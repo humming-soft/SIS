@@ -62,6 +62,7 @@
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\utama.aspx" />
     <Content Include="admin\WebForm1.aspx" />
+    <Content Include="admin\winnable_candidate.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\components.css" />
     <Content Include="assets\css\core.css" />
@@ -133,6 +134,7 @@
     <Content Include="assets\js\jquery.nicescroll.js" />
     <Content Include="assets\js\jquery.scrollTo.min.js" />
     <Content Include="assets\js\jquery.slimscroll.js" />
+    <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\waves.js" />
@@ -345,6 +347,13 @@
     </Compile>
     <Compile Include="admin\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\winnable_candidate.aspx.cs">
+      <DependentUpon>winnable_candidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\winnable_candidate.aspx.designer.cs">
+      <DependentUpon>winnable_candidate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
