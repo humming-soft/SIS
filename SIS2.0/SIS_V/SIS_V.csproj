@@ -60,7 +60,6 @@
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\utama.aspx" />
-    <Content Include="admin\utama2.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\components.css" />
@@ -317,13 +316,6 @@
     </Compile>
     <Compile Include="admin\utama.aspx.designer.cs">
       <DependentUpon>utama.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\utama2.aspx.cs">
-      <DependentUpon>utama2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\utama2.aspx.designer.cs">
-      <DependentUpon>utama2.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
