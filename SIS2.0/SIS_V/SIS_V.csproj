@@ -394,6 +394,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\Master_Admin.Master" />
+    <Content Include="admin\Admin_Master.Master" />
     <Content Include="assets\fonts\fontawesome-webfont3295.eot" />
     <Content Include="assets\fonts\fontawesome-webfont3295.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont3295.woff" />
@@ -420,7 +421,6 @@
     <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
     <Content Include="assets\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
-    <Content Include="admin\Admin_Master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
