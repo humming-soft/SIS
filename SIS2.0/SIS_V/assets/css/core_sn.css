@@ -1,0 +1,68 @@
+.html-login , .body-login {
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+.html-login {
+    background: url("../images/001.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.body-login {
+    filter: alpha(Opacity=40);
+    background: rgba(105, 105, 105, 0.8); /* applies a 80% transparent white background */
+}
+.login-md {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 3px;
+    margin-bottom: 21%;
+    width: 430px;
+
+}
+.w100{
+    width: 100%;
+}
+.m-t-40{
+    margin-top: 40px;
+}
+.m-t-25{
+    margin-top: 25px;
+}
+.wrapper-page .form-control {
+    border-radius: 3px;
+}
+
+/*.kf_comming_counter ul.countdown li a p:hover{*/
+    /*background-color: rgb(255, 255, 255);*/
+    /*padding: 57px 0px 44px 0px;*/
+    /*bottom: 0px;*/
+/*}*/
+/*.kf_comming_counter ul.countdown li a {*/
+    /*height: 150px;*/
+    /*width: 150px;*/
+/*}*/
+
+.portlet-status{
+    text-align: center;
+    padding: 5px;
+    border: solid gray 2px;
+    border-radius: 4px;
+}
+.ta-center{
+    text-align: center;
+}
+.status-white{
+    background-color: #ffffff;
+}
+.status-gray{
+    background-color: #797979;
+}
+.status-black{
+    background-color: #000000;
+}
