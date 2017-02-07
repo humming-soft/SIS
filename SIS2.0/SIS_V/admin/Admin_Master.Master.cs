@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SIS_V.admin
 {
-    public partial class parlimen_tumpuan : System.Web.UI.Page
+    public partial class Admin_Master : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

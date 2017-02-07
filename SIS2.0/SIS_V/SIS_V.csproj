@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\Dash.aspx" />
+    <Content Include="admin\detail_incident.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\utama.aspx" />
     <Content Include="admin\WebForm1.aspx" />
@@ -104,6 +105,7 @@
     <Content Include="assets\images\small\img1.jpg" />
     <Content Include="assets\images\small\img2.jpg" />
     <Content Include="assets\images\small\img3.jpg" />
+    <Content Include="assets\images\users\avatar-0.jpg" />
     <Content Include="assets\images\users\avatar-1.jpg" />
     <Content Include="assets\images\users\avatar-2.jpg" />
     <Content Include="assets\images\users\avatar-3.jpg" />
@@ -117,6 +119,13 @@
     <Content Include="assets\js\core_sn.js" />
     <Content Include="assets\js\detect.js" />
     <Content Include="assets\js\fastclick.js" />
+    <Content Include="assets\js\highcharts\custom.js" />
+    <Content Include="assets\js\highcharts\dark-blue.js" />
+    <Content Include="assets\js\highcharts\dark-green.js" />
+    <Content Include="assets\js\highcharts\dark-unica.js" />
+    <Content Include="assets\js\highcharts\highcharts-more.js" />
+    <Content Include="assets\js\highcharts\highcharts.js" />
+    <Content Include="assets\js\highcharts\no-data-to-display.js" />
     <Content Include="assets\js\jquery.app.js" />
     <Content Include="assets\js\jquery.blockUI.js" />
     <Content Include="assets\js\jquery.core.js" />
@@ -215,7 +224,6 @@
     <Content Include="assets\plugins\jquery-quicksearch\jquery.quicksearch.js" />
     <Content Include="assets\plugins\jquery-sparkline\jquery.sparkline.min.js" />
     <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
-    <Content Include="assets\plugins\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\jquery.validate.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\easypiechart.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" />
@@ -289,12 +297,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\Admin_Master.Master.cs">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Admin_Master.Master.designer.cs">
+      <DependentUpon>Admin_Master.Master</DependentUpon>
+    </Compile>
     <Compile Include="admin\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\Dash.aspx.designer.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\detail_incident.aspx.cs">
+      <DependentUpon>detail_incident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\detail_incident.aspx.designer.cs">
+      <DependentUpon>detail_incident.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Master_Admin.Master.cs">
       <DependentUpon>Master_Admin.Master</DependentUpon>
@@ -362,6 +384,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\Master_Admin.Master" />
     <Content Include="assets\fonts\fontawesome-webfont3295.eot" />
     <Content Include="assets\fonts\fontawesome-webfont3295.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont3295.woff" />
@@ -388,7 +411,7 @@
     <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
     <Content Include="assets\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
-    <Content Include="admin\Master_Admin.Master" />
+    <Content Include="admin\Admin_Master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
