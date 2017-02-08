@@ -160,11 +160,26 @@
                     D = ' AM';
                 }
                 else if (h > 0 && h <= 11) {
-                    hr = h;
+                    if (h < 10)
+                    {
+                        hr = "0"+h;
+                    }
+                    else
+                    {
+                        hr = h;
+                    }
                     D = ' AM';
                 }
                 else if (h > 12 && h <= 23) {
                     hr = h - 12;
+                    if (hr < 10)
+                    {
+                        hr = "0" + hr;
+                    }
+                    else
+                    {
+                        hr = h - 12;
+                    }
                     D = ' PM';
                 }
                 else {
