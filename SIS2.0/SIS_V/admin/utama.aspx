@@ -102,27 +102,27 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Minton Admin v1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Minton Frontend v1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Minton Admin v1.1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/05/2016</td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>Minton Frontend v1.1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Minton Admin v1.3</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                 </tbody>
@@ -142,27 +142,27 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Minton Admin v1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Minton Frontend v1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Minton Admin v1.1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/05/2016</td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>Minton Frontend v1.1</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Minton Admin v1.3</td>
+                                        <td>Lorem Ipsum</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                 </tbody>

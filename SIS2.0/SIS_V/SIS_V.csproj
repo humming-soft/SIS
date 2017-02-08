@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\candidate_detail.aspx" />
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\detail_incident.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
@@ -306,6 +307,13 @@
     <Compile Include="admin\Admin_Master.Master.designer.cs">
       <DependentUpon>Admin_Master.Master</DependentUpon>
     </Compile>
+    <Compile Include="admin\candidate_detail.aspx.cs">
+      <DependentUpon>candidate_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\candidate_detail.aspx.designer.cs">
+      <DependentUpon>candidate_detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,13 +327,6 @@
     </Compile>
     <Compile Include="admin\detail_incident.aspx.designer.cs">
       <DependentUpon>detail_incident.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\Master_Admin.Master.cs">
-      <DependentUpon>Master_Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\Master_Admin.Master.designer.cs">
-      <DependentUpon>Master_Admin.Master</DependentUpon>
     </Compile>
     <Compile Include="admin\parlimen_tumpuan.aspx.cs">
       <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>
@@ -393,7 +394,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\Master_Admin.Master" />
     <Content Include="admin\Admin_Master.Master" />
     <Content Include="assets\fonts\fontawesome-webfont3295.eot" />
     <Content Include="assets\fonts\fontawesome-webfont3295.ttf" />

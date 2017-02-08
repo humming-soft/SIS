@@ -16,7 +16,7 @@ namespace SIS_V
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            if (txtuname.Text != "" && txtpassword.Text != "")
+            if (txtuname.Text != "" && txtpassword.Text != "" && txtuname.Text == "admin" && txtpassword.Text == "password")
             {
                 Response.Redirect("~/admin/Dash.aspx");
             }

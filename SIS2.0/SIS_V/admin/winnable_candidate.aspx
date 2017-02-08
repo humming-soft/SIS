@@ -7,7 +7,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-info txt-black">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -28,7 +28,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-primary txt-white">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -49,7 +49,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-danger txt-white">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -70,7 +70,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-success">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -91,7 +91,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-warning">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -112,7 +112,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-pink">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -133,7 +133,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-inverse txt-white">
                         <div class="ibox-top">
                             <h4 class="font-bold txt-white">PARLIMEN
@@ -154,7 +154,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-purple txt-white">
                         <div class="ibox-top">
                             <h4 class="font-bold txt-white">PARLIMEN
@@ -175,7 +175,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-success">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -196,7 +196,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-primary txt-white">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -217,7 +217,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-info txt-black">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN
@@ -238,7 +238,7 @@
 
         <div class="grid-item">
             <div class="ibox">
-                <a href="<?php echo base_url(); ?>/dashboard/candidate_detail" class="txt-inherit">
+                <a href="candidate_detail.aspx" class="txt-inherit">
                     <div class="ibox-content bg-danger txt-white">
                         <div class="ibox-top">
                             <h4 class="font-bold">PARLIMEN

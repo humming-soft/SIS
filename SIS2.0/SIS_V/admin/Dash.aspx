@@ -82,7 +82,7 @@
                         </li>
                         <li><a href="#">
 <!--                            <span class="seconds last">00</span>-->
-                            <p class="seconds_ref">Kalon Bertanding</p></a>
+                            <p class="seconds_ref">Calon Bertanding</p></a>
                         </li>
                     </ul>
                     <ul class="countdown m-t-25">
@@ -123,8 +123,7 @@
                 </div>
                 <div class="kode_newsletter_form">
                         <form id="form1" runat="server">
-                            <asp:TextBox ID="txtsearch" CssClass="placeholder2" placeholder="Search...." runat="server"></asp:TextBox>
-                            <button><i class="fa fa-search"></i></button>
+                            <asp:TextBox ID="txtsearch" CssClass="placeholder2" placeholder="Need to remove" runat="server" ReadOnly="true"></asp:TextBox>
                     </form>
                 </div>
             </div>
@@ -164,7 +163,7 @@
                     h = checkTime(today.getHours()),
                     m = checkTime(today.getMinutes()),
                     s = checkTime(today.getSeconds());
-                if (h == 0)
+                if (h == 00)
                 {
                     hr = 12;
                     D = ' AM';
@@ -179,7 +178,7 @@
                     hr = h - 12;
                     D = ' PM';
                 }
-                document.getElementById('tm').innerHTML = hr + ":" + m + ":" + s + D;
+                $('#tm').text(hr + ":" + m + ":" + s + D);
                 t = setTimeout(function () {
                     Timer()
                 }, 500);

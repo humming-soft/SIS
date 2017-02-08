@@ -22,78 +22,78 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Minton Admin v1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Minton Frontend v1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Minton Admin v1.1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Minton Frontend v1.1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Minton Admin v1.3</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
 
                             <tr>
                                 <td>6</td>
-                                <td>Minton Admin v1.3</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Minton Admin v1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Minton Frontend v1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Minton Admin v1.1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Minton Frontend v1.1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Minton Admin v1.3</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
 
                             <tr>
                                 <td>6</td>
-                                <td>Minton Admin v1.3</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>Minton Admin v1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Minton Frontend v1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Minton Admin v1.1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Minton Frontend v1.1</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Minton Admin v1.3</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
 
                             <tr>
                                 <td>6</td>
-                                <td>Minton Admin v1.3</td>
+                                <td>Lorem Ipsum</td>
                             </tr>
                         </tbody>
                     </table>
@@ -204,24 +204,16 @@
                         <tr>
                             <th>ACTIVITI :</th>
                             <td>1.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.<br>
+                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
                                 <br>
                                 2.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.<br>
+                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
                                 <br>
                                 3.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.<br>
+                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
                                 <br>
                                 4.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.<br>
+                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
                                 <br>
                                 5.Tarikh : 04/06/2012 Masa: 12:00 AM
                                     -Ceramah Umum yang diadakan bersama Umi Hafilda.
@@ -229,14 +221,10 @@
                                     Mensasarkan golongan muda.<br>
                                 <br>
                                 6.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.<br>
+                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
                                 <br>
                                 7.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.</td>
+                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.</td>
                         </tr>
                     </table>
                 </div>
