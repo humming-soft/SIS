@@ -163,7 +163,6 @@
                     h = checkTime(today.getHours()),
                     m = checkTime(today.getMinutes()),
                     s = checkTime(today.getSeconds());
-                console.log(h);
                 if (h == 00)
                 {
                     hr = 12;
