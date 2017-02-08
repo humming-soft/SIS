@@ -163,6 +163,7 @@
                     h = checkTime(today.getHours()),
                     m = checkTime(today.getMinutes()),
                     s = checkTime(today.getSeconds());
+                console.log(h);
                 if (h == 00)
                 {
                     hr = 12;
@@ -173,9 +174,14 @@
                     hr = h;
                     D = ' AM';
                 }
-                else if (h > 11 && h <= 23)
+                else if (h > 12 && h <= 23)
                 {
                     hr = h - 12;
+                    D = ' PM';
+                }
+                else
+                {
+                    hr = 12;
                     D = ' PM';
                 }
                 $('#tm').text(hr + ":" + m + ":" + s + D);
