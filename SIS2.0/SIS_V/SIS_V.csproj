@@ -60,7 +60,9 @@
     <Content Include="admin\candidate_detail.aspx" />
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\detail_incident.aspx" />
+    <Content Include="admin\kawasan_operasi.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
+    <Content Include="admin\percentage_voters.aspx" />
     <Content Include="admin\utama.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="admin\winnable_candidate.aspx" />
@@ -328,12 +330,26 @@
     <Compile Include="admin\detail_incident.aspx.designer.cs">
       <DependentUpon>detail_incident.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\kawasan_operasi.aspx.cs">
+      <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\kawasan_operasi.aspx.designer.cs">
+      <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\parlimen_tumpuan.aspx.cs">
       <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\parlimen_tumpuan.aspx.designer.cs">
       <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\percentage_voters.aspx.cs">
+      <DependentUpon>percentage_voters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\percentage_voters.aspx.designer.cs">
+      <DependentUpon>percentage_voters.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\utama.aspx.cs">
       <DependentUpon>utama.aspx</DependentUpon>

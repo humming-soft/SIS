@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../assets/images/favicon_1.ico" />
 
-    <title>Minton - Responsive Admin Dashboard Template</title>
+    <title>SIS</title>
 
     <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
@@ -38,6 +38,11 @@
     <script src="../assets/js/highcharts/highcharts-more.js"></script>
     <script src="../assets/js/highcharts/no-data-to-display.js"></script>
     <script src="../assets/js/masonry/masonry.min.js"></script>
+
+    <!-- peity charts -->
+    <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../assets/pages/jquery.peity.init.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -101,13 +106,14 @@
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
                                 <li><a href="utama.aspx">Dashboard Utama</a></li>
-                                <li><a href="parlimen_tumpuan.aspx">Dashboard Parlimen Tumpuan</a></li>
+                                <li><a href="#">Dashboard Parlimen Tumpuan</a></li>
+                                <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
                                 <li><a href="#">Dashboard Tumpuan BN vs Pembpangkang</a></li>
                                 <li><a href="#">Keputusan Pilihan Raya</a></li>
                                 <li><a href="#">Ramusan Status Kawasan</a></li>
                                 <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
                                 <li><a href="#">Penambahan Pengundi</a></li>
-                                <li><a href="#">Peratusan Keluar Mengundi</a></li>
+                                <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
                                 <li><a href="#">Peratusan Tahap Sokongan Agensi</a></li>
                             </ul>
                         </li>
