@@ -111,15 +111,15 @@
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
                                 <li><a href="utama.aspx">Dashboard Utama</a></li>
-                                <li><a href="#">Dashboard Parlimen Tumpuan</a></li>
+                               <%-- <li><a href="#">Dashboard Parlimen Tumpuan</a></li>--%>
                                 <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
-                                <li><a href="#">Dashboard Tumpuan BN vs Pembpangkang</a></li>
-                                <li><a href="#">Keputusan Pilihan Raya</a></li>
-                                <li><a href="#">Ramusan Status Kawasan</a></li>
+                                <%--<li><a href="#">Dashboard Tumpuan BN vs Pembpangkang</a></li>--%>
+                                <%--<li><a href="#">Keputusan Pilihan Raya</a></li>
+                                <li><a href="#">Ramusan Status Kawasan</a></li>--%>
                                 <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
-                                <li><a href="#">Penambahan Pengundi</a></li>
+                                <%--<li><a href="#">Penambahan Pengundi</a></li>--%>
                                 <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
-                                <li><a href="#">Peratusan Tahap Sokongan Agensi</a></li>
+                                <%--<li><a href="#">Peratusan Tahap Sokongan Agensi</a></li>--%>
                             </ul>
                         </li>
                         <li class="has-submenu">

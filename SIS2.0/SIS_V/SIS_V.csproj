@@ -105,6 +105,7 @@
     <Content Include="assets\images\logo\logo_4.png" />
     <Content Include="assets\images\logo\logo_5.png" />
     <Content Include="assets\images\logo\logo_xs.png" />
+    <Content Include="assets\images\pattern\001_p.png" />
     <Content Include="assets\images\small\img1.jpg" />
     <Content Include="assets\images\small\img2.jpg" />
     <Content Include="assets\images\small\img3.jpg" />
@@ -237,14 +238,6 @@
     <Content Include="assets\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
     <Content Include="assets\plugins\magnific-popup\dist\jquery.magnific-popup.min.js" />
     <Content Include="assets\plugins\magnific-popup\dist\magnific-popup.css" />
-    <Content Include="assets\plugins\media\css\DT_bootstrap.css" />
-    <Content Include="assets\plugins\media\css\images\sort_asc.png" />
-    <Content Include="assets\plugins\media\css\images\sort_asc_disabled.png" />
-    <Content Include="assets\plugins\media\css\images\sort_both.png" />
-    <Content Include="assets\plugins\media\css\images\sort_desc.png" />
-    <Content Include="assets\plugins\media\css\images\sort_desc_disabled.png" />
-    <Content Include="assets\plugins\media\js\DT_bootstrap.js" />
-    <Content Include="assets\plugins\media\js\jquery.dataTables.min.js" />
     <Content Include="assets\plugins\mjolnic-bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="assets\plugins\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
     <Content Include="assets\plugins\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha.png" />

@@ -33,10 +33,25 @@
     <![endif]-->
 </head>
 <body class="body-login">
+    <header>
+        <div class="kode_navigation_outr_wrap">
+            <div class="container" style="width: 60%;">
+                <div class="kode_logo">
+                    <a href="index.html">
+                        <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here"/>
+                    </a>
+                </div>
+                <div class="kode_ui_element">
+                    <div class="kode_ui_element">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="wrapper-page login-md">
 
         <div class="text-center">
-            <a href="index-2.html" class="logo logo-lg"><i class="md md-equalizer"></i><span>SIS</span> </a>
+            <a href="#" class="logo logo-lg"><i class="md md-equalizer"></i><span>SIS</span> </a>
             <span>Strategic Information System</span>
         </div>
         <form id="form1" runat="server" class="form-horizontal m-t-20">
@@ -59,7 +74,7 @@
             </div>
             <div class="form-group text-right m-t-40">
                 <div class="col-xs-12">
-                    <asp:Button ID="btnlogin" CssClass="btn btn-primary w100 btn-custom w-md waves-light" runat="server" Text="Log In" OnClientClick="vali()" OnClick="btnlogin_Click"/>
+                    <asp:Button ID="btnlogin" CssClass="btn btn-primary w100 btn-custom w-md waves-light" runat="server" Text="Log In" OnClientClick="vali()" OnClick="btnlogin_Click" />
                 </div>
             </div>
         </form>

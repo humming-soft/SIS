@@ -98,7 +98,6 @@
                                         dari SIS </p>
                                 </a>
                             </li>
-
                         </ul>
                     </div>
 
@@ -160,24 +159,20 @@
                     D = ' AM';
                 }
                 else if (h > 0 && h <= 11) {
-                    if (h < 10)
-                    {
-                        hr = "0"+h;
+                    if (h < 10) {
+                        hr = "0" + h;
                     }
-                    else
-                    {
+                    else {
                         hr = h;
                     }
                     D = ' AM';
                 }
                 else if (h > 12 && h <= 23) {
                     hr = h - 12;
-                    if (hr < 10)
-                    {
+                    if (hr < 10) {
                         hr = "0" + hr;
                     }
-                    else
-                    {
+                    else {
                         hr = h - 12;
                     }
                     D = ' PM';
