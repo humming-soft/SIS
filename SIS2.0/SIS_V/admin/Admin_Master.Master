@@ -143,12 +143,8 @@
                                 <li>
                                     <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
                                 </li>
-                                <li class="has-submenu">
-                                    <a href="#">Aktiviti Parti Bertanding</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
+                                <li >
+                                    <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
                                 </li>
                                 <li class="has-submenu">
                                     <a href="#">Aktiviti Agensi</a>
