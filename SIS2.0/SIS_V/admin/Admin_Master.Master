@@ -31,6 +31,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+
+    <%--<link href="../assets/plugins/media/css/DT_bootstrap.css" rel="stylesheet" />--%>
+
     <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
@@ -54,23 +57,25 @@
 
                 <!-- Logo container-->
                 <div class="logo">
-                    <a href="index-2.html" class="logo"><i class="md md-equalizer"></i><span>STRATEGIC INFORMATION SYSTEM</span> </a>
+                    <a href="#" class="logo">
+                        <img src="../assets/images/logo/logo_4.png" alt="user-img" class="hidden-xs"/>
+                        <img src="../assets/images/logo/logo_xs.png" alt="user-img" class="visible-xs logo-img"/>
+                        <span class="hidden-xs">STRATEGIC INFORMATION SYSTEM</span></a>
                 </div>
                 <!-- End Logo container-->
 
                 <div class="menu-extras">
 
                     <ul class="nav navbar-nav navbar-right pull-right">
-
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle"/>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i>Settings</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
-                                <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Logout</a></li>
+                                <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -135,12 +140,8 @@
                                         <li><a href="map-vector.html">Import Sumber</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu">
-                                    <a href="#">Aktiviti Bakal Calon / Individu</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li class="has-submenu">
                                     <a href="#">Aktiviti Parti Bertanding</a>
@@ -337,6 +338,7 @@
 
 
     <!-- jQuery  -->
+    <%--<script src="../assets/js/jquery.min.js"></script>--%>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -345,6 +347,21 @@
     <script src="../assets/js/jquery.nicescroll.js"></script>
     <script src="../assets/js/jquery.scrollTo.min.js"></script>
 
+    <!-- Datatables-->
+    <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="../assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="../assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.scroller.min.js"></script>
+    
     <!-- Counter Up  -->
     <script src="../assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
     <script src="../assets/plugins/counterup/jquery.counterup.min.js"></script>
@@ -363,18 +380,9 @@
     <script src="../assets/js/jquery.core.js"></script>
     <script src="../assets/js/jquery.app.js"></script>
 
-    <!-- Window load and dcument ready same or not check it -->
-    <script type="text/javascript">
-        $(window).load(function () {
-            $('.grid').masonry({
-                // options
-                itemSelector: '.grid-item',
-                columnWidth: 250,
-                gutter: 25
-            });
+    <!-- Custom DataTable Init Js -->
+    <script src="../assets/js/DT/checker.js"></script>
 
-        });
-    </script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {

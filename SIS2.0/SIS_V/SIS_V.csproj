@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\activiti_bakal_ci_add.aspx" />
+    <Content Include="admin\activiti_bakal_ci_view.aspx" />
     <Content Include="admin\candidate_detail.aspx" />
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\detail_incident.aspx" />
@@ -110,6 +112,7 @@
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\core_sn.js" />
     <Content Include="assets\js\detect.js" />
+    <Content Include="assets\js\DT\checker.js" />
     <Content Include="assets\js\fastclick.js" />
     <Content Include="assets\js\highcharts\custom.js" />
     <Content Include="assets\js\highcharts\dark-blue.js" />
@@ -234,6 +237,14 @@
     <Content Include="assets\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
     <Content Include="assets\plugins\magnific-popup\dist\jquery.magnific-popup.min.js" />
     <Content Include="assets\plugins\magnific-popup\dist\magnific-popup.css" />
+    <Content Include="assets\plugins\media\css\DT_bootstrap.css" />
+    <Content Include="assets\plugins\media\css\images\sort_asc.png" />
+    <Content Include="assets\plugins\media\css\images\sort_asc_disabled.png" />
+    <Content Include="assets\plugins\media\css\images\sort_both.png" />
+    <Content Include="assets\plugins\media\css\images\sort_desc.png" />
+    <Content Include="assets\plugins\media\css\images\sort_desc_disabled.png" />
+    <Content Include="assets\plugins\media\js\DT_bootstrap.js" />
+    <Content Include="assets\plugins\media\js\jquery.dataTables.min.js" />
     <Content Include="assets\plugins\mjolnic-bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
     <Content Include="assets\plugins\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
     <Content Include="assets\plugins\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha.png" />
@@ -290,6 +301,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\activiti_bakal_ci_add.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\activiti_bakal_ci_add.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\activiti_bakal_ci_view.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\activiti_bakal_ci_view.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Admin_Master.Master.cs">
       <DependentUpon>Admin_Master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

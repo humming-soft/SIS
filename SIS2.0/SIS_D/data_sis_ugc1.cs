@@ -18,7 +18,6 @@ namespace SIS_D
         {
             try
             {
-                //cmd.Connection = db.disconnect();
                 cmd.Parameters.Clear();
                 cmd.CommandText = "sp_users";
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -27,7 +26,26 @@ namespace SIS_D
                 cmd.Connection = db.connect();
                 da.SelectCommand = cmd;
                 da.Fill(dt);
-                //db.disconnect();
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_DataTable()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_DataTables";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
                 return dt;
             }
             finally

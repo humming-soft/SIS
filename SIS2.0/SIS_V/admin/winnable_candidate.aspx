@@ -1,6 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="winnable_candidate.aspx.cs" Inherits="SIS_V.admin.winnable_candidate" MasterPageFile="~/admin/Admin_Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.grid').masonry({
+                // options
+                itemSelector: '.grid-item',
+                columnWidth: 250,
+                gutter: 25
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="grid">
@@ -256,8 +266,6 @@
                 </a>
             </div>
         </div>
-
-
-
     </div>
+
 </asp:Content>

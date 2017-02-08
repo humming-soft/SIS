@@ -14,5 +14,10 @@ namespace SIS_B
         {
             return data1.fillgrid();
         }
+
+        public DataTable fill_DataTable()
+        {
+            return data1.fill_DataTable();
+        }
     }
 }
