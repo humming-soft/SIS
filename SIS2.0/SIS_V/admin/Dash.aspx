@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="kode_logo">
                         <a href="index.html">
-                            <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here">
+                            <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here"/>
                         </a>
                     </div>
                     <div class="kode_ui_element">

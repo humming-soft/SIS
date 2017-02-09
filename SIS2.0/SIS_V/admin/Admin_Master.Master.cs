@@ -23,10 +23,10 @@ namespace SIS_V.admin
 
             switch (pageName)
             {
-                case "utama.aspx":
+                case "utama":
                     dash.Attributes["class"] = "has-submenu active";
                     break;
-                case "activiti_bakal_ci_view.aspx":
+                case "activiti_bakal_ci_view":
                     prapiliha.Attributes["class"] = "has-submenu active";
                     break;
                 //case "JournalList.aspx":
