@@ -43,6 +43,7 @@
     <Compile Include="bus_sis_ugc2.cs" />
     <Compile Include="bus_sis_ugc3.cs" />
     <Compile Include="bus_sis_ugc4.cs" />
+    <Compile Include="bus_sis_ugc5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

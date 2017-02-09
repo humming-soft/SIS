@@ -74,9 +74,10 @@ namespace SIS_V.admin
             int id = int.Parse(grdinsident1.DataKeys[row.RowIndex].Value.ToString());
             if(id != 0)
             {
-                /* can use either server.transfer or response .redirect 
-                 * server.transfer - url won't change
-                 * response .redirect - url will change                 * 
+                /* 
+                 * can use either Server.Transfer or Response.Redirect 
+                 * Server.Transfer - url won't change
+                 * Response.Redirect - url will change
                 */
                 Response.Redirect("~/admin/detail_incident.aspx");
 

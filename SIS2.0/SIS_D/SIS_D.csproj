@@ -44,6 +44,7 @@
     <Compile Include="data_sis_ugc2.cs" />
     <Compile Include="data_sis_ugc3.cs" />
     <Compile Include="data_sis_ugc4.cs" />
+    <Compile Include="data_sis_ugc5.cs" />
     <Compile Include="db_connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

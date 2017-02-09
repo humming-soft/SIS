@@ -20,6 +20,11 @@ namespace SIS_V
             {
                 Response.Redirect("~/admin/Dash.aspx");
             }
+            else
+            {
+                txtuname.Text = "";
+                txtpassword.Text = "";
+            }
         }
     }
 }
