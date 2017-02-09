@@ -1,6 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_bakal_ci_add.aspx.cs" Inherits="SIS_V.admin.activiti_bakal_ci_add" MasterPageFile="~/admin/Admin_Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<%--    <script type="text/javascript">
+        $(function () {
+            $("#Button1").click(function () {
+                alert('hi');
+                $('#con-close-modal').modal('show');
+            });
+        });
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -62,7 +70,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <asp:Button ID="Button1" CssClass="btn btn-primary waves-light" data-toggle="modal" data-target="#con-close-modal" Style="margin-top: 24px;" runat="server" Text="Cari Calon" />
+                            <asp:Button ID="Button1" CssClass="btn btn-primary waves-light" Style="margin-top: 24px;" runat="server" Text="Cari Calon" OnClick="Button1_Click" />
                         </div>
                     </div>
                 </div>
@@ -114,7 +122,7 @@
         </div>
     </div>
     <!-- modal -->
-    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div id="mymodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
