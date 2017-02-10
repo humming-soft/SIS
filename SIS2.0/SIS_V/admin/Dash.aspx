@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="kode_logo">
                         <a href="index.html">
-                            <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here"/>
+                            <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here" />
                         </a>
                     </div>
                     <div class="kode_ui_element">
@@ -79,9 +79,11 @@
                             <li>
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="#">
-                                    <p class="days_ref b35">Dafthar  
+                                    <p class="days_ref b35">
+                                        Dafthar  
                                         <br>
-                                        Pamilih</p>
+                                        Pamilih
+                                    </p>
                                 </a>
                             </li>
                             <li>
@@ -93,9 +95,11 @@
                             <li>
                                 <img src="../assets/images/gallery/009_d.png" alt="Logo Image Here" />
                                 <a href="../Login.aspx">
-                                    <p class="hours_ref">Keluar
+                                    <p class="hours_ref">
+                                        Keluar
                                         <br>
-                                        dari SIS </p>
+                                        dari SIS
+                                    </p>
                                 </a>
                             </li>
                         </ul>
@@ -159,12 +163,7 @@
                     D = ' AM';
                 }
                 else if (h > 0 && h <= 11) {
-                    if (h < 10) {
-                        hr = "0" + h;
-                    }
-                    else {
-                        hr = h;
-                    }
+                    hr = h;
                     D = ' AM';
                 }
                 else if (h > 12 && h <= 23) {

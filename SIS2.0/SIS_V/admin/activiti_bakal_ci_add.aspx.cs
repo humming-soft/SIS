@@ -14,9 +14,9 @@ namespace SIS_V.admin
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#mymodal').modal();", true);
-        }
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#con-close-modal').modal();", true);
+        //}
     }
 }

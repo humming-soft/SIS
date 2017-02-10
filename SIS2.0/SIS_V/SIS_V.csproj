@@ -73,6 +73,7 @@
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\detail_incident.aspx" />
     <Content Include="admin\kawasan_operasi.aspx" />
+    <Content Include="admin\laporan_harian_view.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\percentage_voters.aspx" />
     <Content Include="admin\utama.aspx" />
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="admin\kawasan_operasi.aspx.designer.cs">
       <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\laporan_harian_view.aspx.cs">
+      <DependentUpon>laporan_harian_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\laporan_harian_view.aspx.designer.cs">
+      <DependentUpon>laporan_harian_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\parlimen_tumpuan.aspx.cs">
       <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>

@@ -24,7 +24,7 @@
             // set the initial value
             "iDisplayLength": 5,
         });
-        //$('#GridDataTable_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#GridDataTable_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
 
@@ -48,7 +48,7 @@
             // set the initial value
             "iDisplayLength": 5,
         });
-        //$('#GridDataTable_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#GridDataTable2_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
 

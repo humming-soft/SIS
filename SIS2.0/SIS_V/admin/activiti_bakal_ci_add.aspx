@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_bakal_ci_add.aspx.cs" Inherits="SIS_V.admin.activiti_bakal_ci_add" MasterPageFile="~/admin/Admin_Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<%--    <script type="text/javascript">
+    <%--    <script type="text/javascript">
         $(function () {
             $("#Button1").click(function () {
                 alert('hi');
@@ -70,7 +70,10 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <asp:Button ID="Button1" CssClass="btn btn-primary waves-light" Style="margin-top: 24px;" runat="server" Text="Cari Calon" OnClick="Button1_Click" />
+                            <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal" type="button" style="margin-top: 24px;">
+                                Cari Calon
+                            </button>
+                            <%--<asp:Button ID="Button1" CssClass="btn btn-primary waves-light" Style="margin-top: 24px;" runat="server" Text="Cari Calon" OnClick="Button1_Click" />--%>
                         </div>
                     </div>
                 </div>
@@ -122,7 +125,7 @@
         </div>
     </div>
     <!-- modal -->
-    <div id="mymodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -134,9 +137,9 @@
                         <div class="col-md-10">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Jenis Carian</label>
-                                <select class="form-control">
-                                    <option>Nama Bakal Calon/Individu</option>
-                                </select>
+                                <asp:DropDownList ID="DropDownList9" runat="server">
+                                <asp:ListItem>Nama Bakal Calon/Individu</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                         </div>
                     </div>
@@ -144,12 +147,12 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label for="field-2" class="control-label">Keyword</label>
-                                <input type="text" class="form-control" id="field-2" placeholder="Doe">
+                                <asp:TextBox ID="TextBox4" CssClass="form-control" placeholder="Doe" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <button type="button" class="btn btn-default waves-effect" style="margin-top: 24px;">Cari</button>
+                                <asp:Button ID="Button1" CssClass="btn btn-default" style="margin-top: 24px;" runat="server" Text="Cari" />
                             </div>
                         </div>
                     </div>
@@ -200,8 +203,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Okay</button>
-                    <button type="button" class="btn btn-info waves-effect waves-light">Batal</button>
+                    <asp:Button ID="Button4" runat="server" CssClass="btn btn-default" Text="Okay" />
+                    <asp:Button ID="Button5" runat="server" CssClass="btn btn-info" Text="Batal" />
                 </div>
             </div>
         </div>
