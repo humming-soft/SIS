@@ -132,6 +132,7 @@
     <Content Include="assets\images\users\avatar-0.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\core_sn.js" />
+    <Content Include="assets\js\countdown\jquery.lwtCountdown-1.0.js" />
     <Content Include="assets\js\detect.js" />
     <Content Include="assets\js\DT\checker.js" />
     <Content Include="assets\js\DT\lamporan.js" />

@@ -80,7 +80,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
-                                <li><a href="javascript:void(0)" data-toggle="modal"  data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
+                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
                                 <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
@@ -165,7 +165,69 @@
     <form id="form1" runat="server">
         <div class="wrapper">
             <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4>Dashboard Utama</h4>
+                        <ol class="breadcrumb p-l-0">
+                            <li>
+                                <a href="#"><i class="fa fa-home"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <strong>Dashboard Utama</strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-3">
+                        <div id="live_time" class="live_time">
+                            <p style="margin-bottom: 0; text-transform:uppercase;" id="dt"></p>
+                            <span id="tm" class="time"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <!-- Watch -->
+                        <div id="watch" class="pull-right">
 
+                            <!-- Days -->
+                            <div class="dash days_dash">
+                                <div class="digit day_field">0</div>
+                                <div class="digit">0</div>
+                                <div class="digit">6</div>
+                                <span class="dash_title">Days</span>
+                            </div>
+                            <!-- End Days -->
+
+                            <!-- Hours -->
+                            <div class="dash hours_dash">
+                                <div class="digit">1</div>
+                                <div class="digit">2</div>
+                                <span class="dash_title">Hours</span>
+                            </div>
+                            <!-- End Hours -->
+
+                            <!-- Minutes -->
+                            <div class="dash minutes_dash">
+                                <div class="digit">0</div>
+                                <div class="digit">5</div>
+                                <span class="dash_title">Minutes</span>
+                            </div>
+                            <!-- End Minutes -->
+
+                            <!-- Seconds -->
+                            <div class="dash seconds_dash">
+                                <div class="digit">3</div>
+                                <div class="digit">9</div>
+                                <span class="dash_title">Seconds</span>
+                            </div>
+                            <!-- End Seconds -->
+
+                        </div>
+                        <!-- End Watch -->
+
+                    </div>
+                </div>
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
@@ -313,7 +375,9 @@
     <script src="../assets/js/DT/checker.js"></script>
     <script src="../assets/js/DT/lamporan.js"></script>
 
+    <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
 
+    <script src="../assets/plugins/moment/moment.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.counter').counterUp({
@@ -321,6 +385,10 @@
                 time: 1200
             });
             $('.circliful-chart').circliful();
+            get_date();
+            get_time();
+            watch();
+
         });
 
         /* BEGIN SVG WEATHER ICON */
@@ -341,6 +409,76 @@
             icons.play();
         };
 
+    </script>
+    <script type="text/javascript">
+        function get_date() {
+            var today = moment(new Date()).format("DD MMM YYYY");
+            $('#dt').text(today);
+        }
+    </script>
+    <script type="text/javascript">
+        function get_time() {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function Timer() {
+                var hr, D;
+                var today = new Date(),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                if (h == 00) {
+                    hr = 12;
+                    D = ' AM';
+                }
+                else if (h > 0 && h <= 11) {
+                    hr = h;
+                    D = ' AM';
+                }
+                else if (h > 12 && h <= 23) {
+                    hr = h - 12;
+                    if (hr < 10) {
+                        hr = "0" + hr;
+                    }
+                    else {
+                        hr = h - 12;
+                    }
+                    D = ' PM';
+                }
+                else {
+                    hr = 12;
+                    D = ' PM';
+                }
+                $('#tm').text(hr + ":" + m + ":" + s + D);
+                t = setTimeout(function () {
+                    Timer()
+                }, 500);
+            }
+            Timer();
+        }
+    </script>
+    <script type="text/javascript">
+        function watch() {
+            if ($.find('#watch')[0]) {
+
+                $('#watch').countDown({
+                    targetDate: {
+                        'day': 12,
+                        'month': 03,
+                        'year': 2017,
+                        'hour': 12,
+                        'min': 00,
+                        'sec': 00
+                    },
+                    omitWeeks: true
+                });
+                //enter the count down date using the format year, month, day, time: hour, min, sec
+
+                if ($('.day_field .top').html() == "0") $('.day_field').css('display', 'none');
+
+            }
+        }
     </script>
 </body>
 </html>
