@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
     <Content Include="admin\activiti_bakal_ci_add.aspx" />
     <Content Include="admin\activiti_bakal_ci_view.aspx" />
     <Content Include="admin\activiti_parti_add.aspx" />
@@ -315,6 +316,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\activiti_bakal_ci_add.aspx.cs">
       <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

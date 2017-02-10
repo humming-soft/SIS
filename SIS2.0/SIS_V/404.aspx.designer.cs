@@ -10,6 +10,6 @@
 namespace SIS_V {
     
     
-    public partial class Sessiontimeout {
+    public partial class _404 {
     }
 }
