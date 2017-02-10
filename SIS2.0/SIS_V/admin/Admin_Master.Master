@@ -80,7 +80,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
+                                <li><a href="javascript:void(0)" data-toggle="modal"  data-target="#sis-ape-modal">><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
                                 <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
@@ -118,172 +118,28 @@
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
                                 <li><a href="utama.aspx">Dashboard Utama</a></li>
-                                <%-- <li><a href="#">Dashboard Parlimen Tumpuan</a></li>--%>
                                 <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
-                                <%--<li><a href="#">Dashboard Tumpuan BN vs Pembpangkang</a></li>--%>
-                                <%--<li><a href="#">Keputusan Pilihan Raya</a></li>
-                                <li><a href="#">Ramusan Status Kawasan</a></li>--%>
                                 <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
-                                <%--<li><a href="#">Penambahan Pengundi</a></li>--%>
                                 <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
-                                <%--<li><a href="#">Peratusan Tahap Sokongan Agensi</a></li>--%>
                             </ul>
                         </li>
                         <li class="has-submenu" id="prapiliha" runat="server">
                             <a href="#"><i class="md md-invert-colors-on"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
-                                <%--                                 <li class="has-submenu">
-                                    <a href="#">Profil Bakal Calon / Individu</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                               <li class="has-submenu">
-                                    <a href="#">Calon Boleh Menang</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                        <li><a href="map-vector.html">Import Sumber</a></li>
-                                    </ul>
-                                </li>--%>
                                 <li>
                                     <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
                                     <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
                                 </li>
-                                <%--<li class="has-submenu">
-                                    <a href="#">Aktiviti Agensi</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Aktiviti NGO</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                        <li><a href="map-vector.html">Import</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Propaganda</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                        <li><a href="map-vector.html">Import</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Tahap Sokongan</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                        <li><a href="map-vector.html">Kemaskini Paparan Dashboard</a></li>
-                                        <li><a href="map-vector.html">Import</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Laporan Eksekutif</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Daftar Permilih</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Penambahan Pengundi</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>--%>
                                 <li><a href="laporan_harian_view.aspx">Import Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
                             <a href="#"><i class="md md-class"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <%--                                <li class="has-submenu">
-                                    <a href="#">Keputusan Pilihanraya</a>
-                                    <ul class="submenu">
-                                        <li><a href="icons-glyphicons.html">Tambah</a></li>
-                                        <li><a href="icons-materialdesign.html">Kemaskini</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Import Pecahan Kaum</a></li>--%>
                                 <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
                             </ul>
-                        </li>
-                        <li class="has-submenu" id="pelap" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Pelaporan</a>
-                            <%--                            <ul class="submenu">
-                                <li><a href="#">Pelaporan Analisa Winnable Candidate</a></li>
-                                <li><a href="#">Pelaporan Analisa Calon Bertanding</a></li>
-                                <li><a href="#">Pautan Laporan Crystal Report</a></li>
-                            </ul>--%>
-                        </li>
-                        <li class="has-submenu" id="indi" runat="server">
-                            <a href="#"><i class="md md-invert-colors-on"></i>Individu/Pertubuhan</a>
-                            <%--                            <ul class="submenu">
-                                <li class="has-submenu">
-                                    <a href="#">Key-Communicator</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Individu Berpengaruh</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Organisasi Berpengaruh</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">NGO</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Pertubuhan Agama Bukan Islam</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Media</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Agensi</a>
-                                    <ul class="submenu">
-                                        <li><a href="map-google.html">Tambah</a></li>
-                                        <li><a href="map-vector.html">Paparan</a></li>
-                                    </ul>
-                                </li>
-                            </ul>--%>
                         </li>
                         <li id="analisis" runat="server">
                             <a href="analisis_kawasan_view.aspx"><i class="md md-pages"></i>Analisis Kawasan</a>
@@ -297,11 +153,7 @@
                             </ul>
                         </li>
                         <li class="has-submenu" id="teta" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Tetapan Pentadbir</a>
-                            <%--                            <ul class="submenu">
-                                <li><a href="#">Tambah</a></li>
-                                <li><a href="#">Paparan</a></li>
-                            </ul>--%>
+                            <a href="tetapan_pentadbir_view.aspx"><i class="fa fa-user-plus"></i>Tetapan Pentadbir</a>
                         </li>
                     </ul>
                     <!-- End navigation menu -->
@@ -310,30 +162,107 @@
         </div>
     </header>
     <!-- End Navigation Bar-->
-    <div class="wrapper">
-        <div class="container">
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <div class="container">
 
-            <form id="form1" runat="server">
+
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
-            </form>
 
-            <!-- Footer -->
-            <footer class="footer text-right">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 ta-center">
-                            2017 © Strategic Information System.
+
+                <!-- Footer -->
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 ta-center">
+                                2017 © Strategic Information System.
+                            </div>
                         </div>
                     </div>
-                </div>
-            </footer>
-            <!-- End Footer -->
+                </footer>
+                <!-- End Footer -->
 
+            </div>
+            <!-- end container -->
         </div>
-        <!-- end container -->
-    </div>
-    <!-- End wrapper -->
+        <!-- End wrapper -->
+        <!-- Modal -->
+        <div id="sis-ape-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Profile Pengguna SIS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Login Pengguna</label>
+                                    <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Nama Penuh</label>
+                                    <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Kad Pengenalan</label>
+                                    <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Position</label>
+                                    <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Level</label>
+                                    <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Kata Laluan Baru</label>
+                                    <asp:TextBox ID="TextBox6" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-1" class="control-label">Pengesahan Kata Laluan Baru</label>
+                                    <asp:TextBox ID="TextBox7" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="Kemaskini" />
+                        <asp:Button ID="Button2" CssClass="btn btn-info waves-light" runat="server" Text="Batal" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+    </form>
 
 
 

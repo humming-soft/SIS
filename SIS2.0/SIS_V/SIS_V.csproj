@@ -82,6 +82,8 @@
     <Content Include="admin\parlimen_info_view.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\percentage_voters.aspx" />
+    <Content Include="admin\tetapan_pentadbir_add.aspx" />
+    <Content Include="admin\tetapan_pentadbir_view.aspx" />
     <Content Include="admin\utama.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="admin\winnable_candidate.aspx" />
@@ -439,6 +441,20 @@
     <Compile Include="admin\percentage_voters.aspx.designer.cs">
       <DependentUpon>percentage_voters.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\tetapan_pentadbir_add.aspx.cs">
+      <DependentUpon>tetapan_pentadbir_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\tetapan_pentadbir_add.aspx.designer.cs">
+      <DependentUpon>tetapan_pentadbir_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\tetapan_pentadbir_view.aspx.cs">
+      <DependentUpon>tetapan_pentadbir_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\tetapan_pentadbir_view.aspx.designer.cs">
+      <DependentUpon>tetapan_pentadbir_view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\utama.aspx.cs">
       <DependentUpon>utama.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -503,6 +519,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\Admin_Master.Master" />
+    <Content Include="packages.config" />
     <Content Include="assets\fonts\fontawesome-webfont3295.eot" />
     <Content Include="assets\fonts\fontawesome-webfont3295.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont3295.woff" />
@@ -529,7 +546,6 @@
     <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
     <Content Include="assets\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
