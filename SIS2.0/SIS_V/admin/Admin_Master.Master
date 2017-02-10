@@ -206,7 +206,7 @@
                                         <li><a href="map-vector.html">Paparan</a></li>
                                     </ul>
                                 </li>--%>
-                                <li><a href="laporan_harian_view.aspx">IMport Laporan Harian Dari Negeri</a></li>
+                                <li><a href="laporan_harian_view.aspx">Import Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
@@ -299,13 +299,6 @@
                                 <li><a href="#">Paparan</a></li>
                             </ul>--%>
                         </li>
-                        <li class="has-submenu" id="pengu" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Pengguna : State Officer</a>
-<%--                            <ul class="submenu">
-                                <li><a href="#">Maklumat Pengguna state officer</a></li>
-                                <li><a href="#">Keluar dari SIS</a></li>
-                            </ul>--%>
-                        </li>
                     </ul>
                     <!-- End navigation menu -->
                 </div>
@@ -385,6 +378,7 @@
 
     <!-- Custom DataTable Init Js -->
     <script src="../assets/js/DT/checker.js"></script>
+    <script src="../assets/js/DT/lamporan.js"></script>
 
 
     <script type="text/javascript">

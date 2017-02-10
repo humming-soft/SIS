@@ -19,5 +19,10 @@ namespace SIS_B
         {
             return data1.fill_DataTable();
         }
+
+        public DataTable fill_lamporan()
+        {
+            return data1.fill_lamporan();
+        }
     }
 }

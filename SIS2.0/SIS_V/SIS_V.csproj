@@ -73,6 +73,7 @@
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\detail_incident.aspx" />
     <Content Include="admin\kawasan_operasi.aspx" />
+    <Content Include="admin\laporan_harian_add.aspx" />
     <Content Include="admin\laporan_harian_view.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\percentage_voters.aspx" />
@@ -125,6 +126,7 @@
     <Content Include="assets\js\core_sn.js" />
     <Content Include="assets\js\detect.js" />
     <Content Include="assets\js\DT\checker.js" />
+    <Content Include="assets\js\DT\lamporan.js" />
     <Content Include="assets\js\fastclick.js" />
     <Content Include="assets\js\highcharts\custom.js" />
     <Content Include="assets\js\highcharts\dark-blue.js" />
@@ -368,6 +370,13 @@
     </Compile>
     <Compile Include="admin\kawasan_operasi.aspx.designer.cs">
       <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\laporan_harian_add.aspx.cs">
+      <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\laporan_harian_add.aspx.designer.cs">
+      <DependentUpon>laporan_harian_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\laporan_harian_view.aspx.cs">
       <DependentUpon>laporan_harian_view.aspx</DependentUpon>
