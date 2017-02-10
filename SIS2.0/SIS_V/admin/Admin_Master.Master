@@ -65,8 +65,8 @@
                 <!-- Logo container-->
                 <div class="logo">
                     <a href="#" class="logo">
-                        <img src="../assets/images/logo/logo_4.png" alt="user-img" class="hidden-xs"/>
-                        <img src="../assets/images/logo/logo_xs.png" alt="user-img" class="visible-xs logo-img"/>
+                        <img src="../assets/images/logo/logo_4.png" alt="user-img" class="hidden-xs" />
+                        <img src="../assets/images/logo/logo_xs.png" alt="user-img" class="visible-xs logo-img" />
                         <span class="hidden-xs">STRATEGIC INFORMATION SYSTEM</span></a>
                 </div>
                 <!-- End Logo container-->
@@ -76,7 +76,7 @@
                     <ul class="nav navbar-nav navbar-right pull-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
-                                <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle"/>
+                                <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
@@ -118,7 +118,7 @@
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
                                 <li><a href="utama.aspx">Dashboard Utama</a></li>
-                               <%-- <li><a href="#">Dashboard Parlimen Tumpuan</a></li>--%>
+                                <%-- <li><a href="#">Dashboard Parlimen Tumpuan</a></li>--%>
                                 <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
                                 <%--<li><a href="#">Dashboard Tumpuan BN vs Pembpangkang</a></li>--%>
                                 <%--<li><a href="#">Keputusan Pilihan Raya</a></li>
@@ -132,7 +132,7 @@
                         <li class="has-submenu" id="prapiliha" runat="server">
                             <a href="#"><i class="md md-invert-colors-on"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
-<%--                                 <li class="has-submenu">
+                                <%--                                 <li class="has-submenu">
                                     <a href="#">Profil Bakal Calon / Individu</a>
                                     <ul class="submenu">
                                         <li><a href="map-google.html">Tambah</a></li>
@@ -150,7 +150,7 @@
                                 <li>
                                     <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
                                 </li>
                                 <%--<li class="has-submenu">
@@ -211,21 +211,21 @@
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
                             <a href="#"><i class="md md-class"></i>Pilihanraya</a>
-<%--                            <ul class="submenu">
-                                <li class="has-submenu">
+                            <ul class="submenu">
+                                <%--                                <li class="has-submenu">
                                     <a href="#">Keputusan Pilihanraya</a>
                                     <ul class="submenu">
                                         <li><a href="icons-glyphicons.html">Tambah</a></li>
                                         <li><a href="icons-materialdesign.html">Kemaskini</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Import Pecahan Kaum</a></li>
-                                <li><a href="#">Keluar Mengundi</a></li>
-                            </ul>--%>
+                                <li><a href="#">Import Pecahan Kaum</a></li>--%>
+                                <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
+                            </ul>
                         </li>
                         <li class="has-submenu" id="pelap" runat="server">
                             <a href="#"><i class="md md-pages"></i>Pelaporan</a>
-<%--                            <ul class="submenu">
+                            <%--                            <ul class="submenu">
                                 <li><a href="#">Pelaporan Analisa Winnable Candidate</a></li>
                                 <li><a href="#">Pelaporan Analisa Calon Bertanding</a></li>
                                 <li><a href="#">Pautan Laporan Crystal Report</a></li>
@@ -233,7 +233,7 @@
                         </li>
                         <li class="has-submenu" id="indi" runat="server">
                             <a href="#"><i class="md md-invert-colors-on"></i>Individu/Pertubuhan</a>
-<%--                            <ul class="submenu">
+                            <%--                            <ul class="submenu">
                                 <li class="has-submenu">
                                     <a href="#">Key-Communicator</a>
                                     <ul class="submenu">
@@ -288,9 +288,17 @@
                         <li id="analisis" runat="server">
                             <a href="analisis_kawasan_view.aspx"><i class="md md-pages"></i>Analisis Kawasan</a>
                         </li>
+                        <li class="has-submenu" id="tetapan" runat="server">
+                            <a href="#"><i class="md md-pages"></i>Tetapan</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="parlimen_info_view.aspx">Parlimen Info</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="has-submenu" id="teta" runat="server">
                             <a href="#"><i class="md md-pages"></i>Tetapan Pentadbir</a>
-<%--                            <ul class="submenu">
+                            <%--                            <ul class="submenu">
                                 <li><a href="#">Tambah</a></li>
                                 <li><a href="#">Paparan</a></li>
                             </ul>--%>
@@ -353,7 +361,7 @@
     <script src="../assets/plugins/datatables/dataTables.responsive.min.js"></script>
     <script src="../assets/plugins/datatables/responsive.bootstrap.min.js"></script>
     <script src="../assets/plugins/datatables/dataTables.scroller.min.js"></script>
-    
+
     <!-- Counter Up  -->
     <script src="../assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
     <script src="../assets/plugins/counterup/jquery.counterup.min.js"></script>

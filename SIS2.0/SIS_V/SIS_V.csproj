@@ -75,8 +75,11 @@
     <Content Include="admin\Dash.aspx" />
     <Content Include="admin\detail_incident.aspx" />
     <Content Include="admin\kawasan_operasi.aspx" />
+    <Content Include="admin\keluar_mengundi.aspx" />
     <Content Include="admin\laporan_harian_add.aspx" />
     <Content Include="admin\laporan_harian_view.aspx" />
+    <Content Include="admin\parlimen_info_add.aspx" />
+    <Content Include="admin\parlimen_info_view.aspx" />
     <Content Include="admin\parlimen_tumpuan.aspx" />
     <Content Include="admin\percentage_voters.aspx" />
     <Content Include="admin\utama.aspx" />
@@ -387,6 +390,13 @@
     <Compile Include="admin\kawasan_operasi.aspx.designer.cs">
       <DependentUpon>kawasan_operasi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\keluar_mengundi.aspx.cs">
+      <DependentUpon>keluar_mengundi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\keluar_mengundi.aspx.designer.cs">
+      <DependentUpon>keluar_mengundi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\laporan_harian_add.aspx.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,6 +410,20 @@
     </Compile>
     <Compile Include="admin\laporan_harian_view.aspx.designer.cs">
       <DependentUpon>laporan_harian_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\parlimen_info_add.aspx.cs">
+      <DependentUpon>parlimen_info_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\parlimen_info_add.aspx.designer.cs">
+      <DependentUpon>parlimen_info_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\parlimen_info_view.aspx.cs">
+      <DependentUpon>parlimen_info_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\parlimen_info_view.aspx.designer.cs">
+      <DependentUpon>parlimen_info_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\parlimen_tumpuan.aspx.cs">
       <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>
