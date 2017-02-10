@@ -24,5 +24,10 @@ namespace SIS_B
         {
             return data1.fill_lamporan();
         }
+
+        public DataTable fill_Kawasan()
+        {
+            return data1.fill_kawasan();
+        }
     }
 }

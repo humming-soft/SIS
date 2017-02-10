@@ -285,12 +285,8 @@
                                 </li>
                             </ul>--%>
                         </li>
-                        <li class="has-submenu" id="analisis" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Analisis Kawasan</a>
-<%--                            <ul class="submenu">
-                                <li><a href="#">Tambah Analisis Kawasan</a></li>
-                                <li><a href="#">Paparan Alalisis Kawasan</a></li>
-                            </ul>--%>
+                        <li id="analisis" runat="server">
+                            <a href="analisis_kawasan_view.aspx"><i class="md md-pages"></i>Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="teta" runat="server">
                             <a href="#"><i class="md md-pages"></i>Tetapan Pentadbir</a>
