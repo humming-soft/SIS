@@ -491,6 +491,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="hq\hq_master.Master.cs">
+      <DependentUpon>hq_master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hq\hq_master.Master.designer.cs">
+      <DependentUpon>hq_master.Master</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -519,6 +526,13 @@
     </Compile>
     <Compile Include="Sessiontimeout.aspx.designer.cs">
       <DependentUpon>Sessiontimeout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\state_master.Master.cs">
+      <DependentUpon>state_master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\state_master.Master.designer.cs">
+      <DependentUpon>state_master.Master</DependentUpon>
     </Compile>
     <Compile Include="unauthorised.aspx.cs">
       <DependentUpon>unauthorised.aspx</DependentUpon>
@@ -557,6 +571,8 @@
     <Content Include="assets\fonts\weathericons-regular-webfont.woff" />
     <Content Include="assets\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
+    <Content Include="hq\hq_master.Master" />
+    <Content Include="state\state_master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -570,9 +586,7 @@
       <Name>SIS_B</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="user\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
