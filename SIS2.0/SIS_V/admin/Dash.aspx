@@ -28,7 +28,7 @@
             <div class="kode_navigation_outr_wrap">
                 <div class="container">
                     <div class="kode_logo">
-                        <a href="index.html">
+                        <a href="#">
                             <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here" />
                         </a>
                     </div>

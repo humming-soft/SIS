@@ -105,7 +105,7 @@ header{
 	width:100%;	
 }
 section{
-	padding:179px 0px;
+	padding:182px 0px;
 }
 
 /*
@@ -200,6 +200,20 @@ header{
 	position:relative;	
 }
 .kode_logo:before{
+	content:"";
+	position:absolute;
+	right:100%;
+	top:0px;
+	height:100%;
+	width:2000%;
+}
+.kode_logo_right{
+	float:left;
+	/*padding:20px 20px;*/
+	position:relative;
+	margin-left: 60px;
+}
+.kode_logo_right:before{
 	content:"";
 	position:absolute;
 	right:100%;
@@ -2314,8 +2328,9 @@ ul.countdown li {
 }
 /*Sebin*/
 ul.countdown li:hover{
-	background-color: #64d8fecc !important;
+	background-color: rgba(31, 176, 229, 0.56) !important;
 	transform: scale(1.1);
+	color: #ffffff !important;
 	/*border: 3px solid #fff !important*/
 }
 /*Sebin*/
