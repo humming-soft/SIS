@@ -309,10 +309,12 @@
     <Content Include="assets\plugins\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="assets\plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="hq\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Sessiontimeout.aspx" />
+    <Content Include="state\WebForm1.aspx" />
     <Content Include="unauthorised.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -498,6 +500,13 @@
     <Compile Include="hq\hq_master.Master.designer.cs">
       <DependentUpon>hq_master.Master</DependentUpon>
     </Compile>
+    <Compile Include="hq\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hq\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -533,6 +542,13 @@
     </Compile>
     <Compile Include="state\state_master.Master.designer.cs">
       <DependentUpon>state_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="state\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="unauthorised.aspx.cs">
       <DependentUpon>unauthorised.aspx</DependentUpon>
