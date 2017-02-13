@@ -71,7 +71,7 @@
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
                                 <a href="#">
-                                    <p class="seconds_ref">Kalon Bertanding</p>
+                                    <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
                         </ul>
@@ -80,7 +80,7 @@
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="#">
                                     <p class="days_ref b35">
-                                        Dafthar  
+                                        Daftar  
                                         <br>
                                         Pamilih
                                     </p>

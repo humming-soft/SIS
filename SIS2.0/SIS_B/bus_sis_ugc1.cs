@@ -6,6 +6,7 @@ using System.Data;
 using SIS_D;
 namespace SIS_B
 {
+    //Assigned User - Agaile
     public class bus_sis_ugc1
     {
         data_sis_ugc1 data1 = new data_sis_ugc1();

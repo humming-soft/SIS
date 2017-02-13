@@ -132,7 +132,7 @@
                                 <li>
                                     <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="laporan_harian_view.aspx">Import Laporan Harian Dari Negeri</a></li>
+                                <li><a href="laporan_harian_view.aspx">Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
