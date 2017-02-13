@@ -4,6 +4,14 @@
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             TableData.init();
+
+            $('#lock').on('click', function () {
+                $('#sis-password-change-modal').modal('show');
+            });
+
+            $('#edit').on('click', function () {
+                $('#sis-user-edit-modal').modal('show');
+            });
         });
     </script>
 </asp:Content>
@@ -17,12 +25,27 @@
                 <p class="text-muted font-13 m-b-30">
                     Your description goes here(Malay / English).
                 </p>
-                <asp:GridView ID="Gridteta" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="Gridteta_PreRender">
+                <asp:GridView ID="Gridteta" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="Gridteta_PreRender" AutoGenerateColumns="False">
                     <Columns>
+                        <asp:BoundField DataField="Tarikh" HeaderText="Tarikh" />
+                        <asp:BoundField DataField="Masa" HeaderText="Masa" />
+                        <asp:BoundField DataField="Negeri" HeaderText="Negeri" />
+                        <asp:BoundField DataField="Kod Kawasan" HeaderText="Kod Kawasan" />
+                        <asp:BoundField DataField="Nama Kawasan" HeaderText="Nama Kawasan" />
+                        <asp:BoundField DataField="Daerah Mengundi" HeaderText="Daerah Mengundi" />
+                        <asp:BoundField DataField="Parti Gabungan" HeaderText="Parti Gabungan" />
+                        <asp:BoundField DataField="Parti" HeaderText="Parti" />
+                        <asp:BoundField DataField="Calon" HeaderText="Calon" />
+                        <asp:BoundField DataField="Jenis Aktiviti" HeaderText="Jenis Aktiviti" />
+                        <asp:BoundField DataField="Sumber" HeaderText="Sumbar Maklumat" />
+                        <asp:BoundField DataField="Tahap" HeaderText="Tahap Kesahihan Maklumat" />
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkcp" runat="server" CssClass="fa fa-lock" Font-Underline="False" OnClick="lnkcp_Click"></asp:LinkButton>
-                                <asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkdelete_Click"></asp:LinkButton>
+                                <asp:HiddenField ID="Key" runat="server" Value='<%Eval("Id")%>' />
+                                <a id="lock" href="#" class="fa fa-lock"></a>
+                                <a id="edit" href="#" class="fa fa-edit"></a>
+<%--                                <asp:LinkButton ID="lnkcp" runat="server" CssClass="fa fa-lock" Font-Underline="False" OnClick="lnkcp_Click"></asp:LinkButton>
+                                <asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkdelete_Click"></asp:LinkButton>--%>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -58,7 +81,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button1" CssClass="btn btn-success"  runat="server" Text="Kemaskini" />
+                    <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="Kemaskini" />
                     <asp:Button ID="Button2" CssClass="btn btn-info waves-light" runat="server" Text="Tutup" />
                 </div>
             </div>

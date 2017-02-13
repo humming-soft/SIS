@@ -39,15 +39,15 @@ namespace SIS_V.admin
             }
         }
 
-        protected void lnkcp_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-password-change-modal').modal();", true);
+        //protected void lnkcp_Click(object sender, EventArgs e)
+        //{
+        //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-password-change-modal').modal();", true);
 
-        }
+        //}
 
-        protected void lnkdelete_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-user-edit-modal').modal();", true);
-        }
+        //protected void lnkdelete_Click(object sender, EventArgs e)
+        //{
+        //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-user-edit-modal').modal();", true);
+        //}
     }
 }

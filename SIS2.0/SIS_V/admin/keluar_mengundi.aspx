@@ -50,169 +50,28 @@
                     </div>
                 </div>
                 <div class="">
-                    <asp:GridView ID="GridKM" runat="server" CssClass="table table-responsive table-bordered" ClientIDMode="Static" OnPreRender="GridKM_PreRender">
+                    <asp:GridView ID="GridKM" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="Id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing">
                         <Columns>
-                            <asp:CommandField ShowEditButton="True" HeaderText="Edit" />
-                            <asp:CommandField ShowDeleteButton="True" HeaderText="Delete" />
+                            <asp:BoundField DataField="Tarikh" HeaderText="Tarikh" ReadOnly="true" />
+                            <asp:BoundField DataField="Masa" HeaderText="Masa" ReadOnly="true" />
+                            <asp:BoundField DataField="Negeri" HeaderText="Negeri" ReadOnly="true" />
+                            <asp:BoundField DataField="Kod Kawasan" HeaderText="Kod Kawasan" ReadOnly="true" />
+                            <asp:BoundField DataField="Nama Kawasan" HeaderText="Nama Kawasan" />
+                            <asp:BoundField DataField="Daerah Mengundi" HeaderText="Daerah Mengundi" />
+                            <asp:BoundField DataField="Parti Gabungan" HeaderText="Parti Gabungan" />
+                            <asp:TemplateField HeaderText="Actions">
+                                <ItemTemplate>
+                                    <asp:HiddenField ID="Key" runat="server" Value='<%Eval("Id")%>' />
+                                    <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-pencil" CommandName="Edit"></asp:LinkButton>
+                                    <asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-trash" CommandName="Delete"></asp:LinkButton>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:LinkButton ID="lnkupdate" runat="server" CssClass="fa fa-refresh" CommandName="Update"></asp:LinkButton>
+                                    <asp:LinkButton ID="lnkcancel" runat="server" CssClass="fa fa-close" CommandName="Cancel"></asp:LinkButton>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
-<%--                    <table class="table table-responsive table-bordered" id="datatable-editable">
-                        <thead>
-                            <tr>
-                                <th>Nama Daerah Mengundi</th>
-                                <th>Telah Keluar</th>
-                                <th>Jumlah Pengundi</th>
-                                <th>Peratus</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="gradeX">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeC">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="gradeA">
-                                <td>40210 - Lubok Chempedak</td>
-                                <td>0</td>
-                                <td>427</td>
-                                <td>0</td>
-                                <td class="actions">
-                                    <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                    <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>--%>
                 </div>
             </div>
         </div>

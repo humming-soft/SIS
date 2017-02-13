@@ -314,7 +314,9 @@
     <Content Include="MainPage.aspx" />
     <Content Include="Sessiontimeout.aspx" />
     <Content Include="unauthorised.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="404.aspx.cs">

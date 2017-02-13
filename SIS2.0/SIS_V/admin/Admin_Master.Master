@@ -170,13 +170,13 @@
                         <h4>Dashboard Utama</h4>
                         <ol class="breadcrumb p-l-0">
                             <li>
-                                <a href="#"><i class="fa fa-home"></i></a>
+                                <a href="Dash.aspx"><i class="fa fa-home"></i></a>
                             </li>
                             <li>
-                                <a href="#">Dashboard</a>
+                                <a id="pr" runat="server" href="#"></a>
                             </li>
                             <li class="active">
-                                <strong>Dashboard Utama</strong>
+                                <strong id="cr" runat="server"></strong>
                             </li>
                         </ol>
                     </div>

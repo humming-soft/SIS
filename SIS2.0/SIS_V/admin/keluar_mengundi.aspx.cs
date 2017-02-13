@@ -38,5 +38,17 @@ namespace SIS_V.admin
                 GridKM.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+
+        protected void GridKM_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridKM.EditIndex = e.NewEditIndex;
+            fill_DataTable();
+        }
+
+        protected void GridKM_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridKM.EditIndex = -1;
+            fill_DataTable();
+        }
     }
 }
