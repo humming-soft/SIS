@@ -39,11 +39,19 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Level</label>
                                 <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
                                     <asp:ListItem>BKS Management</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="field-1" class="control-label">State</label>
+                                <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server"
+                                    ClientIDMode="Static" DataTextField="" DataValueField="">
                                 </asp:DropDownList>
                             </div>
                         </div>
