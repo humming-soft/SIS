@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SIS_D
 {
-    
+    //Assigned User - Agaile
     public class data_sis_ugc1
     {
         SqlCommand cmd = new SqlCommand();
