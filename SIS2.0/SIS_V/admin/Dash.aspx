@@ -16,6 +16,7 @@
     <link href="../assets/css/dashboard/typography.css" rel="stylesheet" />
     <link href="../assets/css/dashboard/style.css" rel="stylesheet" />
     <link href="../assets/css/dashboard/color.css" rel="stylesheet" />
+    <link href="../assets/js/dl-menu/component.css" rel="stylesheet" />
     <link href="../assets/css/core_sn.css" rel="stylesheet" />
     <link href="../assets/css/dashboard/responsive.css" rel="stylesheet" />
 </head>
@@ -29,11 +30,84 @@
                 <div class="container">
                     <div class="kode_logo">
                         <a href="#">
-                            <img src="../assets/images/logo/logo_5.png" alt="Logo Image Here" />
+                            <img src="../assets/images/logo/logo_6_1.png" alt="Logo Image Here" />
                         </a>
                     </div>
                     <div class="kode_ui_element">
-                        <div class="kode_ui_element">
+
+                        <!--Navigation Wrap Start-->
+                        <div class="kode_menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Event</a>
+                                    <ul>
+                                        <li><a href="#">Event Grid</a></li>
+                                        <li><a href="event-detail.html">Event Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Press Release</a></li>
+                                <li><a href="#">News</a>
+                                    <ul>
+                                        <li><a href="#">News Grid</a></li>
+                                        <li><a href="#">News List</a></li>
+                                        <li><a href="#">News Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Team</a>
+                                    <ul>
+                                        <li><a href="#">team Grid</a></li>
+                                        <li><a href="#">team Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Pages</a>
+                                    <ul>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">404</a></li>
+                                        <li><a href="#">Comming soon</a></li>
+                                        <li><a href="#">ShortCode</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <!--Navigation Wrap End-->
+                        <!--DL Menu Start-->
+                        <div id="kode-responsive-navigation" class="dl-menuwrapper">
+                            <button class="dl-trigger">Open Menu</button>
+                            <ul class="dl-menu">
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li class="menu-item kode-parent-menu"><a href="#">Event</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="event.html">Event Grid</a></li>
+                                        <li><a href="event-detail.html">Event Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="press-release.html">Press Release</a></li>
+                                <li class="menu-item kode-parent-menu"><a href="#">News</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="news.html">News Grid</a></li>
+                                        <li><a href="news-list.html">News List</a></li>
+                                        <li><a href="news-detail.html">News Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item kode-parent-menu"><a href="#">Team</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="team.html">team Grid</a></li>
+                                        <li><a href="team-detail.html">team Detail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item kode-parent-menu"><a href="#">Pages</a>
+                                    <ul class="dl-submenu">
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="comming-soon.html">Comming soon</a></li>
+                                        <li><a href="shortcode.html">ShortCode</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -134,10 +208,27 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/plugins/moment/moment.js"></script>
+    <script src="../assets/js/dl-menu/modernizr.custom.js"></script>
+    <script src="../assets/js/dl-menu/jquery.dlmenu.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             get_date(); // to show current date
             get_time(); // to show timer
+
+            "use strict";
+            if (typeof ($.fn.dlmenu) == 'function') {
+                $('#kode-responsive-navigation').each(function () {
+                    $(this).find('.dl-submenu').each(function () {
+                        if ($(this).siblings('a').attr('href') && $(this).siblings('a').attr('href') != '#') {
+                            var parent_nav = $('<li class="menu-item kode-parent-menu"></li>');
+                            parent_nav.append($(this).siblings('a').clone());
+
+                            $(this).prepend(parent_nav);
+                        }
+                    });
+                    $(this).dlmenu();
+                });
+            }
         });
     </script>
     <script type="text/javascript">
