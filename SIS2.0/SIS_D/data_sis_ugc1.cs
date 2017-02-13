@@ -54,7 +54,6 @@ namespace SIS_D
                 cmd.Connection = db.connect();
                 da.SelectCommand = cmd;
                 da.Fill(dt);
-                //db.disconnect();
                 return dt;
             }
             finally
