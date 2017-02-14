@@ -13,13 +13,13 @@ namespace SIS_V.admin {
     public partial class tetapan_pentadbir_view {
         
         /// <summary>
-        /// Gridteta control.
+        /// grid_user control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Gridteta;
+        protected global::System.Web.UI.WebControls.GridView grid_user;
         
         /// <summary>
         /// TextBox1 control.
@@ -58,49 +58,58 @@ namespace SIS_V.admin {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// TextBox3 control.
+        /// txt_log_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txt_log_name;
         
         /// <summary>
-        /// TextBox4 control.
+        /// txt_user_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txt_user_name;
         
         /// <summary>
-        /// TextBox5 control.
+        /// txt_ic_number control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txt_ic_number;
         
         /// <summary>
-        /// TextBox6 control.
+        /// txt_position control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txt_position;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// drop_role control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList drop_role;
+        
+        /// <summary>
+        /// drop_state control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drop_state;
         
         /// <summary>
         /// Button3 control.
