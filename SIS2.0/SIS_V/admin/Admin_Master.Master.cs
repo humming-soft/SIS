@@ -25,13 +25,13 @@ namespace SIS_V.admin
             {
                 case "utama":
                     dash.Attributes["class"] = "has-submenu active";
-                    pr.InnerHtml = "Dashboard";
-                    cr.InnerHtml = "Dashboard Utama";
+                    //pr.InnerHtml = "Dashboard";
+                    //cr.InnerHtml = "Dashboard Utama";
                     break;
                 case "activiti_bakal_ci_view":
                     prapiliha.Attributes["class"] = "has-submenu active";
-                    pr.InnerHtml = "Pra-Pilihanraya";
-                    cr.InnerHtml = "Aktiviti Bakal Calon / Individu";
+                    //pr.InnerHtml = "Pra-Pilihanraya";
+                    //cr.InnerHtml = "Aktiviti Bakal Calon / Individu";
                     break;
                 //case "JournalList.aspx":
                 //    design.Attributes["class"] = "has-submenu active";

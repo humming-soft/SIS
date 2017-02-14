@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../assets/images/favicon_1.ico" />
 
-    <title>HQ</title>
+    <title>Sate</title>
 
     <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
@@ -81,7 +81,7 @@
                                 <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
                                 <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
+                                <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
                     </ul>
