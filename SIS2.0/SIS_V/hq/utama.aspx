@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="utama.aspx.cs" Inherits="SIS_V.admin.utama" MasterPageFile="~/admin/Admin_Master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="utama.aspx.cs" Inherits="SIS_V.hq.utama" MasterPageFile="~/hq/hq_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
@@ -194,44 +194,44 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
-                <div class="widget-simple-chart text-right card-box">
-                    <h4 class="text-dark  header-title m-t-0 ta-center">Status</h4>
-                    <p class="text-muted m-b-25 font-13 ta-center">
-                        Parlimen
-                    </p>
-                    <h3 class="text-success portlet-status counter status-white">103</h3>
-                    <h3 class="text-warning portlet-status counter status-gray">39</h3>
-                    <h3 class="text-info portlet-status counter status-black">80</h3>
-                </div>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+            <div class="widget-simple-chart text-right card-box">
+                <h4 class="text-dark  header-title m-t-0 ta-center">Status</h4>
+                <p class="text-muted m-b-25 font-13 ta-center">
+                    Parlimen
+                </p>
+                <h3 class="text-success portlet-status counter status-white">103</h3>
+                <h3 class="text-warning portlet-status counter status-gray">39</h3>
+                <h3 class="text-info portlet-status counter status-black">80</h3>
             </div>
-            <div class="col-xs-12 col-sm-3 col-md-1 col-lg-1">
-                <div class="widget-simple-chart text-right card-box">
-                    <h4 class="text-dark  header-title m-t-0 ta-center">Status</h4>
-                    <p class="text-muted m-b-25 font-13 ta-center">
-                       Dun
-                    </p>
-                    <h3 class="text-success portlet-status counter status-white">103</h3>
-                    <h3 class="text-warning portlet-status counter status-gray">39</h3>
-                    <h3 class="text-info portlet-status counter status-black">80</h3>
-                </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-1 col-lg-1">
+            <div class="widget-simple-chart text-right card-box">
+                <h4 class="text-dark  header-title m-t-0 ta-center">Status</h4>
+                <p class="text-muted m-b-25 font-13 ta-center">
+                    Dun
+                </p>
+                <h3 class="text-success portlet-status counter status-white">103</h3>
+                <h3 class="text-warning portlet-status counter status-gray">39</h3>
+                <h3 class="text-info portlet-status counter status-black">80</h3>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-                <div class="card-box">
-                    <h4 class="text-dark header-title m-t-0 m-b-30">Parlimen</h4>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+            <div class="card-box">
+                <h4 class="text-dark header-title m-t-0 m-b-30">Parlimen</h4>
 
-                    <div class="widget-chart text-center">
-                        <div id="gauge"></div>
-                    </div>
+                <div class="widget-chart text-center">
+                    <div id="gauge"></div>
                 </div>
             </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Jumlah Insiden</h4>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="table-responsive">
-                            <asp:GridView ID="grdinsident1" CssClass ="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
+                            <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
                                 <Columns>
                                     <asp:BoundField DataField="#" HeaderText="#" />
                                     <asp:TemplateField HeaderText="Name">
@@ -244,7 +244,7 @@
                             </asp:GridView>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="table-responsive">
                             <asp:GridView ID="grdinsident2" CssClass="table" runat="server" GridLines="None" AutoGenerateColumns="False">
                                 <Columns>
@@ -262,21 +262,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end row -->
-
-
-
-
-    <div class="row">
-        <div class="col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Isu Utama</h4>
-                <p class="text-muted m-b-25 font-13">
-                    Your awesome text goes here.
-                </p>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -289,34 +279,34 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td><a href="<?php echo base_url(); ?>dashboard/perlis">Minton Admin v1</a></td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Front v1</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Admin v1.1</td>
                                         <td>01/05/2016</td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Front v1.1</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Admin v1.3</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -329,27 +319,27 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Admin v1</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Front v1</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Admin v1.1</td>
                                         <td>01/05/2016</td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Front v1.1</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Lorem Ipsum</td>
+                                        <td>Minton Admin v1.3</td>
                                         <td>01/01/2016</td>
                                     </tr>
                                 </tbody>
@@ -360,23 +350,18 @@
             </div>
         </div>
     </div>
+    <!-- end row -->
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Situasi Semasa - Parlimen</h4>
-                <p class="text-muted m-b-25 font-13">
-                    Your awesome text goes here.
-                </p>
                 <div id="stackedp"></div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Situasi Semasa - DUN</h4>
-                <p class="text-muted m-b-25 font-13">
-                    Your awesome text goes here.
-                </p>
                 <div id="stackedd"></div>
             </div>
         </div>
