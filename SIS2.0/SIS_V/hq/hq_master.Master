@@ -4,17 +4,548 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Hq</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
+    <meta name="author" content="Coderthemes" />
+
+    <link rel="shortcut icon" href="../assets/images/favicon_1.ico" />
+
+    <title>HQ</title>
+
+    <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/pages.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/core_sn.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../assets/js/modernizr.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/highcharts/highcharts.js"></script>
+    <script src="../assets/js/highcharts/highcharts-more.js"></script>
+    <script src="../assets/js/highcharts/no-data-to-display.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="topbar-main">
+            <div class="container">
+
+                <!-- Logo container-->
+                <div class="logo">
+                    <a href="index-2.html" class="logo">
+                        <img src="../assets/images/logo/logo_4.png" alt="user-img" class="hidden-xs"/>
+                        <img src="../assets/images/logo/logo_xs.png" alt="user-img" class="visible-xs logo-img"/>
+                        <span class="hidden-xs">STRATEGIC INFORMATION SYSTEM</span></a>
+                </div>
+                <!-- End Logo container-->
+
+                <div class="menu-extras">
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
+                                <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle"/>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
+                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End topbar -->
+
+
+        <!-- Navbar Start -->
+        <div class="navbar-custom">
+            <div class="container">
+                <div id="navigation" style="z-index: 9999">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        <li class="has-submenu active">
+                            <a href="#"><i class="md md-dashboard"></i>Laman Utama</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
+                            <ul class="submenu">
+                                <li><a href="#">Dashboard Utama</a></li>
+                                <li><a href="#">Dashboard Parlimen Tumpuan</a></li>
+                                <li><a href="#">Kawasan Operasi</a></li>
+                                <li><a href="#">Dashboard Tumpuan BN vs Pembpangkang</a></li>
+                                <li><a href="#">Keputusan Pilihan Raya</a></li>
+                                <li><a href="#">Ramusan Status Kawasan</a></li>
+                                <li><a href="#">Winnable Candidate</a></li>
+                                <li><a href="#">Penambahan Pengundi</a></li>
+                                <li><a href="#">Peratusan Keluar Mengundi</a></li>
+                                <li><a href="#">Peratusan Tahap Sokongan Agensi</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-invert-colors-on"></i>Pra-Pilihanraya</a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="#">Profil Bakal Calon / Individu</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Calon Boleh Menang</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                        <li><a href="#">Import Sumber</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Aktiviti Bakal Calon / Individu</a>
+                                </li>
+                                <li>
+                                    <a href="#">Aktiviti Parti Bertanding</a>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Aktiviti Agensi</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Aktiviti NGO</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                        <li><a href="#">Import</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Propaganda</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                        <li><a href="#">Import</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Tahap Sokongan</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                        <li><a href="#">Kemaskini Paparan Dashboard</a></li>
+                                        <li><a href="#">Import</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Laporan Eksekutif</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Daftar Permilih</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Penambahan Pengundi</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Import Laporan Harian Dari Negeri</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-class"></i>Pilihanraya</a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="#">Keputusan Pilihanraya</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Kemaskini</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Import Pecahan Kaum</a></li>
+                                <li><a href="#">Keluar Mengundi</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-pages"></i>Pelaporan</a>
+                            <ul class="submenu">
+                                <li><a href="#">Pelaporan Analisa Winnable Candidate</a></li>
+                                <li><a href="#">Pelaporan Analisa Calon Bertanding</a></li>
+                                <li><a href="#">Pautan Laporan Crystal Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-invert-colors-on"></i>Individu/Pertubuhan</a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="#">Key-Communicator</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Individu Berpengaruh</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Organisasi Berpengaruh</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">NGO</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Pertubuhan Agama Bukan Islam</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Media</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="#">Agensi</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Tambah</a></li>
+                                        <li><a href="#">Paparan</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-pages"></i>Analisis Kawasan</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-pages"></i>Tetapan</a>
+                            <ul class="submenu">
+                                <li><a href=".#">Tetapan parlimen info</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="#"><i class="fa fa-user-plus"></i>Tetapan Pentadbir</a>
+                        </li>
+                    </ul>
+                    <!-- End navigation menu -->
+                </div>
+            </div>
+        </div>
+        <div class="navbar-custom" style="background-color: #d5d5d5;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 visible-xs">
+                        <div class="outer">
+                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"> </i> PRU 13</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 visible-xs">
+                        <div id="live_time" class="live_time">
+                            <p style="margin-bottom: 0; text-transform: uppercase;" id="dts"></p>
+                            <span id="tms" class="time"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 hidden-xs">
+                        <div class="outer">
+                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"> </i> PRU 13</h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 hidden-xs">
+                        <div id="live_time2" class="live_time">
+                            <p style="margin-bottom: 0; text-transform: uppercase;" id="dt"></p>
+                            <span id="tm" class="time"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <!-- Watch -->
+                        <div id="watch" class="pull-left">
+
+                            <!-- Days -->
+                            <div class="dash days_dash">
+                                <div class="digit day_field">0</div>
+                                <div class="digit">0</div>
+                                <div class="digit">6</div>
+                                <span class="dash_title">Days</span>
+                            </div>
+                            <!-- End Days -->
+
+                            <!-- Hours -->
+                            <div class="dash hours_dash">
+                                <div class="digit">1</div>
+                                <div class="digit">2</div>
+                                <span class="dash_title">Hours</span>
+                            </div>
+                            <!-- End Hours -->
+
+                            <!-- Minutes -->
+                            <div class="dash minutes_dash">
+                                <div class="digit">0</div>
+                                <div class="digit">5</div>
+                                <span class="dash_title">Minutes</span>
+                            </div>
+                            <!-- End Minutes -->
+
+                            <!-- Seconds -->
+                            <div class="dash seconds_dash">
+                                <div class="digit">3</div>
+                                <div class="digit">9</div>
+                                <span class="dash_title">Seconds</span>
+                            </div>
+                            <!-- End Seconds -->
+
+                        </div>
+                        <!-- End Watch -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div class="wrapper">
+            <div class="container">
+<%--                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>Dashboard Utama</h4>
+                        <ol class="breadcrumb p-l-0">
+                            <li>
+                                <a href="#"><i class="fa fa-home"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <strong>Dashboard Utama</strong>
+                            </li>
+                        </ol>
+                    </div>
+                </div>--%>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <footer class="footer text-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 ta-center">
+                                2017 © Strategic Information System.
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- End wrapper -->
     </form>
+
+    <!-- jQuery  -->
+    <%--<script src="../assets/js/jquery.min.js"></script>--%>
+    <script src="../assets/js/detect.js"></script>
+    <script src="../assets/js/fastclick.js"></script>
+    <script src="../assets/js/jquery.blockUI.js"></script>
+    <script src="../assets/js/waves.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/jquery.nicescroll.js"></script>
+    <script src="../assets/js/jquery.scrollTo.min.js"></script>
+
+    <!-- Datatables-->
+    <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="../assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="../assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../assets/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="../assets/plugins/datatables/dataTables.scroller.min.js"></script>
+
+    <!-- Counter Up  -->
+    <script src="../assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="../assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- circliful Chart -->
+    <script src="../assets/plugins/jquery-circliful/js/jquery.circliful.min.js"></script>
+    <script src="../assets/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- skycons -->
+    <script src="../assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
+
+    <!-- Page js  -->
+    <script src="../assets/pages/jquery.dashboard.js"></script>
+
+    <!-- Custom main Js -->
+    <script src="../assets/js/jquery.core.js"></script>
+    <script src="../assets/js/jquery.app.js"></script>
+
+    <!-- Custom DataTable Init Js -->
+    <script src="../assets/js/DT/checker.js"></script>
+    <script src="../assets/js/DT/lamporan.js"></script>
+
+    <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
+    <script src="../assets/plugins/moment/moment.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+            $('.circliful-chart').circliful();
+            get_date();
+            get_time();
+            watch();
+
+        });
+
+        /* BEGIN SVG WEATHER ICON */
+        if (typeof Skycons !== 'undefined') {
+            var icons = new Skycons(
+                { "color": "#3bafda" },
+                { "resizeClear": true }
+                ),
+                list = [
+                    "clear-day", "clear-night", "partly-cloudy-day",
+                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                    "fog"
+                ],
+                i;
+
+            for (i = list.length; i--;)
+                icons.set(list[i], list[i]);
+            icons.play();
+        };
+
+    </script>
+    <script type="text/javascript">
+        function get_date() {
+            var today = moment(new Date()).format("DD MMM YYYY");
+            $('#dt').text(today);
+            $('#dts').text(today);
+        }
+    </script>
+    <script type="text/javascript">
+        function get_time() {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function Timer() {
+                var hr, D;
+                var today = new Date(),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                if (h == 00) {
+                    hr = 12;
+                    D = ' AM';
+                }
+                else if (h > 0 && h <= 11) {
+                    hr = h;
+                    D = ' AM';
+                }
+                else if (h > 12 && h <= 23) {
+                    hr = h - 12;
+                    if (hr < 10) {
+                        hr = "0" + hr;
+                    }
+                    else {
+                        hr = h - 12;
+                    }
+                    D = ' PM';
+                }
+                else {
+                    hr = 12;
+                    D = ' PM';
+                }
+                $('#tm').text(hr + ":" + m + ":" + s + D);
+                $('#tms').text(hr + ":" + m + ":" + s + D);
+                t = setTimeout(function () {
+                    Timer()
+                }, 500);
+            }
+            Timer();
+        }
+    </script>
+    <script type="text/javascript">
+        function watch() {
+            if ($.find('#watch')[0]) {
+
+                $('#watch').countDown({
+                    targetDate: {
+                        'day': 12,
+                        'month': 03,
+                        'year': 2017,
+                        'hour': 12,
+                        'min': 00,
+                        'sec': 00
+                    },
+                    omitWeeks: true
+                });
+                //enter the count down date using the format year, month, day, time: hour, min, sec
+
+                if ($('.day_field .top').html() == "0") $('.day_field').css('display', 'none');
+
+            }
+        }
+    </script>
 </body>
 </html>
