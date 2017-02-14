@@ -74,7 +74,7 @@ namespace SIS_V
                 }
                 else if (int.Parse(Session["role"].ToString()) == 3) // State
                 {
-                    Response.Redirect("~/state/WebForm1.aspx");
+                    Response.Redirect("~/state/Dash.aspx");
                 }
                 else
                 {
