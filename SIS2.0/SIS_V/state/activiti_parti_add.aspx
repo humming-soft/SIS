@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_parti_add.aspx.cs" Inherits="SIS_V.state.activiti_parti_add"  MasterPageFile="~/admin/Admin_Master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_parti_add.aspx.cs" Inherits="SIS_V.state.activiti_parti_add"  MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
