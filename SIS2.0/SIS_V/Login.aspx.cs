@@ -16,7 +16,10 @@ namespace SIS_V
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                invalid.Visible = false;
+            }
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace SIS_V
                {
                    txtuname.Text = "";
                    txtpassword.Text = "";
+                   invalid.Visible = true;
                }
             }
             else
