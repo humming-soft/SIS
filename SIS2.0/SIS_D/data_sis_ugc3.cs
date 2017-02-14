@@ -108,6 +108,37 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-
+        public int update_user(string log_name, string name, string icnumber, int role, int state, string position)
+        {
+            try
+            {
+                //cmd.Connection = db.disconnect();
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_update_user";
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Connection = db.connect();
+                cmd.Parameters.AddWithValue("@log_name", log_name);
+                cmd.Parameters.AddWithValue("@icnumber", icnumber);
+                cmd.Parameters.AddWithValue("@fullname", name);
+                cmd.Parameters.AddWithValue("@position", position);
+                cmd.Parameters.AddWithValue("@role_id", role);
+                cmd.Parameters.AddWithValue("@state_id", state);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                //cmd.Dispose();
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

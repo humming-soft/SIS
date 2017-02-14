@@ -67,7 +67,7 @@ namespace SIS_V.admin
                 grid_user.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
-        protected void btn_edit_Click(object sender, EventArgs e)
+        protected void btn_edit_Click1(object sender, EventArgs e)
         {
             bus.log_name = txt_log_name.Text.Trim();
             bus.name = txt_user_name.Text.Trim();
