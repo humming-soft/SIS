@@ -1,6 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tetapan_pentadbir_add.aspx.cs" Inherits="SIS_V.admin.tetapan_pentadbir_add" MasterPageFile="~/admin/Admin_Master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <script src="assets/js/Validations/tetapan_pentadbir_add.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            tetapan_view.init();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">

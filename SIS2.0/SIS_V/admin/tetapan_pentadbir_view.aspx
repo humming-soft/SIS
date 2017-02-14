@@ -7,28 +7,19 @@
             $('.lock').on('click', function () {
                 $('#sis-password-change-modal').modal('show');
             });
-            //$('.edit').on('click', function () {
-            //    // var fname = $('#f_name').val();
-            //    //alert($('#f_name').val() + '---' + $('#l_name').val() + '---' + $('#ic_number').val() + '---' + $('#u_position').val() + '---' + $('#r_id').val() + '---' + $('#s_id').val());
-            //    $('#txt_log_name').val($('#f_name').val());
-            //    $('#txt_user_name').val($('#l_name').val());
-            //    $('#txt_ic_number').val($('#ic_number').val());
-            //    $('#txt_position').val($('#u_position').val());
-            //    $('#drop_role').val($('#r_id').val());
-            //    $('#drop_state').val($('#s_id').val());
-            //    $('#sis-user-edit-modal').modal('show');
-            //});
 
             $(".edit").click(function () {
-                console.log($(this).closest("tr").find("input[type=hidden][id*=f_name]").val());
+                $('#txt_log_name').attr("readonly", "readonly");
+                $('#txt_log_name').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
+                $('#txt_user_name').val($(this).closest("tr").find("input[type=hidden][id*=f_name]").val());
+                $('#txt_ic_number').val($(this).closest("tr").find("input[type=hidden][id*=ic_number]").val());
+                $('#txt_position').val($(this).closest("tr").find("input[type=hidden][id*=u_position]").val());
+                $('#drop_role').val($(this).closest("tr").find("input[type=hidden][id*=r_id]").val());
+                $('#drop_state').val($(this).closest("tr").find("input[type=hidden][id*=s_id]").val());
+                $('#sis-user-edit-modal').modal('show');
             });
         });
-
-
     </script>
-
-
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -51,15 +42,15 @@
                         <asp:BoundField DataField="state_name" HeaderText="State" />
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                                 <asp:HiddenField ID="f_name" ClientIDMode="Static" runat="server" Value='<%#Eval("fullname")%>'/>
-                                 <asp:HiddenField ID="l_name" ClientIDMode="Static" runat="server" Value='<%#Eval("log_name")%>'/>
-                                 <asp:HiddenField ID="ic_number" ClientIDMode="Static" runat="server" Value='<%#Eval("icnumber")%>'/>
-                                 <asp:HiddenField ID="u_position" ClientIDMode="Static" runat="server" Value='<%#Eval("position")%>'/>
-                                 <asp:HiddenField ID="r_id" ClientIDMode="Static" runat="server" Value='<%#Eval("role_id")%>' />
-                                 <asp:HiddenField ID="s_id" ClientIDMode="Static" runat="server" Value='<%#Eval("state_id")%>'/>
-                                 <a id="lock" href="#" class="fa fa-lock lock" ></a>
-                                 <a id="edit" href="#" class="fa fa-edit edit"></a>
-<%--                                <asp:LinkButton ID="lnkcp" runat="server" CssClass="fa fa-lock" Font-Underline="False" OnClick="lnkcp_Click"></asp:LinkButton>
+                                <asp:HiddenField ID="f_name" ClientIDMode="Static" runat="server" Value='<%#Eval("fullname")%>' />
+                                <asp:HiddenField ID="l_name" ClientIDMode="Static" runat="server" Value='<%#Eval("log_name")%>' />
+                                <asp:HiddenField ID="ic_number" ClientIDMode="Static" runat="server" Value='<%#Eval("icnumber")%>' />
+                                <asp:HiddenField ID="u_position" ClientIDMode="Static" runat="server" Value='<%#Eval("position")%>' />
+                                <asp:HiddenField ID="r_id" ClientIDMode="Static" runat="server" Value='<%#Eval("role_id")%>' />
+                                <asp:HiddenField ID="s_id" ClientIDMode="Static" runat="server" Value='<%#Eval("state_id")%>' />
+                                <a id="lock" href="#" class="fa fa-lock lock"></a>
+                                <a id="edit" href="#" class="fa fa-edit edit"></a>
+                                <%--                                <asp:LinkButton ID="lnkcp" runat="server" CssClass="fa fa-lock" Font-Underline="False" OnClick="lnkcp_Click"></asp:LinkButton>
                                 <asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkdelete_Click"></asp:LinkButton>--%>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -148,8 +139,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Role</label>
-                                <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server" 
-                                     ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid" >
+                                <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server"
+                                    ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid">
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -164,10 +155,10 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static"/>
+                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static" OnClick="btn_edit_Click1" />
                     <asp:Button ID="Button4" CssClass="btn btn-info waves-light" runat="server" Text="Batal" />
                 </div>
             </div>
