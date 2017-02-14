@@ -346,6 +346,8 @@
     <Content Include="Logout.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Sessiontimeout.aspx" />
+    <Content Include="state\activiti_bakal_ci_add.aspx" />
+    <Content Include="state\activiti_bakal_ci_view.aspx" />
     <Content Include="state\Dash.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
@@ -571,6 +573,20 @@
     </Compile>
     <Compile Include="Sessiontimeout.aspx.designer.cs">
       <DependentUpon>Sessiontimeout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_add.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_add.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_view.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_view.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
