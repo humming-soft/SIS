@@ -48,5 +48,9 @@ namespace SIS_B
         {
             return objAktivitiDAL.InsertJanjiDetails(janji_kod_kawasan, janji_nama_kawasan, janji_yg, janji_nama_tokoh, janji_tarik, janji_masa);
         }
+        public DataTable fill_DataTable()
+        {
+            return objAktivitiDAL.fill_DataTable();
+        }
     }
 }
