@@ -352,7 +352,9 @@
     <Content Include="state\activiti_parti_view.aspx" />
     <Content Include="state\analisis_kawasan_add.aspx" />
     <Content Include="state\analisis_kawasan_view.aspx" />
+    <Content Include="state\candidate_detail.aspx" />
     <Content Include="state\Dash.aspx" />
+    <Content Include="state\detail_incident.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
     <Content Include="state\utama.aspx" />
@@ -620,12 +622,26 @@
     <Compile Include="state\analisis_kawasan_view.aspx.designer.cs">
       <DependentUpon>analisis_kawasan_view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="state\candidate_detail.aspx.cs">
+      <DependentUpon>candidate_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\candidate_detail.aspx.designer.cs">
+      <DependentUpon>candidate_detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="state\Dash.aspx.designer.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\detail_incident.aspx.cs">
+      <DependentUpon>detail_incident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\detail_incident.aspx.designer.cs">
+      <DependentUpon>detail_incident.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\laporan_harian_add.aspx.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
