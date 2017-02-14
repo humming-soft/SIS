@@ -20,7 +20,7 @@
             //});
 
             $(".edit").click(function () {
-                console.log($(this).parent().prev().find("#f_name").val() + '----' + $(this).parent().prev().find("#l_name").val());
+                console.log($(this).closest("tr").find("input[type=hidden][id*=f_name]").val());
             });
         });
 
