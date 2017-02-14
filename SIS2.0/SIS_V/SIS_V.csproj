@@ -355,8 +355,11 @@
     <Content Include="state\candidate_detail.aspx" />
     <Content Include="state\Dash.aspx" />
     <Content Include="state\detail_incident.aspx" />
+    <Content Include="state\kawasan_operasi.aspx" />
+    <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
+    <Content Include="state\parlimen_info_add.aspx" />
     <Content Include="state\utama.aspx" />
     <Content Include="state\WebForm1.aspx" />
     <Content Include="unauthorised.aspx" />
@@ -643,6 +646,20 @@
     <Compile Include="state\detail_incident.aspx.designer.cs">
       <DependentUpon>detail_incident.aspx</DependentUpon>
     </Compile>
+    <Compile Include="state\kawasan_operasi.aspx.cs">
+      <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\kawasan_operasi.aspx.designer.cs">
+      <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\keluar_mengundi.aspx.cs">
+      <DependentUpon>keluar_mengundi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\keluar_mengundi.aspx.designer.cs">
+      <DependentUpon>keluar_mengundi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\laporan_harian_add.aspx.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -656,6 +673,13 @@
     </Compile>
     <Compile Include="state\laporan_harian_view.aspx.designer.cs">
       <DependentUpon>laporan_harian_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\parlimen_info_add.aspx.cs">
+      <DependentUpon>parlimen_info_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\parlimen_info_add.aspx.designer.cs">
+      <DependentUpon>parlimen_info_add.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\state_master.Master.cs">
       <DependentUpon>state_master.Master</DependentUpon>
