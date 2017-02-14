@@ -4,18 +4,18 @@ Author : Agaile
 Custom login validation script
 */
 
-var tetapan_view = function () {
+var Add = function () {
 
-    var ruenTetapanValidator = function () {
+    var runAddValidator = function () {
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
         form.validate({
             rules: {
-                txtuname: {
+                txt_log_name: {
                     minlength: 2,
                     required: true
                 },
-                txtpassword: {
+                txt_user_name: {
                     minlength: 6,
                     maxlength: 10,
                     required: true
@@ -33,7 +33,7 @@ var tetapan_view = function () {
     return {
         //main function to initiate template pages
         init: function () {
-            runLoginValidator();
+            runAddValidator();
         }
     };
 }();

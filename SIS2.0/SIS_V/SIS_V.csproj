@@ -185,6 +185,7 @@
     <Content Include="assets\js\jquery.slimscroll.js" />
     <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
+    <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\waves.js" />
     <Content Include="assets\js\wow.min.js" />
@@ -341,7 +342,6 @@
     <Content Include="assets\plugins\x-editable\dist\bootstrap3-editable\img\loading.gif" />
     <Content Include="assets\plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="hq\utama.aspx" />
     <Content Include="hq\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -553,13 +553,6 @@
     </Compile>
     <Compile Include="hq\hq_master.Master.designer.cs">
       <DependentUpon>hq_master.Master</DependentUpon>
-    </Compile>
-    <Compile Include="hq\utama.aspx.cs">
-      <DependentUpon>utama.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="hq\utama.aspx.designer.cs">
-      <DependentUpon>utama.aspx</DependentUpon>
     </Compile>
     <Compile Include="hq\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
