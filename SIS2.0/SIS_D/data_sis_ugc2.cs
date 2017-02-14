@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using SIS_D;
-
 
 namespace SIS_D
 {
@@ -19,11 +17,9 @@ namespace SIS_D
         {
             try
             {
-                //cmd.Connection = db.disconnect();
                 cmd.Parameters.Clear();
                 cmd.CommandText = "sp_activity";
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Connection = db.connect();
                 cmd.Parameters.AddWithValue("@kod_kawasan", kod_kawasan);
                 cmd.Parameters.AddWithValue("@butiran_aktiviti", butiran_aktiviti);
                 cmd.Parameters.AddWithValue("@tarikh", tarikh);
@@ -40,7 +36,6 @@ namespace SIS_D
                 cmd.Connection = db.connect();
                 cmd.ExecuteNonQuery();
                 int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
-                //cmd.Dispose();
                 return res;
             }
             finally
@@ -53,11 +48,9 @@ namespace SIS_D
         {
             try
             {
-                //cmd.Connection = db.disconnect();
                 cmd.Parameters.Clear();
                 cmd.CommandText = "sp_isu_activity";
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Connection = db.connect();
                 cmd.Parameters.AddWithValue("@kod_kawasan", isu_kod_kawasan);
                 cmd.Parameters.AddWithValue("@butiran_aktiviti", isu_butiran_aktiviti);
                 cmd.Parameters.AddWithValue("@tarikh", isu_tarikh);
@@ -75,7 +68,6 @@ namespace SIS_D
                 cmd.Connection = db.connect();
                 cmd.ExecuteNonQuery();
                 int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
-                //cmd.Dispose();
                 return res;
             }
             finally
@@ -87,11 +79,9 @@ namespace SIS_D
         {
             try
             {
-                //cmd.Connection = db.disconnect();
                 cmd.Parameters.Clear();
                 cmd.CommandText = "sp_janji_activity";
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Connection = db.connect();
                 cmd.Parameters.AddWithValue("@kod_kawasan", janji_kod_kawasan);
                 cmd.Parameters.AddWithValue("@butiran_aktiviti", janji_nama_kawasan);
                 cmd.Parameters.AddWithValue("@tarikh", janji_yg);
@@ -107,7 +97,6 @@ namespace SIS_D
                 cmd.Connection = db.connect();
                 cmd.ExecuteNonQuery();
                 int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
-                //cmd.Dispose();
                 return res;
             }
             finally

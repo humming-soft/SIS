@@ -849,7 +849,7 @@ pre {
   margin-left: 5px;
 }
 .m-l-10 {
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 .m-l-15 {
   margin-left: 15px;

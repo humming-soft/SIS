@@ -14,13 +14,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Login Pengguna</label>
-                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_log_name" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Nama Penuh</label>
-                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_user_name" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -28,30 +28,30 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">IC Number</label>
-                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_ic_number" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Position</label>
-                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_position" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="field-1" class="control-label">Level</label>
-                                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
-                                    <asp:ListItem>BKS Management</asp:ListItem>
+                                <label for="field-1" class="control-label">Role</label>
+                                <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server"
+                                     ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid">
                                 </asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">State</label>
-                                <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server"
-                                    ClientIDMode="Static" DataTextField="" DataValueField="">
+                                <asp:DropDownList ID="drop_state" CssClass="form-control" runat="server"
+                                    ClientIDMode="Static" DataTextField="state_name" DataValueField="state_id">
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -60,22 +60,22 @@
                         <div class="col-md-6">
                         </div>
                     </div>
-                    <div class="row">
+                    <%--<div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Kata Laluan</label>
-                                <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="txt_kata_laulan" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Pengesahan Kata Laluan</label>
-                                <asp:TextBox ID="TextBox6" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="txt_pen_kata_laulan" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" />
+                        <asp:Button ID="btn_add" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_add_Click" />
                         <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                     </div>
             </div>

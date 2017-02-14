@@ -11,6 +11,19 @@ namespace SIS_B
     {
         data_sis_ugc1 data1 = new data_sis_ugc1();
 
+        public string uname { get; set; }
+        public string pswd { get; set; }
+
+        public int check_login()
+        {
+            return data1.check_login(uname,pswd);
+        }
+
+        public DataTable fetch_userdetails()
+        {
+            return data1.fetch_userdetails(uname);
+        }
+
         public DataTable fillgrid()
         {
             return data1.fillgrid();
