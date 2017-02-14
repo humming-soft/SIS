@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dash.aspx.cs" Inherits="SIS_V.admin.Dash" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dash.aspx.cs" Inherits="SIS_V.state.Dash" %>
 
 <!DOCTYPE html>
 

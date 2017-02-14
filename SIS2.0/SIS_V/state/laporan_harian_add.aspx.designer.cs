@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIS_V.admin {
+namespace SIS_V.state {
     
     
     public partial class laporan_harian_add {

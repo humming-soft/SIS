@@ -161,7 +161,7 @@
     <Content Include="assets\images\users\avatar-0.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\core_sn.js" />
-    <Content Include="assets\js\coundown\jquery.lwtCountdown-1.0.js" />
+    <Content Include="assets\js\countdown\jquery.lwtCountdown-1.0.js" />
     <Content Include="assets\js\detect.js" />
     <Content Include="assets\js\dl-menu\component.css" />
     <Content Include="assets\js\dl-menu\jquery.dlmenu.js" />
@@ -346,7 +346,28 @@
     <Content Include="Logout.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Sessiontimeout.aspx" />
+    <Content Include="state\activiti_bakal_ci_add.aspx" />
+    <Content Include="state\activiti_bakal_ci_view.aspx" />
+    <Content Include="state\activiti_parti_add.aspx" />
+    <Content Include="state\activiti_parti_view.aspx" />
+    <Content Include="state\analisis_kawasan_add.aspx" />
+    <Content Include="state\analisis_kawasan_view.aspx" />
+    <Content Include="state\candidate_detail.aspx" />
+    <Content Include="state\Dash.aspx" />
+    <Content Include="state\detail_incident.aspx" />
+    <Content Include="state\kawasan_operasi.aspx" />
+    <Content Include="state\keluar_mengundi.aspx" />
+    <Content Include="state\laporan_harian_add.aspx" />
+    <Content Include="state\laporan_harian_view.aspx" />
+    <Content Include="state\parlimen_info_add.aspx" />
+    <Content Include="state\parlimen_info_view.aspx" />
+    <Content Include="state\parlimen_tumpuan.aspx" />
+    <Content Include="state\percentage_voters.aspx" />
+    <Content Include="state\tetapan_pentadbir_add.aspx" />
+    <Content Include="state\tetapan_pentadbir_view.aspx" />
+    <Content Include="state\utama.aspx" />
     <Content Include="state\WebForm1.aspx" />
+    <Content Include="state\winnable_candidate.aspx" />
     <Content Include="unauthorised.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -568,6 +589,125 @@
     <Compile Include="Sessiontimeout.aspx.designer.cs">
       <DependentUpon>Sessiontimeout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="state\activiti_bakal_ci_add.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_add.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_view.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_view.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\activiti_parti_add.aspx.cs">
+      <DependentUpon>activiti_parti_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_parti_add.aspx.designer.cs">
+      <DependentUpon>activiti_parti_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\activiti_parti_view.aspx.cs">
+      <DependentUpon>activiti_parti_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_parti_view.aspx.designer.cs">
+      <DependentUpon>activiti_parti_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\analisis_kawasan_add.aspx.cs">
+      <DependentUpon>analisis_kawasan_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\analisis_kawasan_add.aspx.designer.cs">
+      <DependentUpon>analisis_kawasan_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\analisis_kawasan_view.aspx.cs">
+      <DependentUpon>analisis_kawasan_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\analisis_kawasan_view.aspx.designer.cs">
+      <DependentUpon>analisis_kawasan_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\candidate_detail.aspx.cs">
+      <DependentUpon>candidate_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\candidate_detail.aspx.designer.cs">
+      <DependentUpon>candidate_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\Dash.aspx.cs">
+      <DependentUpon>Dash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\Dash.aspx.designer.cs">
+      <DependentUpon>Dash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\detail_incident.aspx.cs">
+      <DependentUpon>detail_incident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\detail_incident.aspx.designer.cs">
+      <DependentUpon>detail_incident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\kawasan_operasi.aspx.cs">
+      <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\kawasan_operasi.aspx.designer.cs">
+      <DependentUpon>kawasan_operasi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\keluar_mengundi.aspx.cs">
+      <DependentUpon>keluar_mengundi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\keluar_mengundi.aspx.designer.cs">
+      <DependentUpon>keluar_mengundi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_add.aspx.cs">
+      <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_add.aspx.designer.cs">
+      <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_view.aspx.cs">
+      <DependentUpon>laporan_harian_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_view.aspx.designer.cs">
+      <DependentUpon>laporan_harian_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\parlimen_info_add.aspx.cs">
+      <DependentUpon>parlimen_info_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\parlimen_info_add.aspx.designer.cs">
+      <DependentUpon>parlimen_info_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\parlimen_info_view.aspx.cs">
+      <DependentUpon>parlimen_info_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\parlimen_info_view.aspx.designer.cs">
+      <DependentUpon>parlimen_info_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\parlimen_tumpuan.aspx.cs">
+      <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\parlimen_tumpuan.aspx.designer.cs">
+      <DependentUpon>parlimen_tumpuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\percentage_voters.aspx.cs">
+      <DependentUpon>percentage_voters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\percentage_voters.aspx.designer.cs">
+      <DependentUpon>percentage_voters.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\state_master.Master.cs">
       <DependentUpon>state_master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -575,12 +715,40 @@
     <Compile Include="state\state_master.Master.designer.cs">
       <DependentUpon>state_master.Master</DependentUpon>
     </Compile>
+    <Compile Include="state\tetapan_pentadbir_add.aspx.cs">
+      <DependentUpon>tetapan_pentadbir_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\tetapan_pentadbir_add.aspx.designer.cs">
+      <DependentUpon>tetapan_pentadbir_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\tetapan_pentadbir_view.aspx.cs">
+      <DependentUpon>tetapan_pentadbir_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\tetapan_pentadbir_view.aspx.designer.cs">
+      <DependentUpon>tetapan_pentadbir_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\utama.aspx.cs">
+      <DependentUpon>utama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\utama.aspx.designer.cs">
+      <DependentUpon>utama.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="state\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\winnable_candidate.aspx.cs">
+      <DependentUpon>winnable_candidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\winnable_candidate.aspx.designer.cs">
+      <DependentUpon>winnable_candidate.aspx</DependentUpon>
     </Compile>
     <Compile Include="unauthorised.aspx.cs">
       <DependentUpon>unauthorised.aspx</DependentUpon>

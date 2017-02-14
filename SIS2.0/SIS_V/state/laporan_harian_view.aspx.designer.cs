@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIS_V {
+namespace SIS_V.state {
     
     
-    public partial class Login {
+    public partial class laporan_harian_view {
         
         /// <summary>
-        /// form1 control.
+        /// GridDataTable3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.GridView GridDataTable3;
         
         /// <summary>
-        /// txtuname control.
+        /// GridDataTable4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtuname;
+        protected global::System.Web.UI.WebControls.GridView GridDataTable4;
         
         /// <summary>
-        /// txtpassword control.
+        /// GridDataTable5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpassword;
+        protected global::System.Web.UI.WebControls.GridView GridDataTable5;
         
         /// <summary>
-        /// btnlogin control.
+        /// GridDataTable6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnlogin;
+        protected global::System.Web.UI.WebControls.GridView GridDataTable6;
         
         /// <summary>
-        /// invalid control.
+        /// GridDataTable7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
+        protected global::System.Web.UI.WebControls.GridView GridDataTable7;
     }
 }

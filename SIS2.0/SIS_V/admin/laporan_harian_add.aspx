@@ -47,20 +47,20 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Kod Kawasan</label>
-                                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label for="kodKawasan">Kod Kawasan</label>
+                                        <asp:TextBox ID="txtKodKawasan" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Nama Kawasan</label>
-                                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label for="namaKawasan">Nama Kawasan</label>
+                                        <asp:TextBox ID="txtNamaKawasan" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Jenis Aktiviti</label>
-                                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label for="jenisAktiviti">Jenis Aktiviti</label>
+                                        <asp:TextBox ID="txtJenisAktiviti" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -68,14 +68,14 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Butiran Aktiviti</label>
-                                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label for="butiranAktiviti">Butiran Aktiviti</label>
+                                        <asp:TextBox ID="txtButiranAktiviti" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtParti" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -84,18 +84,18 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Tarikh</label>
-                                        <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Masa</label>
-                                        <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtMasa" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group text-left m-b-0 m-t-15">
-                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" />
+                                <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btnAdd_Click" />
                                 <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                             </div>
                     </div>
@@ -104,19 +104,19 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:TextBox ID="TextBox8" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUKodKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Nama Kawasan</label>
-                                        <asp:TextBox ID="TextBox9" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUNamaKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kategori Isu</label>
-                                        <asp:TextBox ID="TextBox10" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUKategori" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -125,19 +125,19 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Butiran Isu</label>
-                                        <asp:TextBox ID="TextBox11" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUButiran" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Sumber Isu</label>
-                                        <asp:TextBox ID="TextBox12" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUSumber" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:TextBox ID="TextBox13" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUParti" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -146,18 +146,18 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Tarikh</label>
-                                        <asp:TextBox ID="TextBox14" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUTarikh" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Masa</label>
-                                        <asp:TextBox ID="TextBox15" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtISUMasa" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group text-left m-b-0 m-t-15">
-                                <asp:Button ID="Button3" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" />
+                                <asp:Button ID="btnISUAdd" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="btnISUAdd_Click" />
                                 <asp:Button ID="Button4" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
                             </div>
                     </div>
@@ -166,13 +166,13 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:TextBox ID="TextBox16" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtJanjiKodKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Nama Kawasan</label>
-                                        <asp:TextBox ID="TextBox21" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtJanjiNamaKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -181,13 +181,13 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Janji yg Diberi</label>
-                                        <asp:TextBox ID="TextBox17" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtJanjiYG" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Nama Tokoh</label>
-                                        <asp:TextBox ID="TextBox18" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtJanjiNamaTokoh" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -196,18 +196,18 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Tarikh</label>
-                                        <asp:TextBox ID="TextBox19" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtJanjiTarikh" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Masa</label>
-                                        <asp:TextBox ID="TextBox20" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtJanjiMasa" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group text-left m-b-0 m-t-15">
-                                <asp:Button ID="Button5" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" />
+                                <asp:Button ID="btnJanjiAdd" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="btnJanjiAdd_Click" />
                                 <asp:Button ID="Button6" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
                             </div>
                     </div>
@@ -216,13 +216,13 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:TextBox ID="TextBox22" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtInsidenKodKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Nama Kawasan</label>
-                                        <asp:TextBox ID="TextBox23" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtInsidenNamaKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -231,13 +231,13 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Butiran Insiden</label>
-                                        <asp:TextBox ID="TextBox24" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtInsidenButiran" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:TextBox ID="TextBox25" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtInsidenParti" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -246,19 +246,19 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Tarikh</label>
-                                        <asp:TextBox ID="TextBox26" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtInsidenTarikh" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Masa</label>
-                                        <asp:TextBox ID="TextBox27" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtInsidenMasa" CssClass="form-control" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group text-left m-b-0 m-t-15">
-                                <asp:Button ID="Button7" runat="server" CssClass="btn btn-primary waves-light" Text="Button" />
-                                <asp:Button ID="Button8" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Button" />
+                                <asp:Button ID="btnInsidenAdd" runat="server" CssClass="btn btn-primary waves-light" Text="Button"/>
+                                <asp:Button ID="Button8" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Button"/>
                             </div>
                     </div>
                     <div class="tab-pane" id="settings2">
