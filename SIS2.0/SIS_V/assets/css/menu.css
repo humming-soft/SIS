@@ -6,7 +6,8 @@ Email: coderthemes@gmail.com
 File: Menu
 */
 .wrapper {
-  margin-top: 145px;
+  /*margin-top: 145px;*/
+  margin-top: 234px;
 }
 #topnav {
   position: fixed;
@@ -454,7 +455,7 @@ File: Menu
 }
 @media (max-width: 991px) {
   .wrapper {
-    margin-top: 80px;
+    margin-top: 343px;
   }
   .container {
     width: auto;
