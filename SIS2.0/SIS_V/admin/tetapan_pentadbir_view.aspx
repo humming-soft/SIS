@@ -4,16 +4,31 @@
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             TableData.init();
-
-            $('#lock').on('click', function () {
+            $('.lock').on('click', function () {
                 $('#sis-password-change-modal').modal('show');
             });
+            //$('.edit').on('click', function () {
+            //    // var fname = $('#f_name').val();
+            //    //alert($('#f_name').val() + '---' + $('#l_name').val() + '---' + $('#ic_number').val() + '---' + $('#u_position').val() + '---' + $('#r_id').val() + '---' + $('#s_id').val());
+            //    $('#txt_log_name').val($('#f_name').val());
+            //    $('#txt_user_name').val($('#l_name').val());
+            //    $('#txt_ic_number').val($('#ic_number').val());
+            //    $('#txt_position').val($('#u_position').val());
+            //    $('#drop_role').val($('#r_id').val());
+            //    $('#drop_state').val($('#s_id').val());
+            //    $('#sis-user-edit-modal').modal('show');
+            //});
 
-            $('#edit').on('click', function () {
-                $('#sis-user-edit-modal').modal('show');
+            $(".edit").click(function () {
+                console.log($(this).parent().prev().find("#f_name").val() + '----' + $(this).parent().prev().find("#l_name").val());
             });
         });
+
+
     </script>
+
+
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -36,14 +51,14 @@
                         <asp:BoundField DataField="state_name" HeaderText="State" />
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                                <asp:HiddenField ID="fullname" runat="server" Value='<%Eval("fullname")%>' />
-                                 <asp:HiddenField ID="log_name" runat="server" Value='<%Eval("log_name")%>' />
-                                 <asp:HiddenField ID="icnumber" runat="server" Value='<%Eval("icnumber")%>' />
-                                 <asp:HiddenField ID="position" runat="server" Value='<%Eval("position")%>' />
-                                <asp:HiddenField ID="rolename" runat="server" Value='<%Eval("rolename")%>' />
-                                 <asp:HiddenField ID="state_name" runat="server" Value='<%Eval("state_name")%>' />
-                                <a id="lock" href="#" class="fa fa-lock" data-value='{"name":}'></a>
-                                <a id="edit" href="#" class="fa fa-edit"></a>
+                                 <asp:HiddenField ID="f_name" ClientIDMode="Static" runat="server" Value='<%#Eval("fullname")%>'/>
+                                 <asp:HiddenField ID="l_name" ClientIDMode="Static" runat="server" Value='<%#Eval("log_name")%>'/>
+                                 <asp:HiddenField ID="ic_number" ClientIDMode="Static" runat="server" Value='<%#Eval("icnumber")%>'/>
+                                 <asp:HiddenField ID="u_position" ClientIDMode="Static" runat="server" Value='<%#Eval("position")%>'/>
+                                 <asp:HiddenField ID="r_id" ClientIDMode="Static" runat="server" Value='<%#Eval("role_id")%>' />
+                                 <asp:HiddenField ID="s_id" ClientIDMode="Static" runat="server" Value='<%#Eval("state_id")%>'/>
+                                 <a id="lock" href="#" class="fa fa-lock lock" ></a>
+                                 <a id="edit" href="#" class="fa fa-edit edit"></a>
 <%--                                <asp:LinkButton ID="lnkcp" runat="server" CssClass="fa fa-lock" Font-Underline="False" OnClick="lnkcp_Click"></asp:LinkButton>
                                 <asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkdelete_Click"></asp:LinkButton>--%>
                             </ItemTemplate>
@@ -101,7 +116,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Login Pengguna</label>
-                                <asp:TextBox ID="txt_log_name" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_log_name" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -109,7 +124,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Nama Penuh</label>
-                                <asp:TextBox ID="txt_user_name" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_user_name" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -117,7 +132,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">IC Number</label>
-                                <asp:TextBox ID="txt_ic_number" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_ic_number" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -125,7 +140,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Position</label>
-                                <asp:TextBox ID="txt_position" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_position" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -133,8 +148,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Role</label>
-                                <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server"
-                                     ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid">
+                                <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server" 
+                                     ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid" >
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -152,7 +167,7 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button3" CssClass="btn btn-default" runat="server" Text="Kemaskini" />
+                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static"/>
                     <asp:Button ID="Button4" CssClass="btn btn-info waves-light" runat="server" Text="Batal" />
                 </div>
             </div>
