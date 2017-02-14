@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIS_V.state {
+namespace SIS_V.hq {
     
     
     public partial class utama {

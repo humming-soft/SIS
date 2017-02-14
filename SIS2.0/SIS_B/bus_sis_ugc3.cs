@@ -34,5 +34,9 @@ namespace SIS_B
         {
             return data.insert_user(log_name, name, icnumber, role, state, position);
         }
+        public int update_user()
+        {
+            return data.update_user(log_name, name, icnumber, role, state, position);
+        }
     }
 }

@@ -14,13 +14,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Login Pengguna</label>
-                                <asp:TextBox ID="txt_log_name" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_log_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Nama Penuh</label>
-                                <asp:TextBox ID="txt_user_name" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_user_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -28,13 +28,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">IC Number</label>
-                                <asp:TextBox ID="txt_ic_number" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_ic_number" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Position</label>
-                                <asp:TextBox ID="txt_position" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_position" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -64,19 +64,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Kata Laluan</label>
-                                <asp:TextBox ID="txt_kata_laulan" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="txt_kata_laulan" CssClass="form-control" ClientIDMode="Static" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Pengesahan Kata Laluan</label>
-                                <asp:TextBox ID="txt_pen_kata_laulan" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="txt_pen_kata_laulan" CssClass="form-control" ClientIDMode="Static" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
                     </div>--%>
                     <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="btn_add" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_add_Click" />
-                        <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                        <asp:Button ID="btn_add" runat="server" CssClass="btn btn-primary waves-light" ClientIDMode="Static" Text="Simpan" OnClientClick="add()" OnClick="btn_add_Click" />
+                        <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" ClientIDMode="Static" Text="Batal" />
                     </div>
             </div>
         </div>

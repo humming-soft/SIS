@@ -20,7 +20,6 @@ namespace SIS_V.admin
                 fill_state();
                 fill_role();
                 fill_DataTable_user();
-                
             }
         }
         public void fill_DataTable_user()
@@ -68,7 +67,21 @@ namespace SIS_V.admin
                 grid_user.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
-
+        protected void btn_edit_Click1(object sender, EventArgs e)
+        {
+            bus.log_name = txt_log_name.Text.Trim();
+            bus.name = txt_user_name.Text.Trim();
+            bus.icnumber = txt_ic_number.Text.Trim();
+            bus.position = txt_position.Text.Trim();
+            bus.role = int.Parse(drop_role.SelectedValue.ToString());
+            bus.state = int.Parse(drop_state.SelectedValue.ToString());
+            int r = bus.update_user();
+            if (r == 0)
+            {
+                Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+            }
+        }
+        
         //protected void lnkcp_Click(object sender, EventArgs e)
         //{
         //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-password-change-modal').modal();", true);

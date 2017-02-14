@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using SIS_B;
 
-namespace SIS_V.state
+namespace SIS_V.hq
 {
     public partial class utama : System.Web.UI.Page
     {
@@ -79,9 +79,9 @@ namespace SIS_V.state
                  * Server.Transfer - url won't change
                  * Response.Redirect - url will change
                 */
-                Response.Redirect("~/state/detail_incident.aspx");
+                Response.Redirect("~/hq/WebForm1.aspx");
 
-                //Server.Transfer("~/state/detail_incident.aspx");
+                //Server.Transfer("~/hq/WebForm1.aspx");
             }
         }
     }
