@@ -140,5 +140,33 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public int update_pass(string pass, string log_name)
+        {
+            try
+            {
+                //cmd.Connection = db.disconnect();
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_update_pass";
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Connection = db.connect();
+                cmd.Parameters.AddWithValue("@log_name", log_name);
+                cmd.Parameters.AddWithValue("@log_pwd", pass);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                //cmd.Dispose();
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

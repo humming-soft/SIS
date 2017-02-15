@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="row">
         <div class="col-lg-12">
             <div class="card-box" style="margin: 0 25%;">
@@ -10,57 +11,62 @@
                 <p class="text-muted font-13 m-b-30">
                     Description (if needed).
                 </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Login Pengguna</label>
-                                <asp:TextBox ID="txt_log_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
-                            </div>
+                <div class="row">
+                     <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <p>Please check , you have some form <b>errors</b>!</p>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Nama Penuh</label>
-                                <asp:TextBox ID="txt_user_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
-                            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">Login Pengguna</label>
+                            <asp:TextBox ID="txt_log_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">IC Number</label>
-                                <asp:TextBox ID="txt_ic_number" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Position</label>
-                                <asp:TextBox ID="txt_position" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
-                            </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">Nama Penuh</label>
+                            <asp:TextBox ID="txt_user_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Role</label>
-                                <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server"
-                                     ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid">
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">State</label>
-                                <asp:DropDownList ID="drop_state" CssClass="form-control" runat="server"
-                                    ClientIDMode="Static" DataTextField="state_name" DataValueField="state_id">
-                                </asp:DropDownList>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">IC Number</label>
+                            <asp:TextBox ID="txt_ic_number" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">Position</label>
+                            <asp:TextBox ID="txt_position" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
-                    <%--<div class="row">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">Role</label>
+                            <asp:DropDownList ID="drop_role" CssClass="form-control" runat="server"
+                                ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">State</label>
+                            <asp:DropDownList ID="drop_state" CssClass="form-control" runat="server"
+                                ClientIDMode="Static" DataTextField="state_name" DataValueField="state_id">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                </div>
+                <%--<div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Kata Laluan</label>
@@ -74,11 +80,16 @@
                             </div>
                         </div>
                     </div>--%>
-                    <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="btn_add" runat="server" CssClass="btn btn-primary waves-light" ClientIDMode="Static" Text="Simpan" OnClientClick="add()" OnClick="btn_add_Click" />
-                        <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" ClientIDMode="Static" Text="Batal" />
-                    </div>
+                <div class="form-group text-left m-b-0 m-t-15">
+                    <asp:Button ID="btn_add" runat="server" CssClass="btn btn-primary waves-light" ClientIDMode="Static" Text="Simpan" OnClick="btn_add_Click" OnClientClick="validate_tetapan()"/>
+                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" ClientIDMode="Static" Text="Batal" />
+                </div>
             </div>
         </div>
     </div>
+     <script type="text/javascript">
+         function validate_tetapan() {
+             Add.init();
+        }
+    </script>
 </asp:Content>
