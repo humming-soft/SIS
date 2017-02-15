@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../assets/images/favicon_1.ico" />
 
-    <title>Sate</title>
+    <title>State</title>
 
     <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
@@ -343,7 +343,7 @@
     </form>
 
     <!-- jQuery  -->
-    <%--<script src="../assets/js/jquery.min.js"></script>--%>
+    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -391,6 +391,13 @@
 
     <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
     <script src="../assets/plugins/moment/moment.js"></script>
+
+    <!-- Jquery Validation -->
+    <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+
+    <script src="../assets/js/Validations/custom_laporanactivity.js"></script>
+
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.counter').counterUp({

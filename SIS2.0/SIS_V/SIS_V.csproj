@@ -185,6 +185,7 @@
     <Content Include="assets\js\jquery.slimscroll.js" />
     <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
+    <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\waves.js" />
@@ -276,6 +277,7 @@
     <Content Include="assets\plugins\jquery-quicksearch\jquery.quicksearch.js" />
     <Content Include="assets\plugins\jquery-sparkline\jquery.sparkline.min.js" />
     <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="assets\plugins\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\jquery.validate.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\easypiechart.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" />
