@@ -400,3 +400,24 @@
 .outer{
     margin: 10px;
 }
+.label-custom {
+    padding:  7px 28px;
+    margin: 4px;
+}
+.w96{
+    width: 96%;
+}
+.m-l-40{
+    margin-left: 40px;
+}
+.c-here {
+    border-bottom: 2px solid #eaeaea;
+    padding: 30px 0;
+    padding: 20px;
+}
+.c-here.active {
+    padding: 20px;
+    background-color: #f3f3f3;
+    margin-top: 10px;
+    border: 1px solid #eaeaea;
+}

@@ -13,166 +13,166 @@ namespace SIS_V.state {
     public partial class parlimen_info_add {
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtKodKawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtKodKawasan;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txtNamaKawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtNamaKawasan;
         
         /// <summary>
-        /// TextBox3 control.
+        /// txtBil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtBil;
         
         /// <summary>
-        /// CheckBox4 control.
+        /// chkKawasanTumpuan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
+        protected global::System.Web.UI.WebControls.CheckBox chkKawasanTumpuan;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// chkKawasanTumpuanPenbangkang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox chkKawasanTumpuanPenbangkang;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// chkKawasanOperasi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox chkKawasanOperasi;
         
         /// <summary>
-        /// ListBox1 control.
+        /// txtKeluasanKawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtKeluasanKawasan;
         
         /// <summary>
-        /// ListBox2 control.
+        /// txtSempadanKawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtSempadanKawasan;
         
         /// <summary>
-        /// ListBox3 control.
+        /// txtKegiatanEkonomi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtKegiatanEkonomi;
         
         /// <summary>
-        /// ListBox4 control.
+        /// txtPecahanKaum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtPecahanKaum;
         
         /// <summary>
-        /// ListBox5 control.
+        /// txtPopulasiPenduduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtPopulasiPenduduk;
         
         /// <summary>
-        /// ListBox6 control.
+        /// txtPurataUmur control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox6;
+        protected global::System.Web.UI.WebControls.TextBox txtPurataUmur;
         
         /// <summary>
-        /// ListBox7 control.
+        /// txtPurataJantina control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox7;
+        protected global::System.Web.UI.WebControls.TextBox txtPurataJantina;
         
         /// <summary>
-        /// ListBox8 control.
+        /// txtKemudahanAwam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox8;
+        protected global::System.Web.UI.WebControls.TextBox txtKemudahanAwam;
         
         /// <summary>
-        /// ListBox9 control.
+        /// txtTaburanPenduduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox9;
+        protected global::System.Web.UI.WebControls.TextBox txtTaburanPenduduk;
         
         /// <summary>
-        /// ListBox10 control.
+        /// txtKomposisiEtnik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox10;
+        protected global::System.Web.UI.WebControls.TextBox txtKomposisiEtnik;
         
         /// <summary>
-        /// ListBox11 control.
+        /// txtKedarPertumbuhanPenduduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox11;
+        protected global::System.Web.UI.WebControls.TextBox txtKedarPertumbuhanPenduduk;
         
         /// <summary>
-        /// Button1 control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// Button2 control.

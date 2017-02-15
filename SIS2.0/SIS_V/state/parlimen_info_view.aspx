@@ -38,7 +38,7 @@
                         <asp:BoundField DataField="Operation Area" HeaderText="Operation Area" />
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-edit" Font-Underline="False"></asp:LinkButton>
+                                <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkedit_Click"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

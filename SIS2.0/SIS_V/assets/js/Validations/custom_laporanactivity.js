@@ -1,0 +1,60 @@
+﻿/*
+Author : Agaile
+15/02/2017
+Custom laporan_harian_add_activity validation script
+*/
+
+var laporan_harian_add_activity = function () {
+    var runValidator = function () {
+        var form = $('#form1');
+        var errorHandler = $('.errorHandler', form);
+        $.validator.prototype.checkForm = function () {
+            //overriden in a specific page
+            this.prepareForm();
+            for (var i = 0, elements = (this.currentElements = this.elements()) ; elements[i]; i++) {
+                if (this.findByName(elements[i].name).length != undefined && this.findByName(elements[i].name).length > 1) {
+                    for (var cnt = 0; cnt < this.findByName(elements[i].name).length; cnt++) {
+                        this.check(this.findByName(elements[i].name)[cnt]);
+                    }
+                } else {
+                    this.check(elements[i]);
+                }
+            }
+            return this.valid();
+        }
+
+        form.validate({
+            ignore: ':hidden',
+            rules: {
+                ctl00$ContentPlaceHolder1$ddlKodKawasan: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlAktiviti: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlparti: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtdate: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtButiran: {
+                    required: true
+                }
+            },
+            submitHandler: function (form) {
+                errorHandler.hide();
+                form.submit();
+            },
+            invalidHandler: function (event, validator) { //display error alert on form submit
+                errorHandler.show();
+            }
+        });
+    };
+    return {
+        //main function to initiate template pages
+        init: function () {
+            runValidator();
+        }
+    };
+}();
