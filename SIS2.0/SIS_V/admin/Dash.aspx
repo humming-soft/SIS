@@ -56,7 +56,7 @@
                         <!--Navigation Wrap Start-->
                         <div class="kode_menu">
                             <ul>
-                                <li><a href="#">Laman Utama</a></li>
+                                <li><a href="Dash.aspx">Laman Utama</a></li>
                                 <li><a href="#">Dashboard</a>
                                     <ul>
                                         <li><a href="utama.aspx">Dashboard Utama</a></li>
@@ -78,12 +78,12 @@
                                     </ul>
                                 </li>
                                 <li><a href="#">Analisis Kawasan</a></li>
-<%--                                <li><a href="#">Tetapan</a>
+                                <li><a href="#">Tetapan</a>
                                     <ul>
                                         <li><a href="parlimen_info_view.aspx">Parlimen Info</a></li>
                                     </ul>
-                                </li>--%>
-                                <li><a href="tetapan_pentadbir_view.aspx">Tetapa</a></li>
+                                </li>
+                                <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>
                             </ul>
                         </div>
                         <!--Navigation Wrap End-->
@@ -91,37 +91,34 @@
                         <div id="kode-responsive-navigation" class="dl-menuwrapper">
                             <button class="dl-trigger">Open Menu</button>
                             <ul class="dl-menu">
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="about-us.html">About</a></li>
-                                <li class="menu-item kode-parent-menu"><a href="#">Event</a>
+                                <li><a href="Dash.aspx">Laman Utama</a></li>
+                                <li class="menu-item kode-parent-menu"><a href="#">Dashboard</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="event.html">Event Grid</a></li>
-                                        <li><a href="event-detail.html">Event Detail</a></li>
+                                        <li><a href="utama.aspx">Dashboard Utama</a></li>
+                                        <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
+                                        <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
+                                        <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="press-release.html">Press Release</a></li>
-                                <li class="menu-item kode-parent-menu"><a href="#">News</a>
+                                <li class="menu-item kode-parent-menu"><a href="#">Pra-Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="news.html">News Grid</a></li>
-                                        <li><a href="news-list.html">News List</a></li>
-                                        <li><a href="news-detail.html">News Detail</a></li>
+                                        <li><a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a></li>
+                                        <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item kode-parent-menu"><a href="#">Team</a>
+                                <li class="menu-item kode-parent-menu"><a href="#">Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="team.html">team Grid</a></li>
-                                        <li><a href="team-detail.html">team Detail</a></li>
+                                        <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item kode-parent-menu"><a href="#">Pages</a>
+                                <li><a href="Dash.aspx">Analisis Kawasan</a></li>
+                                <li class="menu-item kode-parent-menu"><a href="#">Tetapan</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="comming-soon.html">Comming soon</a></li>
-                                        <li><a href="shortcode.html">ShortCode</a></li>
+                                        <li><a href="parlimen_info_view.aspx">Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>
                             </ul>
                         </div>
                     </div>
