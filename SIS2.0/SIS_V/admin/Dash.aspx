@@ -56,37 +56,34 @@
                         <!--Navigation Wrap Start-->
                         <div class="kode_menu">
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Event</a>
+                                <li><a href="#">Laman Utama</a></li>
+                                <li><a href="#">Dashboard</a>
                                     <ul>
-                                        <li><a href="#">Event Grid</a></li>
-                                        <li><a href="event-detail.html">Event Detail</a></li>
+                                        <li><a href="utama.aspx">Dashboard Utama</a></li>
+                                        <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
+                                        <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
+                                        <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Press Release</a></li>
-                                <li><a href="#">News</a>
+                                <li><a href="#">Pra-Pilihanraya</a>
                                     <ul>
-                                        <li><a href="#">News Grid</a></li>
-                                        <li><a href="#">News List</a></li>
-                                        <li><a href="#">News Detail</a></li>
+                                        <li><a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a></li>
+                                        <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Team</a>
+                                <li><a href="#">Pilihanraya</a>
                                     <ul>
-                                        <li><a href="#">team Grid</a></li>
-                                        <li><a href="#">team Detail</a></li>
+                                        <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Pages</a>
+                                <li><a href="#">Analisis Kawasan</a></li>
+<%--                                <li><a href="#">Tetapan</a>
                                     <ul>
-                                        <li><a href="#">Services</a></li>
-                                        <li><a href="#">404</a></li>
-                                        <li><a href="#">Comming soon</a></li>
-                                        <li><a href="#">ShortCode</a></li>
+                                        <li><a href="parlimen_info_view.aspx">Parlimen Info</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="#">Contact Us</a></li>
+                                </li>--%>
+                                <li><a href="tetapan_pentadbir_view.aspx">Tetapa</a></li>
                             </ul>
                         </div>
                         <!--Navigation Wrap End-->
@@ -150,8 +147,12 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/002_d.png" alt="Logo Image Here" />
-                                <a href="#">
-                                    <p class="hours_ref b15">Dashboard Parlimen Tumpuan</p>
+                                <a href="kawasan_operasi.aspx">
+                                    <p class="days_ref">
+                                        Kawasan
+                                        <br />
+                                        Operasi
+                                    </p>
                                 </a>
                             </li>
                             <li>
@@ -162,7 +163,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="winnable_candidate.aspx">
                                     <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
@@ -172,9 +173,7 @@
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="#">
                                     <p class="days_ref b35">
-                                        Daftar  
-                                        <br>
-                                        Pamilih
+                                        Peratusan Keluar Mengundi
                                     </p>
                                 </a>
                             </li>
