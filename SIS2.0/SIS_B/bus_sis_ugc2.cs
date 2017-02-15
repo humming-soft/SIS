@@ -39,7 +39,7 @@ namespace SIS_B
         public int area_id { get; set; }
         public string p_kod_kawasan { get; set; }
         public string p_nama_kawasan { get; set; }
-        public string bil { get; set; }
+        public int bil { get; set; }
         public string kawasan_tumpuan { get; set; }
         public string kawasan_tumpuan_penbangkang { get; set; }
         public string kawasan_operasi { get; set; }
@@ -47,8 +47,8 @@ namespace SIS_B
         public string sempadan_kawasan { get; set; }
         public string kegiatan_ekonomi { get; set; }
         public string pecahan_kaum { get; set; }
-        public string populasi_penduduk { get; set; }
-        public string purata_umur { get; set; }
+        public int populasi_penduduk { get; set; }
+        public int purata_umur { get; set; }
         public string purata_jantina { get; set; }
         public string kemudahan_awam { get; set; }
         public string taburan_penduduk { get; set; }
