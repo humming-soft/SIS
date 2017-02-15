@@ -14,53 +14,53 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="userName">Kod Kawasan</label>
-                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtKodKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <label for="userName">Nama Kawasan</label>
-                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtNamaKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Bil. Kampung</label>
-                                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtBil" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="checkbox checkbox-pink">
-                                <asp:CheckBox ID="CheckBox4" runat="server" />
+                                <asp:CheckBox ID="chkKawasanTumpuan" runat="server" />
                                 <label for="checkbox1">Kawasan Tumpuan </label>
                             </div>
                             <div class="checkbox checkbox-pink">
-                                <asp:CheckBox ID="CheckBox1" runat="server" />
+                                <asp:CheckBox ID="chkKawasanTumpuanPenbangkang" runat="server" />
                                 <label for="checkbox2">Kawasan Tumpuan Penbangkang </label>
                             </div>
                             <div class="checkbox checkbox-pink">
-                                <asp:CheckBox ID="CheckBox2" runat="server" />
+                                <asp:CheckBox ID="chkKawasanOperasi" runat="server" />
                                 <label for="checkbox3">Kawasan Operasi </label>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Keluasan Kawasan</label>
-                                <asp:ListBox ID="ListBox1" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtKeluasanKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Sempadan Kawasan</label>
-                                <asp:ListBox ID="ListBox2" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtSempadanKawasan" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Kegiatan Ekonomi</label>
-                                <asp:ListBox ID="ListBox3" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtKegiatanEkonomi" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -68,25 +68,25 @@
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Pecahan Kaum</label>
-                                <asp:ListBox ID="ListBox4" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtPecahanKaum" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <label for="userName">populasi Penduduk</label>
-                                <asp:ListBox ID="ListBox5" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <label for="userName">Populasi Penduduk</label>
+                                <asp:TextBox ID="txtPopulasiPenduduk" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Purata Umur</label>
-                                <asp:ListBox ID="ListBox6" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtPurataUmur" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Purata Jantina</label>
-                                <asp:ListBox ID="ListBox7" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtPurataJantina" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -94,30 +94,30 @@
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Kemudahan Awam</label>
-                                <asp:ListBox ID="ListBox8" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtKemudahanAwam" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Taburan Penduduk</label>
-                                <asp:ListBox ID="ListBox9" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtTaburanPenduduk" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Komposisi Etnik</label>
-                                <asp:ListBox ID="ListBox10" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtKomposisiEtnik" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label for="userName">Kedar Pertumbuhan Penduduk</label>
-                                <asp:ListBox ID="ListBox11" CssClass="form-control" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                                <asp:TextBox ID="txtKedarPertumbuhanPenduduk" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                     <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="Button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" />
+                        <asp:Button ID="btnUpdate" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="btnUpdate_Click" />
                         <asp:Button ID="Button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
                     </div>
             </div>

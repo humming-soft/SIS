@@ -107,7 +107,7 @@ namespace SIS_D
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "sp_lamporan";
+                cmd.CommandText = "sp_fetch_daily_report";
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();

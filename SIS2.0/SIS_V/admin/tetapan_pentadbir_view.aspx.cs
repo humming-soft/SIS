@@ -13,6 +13,7 @@ namespace SIS_V.admin
     public partial class tetapan_pentadbir_view : System.Web.UI.Page
     {
         bus_sis_ugc3 bus = new bus_sis_ugc3();
+        string hashed;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,6 +21,7 @@ namespace SIS_V.admin
                 fill_state();
                 fill_role();
                 fill_DataTable_user();
+                log_valid.Visible = false;
             }
         }
         public void fill_DataTable_user()
@@ -69,28 +71,65 @@ namespace SIS_V.admin
         }
         protected void btn_edit_Click1(object sender, EventArgs e)
         {
-            bus.log_name = txt_log_name.Text.Trim();
-            bus.name = txt_user_name.Text.Trim();
-            bus.icnumber = txt_ic_number.Text.Trim();
-            bus.position = txt_position.Text.Trim();
-            bus.role = int.Parse(drop_role.SelectedValue.ToString());
-            bus.state = int.Parse(drop_state.SelectedValue.ToString());
-            int r = bus.update_user();
-            if (r == 0)
+            if (txt_log_name.Text.Trim() == "" || txt_user_name.Text.Trim() == "" || txt_ic_number.Text.Trim() == "" || txt_position.Text.Trim() == "" ||
+                 drop_role.SelectedValue.ToString() == "" || drop_state.SelectedValue.ToString() == "")
             {
-                Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                if (txt_log_name.Text.Trim() == "")
+                {
+                    log_valid.Visible = true;
+                }
+                if (txt_user_name.Text.Trim() == "")
+                {
+                    log_valid.Visible = true;
+                }
+                if (txt_ic_number.Text.Trim() == "")
+                {
+                    log_valid.Visible = true;
+                }
+                if (txt_position.Text.Trim() == "")
+                {
+                    log_valid.Visible = true;
+                }
+                if (drop_role.SelectedValue.ToString() == "")
+                {
+                    log_valid.Visible = true;
+                }
+                if (drop_state.SelectedValue.ToString() == "")
+                {
+                    log_valid.Visible = true;
+                }
+            }
+            else
+            {
+                bus.log_name = txt_log_name.Text.Trim();
+                bus.name = txt_user_name.Text.Trim();
+                bus.icnumber = txt_ic_number.Text.Trim();
+                bus.position = txt_position.Text.Trim();
+                bus.role = int.Parse(drop_role.SelectedValue.ToString());
+                bus.state = int.Parse(drop_state.SelectedValue.ToString());
+                int r = bus.update_user();
+                if (r == 0)
+                {
+                    Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                }
             }
         }
-        
-        //protected void lnkcp_Click(object sender, EventArgs e)
-        //{
-        //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-password-change-modal').modal();", true);
 
-        //}
-
-        //protected void lnkdelete_Click(object sender, EventArgs e)
-        //{
-        //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#sis-user-edit-modal').modal();", true);
-        //}
+        protected void btn_resetpass_Click(object sender, EventArgs e)
+        {
+            string pass = txt_pass.Text.Trim();
+            string con_pass = txt_con_pass.Text.Trim();
+            if (pass == con_pass)
+            {
+              hashed = encrypt.Encrypt(txt_con_pass.Text);
+              bus.pass = hashed;
+              bus.log_name = hd_pass.Value.Trim().ToString();
+              int r = bus.update_password();
+              if (r == 0)
+              {
+                  Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+              }
+            }
+        }
     }
 }

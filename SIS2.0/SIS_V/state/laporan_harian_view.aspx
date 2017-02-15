@@ -27,7 +27,17 @@
                             </div>
                             <div id="collapseOne-2" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable3_PreRender"></asp:GridView>
+                                    <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable3_PreRender" >                                   
+                                        <Columns>
+                                            <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="50%"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Jenis Aktiviti" DataField="activity_type"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Butiran Aktiviti" DataField="details"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Parti" DataField="party_name_bm"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Tarikh" DataField="date"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Masa" DataField="time"></asp:BoundField>
+                                        </Columns>
+                                    </asp:GridView>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +50,7 @@
                             </div>
                             <div id="collapseTwo-2" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable4" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable4_PreRender"></asp:GridView>
+                                    <%--<asp:GridView ID="GridDataTable4" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable4_PreRender"></asp:GridView>--%>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +63,7 @@
                             </div>
                             <div id="collapseThree-2" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable5" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable5_PreRender"></asp:GridView>
+                                    <%--<asp:GridView ID="GridDataTable5" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable5_PreRender"></asp:GridView>--%>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +76,7 @@
                             </div>
                             <div id="collapseThree-3" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable6" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable6_PreRender"></asp:GridView>
+                                    <%--<asp:GridView ID="GridDataTable6" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable6_PreRender"></asp:GridView>--%>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +89,7 @@
                             </div>
                             <div id="collapseThree-5" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable7" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable7_PreRender"></asp:GridView>
+                                    <%--<asp:GridView ID="GridDataTable7" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable7_PreRender"></asp:GridView>--%>
                                 </div>
                             </div>
                         </div>

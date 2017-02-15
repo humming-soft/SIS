@@ -11,12 +11,13 @@ namespace SIS_V.admin
 {
     public partial class tetapan_pentadbir_add : System.Web.UI.Page
     {
-       
+
         bus_sis_ugc3 bus = new bus_sis_ugc3();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                log_valid.Visible = false;
                 fill_state();
                 fill_role();
             }
@@ -51,6 +52,34 @@ namespace SIS_V.admin
         }
         protected void btn_add_Click(object sender, EventArgs e)
         {
+            if (txt_log_name.Text.Trim() == "" || txt_user_name.Text.Trim() == "" || txt_ic_number.Text.Trim() == "" || txt_position.Text.Trim() == "" ||
+               drop_role.SelectedValue.ToString() == "" || drop_state.SelectedValue.ToString() == "")
+            {
+            if (txt_log_name.Text.Trim()=="")
+            {
+                log_valid.Visible = true;
+            }
+            if (txt_user_name.Text.Trim() == "")
+            {
+                log_valid.Visible = true;
+            }
+            if (txt_ic_number.Text.Trim() == "")
+            {
+                log_valid.Visible = true;
+            }
+            if (txt_position.Text.Trim() == "")
+            {
+                log_valid.Visible = true;
+            }
+            if (drop_role.SelectedValue.ToString() == "")
+            {
+                log_valid.Visible = true;
+            }
+            if (drop_state.SelectedValue.ToString() == "")
+            {
+                log_valid.Visible = true;
+            }
+            }else{
             bus.log_name = txt_log_name.Text.Trim();
             bus.name = txt_user_name.Text.Trim();
             bus.icnumber = txt_ic_number.Text.Trim();
@@ -61,7 +90,8 @@ namespace SIS_V.admin
             if(r==0){
                 Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
             }
+            }
         }
-       
+
     }
 }

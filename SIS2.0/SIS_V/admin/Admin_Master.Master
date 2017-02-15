@@ -40,9 +40,8 @@
 
 
     <%--<link href="../assets/plugins/media/css/DT_bootstrap.css" rel="stylesheet" />--%>
-
-    <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/highcharts/highcharts.js"></script>
     <script src="../assets/js/highcharts/highcharts-more.js"></script>
@@ -346,7 +345,7 @@
 
 
     <!-- jQuery  -->
-    <script src="../assets/js/jquery.min.js"></script>
+    
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -395,7 +394,9 @@
     <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
 
     <script src="../assets/plugins/moment/moment.js"></script>
+    <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
+   
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {

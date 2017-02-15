@@ -56,7 +56,7 @@
                         <!--Navigation Wrap Start-->
                         <div class="kode_menu">
                             <ul>
-                                <li><a href="Dash.aspx">Laman Utama</a></li>
+                                <%--<li><a href="Dash.aspx">Laman Utama</a></li>--%>
                                 <li><a href="#">Dashboard</a>
                                     <ul>
                                         <li><a href="utama.aspx">Dashboard Utama</a></li>

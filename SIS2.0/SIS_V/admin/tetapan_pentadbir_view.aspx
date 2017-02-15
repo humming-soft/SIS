@@ -5,6 +5,7 @@
         jQuery(document).ready(function ($) {
             TableData.init();
             $('.lock').on('click', function () {
+                $('#hd_pass').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
                 $('#sis-password-change-modal').modal('show');
             });
 
@@ -75,19 +76,21 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Kata Laluan Baru</label>
-                                <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_pass" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Pengesahan Kata Laluan</label>
-                                <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_con_pass" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:HiddenField ID="hd_pass" runat="server" ClientIDMode="Static" />
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="Kemaskini" />
+                    <asp:Button ID="btn_resetpass" CssClass="btn btn-success" runat="server" Text="Kemaskini" OnClick="btn_resetpass_Click" />
                     <asp:Button ID="Button2" CssClass="btn btn-info waves-light" runat="server" Text="Tutup" />
                 </div>
             </div>
@@ -104,6 +107,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
+                         <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <p>Please check , you have some form <b>errors</b>!</p>
+                        </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Login Pengguna</label>
