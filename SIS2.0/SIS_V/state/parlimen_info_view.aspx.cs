@@ -11,7 +11,7 @@ namespace SIS_V.state
 {
     public partial class parlimen_info_view : System.Web.UI.Page
     {
-        bus_sis_ugc1 bus = new bus_sis_ugc1();
+        bus_sis_ugc2 bus = new bus_sis_ugc2();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

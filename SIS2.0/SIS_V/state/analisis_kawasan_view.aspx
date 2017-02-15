@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="analisis_kawasan_view.aspx.cs" Inherits="SIS_V.state.analisis_kawasan_view" MasterPageFile="~/admin/Admin_Master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="analisis_kawasan_view.aspx.cs" Inherits="SIS_V.state.analisis_kawasan_view" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
