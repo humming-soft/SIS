@@ -268,10 +268,11 @@ header{
 	display:block;
 	text-transform:uppercase;
 	color:#27282d;
-	font-size:14px;
+	font-size:13px;
 	padding:25px 15px;
 	font-weight:600;
 	line-height:14px;	
+    padding-right:12px;
 }
 .kode_menu ul li.active:before,
 .kode_menu ul li:hover:before,
@@ -5556,6 +5557,7 @@ ul.kf_loc_socil_icon{
 	right:0px;
 	margin:auto;
 	color:#020202;
+    line-height: 17px;
 }
 .kf_comming_form{
 	width:560px;
