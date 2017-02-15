@@ -371,6 +371,12 @@
     <script src="../assets/js/DT/checker.js"></script>
     <script src="../assets/js/DT/lamporan.js"></script>
 
+    <!-- Validation js -->
+    <script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
+
+
     <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
     <script src="../assets/plugins/moment/moment.js"></script>
     <script type="text/javascript">
