@@ -56,7 +56,7 @@
                         <!--Navigation Wrap Start-->
                         <div class="kode_menu">
                             <ul>
-                                <li><a href="Dash.aspx">Laman Utama</a></li>
+                                <%--<li><a href="Dash.aspx">Laman Utama</a></li>--%>
                                 <li><a href="#">Dashboard</a>
                                     <ul>
                                         <li><a href="utama.aspx">Dashboard Utama</a></li>
@@ -171,7 +171,7 @@
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="#">
                                     <p class="days_ref b35">
-                                        Peratusan Keluar Mengundi
+                                        Peratusan <br />Keluar Mengundi
                                     </p>
                                 </a>
                             </li>
