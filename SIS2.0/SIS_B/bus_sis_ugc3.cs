@@ -10,7 +10,6 @@ namespace SIS_B
     //Assigned User - Ancy
     public class bus_sis_ugc3
     {
-        //coded by ANCY MATHEW
         data_sis_ugc3 data = new data_sis_ugc3();
         public string log_name { get; set; }
         public string name { get; set; }
@@ -18,6 +17,7 @@ namespace SIS_B
         public int role { get; set; }
         public int state { get; set; }
         public string position { get; set; }
+        public string pass { get; set; }
         public DataTable fetch_states()
         {
             return data.fetch_state();
@@ -37,6 +37,10 @@ namespace SIS_B
         public int update_user()
         {
             return data.update_user(log_name, name, icnumber, role, state, position);
+        }
+        public int update_password()
+        {
+            return data.update_pass(pass, log_name);
         }
     }
 }

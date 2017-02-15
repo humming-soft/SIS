@@ -1,23 +1,30 @@
-﻿/*
-Author : Agaile
-06/02/2017
-Custom login validation script
-*/
-
-var Add = function () {
-
-    var runAddValidator = function () {
+﻿var Add = function () {
+    var runValidator = function () {
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
         form.validate({
             rules: {
-                txt_log_name: {
+                ctl00$ContentPlaceHolder1$txt_log_name: {
+                    minlength: 5,
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txt_user_name: {
+                    minlength: 5,
+                    required: true
+
+                },
+                ctl00$ContentPlaceHolder1$txt_ic_number: {
+                    minlength: 4,
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txt_position: {
                     minlength: 2,
                     required: true
                 },
-                txt_user_name: {
-                    minlength: 6,
-                    maxlength: 10,
+                ctl00$ContentPlaceHolder1$drop_role: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$drop_state: {
                     required: true
                 }
             },
@@ -33,7 +40,7 @@ var Add = function () {
     return {
         //main function to initiate template pages
         init: function () {
-            runAddValidator();
+            runValidator();
         }
     };
 }();
