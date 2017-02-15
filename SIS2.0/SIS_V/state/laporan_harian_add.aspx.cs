@@ -12,7 +12,7 @@ namespace SIS_V.state
 {
     public partial class laporan_harian_add : System.Web.UI.Page
     {
-        bus_sis_ugc2 objAktivitiBUS = new bus_sis_ugc2();
+        bus_sis_ugc1 objAktivitiBUS = new bus_sis_ugc1();
         DataTable dt,dt1,dt2;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace SIS_V.state
 
         public void fill_kodkawasan()
         {
-            dt = objAktivitiBUS.fill_kodkawasan();
+            //dt = objAktivitiBUS.fill_kodkawasan();
             ddlKodKawasan.DataSource = dt;
             ddlKodKawasan.DataBind();
             ddlKodKawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
@@ -35,7 +35,7 @@ namespace SIS_V.state
 
         public void fill_jenis()
         {
-            dt1 = objAktivitiBUS.fill_jenis();
+            //dt1 = objAktivitiBUS.fill_jenis();
             ddlAktiviti.DataSource = dt;
             ddlAktiviti.DataBind();
             ddlAktiviti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
@@ -43,7 +43,7 @@ namespace SIS_V.state
 
         public void fill_parti()
         {
-            dt2 = objAktivitiBUS.fill_parti();
+            //dt2 = objAktivitiBUS.fill_parti();
             ddlparti.DataSource = dt;
             ddlparti.DataBind();
             ddlparti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
