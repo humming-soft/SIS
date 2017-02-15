@@ -37,5 +37,15 @@ namespace SIS_V.state
                 GridPinfo.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+
+        protected void lnkedit_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(GridPinfo.DataKeys[row.RowIndex].Value.ToString());
+            Session["area_id"] = id;
+            Response.Redirect("parlimen_info_add.aspx");
+
+        }
     }
 }

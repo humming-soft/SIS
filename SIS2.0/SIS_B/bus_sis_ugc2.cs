@@ -10,7 +10,7 @@ namespace SIS_B
     //Assigned User - Jane
     public class bus_sis_ugc2
     {
-        data_sis_ugc2 objAktivitiDAL = new data_sis_ugc2();
+        data_sis_ugc2 objDAL = new data_sis_ugc2();
 
         public string kod_kawasan { get; set; }
         public string butiran_aktiviti { get; set; }
@@ -36,21 +36,50 @@ namespace SIS_B
         public string janji_tarik { get; set; }
         public string janji_masa { get; set; }
 
+        public int area_id { get; set; }
+        public string p_kod_kawasan { get; set; }
+        public string p_nama_kawasan { get; set; }
+        public string bil { get; set; }
+        public string kawasan_tumpuan { get; set; }
+        public string kawasan_tumpuan_penbangkang { get; set; }
+        public string kawasan_operasi { get; set; }
+        public string keluasan_kawasan { get; set; }
+        public string sempadan_kawasan { get; set; }
+        public string kegiatan_ekonomi { get; set; }
+        public string pecahan_kaum { get; set; }
+        public string populasi_penduduk { get; set; }
+        public string purata_umur { get; set; }
+        public string purata_jantina { get; set; }
+        public string kemudahan_awam { get; set; }
+        public string taburan_penduduk { get; set; }
+        public string komposisi_etnik { get; set; }
+        public string kedar_pertumbuhan_penduduk { get; set; }
+
         public int InsertAktivitiDetails()
         {
-            return objAktivitiDAL.InsertAktivitiDetails(kod_kawasan, butiran_aktiviti, tarikh, nama_kawasan, parti, masa, jenis_aktiviti);
+            return objDAL.InsertAktivitiDetails(kod_kawasan, butiran_aktiviti, tarikh, nama_kawasan, parti, masa, jenis_aktiviti);
         }
         public int InsertISUDetails()
         {
-            return objAktivitiDAL.InsertISUDetails(isu_kod_kawasan, isu_butiran_aktiviti, isu_tarikh, isu_nama_kawasan, isu_sumber, isu_masa, isu_parti,isu_kategori);
+            return objDAL.InsertISUDetails(isu_kod_kawasan, isu_butiran_aktiviti, isu_tarikh, isu_nama_kawasan, isu_sumber, isu_masa, isu_parti, isu_kategori);
         }
         public int InsertJanjiDetails()
         {
-            return objAktivitiDAL.InsertJanjiDetails(janji_kod_kawasan, janji_nama_kawasan, janji_yg, janji_nama_tokoh, janji_tarik, janji_masa);
+            return objDAL.InsertJanjiDetails(janji_kod_kawasan, janji_nama_kawasan, janji_yg, janji_nama_tokoh, janji_tarik, janji_masa);
         }
         public DataTable fill_DataTable()
         {
-            return objAktivitiDAL.fill_DataTable();
+            return objDAL.fill_DataTable();
+        }
+
+        public DataTable GetPInfoDetails(){
+
+            return objDAL.GetPInfoDetails(area_id);
+        }
+
+        public int UpdatePInfoDetails()
+        {
+            return objDAL.UpdatePInfoDetails(area_id, p_kod_kawasan, p_nama_kawasan, bil, kawasan_tumpuan, kawasan_tumpuan_penbangkang, kawasan_operasi, keluasan_kawasan, sempadan_kawasan, kegiatan_ekonomi, pecahan_kaum, populasi_penduduk, purata_umur, purata_jantina, kemudahan_awam, taburan_penduduk, komposisi_etnik, kedar_pertumbuhan_penduduk);
         }
     }
 }
