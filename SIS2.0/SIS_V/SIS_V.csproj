@@ -187,6 +187,7 @@
     <Content Include="assets\js\modernizr.min.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
+    <Content Include="assets\js\Validations\parliment_info.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
     <Content Include="assets\js\waves.js" />
     <Content Include="assets\js\wow.min.js" />

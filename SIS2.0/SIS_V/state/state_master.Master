@@ -407,6 +407,7 @@
     <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../assets/js/Validations/custom_laporanactivity.js"></script>
+    <script src="../assets/js/Validations/parliment_info.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
