@@ -74,17 +74,29 @@ namespace SIS_V.state
         {
             objPInfoBUS.area_id = int.Parse(Session["area_id"].ToString());
             objPInfoBUS.p_kod_kawasan = txtKodKawasan.Text;
-            objPInfoBUS.p_nama_kawasan = txtNamaKawasan.Text;
-            objPInfoBUS.bil = txtBil.Text;
-            objPInfoBUS.kawasan_tumpuan = chkKawasanTumpuan.Text;
-            objPInfoBUS.kawasan_tumpuan_penbangkang = chkKawasanTumpuanPenbangkang.Text;
-            objPInfoBUS.kawasan_operasi = chkKawasanOperasi.Text;
+            objPInfoBUS.p_nama_kawasan = txtNamaKawasan.Text;            
+            objPInfoBUS.bil = int.Parse(txtBil.Text);
+            if (chkKawasanTumpuan.Checked){
+                objPInfoBUS.kawasan_tumpuan = "Yes";
+            }else{
+                objPInfoBUS.kawasan_tumpuan = "No";
+            }
+            if (chkKawasanTumpuanPenbangkang.Checked){
+                objPInfoBUS.kawasan_tumpuan_penbangkang = "Yes";
+            }else{
+                objPInfoBUS.kawasan_tumpuan_penbangkang = "No";
+            }
+            if (chkKawasanOperasi.Checked){
+                objPInfoBUS.kawasan_operasi = "Yes";
+            }else{
+                objPInfoBUS.kawasan_operasi = "No";
+            }
             objPInfoBUS.keluasan_kawasan = txtKeluasanKawasan.Text;
             objPInfoBUS.sempadan_kawasan = txtSempadanKawasan.Text;
             objPInfoBUS.kegiatan_ekonomi = txtKegiatanEkonomi.Text;
-            objPInfoBUS.pecahan_kaum = txtPecahanKaum.Text;
-            objPInfoBUS.populasi_penduduk = txtPopulasiPenduduk.Text;
-            objPInfoBUS.purata_umur = txtPurataUmur.Text;
+            objPInfoBUS.pecahan_kaum = txtPecahanKaum.Text;            
+            objPInfoBUS.populasi_penduduk = int.Parse(txtPopulasiPenduduk.Text);
+            objPInfoBUS.purata_umur = int.Parse(txtPurataUmur.Text);
             objPInfoBUS.purata_jantina = txtPurataJantina.Text;
             objPInfoBUS.kemudahan_awam = txtKemudahanAwam.Text;
             objPInfoBUS.taburan_penduduk = txtTaburanPenduduk.Text;

@@ -29,13 +29,13 @@
                                 <div class="panel-body">
                                     <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable3_PreRender" >                                   
                                         <Columns>
-                                            <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="50%"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Jenis Aktiviti" DataField="activity_type"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Jenis Aktiviti" DataField="activity_type" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Butiran Aktiviti" DataField="details"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Parti" DataField="party_name_bm"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Tarikh" DataField="date"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Masa" DataField="time"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Parti" DataField="party_name_bm" ItemStyle-Width="10%"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Masa" DataField="time" ItemStyle-Width="10%"></asp:BoundField>
                                         </Columns>
                                     </asp:GridView>
                                 </div>
