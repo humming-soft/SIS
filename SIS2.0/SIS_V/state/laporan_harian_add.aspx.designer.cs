@@ -67,13 +67,31 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.TextBox txtButiran;
         
         /// <summary>
-        /// hfaktivity control.
+        /// hfkodkawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfaktivity;
+        protected global::System.Web.UI.WebControls.HiddenField hfkodkawasan;
+        
+        /// <summary>
+        /// hfkaktiviti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfkaktiviti;
+        
+        /// <summary>
+        /// hfparti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfparti;
         
         /// <summary>
         /// btnsimpan control.

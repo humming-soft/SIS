@@ -32,6 +32,9 @@
                 $cloned.find('textarea').each(function () {
                     $(this).val('');
                 });
+                $cloned.find('input:hidden').each(function () {
+                    $(this).val('');
+                });
                 $cloned.find('.error').each(function () {
                     if ($(this).is('label')) {
                         $(this).remove();
@@ -345,7 +348,7 @@
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
                                         <asp:HiddenField ID="key" Value="2" runat="server" />
-                                        <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id" onchange="AKK()"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -377,7 +380,9 @@
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
-                            <asp:HiddenField ID="hfaktivity" runat="server" ClientIDMode="Static" />
+                            <asp:HiddenField ID="hfkodkawasan" runat="server" ClientIDMode="Static" />
+                            <asp:HiddenField ID="hfkaktiviti" runat="server" ClientIDMode="Static" />
+                            <asp:HiddenField ID="hfparti" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan_Click" />
                             <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
