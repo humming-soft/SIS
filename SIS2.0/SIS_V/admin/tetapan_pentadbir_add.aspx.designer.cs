@@ -22,6 +22,15 @@ namespace SIS_V.admin {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl log_valid;
         
         /// <summary>
+        /// log_uname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl log_uname;
+        
+        /// <summary>
         /// txt_log_name control.
         /// </summary>
         /// <remarks>
@@ -85,12 +94,12 @@ namespace SIS_V.admin {
         protected global::System.Web.UI.WebControls.Button btn_add;
         
         /// <summary>
-        /// Button2 control.
+        /// btn_cancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btn_cancel;
     }
 }

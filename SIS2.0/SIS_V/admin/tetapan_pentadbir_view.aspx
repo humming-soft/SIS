@@ -3,12 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
+            $(window).on('load', function () {
+                if ($('#hd_validation').val() == "0") {
+                    $('#sis-user-edit-modal').modal('show');
+                }
+                if ($('#hd_password').val() == "0") {
+                    $('#sis-password-change-modal').modal('show');
+                }
+            });
             TableData.init();
             $('.lock').on('click', function () {
                 $('#hd_pass').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
                 $('#sis-password-change-modal').modal('show');
             });
-
             $(".edit").click(function () {
                 $('#txt_log_name').attr("readonly", "readonly");
                 $('#txt_log_name').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
@@ -63,7 +70,17 @@
 
     <div id="sis-password-change-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
+            <asp:HiddenField ID="hd_password" ClientIDMode="Static" runat="server" />
             <div class="modal-content">
+                <div class="alert alert-danger alert-dismissable" id="valid_match" runat="server">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p><b>Passwords do not match</b>!</p>
+                </div>
+                <div class="alert alert-danger alert-dismissable" id="valid_empty" runat="server">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p>Please check , you have some form <b>errors</b>!</p>
+                </div>
+                
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Kemaskini Katalulan</h4>
@@ -76,13 +93,13 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Kata Laluan Baru</label>
-                                <asp:TextBox ID="txt_pass" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_pass" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Pengesahan Kata Laluan</label>
-                                <asp:TextBox ID="txt_con_pass" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_con_pass" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                                 <asp:HiddenField ID="hd_pass" runat="server" ClientIDMode="Static" />
                             </div>
                         </div>
@@ -90,15 +107,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btn_resetpass" CssClass="btn btn-success" runat="server" Text="Kemaskini" OnClick="btn_resetpass_Click" />
-                    <asp:Button ID="Button2" CssClass="btn btn-info waves-light" runat="server" Text="Tutup" />
+                    <asp:Button ID="btn_resetpass" CssClass="btn btn-success" runat="server" Text="Kemaskini" OnClick="btn_resetpass_Click" OnClientClick="fun_passwrdd()"/>
+                    <asp:Button ID="btn_can" CssClass="btn btn-info waves-light" runat="server" Text="Tutup" />
                 </div>
             </div>
         </div>
     </div>
     <!-- /.modal -->
 
-    <div id="sis-user-edit-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div id="sis-user-edit-modal" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -106,8 +123,9 @@
                     <h4 class="modal-title">JPengguna Baru</h4>
                 </div>
                 <div class="modal-body">
+                    <asp:HiddenField ID="hd_validation" ClientIDMode="Static" runat="server" />
                     <div class="row">
-                         <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
+                        <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <p>Please check , you have some form <b>errors</b>!</p>
                         </div>
@@ -165,11 +183,19 @@
 
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static" OnClick="btn_edit_Click1" />
-                    <asp:Button ID="Button4" CssClass="btn btn-info waves-light" runat="server" Text="Batal" />
+                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static" OnClick="btn_edit_Click1" OnClientClick="validate_view()"/>
+                    <asp:Button ID="btn_cancel" CssClass="btn btn-info waves-light" data-dismiss="modal" ClientIDMode="Static" runat="server" Text="Batal"  />
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function validate_view() {
+            View.init();
+        }
+        function fun_passwrdd() {
+            Passwrd.init();
+        }
+    </script>
     <!-- /.modal -->
 </asp:Content>
