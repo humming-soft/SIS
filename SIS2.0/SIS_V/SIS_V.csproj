@@ -279,6 +279,7 @@
     <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="assets\plugins\jquery-validation\dist\jquery.validate_old.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\easypiechart.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" />
     <Content Include="assets\plugins\jvectormap\gdp-data.js" />

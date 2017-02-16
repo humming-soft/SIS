@@ -1,18 +1,30 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="laporan_harian_add.aspx.cs" Inherits="SIS_V.state.laporan_harian_add" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <%--    /***********************************************************   Remove function is reused for every Tab's  ***********************************************************************/--%>
+
+    <%--/***************************************************************   ACTIVITY : START   **********************************************************************************************/--%>
     <script type="text/javascript">
         $(function () {
 
+            datepick();
+
             $('.addToTable').click(function () {
                 $copy = $(this).parent().parent().next();
-                $length = $copy.find('.c-here').length;
+                $length = $(this).parent().parent().parent().find('.c-here').length;
                 $append = $copy;
                 $copy.find('.row_remove').removeClass('hidden');
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    //$(this).removeAttr("id").attr("id", "ContentPlaceHolder1_item_name" + ($length + 1))
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy",
+                        keyboardNavigation: false,
+                        todayHighlight: true, // to highlight today
+                        orientation: "bottom",
+                        autoclose: true
+                    });
                 });
                 $cloned.find('select').each(function () {
                     $(this).val('');
@@ -20,12 +32,20 @@
                 $cloned.find('textarea').each(function () {
                     $(this).val('');
                 });
-
-                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_item_date" + ($length + 1));
-                $cloned.find('.item_activity').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlAktiviti" + ($length + 1));
-                $cloned.find('.item_parti').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlparti" + ($length + 1));
-                $cloned.find('.item_kodkawasan').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan" + ($length + 1));
-                $cloned.find('.item_butiran').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiran" + ($length + 1));
+                $cloned.find('.error').each(function () {
+                    if ($(this).is('label')) {
+                        $(this).remove();
+                    } else {
+                        $(this).removeAttr('aria-invalid');
+                        $(this).removeAttr('aria-required');
+                        $(this).removeClass('error');
+                    }
+                });
+                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_item_date" + ($length));
+                $cloned.find('.item_activity').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlAktiviti" + ($length));
+                $cloned.find('.item_parti').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlparti" + ($length));
+                $cloned.find('.item_kodkawasan').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan" + ($length));
+                $cloned.find('.item_butiran').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiran" + ($length));
 
                 $copy.removeClass('active');
                 $cloned.insertBefore($append);
@@ -48,16 +68,227 @@
             });
         });
     </script>
+
+    <%--/***************************************************************   ACTIVITY : END   **********************************************************************************************/--%>
+
+    <%--/***************************************************************   ISSUE : START   **********************************************************************************************/--%>
+    <script type="text/javascript">
+        $(function () {
+            $('.addToTable1').click(function () {
+                $copy = $(this).parent().parent().next();
+                $length = $(this).parent().parent().parent().find('.c-here').length;
+                $append = $copy;
+                $copy.find('.row_remove').removeClass('hidden');
+                $cloned = $copy.clone();
+                $cloned.find('input:text').each(function () {
+                    $(this).val('');
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy",
+                        keyboardNavigation: false,
+                        todayHighlight: true, // to highlight today
+                        orientation: "bottom",
+                        autoclose: true
+                    });
+                });
+                $cloned.find('select').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('textarea').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('.error').each(function () {
+                    if ($(this).is('label')) {
+                        $(this).remove();
+                    } else {
+                        $(this).removeAttr('aria-invalid');
+                        $(this).removeAttr('aria-required');
+                        $(this).removeClass('error');
+                    }
+                });
+                $cloned.find('.item_kod_kawasan').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKod_Kawasan" + ($length));
+                $cloned.find('.item_KategoriIsu').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKategoriIsu" + ($length));
+                $cloned.find('.item_SumberIsu').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlSumberIsu" + ($length));
+                $cloned.find('.item_Parti1').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlParti1" + ($length));
+                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh" + ($length));
+                $cloned.find('.item_Butiran_Isu').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiran_Isu" + ($length));
+                $copy.removeClass('active');
+                $cloned.insertBefore($append);
+            });
+        });
+    </script>
+
+    <%--/********************************************************************   ISSUE : END   *****************************************************************************************/--%>
+
+
+    <%--/********************************************************************   JANJI : START   *****************************************************************************************/--%>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.addToTable2').click(function () {
+                $copy = $(this).parent().parent().next();
+                $length = $(this).parent().parent().parent().find('.c-here').length;
+                $append = $copy;
+                $copy.find('.row_remove').removeClass('hidden');
+                $cloned = $copy.clone();
+                $cloned.find('input:text').each(function () {
+                    $(this).val('');
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy",
+                        keyboardNavigation: false,
+                        todayHighlight: true, // to highlight today
+                        orientation: "bottom",
+                        autoclose: true
+                    });
+                });
+                $cloned.find('select').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('textarea').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('.error').each(function () {
+                    if ($(this).is('label')) {
+                        $(this).remove();
+                    } else {
+                        $(this).removeAttr('aria-invalid');
+                        $(this).removeAttr('aria-required');
+                        $(this).removeClass('error');
+                    }
+                });
+                $cloned.find('.item_kod_kawasan1').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan1" + ($length));
+                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh1" + ($length));
+                $cloned.find('.item_janji').removeAttr("id").attr("id", "ContentPlaceHolder1_txtjanji" + ($length));
+                $cloned.find('.item_NamaTokoh').removeAttr("id").attr("id", "ContentPlaceHolder1_txtNamaTokoh" + ($length));
+                $copy.removeClass('active');
+                $cloned.insertBefore($append);
+            });
+        });
+    </script>
+
+    <%--/********************************************************************   JANJI : END   *****************************************************************************************/--%>
+
+    <%--/********************************************************************   INSIDEN : START   *****************************************************************************************/--%>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.addToTable3').click(function () {
+                $copy = $(this).parent().parent().next();
+                $length = $(this).parent().parent().parent().find('.c-here').length;
+                $append = $copy;
+                $copy.find('.row_remove').removeClass('hidden');
+                $cloned = $copy.clone();
+                $cloned.find('input:text').each(function () {
+                    $(this).val('');
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy",
+                        keyboardNavigation: false,
+                        todayHighlight: true, // to highlight today
+                        orientation: "bottom",
+                        autoclose: true
+                    });
+                });
+                $cloned.find('select').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('textarea').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('.error').each(function () {
+                    if ($(this).is('label')) {
+                        $(this).remove();
+                    } else {
+                        $(this).removeAttr('aria-invalid');
+                        $(this).removeAttr('aria-required');
+                        $(this).removeClass('error');
+                    }
+                });
+                $cloned.find('.item_kod_kawasan2').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan2" + ($length));
+                $cloned.find('.item_parti2').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlParti2" + ($length));
+                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh2" + ($length));
+                $cloned.find('.item_ButiranInsiden').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiranInsiden" + ($length));
+                $copy.removeClass('active');
+                $cloned.insertBefore($append);
+            });
+        });
+    </script>
+
+    <%--/********************************************************************   INSIDEN : END   *****************************************************************************************/--%>
+
+
+    <%--/********************************************************************   KAWASAN : START   *****************************************************************************************/--%>
+
+        <script type="text/javascript">
+            $(function () {
+                $('.addToTable4').click(function () {
+                    $copy = $(this).parent().parent().next();
+                    $length = $(this).parent().parent().parent().find('.c-here').length;
+                    $append = $copy;
+                    $copy.find('.row_remove').removeClass('hidden');
+                    $cloned = $copy.clone();
+                    $cloned.find('input:text').each(function () {
+                        $(this).val('');
+                        $(this).datepicker({
+                            format: "dd/mm/yyyy",
+                            keyboardNavigation: false,
+                            todayHighlight: true, // to highlight today
+                            orientation: "bottom",
+                            autoclose: true
+                        });
+                    });
+                    $cloned.find('select').each(function () {
+                        $(this).val('');
+                    });
+                    $cloned.find('textarea').each(function () {
+                        $(this).val('');
+                    });
+                    $cloned.find('.error').each(function () {
+                        if ($(this).is('label')) {
+                            $(this).remove();
+                        } else {
+                            $(this).removeAttr('aria-invalid');
+                            $(this).removeAttr('aria-required');
+                            $(this).removeClass('error');
+                        }
+                    });
+                    $cloned.find('.item_kod_kawasan3').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan3" + ($length));
+                    $cloned.find('.item_status').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlstatus" + ($length));
+                    $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh3" + ($length));
+                    $cloned.find('.item_Wujud').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlWujud" + ($length));
+                    $cloned.find('.item_Justifikasi').removeAttr("id").attr("id", "ContentPlaceHolder1_txtJustifikasi" + ($length));
+                    $copy.removeClass('active');
+                    $cloned.insertBefore($append);
+                });
+            });
+    </script>
+    <%--/********************************************************************   KAWASAN : END   *****************************************************************************************/--%>
+
     <script type="text/javascript">
         function vali() {
+            //alert('test');
             var chk;
             chk = $('.lamporan_act').length;
-            //alert(chk);
             //setting the value for hiddenfield
             $('#hfaktivity').val(chk);
             laporan_harian_add_activity.init();
         }
     </script>
+    <script type="text/javascript">
+
+        function datepick() {
+            var date = new Date();
+            var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+            $('.item_date').datepicker({
+                format: "dd/mm/yyyy",
+                keyboardNavigation: false,
+                todayHighlight: true, // to highlight today
+                orientation: "bottom",
+                autoclose: true
+            });
+        }
+
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Start row -->
@@ -113,19 +344,20 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server"></asp:DropDownList>
+                                        <asp:HiddenField ID="key" Value="2" runat="server" />
+                                        <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Jenis Aktiviti</label>
-                                        <asp:DropDownList ID="ddlAktiviti" CssClass="form-control item_activity" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlAktiviti" CssClass="form-control item_activity" runat="server" DataTextField="ad" DataValueField="aid"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:DropDownList ID="ddlparti" CssClass="form-control item_parti" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlparti" CssClass="form-control item_parti" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -150,31 +382,43 @@
                             <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
                     </div>
-<%--                    <div class="tab-pane" id="profile1">
+                    <div class="tab-pane" id="profile1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable"><i class="fa fa-plus"></i>Add Baru Aktiviti</button>
+                                <button type="button" class="btn btn-success pull-right addToTable1"><i class="fa fa-plus"></i>Add Baru Isu</button>
                             </div>
                         </div>
-                        <div class="c-here active">
+                        <div class="c-here active lamporan_isu">
                             <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row pre_here">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:DropDownList ID="ddlKod_Kawasan" CssClass="form-control item_kod_kawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Nama Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kategori Isu</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Sumber Isu</label>
+                                        <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Parti</label>
+                                        <asp:DropDownList ID="ddlParti1" CssClass="form-control item_Parti1" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Tarikh</label>
+                                        <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control item_date"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -183,66 +427,37 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Butiran Isu</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:TextBox ID="txtButiran_Isu" runat="server" TextMode="MultiLine" CssClass="form-control item_Butiran_Isu"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Sumber Isu</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Parti</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Tarikh</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Masa</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit">
-                                Simpan
-                            </button>
-                            <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
-                                Batal
-                            </button>
+                            <asp:HiddenField ID="hfisu" runat="server" ClientIDMode="Static" />
+                            <asp:Button ID="btnsimpan1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" />
+                            <asp:Button ID="btnbatal1" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
                     </div>
                     <div class="tab-pane" id="messages1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable"><i class="fa fa-plus"></i>Add Baru Aktiviti</button>
+                                <button type="button" class="btn btn-success pull-right addToTable2"><i class="fa fa-plus"></i>Add Baru Janji</button>
                             </div>
                         </div>
-                        <div class="c-here active">
+                        <div class="c-here active lamporan_janji">
                             <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:DropDownList ID="ddlKodKawasan1" CssClass="form-control item_kod_kawasan1" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Nama Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <label for="userName">Tarikh</label>
+                                        <asp:TextBox ID="txtTarikh1" runat="server" CssClass="form-control item_date"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -251,60 +466,49 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Janji yg Diberi</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:TextBox ID="txtjanji" runat="server" TextMode="MultiLine" CssClass="form-control item_janji"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Nama Tokoh</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Tarikh</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Masa</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:TextBox ID="txtNamaTokoh" runat="server" TextMode="MultiLine" CssClass="form-control item_NamaTokoh"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit">
-                                Simpan
-                            </button>
-                            <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
-                                Batal
-                            </button>
+                            <asp:HiddenField ID="hfjanji" runat="server" ClientIDMode="Static" />
+                            <asp:Button ID="btnsimpan2" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" />
+                            <asp:Button ID="btnbatal2" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
                     </div>
                     <div class="tab-pane" id="settings1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable"><i class="fa fa-plus"></i>Add Baru Aktiviti</button>
+                                <button type="button" class="btn btn-success pull-right addToTable3"><i class="fa fa-plus"></i>Add Baru Insiden</button>
                             </div>
                         </div>
                         <div class="c-here active">
                             <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:DropDownList ID="ddlKodKawasan2" CssClass="form-control item_kod_kawasan2" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Nama Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <label for="userName">Parti</label>
+                                        <asp:DropDownList ID="ddlParti2" CssClass="form-control item_parti2" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Tarikh</label>
+                                        <asp:TextBox ID="txtTarikh2" runat="server" CssClass="form-control item_date"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -313,106 +517,69 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Butiran Insiden</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:TextBox ID="txtButiranInsiden" runat="server" TextMode="MultiLine" CssClass="form-control item_ButiranInsiden"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Parti</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Tarikh</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Masa</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit">
-                                Simpan
-                            </button>
-                            <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
-                                Batal
-                            </button>
+                            <asp:HiddenField ID="hfinsiden" runat="server" ClientIDMode="Static" />
+                            <asp:Button ID="btnsimpan3" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" />
+                            <asp:Button ID="btnbatal3" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
                     </div>
                     <div class="tab-pane" id="settings2">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable"><i class="fa fa-plus"></i>Add Baru Aktiviti</button>
+                                <button type="button" class="btn btn-success pull-right addToTable4"><i class="fa fa-plus"></i>Add Baru Status Kawasan</button>
                             </div>
                         </div>
                         <div class="c-here active">
                             <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:DropDownList ID="ddlKodKawasan3" CssClass="form-control item_kod_kawasan3" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Nama Kawasan</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <label for="userName">Status</label>
+                                        <asp:DropDownList ID="ddlstatus" CssClass="form-control item_status" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Tarikh</label>
+                                        <asp:TextBox ID="txtTarikh3" runat="server" CssClass="form-control item_date"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Data Wujud (Ya/Tidak)</label>
+                                        <asp:DropDownList ID="ddlWujud" CssClass="form-control item_Wujud" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Status</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Justifikasi/Kaveat</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Tarikh</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="userName">Data Wujud (Ya/Tidak)</label>
-                                        <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="date">
+                                        <asp:TextBox ID="txtJustifikasi" runat="server" TextMode="MultiLine" CssClass="form-control item_Justifikasi"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
-                            <button class="btn btn-primary waves-effect waves-light" type="submit">
-                                Simpan
-                            </button>
-                            <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
-                                Batal
-                            </button>
+                            <asp:HiddenField ID="hfkawasan" runat="server" ClientIDMode="Static" />
+                            <asp:Button ID="btnsimpan4" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" />
+                            <asp:Button ID="btnbatal4" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
-                    </div>--%>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end row -->
+        <!-- end row -->
 </asp:Content>

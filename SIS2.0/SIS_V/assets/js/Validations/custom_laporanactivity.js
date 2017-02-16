@@ -40,6 +40,63 @@ var laporan_harian_add_activity = function () {
                 },
                 ctl00$ContentPlaceHolder1$txtButiran: {
                     required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlKod_Kawasan: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlKategoriIsu: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlSumberIsu: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlParti1: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtTarikh: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtButiran_Isu: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlKodKawasan1: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtTarikh1: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtjanji: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtNamaTokoh: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlKodKawasan2: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlParti2: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtTarikh2: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtButiranInsiden: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlKodKawasan3: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlstatus: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtTarikh3: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlWujud: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtJustifikasi: {
+                    required: true
                 }
             },
             submitHandler: function (form) {

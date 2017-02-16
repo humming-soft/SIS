@@ -43,5 +43,20 @@ namespace SIS_B
         {
             return data1.fill_kawasan();
         }
+
+        public DataTable fill_kodkawasan()
+        {
+            return data1.fill_kodkawasan();
+        }
+
+        public DataTable fill_jenis()
+        {
+            return data1.fill_jenis();
+        }
+
+        public DataTable fill_parti()
+        {
+            return data1.fill_parti();
+        }
     }
 }
