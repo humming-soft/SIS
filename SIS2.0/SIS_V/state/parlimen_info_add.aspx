@@ -1,6 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="parlimen_info_add.aspx.cs" Inherits="SIS_V.state.parlimen_info_add" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function validation() {
+            Parliment_Info.init();
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -117,10 +122,10 @@
                         </div>
                     </div>
                     <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="btnUpdate" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="btnUpdate_Click" />
+                        <asp:Button ID="btnUpdate" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan"  OnClientClick="validation()" OnClick="btnUpdate_Click" />
                         <asp:Button ID="Button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
-                    </div>
+                    </div> 
             </div>
         </div>
-    </div>
+    </div> 
 </asp:Content>

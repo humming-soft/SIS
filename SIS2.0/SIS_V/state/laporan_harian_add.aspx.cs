@@ -21,13 +21,16 @@ namespace SIS_V.state
                 fill_kodkawasan();
                 fill_jenis();
                 fill_parti();
-
+                txtdate.Attributes.Add("readonly", "readonly");
+                txtTarikh.Attributes.Add("readonly", "readonly");
+                txtTarikh1.Attributes.Add("readonly", "readonly");
+                txtTarikh2.Attributes.Add("readonly", "readonly");
             }
         }
 
         public void fill_kodkawasan()
         {
-            //dt = objAktivitiBUS.fill_kodkawasan();
+            dt = objAktivitiBUS.fill_kodkawasan();
             ddlKodKawasan.DataSource = dt;
             ddlKodKawasan.DataBind();
             ddlKodKawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
@@ -35,16 +38,16 @@ namespace SIS_V.state
 
         public void fill_jenis()
         {
-            //dt1 = objAktivitiBUS.fill_jenis();
-            ddlAktiviti.DataSource = dt;
+            dt1 = objAktivitiBUS.fill_jenis();
+            ddlAktiviti.DataSource = dt1;
             ddlAktiviti.DataBind();
             ddlAktiviti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
         }
 
         public void fill_parti()
         {
-            //dt2 = objAktivitiBUS.fill_parti();
-            ddlparti.DataSource = dt;
+            dt2 = objAktivitiBUS.fill_parti();
+            ddlparti.DataSource = dt2;
             ddlparti.DataBind();
             ddlparti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
         }
@@ -52,6 +55,10 @@ namespace SIS_V.state
         protected void btnsimpan_Click(object sender, EventArgs e)
         {
             string a = hfaktivity.Value;
+            int counter = int.Parse(a);
+            string aaaa = key.Value;
+            string ddl = ddlKodKawasan.SelectedItem.Text.ToString();
+            string item = txtdate.Text;
 
         }
 

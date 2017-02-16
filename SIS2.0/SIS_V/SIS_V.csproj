@@ -187,6 +187,7 @@
     <Content Include="assets\js\modernizr.min.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
+    <Content Include="assets\js\Validations\parliment_info.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_view.js" />
     <Content Include="assets\js\waves.js" />
@@ -280,6 +281,7 @@
     <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="assets\plugins\jquery-validation\dist\jquery.validate_old.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\easypiechart.min.js" />
     <Content Include="assets\plugins\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" />
     <Content Include="assets\plugins\jvectormap\gdp-data.js" />

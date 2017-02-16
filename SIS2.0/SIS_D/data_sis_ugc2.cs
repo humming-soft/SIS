@@ -146,7 +146,7 @@ namespace SIS_D
             }
         }
 
-        public int UpdatePInfoDetails(int area_id, string p_kod_kawasan, string p_nama_kawasan, string bil, string kawasan_tumpuan, string kawasan_tumpuan_penbangkang, string kawasan_operasi, string keluasan_kawasan, string sempadan_kawasan, string kegiatan_ekonomi, string pecahan_kaum, string populasi_penduduk, string purata_umur, string purata_jantina, string kemudahan_awam, string taburan_penduduk, string komposisi_etnik, string kedar_pertumbuhan_penduduk)
+        public int UpdatePInfoDetails(int area_id, string p_kod_kawasan, string p_nama_kawasan, int bil, string kawasan_tumpuan, string kawasan_tumpuan_penbangkang, string kawasan_operasi, string keluasan_kawasan, string sempadan_kawasan, string kegiatan_ekonomi, string pecahan_kaum, int populasi_penduduk, int purata_umur, string purata_jantina, string kemudahan_awam, string taburan_penduduk, string komposisi_etnik, string kedar_pertumbuhan_penduduk)
         {
             try
             {

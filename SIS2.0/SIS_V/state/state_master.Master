@@ -38,9 +38,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Datepicker -->
+    <link href="../assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
 
     <%--<link href="../assets/plugins/media/css/DT_bootstrap.css" rel="stylesheet" />--%>
-
+    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
@@ -394,15 +397,17 @@
     <script src="assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
 
+    <!-- Datepicker -->
+    <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
     <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
     <script src="../assets/plugins/moment/moment.js"></script>
 
-    <!-- Jquery Validation -->
+    <!-- Jquery Custom Validation -->
     <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
-
     <script src="../assets/js/Validations/custom_laporanactivity.js"></script>
+    <script src="../assets/js/Validations/parliment_info.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
