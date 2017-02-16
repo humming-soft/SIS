@@ -41,7 +41,7 @@ var laporan_harian_add_activity = function () {
                 ctl00$ContentPlaceHolder1$txtButiran: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlKod_Kawasan: {
+                ctl00$ContentPlaceHolder1$ddlKod_KawasanI: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$ddlKategoriIsu: {
@@ -50,7 +50,7 @@ var laporan_harian_add_activity = function () {
                 ctl00$ContentPlaceHolder1$ddlSumberIsu: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlParti1: {
+                ctl00$ContentPlaceHolder1$ddlPartiI: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txtTarikh: {

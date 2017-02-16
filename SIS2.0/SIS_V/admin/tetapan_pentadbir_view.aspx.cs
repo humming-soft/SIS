@@ -22,6 +22,8 @@ namespace SIS_V.admin
                 fill_role();
                 fill_DataTable_user();
                 log_valid.Visible = false;
+                valid_empty.Visible = false;
+                valid_match.Visible = false;
             }
         }
         public void fill_DataTable_user()
@@ -74,33 +76,12 @@ namespace SIS_V.admin
             if (txt_log_name.Text.Trim() == "" || txt_user_name.Text.Trim() == "" || txt_ic_number.Text.Trim() == "" || txt_position.Text.Trim() == "" ||
                  drop_role.SelectedValue.ToString() == "" || drop_state.SelectedValue.ToString() == "")
             {
-                if (txt_log_name.Text.Trim() == "")
-                {
-                    log_valid.Visible = true;
-                }
-                if (txt_user_name.Text.Trim() == "")
-                {
-                    log_valid.Visible = true;
-                }
-                if (txt_ic_number.Text.Trim() == "")
-                {
-                    log_valid.Visible = true;
-                }
-                if (txt_position.Text.Trim() == "")
-                {
-                    log_valid.Visible = true;
-                }
-                if (drop_role.SelectedValue.ToString() == "")
-                {
-                    log_valid.Visible = true;
-                }
-                if (drop_state.SelectedValue.ToString() == "")
-                {
-                    log_valid.Visible = true;
-                }
+                log_valid.Visible = true;
+                hd_validation.Value = "0";
             }
             else
             {
+                hd_validation.Value = "1";
                 bus.log_name = txt_log_name.Text.Trim();
                 bus.name = txt_user_name.Text.Trim();
                 bus.icnumber = txt_ic_number.Text.Trim();
@@ -117,18 +98,34 @@ namespace SIS_V.admin
 
         protected void btn_resetpass_Click(object sender, EventArgs e)
         {
-            string pass = txt_pass.Text.Trim();
-            string con_pass = txt_con_pass.Text.Trim();
-            if (pass == con_pass)
+            if (txt_pass.Text.Trim() == "" || txt_con_pass.Text.Trim() == "")
             {
-              hashed = encrypt.Encrypt(txt_con_pass.Text);
-              bus.pass = hashed;
-              bus.log_name = hd_pass.Value.Trim().ToString();
-              int r = bus.update_password();
-              if (r == 0)
-              {
-                  Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
-              }
+                valid_empty.Visible = true;
+                valid_match.Visible = false;
+                hd_password.Value = "0";
+            }
+            else
+            {
+                string pass = txt_pass.Text.Trim();
+                string con_pass = txt_con_pass.Text.Trim();
+                if (pass == con_pass)
+                {
+                    hashed = encrypt.Encrypt(txt_con_pass.Text);
+                    bus.pass = hashed;
+                    bus.log_name = hd_pass.Value.Trim().ToString();
+                    int r = bus.update_password();
+                    if (r == 0)
+                    {
+                        Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                        hd_password.Value = "1";
+                    }
+                }
+                else
+                {
+                    valid_match.Visible = true;
+                    valid_empty.Visible = false;
+                    hd_password.Value = "0";
+                }
             }
         }
     }

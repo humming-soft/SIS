@@ -32,6 +32,9 @@
                 $cloned.find('textarea').each(function () {
                     $(this).val('');
                 });
+                //$cloned.find('input:hidden').each(function () {
+                //    $(this).val('');
+                //});
                 $cloned.find('.error').each(function () {
                     if ($(this).is('label')) {
                         $(this).remove();
@@ -105,11 +108,11 @@
                         $(this).removeClass('error');
                     }
                 });
-                $cloned.find('.item_kod_kawasan').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKod_Kawasan" + ($length));
+                $cloned.find('.item_kod_kawasanI').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKod_KawasanI" + ($length));
                 $cloned.find('.item_KategoriIsu').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKategoriIsu" + ($length));
                 $cloned.find('.item_SumberIsu').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlSumberIsu" + ($length));
-                $cloned.find('.item_Parti1').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlParti1" + ($length));
-                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh" + ($length));
+                $cloned.find('.item_PartiI').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlPartiI" + ($length));
+                $cloned.find('.item_dateI').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikhI" + ($length));
                 $cloned.find('.item_Butiran_Isu').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiran_Isu" + ($length));
                 $copy.removeClass('active');
                 $cloned.insertBefore($append);
@@ -217,58 +220,58 @@
 
     <%--/********************************************************************   KAWASAN : START   *****************************************************************************************/--%>
 
-        <script type="text/javascript">
-            $(function () {
-                $('.addToTable4').click(function () {
-                    $copy = $(this).parent().parent().next();
-                    $length = $(this).parent().parent().parent().find('.c-here').length;
-                    $append = $copy;
-                    $copy.find('.row_remove').removeClass('hidden');
-                    $cloned = $copy.clone();
-                    $cloned.find('input:text').each(function () {
-                        $(this).val('');
-                        $(this).datepicker({
-                            format: "dd/mm/yyyy",
-                            keyboardNavigation: false,
-                            todayHighlight: true, // to highlight today
-                            orientation: "bottom",
-                            autoclose: true
-                        });
+    <script type="text/javascript">
+        $(function () {
+            $('.addToTable4').click(function () {
+                $copy = $(this).parent().parent().next();
+                $length = $(this).parent().parent().parent().find('.c-here').length;
+                $append = $copy;
+                $copy.find('.row_remove').removeClass('hidden');
+                $cloned = $copy.clone();
+                $cloned.find('input:text').each(function () {
+                    $(this).val('');
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy",
+                        keyboardNavigation: false,
+                        todayHighlight: true, // to highlight today
+                        orientation: "bottom",
+                        autoclose: true
                     });
-                    $cloned.find('select').each(function () {
-                        $(this).val('');
-                    });
-                    $cloned.find('textarea').each(function () {
-                        $(this).val('');
-                    });
-                    $cloned.find('.error').each(function () {
-                        if ($(this).is('label')) {
-                            $(this).remove();
-                        } else {
-                            $(this).removeAttr('aria-invalid');
-                            $(this).removeAttr('aria-required');
-                            $(this).removeClass('error');
-                        }
-                    });
-                    $cloned.find('.item_kod_kawasan3').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan3" + ($length));
-                    $cloned.find('.item_status').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlstatus" + ($length));
-                    $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh3" + ($length));
-                    $cloned.find('.item_Wujud').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlWujud" + ($length));
-                    $cloned.find('.item_Justifikasi').removeAttr("id").attr("id", "ContentPlaceHolder1_txtJustifikasi" + ($length));
-                    $copy.removeClass('active');
-                    $cloned.insertBefore($append);
                 });
+                $cloned.find('select').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('textarea').each(function () {
+                    $(this).val('');
+                });
+                $cloned.find('.error').each(function () {
+                    if ($(this).is('label')) {
+                        $(this).remove();
+                    } else {
+                        $(this).removeAttr('aria-invalid');
+                        $(this).removeAttr('aria-required');
+                        $(this).removeClass('error');
+                    }
+                });
+                $cloned.find('.item_kod_kawasan3').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan3" + ($length));
+                $cloned.find('.item_status').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlstatus" + ($length));
+                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh3" + ($length));
+                $cloned.find('.item_Wujud').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlWujud" + ($length));
+                $cloned.find('.item_Justifikasi').removeAttr("id").attr("id", "ContentPlaceHolder1_txtJustifikasi" + ($length));
+                $copy.removeClass('active');
+                $cloned.insertBefore($append);
             });
+        });
     </script>
     <%--/********************************************************************   KAWASAN : END   *****************************************************************************************/--%>
 
     <script type="text/javascript">
         function vali() {
-            //alert('test');
-            var chk;
             chk = $('.lamporan_act').length;
+            chk1 = $('.lamporan_isu').length;
             //setting the value for hiddenfield
-            $('#hfaktivity').val(chk);
+            $('#hfkaktivitiM').val(chk);
+            $('#hfisu').val(chk1);
             laporan_harian_add_activity.init();
         }
     </script>
@@ -285,8 +288,51 @@
                 orientation: "bottom",
                 autoclose: true
             });
+
+            $('.item_dateI').datepicker({
+                format: "dd/mm/yyyy",
+                keyboardNavigation: false,
+                todayHighlight: true, // to highlight today
+                orientation: "bottom",
+                autoclose: true
+            });
         }
 
+    </script>
+    <script type="text/javascript">
+
+        // Setting the hidden field values 
+
+        //ACTIVITY
+
+        $(document).on("change", ".item_kodkawasan", function () {
+            $(this).next().val($(this).val());
+        });
+
+        $(document).on("change", ".item_activity", function () {
+            $(this).next().val($(this).val());
+        });
+
+        $(document).on("change", ".item_parti", function () {
+            $(this).next().val($(this).val());
+        });
+
+        //ISSUE
+
+        $(document).on("change", ".item_kod_kawasanI", function () {
+            $(this).next().val($(this).val());
+        });
+
+        $(document).on("change", ".item_KategoriIsu", function () {
+            $(this).next().val($(this).val());
+        });
+
+        $(document).on("change", ".item_SumberIsu", function () {
+            $(this).next().val($(this).val());
+        });
+        $(document).on("change", ".item_PartiI", function () {
+            $(this).next().val($(this).val());
+        });
     </script>
 
 </asp:Content>
@@ -297,6 +343,16 @@
         <p class="text-muted m-b-25 font-13">
             Description here (if any).
         </p>
+        <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+            </div>
+            <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <asp:Label ID="lblsuccess" runat="server"></asp:Label>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <ul class="nav nav-tabs navtab-custom nav-justified">
@@ -346,18 +402,21 @@
                                         <label for="userName">Kod Kawasan</label>
                                         <asp:HiddenField ID="key" Value="2" runat="server" />
                                         <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="hfkodkawasan" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Jenis Aktiviti</label>
                                         <asp:DropDownList ID="ddlAktiviti" CssClass="form-control item_activity" runat="server" DataTextField="ad" DataValueField="aid"></asp:DropDownList>
+                                        <asp:HiddenField ID="hfkaktiviti" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
                                         <asp:DropDownList ID="ddlparti" CssClass="form-control item_parti" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="hfparti" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -377,7 +436,7 @@
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
-                            <asp:HiddenField ID="hfaktivity" runat="server" ClientIDMode="Static" />
+                            <asp:HiddenField ID="hfkaktivitiM" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan_Click" />
                             <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
@@ -394,31 +453,35 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:DropDownList ID="ddlKod_Kawasan" CssClass="form-control item_kod_kawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlKod_KawasanI" CssClass="form-control item_kod_kawasanI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="kod_kawasanI" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kategori Isu</label>
-                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="current_issue_name" DataValueField="current_issue_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="KategoriIsu" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Sumber Isu</label>
-                                        <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="SumberIsu" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:DropDownList ID="ddlParti1" CssClass="form-control item_Parti1" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlPartiI" CssClass="form-control item_PartiI" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="PartiI" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Tarikh</label>
-                                        <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control item_date"></asp:TextBox>
+                                        <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control item_dateI"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -435,7 +498,7 @@
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfisu" runat="server" ClientIDMode="Static" />
-                            <asp:Button ID="btnsimpan1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" />
+                            <asp:Button ID="btnsimpan1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan1_Click" />
                             <asp:Button ID="btnbatal1" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
                     </div>
@@ -582,4 +645,5 @@
             </div>
         </div>
         <!-- end row -->
+    </div>
 </asp:Content>

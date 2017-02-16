@@ -18,6 +18,7 @@ namespace SIS_V.admin
             if (!IsPostBack)
             {
                 log_valid.Visible = false;
+                log_uname.Visible = false;
                 fill_state();
                 fill_role();
             }
@@ -55,42 +56,36 @@ namespace SIS_V.admin
             if (txt_log_name.Text.Trim() == "" || txt_user_name.Text.Trim() == "" || txt_ic_number.Text.Trim() == "" || txt_position.Text.Trim() == "" ||
                drop_role.SelectedValue.ToString() == "" || drop_state.SelectedValue.ToString() == "")
             {
-            if (txt_log_name.Text.Trim()=="")
-            {
                 log_valid.Visible = true;
             }
-            if (txt_user_name.Text.Trim() == "")
+            else
             {
-                log_valid.Visible = true;
+                bus.log_name = txt_log_name.Text.Trim();
+                bus.name = txt_user_name.Text.Trim();
+                bus.icnumber = txt_ic_number.Text.Trim();
+                bus.position = txt_position.Text.Trim();
+                bus.role = int.Parse(drop_role.SelectedValue.ToString());
+                bus.state = int.Parse(drop_state.SelectedValue.ToString());
+                int r = bus.insert_user();
+                if (r == 0)
+                {
+                    Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                }
+                if (r == -1)
+                {
+                    log_uname.Visible = true;
+                }
             }
-            if (txt_ic_number.Text.Trim() == "")
-            {
-                log_valid.Visible = true;
-            }
-            if (txt_position.Text.Trim() == "")
-            {
-                log_valid.Visible = true;
-            }
-            if (drop_role.SelectedValue.ToString() == "")
-            {
-                log_valid.Visible = true;
-            }
-            if (drop_state.SelectedValue.ToString() == "")
-            {
-                log_valid.Visible = true;
-            }
-            }else{
-            bus.log_name = txt_log_name.Text.Trim();
-            bus.name = txt_user_name.Text.Trim();
-            bus.icnumber = txt_ic_number.Text.Trim();
-            bus.position = txt_position.Text.Trim();
-            bus.role = int.Parse(drop_role.SelectedValue.ToString());
-            bus.state = int.Parse(drop_state.SelectedValue.ToString());
-            int r = bus.insert_user();
-            if(r==0){
-                Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
-            }
-            }
+        }
+
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+           txt_log_name.Text="";
+           txt_user_name.Text="";
+           txt_ic_number.Text= "" ;
+           txt_position.Text= "" ;
+           fill_state();
+           fill_role();
         }
 
     }

@@ -22,6 +22,33 @@ namespace SIS_V.admin {
         protected global::System.Web.UI.WebControls.GridView grid_user;
         
         /// <summary>
+        /// hd_password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hd_password;
+        
+        /// <summary>
+        /// valid_match control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid_match;
+        
+        /// <summary>
+        /// valid_empty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid_empty;
+        
+        /// <summary>
         /// txt_pass control.
         /// </summary>
         /// <remarks>
@@ -58,13 +85,22 @@ namespace SIS_V.admin {
         protected global::System.Web.UI.WebControls.Button btn_resetpass;
         
         /// <summary>
-        /// Button2 control.
+        /// btn_can control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btn_can;
+        
+        /// <summary>
+        /// hd_validation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hd_validation;
         
         /// <summary>
         /// log_valid control.
@@ -139,12 +175,12 @@ namespace SIS_V.admin {
         protected global::System.Web.UI.WebControls.Button btn_edit;
         
         /// <summary>
-        /// Button4 control.
+        /// btn_cancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button btn_cancel;
     }
 }
