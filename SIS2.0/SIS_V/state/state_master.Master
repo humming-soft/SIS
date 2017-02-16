@@ -58,6 +58,21 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    	<div class="splash"> 
+<!-- 			<div class="color-line"></div> -->
+			<div class="splash-title">
+<!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
+<!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
+				<div class="spinner"> 
+					<div class="rect1"></div> 
+					<div class="rect2"></div> 
+					<div class="rect3"></div> 
+					<div class="rect4"></div> 
+					<div class="rect5"></div> 
+				</div> 
+				<h4>Loading..</h4> 
+			</div> 
+		</div>
     <!-- Navigation Bar-->
     <header id="topnav">
         <div class="topbar-main">
@@ -118,43 +133,43 @@
                         <li class="has-submenu" id="dash" runat="server">
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
-                                <li><a href="utama.aspx">Dashboard Utama</a></li>
-                                <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
-                                <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
-                                <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
+                                <li><a href="utama.aspx"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
+                                <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i> Winnable Candidate</a></li>
+                                <li><a href="percentage_voters.aspx"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="prapiliha" runat="server">
-                            <a href="#"><i class="md md-invert-colors-on"></i>Pra-Pilihanraya</a>
+                            <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
+                                    <a href="activiti_bakal_ci_view.aspx"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
-                                    <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
+                                    <a href="activiti_parti_view.aspx"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
+                                <li><a href="laporan_harian_add.aspx"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
-                            <a href="#"><i class="md md-class"></i>Pilihanraya</a>
+                            <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
+                                <li><a href="keluar_mengundi.aspx"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
-                            <a href="analisis_kawasan_view.aspx"><i class="md md-pages"></i>Analisis Kawasan</a>
+                            <a href="analisis_kawasan_view.aspx"><i class="md md-place"></i> Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="tetapan" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Tetapan</a>
+                            <a href="#"><i class="md md-settings"></i> Tetapan</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="parlimen_info_view.aspx">Parlimen Info</a>
+                                    <a href="parlimen_info_view.aspx"><i class="md md-info"></i> Parlimen Info</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="teta" runat="server">
-                            <a href="tetapan_pentadbir_view.aspx"><i class="fa fa-user-plus"></i>Tetapan Pentadbir</a>
+                            <a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i>Tetapan Pentadbir</a>
                         </li>
                     </ul>
                     <!-- End navigation menu -->
@@ -346,7 +361,7 @@
 
     <!-- jQuery  -->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <%--<script src="../assets/js/bootstrap.min.js"></script>--%>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -391,6 +406,7 @@
     <!-- Custom DataTable Init Js -->
     <script src="../assets/js/DT/checker.js"></script>
     <script src="../assets/js/DT/lamporan.js"></script>
+    <script src="../assets/js/core_sn.js"></script>
 
     <!-- Validation js -->
     <script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>

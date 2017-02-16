@@ -240,6 +240,7 @@ File: Menu
 #topnav .navbar-custom {
   background-color: #ffffff;
   box-shadow: 0 6px 19px 0 rgba(0, 0, 0, 0.04), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 2px -5px 19px 0 rgba(58, 57, 57, 0.42), 0px 0px 0px 0 rgba(0, 0, 0, 0.02);
 }
 #topnav .navbar-toggle {
   border: 0;
@@ -345,8 +346,8 @@ File: Menu
 }
 @media (min-width: 992px) {
   #topnav .navigation-menu > li > a {
-    padding-top: 22px;
-    padding-bottom: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 /*
@@ -431,8 +432,30 @@ File: Menu
     white-space: nowrap;
     color: #494e53;
   }
+    #topnav .navigation-menu > li .submenu li a::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+  }
+    #topnav .navigation-menu > li .submenu li:hover, #topnav .navigation-menu > li .submenu li::after {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    background-color: #2989d8;
+  }
   #topnav .navigation-menu > li .submenu li a:hover {
-    color: #228bdf;
+    /*color: #228bdf;*/
+    color:#ffffff;
+  }
+    #topnav .navigation-menu > li .submenu li a i {
+    color: inherit;
+    margin-right: 5px;
   }
   #topnav .navigation-menu > li .submenu li span {
     display: block;
