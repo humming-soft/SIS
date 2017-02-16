@@ -16,6 +16,10 @@
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                             <p>Please check , you have some form <b>errors</b>!</p>
                         </div>
+                    <div class="alert alert-danger alert-dismissable" id="log_uname" runat="server">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <p><b>Login Pengguna </b>is alredy exist!</p>
+                        </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="field-1" class="control-label">Login Pengguna</label>
@@ -82,7 +86,7 @@
                     </div>--%>
                 <div class="form-group text-left m-b-0 m-t-15">
                     <asp:Button ID="btn_add" runat="server" CssClass="btn btn-primary waves-light" ClientIDMode="Static" Text="Simpan" OnClick="btn_add_Click" OnClientClick="validate_tetapan()"/>
-                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-default waves-light m-l-5" ClientIDMode="Static" Text="Batal" />
+                    <asp:Button ID="btn_cancel" runat="server" CssClass="btn btn-default waves-light m-l-5" ClientIDMode="Static" Text="Batal" OnClick="btn_cancel_Click" />
                 </div>
             </div>
         </div>
