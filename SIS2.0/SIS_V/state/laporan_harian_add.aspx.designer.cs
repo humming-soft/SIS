@@ -13,6 +13,42 @@ namespace SIS_V.state {
     public partial class laporan_harian_add {
         
         /// <summary>
+        /// invalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
+        
+        /// <summary>
+        /// lblinvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblinvalid;
+        
+        /// <summary>
+        /// valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid;
+        
+        /// <summary>
+        /// lblsuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblsuccess;
+        
+        /// <summary>
         /// key control.
         /// </summary>
         /// <remarks>
@@ -31,6 +67,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlKodKawasan;
         
         /// <summary>
+        /// hfkodkawasan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfkodkawasan;
+        
+        /// <summary>
         /// ddlAktiviti control.
         /// </summary>
         /// <remarks>
@@ -40,6 +85,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlAktiviti;
         
         /// <summary>
+        /// hfkaktiviti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfkaktiviti;
+        
+        /// <summary>
         /// ddlparti control.
         /// </summary>
         /// <remarks>
@@ -47,6 +101,15 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlparti;
+        
+        /// <summary>
+        /// hfparti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfparti;
         
         /// <summary>
         /// txtdate control.
@@ -67,31 +130,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.TextBox txtButiran;
         
         /// <summary>
-        /// hfkodkawasan control.
+        /// hfkaktivitiM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfkodkawasan;
-        
-        /// <summary>
-        /// hfkaktiviti control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfkaktiviti;
-        
-        /// <summary>
-        /// hfparti control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfparti;
+        protected global::System.Web.UI.WebControls.HiddenField hfkaktivitiM;
         
         /// <summary>
         /// btnsimpan control.
@@ -112,13 +157,22 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Button btnbatal;
         
         /// <summary>
-        /// ddlKod_Kawasan control.
+        /// ddlKod_KawasanI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlKod_Kawasan;
+        protected global::System.Web.UI.WebControls.DropDownList ddlKod_KawasanI;
+        
+        /// <summary>
+        /// HiddenField1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
         
         /// <summary>
         /// ddlKategoriIsu control.
@@ -130,6 +184,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlKategoriIsu;
         
         /// <summary>
+        /// HiddenField2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
+        
+        /// <summary>
         /// ddlSumberIsu control.
         /// </summary>
         /// <remarks>
@@ -139,13 +202,31 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlSumberIsu;
         
         /// <summary>
-        /// ddlParti1 control.
+        /// HiddenField3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlParti1;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField3;
+        
+        /// <summary>
+        /// ddlPartiI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPartiI;
+        
+        /// <summary>
+        /// HiddenField4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField4;
         
         /// <summary>
         /// txtTarikh control.

@@ -13,6 +13,11 @@ namespace SIS_B
 
         public string uname { get; set; }
         public string pswd { get; set; }
+        public int kod_kawasan { get; set; }
+        public int jenis_aktiviti { get; set; }
+        public int parti { get; set; }
+        public string butiran_aktiviti { get; set; }
+        public DateTime tarikh { get; set; }
 
         public int check_login()
         {
@@ -57,6 +62,11 @@ namespace SIS_B
         public DataTable fill_parti()
         {
             return data1.fill_parti();
+        }
+
+        public int insert_aktiviti()
+        {
+            return data1.insert_aktiviti(kod_kawasan,jenis_aktiviti,parti,tarikh,butiran_aktiviti);
         }
     }
 }

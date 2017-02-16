@@ -201,5 +201,34 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public int insert_aktiviti(int kod_kawasan,int jenis_aktiviti,int parti,DateTime tarikh,string butiran_aktiviti)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_aktiviti";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@jenis_aktiviti", jenis_aktiviti);
+                cmd.Parameters.AddWithValue("@parti", parti);
+                cmd.Parameters.AddWithValue("@tarikh", tarikh);
+                cmd.Parameters.AddWithValue("@butiran_aktiviti", butiran_aktiviti);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }
