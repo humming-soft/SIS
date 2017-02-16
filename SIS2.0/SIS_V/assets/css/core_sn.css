@@ -474,6 +474,8 @@
 }
 .splash-title h4{
 	color: #545451;
+    font-size: 15px;
+    line-height: 0;
 }
 .spinner .rect2 {
     -webkit-animation-delay: -1.1s;
