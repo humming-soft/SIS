@@ -27,7 +27,7 @@
                             </div>
                             <div id="collapseOne-2" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable3_PreRender" >                                   
+                                    <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" CellSpacing="0" Width="100%" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable3_PreRender" >                                   
                                         <Columns>
                                             <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
