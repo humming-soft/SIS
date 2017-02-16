@@ -166,13 +166,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlKod_KawasanI;
         
         /// <summary>
-        /// HiddenField1 control.
+        /// kod_kawasanI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
+        protected global::System.Web.UI.WebControls.HiddenField kod_kawasanI;
         
         /// <summary>
         /// ddlKategoriIsu control.
@@ -184,13 +184,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlKategoriIsu;
         
         /// <summary>
-        /// HiddenField2 control.
+        /// KategoriIsu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField2;
+        protected global::System.Web.UI.WebControls.HiddenField KategoriIsu;
         
         /// <summary>
         /// ddlSumberIsu control.
@@ -202,13 +202,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlSumberIsu;
         
         /// <summary>
-        /// HiddenField3 control.
+        /// SumberIsu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField3;
+        protected global::System.Web.UI.WebControls.HiddenField SumberIsu;
         
         /// <summary>
         /// ddlPartiI control.
@@ -220,13 +220,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlPartiI;
         
         /// <summary>
-        /// HiddenField4 control.
+        /// PartiI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField4;
+        protected global::System.Web.UI.WebControls.HiddenField PartiI;
         
         /// <summary>
         /// txtTarikh control.

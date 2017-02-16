@@ -18,6 +18,8 @@ namespace SIS_B
         public int parti { get; set; }
         public string butiran_aktiviti { get; set; }
         public DateTime tarikh { get; set; }
+        public int category { get; set; }
+        public int sumber { get; set; }
 
         public int check_login()
         {
@@ -67,6 +69,20 @@ namespace SIS_B
         public int insert_aktiviti()
         {
             return data1.insert_aktiviti(kod_kawasan,jenis_aktiviti,parti,tarikh,butiran_aktiviti);
+        }
+
+        public DataTable fill_sumber()
+        {
+            return data1.fill_sumber();
+        }
+        public DataTable fill_isu()
+        {
+            return data1.fill_isu();
+        }
+
+        public int insert_isu()
+        {
+            return data1.insert_isu(kod_kawasan, category, sumber, parti, tarikh, butiran_aktiviti);
         }
     }
 }
