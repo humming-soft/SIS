@@ -145,6 +145,7 @@ namespace SIS_V.state
             txtTaburanPenduduk.Text = "";
             txtKomposisiEtnik.Text = "";
             txtKedarPertumbuhanPenduduk.Text = "";
+            Response.Redirect("parlimen_info_view");
         }
 
     }
