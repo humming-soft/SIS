@@ -301,5 +301,106 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public int insert_janji(int kod_kawasan, DateTime tarikh,string diberi,string jnama)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_janji";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@janji_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@janji_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@janji_parti_id", 14);
+                cmd.Parameters.AddWithValue("@janji_yg", diberi);
+                cmd.Parameters.AddWithValue("@janji_nama_tokoh", jnama);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int insert_insiden(int kod_kawasan, int parti, DateTime tarikh, string binsiden)
+        {
+            try{
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_insiden";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@insiden_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@insiden_parti", parti);
+                cmd.Parameters.AddWithValue("@insiden_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@insiden_butiran_insiden", binsiden);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_status()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_fetch_analysis_color";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int insert_statuskawasan(int kod_kawasan, string status_kawasan, DateTime tarikh, string kaveat)
+        {
+try{
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_analysis";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@analysis_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@analysis_status", status_kawasan);
+                cmd.Parameters.AddWithValue("@analysis_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@analysis_justifikasi", kaveat);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

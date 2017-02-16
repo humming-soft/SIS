@@ -20,6 +20,11 @@ namespace SIS_B
         public DateTime tarikh { get; set; }
         public int category { get; set; }
         public int sumber { get; set; }
+        public string diberi { get; set; }
+        public string jnama { get; set; }
+        public string binsiden { get; set; }
+        public string status_kawasan { get; set; }
+        public string kaveat { get; set; }
 
         public int check_login()
         {
@@ -83,6 +88,22 @@ namespace SIS_B
         public int insert_isu()
         {
             return data1.insert_isu(kod_kawasan, category, sumber, parti, tarikh, butiran_aktiviti);
+        }
+        public int insert_janji()
+        {
+            return data1.insert_janji(kod_kawasan, tarikh,diberi,jnama);
+        }
+        public int insert_insiden()
+        {
+            return data1.insert_insiden(kod_kawasan, parti, tarikh, binsiden );
+        }
+        public DataTable fill_status()
+        {
+            return data1.fill_status();
+        }
+        public int insert_statuskawasan()
+        {
+            return data1.insert_statuskawasan(kod_kawasan, status_kawasan, tarikh, kaveat);
         }
     }
 }
