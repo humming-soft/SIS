@@ -5,6 +5,7 @@
         function validation() {
             Parliment_Info.init();
         }
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -123,8 +124,13 @@
                     </div>
                     <div class="form-group text-left m-b-0 m-t-15">
                         <asp:Button ID="btnUpdate" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan"  OnClientClick="validation()" OnClick="btnUpdate_Click" />
-                        <asp:Button ID="Button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
+                        <asp:Button ID="btnClear" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" OnClick="btnClear_Click"/>
+                    </div>
+                    <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>We could not process your request, please check your form fields!</p>
                     </div> 
+
             </div>
         </div>
     </div> 

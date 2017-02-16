@@ -108,11 +108,11 @@
                         $(this).removeClass('error');
                     }
                 });
-                $cloned.find('.item_kod_kawasan').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKod_Kawasan" + ($length));
+                $cloned.find('.item_kod_kawasanI').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKod_KawasanI" + ($length));
                 $cloned.find('.item_KategoriIsu').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKategoriIsu" + ($length));
                 $cloned.find('.item_SumberIsu').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlSumberIsu" + ($length));
-                $cloned.find('.item_Parti1').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlParti1" + ($length));
-                $cloned.find('.item_date').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikh" + ($length));
+                $cloned.find('.item_PartiI').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlPartiI" + ($length));
+                $cloned.find('.item_dateI').removeAttr("id").attr("id", "ContentPlaceHolder1_txtTarikhI" + ($length));
                 $cloned.find('.item_Butiran_Isu').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiran_Isu" + ($length));
                 $copy.removeClass('active');
                 $cloned.insertBefore($append);
@@ -267,11 +267,11 @@
 
     <script type="text/javascript">
         function vali() {
-            //alert('test');
-            var chk;
             chk = $('.lamporan_act').length;
+            chk1 = $('.lamporan_isu').length;
             //setting the value for hiddenfield
             $('#hfkaktivitiM').val(chk);
+            $('#hfisu').val(chk1);
             laporan_harian_add_activity.init();
         }
     </script>
@@ -288,12 +288,22 @@
                 orientation: "bottom",
                 autoclose: true
             });
+
+            $('.item_dateI').datepicker({
+                format: "dd/mm/yyyy",
+                keyboardNavigation: false,
+                todayHighlight: true, // to highlight today
+                orientation: "bottom",
+                autoclose: true
+            });
         }
 
     </script>
     <script type="text/javascript">
 
         // Setting the hidden field values 
+
+        //ACTIVITY
 
         $(document).on("change", ".item_kodkawasan", function () {
             $(this).next().val($(this).val());
@@ -304,6 +314,23 @@
         });
 
         $(document).on("change", ".item_parti", function () {
+            $(this).next().val($(this).val());
+        });
+
+        //ISSUE
+
+        $(document).on("change", ".item_kod_kawasanI", function () {
+            $(this).next().val($(this).val());
+        });
+
+        $(document).on("change", ".item_KategoriIsu", function () {
+            $(this).next().val($(this).val());
+        });
+
+        $(document).on("change", ".item_SumberIsu", function () {
+            $(this).next().val($(this).val());
+        });
+        $(document).on("change", ".item_PartiI", function () {
             $(this).next().val($(this).val());
         });
     </script>
@@ -427,34 +454,34 @@
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
                                         <asp:DropDownList ID="ddlKod_KawasanI" CssClass="form-control item_kod_kawasanI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        <asp:HiddenField ID="HiddenField1" runat="server" ClientIDMode="Static" />
+                                        <asp:HiddenField ID="kod_kawasanI" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kategori Isu</label>
-                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        <asp:HiddenField ID="HiddenField2" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="current_issue_name" DataValueField="current_issue_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="KategoriIsu" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Sumber Isu</label>
-                                        <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        <asp:HiddenField ID="HiddenField3" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="SumberIsu" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:DropDownList ID="ddlPartiI" CssClass="form-control item_PartiI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        <asp:HiddenField ID="HiddenField4" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlPartiI" CssClass="form-control item_PartiI" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                        <asp:HiddenField ID="PartiI" runat="server" ClientIDMode="Static" />
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Tarikh</label>
-                                        <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control item_date"></asp:TextBox>
+                                        <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control item_dateI"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -471,7 +498,7 @@
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfisu" runat="server" ClientIDMode="Static" />
-                            <asp:Button ID="btnsimpan1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" />
+                            <asp:Button ID="btnsimpan1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan1_Click" />
                             <asp:Button ID="btnbatal1" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                         </div>
                     </div>
