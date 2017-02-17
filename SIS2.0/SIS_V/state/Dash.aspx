@@ -69,7 +69,7 @@
                                     <ul>
                                         <li><a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="laporan_harian_view.aspx">Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Pilihanraya</a>
@@ -104,7 +104,7 @@
                                     <ul class="dl-submenu">
                                         <li><a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="laporan_harian_view.aspx">Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#">Pilihanraya</a>
