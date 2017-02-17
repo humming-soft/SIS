@@ -273,6 +273,7 @@ header{
 	font-weight:600;
 	line-height:14px;	
     padding-right:12px;
+    outline: 0;
 }
 .kode_menu ul li.active:before,
 .kode_menu ul li:hover:before,
@@ -282,7 +283,7 @@ header{
 }
 /*1st DropDown Menu*/
 .kode_menu ul ul{
-	width:250px;
+	width:280px;
 	position:absolute;
 	top:50%;
 	left:-50px;
