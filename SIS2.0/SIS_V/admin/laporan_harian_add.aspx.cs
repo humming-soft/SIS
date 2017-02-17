@@ -27,7 +27,6 @@ namespace SIS_V.admin
             objAktivitiBUS.parti = txtParti.Text;
             objAktivitiBUS.masa = txtMasa.Text;
             objAktivitiBUS.jenis_aktiviti = txtJenisAktiviti.Text;
-            Output = objAktivitiBUS.InsertAktivitiDetails();
         }
         protected void btnISUAdd_Click(object sender, EventArgs e)
         {
@@ -40,7 +39,6 @@ namespace SIS_V.admin
             objAktivitiBUS.isu_masa = txtISUMasa.Text;
             objAktivitiBUS.isu_kategori = txtISUKategori.Text;
             objAktivitiBUS.isu_parti = txtISUParti.Text;
-            Output = objAktivitiBUS.InsertISUDetails();
         }
         protected void btnJanjiAdd_Click(object sender, EventArgs e)
         {
@@ -53,7 +51,6 @@ namespace SIS_V.admin
             objAktivitiBUS.isu_masa = txtISUMasa.Text;
             objAktivitiBUS.isu_kategori = txtISUKategori.Text;
             objAktivitiBUS.isu_parti = txtISUParti.Text;
-            Output = objAktivitiBUS.InsertISUDetails();
         }
 
     }

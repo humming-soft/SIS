@@ -14,21 +14,9 @@ namespace SIS_V.admin
         bus_sis_ugc1 bus = new bus_sis_ugc1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                fill_DataTable();
-            }
+
         }
 
-        public void fill_DataTable()
-        {
-            DataTable dt = bus.fill_DataTable();
-            if (dt.Rows.Count > 0)
-            {
-                GridKM.DataSource = dt;
-                GridKM.DataBind();
-            }
-        }
 
         protected void GridKM_PreRender(object sender, EventArgs e)
         {
@@ -42,13 +30,11 @@ namespace SIS_V.admin
         protected void GridKM_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridKM.EditIndex = e.NewEditIndex;
-            fill_DataTable();
         }
 
         protected void GridKM_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridKM.EditIndex = -1;
-            fill_DataTable();
         }
     }
 }

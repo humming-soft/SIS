@@ -17,29 +17,7 @@ namespace SIS_V.admin
         {
             if (!IsPostBack)
             {
-                fill_lamporan();
-            }
-        }
-
-        public void fill_lamporan()
-        {
-            table1 = bus1.fill_lamporan();
-            if (table1.Rows.Count > 0)
-            {
-                GridDataTable3.DataSource = table1;
-                GridDataTable3.DataBind();
-
-                GridDataTable4.DataSource = table1;
-                GridDataTable4.DataBind();
-
-                GridDataTable5.DataSource = table1;
-                GridDataTable5.DataBind();
-
-                GridDataTable6.DataSource = table1;
-                GridDataTable6.DataBind();
-
-                GridDataTable7.DataSource = table1;
-                GridDataTable7.DataBind();
+                //fill_lamporan();
             }
         }
 
