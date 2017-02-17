@@ -453,7 +453,7 @@
                         </div>
                         <div class="c-here active lamporan_act">
                             <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)" ><i class="fa fa-trash f-s-20"></i></a>
-                            <div class="row pre_here">
+                            <div class="row pre_here m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
@@ -506,7 +506,7 @@
                         </div>
                         <div class="c-here active lamporan_isu">
                             <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
-                            <div class="row pre_here">
+                            <div class="row pre_here m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
@@ -567,7 +567,7 @@
                         </div>
                         <div class="c-here active lamporan_janji">
                             <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
-                            <div class="row">
+                            <div class="row m-t-20">
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
@@ -612,7 +612,7 @@
                         </div>
                         <div class="c-here active laporan_insiden">
                             <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
-                            <div class="row">
+                            <div class="row m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
@@ -659,7 +659,7 @@
                         </div>
                         <div class="c-here active laporan_kawasan">
                             <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
-                            <div class="row">
+                            <div class="row m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>

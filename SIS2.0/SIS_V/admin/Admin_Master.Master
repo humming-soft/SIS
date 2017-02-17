@@ -109,9 +109,9 @@
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
-                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
+                                <li><a href="#"><i class="ti-user m-r-5"></i>Profile</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
+                                <li><a href="#"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
                                 <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
@@ -119,7 +119,7 @@
 
                     <div class="menu-item">
                         <!-- Mobile menu toggle-->
-                        <a class="navbar-toggle">
+                        <a class="navbar-toggle no-loader">
                             <div class="lines">
                                 <span></span>
                                 <span></span>
@@ -146,38 +146,38 @@
                         <li class="has-submenu" id="dash" runat="server">
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
-                                <li><a href="utama.aspx"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
-                                <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i>Kawasan Operasi</a></li>
-                                <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i>Winnable Candidate</a></li>
-                                <li><a href="percentage_voters.aspx"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
+                                <li><a href="#"><i class="md md-place"></i>Kawasan Operasi</a></li>
+                                <li><a href="#"><i class="md md-contacts"></i>Winnable Candidate</a></li>
+                                <li><a href="#"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="prapiliha" runat="server">
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="activiti_bakal_ci_view.aspx"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
+                                    <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
-                                    <a href="activiti_parti_view.aspx"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
+                                    <a href="#"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="laporan_harian_view.aspx"><i class="md md-report"></i>Laporan Harian Dari Negeri</a></li>
+                                <li><a href="#"><i class="md md-report"></i>Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
                             <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="keluar_mengundi.aspx"><i class="md md-poll"></i>Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
-                            <a href="analisis_kawasan_view.aspx"><i class="md md-place"></i>Analisis Kawasan</a>
+                            <a href="#"><i class="md md-place"></i>Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="tetapan" runat="server">
                             <a href="#"><i class="md md-settings"></i>Tetapan</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="parlimen_info_view.aspx"><i class="md md-info"></i>Parlimen Info</a>
+                                    <a href="#"><i class="md md-info"></i>Parlimen Info</a>
                                 </li>
                             </ul>
                         </li>
@@ -261,7 +261,7 @@
             </div>
         </div>
     </header>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="no-loader">
         <div class="wrapper">
             <div class="container">
                 <%--                <div class="row">
