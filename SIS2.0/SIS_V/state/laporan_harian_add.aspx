@@ -414,31 +414,31 @@
             <div class="col-lg-12">
                 <ul class="nav nav-tabs navtab-custom nav-justified">
                     <li class="active">
-                        <a href="#home1" data-toggle="tab" aria-expanded="false">
+                        <a href="#home1" data-toggle="tab" aria-expanded="false" class="no-loader">
                             <span class="visible-xs">1.0 AKTIVITI</span>
                             <span class="hidden-xs">1.0 AKTIVITI</span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="#profile1" data-toggle="tab" aria-expanded="true">
+                        <a href="#profile1" data-toggle="tab" aria-expanded="true" class="no-loader">
                             <span class="visible-xs">2.0 ISI-ISU</span>
                             <span class="hidden-xs">2.0 ISI-ISU</span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="#messages1" data-toggle="tab" aria-expanded="false">
+                        <a href="#messages1" data-toggle="tab" aria-expanded="false" class="no-loader">
                             <span class="visible-xs">3.0 JANJI PILIHANRAYA</span>
                             <span class="hidden-xs">3.0 JANJI PILIHANRAYA</span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="#settings1" data-toggle="tab" aria-expanded="false">
+                        <a href="#settings1" data-toggle="tab" aria-expanded="false" class="no-loader">
                             <span class="visible-xs">4.0 INSIDEN</span>
                             <span class="hidden-xs">4.0 INSIDEN</span>
                         </a>
                     </li>
                     <li class="">
-                        <a href="#settings2" data-toggle="tab" aria-expanded="false">
+                        <a href="#settings2" data-toggle="tab" aria-expanded="false" class="no-loader">
                             <span class="visible-xs">5.0 ANALISIS STATUS KAWASAN</span>
                             <span class="hidden-xs">5.0 ANALISIS STATUS KAWASAN</span>
                         </a>
@@ -452,7 +452,7 @@
                             </div>
                         </div>
                         <div class="c-here active lamporan_act">
-                            <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
+                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)" ><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row pre_here">
                                 <div class="col-lg-2">
                                     <div class="form-group">
@@ -505,7 +505,7 @@
                             </div>
                         </div>
                         <div class="c-here active lamporan_isu">
-                            <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
+                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row pre_here">
                                 <div class="col-lg-2">
                                     <div class="form-group">
@@ -566,7 +566,7 @@
                             </div>
                         </div>
                         <div class="c-here active lamporan_janji">
-                            <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
+                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group">
@@ -611,7 +611,7 @@
                             </div>
                         </div>
                         <div class="c-here active laporan_insiden">
-                            <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
+                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row">
                                 <div class="col-lg-2">
                                     <div class="form-group">
@@ -658,7 +658,7 @@
                             </div>
                         </div>
                         <div class="c-here active laporan_kawasan">
-                            <a class="pull-right row_remove hidden" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
+                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row">
                                 <div class="col-lg-2">
                                     <div class="form-group">

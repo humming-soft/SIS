@@ -83,7 +83,7 @@
                                         <li><a href="parlimen_info_view.aspx">Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>
+                              <%--  <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>--%>
                             </ul>
                         </div>
                         <!--Navigation Wrap End-->
@@ -118,7 +118,7 @@
                                         <li><a href="parlimen_info_view.aspx">Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>
+                              <%--  <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>--%>
                             </ul>
                         </div>
                         <!--DL Menu End-->
