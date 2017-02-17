@@ -21,7 +21,7 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="true" class="collapsed no-loader">1.0 AKTIVITI
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="true" class="no-loader">1.0 AKTIVITI
                                     </a>
                                 </h4>
                             </div>
@@ -44,7 +44,7 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed no-loader" aria-expanded="true">2.0 ISu-ISU
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="no-loader" aria-expanded="true">2.0 ISu-ISU
                                     </a>
                                 </h4>
                             </div>
@@ -68,7 +68,7 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-2" class="collapsed no-loader" aria-expanded="true">3.0 JANJI PILIHANRAYA
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-2" class="no-loader" aria-expanded="true">3.0 JANJI PILIHANRAYA
                                     </a>
                                 </h4>
                             </div>
@@ -90,7 +90,7 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-3" class="collapsed no-loader" aria-expanded="true">4.0 INSIDEN
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-3" class="no-loader" aria-expanded="true">4.0 INSIDEN
                                     </a>
                                 </h4>
                             </div>
@@ -112,7 +112,7 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-5" class="collapsed no-loader" aria-expanded="true">5.0 ANALISIS STATUS KAWASAN
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-5" class="no-loader" aria-expanded="true">5.0 ANALISIS STATUS KAWASAN
                                     </a>
                                 </h4>
                             </div>
