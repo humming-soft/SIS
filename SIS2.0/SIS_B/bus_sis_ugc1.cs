@@ -37,11 +37,6 @@ namespace SIS_B
             return data1.fetch_userdetails(uname);
         }
 
-        public DataTable fill_lamporan()
-        {
-            return data1.fill_lamporan();
-        }
-
         public DataTable fill_Kawasan()
         {
             return data1.fill_kawasan();
