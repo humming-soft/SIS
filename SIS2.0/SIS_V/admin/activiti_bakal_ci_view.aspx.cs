@@ -16,19 +16,9 @@ namespace SIS_V.admin
         {
             if(!IsPostBack)
             {
-                fill_DataTable();
             }
         }
 
-        public void fill_DataTable()
-        {
-            DataTable dt = bus.fill_DataTable();
-            if (dt.Rows.Count > 0)
-            {
-                GridDataTable.DataSource = dt;
-                GridDataTable.DataBind();
-            }
-        }
 
         protected void GridDataTable_PreRender(object sender, EventArgs e)
         {

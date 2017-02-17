@@ -62,45 +62,6 @@ namespace SIS_D
             }
         }
 
-        public DataTable fillgrid()
-        {
-            try
-            {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "sp_users";
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                cmd.Connection = db.connect();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                return dt;
-            }
-            finally
-            {
-                db.disconnect();
-            }
-        }
-
-        public DataTable fill_DataTable()
-        {
-            try
-            {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "sp_DataTables";
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                cmd.Connection = db.connect();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                return dt;
-            }
-            finally
-            {
-                db.disconnect();
-            }
-        }
 
         public DataTable fill_lamporan()
         {
@@ -202,7 +163,7 @@ namespace SIS_D
             }
         }
 
-        public int insert_aktiviti(int kod_kawasan,int jenis_aktiviti,int parti,DateTime tarikh,string butiran_aktiviti)
+        public int insert_aktiviti(int kod_kawasan, int jenis_aktiviti, int parti, DateTime tarikh, string butiran_aktiviti)
         {
             try
             {
@@ -301,7 +262,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int insert_janji(int kod_kawasan, DateTime tarikh,string diberi,string jnama)
+        public int insert_janji(int kod_kawasan, DateTime tarikh, string diberi, string jnama)
         {
             try
             {
@@ -332,7 +293,8 @@ namespace SIS_D
 
         public int insert_insiden(int kod_kawasan, int parti, DateTime tarikh, string binsiden)
         {
-            try{
+            try
+            {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "usp_insert_insiden";
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -378,7 +340,8 @@ namespace SIS_D
         }
         public int insert_statuskawasan(int kod_kawasan, string status_kawasan, DateTime tarikh, string kaveat)
         {
-try{
+            try
+            {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "usp_insert_analysis";
                 cmd.CommandType = CommandType.StoredProcedure;

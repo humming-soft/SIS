@@ -14,21 +14,8 @@ namespace SIS_V.admin
         bus_sis_ugc1 bus = new bus_sis_ugc1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                fill_DataTable();
-            }
         }
 
-        public void fill_DataTable()
-        {
-            DataTable dt = bus.fill_DataTable();
-            if (dt.Rows.Count > 0)
-            {
-                GridPinfo.DataSource = dt;
-                GridPinfo.DataBind();
-            }
-        }
         protected void GridPinfo_PreRender(object sender, EventArgs e)
         {
             if (GridPinfo.Rows.Count > 0)
