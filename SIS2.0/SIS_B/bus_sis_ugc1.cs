@@ -25,6 +25,7 @@ namespace SIS_B
         public string binsiden { get; set; }
         public string status_kawasan { get; set; }
         public string kaveat { get; set; }
+        public DateTime tarikhA { get; set; }
 
         public int check_login()
         {
