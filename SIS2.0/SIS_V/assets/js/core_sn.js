@@ -8,7 +8,9 @@ var _sn = function (options) {
 
     var runCustom = function (options) {
         $('form').submit(function () {
-            Splash.fadeIn('slow');
+            if (!$(this).hasClass('no-loader')) {
+                Splash.fadeIn('slow');
+            }
         })
         $('a').click(function () {
             if (($(this).attr('href') != '#')) {
