@@ -311,7 +311,7 @@ namespace SIS_V.state
             {
                 objAktivitiBUS.kod_kawasan = int.Parse(split_KodKawasanKawasan[n]);
                 objAktivitiBUS.status_kawasan = split_statusKawasan[n];
-                objAktivitiBUS.tarikh = DateTime.Parse(split_tarikhKawasan[n]);
+                objAktivitiBUS.tarikh = DateTime.ParseExact(split_tarikhKawasan[n],"dd/MM/yyyy", null);
                 objAktivitiBUS.kaveat = split_KaveatKawasan[n];
                 int kawasa = objAktivitiBUS.insert_statuskawasan();
                 if (kawasa == 1)// success
