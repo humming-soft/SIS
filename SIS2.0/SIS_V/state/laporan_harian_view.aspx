@@ -21,11 +21,11 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="false" class="collapsed no-loader">1.0 AKTIVITI
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="true" class="collapsed no-loader">1.0 AKTIVITI
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseOne-2" class="panel-collapse collapse">
+                            <div id="collapseOne-2" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" CellSpacing="0" Width="100%" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable3_PreRender" >                                   
                                         <Columns>
@@ -44,11 +44,11 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed no-loader" aria-expanded="false">2.0 ISu-ISU
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed no-loader" aria-expanded="true">2.0 ISu-ISU
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseTwo-2" class="panel-collapse collapse">
+                            <div id="collapseTwo-2" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <asp:GridView ID="GridDataTable4" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable4_PreRender">
                                          <Columns>
@@ -68,11 +68,11 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-2" class="collapsed no-loader" aria-expanded="false">3.0 JANJI PILIHANRAYA
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-2" class="collapsed no-loader" aria-expanded="true">3.0 JANJI PILIHANRAYA
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseThree-2" class="panel-collapse collapse">
+                            <div id="collapseThree-2" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <asp:GridView ID="GridDataTable5" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable5_PreRender">
                                        <Columns>
@@ -90,11 +90,11 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-3" class="collapsed no-loader" aria-expanded="false">4.0 INSIDEN
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-3" class="collapsed no-loader" aria-expanded="true">4.0 INSIDEN
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseThree-3" class="panel-collapse collapse">
+                            <div id="collapseThree-3" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <asp:GridView ID="GridDataTable6" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable6_PreRender">
                                         <Columns>
@@ -112,11 +112,11 @@
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-5" class="collapsed no-loader" aria-expanded="false">5.0 ANALISIS STATUS KAWASAN
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-5" class="collapsed no-loader" aria-expanded="true">5.0 ANALISIS STATUS KAWASAN
                                     </a>
                                 </h4>
                             </div>
-                            <div id="collapseThree-5" class="panel-collapse collapse">
+                            <div id="collapseThree-5" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <asp:GridView ID="GridDataTable7" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable7_PreRender">
                                         <Columns>
