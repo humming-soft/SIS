@@ -7,7 +7,7 @@
             <div class="card-box">
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title"><b>SENARAI KAWASAN BN</b></h4>
+                        <h4 class="m-t-0 m-b-20 header-title"><b>KAWASAN TUMPUAN KERAJAAN</b></h4>
                         <div class="container table-custom">
                             <div class="row">
                                 <div class="col-lg-4">
@@ -398,7 +398,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title"><b>SENARAI KAWASAN PEMBANGKANG</b></h4>
+                        <h4 class="m-t-0 m-b-20 header-title"><b>KAWASAN OPERASI KERAJAAN</b></h4>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-4">
