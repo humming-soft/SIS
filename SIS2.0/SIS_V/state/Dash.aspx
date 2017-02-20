@@ -62,6 +62,7 @@
                                         <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
                                         <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
                                         <li><a href="parlimen_tumpuan.aspx"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="status_kawasan.aspx"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="percentage_voters.aspx"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
@@ -100,6 +101,7 @@
                                         <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
                                         <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
                                         <li><a href="parlimen_tumpuan.aspx"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="status_kawasan.aspx"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="percentage_voters.aspx"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
