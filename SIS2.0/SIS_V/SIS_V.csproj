@@ -369,6 +369,7 @@
     <Content Include="state\parlimen_info_view.aspx" />
     <Content Include="state\parlimen_tumpuan.aspx" />
     <Content Include="state\percentage_voters.aspx" />
+    <Content Include="state\status_kawasan.aspx" />
     <Content Include="state\tetapan_pentadbir_add.aspx" />
     <Content Include="state\tetapan_pentadbir_view.aspx" />
     <Content Include="state\utama.aspx" />
@@ -720,6 +721,13 @@
     </Compile>
     <Compile Include="state\state_master.Master.designer.cs">
       <DependentUpon>state_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="state\status_kawasan.aspx.cs">
+      <DependentUpon>status_kawasan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\status_kawasan.aspx.designer.cs">
+      <DependentUpon>status_kawasan.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\tetapan_pentadbir_add.aspx.cs">
       <DependentUpon>tetapan_pentadbir_add.aspx</DependentUpon>

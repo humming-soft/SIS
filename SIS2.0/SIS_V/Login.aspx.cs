@@ -66,19 +66,19 @@ namespace SIS_V
                 Session["is_login"] = "t";
                 if (int.Parse(Session["role"].ToString()) == 1) // Admin
                 {
-                    Response.Redirect("~/admin/Dash.aspx");
+                    Response.Redirect("~/admin/Dash");
                 }
                 else if (int.Parse(Session["role"].ToString()) == 2) // HQ
                 {
-                    Response.Redirect("~/hq/WebForm1.aspx");
+                    Response.Redirect("~/hq/WebForm1");
                 }
                 else if (int.Parse(Session["role"].ToString()) == 3) // State
                 {
-                    Response.Redirect("~/state/Dash.aspx");
+                    Response.Redirect("~/state/Dash");
                 }
                 else
                 {
-                    Response.Redirect("~/unauthorised.aspx");
+                    Response.Redirect("~/unauthorised");
                 }
             }
             else

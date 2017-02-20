@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using SIS_B;
+using System.Web.Services;
 
 namespace SIS_V.state
 {
@@ -24,6 +25,14 @@ namespace SIS_V.state
                 //fillgrid();
             }
         }
+
+        [WebMethod]
+
+        public static int test()
+        {
+            return 0;
+        }
+       
         //public void fillgrid()
         //{
         //    dt = bus1.fillgrid();
