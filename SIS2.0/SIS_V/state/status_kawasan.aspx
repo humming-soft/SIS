@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/state/state_master.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SIS_V.state.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="status_kawasan.aspx.cs" Inherits="SIS_V.state.status_kawasan" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
