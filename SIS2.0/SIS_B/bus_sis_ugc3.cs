@@ -18,6 +18,7 @@ namespace SIS_B
         public int state { get; set; }
         public string position { get; set; }
         public string pass { get; set; }
+        public int state_id { get; set; }
         public DataTable fetch_states()
         {
             return data.fetch_state();
@@ -42,5 +43,15 @@ namespace SIS_B
         {
             return data.update_pass(pass, log_name);
         }
+        //sis user story 004_004A
+        public DataTable fill_senarai_kawasan()
+        {
+            return data.fill_senarai_kawasan(state_id);
+        }
+        public DataTable fill_senarai_kawasan_pem()
+        {
+            return data.fill_senarai_kawasan_pem(state_id);
+        }
+        
     }
 }
