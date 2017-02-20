@@ -12,11 +12,11 @@
                 }
             });
             TableData.init();
-            $('.lock').on('click', function () {
+            $(document).on("click",'.lock', function () {
                 $('#hd_pass').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
                 $('#sis-password-change-modal').modal('show');
             });
-            $(".edit").click(function () {
+            $(document).on("click",'.edit',function () {
                 $('#txt_log_name').attr("readonly", "readonly");
                 $('#txt_log_name').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
                 $('#txt_user_name').val($(this).closest("tr").find("input[type=hidden][id*=f_name]").val());

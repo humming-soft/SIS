@@ -143,7 +143,7 @@
                             <a href="Dash.aspx"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
-                            <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
+                            <a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                             <ul class="submenu">
                                 <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
                                 <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
@@ -164,7 +164,7 @@
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
-                            <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
+                            <a href="#"><i class="md md-stars"></i> Pilihanraya</a>
                             <ul class="submenu">
                                 <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                             </ul>
@@ -180,9 +180,9 @@
                                 </li>
                             </ul>
                         </li>
-<%--                        <li class="has-submenu" id="teta" runat="server">
-                            <a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i>Tetapan Pentadbir</a>
-                        </li>--%>
+                        <li class="has-submenu" id="teta" runat="server">
+                            <%--<a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i>Tetapan Pentadbir</a>--%>
+                        </li>
                     </ul>
                     <!-- End navigation menu -->
                 </div>
