@@ -59,11 +59,12 @@
                                 <%--<li><a href="Dash.aspx">Laman Utama</a></li>--%>
                                 <li><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul>
-                                        <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
-                                        <li><a href="parlimen_tumpuan.aspx"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
-                                        <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i> Winnable Candidate</a></li>
-                                        <li><a href="percentage_voters.aspx"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
+                                        <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
+                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                        <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
+                                        <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
+                                        <li><a href="percentage_voters"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
@@ -81,7 +82,7 @@
                                 <li><a href="#"><i class="md md-place"></i> Analisis Kawasan</a></li>
                                 <li><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul>
-                                        <li><a href="parlimen_info_view.aspx"><i class="md md-info"></i> Parlimen Info</a></li>
+                                        <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -97,18 +98,19 @@
                             <ul class="dl-menu">
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
-                                        <li><a href="parlimen_tumpuan.aspx"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
-                                        <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i> Winnable Candidate</a></li>
-                                        <li><a href="percentage_voters.aspx"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
+                                        <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
+                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                        <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
+                                        <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
+                                        <li><a href="percentage_voters"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
                                     <ul class="dl-submenu">
                                         <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_view.aspx"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="laporan_harian_view"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -116,10 +118,10 @@
                                         <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="Dash.aspx"><i class="md md-place"></i> Analisis Kawasan</a></li>
+                                <li><a href="Dash"><i class="md md-place"></i> Analisis Kawasan</a></li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="parlimen_info_view.aspx"><i class="md md-info"></i> Parlimen Info</a></li>
+                                        <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
                               <%--  <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>--%>
@@ -142,14 +144,14 @@
                         <ul class="countdown">
                             <li>
                                 <img src="../assets/images/gallery/001_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="utama">
 
                                     <p class="days_ref">Dashboard Utama</p>
                                 </a>
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/002_d.png" alt="Logo Image Here" />
-                                <a href="kawasan_operasi.aspx">
+                                <a href="kawasan_operasi">
                                     <p class="days_ref">
                                         Kawasan
                                         <br />
@@ -165,7 +167,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="winnable_candidate.aspx">
+                                <a href="winnable_candidate">
                                     <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
@@ -187,7 +189,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/009_d.png" alt="Logo Image Here" />
-                                <a href="../Login.aspx">
+                                <a href="../Login">
                                     <p class="hours_ref">
                                         Keluar
                                         <br>
