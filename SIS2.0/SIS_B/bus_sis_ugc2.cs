@@ -55,6 +55,8 @@ namespace SIS_B
         public string komposisi_etnik { get; set; }
         public string kedar_pertumbuhan_penduduk { get; set; }
 
+        public int state_id { get; set; }
+
         public DataTable fill_DataTable()
         {
             return objDAL.fill_DataTable();
@@ -68,6 +70,10 @@ namespace SIS_B
         public int UpdatePInfoDetails()
         {
             return objDAL.UpdatePInfoDetails(area_id, p_kod_kawasan, p_nama_kawasan, bil, kawasan_tumpuan, kawasan_tumpuan_penbangkang, kawasan_operasi, keluasan_kawasan, sempadan_kawasan, kegiatan_ekonomi, pecahan_kaum, populasi_penduduk, purata_umur, purata_jantina, kemudahan_awam, taburan_penduduk, komposisi_etnik, kedar_pertumbuhan_penduduk);
+        }
+        public DataTable GetConOpAreaList()
+        {
+            return objDAL.GetConOpAreaList(state_id);
         }
     }
 }
