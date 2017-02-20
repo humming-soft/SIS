@@ -20,6 +20,7 @@ namespace SIS_V.state
             {
                 //area_id = int.Parse(Session["area_id"].ToString());
                 GetPInfoDetails();
+                invalid.Visible = false;
             }
         }
 
@@ -72,41 +73,79 @@ namespace SIS_V.state
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            objPInfoBUS.area_id = int.Parse(Session["area_id"].ToString());
-            objPInfoBUS.p_kod_kawasan = txtKodKawasan.Text;
-            objPInfoBUS.p_nama_kawasan = txtNamaKawasan.Text;            
-            objPInfoBUS.bil = int.Parse(txtBil.Text);
-            if (chkKawasanTumpuan.Checked){
-                objPInfoBUS.kawasan_tumpuan = "Yes";
-            }else{
-                objPInfoBUS.kawasan_tumpuan = "No";
-            }
-            if (chkKawasanTumpuanPenbangkang.Checked){
-                objPInfoBUS.kawasan_tumpuan_penbangkang = "Yes";
-            }else{
-                objPInfoBUS.kawasan_tumpuan_penbangkang = "No";
-            }
-            if (chkKawasanOperasi.Checked){
-                objPInfoBUS.kawasan_operasi = "Yes";
-            }else{
-                objPInfoBUS.kawasan_operasi = "No";
-            }
-            objPInfoBUS.keluasan_kawasan = txtKeluasanKawasan.Text;
-            objPInfoBUS.sempadan_kawasan = txtSempadanKawasan.Text;
-            objPInfoBUS.kegiatan_ekonomi = txtKegiatanEkonomi.Text;
-            objPInfoBUS.pecahan_kaum = txtPecahanKaum.Text;            
-            objPInfoBUS.populasi_penduduk = int.Parse(txtPopulasiPenduduk.Text);
-            objPInfoBUS.purata_umur = int.Parse(txtPurataUmur.Text);
-            objPInfoBUS.purata_jantina = txtPurataJantina.Text;
-            objPInfoBUS.kemudahan_awam = txtKemudahanAwam.Text;
-            objPInfoBUS.taburan_penduduk = txtTaburanPenduduk.Text;
-            objPInfoBUS.komposisi_etnik = txtKomposisiEtnik.Text;
-            objPInfoBUS.kedar_pertumbuhan_penduduk = txtKedarPertumbuhanPenduduk.Text;
-            int chk = objPInfoBUS.UpdatePInfoDetails();
-            if (chk == 0)
+            if (txtKodKawasan.Text != "" && txtNamaKawasan.Text != "" && txtBil.Text != "" && txtKeluasanKawasan.Text != "" && txtSempadanKawasan.Text != "" && txtKegiatanEkonomi.Text != "" && txtPecahanKaum.Text != "" && txtKegiatanEkonomi.Text != "" && txtPopulasiPenduduk.Text != "" && txtPurataUmur.Text != "" && txtPurataJantina.Text != "" && txtKemudahanAwam.Text != "" && txtTaburanPenduduk.Text != "" && txtKomposisiEtnik.Text != "" && txtKedarPertumbuhanPenduduk.Text != "")
             {
-                Response.Redirect("parlimen_info_view");
+                objPInfoBUS.area_id = int.Parse(Session["area_id"].ToString());
+                objPInfoBUS.p_kod_kawasan = txtKodKawasan.Text;
+                objPInfoBUS.p_nama_kawasan = txtNamaKawasan.Text;
+                objPInfoBUS.bil = int.Parse(txtBil.Text);
+                if (chkKawasanTumpuan.Checked)
+                {
+                    objPInfoBUS.kawasan_tumpuan = "Yes";
+                }
+                else
+                {
+                    objPInfoBUS.kawasan_tumpuan = "No";
+                }
+                if (chkKawasanTumpuanPenbangkang.Checked)
+                {
+                    objPInfoBUS.kawasan_tumpuan_penbangkang = "Yes";
+                }
+                else
+                {
+                    objPInfoBUS.kawasan_tumpuan_penbangkang = "No";
+                }
+                if (chkKawasanOperasi.Checked)
+                {
+                    objPInfoBUS.kawasan_operasi = "Yes";
+                }
+                else
+                {
+                    objPInfoBUS.kawasan_operasi = "No";
+                }
+                objPInfoBUS.keluasan_kawasan = txtKeluasanKawasan.Text;
+                objPInfoBUS.sempadan_kawasan = txtSempadanKawasan.Text;
+                objPInfoBUS.kegiatan_ekonomi = txtKegiatanEkonomi.Text;
+                objPInfoBUS.pecahan_kaum = txtPecahanKaum.Text;
+                objPInfoBUS.populasi_penduduk = int.Parse(txtPopulasiPenduduk.Text);
+                objPInfoBUS.purata_umur = int.Parse(txtPurataUmur.Text);
+                objPInfoBUS.purata_jantina = txtPurataJantina.Text;
+                objPInfoBUS.kemudahan_awam = txtKemudahanAwam.Text;
+                objPInfoBUS.taburan_penduduk = txtTaburanPenduduk.Text;
+                objPInfoBUS.komposisi_etnik = txtKomposisiEtnik.Text;
+                objPInfoBUS.kedar_pertumbuhan_penduduk = txtKedarPertumbuhanPenduduk.Text;
+                int chk = objPInfoBUS.UpdatePInfoDetails();
+                if (chk == 0)
+                {
+                    Response.Redirect("parlimen_info_view");
+                }
             }
+            else
+            {
+                invalid.Visible = true;
+            }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtKodKawasan.Text = "";
+            txtNamaKawasan.Text = "";
+            txtBil.Text = "";
+            chkKawasanTumpuan.Checked = false;
+            chkKawasanTumpuanPenbangkang.Checked = false;
+            chkKawasanOperasi.Checked = false; 
+            txtKeluasanKawasan.Text = "";
+            txtSempadanKawasan.Text = "";
+            txtKegiatanEkonomi.Text = "";
+            txtPecahanKaum.Text = "";
+            txtPopulasiPenduduk.Text = "";
+            txtPurataUmur.Text = "";
+            txtPurataJantina.Text = "";
+            txtKemudahanAwam.Text = "";
+            txtTaburanPenduduk.Text = "";
+            txtKomposisiEtnik.Text = "";
+            txtKedarPertumbuhanPenduduk.Text = "";
+            Response.Redirect("parlimen_info_view");
         }
 
     }

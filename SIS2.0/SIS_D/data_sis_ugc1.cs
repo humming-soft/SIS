@@ -62,66 +62,6 @@ namespace SIS_D
             }
         }
 
-        public DataTable fillgrid()
-        {
-            try
-            {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "sp_users";
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                cmd.Connection = db.connect();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                return dt;
-            }
-            finally
-            {
-                db.disconnect();
-            }
-        }
-
-        public DataTable fill_DataTable()
-        {
-            try
-            {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "sp_DataTables";
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                cmd.Connection = db.connect();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                return dt;
-            }
-            finally
-            {
-                db.disconnect();
-            }
-        }
-
-        public DataTable fill_lamporan()
-        {
-            try
-            {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "sp_fetch_daily_report";
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                cmd.Connection = db.connect();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-                return dt;
-            }
-            finally
-            {
-                db.disconnect();
-            }
-        }
-
         public DataTable fill_kawasan()
         {
             try
@@ -202,7 +142,7 @@ namespace SIS_D
             }
         }
 
-        public int insert_aktiviti(int kod_kawasan,int jenis_aktiviti,int parti,DateTime tarikh,string butiran_aktiviti)
+        public int insert_aktiviti(int kod_kawasan, int jenis_aktiviti, int parti, DateTime tarikh, string butiran_aktiviti)
         {
             try
             {
@@ -214,6 +154,180 @@ namespace SIS_D
                 cmd.Parameters.AddWithValue("@parti", parti);
                 cmd.Parameters.AddWithValue("@tarikh", tarikh);
                 cmd.Parameters.AddWithValue("@butiran_aktiviti", butiran_aktiviti);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_sumber()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetLookup";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lookupType", 8);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_isu()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetIsu";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int insert_isu(int kod_kawasan, int category, int sumber, int parti, DateTime tarikh, string butiran_aktiviti)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_isu";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@isu_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@isu_kategori", category);
+                cmd.Parameters.AddWithValue("@isu_sumber", sumber);
+                cmd.Parameters.AddWithValue("@isu_parti", parti);
+                cmd.Parameters.AddWithValue("@isu_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@isu_butiran", butiran_aktiviti);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int insert_janji(int kod_kawasan, DateTime tarikh, string diberi, string jnama)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_janji";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@janji_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@janji_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@janji_parti_id", 14);
+                cmd.Parameters.AddWithValue("@janji_yg", diberi);
+                cmd.Parameters.AddWithValue("@janji_nama_tokoh", jnama);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int insert_insiden(int kod_kawasan, int parti, DateTime tarikh, string binsiden)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_insiden";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@insiden_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@insiden_parti", parti);
+                cmd.Parameters.AddWithValue("@insiden_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@insiden_butiran_insiden", binsiden);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_status()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_fetch_analysis_color";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int insert_statuskawasan(int kod_kawasan, string status_kawasan, DateTime tarikh, string kaveat)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_insert_analysis";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@analysis_kod_kawasan", kod_kawasan);
+                cmd.Parameters.AddWithValue("@analysis_status", status_kawasan);
+                cmd.Parameters.AddWithValue("@analysis_tarik", tarikh);
+                cmd.Parameters.AddWithValue("@analysis_justifikasi", kaveat);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
                 outparam.Direction = ParameterDirection.InputOutput;

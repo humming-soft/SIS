@@ -9,18 +9,27 @@
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
     <meta name="author" content="Coderthemes" />
 
-    <link rel="shortcut icon" href="../assets/images/favicon_1.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/images/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 
     <title>State</title>
 
     <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
-
-    <!-- DataTables -->
-    <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -30,6 +39,13 @@
     <link href="../assets/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/core_sn.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+        <!-- DataTables -->
+    <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,20 +61,30 @@
     <%--<link href="../assets/plugins/media/css/DT_bootstrap.css" rel="stylesheet" />--%>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/modernizr.min.js"></script>
-    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/highcharts/highcharts.js"></script>
     <script src="../assets/js/highcharts/highcharts-more.js"></script>
     <script src="../assets/js/highcharts/no-data-to-display.js"></script>
-    <script src="../assets/js/masonry/masonry.min.js"></script>
 
-    <!-- peity charts -->
-    <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
-    <script src="../assets/pages/jquery.peity.init.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    	<div class="splash"> 
+<!-- 			<div class="color-line"></div> -->
+			<div class="splash-title">
+<!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
+<!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
+				<div class="spinner"> 
+					<div class="rect1"></div> 
+					<div class="rect2"></div> 
+					<div class="rect3"></div> 
+					<div class="rect4"></div> 
+					<div class="rect5"></div> 
+				</div> 
+				<h4>Loading..</h4> 
+			</div> 
+		</div>
     <!-- Navigation Bar-->
     <header id="topnav">
         <div class="topbar-main">
@@ -81,9 +107,9 @@
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
-                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
+                                <li><a href="#"><i class="ti-user m-r-5"></i>Profile</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
+                                <li><a href="#"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
                                 <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
@@ -91,7 +117,7 @@
 
                     <div class="menu-item">
                         <!-- Mobile menu toggle-->
-                        <a class="navbar-toggle">
+                        <a class="navbar-toggle no-loader">
                             <div class="lines">
                                 <span></span>
                                 <span></span>
@@ -117,45 +143,45 @@
                             <a href="Dash.aspx"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
-                            <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
+                            <a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                             <ul class="submenu">
-                                <li><a href="utama.aspx">Dashboard Utama</a></li>
-                                <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
-                                <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
-                                <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
+                                <li><a href="kawasan_operasi.aspx"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                <li><a href="winnable_candidate.aspx"><i class="md md-contacts"></i> Winnable Candidate</a></li>
+                                <li><a href="percentage_voters.aspx"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="prapiliha" runat="server">
-                            <a href="#"><i class="md md-invert-colors-on"></i>Pra-Pilihanraya</a>
+                            <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
+                                    <a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
-                                    <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
+                                    <a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
+                                <li><a href="laporan_harian_view.aspx"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
-                            <a href="#"><i class="md md-class"></i>Pilihanraya</a>
+                            <a href="#"><i class="md md-stars"></i> Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
-                            <a href="analisis_kawasan_view.aspx"><i class="md md-pages"></i>Analisis Kawasan</a>
+                            <a href="#"><i class="md md-place"></i> Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="tetapan" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Tetapan</a>
+                            <a href="#"><i class="md md-settings"></i> Tetapan</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="parlimen_info_view.aspx">Parlimen Info</a>
+                                    <a href="parlimen_info_view.aspx"><i class="md md-info"></i> Parlimen Info</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="teta" runat="server">
-                            <a href="tetapan_pentadbir_view.aspx"><i class="fa fa-user-plus"></i>Tetapan Pentadbir</a>
+                            <%--<a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i>Tetapan Pentadbir</a>--%>
                         </li>
                     </ul>
                     <!-- End navigation menu -->
@@ -167,7 +193,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 visible-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"></i>PRU 13</h1>
+                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"></i> PRU 13</h1>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 visible-xs">
@@ -180,7 +206,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 hidden-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"></i>PRU 13</h1>
+                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"></i> PRU 13</h1>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 hidden-xs">
@@ -234,7 +260,7 @@
             </div>
         </div>
     </header>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="no-loader">
         <div class="wrapper">
             <div class="container">
                 <%--                <div class="row">
@@ -347,6 +373,7 @@
 
     <!-- jQuery  -->
     <script src="../assets/js/jquery.min.js"></script>
+    <%--<script src="../assets/js/bootstrap.min.js"></script>--%>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -354,6 +381,10 @@
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/jquery.nicescroll.js"></script>
     <script src="../assets/js/jquery.scrollTo.min.js"></script>
+
+            <!-- peity charts -->
+    <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../assets/pages/jquery.peity.init.js"></script>
 
     <!-- Datatables-->
     <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -391,6 +422,7 @@
     <!-- Custom DataTable Init Js -->
     <script src="../assets/js/DT/checker.js"></script>
     <script src="../assets/js/DT/lamporan.js"></script>
+    <script src="../assets/js/core_sn.js"></script>
 
     <!-- Validation js -->
     <script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -409,6 +441,8 @@
     <script src="../assets/js/Validations/custom_laporanactivity.js"></script>
     <script src="../assets/js/Validations/parliment_info.js"></script>
 
+    <script src="../assets/js/masonry/masonry.min.js"></script>
+
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $('.counter').counterUp({
@@ -419,6 +453,21 @@
             get_date();
             get_time();
             watch();
+            //$('#collapseOne-2').on('show.bs.collapse', function () {
+            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
+            //});
+            //$('#collapseTwo-2').on('shown.bs.collapse', function () {
+            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
+            //});
+            //$('#collapseThree-2').on('shown.bs.collapse', function () {
+            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
+            //});
+            //$('#collapseThree-3').on('shown.bs.collapse', function () {
+            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
+            //});
+            //$('#collapseThree-5').on('shown.bs.collapse', function () {
+            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
+            //});
 
         });
 

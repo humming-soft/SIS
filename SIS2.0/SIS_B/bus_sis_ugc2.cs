@@ -55,18 +55,6 @@ namespace SIS_B
         public string komposisi_etnik { get; set; }
         public string kedar_pertumbuhan_penduduk { get; set; }
 
-        public int InsertAktivitiDetails()
-        {
-            return objDAL.InsertAktivitiDetails(kod_kawasan, butiran_aktiviti, tarikh, nama_kawasan, parti, masa, jenis_aktiviti);
-        }
-        public int InsertISUDetails()
-        {
-            return objDAL.InsertISUDetails(isu_kod_kawasan, isu_butiran_aktiviti, isu_tarikh, isu_nama_kawasan, isu_sumber, isu_masa, isu_parti, isu_kategori);
-        }
-        public int InsertJanjiDetails()
-        {
-            return objDAL.InsertJanjiDetails(janji_kod_kawasan, janji_nama_kawasan, janji_yg, janji_nama_tokoh, janji_tarik, janji_masa);
-        }
         public DataTable fill_DataTable()
         {
             return objDAL.fill_DataTable();

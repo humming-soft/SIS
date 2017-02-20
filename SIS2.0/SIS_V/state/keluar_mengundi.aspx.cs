@@ -16,17 +16,6 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_DataTable();
-            }
-        }
-
-        public void fill_DataTable()
-        {
-            DataTable dt = bus.fill_DataTable();
-            if (dt.Rows.Count > 0)
-            {
-                GridKM.DataSource = dt;
-                GridKM.DataBind();
             }
         }
 
@@ -42,13 +31,11 @@ namespace SIS_V.state
         protected void GridKM_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridKM.EditIndex = e.NewEditIndex;
-            fill_DataTable();
         }
 
         protected void GridKM_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridKM.EditIndex = -1;
-            fill_DataTable();
         }
     }
 }

@@ -11,7 +11,10 @@ namespace SIS_B
     {
         data_sis_ugc4 data = new data_sis_ugc4();
 
-
+        public DataTable fill_lamporan()
+        {
+            return data.fill_lamporan();
+        }
         public DataTable fill_issues()
         {
             return data.data_lamboran("sp_fetch_issues");

@@ -41,7 +41,7 @@ var laporan_harian_add_activity = function () {
                 ctl00$ContentPlaceHolder1$txtButiran: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlKod_Kawasan: {
+                ctl00$ContentPlaceHolder1$ddlKod_KawasanI: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$ddlKategoriIsu: {
@@ -50,7 +50,7 @@ var laporan_harian_add_activity = function () {
                 ctl00$ContentPlaceHolder1$ddlSumberIsu: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlParti1: {
+                ctl00$ContentPlaceHolder1$ddlPartiI: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txtTarikh: {
@@ -59,10 +59,10 @@ var laporan_harian_add_activity = function () {
                 ctl00$ContentPlaceHolder1$txtButiran_Isu: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlKodKawasan1: {
+                ctl00$ContentPlaceHolder1$ddlKodKawasanj: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$txtTarikh1: {
+                ctl00$ContentPlaceHolder1$txtTarikhj: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txtjanji: {
@@ -71,25 +71,25 @@ var laporan_harian_add_activity = function () {
                 ctl00$ContentPlaceHolder1$txtNamaTokoh: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlKodKawasan2: {
+                ctl00$ContentPlaceHolder1$ddlKodKawasanIn: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlParti2: {
+                ctl00$ContentPlaceHolder1$ddlPartiIn: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$txtTarikh2: {
+                ctl00$ContentPlaceHolder1$txtTarikhIn: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txtButiranInsiden: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlKodKawasan3: {
+                ctl00$ContentPlaceHolder1$ddlKodKawasanKawasan: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlstatus: {
+                ctl00$ContentPlaceHolder1$ddlstatusKawasan: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$txtTarikh3: {
+                ctl00$ContentPlaceHolder1$txtTarikhKawasan: {
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$ddlWujud: {

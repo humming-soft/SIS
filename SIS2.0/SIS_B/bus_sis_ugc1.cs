@@ -18,6 +18,14 @@ namespace SIS_B
         public int parti { get; set; }
         public string butiran_aktiviti { get; set; }
         public DateTime tarikh { get; set; }
+        public int category { get; set; }
+        public int sumber { get; set; }
+        public string diberi { get; set; }
+        public string jnama { get; set; }
+        public string binsiden { get; set; }
+        public string status_kawasan { get; set; }
+        public string kaveat { get; set; }
+        public DateTime tarikhA { get; set; }
 
         public int check_login()
         {
@@ -27,21 +35,6 @@ namespace SIS_B
         public DataTable fetch_userdetails()
         {
             return data1.fetch_userdetails(uname);
-        }
-
-        public DataTable fillgrid()
-        {
-            return data1.fillgrid();
-        }
-
-        public DataTable fill_DataTable()
-        {
-            return data1.fill_DataTable();
-        }
-
-        public DataTable fill_lamporan()
-        {
-            return data1.fill_lamporan();
         }
 
         public DataTable fill_Kawasan()
@@ -67,6 +60,36 @@ namespace SIS_B
         public int insert_aktiviti()
         {
             return data1.insert_aktiviti(kod_kawasan,jenis_aktiviti,parti,tarikh,butiran_aktiviti);
+        }
+
+        public DataTable fill_sumber()
+        {
+            return data1.fill_sumber();
+        }
+        public DataTable fill_isu()
+        {
+            return data1.fill_isu();
+        }
+
+        public int insert_isu()
+        {
+            return data1.insert_isu(kod_kawasan, category, sumber, parti, tarikh, butiran_aktiviti);
+        }
+        public int insert_janji()
+        {
+            return data1.insert_janji(kod_kawasan, tarikh,diberi,jnama);
+        }
+        public int insert_insiden()
+        {
+            return data1.insert_insiden(kod_kawasan, parti, tarikh, binsiden );
+        }
+        public DataTable fill_status()
+        {
+            return data1.fill_status();
+        }
+        public int insert_statuskawasan()
+        {
+            return data1.insert_statuskawasan(kod_kawasan, status_kawasan, tarikh, kaveat);
         }
     }
 }

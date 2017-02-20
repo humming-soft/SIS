@@ -13,11 +13,49 @@ var Parliment_Info = function () {
             rules: {
                 ctl00$ContentPlaceHolder1$txtKodKawasan: {
                     required: true
-                }
-                /*,
-                ctl00$ContentPlaceHolder1$txtKodKawasan: {
+                },
+                ctl00$ContentPlaceHolder1$txtNamaKawasan: {
                     required: true
-                }*/
+                },
+                ctl00$ContentPlaceHolder1$txtBil: {
+                    required: true,
+                    number: true
+                },
+                ctl00$ContentPlaceHolder1$txtKeluasanKawasan: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtSempadanKawasan: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtKegiatanEkonomi: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtPecahanKaum: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtPopulasiPenduduk: {
+                    required: true,
+                    number: true
+                },
+                ctl00$ContentPlaceHolder1$txtPurataUmur: {
+                    required: true,
+                    number: true
+                },
+                ctl00$ContentPlaceHolder1$txtPurataJantina: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtKemudahanAwam: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtTaburanPenduduk: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtKomposisiEtnik: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtKedarPertumbuhanPenduduk: {
+                    required: true
+                }
             },
             submitHandler: function (form) {
                 errorHandler.hide();

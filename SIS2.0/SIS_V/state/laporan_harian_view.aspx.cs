@@ -29,7 +29,7 @@ namespace SIS_V.state
 
         public void fill_lamporan()
         {
-            table1 = bus1.fill_lamporan();
+            table1 = bus4.fill_lamporan();
             issues = bus4.fill_issues();
             promises = bus4.fill_promises();
             incident = bus4.fill_incident();
