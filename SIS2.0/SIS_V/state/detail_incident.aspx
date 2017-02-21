@@ -7,9 +7,9 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Kod Kawasan</h4>
-                <p class="text-muted m-b-25 font-13">
+                <%--<p class="text-muted m-b-25 font-13">
                     Your awesome text goes here.
-                </p>
+                </p>--%>
 
                 <div class="table-responsive">
                   <%--  <table class="table">
@@ -97,7 +97,7 @@
                             </tr>
                         </tbody>
                     </table>--%>
-                    <asp:GridView ID="grid_kodkawasan" runat="server" AutoGenerateColumns="False">
+                    <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="area_code" HeaderText="#" SortExpression="area_code" />
                             <asp:BoundField DataField="area_name" HeaderText="Area Name" SortExpression="area_name" />
