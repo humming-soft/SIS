@@ -29,6 +29,7 @@ namespace SIS_V.state
 
         public void fill_lamporan()
         {
+            bus4.sid = int.Parse(Session["state"].ToString());
             table1 = bus4.fill_lamporan();
             issues = bus4.fill_issues();
             promises = bus4.fill_promises();

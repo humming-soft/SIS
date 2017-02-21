@@ -12,14 +12,16 @@ namespace SIS_D
     {
         SqlCommand cmd = new SqlCommand();
         db_connect db = new db_connect();
-        
-        public DataTable fill_lamporan()
+
+        public DataTable data_lamboran(String sp, String nature, int sid)
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "sp_fetch_daily_report";
+                cmd.CommandText = sp;
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nature", nature);
+                cmd.Parameters.AddWithValue("@sid", sid);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();
@@ -32,13 +34,16 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataTable data_lamboran(String sp)
+        public DataTable dataStatusDistricts(String sp, String nature, int sid, int areaType)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = sp;
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nature", nature);
+                cmd.Parameters.AddWithValue("@sid", sid);
+                cmd.Parameters.AddWithValue("@area_type", areaType);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();
