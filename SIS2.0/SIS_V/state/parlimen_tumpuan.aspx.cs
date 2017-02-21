@@ -13,6 +13,8 @@ namespace SIS_V.state
     {
         bus_sis_ugc3 bus = new bus_sis_ugc3();
         int id;
+        string is_con;
+        string is_opp_con;
         string area_code;
         string name;
         string color;
@@ -35,16 +37,20 @@ namespace SIS_V.state
             one.Columns.Add("area_name", typeof(string));
             one.Columns.Add("color", typeof(string));
             one.Columns.Add("area_id", typeof(int));
+            one.Columns.Add("isconcentrated_opposition", typeof(string));
+            
 
             two.Columns.Add("area_code", typeof(string));
             two.Columns.Add("area_name", typeof(string));
             two.Columns.Add("color", typeof(string));
             two.Columns.Add("area_id", typeof(int));
+            two.Columns.Add("isconcentrated_opposition", typeof(string));
 
             three.Columns.Add("area_code", typeof(string));
             three.Columns.Add("area_name", typeof(string));
             three.Columns.Add("color", typeof(string));
             three.Columns.Add("area_id", typeof(int));
+            three.Columns.Add("isconcentrated_opposition", typeof(string));
 
 
             bus.state_id = int.Parse(Session["state"].ToString());
@@ -53,27 +59,28 @@ namespace SIS_V.state
             if (count>=3)
             {
                 int div_count = count / 3;
-                for (int i = 0; i <count; i++)
+                for (int i = 0; i < count; i++)
                 {
                     id = int.Parse(dt.Rows[i]["area_id"].ToString());
                     area_code = dt.Rows[i]["area_code"].ToString();
                     name = dt.Rows[i]["area_name"].ToString();
                     color = dt.Rows[i]["color"].ToString();
+                    is_opp_con = dt.Rows[i]["isconcentrated_opposition"].ToString();
                     if (i < div_count)
                     {
-                        one.Rows.Add(area_code, name, color, id);
+                        one.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
                     else if (i < (div_count * 2))
                     {
-                        two.Rows.Add(area_code, name, color, id);
+                        two.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
                     else if (i < (div_count * 3))
                     {
-                        three.Rows.Add(area_code, name, color, id);
+                        three.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
                     else
                     {
-                        one.Rows.Add(area_code, name, color, id);
+                        one.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
 
 
@@ -94,12 +101,14 @@ namespace SIS_V.state
                 string o_area_code = dt.Rows[0]["area_code"].ToString();
                 string o_name = dt.Rows[0]["area_name"].ToString();
                 string o_color = dt.Rows[0]["color"].ToString();
+                string o_is_op_co = dt.Rows[0]["isconcentrated_opposition"].ToString();
                 int t_id = int.Parse(dt.Rows[1]["area_id"].ToString());
                 string t_area_code = dt.Rows[1]["area_code"].ToString();
                 string t_name = dt.Rows[1]["area_name"].ToString();
                 string t_color = dt.Rows[1]["color"].ToString();
-                one.Rows.Add(o_area_code, o_name, o_color, o_id);
-                two.Rows.Add(t_area_code, t_name, t_color, t_id);
+                string t_is_op_co =dt.Rows[1]["isconcentrated_opposition"].ToString();
+                one.Rows.Add(o_area_code, o_name, o_color, o_id, o_is_op_co);
+                two.Rows.Add(t_area_code, t_name, t_color, t_id, t_is_op_co);
 
                 grid_senarai_one.DataSource = one;
                 grid_senarai_one.DataBind();
@@ -122,16 +131,19 @@ namespace SIS_V.state
             one_one.Columns.Add("area_name", typeof(string));
             one_one.Columns.Add("color", typeof(string));
             one_one.Columns.Add("area_id", typeof(int));
+            one_one.Columns.Add("isconcentrated", typeof(string));
 
             two_two.Columns.Add("area_code", typeof(string));
             two_two.Columns.Add("area_name", typeof(string));
             two_two.Columns.Add("color", typeof(string));
             two_two.Columns.Add("area_id", typeof(int));
+            two_two.Columns.Add("isconcentrated", typeof(string));
 
             three_three.Columns.Add("area_code", typeof(string));
             three_three.Columns.Add("area_name", typeof(string));
             three_three.Columns.Add("color", typeof(string));
             three_three.Columns.Add("area_id", typeof(int));
+            three_three.Columns.Add("isconcentrated", typeof(string));
 
 
             bus.state_id = int.Parse(Session["state"].ToString());
@@ -146,21 +158,22 @@ namespace SIS_V.state
                     area_code = dt.Rows[i]["area_code"].ToString();
                     name = dt.Rows[i]["area_name"].ToString();
                     color = dt.Rows[i]["color"].ToString();
+                    is_con = dt.Rows[i]["isconcentrated"].ToString();
                     if (i < div_count)
                     {
-                        one_one.Rows.Add(area_code, name, color, id);
+                        one_one.Rows.Add(area_code, name, color, id, is_con);
                     }
                     else if (i < (div_count * 2))
                     {
-                        two_two.Rows.Add(area_code, name, color, id);
+                        two_two.Rows.Add(area_code, name, color, id, is_con);
                     }
                     else if (i < (div_count * 3))
                     {
-                        three_three.Rows.Add(area_code, name, color, id);
+                        three_three.Rows.Add(area_code, name, color, id, is_con);
                     }
                     else
                     {
-                        one_one.Rows.Add(area_code, name, color, id);
+                        one_one.Rows.Add(area_code, name, color, id, is_con);
                     }
                 }
                 grid_one.DataSource = one_one;
@@ -179,12 +192,14 @@ namespace SIS_V.state
                 string o_area_code = dt.Rows[0]["area_code"].ToString();
                 string o_name = dt.Rows[0]["area_name"].ToString();
                 string o_color = dt.Rows[0]["color"].ToString();
+                string o_is_con = dt.Rows[0]["isconcentrated"].ToString();
                 int t_id = int.Parse(dt.Rows[1]["area_id"].ToString());
                 string t_area_code = dt.Rows[1]["area_code"].ToString();
                 string t_name = dt.Rows[1]["area_name"].ToString();
                 string t_color = dt.Rows[1]["color"].ToString();
-                one_one.Rows.Add(o_area_code, o_name, o_color, o_id);
-                two_two.Rows.Add(t_area_code, t_name, t_color, t_id);
+                string t_is_con = dt.Rows[1]["isconcentrated"].ToString();
+                one_one.Rows.Add(o_area_code, o_name, o_color, o_id, o_is_con);
+                two_two.Rows.Add(t_area_code, t_name, t_color, t_id,t_is_con);
 
                 grid_one.DataSource = one_one;
                 grid_one.DataBind();

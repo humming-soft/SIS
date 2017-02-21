@@ -28,11 +28,40 @@ namespace SIS_V.state
 
         [WebMethod]
 
-        public static int test()
+        public static List<Parliment> parlimen(int sid)
         {
-            return 0;
+            List<Parliment> parliment = new List<Parliment>();
+            bus_sis_ugc1 buspar = new bus_sis_ugc1();
+            buspar.stateid = sid;
+            DataTable dt = buspar.parlimen();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Parliment _Parliment = new Parliment();
+                _Parliment.Color_code = int.Parse(dt.Rows[i]["analysis_color_id"].ToString());
+                _Parliment.Color_Value = dt.Rows[i]["count_analysis"].ToString();
+                parliment.Add(_Parliment);
+            }
+            return parliment;
         }
-       
+
+        [WebMethod]
+
+        public static List<Parliment> dun(int sid)
+        {
+            List<Parliment> parliment = new List<Parliment>();
+            bus_sis_ugc1 buspar = new bus_sis_ugc1();
+            buspar.stateid = sid;
+            DataTable dt = buspar.dun();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Parliment _Parliment = new Parliment();
+                _Parliment.Color_code = int.Parse(dt.Rows[i]["analysis_color_id"].ToString());
+                _Parliment.Color_Value = dt.Rows[i]["count_analysis"].ToString();
+                parliment.Add(_Parliment);
+            }
+            return parliment;
+        }
+
         //public void fillgrid()
         //{
         //    dt = bus1.fillgrid();

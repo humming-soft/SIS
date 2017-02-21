@@ -26,6 +26,12 @@
     margin-top: 170px;
 
 }
+.txt-red{
+    color:red !important;
+}
+.txt-grey{
+    color:#797979 !important;
+}
 .image-jata-negara-15{
     width: 15%;
 }
@@ -520,4 +526,7 @@
 }
 .m-r-45{
     margin-right:45px;
+}
+.txt-black{
+    color:#000000 !important;
 }
