@@ -99,7 +99,7 @@
                     </table>--%>
                     <asp:GridView ID="grid_kodkawasan" runat="server" AutoGenerateColumns="False">
                         <Columns>
-                            <asp:BoundField DataField="area_id" HeaderText="#" SortExpression="area_id" />
+                            <asp:BoundField DataField="area_code" HeaderText="#" SortExpression="area_code" />
                             <asp:BoundField DataField="area_name" HeaderText="Area Name" SortExpression="area_name" />
                         </Columns>
                     </asp:GridView>

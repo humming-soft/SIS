@@ -6,195 +6,12 @@
         $(function () {
             parlimen();
             dun();
+            Highcharts.setOptions({
+                colors: ['#c64136', '#1e5799']
+            });
+            situasi_parlimen()
+            situasi_dun();
         });
-        //$(function () {
-        //    Highcharts.setOptions({
-        //        colors: ['#c64136', '#1e5799']
-        //    });
-        //    Highcharts.chart('gauge', {
-
-        //        chart: {
-        //            type: 'gauge',
-        //            plotBackgroundColor: null,
-        //            plotBackgroundImage: null,
-        //            plotBorderWidth: 0,
-        //            plotShadow: false
-        //        },
-
-        //        title: {
-        //            text: ''
-        //        },
-
-        //        pane: {
-        //            startAngle: -150,
-        //            endAngle: 150,
-        //            background: [{
-        //                backgroundColor: {
-        //                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-        //                    stops: [
-        //                        [0, '#FFF'],
-        //                        [1, '#333']
-        //                    ]
-        //                },
-        //                borderWidth: 0,
-        //                outerRadius: '109%'
-        //            }, {
-        //                backgroundColor: {
-        //                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-        //                    stops: [
-        //                        [0, '#333'],
-        //                        [1, '#FFF']
-        //                    ]
-        //                },
-        //                borderWidth: 1,
-        //                outerRadius: '107%'
-        //            }, {
-        //                // default background
-        //            }, {
-        //                backgroundColor: '#DDD',
-        //                borderWidth: 0,
-        //                outerRadius: '105%',
-        //                innerRadius: '103%'
-        //            }]
-        //        },
-
-        //        // the value axis
-        //        yAxis: {
-        //            min: 0,
-        //            max: 200,
-
-        //            minorTickInterval: 'auto',
-        //            minorTickWidth: 1,
-        //            minorTickLength: 10,
-        //            minorTickPosition: 'inside',
-        //            minorTickColor: '#666',
-
-        //            tickPixelInterval: 30,
-        //            tickWidth: 2,
-        //            tickPosition: 'inside',
-        //            tickLength: 10,
-        //            tickColor: '#666',
-        //            labels: {
-        //                step: 2,
-        //                rotation: 'auto'
-        //            },
-        //            title: {
-        //                text: ''
-        //            },
-        //            plotBands: [{
-        //                from: 0,
-        //                to: 100,
-        //                color: '#55BF3B' // green
-        //            }, {
-        //                from: 100,
-        //                to: 120,
-        //                color: '#DDDF0D' // yellow
-        //            }, {
-        //                from: 120,
-        //                to: 200,
-        //                color: '#DF5353' // red
-        //            }]
-        //        },
-
-        //        series: [{
-        //            name: 'Value',
-        //            data: [80],
-        //            tooltip: {
-        //                valueSuffix: ''
-        //            }
-        //        }]
-
-        //    },
-        //        // Add some life
-        //        function (chart) {
-        //            if (!chart.renderer.forExport) {
-        //                setInterval(function () {
-        //                    var point = chart.series[0].points[0],
-        //                        newVal,
-        //                        inc = Math.round((Math.random() - 0.5) * 20);
-
-        //                    newVal = point.y + inc;
-        //                    if (newVal < 0 || newVal > 200) {
-        //                        newVal = point.y - inc;
-        //                    }
-
-        //                    point.update(newVal);
-
-        //                }, 3000);
-        //            }
-        //        });
-
-        //    Highcharts.chart('stackedp', {
-        //        chart: {
-        //            type: 'bar'
-        //        },
-        //        title: {
-        //            text: ''
-        //        },
-        //        xAxis: {
-        //            categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
-        //                'Perak', 'Pahang', 'Selangor',
-        //                'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
-        //        },
-        //        yAxis: {
-        //            min: 0,
-        //            max: 100,
-        //            title: {
-        //                text: ''
-        //            }
-        //        },
-        //        legend: {
-        //            reversed: true
-        //        },
-        //        plotOptions: {
-        //            series: {
-        //                stacking: 'normal'
-        //            }
-        //        },
-        //        series: [{
-        //            name: 'BN',
-        //            data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
-        //        }, {
-        //            name: 'PEMBANGKANG',
-        //            data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
-        //        }, ]
-        //    });
-        //    Highcharts.chart('stackedd', {
-        //        chart: {
-        //            type: 'bar'
-        //        },
-        //        title: {
-        //            text: ''
-        //        },
-        //        xAxis: {
-        //            categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
-        //                'Perak', 'Pahang', 'Selangor',
-        //                'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
-        //        },
-        //        yAxis: {
-        //            min: 0,
-        //            max: 100,
-        //            title: {
-        //                text: ''
-        //            }
-        //        },
-        //        legend: {
-        //            reversed: true
-        //        },
-        //        plotOptions: {
-        //            series: {
-        //                stacking: 'normal'
-        //            }
-        //        },
-        //        series: [{
-        //            name: 'BN',
-        //            data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
-        //        }, {
-        //            name: 'PEMBANGKANG',
-        //            data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
-        //        }, ]
-        //    });
-        //});
     </script>
     <script type="text/javascript">
         function parlimen() {
@@ -233,7 +50,112 @@
         }
     </script>
     <script type="text/javascript">
+
+        function guage(total, vals) {
+            var fty = 0, tn = 0, frty = 0;
+            fty = (total * 50) / 100;
+            tn = fty + (total * 10) / 100;
+            frty = tn + (total * 40) / 100;
+            //console.log(fty + '---' + frty + '---' + tn);
+            Highcharts.chart('gauge', {
+
+                chart: {
+                    type: 'gauge',
+                    plotBackgroundColor: null,
+                    plotBackgroundImage: null,
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                },
+
+                title: {
+                    text: ''
+                },
+
+                pane: {
+                    startAngle: -150,
+                    endAngle: 150,
+                    background: [{
+                        backgroundColor: {
+                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                            stops: [
+                                [0, '#FFF'],
+                                [1, '#333']
+                            ]
+                        },
+                        borderWidth: 0,
+                        outerRadius: '109%'
+                    }, {
+                        backgroundColor: {
+                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                            stops: [
+                                [0, '#333'],
+                                [1, '#FFF']
+                            ]
+                        },
+                        borderWidth: 1,
+                        outerRadius: '107%'
+                    }, {
+                        // default background
+                    }, {
+                        backgroundColor: '#DDD',
+                        borderWidth: 0,
+                        outerRadius: '105%',
+                        innerRadius: '103%'
+                    }]
+                },
+
+                // the value axis
+                yAxis: {
+                    min: 0,
+                    max: total,
+
+                    minorTickInterval: 'auto',
+                    minorTickWidth: 1,
+                    minorTickLength: 10,
+                    minorTickPosition: 'inside',
+                    minorTickColor: '#666',
+
+                    tickPixelInterval: 30,
+                    tickWidth: 2,
+                    tickPosition: 'inside',
+                    tickLength: 10,
+                    tickColor: '#666',
+                    labels: {
+                        step: 2,
+                        rotation: 'auto'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    plotBands: [{
+                        from: 0,
+                        to: fty,          //50 % of total
+                        color: '#55BF3B' // green
+                    }, {
+                        from: fty,
+                        to: tn,            //10 % of total
+                        color: '#DDDF0D' // yellow
+                    }, {
+                        from: tn,
+                        to: total,        //40 % of total
+                        color: '#DF5353' // red
+                    }]
+                },
+
+                series: [{
+                    name: 'Value',
+                    data: [vals],
+                    tooltip: {
+                        valueSuffix: ''
+                    }
+                }]
+
+            });
+        }
+    </script>
+    <script type="text/javascript">
         function dun() {
+            var total = 0, vals = 0;
             var data = {};
             var sid = '<%= Session["state"] %>';
             //alert(sid);
@@ -246,7 +168,8 @@
                 success: function (data) {
                     for (var i = 0; i < data.d.length; i++) {
                         //console.log(data.d[i].Color_code);
-                        //console.log(data.d[i].Color_Value);
+                        total = total + parseInt(data.d[i].Color_Value);
+                        //console.log(total);
                         if (data.d[i].Color_code == 1) {
                             $('#blackd').html(data.d[i].Color_Value);
                         }
@@ -255,6 +178,7 @@
                         }
                         else if (data.d[i].Color_code == 3) {
                             $('#whited').text(data.d[i].Color_Value);
+                            vals = vals + parseInt(data.d[i].Color_Value);
                         }
                         else {
                             console.log('Unused Value');
@@ -264,7 +188,159 @@
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log(errorThrown);
+                },
+                complete: function (data) {
+                    guage(total,vals);
                 }
+            });
+        }
+
+    </script>
+    <script type="text/javascript">
+        function situasi_parlimen() {
+            Highcharts.chart('stackedp', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
+                        'Perak', 'Pahang', 'Selangor',
+                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
+                },
+                yAxis: {
+                    min: 0,
+                    max: 100,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    reversed: true
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name: 'BN',
+                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
+                }, {
+                    name: 'PEMBANGKANG',
+                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
+                }, ]
+            });
+            Highcharts.chart('stackedd', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
+                        'Perak', 'Pahang', 'Selangor',
+                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
+                },
+                yAxis: {
+                    min: 0,
+                    max: 100,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    reversed: true
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name: 'BN',
+                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
+                }, {
+                    name: 'PEMBANGKANG',
+                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
+                }, ]
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function situasi_dun() {
+            Highcharts.chart('stackedp', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
+                        'Perak', 'Pahang', 'Selangor',
+                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
+                },
+                yAxis: {
+                    min: 0,
+                    max: 100,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    reversed: true
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name: 'BN',
+                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
+                }, {
+                    name: 'PEMBANGKANG',
+                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
+                }, ]
+            });
+            Highcharts.chart('stackedd', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
+                        'Perak', 'Pahang', 'Selangor',
+                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
+                },
+                yAxis: {
+                    min: 0,
+                    max: 100,
+                    title: {
+                        text: ''
+                    }
+                },
+                legend: {
+                    reversed: true
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal'
+                    }
+                },
+                series: [{
+                    name: 'BN',
+                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
+                }, {
+                    name: 'PEMBANGKANG',
+                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
+                }, ]
             });
         }
     </script>
@@ -277,9 +353,9 @@
                 <p class="text-muted m-b-25 font-13 ta-center">
                     Parlimen
                 </p>
-                <h3 class="text-success portlet-status  status-white" id="white"></h3>
-                <h3 class="text-warning portlet-status  status-gray" id="grey"></h3>
-                <h3 class="text-info portlet-status status-black" id="black"></h3>
+                <h3 class="text-success portlet-status  status-white" id="white">-</h3>
+                <h3 class="text-warning portlet-status  status-gray" id="grey">-</h3>
+                <h3 class="text-info portlet-status status-black" id="black">-</h3>
             </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-1 col-lg-1">
@@ -288,9 +364,9 @@
                 <p class="text-muted m-b-25 font-13 ta-center">
                     Dun
                 </p>
-                <h3 class="text-success portlet-status status-white" id="whited"></h3>
-                <h3 class="text-warning portlet-status status-gray" id="greyd"></h3>
-                <h3 class="text-info portlet-status status-black" id="blackd"></h3>
+                <h3 class="text-success portlet-status status-white" id="whited">-</h3>
+                <h3 class="text-warning portlet-status status-gray" id="greyd">-</h3>
+                <h3 class="text-info portlet-status status-black" id="blackd">-</h3>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">

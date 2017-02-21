@@ -75,5 +75,11 @@ namespace SIS_B
         {
             return objDAL.GetConOpAreaList(state_id);
         }
+        public DataTable fill_kod_kawasan()
+        {
+            return objDAL.fill_kod_kawasan(state_id);
+        }
+
+
     }
 }
