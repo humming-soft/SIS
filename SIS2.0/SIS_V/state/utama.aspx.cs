@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using SIS_B;
+using System.Web.Services;
 
 namespace SIS_V.state
 {
@@ -24,6 +25,25 @@ namespace SIS_V.state
                 //fillgrid();
             }
         }
+
+        [WebMethod]
+
+        public static List<Parliment> parlimen(int sid)
+        {
+            List<Parliment> parliment = new List<Parliment>();
+            bus_sis_ugc1 buspar = new bus_sis_ugc1();
+            buspar.stateid = sid;
+            DataTable dt = buspar.parlimen();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Parliment _Parliment = new Parliment();
+                _Parliment.Color_code = int.Parse(dt.Rows[i]["analysis_color_id"].ToString());
+                _Parliment.Color_Value = dt.Rows[i]["count_analysis"].ToString();
+                parliment.Add(_Parliment);
+            }
+            return parliment;
+        }
+
         //public void fillgrid()
         //{
         //    dt = bus1.fillgrid();

@@ -344,5 +344,27 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataTable parlimen(int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetMainDashboardAnalysisAreaStatus_parlimen";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@areaType", 1);
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

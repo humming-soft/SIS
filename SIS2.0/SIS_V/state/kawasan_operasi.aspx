@@ -12,386 +12,47 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <table class="table table-bordered m-t-10 table-n">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Area</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td class="text-danger">PADANG BESAR</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white"></h3>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td class="text-danger">KANGAR</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.3</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.4</td>
-                                                    <td class="text-danger">LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.5</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.6</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.7</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.8</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.9</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.10</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.11</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.12</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.13</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.14</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.15</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.16</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.17</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.18</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <asp:GridView ID="ConGridView1" CssClass="table table-bordered m-t-10 table-n" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" runat="server">
+                                            <Columns>
+                                                <asp:BoundField DataField="area_code" HeaderText="Area Code"></asp:BoundField>
+                                                <asp:BoundField DataField="area_name" HeaderText="Area Name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <ItemTemplate>
+                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <table class="table table-bordered m-t-10 table-n">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Area</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td>PADANG BESAR</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white"></h3>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td>KANGAR</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.3</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.4</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.5</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.6</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.7</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.8</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.9</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.10</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.11</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.12</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.13</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.14</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.15</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.16</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.17</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.18</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <asp:GridView ID="ConGridView2" CssClass="table table-bordered m-t-10 table-n" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" runat="server">
+                                            <Columns>
+                                                <asp:BoundField DataField="area_code" HeaderText="Area Code"></asp:BoundField>
+                                                <asp:BoundField DataField="area_name" HeaderText="Area Name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <ItemTemplate>
+                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <table class="table table-bordered m-t-10 table-n">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Area</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td>PADANG BESAR</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white"></h3>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td>KANGAR</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.3</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.4</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.5</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.6</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.7</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.8</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.9</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.10</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.11</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.12</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.13</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.14</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.15</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.16</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.17</td>
-                                                    <td>AKAU</td>
-                                                    <td>
-                                                        <h3 class="text-success portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.18</td>
-                                                    <td>LANGKAWI</td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <asp:GridView ID="ConGridView3" CssClass="table table-bordered m-t-10 table-n" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" runat="server">
+                                            <Columns>
+                                                <asp:BoundField DataField="area_code" HeaderText="Area Code"></asp:BoundField>
+                                                <asp:BoundField DataField="area_name" HeaderText="Area Name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <ItemTemplate>
+                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                             </div>
@@ -403,87 +64,47 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <table class="table table-bordered m-t-10">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Area</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td class="text-danger">PADANG BESAR</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td class="text-danger">KANGAR</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <asp:GridView ID="OpGridView1" CssClass="table table-bordered m-t-10 table-n" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" runat="server">
+                                            <Columns>
+                                                <asp:BoundField DataField="area_code" HeaderText="Area Code"></asp:BoundField>
+                                                <asp:BoundField DataField="area_name" HeaderText="Area Name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <ItemTemplate>
+                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <table class="table table-bordered m-t-10">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Area</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.4</td>
-                                                    <td class="text-danger">LANGKAWI</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-gray">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td>KUALA KEDAH</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <asp:GridView ID="OpGridView2" CssClass="table table-bordered m-t-10 table-n" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" runat="server">
+                                            <Columns>
+                                                <asp:BoundField DataField="area_code" HeaderText="Area Code"></asp:BoundField>
+                                                <asp:BoundField DataField="area_name" HeaderText="Area Name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <ItemTemplate>
+                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <table class="table table-bordered m-t-10">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Area</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.4</td>
-                                                    <td>BAYAN BARU</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td class="text-danger">SELAYANG</td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <asp:GridView ID="OpGridView3" CssClass="table table-bordered m-t-10 table-n" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" runat="server">
+                                            <Columns>
+                                                <asp:BoundField DataField="area_code" HeaderText="Area Code"></asp:BoundField>
+                                                <asp:BoundField DataField="area_name" HeaderText="Area Name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <ItemTemplate>
+                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                             </div>

@@ -55,12 +55,12 @@ var Passwrd = function () {
         form.validate({
             rules: {
                 ctl00$ContentPlaceHolder1$txt_pass: {
-                    minlength: 5,
+                    minlength: 6,
                     maxlength:10,
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txt_con_pass: {
-                    minlength: 5,
+                    minlength: 6,
                     maxlength: 10,
                     required: true
                 }

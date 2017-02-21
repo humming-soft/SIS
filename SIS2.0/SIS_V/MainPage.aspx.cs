@@ -21,7 +21,7 @@ namespace SIS_V
         {
             if (Session["is_login"] == null)
             {
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Login");
             }
             else
             {
@@ -29,16 +29,16 @@ namespace SIS_V
                 {
                     if (Session["role"].ToString() == "user")
                     {
-                        Response.Redirect("~/user/Dash.aspx");
+                        Response.Redirect("~/user/Dash");
                     }
                     else if (Session["role"].ToString() == "admin")
                     {
-                        Response.Redirect("~/admin/Dash.aspx");
+                        Response.Redirect("~/admin/Dash");
                     }
                 }
                 else
                 {
-                    Response.Redirect("~/Login.aspx");
+                    Response.Redirect("~/Login");
                 }
             }
         }
