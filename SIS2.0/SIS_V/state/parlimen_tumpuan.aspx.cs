@@ -53,7 +53,7 @@ namespace SIS_V.state
             if (count>=3)
             {
                 int div_count = count / 3;
-                for (int i = 0; i <count; i++)
+                for (int i = 0; i < count; i++)
                 {
                     id = int.Parse(dt.Rows[i]["area_id"].ToString());
                     area_code = dt.Rows[i]["area_code"].ToString();
