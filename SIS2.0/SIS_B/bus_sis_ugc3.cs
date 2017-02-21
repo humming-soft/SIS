@@ -53,10 +53,5 @@ namespace SIS_B
         {
             return data.fill_senarai_kawasan_pem(state_id);
         }
-
-        public DataTable fill_kod_kawasan()
-        {
-            return data.fill_kod_kawasan(area_id);
-        }
     }
 }
