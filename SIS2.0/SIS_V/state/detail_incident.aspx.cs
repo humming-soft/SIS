@@ -17,7 +17,7 @@ namespace SIS_V.state
         {
              id= int.Parse(Session["area"].ToString());
             if(!IsPostBack){
-                fill_kod_kawasan();
+                //fill_kod_kawasan();
                 //fill_maklumat_kawasan();
                 //fill_calon();
                 //fill_masalah_dalaman_parti();
