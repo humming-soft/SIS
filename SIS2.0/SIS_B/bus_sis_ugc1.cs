@@ -26,6 +26,7 @@ namespace SIS_B
         public string status_kawasan { get; set; }
         public string kaveat { get; set; }
         public DateTime tarikhA { get; set; }
+        public int stateid { get; set; }
 
         public int check_login()
         {
@@ -90,6 +91,10 @@ namespace SIS_B
         public int insert_statuskawasan()
         {
             return data1.insert_statuskawasan(kod_kawasan, status_kawasan, tarikh, kaveat);
+        }
+        public DataTable parlimen()
+        {
+            return data1.parlimen(stateid);
         }
     }
 }

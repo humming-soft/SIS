@@ -4,7 +4,7 @@
     <script type="text/javascript">
 
         $(function () {
-            trends_vals();
+            parlimen();
 
         });
         //$(function () {
@@ -197,16 +197,34 @@
         //});
     </script>
     <script type="text/javascript">
-        function trends_vals() {
-            //alert('inside');
+        function parlimen() {
+            var data = {};
+            var sid = '<%= Session["state"] %>';
+            //alert(sid);
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
-                data: "{}",
-                //url: "utama.aspx/test",
-                url:'<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/test")%>',
+                data: '{"sid":"' + sid + '"}',
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/parlimen")%>',
                 dataType: "json",
                 success: function (data) {
+                    for (var i = 0; i < data.d.length; i++) {
+                        //console.log(data.d[i].Color_code);
+                        //console.log(data.d[i].Color_Value);
+                        if (data.d[i].Color_code == 1) {
+                            $('#black').html(data.d[i].Color_Value);
+                        }
+                        else if (data.d[i].Color_code == 2) {
+                            $('#grey').text(data.d[i].Color_Value);
+                        }
+                        else if (data.d[i].Color_code == 3) {
+                            $('#white').text(data.d[i].Color_Value);
+                        }
+                        else {
+                            console.log('Unused Value');
+                        }
+
+                    }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log(errorThrown);
@@ -223,9 +241,9 @@
                 <p class="text-muted m-b-25 font-13 ta-center">
                     Parlimen
                 </p>
-                <h3 class="text-success portlet-status counter status-white">103</h3>
-                <h3 class="text-warning portlet-status counter status-gray">39</h3>
-                <h3 class="text-info portlet-status counter status-black">80</h3>
+                <h3 class="text-success portlet-status  status-white" id="white"></h3>
+                <h3 class="text-warning portlet-status  status-gray" id="grey"></h3>
+                <h3 class="text-info portlet-status status-black" id="black"></h3>
             </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-1 col-lg-1">
