@@ -96,5 +96,9 @@ namespace SIS_B
         {
             return data1.parlimen(stateid);
         }
+        public DataTable dun()
+        {
+            return data1.dun(stateid);
+        }
     }
 }
