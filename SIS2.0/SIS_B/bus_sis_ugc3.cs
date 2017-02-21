@@ -19,6 +19,7 @@ namespace SIS_B
         public string position { get; set; }
         public string pass { get; set; }
         public int state_id { get; set; }
+        public int area_id { get; set; }
         public DataTable fetch_states()
         {
             return data.fetch_state();
@@ -52,6 +53,10 @@ namespace SIS_B
         {
             return data.fill_senarai_kawasan_pem(state_id);
         }
-        
+
+        public DataTable fill_kod_kawasan()
+        {
+            return data.fill_kod_kawasan(area_id);
+        }
     }
 }
