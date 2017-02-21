@@ -17,7 +17,7 @@ namespace SIS_V.state
         DataTable isconc = new DataTable();
         DataTable isopera = new DataTable();
 
-        int isconccount, isopercount;
+        int area_id, isconccount, isopercount;
 
         DataTable con_dt1 = new DataTable();
         DataTable con_dt2 = new DataTable();
@@ -57,41 +57,49 @@ namespace SIS_V.state
 
             if (dt.Rows.Count > 0)
             {
+                isconc.Columns.Add("area_id", typeof(int));
                 isconc.Columns.Add("area_code", typeof(string));
                 isconc.Columns.Add("area_name", typeof(string));
                 isconc.Columns.Add("color", typeof(string));
                 isconc.Columns.Add("row_color", typeof(string));
 
+                isopera.Columns.Add("area_id", typeof(int));
                 isopera.Columns.Add("area_code", typeof(string));
                 isopera.Columns.Add("area_name", typeof(string));
                 isopera.Columns.Add("color", typeof(string));
                 isopera.Columns.Add("row_color", typeof(string));
 
+                con_dt1.Columns.Add("area_id", typeof(int));
                 con_dt1.Columns.Add("area_code", typeof(string));
                 con_dt1.Columns.Add("area_name", typeof(string));
                 con_dt1.Columns.Add("color", typeof(string));
                 con_dt1.Columns.Add("row_color", typeof(string));
 
+                con_dt2.Columns.Add("area_id", typeof(int));
                 con_dt2.Columns.Add("area_code", typeof(string));
                 con_dt2.Columns.Add("area_name", typeof(string));
                 con_dt2.Columns.Add("color", typeof(string));
                 con_dt2.Columns.Add("row_color", typeof(string));
 
+                con_dt3.Columns.Add("area_id", typeof(int));
                 con_dt3.Columns.Add("area_code", typeof(string));
                 con_dt3.Columns.Add("area_name", typeof(string));
                 con_dt3.Columns.Add("color", typeof(string));
                 con_dt3.Columns.Add("row_color", typeof(string));
 
+                op_dt1.Columns.Add("area_id", typeof(int));
                 op_dt1.Columns.Add("area_code", typeof(string));
                 op_dt1.Columns.Add("area_name", typeof(string));
                 op_dt1.Columns.Add("color", typeof(string));
                 op_dt1.Columns.Add("row_color", typeof(string));
 
+                op_dt2.Columns.Add("area_id", typeof(int));
                 op_dt2.Columns.Add("area_code", typeof(string));
                 op_dt2.Columns.Add("area_name", typeof(string));
                 op_dt2.Columns.Add("color", typeof(string));
                 op_dt2.Columns.Add("row_color", typeof(string));
 
+                op_dt3.Columns.Add("area_id", typeof(int));
                 op_dt3.Columns.Add("area_code", typeof(string));
                 op_dt3.Columns.Add("area_name", typeof(string));
                 op_dt3.Columns.Add("color", typeof(string));
@@ -101,7 +109,8 @@ namespace SIS_V.state
                 {
                     if ((dt.Rows[i][7].ToString() == dt.Rows[i][8].ToString()) && (dt.Rows[i][7].ToString() == "True") && (dt.Rows[i][8].ToString() == "True"))
                     {
-                        area_code = ""; area_name = ""; color = ""; row_color = "";
+                        area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
+                        area_id = int.Parse(dt.Rows[i]["area_id"].ToString());
                         area_code = dt.Rows[i]["area_code"].ToString();
                         area_name = dt.Rows[i]["area_name"].ToString();
                         color = dt.Rows[i]["color"].ToString();
@@ -109,7 +118,8 @@ namespace SIS_V.state
                     }
                     else
                     {
-                        area_code = ""; area_name = ""; color = ""; row_color = "";
+                        area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
+                        area_id = int.Parse(dt.Rows[i]["area_id"].ToString());
                         area_code = dt.Rows[i]["area_code"].ToString();
                         area_name = dt.Rows[i]["area_name"].ToString();
                         color = dt.Rows[i]["color"].ToString();
@@ -117,11 +127,11 @@ namespace SIS_V.state
                     }
                     if (dt.Rows[i][7].ToString() == "True") //Concentrated area
                     {
-                        isconc.Rows.Add(area_code, area_name, color, row_color);
+                        isconc.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     if (dt.Rows[i][8].ToString() == "True") // Operational area
                     {
-                        isopera.Rows.Add(area_code, area_name, color, row_color);
+                        isopera.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                 }
 
@@ -130,38 +140,39 @@ namespace SIS_V.state
 
                 for (int j = 0; j < isconc.Rows.Count; j++) // looping through isconcentrated only
                 {
-                    area_code = ""; area_name = ""; color = ""; row_color = "";
+                    area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
+                    area_id = int.Parse(dt.Rows[j]["area_id"].ToString());
                     area_code = isconc.Rows[j]["area_code"].ToString();
                     area_name = isconc.Rows[j]["area_name"].ToString();
                     color = isconc.Rows[j]["color"].ToString();
                     row_color = isconc.Rows[j]["row_color"].ToString();
                     if (j < isconccount)
                     {
-                        con_dt1.Rows.Add(area_code, area_name, color, row_color);
+                        con_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     else if (j >= isconccount && j < (isconccount * 2))
                     {
-                        con_dt2.Rows.Add(area_code, area_name, color, row_color);
+                        con_dt2.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     else if (j >= (isconccount * 2) && j < (isconccount * 3))
                     {
-                        con_dt3.Rows.Add(area_code, area_name, color, row_color);
+                        con_dt3.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     else
                     {
                         if (isconc.Rows.Count == 1)
                         {
-                            con_dt1.Rows.Add(area_code, area_name, color, row_color);
+                            con_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                         }
                         if (isconc.Rows.Count == 2)
                         {
                             if (j == 0)
                             {
-                                con_dt1.Rows.Add(area_code, area_name, color, row_color);
+                                con_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                             }
                             else
                             {
-                                con_dt2.Rows.Add(area_code, area_name, color, row_color);
+                                con_dt2.Rows.Add(area_id, area_code, area_name, color, row_color);
                             }
 
                         }
@@ -170,38 +181,39 @@ namespace SIS_V.state
 
                 for (int k = 0; k < isopera.Rows.Count; k++) // looping through operational only
                 {
-                    area_code = ""; area_name = ""; color = ""; row_color = "";
+                    area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
+                    area_id = int.Parse(dt.Rows[k]["area_id"].ToString());
                     area_code = isopera.Rows[k]["area_code"].ToString();
                     area_name = isopera.Rows[k]["area_name"].ToString();
                     color = isopera.Rows[k]["color"].ToString();
                     row_color = isopera.Rows[k]["row_color"].ToString();
                     if (k < isopercount)
                     {
-                        op_dt1.Rows.Add(area_code, area_name, color, row_color);
+                        op_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     else if (k >= isopercount && k < (isopercount * 2))
                     {
-                        op_dt2.Rows.Add(area_code, area_name, color, row_color);
+                        op_dt2.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     else if (k >= (isopercount * 2) && k < (isopercount * 3))
                     {
-                        op_dt3.Rows.Add(area_code, area_name, color, row_color);
+                        op_dt3.Rows.Add(area_id, area_code, area_name, color, row_color);
                     }
                     else
                     {
                         if (isopera.Rows.Count == 1)
                         {
-                            op_dt1.Rows.Add(area_code, area_name, color, row_color);
+                            op_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                         }
                         if (isopera.Rows.Count == 2)
                         {
                             if (k == 0)
                             {
-                                op_dt1.Rows.Add(area_code, area_name, color, row_color);
+                                op_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                             }
                             else
                             {
-                                op_dt2.Rows.Add(area_code, area_name, color, row_color);
+                                op_dt2.Rows.Add(area_id, area_code, area_name, color, row_color);
                             }
 
                         }
@@ -285,6 +297,48 @@ namespace SIS_V.state
                 OpGridView3.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
 
+        }
+        protected void lnk_arn1_Click(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            Session["area"] = int.Parse(ConGridView1.DataKeys[row.RowIndex].Value.ToString());
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void lnk_arn2_Click(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            Session["area"] = int.Parse(ConGridView2.DataKeys[row.RowIndex].Value.ToString());
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void lnk_arn3_Click(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            Session["area"] = int.Parse(ConGridView3.DataKeys[row.RowIndex].Value.ToString());
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void lnk_arn4_Click(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            Session["area"] = int.Parse(OpGridView1.DataKeys[row.RowIndex].Value.ToString());
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void lnk_arn5_Click(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            Session["area"] = int.Parse(OpGridView2.DataKeys[row.RowIndex].Value.ToString());
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void lnk_arn6_Click(Object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            Session["area"] = int.Parse(OpGridView3.DataKeys[row.RowIndex].Value.ToString());
+            Response.Redirect("detail_incident.aspx");
         }
 
     }

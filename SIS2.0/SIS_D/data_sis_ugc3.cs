@@ -188,6 +188,27 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataTable fill_kod_kawasan(int area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "GetStateAreaList";
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
         public DataTable fill_senarai_kawasan_pem(int state_id)
         {
             try

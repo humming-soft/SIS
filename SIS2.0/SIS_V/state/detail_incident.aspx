@@ -12,7 +12,7 @@
                 </p>
 
                 <div class="table-responsive">
-                    <table class="table">
+                  <%--  <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -96,7 +96,13 @@
                                 <td>Lorem Ipsum</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>--%>
+                    <asp:GridView ID="grid_kodkawasan" runat="server" AutoGenerateColumns="False">
+                        <Columns>
+                            <asp:BoundField DataField="area_id" HeaderText="#" SortExpression="area_id" />
+                            <asp:BoundField DataField="area_name" HeaderText="Area Name" SortExpression="area_name" />
+                        </Columns>
+                    </asp:GridView>
                 </div>
             </div>
         </div>

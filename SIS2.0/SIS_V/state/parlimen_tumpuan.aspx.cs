@@ -269,5 +269,29 @@ namespace SIS_V.state
                 grid_three.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+        protected void link_area_name_skone_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(grid_senarai_one.DataKeys[row.RowIndex].Value.ToString());
+            Session["area"] = id;
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void link_area_name_sktwo_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(grid_senarai_two.DataKeys[row.RowIndex].Value.ToString());
+            Session["area"] = id;
+            Response.Redirect("detail_incident.aspx");
+        }
+        protected void link_area_name_skthree_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(grid_senarai_three.DataKeys[row.RowIndex].Value.ToString());
+            Session["area"] = id;
+            Response.Redirect("detail_incident.aspx");
+        }
     }
 }
