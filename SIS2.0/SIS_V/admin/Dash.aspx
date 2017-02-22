@@ -60,7 +60,8 @@
                                 <li><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul>
                                         <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="#"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
+                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                         <li><a href="#"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="#"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
@@ -95,7 +96,8 @@
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul class="dl-submenu">
                                         <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="#"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
+                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                         <li><a href="#"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="#"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
@@ -147,9 +149,9 @@
                                 <img src="../assets/images/gallery/002_d.png" alt="Logo Image Here" />
                                 <a href="#">
                                     <p class="days_ref">
-                                        Kawasan
+                                        Parlimen
                                         <br />
-                                        Operasi
+                                        Tumpuan
                                     </p>
                                 </a>
                             </li>
