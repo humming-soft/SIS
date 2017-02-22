@@ -22,7 +22,7 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                //fillgrid();
+                jumlah_insiden();
             }
         }
 
@@ -79,11 +79,12 @@ namespace SIS_V.state
             }
             return pc;
         }
-        //public void fillgrid()
-        //{
-        //    dt = bus1.fillgrid();
-        //    if (dt.Rows.Count > 0)
-        //    {
+        public void jumlah_insiden()
+        {
+            bus1.stateid = int.Parse(Session["state"].ToString());
+            dt = bus1.jumlah_insiden();
+            if (dt.Rows.Count > 0)
+            {
         //        count = dt.Rows.Count / 2;
 
         //        table1.Columns.Add("id", typeof(int));
@@ -112,15 +113,19 @@ namespace SIS_V.state
         //                table2.Rows.Add(id, hash, Name, Num);
         //            }
         //        }
+                grdinsident1.DataSource = dt;
+                grdinsident1.DataBind();
 
-        //    }
+                grdinsident2.DataSource = dt;
+                grdinsident2.DataBind();
+            }
 
-        //    grdinsident1.DataSource = table1;
-        //    grdinsident1.DataBind();
+            //grdinsident1.DataSource = table1;
+            //grdinsident1.DataBind();
 
-        //    grdinsident2.DataSource = table2;
-        //    grdinsident2.DataBind();
-        //}
+            //grdinsident2.DataSource = table2;
+            //grdinsident2.DataBind();
+        }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {

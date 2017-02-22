@@ -223,9 +223,11 @@
                     }
                 },
                 series: [{
+                    maxPointWidth: 20,
                     name: 'PEMBANGKANG',
                     data: pm
                 }, {
+                    maxPointWidth: 20,
                     name: 'BN',
                     data: bn
                 }, ]
@@ -308,9 +310,11 @@
                     }
                 },
                 series: [{
+                    maxPointWidth: 20,
                     name: 'PEMBANGKANG',
                     data: pm1
                 }, {
+                    maxPointWidth: 20,
                     name: 'BN',
                     data: bn1
                 }, ]
@@ -401,31 +405,13 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="table-responsive">
-                            <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
-                                <Columns>
-                                    <asp:BoundField DataField="#" HeaderText="#" />
-                                    <asp:TemplateField HeaderText="Name">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Bind("Name") %>' Font-Underline="False" OnClick="LinkButton1_Click"></asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="Num" HeaderText="No. of Incident" />
-                                </Columns>
+                            <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None">
                             </asp:GridView>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="table-responsive">
-                            <asp:GridView ID="grdinsident2" CssClass="table" runat="server" GridLines="None" AutoGenerateColumns="False">
-                                <Columns>
-                                    <asp:BoundField DataField="#" HeaderText="#" />
-                                    <asp:TemplateField HeaderText="Name">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="LinkButton2" runat="server" Text='<%# Bind("Name") %>' Font-Underline="False"></asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="Num" HeaderText="No. of Incidents" />
-                                </Columns>
+                            <asp:GridView ID="grdinsident2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None">
                             </asp:GridView>
                         </div>
                     </div>
