@@ -21,9 +21,11 @@ namespace SIS_V.state
             if(!IsPostBack){
                fill_kod_kawasan();
                fill_maklumat_kawasan();
-                //fill_calon();
+               fill_calon();
                 //fill_masalah_dalaman_parti();
-                //fill_keluar_mengundi();
+               fill_keluar_mengundi();
+               fill_semasa();
+
             }
         }
         public void fill_kod_kawasan()
@@ -49,6 +51,40 @@ namespace SIS_V.state
                 lbl_percent_vote.Text = dt.Rows[0]["percent_vote"].ToString();
                 lbl_spoilt_vote.Text = dt.Rows[0]["spoilt_vote"].ToString();
                 lbl_raceFragment.Text = dt.Rows[0]["race_fragment"].ToString();
+            }
+        }
+        public void fill_calon()
+        {
+            bus.area_id = id;
+            DataTable dt = bus.fill_calon();
+            if (dt.Rows.Count > 0)
+            {
+                lbl_name.Text = dt.Rows[0]["name"].ToString();
+                lbl_job.Text = dt.Rows[0]["occupation"].ToString();
+                lbl_political_pos.Text = dt.Rows[0]["political_post"].ToString();
+                lbl_education.Text = dt.Rows[0]["education"].ToString();
+                byte[] bytes = (byte[])dt.Rows[0]["image"];
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                img_candidate.ImageUrl = "data:image/png;base64," + base64String;
+            }
+        }
+        public void fill_keluar_mengundi()
+        {
+            bus.area_id = id;
+            DataTable dt = bus.fill_keluar_mengundi();
+            if (dt.Rows.Count > 0)
+            {
+                lbl_perc.Text = dt.Rows[0]["percent_turnout_vote"].ToString()+"%";
+            }
+        }
+        public void fill_semasa()
+        {
+            bus.area_id = id;
+            DataTable dt = bus.fill_semasa();
+            if (dt.Rows.Count > 0)
+            {
+                grid_activity.DataSource = dt;
+                grid_activity.DataBind();
             }
         }
     }

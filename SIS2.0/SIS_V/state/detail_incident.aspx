@@ -2,7 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.progress-bar').css("width",$('#lbl_perc').text())
+        });
+</script>
     <div class="row">
         <div class="col-lg-3">
             <div class="card-box">
@@ -135,7 +141,8 @@
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Calon</h4>
                 <div>
-                    <img src="../assets/images/users/avatar-0.jpg" class="img-responsive img-rounded" alt="user">
+                    <asp:Image ID="img_candidate" runat="server"  class="img-responsive img-rounded" alt="user"/>
+                    <%--<img src="../assets/images/users/avatar-0.jpg" class="img-responsive img-rounded" alt="user">--%>
                     <div class="wid-u-info">
                         <table class="table">
                             <tr>
@@ -178,8 +185,8 @@
                 <h4 class="text-dark  header-title m-t-0 m-b-25">Peratusan Keluar Mengundi</h4>
                 <div>
                     <div class="progress progress-lgg">
-                        <div class="progress-bar  progress-bar-primary progress-bar-striped active progress-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-                            85%
+                        <div class="progress-bar progress-bar-primary progress-bar-striped active progress-custom txt-black" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+                            <asp:Label ID="lbl_perc" runat="server" Text="" ClientIDMode="Static"></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -209,28 +216,12 @@
                         </tr>
                         <tr>
                             <th>ACTIVITI :</th>
-                            <td>1.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
-                                <br>
-                                2.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
-                                <br>
-                                3.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
-                                <br>
-                                4.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
-                                <br>
-                                5.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    -Ceramah Umum yang diadakan bersama Umi Hafilda.
-                                    Diaggarkan seramai 5 ribu hadir.
-                                    Mensasarkan golongan muda.<br>
-                                <br>
-                                6.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.<br>
-                                <br>
-                                7.Tarikh : 04/06/2012 Masa: 12:00 AM
-                                    - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus mauris. Donec quis leo rhoncus, fringilla mi vitae, pellentesque massa.</td>
+                            <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" BorderColor="White" BorderStyle="None" GridLines="None">
+                                <Columns>
+                                    <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" />
+                                    <asp:BoundField DataField="details" SortExpression="details" />
+                                </Columns>
+                            </asp:GridView>
                         </tr>
                     </table>
                 </div>

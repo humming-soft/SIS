@@ -57,6 +57,18 @@ namespace SIS_B
         {
             return data.fill_maklumat_kawasan(area_id);
         }
+        public DataTable fill_calon()
+        {
+            return data.fill_calon(area_id);
+        }
+        public DataTable fill_keluar_mengundi()
+        {
+            return data.fill_keluar_mengundi(area_id);
+        }
+        public DataTable fill_semasa()
+        {
+            return data.fill_semasa(area_id);
+        }
         
     }
 }
