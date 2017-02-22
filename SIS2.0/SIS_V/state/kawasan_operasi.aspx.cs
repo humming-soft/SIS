@@ -303,42 +303,42 @@ namespace SIS_V.state
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(ConGridView1.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident.aspx");
+            Response.Redirect("detail_incident");
         }
         protected void lnk_arn2_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(ConGridView2.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident.aspx");
+            Response.Redirect("detail_incident");
         }
         protected void lnk_arn3_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(ConGridView3.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident.aspx");
+            Response.Redirect("detail_incident");
         }
         protected void lnk_arn4_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(OpGridView1.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident.aspx");
+            Response.Redirect("detail_incident");
         }
         protected void lnk_arn5_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(OpGridView2.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident.aspx");
+            Response.Redirect("detail_incident");
         }
         protected void lnk_arn6_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(OpGridView3.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident.aspx");
+            Response.Redirect("detail_incident");
         }
 
     }
