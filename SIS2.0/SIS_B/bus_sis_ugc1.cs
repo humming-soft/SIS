@@ -27,6 +27,7 @@ namespace SIS_B
         public string kaveat { get; set; }
         public DateTime tarikhA { get; set; }
         public int stateid { get; set; }
+        public int areaid { get; set; }
 
         public int check_login()
         {
@@ -99,6 +100,10 @@ namespace SIS_B
         public DataTable dun()
         {
             return data1.dun(stateid);
+        }
+        public DataTable situasi()
+        {
+            return data1.situasi(areaid,stateid);
         }
     }
 }

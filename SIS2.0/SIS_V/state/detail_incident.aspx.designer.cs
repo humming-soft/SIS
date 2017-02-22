@@ -94,6 +94,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Label lbl_raceFragment;
         
         /// <summary>
+        /// img_candidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_candidate;
+        
+        /// <summary>
         /// lbl_name control.
         /// </summary>
         /// <remarks>
@@ -128,5 +137,23 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_education;
+        
+        /// <summary>
+        /// lbl_perc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_perc;
+        
+        /// <summary>
+        /// grid_activity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grid_activity;
     }
 }
