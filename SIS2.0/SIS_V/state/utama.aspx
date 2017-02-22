@@ -205,9 +205,13 @@
                 },
                 yAxis: {
                     min: 0,
-                    max: 100,
                     title: {
-                        text: ''
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify',
+                        enabled: false
                     }
                 },
                 legend: {
@@ -286,9 +290,13 @@
                 },
                 yAxis: {
                     min: 0,
-                    max: 100,
                     title: {
-                        text: ''
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify',
+                        enabled: false
                     }
                 },
                 legend: {
@@ -428,7 +436,7 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Isu Utama</h4>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: scroll">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -461,6 +469,16 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
+                                        <td>Minton Admin v1.3</td>
+                                        <td>01/01/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Minton Admin v1.3</td>
+                                        <td>01/01/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
                                         <td>Minton Admin v1.3</td>
                                         <td>01/01/2016</td>
                                     </tr>
