@@ -530,3 +530,9 @@
 .txt-black{
     color:#000000 !important;
 }
+.va-top{
+    vertical-align:top;
+}
+.f-w-600{
+    font-weight:600;
+}

@@ -61,7 +61,24 @@ namespace SIS_V.state
             }
             return parliment;
         }
-
+        [WebMethod]
+        public static List<ParlimentChart> situasi(int sid, int aid)
+        {
+            List<ParlimentChart> pc = new List<ParlimentChart>();
+            bus_sis_ugc1 busparc = new bus_sis_ugc1();
+            busparc.areaid = aid;
+            busparc.stateid = sid;
+            DataTable dtpc = busparc.situasi();
+            for (int i = 0; i < dtpc.Rows.Count; i++)
+            {
+                ParlimentChart _pc = new ParlimentChart();
+                _pc.State = dtpc.Rows[i]["State_Name"].ToString();
+                _pc.Color_Code = int.Parse(dtpc.Rows[i]["Analysis_Color_Id"].ToString());
+                _pc.Color_Value = int.Parse(dtpc.Rows[i]["Count_Analysis"].ToString());
+                pc.Add(_pc);
+            }
+            return pc;
+        }
         //public void fillgrid()
         //{
         //    dt = bus1.fillgrid();

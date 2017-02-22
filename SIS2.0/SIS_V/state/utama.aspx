@@ -17,7 +17,6 @@
         function parlimen() {
             var data = {};
             var sid = '<%= Session["state"] %>';
-            //alert(sid);
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -26,8 +25,6 @@
                 dataType: "json",
                 success: function (data) {
                     for (var i = 0; i < data.d.length; i++) {
-                        //console.log(data.d[i].Color_code);
-                        //console.log(data.d[i].Color_Value);
                         if (data.d[i].Color_code == 1) {
                             $('#black').html(data.d[i].Color_Value);
                         }
@@ -167,9 +164,7 @@
                 dataType: "json",
                 success: function (data) {
                     for (var i = 0; i < data.d.length; i++) {
-                        //console.log(data.d[i].Color_code);
                         total = total + parseInt(data.d[i].Color_Value);
-                        //console.log(total);
                         if (data.d[i].Color_code == 1) {
                             $('#blackd').html(data.d[i].Color_Value);
                         }
@@ -190,14 +185,14 @@
                     console.log(errorThrown);
                 },
                 complete: function (data) {
-                    guage(total,vals);
+                    guage(total, vals);
                 }
             });
         }
 
     </script>
     <script type="text/javascript">
-        function situasi_parlimen() {
+        function parlimen_chart(cat, bn, pm) {
             Highcharts.chart('stackedp', {
                 chart: {
                     type: 'bar'
@@ -206,15 +201,17 @@
                     text: ''
                 },
                 xAxis: {
-                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
-                        'Perak', 'Pahang', 'Selangor',
-                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
+                    categories: cat
                 },
                 yAxis: {
                     min: 0,
-                    max: 100,
                     title: {
-                        text: ''
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify',
+                        enabled: false
                     }
                 },
                 legend: {
@@ -226,13 +223,61 @@
                     }
                 },
                 series: [{
-                    name: 'BN',
-                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
-                }, {
                     name: 'PEMBANGKANG',
-                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
+                    data: pm
+                }, {
+                    name: 'BN',
+                    data: bn
                 }, ]
             });
+        }
+    </script>
+    <script type="text/javascript">
+        function situasi_parlimen() {
+            try {
+                var pms1 = 0, pms2 = 0, pmst = 0, cat = [], bn = [], pm = [];
+                var data = {};
+                var sid = '<%= Session["state"] %>';
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    data: '{"sid":"' + sid + '","aid":"' + 1 + '"}',
+                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/situasi")%>',
+                    dataType: "json",
+                    success: function (data) {
+                        cat.push(data.d[0].State);
+                        for (var i = 0; i < data.d.length; i++) {
+                            if (data.d[i].Color_Code == 1) { // black
+                                pms1 = pms1 + parseInt(data.d[i].Color_Value);
+                            }
+                            else if (data.d[i].Color_Code == 2) { // grey
+                                pms2 = pms2 + parseInt(data.d[i].Color_Value);
+                            }
+                            else if (data.d[i].Color_Code == 3) { // white
+                                bn.push(data.d[i].Color_Value);
+                            }
+                            else {
+                                console.log('Unused Value');
+                            }
+                        }
+                        pmst = pms1 + pms2;
+                        pm.push(pmst);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    },
+                    complete: function (data) {
+                        parlimen_chart(cat, bn, pm);
+                    }
+                });
+            }
+            catch (err) {
+                console.log(err.message);
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function dun_chart(cat1, bn1, pm1) {
             Highcharts.chart('stackedd', {
                 chart: {
                     type: 'bar'
@@ -241,15 +286,17 @@
                     text: ''
                 },
                 xAxis: {
-                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
-                        'Perak', 'Pahang', 'Selangor',
-                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
+                    categories: cat1
                 },
                 yAxis: {
                     min: 0,
-                    max: 100,
                     title: {
-                        text: ''
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify',
+                        enabled: false
                     }
                 },
                 legend: {
@@ -261,87 +308,57 @@
                     }
                 },
                 series: [{
-                    name: 'BN',
-                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
-                }, {
                     name: 'PEMBANGKANG',
-                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
+                    data: pm1
+                }, {
+                    name: 'BN',
+                    data: bn1
                 }, ]
             });
         }
     </script>
     <script type="text/javascript">
         function situasi_dun() {
-            Highcharts.chart('stackedp', {
-                chart: {
-                    type: 'bar'
-                },
-                title: {
-                    text: ''
-                },
-                xAxis: {
-                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
-                        'Perak', 'Pahang', 'Selangor',
-                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    title: {
-                        text: ''
+            try {
+                var pms8 = 0, pms9 = 0, pmst1 = 0, cat1 = [], bn1 = [], pm1 = [];
+                var data = {};
+                var sid = '<%= Session["state"] %>';
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    data: '{"sid":"' + sid + '","aid":"' + 2 + '"}',
+                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/situasi")%>',
+                    dataType: "json",
+                    success: function (data) {
+                        cat1.push(data.d[0].State);
+                        for (var i = 0; i < data.d.length; i++) {
+                            if (data.d[i].Color_Code == 1) { // black
+                                pms8 = pms8 + parseInt(data.d[i].Color_Value);
+                            }
+                            else if (data.d[i].Color_Code == 2) { // grey
+                                pms9 = pms9 + parseInt(data.d[i].Color_Value);
+                            }
+                            else if (data.d[i].Color_Code == 3) { // white
+                                bn1.push(data.d[i].Color_Value);
+                            }
+                            else {
+                                console.log('Unused Value');
+                            }
+                        }
+                        pmst1 = pms8 + pms9;
+                        pm1.push(pmst1);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    },
+                    complete: function (data) {
+                        dun_chart(cat1, bn1, pm1);
                     }
-                },
-                legend: {
-                    reversed: true
-                },
-                plotOptions: {
-                    series: {
-                        stacking: 'normal'
-                    }
-                },
-                series: [{
-                    name: 'BN',
-                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
-                }, {
-                    name: 'PEMBANGKANG',
-                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
-                }, ]
-            });
-            Highcharts.chart('stackedd', {
-                chart: {
-                    type: 'bar'
-                },
-                title: {
-                    text: ''
-                },
-                xAxis: {
-                    categories: ['Perlis', 'Kedah', 'Kelantan', 'Terengganu', 'Pulau Pinang',
-                        'Perak', 'Pahang', 'Selangor',
-                        'Negeri Sembilan', 'Melaka', 'Johar', 'Sabah', 'Sarawak', 'WP Kuala Lumpur', 'WP Putrajaya', 'WP Kabuan']
-                },
-                yAxis: {
-                    min: 0,
-                    max: 100,
-                    title: {
-                        text: ''
-                    }
-                },
-                legend: {
-                    reversed: true
-                },
-                plotOptions: {
-                    series: {
-                        stacking: 'normal'
-                    }
-                },
-                series: [{
-                    name: 'BN',
-                    data: [58, 30, 40, 70, 92, 50, 53, 40, 70, 20, 50, 83, 40, 70, 42, 55, 80]
-                }, {
-                    name: 'PEMBANGKANG',
-                    data: [42, 70, 60, 30, 8, 50, 47, 60, 30, 80, 50, 17, 60, 30, 58, 45, 20]
-                }, ]
-            });
+                });
+            }
+            catch (err) {
+                console.log(err.message);
+            }
         }
     </script>
 </asp:Content>
@@ -419,7 +436,7 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Isu Utama</h4>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: scroll">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -452,6 +469,16 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
+                                        <td>Minton Admin v1.3</td>
+                                        <td>01/01/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Minton Admin v1.3</td>
+                                        <td>01/01/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
                                         <td>Minton Admin v1.3</td>
                                         <td>01/01/2016</td>
                                     </tr>

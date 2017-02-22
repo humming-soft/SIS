@@ -107,9 +107,7 @@
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="ti-user m-r-5"></i>Profile</a></li>
                                 <li><a href="#" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
-                                <li><a href="#"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
                                 <li><a href="../Login"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
@@ -140,13 +138,13 @@
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
                         <li class="has-submenu" id="utama" runat="server">
-                            <a href="Dash.aspx"><i class="md md-dashboard"></i>Laman Utama</a>
+                            <a href="Dash"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
                             <a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                             <ul class="submenu">
                                 <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                <li><a href="kawasan_operasi"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                <li><a href="kawasan_operasi"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
                                 <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                 <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                 <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
