@@ -7,9 +7,9 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Kod Kawasan</h4>
-                <p class="text-muted m-b-25 font-13">
+                <%--<p class="text-muted m-b-25 font-13">
                     Your awesome text goes here.
-                </p>
+                </p>--%>
 
                 <div class="table-responsive">
                   <%--  <table class="table">
@@ -97,9 +97,9 @@
                             </tr>
                         </tbody>
                     </table>--%>
-                    <asp:GridView ID="grid_kodkawasan" runat="server" AutoGenerateColumns="False">
+                    <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False">
                         <Columns>
-                            <asp:BoundField DataField="area_id" HeaderText="#" SortExpression="area_id" />
+                            <asp:BoundField DataField="area_code" HeaderText="#" SortExpression="area_code" />
                             <asp:BoundField DataField="area_name" HeaderText="Area Name" SortExpression="area_name" />
                         </Columns>
                     </asp:GridView>
@@ -114,19 +114,19 @@
                 <div>
                     <table class="table">
                         <tr>
-                            <th colspan="4">Nama Kawasan : P.1 PADANG BASAR</th>
+                            <th colspan="4">Nama Kawasan :&nbsp;<asp:Label ID="lbl_area_code" runat="server" Text=""></asp:Label> <asp:Label ID="lbl_area_name" runat="server" Text=""></asp:Label></th>
                         </tr>
                         <tr>
-                            <td>JUMLAH UNDI 0</td>
-                            <td>MAJORITI</td>
-                            <td>PERATUS MENGUNDI</td>
-                            <td>UNDI ROSAK</td>
+                            <td>JUMLAH UNDI<br /> <asp:Label ID="lbl_no_voters" runat="server" Text=""></asp:Label> </td>
+                            <td>MAJORITI <br /><asp:Label ID="lbl_majority" runat="server" Text=""></asp:Label></td>
+                            <td>PERATUS MENGUNDI<br /><asp:Label ID="lbl_percent_vote" runat="server" Text=""></asp:Label></td>
+                            <td>UNDI ROSAK<br /><asp:Label ID="lbl_spoilt_vote" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PENIYANG DANG</td>
+                            <td colspan="4">PENIYANG DANG <br /><asp:Label ID="Label5" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PECHAHUM KAUM</td>
+                            <td colspan="4">PECHAHUM KAUM <br /><asp:Label ID="lbl_raceFragment" runat="server" Text=""></asp:Label></td>
                         </tr>
                     </table>
                 </div>
@@ -141,25 +141,25 @@
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">NAMA</h5>
-                                    <p class="text-muted m-b-5 font-13">Tiada Maklumat Nama Calon</p>
+                                    <p class="text-muted m-b-5 font-13" ><asp:Label ID="lbl_name" runat="server" Text=""></asp:Label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">PEKERJAAN</h5>
-                                    <p class="text-muted m-b-5 font-13">Tiada Maklumat</p>
+                                    <p class="text-muted m-b-5 font-13"> <asp:Label ID="lbl_job" runat="server" Text=""></asp:Label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">JAWATAN POLITIK</h5>
-                                    <p class="text-muted m-b-5 font-13">Tiada Maklumat</p>
+                                    <p class="text-muted m-b-5 font-13"><asp:Label ID="lbl_political_pos" runat="server" Text=""></asp:Label></p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">PENDIDIKAN</h5>
-                                    <p class="text-muted m-b-5 font-13">Tiada Maklumat</p>
+                                    <p class="text-muted m-b-5 font-13"> <asp:Label ID="lbl_education" runat="server" Text=""></asp:Label></p>
                                 </td>
                             </tr>
                         </table>

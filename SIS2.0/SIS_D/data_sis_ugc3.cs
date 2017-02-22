@@ -188,14 +188,13 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-
-        public DataTable fill_kod_kawasan(int area_id)
+        public DataTable fill_senarai_kawasan_pem(int state_id)
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "GetStateAreaList";
-                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.CommandText = "GetConDashboardAreaListPembangkang_state";
+                cmd.Parameters.AddWithValue("@state_id", state_id);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
@@ -209,13 +208,13 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataTable fill_senarai_kawasan_pem(int state_id)
+        public DataTable fill_maklumat_kawasan(int area_id)
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "GetConDashboardAreaListPembangkang_state";
-                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.CommandText = "usp_GetConDetDashboardAreaDetail";
+                cmd.Parameters.AddWithValue("@areaId", area_id);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();

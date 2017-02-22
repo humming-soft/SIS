@@ -28,31 +28,6 @@
                                                 </asp:TemplateField>
                                             </Columns>
                                         </asp:GridView>
-<%--                                        <table class="table table-bordered m-t-10">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width: 66px;">#</th>
-                                                    <th>Area</th>
-                                                    <th style="width: 100px;">Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>P.1</td>
-                                                    <td class="text-danger">PADANG BESAR</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-white">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>P.2</td>
-                                                    <td class="text-danger">KANGAR</td>
-                                                    <td>
-                                                        <h3 class="portlet-table-status status-black">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>--%>
                                     </div>
                                 </div>
                             </div>
