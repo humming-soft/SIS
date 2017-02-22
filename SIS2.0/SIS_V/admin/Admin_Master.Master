@@ -112,7 +112,7 @@
                                 <li><a href="#"><i class="ti-user m-r-5"></i>Profile</a></li>
                                 <li><a href="#" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
                                 <li><a href="#"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
-                                <li><a href="../Login.aspx"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
+                                <li><a href="../Login"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
                     </ul>
