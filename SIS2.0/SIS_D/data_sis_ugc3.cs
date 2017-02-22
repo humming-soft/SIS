@@ -208,5 +208,25 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataTable fill_maklumat_kawasan(int area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetConDetDashboardAreaDetail";
+                cmd.Parameters.AddWithValue("@areaId", area_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }
