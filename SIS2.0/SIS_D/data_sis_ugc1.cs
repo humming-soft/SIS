@@ -393,7 +393,7 @@ namespace SIS_D
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "usp_GetMainDashboardAnalysisAreaStatus_test";
+                cmd.CommandText = "usp_GetMainDashboardAnalysisAreaStatus_chart";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@areaType", @areaid);
                 cmd.Parameters.AddWithValue("@state_id", state_id);

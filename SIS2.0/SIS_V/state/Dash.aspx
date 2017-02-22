@@ -60,7 +60,7 @@
                                 <li><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul>
                                         <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
                                         <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                         <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
@@ -99,7 +99,7 @@
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul class="dl-submenu">
                                         <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Kawasan Operasi</a></li>
+                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
                                         <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                         <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
@@ -153,9 +153,9 @@
                                 <img src="../assets/images/gallery/002_d.png" alt="Logo Image Here" />
                                 <a href="kawasan_operasi">
                                     <p class="days_ref">
-                                        Kawasan
+                                        Parlimen
                                         <br />
-                                        Operasi
+                                        Tumpuan
                                     </p>
                                 </a>
                             </li>
