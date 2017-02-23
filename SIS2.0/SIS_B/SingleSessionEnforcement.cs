@@ -37,7 +37,6 @@ namespace SIS_B
                 {
                     // No authentication ticket found so logout this user
                     // Should never hit this code
-                    //httpContext.Session.Clear();
                     FormsAuthentication.SignOut();
                     FormsAuthentication.RedirectToLoginPage();
                     return;
@@ -55,18 +54,14 @@ namespace SIS_B
                 {
                     // Stored session does not match one in authentication
                     // ticket so logout the user
-                    //HttpContext context_new = HttpContext.Current;
-                    //context_new.Session.Clear();
                     FormsAuthentication.SignOut();
-                    FormsAuthentication.RedirectToLoginPage();
-                    return;
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
+                    cookie.Expires = DateTime.Now.AddYears(-1);
+                    httpContext.Response.Redirect("~/logout");
+                    //FormsAuthentication.RedirectToLoginPage();
                 }
             }
-            //else
-            //{
-            //    FormsAuthentication.SignOut();
-            //    FormsAuthentication.RedirectToLoginPage();
-            //}
+            
         }
 
         public void Dispose()

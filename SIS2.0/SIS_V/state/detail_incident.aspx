@@ -224,11 +224,11 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
-                            <th>&nbsp;&nbsp;&nbsp;&nbsp;STATUS SEMASA KAWASAN :</th>
+                            <th>STATUS SEMASA KAWASAN :</th>
                             <td><asp:Label ID="lbl_status" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <th>&nbsp;&nbsp;&nbsp;&nbsp;JUSTIFIKASI :</th>
+                            <th>JUSTIFIKASI :</th>
                             <td><asp:Label ID="lbl_justification" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <%--<tr>
@@ -239,8 +239,8 @@
                             <%--<th>ACTIVITI :</th>--%>
                             <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" BorderColor="White" BorderStyle="None" GridLines="None">
                                 <Columns>
-                                    <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" />
-                                    <asp:BoundField DataField="details" HeaderText="ACTIVITI :" SortExpression="details" />
+                                    <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" ItemStyle-Width="5%" />
+                                    <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="ACTIVITI :" SortExpression="details" />
                                 </Columns>
                             </asp:GridView>
                         </tr>
