@@ -26,7 +26,8 @@ namespace SIS_V.state
         DataTable three_three = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack){
+            if (!IsPostBack)
+            {
                 fill_senarai_kawasan();
                 fill_senarai_kawasan_pem();
             }
@@ -38,7 +39,7 @@ namespace SIS_V.state
             one.Columns.Add("color", typeof(string));
             one.Columns.Add("area_id", typeof(int));
             one.Columns.Add("isconcentrated_opposition", typeof(string));
-            
+
 
             two.Columns.Add("area_code", typeof(string));
             two.Columns.Add("area_name", typeof(string));
@@ -56,7 +57,19 @@ namespace SIS_V.state
             bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_senarai_kawasan();
             int count = dt.Rows.Count;
-            if (count>=3)
+            if (count == 1)
+            {
+                sena1.Attributes["class"] = "col-lg-12";
+                sena2.Attributes["style"] = "display:none";
+                sena3.Attributes["style"] = "display:none";
+            }
+            else if (count == 2)
+            {
+                sena1.Attributes["class"] = "col-lg-6";
+                sena2.Attributes["class"] = "col-lg-6";
+                sena3.Attributes["style"] = "display:none";
+            }
+            if (count >= 3)
             {
                 int div_count = count / 3;
                 for (int i = 0; i < count; i++)
@@ -82,8 +95,6 @@ namespace SIS_V.state
                     {
                         one.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
-
-
                 }
                 grid_senarai_one.DataSource = one;
                 grid_senarai_one.DataBind();
@@ -96,7 +107,6 @@ namespace SIS_V.state
             }
             else if (count == 2)
             {
-
                 int o_id = int.Parse(dt.Rows[0]["area_id"].ToString());
                 string o_area_code = dt.Rows[0]["area_code"].ToString();
                 string o_name = dt.Rows[0]["area_name"].ToString();
@@ -106,7 +116,7 @@ namespace SIS_V.state
                 string t_area_code = dt.Rows[1]["area_code"].ToString();
                 string t_name = dt.Rows[1]["area_name"].ToString();
                 string t_color = dt.Rows[1]["color"].ToString();
-                string t_is_op_co =dt.Rows[1]["isconcentrated_opposition"].ToString();
+                string t_is_op_co = dt.Rows[1]["isconcentrated_opposition"].ToString();
                 one.Rows.Add(o_area_code, o_name, o_color, o_id, o_is_op_co);
                 two.Rows.Add(t_area_code, t_name, t_color, t_id, t_is_op_co);
 
@@ -122,8 +132,8 @@ namespace SIS_V.state
                 grid_senarai_one.DataSource = dt;
                 grid_senarai_one.DataBind();
             }
-               
-            
+
+
         }
         public void fill_senarai_kawasan_pem()
         {
@@ -149,6 +159,18 @@ namespace SIS_V.state
             bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_senarai_kawasan_pem();
             int count = dt.Rows.Count;
+            if (count == 1)
+            {
+                pem1.Attributes["class"] = "col-lg-12";
+                pem2.Attributes["style"] = "display:none";
+                pem3.Attributes["style"] = "display:none";
+            }
+            else if (count == 2)
+            {
+                pem1.Attributes["class"] = "col-lg-6";
+                pem2.Attributes["class"] = "col-lg-6";
+                pem3.Attributes["style"] = "display:none";
+            }
             if (count >= 3)
             {
                 int div_count = count / 3;
@@ -187,7 +209,6 @@ namespace SIS_V.state
             }
             else if (count == 2)
             {
-
                 int o_id = int.Parse(dt.Rows[0]["area_id"].ToString());
                 string o_area_code = dt.Rows[0]["area_code"].ToString();
                 string o_name = dt.Rows[0]["area_name"].ToString();
@@ -199,7 +220,7 @@ namespace SIS_V.state
                 string t_color = dt.Rows[1]["color"].ToString();
                 string t_is_con = dt.Rows[1]["isconcentrated"].ToString();
                 one_one.Rows.Add(o_area_code, o_name, o_color, o_id, o_is_con);
-                two_two.Rows.Add(t_area_code, t_name, t_color, t_id,t_is_con);
+                two_two.Rows.Add(t_area_code, t_name, t_color, t_id, t_is_con);
 
                 grid_one.DataSource = one_one;
                 grid_one.DataBind();
@@ -293,7 +314,7 @@ namespace SIS_V.state
             Session["area"] = id;
             Response.Redirect("detail_incident");
         }
-       
+
         protected void link_area_name_skpone_Click1(object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
