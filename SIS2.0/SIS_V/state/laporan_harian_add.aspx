@@ -398,7 +398,6 @@
     <div class="card-box">
         <h4 class="text-dark  header-title m-t-0">Import Laporan Harian Dari Negeri</h4>
         <p class="text-muted m-b-25 font-13">
-            Description here (if any).
         </p>
         <div class="col-md-12">
             <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">

@@ -109,5 +109,9 @@ namespace SIS_B
         {
             return data1.jumlah_insiden(stateid);
         }
+        public DataTable isu_utama()
+        {
+            return data1.isu_utama(stateid);
+        }
     }
 }
