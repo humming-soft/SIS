@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Security;
+using System.Web.SessionState;
 using SIS_D;
 
 namespace SIS_B
@@ -36,6 +37,7 @@ namespace SIS_B
                 {
                     // No authentication ticket found so logout this user
                     // Should never hit this code
+                    //httpContext.Session.Clear();
                     FormsAuthentication.SignOut();
                     FormsAuthentication.RedirectToLoginPage();
                     return;
@@ -53,8 +55,11 @@ namespace SIS_B
                 {
                     // Stored session does not match one in authentication
                     // ticket so logout the user
+                    //HttpContext context_new = HttpContext.Current;
+                    //context_new.Session.Clear();
                     FormsAuthentication.SignOut();
                     FormsAuthentication.RedirectToLoginPage();
+                    return;
                 }
             }
             //else

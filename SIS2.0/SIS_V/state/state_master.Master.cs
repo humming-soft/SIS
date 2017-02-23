@@ -19,30 +19,16 @@ namespace SIS_V.state
         string log_name;
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpContext context = HttpContext.Current;
-            // CheckSession() inlined
-            try
-            {
-                if (context.Session["is_login"].ToString() != null)
-                {
-                    if (!"t".Equals(context.Session["is_login"].ToString()))
-                    {
-                        FormsAuthentication.SignOut();
-                        FormsAuthentication.RedirectToLoginPage();
-                    }
-                }
-            }
-            catch (NullReferenceException)
-            {
-                FormsAuthentication.SignOut();
-                FormsAuthentication.RedirectToLoginPage();
-            }
-
             if (!IsPostBack)
             {
+                checker();
                 valid_empty.Visible = false;
                 valid_match.Visible = false;
                 GetUserDetails();
+            }
+            else
+            {
+                checker();
             }
 
         }
@@ -97,6 +83,28 @@ namespace SIS_V.state
          {
              txtNewPassword.Text = "";
              txtConfirmPassword.Text = "";
+         }
+
+        protected void checker()
+         {
+             HttpContext context = HttpContext.Current;
+             // CheckSession() inlined
+             try
+             {
+                 if (context.Session["is_login"].ToString() != null)
+                 {
+                     if (!"t".Equals(context.Session["is_login"].ToString()))
+                     {
+                         FormsAuthentication.SignOut();
+                         FormsAuthentication.RedirectToLoginPage();
+                     }
+                 }
+             }
+             catch (NullReferenceException)
+             {
+                 FormsAuthentication.SignOut();
+                 FormsAuthentication.RedirectToLoginPage();
+             }
          }
     }
 }

@@ -28,8 +28,7 @@ namespace SIS_V
             //Session.Abandon();
             Session.Clear();
             Session["is_login"] = "f";
-            FormsAuthentication.SignOut();
-            FormsAuthentication.RedirectToLoginPage();
+            Response.Redirect("~/Mainpage");
         }
     }
 }
