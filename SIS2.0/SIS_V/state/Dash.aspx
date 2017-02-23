@@ -189,7 +189,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/009_d.png" alt="Logo Image Here" />
-                                <a href="../Login">
+                                <a href="../Logout">
                                     <p class="hours_ref">
                                         Keluar
                                         <br>

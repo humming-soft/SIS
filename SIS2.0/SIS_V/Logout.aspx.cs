@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace SIS_V
 {
@@ -11,7 +12,24 @@ namespace SIS_V
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                logout();
+            }
+            else
+            {
+                logout();
+            }
 
+        }
+
+        public void logout()
+        {
+            //Session.Abandon();
+            Session.Clear();
+            Session["is_login"] = "f";
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
         }
     }
 }
