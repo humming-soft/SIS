@@ -56,6 +56,7 @@ namespace SIS_B
         public string kedar_pertumbuhan_penduduk { get; set; }
 
         public int state_id { get; set; }
+        public string log_name { get; set; }
 
         public DataTable fill_DataTable()
         {
@@ -79,7 +80,10 @@ namespace SIS_B
         {
             return objDAL.fill_kod_kawasan(state_id);
         }
-
+        public DataTable GetUserDetails()
+        {
+            return objDAL.GetUserDetails(log_name);
+        }
 
     }
 }

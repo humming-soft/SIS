@@ -91,7 +91,7 @@ namespace SIS_V.admin
                 int r = bus.update_user();
                 if (r == 0)
                 {
-                    Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                    Response.Redirect("~/admin/tetapan_pentadbir_view");
                 }
             }
         }
@@ -116,7 +116,7 @@ namespace SIS_V.admin
                     int r = bus.update_password();
                     if (r == 0)
                     {
-                        Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                        Response.Redirect("~/admin/tetapan_pentadbir_view");
                         hd_password.Value = "1";
                     }
                 }

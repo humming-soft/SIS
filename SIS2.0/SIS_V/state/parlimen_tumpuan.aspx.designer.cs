@@ -13,6 +13,15 @@ namespace SIS_V.state {
     public partial class parlimen_tumpuan {
         
         /// <summary>
+        /// sena1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sena1;
+        
+        /// <summary>
         /// grid_senarai_one control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grid_senarai_one;
+        
+        /// <summary>
+        /// sena2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sena2;
         
         /// <summary>
         /// grid_senarai_two control.
@@ -31,6 +49,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.GridView grid_senarai_two;
         
         /// <summary>
+        /// sena3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sena3;
+        
+        /// <summary>
         /// grid_senarai_three control.
         /// </summary>
         /// <remarks>
@@ -38,6 +65,15 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grid_senarai_three;
+        
+        /// <summary>
+        /// pem1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pem1;
         
         /// <summary>
         /// grid_one control.
@@ -49,6 +85,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.GridView grid_one;
         
         /// <summary>
+        /// pem2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pem2;
+        
+        /// <summary>
         /// grid_two control.
         /// </summary>
         /// <remarks>
@@ -56,6 +101,15 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grid_two;
+        
+        /// <summary>
+        /// pem3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pem3;
         
         /// <summary>
         /// grid_three control.

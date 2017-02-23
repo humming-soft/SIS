@@ -11,7 +11,7 @@
                         <h4 class="m-t-0 m-b-20 header-title"><b>SENARAI KAWASAN BN</b></h4>
                         <div class="container table-custom">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" id="sena1" runat="server">
                                     <div class="content">
                                         <asp:GridView ID="grid_senarai_one" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_senarai_one_PreRender" DataKeyNames="area_id">
                                             <Columns>
@@ -30,7 +30,7 @@
                                         </asp:GridView>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" id="sena2" runat="server">
                                     <div class="content">
                                         <asp:GridView ID="grid_senarai_two" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_senarai_two_PreRender" DataKeyNames="area_id">
                                             <Columns>
@@ -49,7 +49,7 @@
                                         </asp:GridView>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" id="sena3" runat="server">
                                     <div class="content">
                                         <div class="content">
                                             <asp:GridView ID="grid_senarai_three" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_senarai_three_PreRender" DataKeyNames="area_id">
@@ -77,7 +77,7 @@
                         <h4 class="m-t-0 m-b-20 header-title"><b>SENARAI KAWASAN PEMBANGKANG</b></h4>
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" id="pem1" runat="server">
                                     <div class="content">
                                         <asp:GridView ID="grid_one" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_one_PreRender" DataKeyNames="area_id">
                                             <Columns>
@@ -96,7 +96,7 @@
                                         </asp:GridView>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" id="pem2" runat="server">
                                     <div class="content">
                                         <asp:GridView ID="grid_two" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_two_PreRender" DataKeyNames="area_id">
                                             <Columns>
@@ -115,7 +115,7 @@
                                         </asp:GridView>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" id="pem3" runat="server">
                                     <div class="content">
                                         <asp:GridView ID="grid_three" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_three_PreRender" DataKeyNames="area_id">
                                             <Columns>
