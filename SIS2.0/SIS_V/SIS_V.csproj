@@ -188,6 +188,7 @@
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\Validations\parliment_info.js" />
+    <Content Include="assets\js\Validations\password_check.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_view.js" />
     <Content Include="assets\js\waves.js" />
