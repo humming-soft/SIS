@@ -76,13 +76,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Label lbl_spoilt_vote;
         
         /// <summary>
-        /// Label5 control.
+        /// lbl_winner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label lbl_winner;
         
         /// <summary>
         /// lbl_raceFragment control.
@@ -139,6 +139,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Label lbl_education;
         
         /// <summary>
+        /// lbl_issue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_issue;
+        
+        /// <summary>
         /// lbl_perc control.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,24 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_perc;
+        
+        /// <summary>
+        /// lbl_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_status;
+        
+        /// <summary>
+        /// lbl_justification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_justification;
         
         /// <summary>
         /// grid_activity control.
