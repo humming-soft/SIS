@@ -403,15 +403,33 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Jumlah Insiden</h4>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="ins1" runat="server">
                         <div class="table-responsive">
-                            <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None">
+                            <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Area">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkgrdinsid1" runat="server" Text='<%# Bind("Area") %>' Font-Underline="False" OnClick="lnkgrdinsid1_Click"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:BoundField DataField="Num" HeaderText="#"></asp:BoundField>
+                                </Columns>
                             </asp:GridView>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="ins2" runat="server">
                         <div class="table-responsive">
-                            <asp:GridView ID="grdinsident2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None">
+                            <asp:GridView ID="grdinsident2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Area">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkgrdinsid2" runat="server" Text='<%# Bind("Area") %>' Font-Underline="False" OnClick="lnkgrdinsid2_Click"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:BoundField DataField="Num" HeaderText="#"></asp:BoundField>
+                                </Columns>
                             </asp:GridView>
                         </div>
                     </div>
@@ -422,94 +440,32 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Isu Utama</h4>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: scroll">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="issu1" runat="server">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>District</th>
-                                        <th>Issue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><a href="<?php echo base_url(); ?>dashboard/perlis">Minton Admin v1</a></td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Minton Front v1</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Minton Admin v1.1</td>
-                                        <td>01/05/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Minton Front v1.1</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Minton Admin v1.3</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Minton Admin v1.3</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Minton Admin v1.3</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <asp:GridView ID="grdisu1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None"  DataKeyNames="id1" AutoGenerateColumns="False">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Area">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkisu1" runat="server" Text='<%# Bind("Name1") %>' Font-Underline="False" OnClick="lnkisu1_Click"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="ciname1" HeaderText="Issue"></asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="issu2" runat="server">
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>District</th>
-                                        <th>Issue</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Minton Admin v1</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Minton Front v1</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Minton Admin v1.1</td>
-                                        <td>01/05/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Minton Front v1.1</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Minton Admin v1.3</td>
-                                        <td>01/01/2016</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <asp:GridView ID="grdisu2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None"  DataKeyNames="id1" AutoGenerateColumns="False">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Area">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkisu2" runat="server" Text='<%# Bind("Name1") %>' Font-Underline="False" OnClick="lnkisu2_Click"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="ciname1" HeaderText="Issue"></asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
                         </div>
                     </div>
                 </div>
