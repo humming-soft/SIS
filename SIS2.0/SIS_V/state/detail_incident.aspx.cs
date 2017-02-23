@@ -22,10 +22,10 @@ namespace SIS_V.state
                fill_kod_kawasan();
                fill_maklumat_kawasan();
                fill_calon();
-                //fill_masalah_dalaman_parti();
+               fill_masalah_dalaman_parti();
                fill_keluar_mengundi();
                fill_semasa();
-
+               fill_comment();
             }
         }
         public void fill_kod_kawasan()
@@ -50,7 +50,9 @@ namespace SIS_V.state
                 lbl_majority.Text = dt.Rows[0]["winner_majority"].ToString();
                 lbl_percent_vote.Text = dt.Rows[0]["percent_vote"].ToString();
                 lbl_spoilt_vote.Text = dt.Rows[0]["spoilt_vote"].ToString();
+                lbl_winner.Text = dt.Rows[0]["winner_name"].ToString();
                 lbl_raceFragment.Text = dt.Rows[0]["race_fragment"].ToString();
+                lbl_status.Text = dt.Rows[0]["color"].ToString();
             }
         }
         public void fill_calon()
@@ -85,6 +87,47 @@ namespace SIS_V.state
             {
                 grid_activity.DataSource = dt;
                 grid_activity.DataBind();
+            }
+        }
+        public void fill_masalah_dalaman_parti()
+        {
+            string issue=null;
+            bus.state_id = state;
+            DataTable dt = bus.fill_masalah_dalaman_parti();
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i< dt.Rows.Count;i++ )
+                {
+                    if (i == dt.Rows.Count-1)
+                    {
+                        issue += dt.Rows[i]["issue_name"].ToString();
+                    }
+                    else
+                    {
+                        issue += dt.Rows[i]["issue_name"].ToString() + ",";
+                    }
+                }
+                lbl_issue.Text = issue;
+            }
+        }
+        public void fill_comment()
+        {
+            bus.area_id = id;
+            DataTable dt = bus.fill_comment();
+            if (dt.Rows.Count > 0)
+            {
+                if (dt.Rows[0]["comment"].ToString()=="")
+                {
+                    lbl_justification.Text = "N/A";
+                }
+                else
+                {
+                    lbl_justification.Text = dt.Rows[0]["comment"].ToString();
+                }
+            }
+            else
+            {
+                lbl_justification.Text = "N/A";
             }
         }
     }

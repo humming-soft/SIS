@@ -69,6 +69,13 @@ namespace SIS_B
         {
             return data.fill_semasa(area_id);
         }
-        
+        public DataTable fill_masalah_dalaman_parti()
+        {
+            return data.fill_masalah_dalaman_parti(state_id);
+        }
+        public DataTable fill_comment()
+        {
+            return data.fill_comment(area_id);
+        }
     }
 }

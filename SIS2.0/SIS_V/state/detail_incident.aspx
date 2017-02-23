@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="detail_incident.aspx.cs" Inherits="SIS_V.state.detail_incident"  MasterPageFile="~/state/state_master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="detail_incident.aspx.cs" Inherits="SIS_V.state.detail_incident" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -6,9 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script type="text/javascript">
         $(window).load(function () {
-            $('.progress-bar').css("width",$('#lbl_perc').text())
+            $('.progress-bar').css("width", $('#lbl_perc').text())
         });
-</script>
+    </script>
     <div class="row">
         <div class="col-lg-3">
             <div class="card-box">
@@ -18,7 +18,7 @@
                 </p>--%>
 
                 <div class="table-responsive">
-                  <%--  <table class="table">
+                    <%--  <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -120,19 +120,30 @@
                 <div>
                     <table class="table">
                         <tr>
-                            <th colspan="4">Nama Kawasan :&nbsp;<asp:Label ID="lbl_area_code" runat="server" Text=""></asp:Label> <asp:Label ID="lbl_area_name" runat="server" Text=""></asp:Label></th>
+                            <th colspan="4">Nama Kawasan :&nbsp;<asp:Label ID="lbl_area_code" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="lbl_area_name" runat="server" Text=""></asp:Label></th>
                         </tr>
                         <tr>
-                            <td>JUMLAH UNDI<br /> <asp:Label ID="lbl_no_voters" runat="server" Text=""></asp:Label> </td>
-                            <td>MAJORITI <br /><asp:Label ID="lbl_majority" runat="server" Text=""></asp:Label></td>
-                            <td>PERATUS MENGUNDI<br /><asp:Label ID="lbl_percent_vote" runat="server" Text=""></asp:Label></td>
-                            <td>UNDI ROSAK<br /><asp:Label ID="lbl_spoilt_vote" runat="server" Text=""></asp:Label></td>
+                            <td>JUMLAH UNDI<br />
+                                <asp:Label ID="lbl_no_voters" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td>MAJORITI
+                                <br />
+                                <asp:Label ID="lbl_majority" runat="server" Text=""></asp:Label></td>
+                            <td>PERATUS MENGUNDI<br />
+                                <asp:Label ID="lbl_percent_vote" runat="server" Text=""></asp:Label></td>
+                            <td>UNDI ROSAK<br />
+                                <asp:Label ID="lbl_spoilt_vote" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PENIYANG DANG <br /><asp:Label ID="Label5" runat="server" Text=""></asp:Label></td>
+                            <td colspan="4">PENIYANG DANG
+                                <br />
+                                <asp:Label ID="lbl_winner" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PECHAHUM KAUM <br /><asp:Label ID="lbl_raceFragment" runat="server" Text=""></asp:Label></td>
+                            <td colspan="4">PECHAHUM KAUM
+                                <br />
+                                <asp:Label ID="lbl_raceFragment" runat="server" Text=""></asp:Label></td>
                         </tr>
                     </table>
                 </div>
@@ -141,32 +152,40 @@
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Calon</h4>
                 <div>
-                    <asp:Image ID="img_candidate" runat="server"  class="img-responsive img-rounded" alt="user"/>
+                    <asp:Image ID="img_candidate" runat="server" class="img-responsive img-rounded" alt="user" />
                     <%--<img src="../assets/images/users/avatar-0.jpg" class="img-responsive img-rounded" alt="user">--%>
                     <div class="wid-u-info">
                         <table class="table">
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">NAMA</h5>
-                                    <p class="text-muted m-b-5 font-13" ><asp:Label ID="lbl_name" runat="server" Text=""></asp:Label></p>
+                                    <p class="text-muted m-b-5 font-13">
+                                        <asp:Label ID="lbl_name" runat="server" Text=""></asp:Label>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">PEKERJAAN</h5>
-                                    <p class="text-muted m-b-5 font-13"> <asp:Label ID="lbl_job" runat="server" Text=""></asp:Label></p>
+                                    <p class="text-muted m-b-5 font-13">
+                                        <asp:Label ID="lbl_job" runat="server" Text=""></asp:Label>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">JAWATAN POLITIK</h5>
-                                    <p class="text-muted m-b-5 font-13"><asp:Label ID="lbl_political_pos" runat="server" Text=""></asp:Label></p>
+                                    <p class="text-muted m-b-5 font-13">
+                                        <asp:Label ID="lbl_political_pos" runat="server" Text=""></asp:Label>
+                                    </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <h5 class="m-t-0 m-b-5">PENDIDIKAN</h5>
-                                    <p class="text-muted m-b-5 font-13"> <asp:Label ID="lbl_education" runat="server" Text=""></asp:Label></p>
+                                    <p class="text-muted m-b-5 font-13">
+                                        <asp:Label ID="lbl_education" runat="server" Text=""></asp:Label>
+                                    </p>
                                 </td>
                             </tr>
                         </table>
@@ -178,7 +197,9 @@
                 <h4 class="text-dark  header-title m-t-0">Masalah Dalaman Parti</h4>
                 <div>
                     <h6 class="m-t-0 m-b-5">MASALAH</h6>
-                    <p class="text-muted m-b-5 font-13">Tiada Masalah</p>
+                    <p class="text-muted m-b-5 font-13">
+                        <asp:Label ID="lbl_issue" runat="server" Text=""></asp:Label>
+                    </p>
                 </div>
             </div>
             <div class="card-box widget-user">
@@ -196,30 +217,30 @@
         <div class="col-lg-4">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Maklumat Semasa</h4>
-                <p class="text-muted m-b-25 font-13">
+                <%--<p class="text-muted m-b-25 font-13">
                     Your awesome text goes here.
-                </p>
+                </p>--%>
 
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
-                            <th>STATUS SEMASA KAWASAN :</th>
-                            <td>PUTIH</td>
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;STATUS SEMASA KAWASAN :</th>
+                            <td><asp:Label ID="lbl_status" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <th>JUSTIFIKASI :</th>
-                            <td>Nothing</td>
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;JUSTIFIKASI :</th>
+                            <td><asp:Label ID="lbl_justification" runat="server" Text=""></asp:Label></td>
                         </tr>
-                        <tr>
+                        <%--<tr>
                             <th>PROJEK :</th>
                             <td>Tiada maklumat diperolehi</td>
-                        </tr>
+                        </tr>--%>
                         <tr>
-                            <th>ACTIVITI :</th>
+                            <%--<th>ACTIVITI :</th>--%>
                             <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" BorderColor="White" BorderStyle="None" GridLines="None">
                                 <Columns>
                                     <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" />
-                                    <asp:BoundField DataField="details" SortExpression="details" />
+                                    <asp:BoundField DataField="details" HeaderText="ACTIVITI :" SortExpression="details" />
                                 </Columns>
                             </asp:GridView>
                         </tr>
