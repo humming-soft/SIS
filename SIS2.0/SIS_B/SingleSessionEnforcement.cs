@@ -57,7 +57,7 @@ namespace SIS_B
                     FormsAuthentication.SignOut();
                     HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
                     cookie.Expires = DateTime.Now.AddYears(-1);
-                    httpContext.Response.Redirect("~/logout");
+                    httpContext.Response.Redirect("~/logout?ml=5jg90sjrkkms0-8jj");
                     //FormsAuthentication.RedirectToLoginPage();
                 }
             }

@@ -25,10 +25,20 @@ namespace SIS_V
 
         public void logout()
         {
-            //Session.Abandon();
-            Session.Clear();
-            Session["is_login"] = "f";
-            Response.Redirect("~/Mainpage");
+            if (Request.QueryString["ml"] != null)
+            {
+                if (Request.QueryString["ml"].ToString() == "5jg90sjrkkms0-8jj")
+                {
+                    Session.Clear();
+                    Session["message"] = "yes";
+                    Response.Redirect("~/Login");
+                }
+            } else {
+                Session.Clear();
+                Session["is_login"] = "f";
+                Response.Redirect("~/Mainpage");
+
+            }
         }
     }
 }

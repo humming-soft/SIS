@@ -98,6 +98,10 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <p>Please check your <b>username</b> or <b>password</b>!</p>
             </div>
+             <div class="alert alert-danger alert-dismissable" id="mulogin" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p>You have been logged out.<br />Multiple login for a single user are not allowed!</p>
+            </div>
         </form>
     </div>
 
