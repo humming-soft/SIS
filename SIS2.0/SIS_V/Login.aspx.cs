@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SIS_B;
 using System.Data;
+using System.Web;
+using System.Web.Security;
 
 namespace SIS_V
 {
@@ -64,6 +66,9 @@ namespace SIS_V
                 Session["state"] = dt.Rows[0][7].ToString();
                 Session["role"] = dt.Rows[0][8].ToString();
                 Session["is_login"] = "t";
+                //Let us now set the authentication cookie so that we can use that later.
+                FormsAuthentication.SetAuthCookie(dt.Rows[0][0].ToString(), false);
+                SingleSessionPreparation.CreateAndStoreSessionToken(dt.Rows[0][0].ToString());
                 if (int.Parse(Session["role"].ToString()) == 1) // Admin
                 {
                     Response.Redirect("~/admin/Dash");

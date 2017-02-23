@@ -105,5 +105,9 @@ namespace SIS_B
         {
             return data1.situasi(areaid,stateid);
         }
+        public DataTable jumlah_insiden()
+        {
+            return data1.jumlah_insiden(stateid);
+        }
     }
 }
