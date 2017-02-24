@@ -57,6 +57,7 @@ namespace SIS_V.state
             bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_senarai_kawasan();
             int count = dt.Rows.Count;
+            int modCount = count % 3;
             if (count == 1)
             {
                 sena1.Attributes["class"] = "col-lg-12";
@@ -83,17 +84,36 @@ namespace SIS_V.state
                     {
                         one.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
-                    else if (i < (div_count * 2))
+                    else if (i >= div_count  && i < (div_count * 2))
                     {
                         two.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
-                    else if (i < (div_count * 3))
+                    else if (i >= (div_count * 2) && i < (div_count * 3))
                     {
                         three.Rows.Add(area_code, name, color, id, is_opp_con);
                     }
                     else
                     {
-                        one.Rows.Add(area_code, name, color, id, is_opp_con);
+                        if (modCount==2)
+                        {
+                            int o_id = int.Parse(dt.Rows[i]["area_id"].ToString());
+                            string o_area_code = dt.Rows[i]["area_code"].ToString();
+                            string o_name = dt.Rows[i]["area_name"].ToString();
+                            string o_color = dt.Rows[i]["color"].ToString();
+                            string o_is_op_co = dt.Rows[i]["isconcentrated_opposition"].ToString();
+                            int t_id = int.Parse(dt.Rows[i+1]["area_id"].ToString());
+                            string t_area_code = dt.Rows[i+1]["area_code"].ToString();
+                            string t_name = dt.Rows[i+1]["area_name"].ToString();
+                            string t_color = dt.Rows[i+1]["color"].ToString();
+                            string t_is_op_co = dt.Rows[i+1]["isconcentrated_opposition"].ToString();
+                            one.Rows.Add(o_area_code, o_name, o_color, o_id, o_is_op_co);
+                            two.Rows.Add(t_area_code, t_name, t_color, t_id, t_is_op_co);
+                            i = i + 1;
+                        } if (modCount == 1)
+                        {
+                            one.Rows.Add(area_code, name, color, id, is_opp_con);
+                        }
+                        
                     }
                 }
                 grid_senarai_one.DataSource = one;
@@ -159,6 +179,7 @@ namespace SIS_V.state
             bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_senarai_kawasan_pem();
             int count = dt.Rows.Count;
+            int modCount = count % 3;
             if (count == 1)
             {
                 pem1.Attributes["class"] = "col-lg-12";
@@ -185,17 +206,37 @@ namespace SIS_V.state
                     {
                         one_one.Rows.Add(area_code, name, color, id, is_con);
                     }
-                    else if (i < (div_count * 2))
+                    else if (i >= div_count && i < (div_count * 2))
                     {
                         two_two.Rows.Add(area_code, name, color, id, is_con);
                     }
-                    else if (i < (div_count * 3))
+                    else if (i >= (div_count * 2) && i < (div_count * 3))
                     {
                         three_three.Rows.Add(area_code, name, color, id, is_con);
                     }
                     else
                     {
-                        one_one.Rows.Add(area_code, name, color, id, is_con);
+                        if(modCount==2)
+                        {
+                            int o_id = int.Parse(dt.Rows[i]["area_id"].ToString());
+                            string o_area_code = dt.Rows[i]["area_code"].ToString();
+                            string o_name = dt.Rows[i]["area_name"].ToString();
+                            string o_color = dt.Rows[i]["color"].ToString();
+                            string o_is_con = dt.Rows[i]["isconcentrated"].ToString();
+                            int t_id = int.Parse(dt.Rows[i+1]["area_id"].ToString());
+                            string t_area_code = dt.Rows[i + 1]["area_code"].ToString();
+                            string t_name = dt.Rows[i + 1]["area_name"].ToString();
+                            string t_color = dt.Rows[i + 1]["color"].ToString();
+                            string t_is_con = dt.Rows[i + 1]["isconcentrated"].ToString();
+                            one_one.Rows.Add(o_area_code, o_name, o_color, o_id, o_is_con);
+                            two_two.Rows.Add(t_area_code, t_name, t_color, t_id, t_is_con);
+                            i = i + 1;
+                        }
+                        if(modCount==1)
+                        {
+                            one_one.Rows.Add(area_code, name, color, id, is_con);
+                        }
+                        
                     }
                 }
                 grid_one.DataSource = one_one;
