@@ -15,7 +15,7 @@
                 <h4 class="m-t-0 header-title"><b>SENARI KAWASAN (NAMA PARLIMEN) BAGI NEGERI PERLIS</b></h4>
 <%--                <a href="parlimen_info_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>--%>
                 <p class="text-muted font-13 m-b-30">
-                    Your description goes here(Malay / English).
+
                 </p>
                 <asp:GridView ID="GridPinfo" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" runat="server" OnPreRender="GridPinfo_PreRender" AutoGenerateColumns="False" DataKeyNames="area_id">
                     <Columns>
