@@ -38,6 +38,7 @@ namespace SIS_V.state
 
         public void fill_kodkawasan()
         {
+            objAktivitiBUS.stateid = int.Parse(Session["state"].ToString());
             dt = objAktivitiBUS.fill_kodkawasan();
             ddlKodKawasan.DataSource = dt;
             ddlKodKawasan.DataBind();

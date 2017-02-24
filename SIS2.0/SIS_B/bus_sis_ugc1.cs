@@ -46,7 +46,7 @@ namespace SIS_B
 
         public DataTable fill_kodkawasan()
         {
-            return data1.fill_kodkawasan();
+            return data1.fill_kodkawasan(stateid);
         }
 
         public DataTable fill_jenis()

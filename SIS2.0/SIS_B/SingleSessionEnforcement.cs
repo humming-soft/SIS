@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Security;
+using System.Web.SessionState;
 using SIS_D;
 
 namespace SIS_B
@@ -54,14 +55,13 @@ namespace SIS_B
                     // Stored session does not match one in authentication
                     // ticket so logout the user
                     FormsAuthentication.SignOut();
-                    FormsAuthentication.RedirectToLoginPage();
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
+                    cookie.Expires = DateTime.Now.AddYears(-1);
+                    httpContext.Response.Redirect("~/logout?ml=5jg90sjrkkms0-8jj");
+                    //FormsAuthentication.RedirectToLoginPage();
                 }
             }
-            //else
-            //{
-            //    FormsAuthentication.SignOut();
-            //    FormsAuthentication.RedirectToLoginPage();
-            //}
+            
         }
 
         public void Dispose()

@@ -82,13 +82,14 @@ namespace SIS_D
             }
         }
 
-        public DataTable fill_kodkawasan()
+        public DataTable fill_kodkawasan(int stateid)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "usp_getkodkawasan";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", stateid);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();

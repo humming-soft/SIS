@@ -44,7 +44,7 @@ namespace SIS_V.state
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             int id = int.Parse(GridPinfo.DataKeys[row.RowIndex].Value.ToString());
             Session["area_id"] = id;
-            Response.Redirect("parlimen_info_add.aspx");
+            Response.Redirect("parlimen_info_add");
 
         }
     }

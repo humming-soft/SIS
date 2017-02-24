@@ -13,7 +13,7 @@
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
-                <a href="laporan_harian_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
+                <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
                     Your description goes here(Malay / English).
                 </p>
@@ -56,7 +56,7 @@
                                             <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Kategori Isu" DataField="current_issue_name" ItemStyle-Width="10%"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Butiran Isu" DataField="current_issue_details"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Butiran Isu" DataField="details"></asp:BoundField>
                                             <asp:BoundField HeaderText="Sumber Isu" DataField="lookup_name" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Parti" DataField="party_name_bm" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
@@ -75,7 +75,7 @@
                             </div>
                             <div id="collapseThree-2" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable5" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable5_PreRender">
+                                    <asp:GridView ID="GridDataTable5" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable5_PreRender" EmptyDataText="No Data Available">
                                        <Columns>
                                             <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
@@ -126,7 +126,7 @@
                                             <asp:BoundField HeaderText="Status" DataField="color" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Justifikasi/Kaveat" DataField="comment"></asp:BoundField>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Data Wujud (Ya/Tidak)" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
+                                            <%--<asp:BoundField HeaderText="Data Wujud (Ya/Tidak)" DataField="date" ItemStyle-Width="10%"></asp:BoundField>--%>
                                         </Columns>
                                     </asp:GridView>
 

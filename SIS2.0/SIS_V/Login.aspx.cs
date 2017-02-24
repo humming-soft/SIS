@@ -21,7 +21,18 @@ namespace SIS_V
             if(!IsPostBack)
             {
                 invalid.Visible = false;
+                mulogin.Visible = false;
+                if (Session["message"] != null)
+                {
+                    if (Session["message"].ToString() == "yes")
+                    {
+                        Session["message"] = "no";
+                        mulogin.Visible = true;
+                    }
+                }
+                
             }
+
         }
 
         protected void btnlogin_Click(object sender, EventArgs e)
@@ -42,6 +53,7 @@ namespace SIS_V
                    txtuname.Text = "";
                    txtpassword.Text = "";
                    invalid.Visible = true;
+                   mulogin.Visible = false;
                }
             }
             else

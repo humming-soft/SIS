@@ -393,7 +393,6 @@
         <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
             <div class="card-box">
                 <h4 class="text-dark header-title m-t-0 m-b-30">Parlimen</h4>
-
                 <div class="widget-chart text-center">
                     <div id="gauge"></div>
                 </div>
@@ -403,7 +402,7 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Jumlah Insiden</h4>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="ins1" runat="server">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 rest-height-250 mCustomScrollbar m-b-15"  id="ins1" runat="server" data-mcs-theme="dark-3">
                         <div class="table-responsive">
                             <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
                                 <Columns>
@@ -418,7 +417,7 @@
                             </asp:GridView>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="ins2" runat="server">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 rest-height-250 mCustomScrollbar m-b-15" id="ins2" runat="server" data-mcs-theme="dark-3">
                         <div class="table-responsive">
                             <asp:GridView ID="grdinsident2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
                                 <Columns>
@@ -440,7 +439,7 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Isu Utama</h4>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="issu1" runat="server">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 rest-height-250 mCustomScrollbar m-b-15" id="issu1" runat="server" data-mcs-theme="dark-3">
                         <div class="table-responsive">
                             <asp:GridView ID="grdisu1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None"  DataKeyNames="id1" AutoGenerateColumns="False">
                                 <Columns>
@@ -454,7 +453,7 @@
                             </asp:GridView>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="height: 250px; overflow-y: auto" id="issu2" runat="server">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 rest-height-250 mCustomScrollbar m-b-15" id="issu2" runat="server" data-mcs-theme="dark-3">
                         <div class="table-responsive">
                             <asp:GridView ID="grdisu2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None"  DataKeyNames="id1" AutoGenerateColumns="False">
                                 <Columns>
@@ -478,13 +477,13 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Situasi Semasa - Parlimen</h4>
-                <div id="stackedp"></div>
+                <div id="stackedp" style="height:230px;"></div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Situasi Semasa - DUN</h4>
-                <div id="stackedd"></div>
+                <div id="stackedd" style="height:230px;"></div>
             </div>
         </div>
     </div>
