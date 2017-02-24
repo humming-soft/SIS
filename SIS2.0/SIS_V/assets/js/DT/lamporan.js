@@ -3,8 +3,20 @@
     //DataTable is a highly flexible tool, based upon the foundations of progressive enhancement, 
     //which will add advanced interaction controls to any HTML table
     //For more information, please visit https://datatables.net/
+    jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+        "date-uk-pre": function (a) {
+            var ukDatea = a.split('-');
+            return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+        },
 
-    
+        "date-uk-asc": function (a, b) {
+            return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+        },
+
+        "date-uk-desc": function (a, b) {
+            return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+        }
+    });
     var runDataTable2 = function () {
         var oTable = $('#GridDataTable2').dataTable({
             "aoColumnDefs": [{
@@ -31,16 +43,22 @@
 
     var runDataTable3 = function () {
         var oTable = $('#GridDataTable3').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,               
+                { "sType": "date-uk" },
+                null
+            ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [5, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],
@@ -55,16 +73,23 @@
 
     var runDataTable4 = function () {
         var oTable = $('#GridDataTable4').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null
+            ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [6, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],
@@ -79,16 +104,21 @@
 
     var runDataTable5 = function () {
         var oTable = $('#GridDataTable5').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null
+            ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [4, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],
@@ -103,16 +133,21 @@
 
     var runDataTable6 = function () {
         var oTable = $('#GridDataTable6').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                {"sType": "date-uk" },
+                null
+             ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [4, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],
@@ -127,16 +162,20 @@
 
     var runDataTable7 = function () {
         var oTable = $('#GridDataTable7').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" }
+            ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [4, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],
