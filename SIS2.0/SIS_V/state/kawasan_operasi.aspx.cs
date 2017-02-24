@@ -138,6 +138,8 @@ namespace SIS_V.state
                 isconccount = isconc.Rows.Count / 3;
                 isopercount = isopera.Rows.Count / 3;
 
+                int isconmod = isconc.Rows.Count % 3;
+                int isopermod = isconc.Rows.Count % 3;
                 for (int j = 0; j < isconc.Rows.Count; j++) // looping through isconcentrated only
                 {
                     area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
@@ -175,6 +177,27 @@ namespace SIS_V.state
                                 con_dt2.Rows.Add(area_id, area_code, area_name, color, row_color);
                             }
 
+                        }
+                        if (isconmod == 1)
+                        {
+                            con_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
+                        }
+                        if (isconmod == 2)
+                        {
+                            int area_id_1 = int.Parse(dt.Rows[j]["area_id"].ToString());
+                            string area_code_1 = isconc.Rows[j]["area_code"].ToString();
+                            string area_name_1 = isconc.Rows[j]["area_name"].ToString();
+                            string color_1 = isconc.Rows[j]["color"].ToString();
+                            string row_color_1 = isconc.Rows[j]["row_color"].ToString();
+                            con_dt1.Rows.Add(area_id_1, area_code_1, area_name_1, color_1, row_color_1);
+
+                            int area_id_2 = int.Parse(dt.Rows[j+1]["area_id"].ToString());
+                            string area_code_2 = isconc.Rows[j+1]["area_code"].ToString();
+                            string area_name_2 = isconc.Rows[j+1]["area_name"].ToString();
+                            string color_2 = isconc.Rows[j+1]["color"].ToString();
+                            string row_color_2 = isconc.Rows[j+1]["row_color"].ToString();
+                            con_dt2.Rows.Add(area_id_2, area_code_2, area_name_2, color_2, row_color_2);
+                            j = j + 1;
                         }
                     }
                 }
@@ -216,6 +239,28 @@ namespace SIS_V.state
                                 op_dt2.Rows.Add(area_id, area_code, area_name, color, row_color);
                             }
 
+                        }
+
+                        if (isopermod == 1)
+                        {
+                            op_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
+                        }
+                        if (isopermod == 2)
+                        {
+                            int area_id_1 = int.Parse(dt.Rows[k]["area_id"].ToString());
+                            string area_code_1 = isconc.Rows[k]["area_code"].ToString();
+                            string area_name_1 = isconc.Rows[k]["area_name"].ToString();
+                            string color_1 = isconc.Rows[k]["color"].ToString();
+                            string row_color_1 = isconc.Rows[k]["row_color"].ToString();
+                            op_dt1.Rows.Add(area_id_1, area_code_1, area_name_1, color_1, row_color_1);
+
+                            int area_id_2 = int.Parse(dt.Rows[k + 1]["area_id"].ToString());
+                            string area_code_2 = isconc.Rows[k + 1]["area_code"].ToString();
+                            string area_name_2 = isconc.Rows[k + 1]["area_name"].ToString();
+                            string color_2 = isconc.Rows[k + 1]["color"].ToString();
+                            string row_color_2 = isconc.Rows[k + 1]["row_color"].ToString();
+                            op_dt2.Rows.Add(area_id_2, area_code_2, area_name_2, color_2, row_color_2);
+                            k = k + 1;
                         }
                     }
                 }
