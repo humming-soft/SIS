@@ -60,7 +60,7 @@ namespace SIS_V.state
             int r = bus.insert_user();
             if (r == 0)
             {
-                Response.Redirect("~/admin/tetapan_pentadbir_view.aspx");
+                Response.Redirect("~/admin/tetapan_pentadbir_view");
             }
         }
 

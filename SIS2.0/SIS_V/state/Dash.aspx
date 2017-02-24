@@ -71,7 +71,7 @@
                                     <ul>
                                         <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_view.aspx"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="laporan_harian_view"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
