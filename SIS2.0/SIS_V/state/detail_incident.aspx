@@ -9,101 +9,17 @@
             $('.progress-bar').css("width", $('#lbl_perc').text())
         });
     </script>
+    <style>
+        .table-bordered tr td.va-top{
+            vertical-align:top !important;
+        }
+    </style>
     <div class="row">
         <div class="col-lg-3">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Kod Kawasan</h4>
-                <%--<p class="text-muted m-b-25 font-13">
-                    Your awesome text goes here.
-                </p>--%>
-
-                <div class="table-responsive">
-                    <%--  <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Project Name</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-
-                            <tr>
-                                <td>6</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-
-                            <tr>
-                                <td>6</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-
-                            <tr>
-                                <td>6</td>
-                                <td>Lorem Ipsum</td>
-                            </tr>
-                        </tbody>
-                    </table>--%>
-                    <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False">
+                <div class="table-responsive mCustomScrollbar" style="height:865px;" data-mcs-theme="dark-3">
+                    <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" OnPreRender="grid_kodkawasan_PreRender">
                         <Columns>
                             <asp:BoundField DataField="area_code" HeaderText="#" SortExpression="area_code" />
                             <asp:BoundField DataField="area_name" HeaderText="Area Name" SortExpression="area_name" />
@@ -117,7 +33,7 @@
         <div class="col-lg-5">
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Maklumat Kawasan</h4>
-                <div>
+                <div class="mCustomScrollbar" style="height:220px;" data-mcs-theme="dark-3">
                     <table class="table">
                         <tr>
                             <th colspan="4">Nama Kawasan :&nbsp;<asp:Label ID="lbl_area_code" runat="server" Text=""></asp:Label>
@@ -151,10 +67,10 @@
 
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Calon</h4>
-                <div>
+                 <div>
                     <asp:Image ID="img_candidate" runat="server" class="img-responsive img-rounded" alt="user" />
                     <%--<img src="../assets/images/users/avatar-0.jpg" class="img-responsive img-rounded" alt="user">--%>
-                    <div class="wid-u-info">
+                    <div class="wid-u-info mCustomScrollbar" style="height:255px;" data-mcs-theme="dark-3">
                         <table class="table">
                             <tr>
                                 <td>
@@ -235,16 +151,16 @@
                             <th>PROJEK :</th>
                             <td>Tiada maklumat diperolehi</td>
                         </tr>--%>
-                        <tr>
+                        </table>
                             <%--<th>ACTIVITI :</th>--%>
-                            <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" BorderColor="White" BorderStyle="None" GridLines="None">
-                                <Columns>
-                                    <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" ItemStyle-Width="5%" />
-                                    <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="ACTIVITI :" SortExpression="details" />
-                                </Columns>
-                            </asp:GridView>
-                        </tr>
-                    </table>
+                    <div class="table-responsive mCustomScrollbar" style="height:778px;" data-mcs-theme="dark-3">
+                                <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
+                                    <Columns>
+                                        <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" HeaderText="#" ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top"/>
+                                        <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="ACTIVITI :" SortExpression="details" />
+                                    </Columns>
+                                </asp:GridView>
+                        </div>
                 </div>
             </div>
         </div>
