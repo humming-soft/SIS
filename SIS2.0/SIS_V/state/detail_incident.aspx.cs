@@ -130,5 +130,22 @@ namespace SIS_V.state
                 lbl_justification.Text = "N/A";
             }
         }
+
+        protected void grid_kodkawasan_PreRender(object sender, EventArgs e)
+        {
+            if (grid_kodkawasan.Rows.Count > 0){
+                grid_kodkawasan.UseAccessibleHeader = true;
+                grid_kodkawasan.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void grid_activity_PreRender(object sender, EventArgs e)
+        {
+            if (grid_activity.Rows.Count > 0)
+            {
+                grid_activity.UseAccessibleHeader = true;
+                grid_activity.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
     }
 }
