@@ -94,7 +94,7 @@
 
 .portlet-status{
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     border: solid gray 2px;
     border-radius: 4px;
 }
@@ -135,7 +135,7 @@
     }
 }
 #gauge{
-    height: 213px !important;
+    height: 243px !important;
     width: 100% !important;
     text-align: center;
     margin: 0 auto;
@@ -541,4 +541,7 @@
 }
 .p-b-10{
     padding-bottom:10px;
+}
+.rest-height-250{
+    height:250px !important;
 }

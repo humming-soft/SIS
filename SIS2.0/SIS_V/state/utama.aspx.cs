@@ -93,7 +93,7 @@ namespace SIS_V.state
                 count = dt.Rows.Count / 2;
                 if (dt.Rows.Count == 1)
                 {
-                    ins1.Attributes["class"] = "col-xs-12 col-sm-6 col-md-6 col-lg-12";
+                    ins1.Attributes["class"] = "col-xs-12 col-sm-6 col-md-6 col-lg-12 rest-height-250 mCustomScrollbar m-b-15";
                     ins2.Attributes["style"] = "height: 250px; overflow-y: auto;display:none";
                 }
 
@@ -187,7 +187,7 @@ namespace SIS_V.state
                 count1 = dtisu.Rows.Count / 2;
                 if (dtisu.Rows.Count == 1)
                 {
-                    issu1.Attributes["class"] = "col-xs-12 col-sm-6 col-md-6 col-lg-12";
+                    issu1.Attributes["class"] = "col-xs-12 col-sm-6 col-md-6 col-lg-12 rest-height-250 mCustomScrollbar m-b-15";
                     issu2.Attributes["style"] = "height: 250px; overflow-y: auto;display:none";
                 }
 
