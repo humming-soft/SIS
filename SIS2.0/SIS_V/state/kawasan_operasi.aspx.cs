@@ -178,11 +178,11 @@ namespace SIS_V.state
                             }
 
                         }
-                        if (isconmod == 1)
+                        if (isconmod == 1 && isconc.Rows.Count >2)
                         {
                             con_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                         }
-                        if (isconmod == 2)
+                        if (isconmod == 2 && isconc.Rows.Count > 2)
                         {
                             int area_id_1 = int.Parse(dt.Rows[j]["area_id"].ToString());
                             string area_code_1 = isconc.Rows[j]["area_code"].ToString();
@@ -241,11 +241,11 @@ namespace SIS_V.state
 
                         }
 
-                        if (isopermod == 1)
+                        if (isopermod == 1 && isopera.Rows.Count > 2)
                         {
                             op_dt1.Rows.Add(area_id, area_code, area_name, color, row_color);
                         }
-                        if (isopermod == 2)
+                        if (isopermod == 2 && isopera.Rows.Count > 2)
                         {
                             int area_id_1 = int.Parse(dt.Rows[k]["area_id"].ToString());
                             string area_code_1 = isconc.Rows[k]["area_code"].ToString();
