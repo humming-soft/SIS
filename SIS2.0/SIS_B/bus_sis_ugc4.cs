@@ -38,6 +38,11 @@ namespace SIS_B
         {
             return data.dataStatusDistricts("sp_fetch_dist_status_summary","i",sid,areaType);
         }
+
+        public DataTable currentElectionInfo()
+        {
+            return data.data_currentElectionInfo();
+        }
         
     }
 }
