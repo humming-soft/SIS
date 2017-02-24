@@ -15,7 +15,7 @@
                 <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
                 <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
-                    Your description goes here(Malay / English).
+-                    Your description goes here(Malay / English).
                 </p>
                 <div class="col-lg-12">
                     <div class="panel-group" id="accordion-test-2">
