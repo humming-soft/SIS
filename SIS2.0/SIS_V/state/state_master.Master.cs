@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Web.Services;
 using SIS_B;
 using System.Data;
 
@@ -46,65 +47,68 @@ namespace SIS_V.state
                 txtPosition.Text = dt.Rows[0]["position"].ToString();
             }
         }
-         protected void btnSubmit_Click(object sender, EventArgs e){
-             if (txtNewPassword.Text.Trim() == "" || txtConfirmPassword.Text.Trim() == "")
-             {
-                 valid_empty.Visible = true;
-                 valid_match.Visible = false;
-                 //hd_password.Value = "0";
-             }
-             else
-             {
-                 string pass = txtNewPassword.Text.Trim();
-                 string con_pass = txtConfirmPassword.Text.Trim();
-                 if (pass == con_pass)
-                 {
-                     string hashed = encrypt.Encrypt(txtConfirmPassword.Text);
-                     objBUS2.pass = hashed;
-                     objBUS2.log_name = Session["log_name"].ToString();
-                     int result = objBUS2.update_password();
-                     if (result == 0)
-                     {
-                         Response.Redirect("utama");
-                         //hd_password.Value = "1";
-                     }
-                 }
-                 else
-                 {
-                     valid_match.Visible = true;
-                     valid_empty.Visible = false;
-                     //hd_password.Value = "0";
-                 }
-             }
-            
-         }
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtNewPassword.Text.Trim() == "" || txtConfirmPassword.Text.Trim() == "")
+            {
+                valid_empty.Visible = true;
+                valid_match.Visible = false;
+                //hd_password.Value = "0";
+            }
+            else
+            {
+                string pass = txtNewPassword.Text.Trim();
+                string con_pass = txtConfirmPassword.Text.Trim();
+                if (pass == con_pass)
+                {
+                    string hashed = encrypt.Encrypt(txtConfirmPassword.Text);
+                    objBUS2.pass = hashed;
+                    objBUS2.log_name = Session["log_name"].ToString();
+                    int result = objBUS2.update_password();
+                    if (result == 0)
+                    {
+                        Response.Redirect("utama");
+                        //hd_password.Value = "1";
+                    }
+                }
+                else
+                {
+                    valid_match.Visible = true;
+                    valid_empty.Visible = false;
+                    //hd_password.Value = "0";
+                }
+            }
 
-         protected void btnClear_Click(object sender, EventArgs e)
-         {
-             txtNewPassword.Text = "";
-             txtConfirmPassword.Text = "";
-         }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtNewPassword.Text = "";
+            txtConfirmPassword.Text = "";
+        }
 
         protected void checker()
-         {
-             HttpContext context = HttpContext.Current;
-             // CheckSession() inlined
-             try
-             {
-                 if (context.Session["is_login"].ToString() != null)
-                 {
-                     if (!"t".Equals(context.Session["is_login"].ToString()))
-                     {
-                         FormsAuthentication.SignOut();
-                         FormsAuthentication.RedirectToLoginPage();
-                     }
-                 }
-             }
-             catch (NullReferenceException)
-             {
-                 FormsAuthentication.SignOut();
-                 FormsAuthentication.RedirectToLoginPage();
-             }
-         }
+        {
+            HttpContext context = HttpContext.Current;
+            // CheckSession() inlined
+            try
+            {
+                if (context.Session["is_login"].ToString() != null)
+                {
+                    if (!"t".Equals(context.Session["is_login"].ToString()))
+                    {
+                        FormsAuthentication.SignOut();
+                        FormsAuthentication.RedirectToLoginPage();
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+                FormsAuthentication.SignOut();
+                FormsAuthentication.RedirectToLoginPage();
+            }
+        }
+
+
     }
 }
