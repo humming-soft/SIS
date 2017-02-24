@@ -126,7 +126,7 @@
                                             <asp:BoundField HeaderText="Status" DataField="color" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Justifikasi/Kaveat" DataField="comment"></asp:BoundField>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Data Wujud (Ya/Tidak)" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
+                                            <%--<asp:BoundField HeaderText="Data Wujud (Ya/Tidak)" DataField="date" ItemStyle-Width="10%"></asp:BoundField>--%>
                                         </Columns>
                                     </asp:GridView>
 

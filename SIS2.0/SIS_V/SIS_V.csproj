@@ -331,6 +331,7 @@
     <Content Include="assets\plugins\raphael\raphael-min.js" />
     <Content Include="assets\plugins\RWD-Table-Patterns\dist\css\rwd-table.min.css" />
     <Content Include="assets\plugins\RWD-Table-Patterns\dist\js\rwd-table.min.js" />
+    <Content Include="assets\plugins\scroller\mCSB_buttons.png" />
     <Content Include="assets\plugins\select2\select2-spinner.gif" />
     <Content Include="assets\plugins\select2\select2.css" />
     <Content Include="assets\plugins\select2\select2.min.js" />
