@@ -12,11 +12,11 @@
                 }
             });
             TableData.init();
-            $(document).on("click",'.lock', function () {
+            $(document).on("click", '.lock', function () {
                 $('#hd_pass').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
                 $('#sis-password-change-modal').modal('show');
             });
-            $(document).on("click",'.edit',function () {
+            $(document).on("click", '.edit', function () {
                 $('#txt_log_name').attr("readonly", "readonly");
                 $('#txt_log_name').val($(this).closest("tr").find("input[type=hidden][id*=l_name]").val());
                 $('#txt_user_name').val($(this).closest("tr").find("input[type=hidden][id*=f_name]").val());
@@ -80,7 +80,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <p>Please check , you have some form <b>errors</b>!</p>
                 </div>
-                
+
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Kemaskini Katalulan</h4>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btn_resetpass" CssClass="btn btn-success" runat="server" Text="Kemaskini" OnClick="btn_resetpass_Click" OnClientClick="fun_passwrdd()"/>
+                    <asp:Button ID="btn_resetpass" CssClass="btn btn-success" runat="server" Text="Kemaskini" OnClick="btn_resetpass_Click" OnClientClick="fun_passwrdd()" />
                     <asp:Button ID="btn_can" CssClass="btn btn-info waves-light" runat="server" Text="Tutup" />
                 </div>
             </div>
@@ -183,8 +183,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static" OnClick="btn_edit_Click1" OnClientClick="validate_view()"/>
-                    <asp:Button ID="btn_cancel" CssClass="btn btn-info waves-light" data-dismiss="modal" ClientIDMode="Static" runat="server" Text="Batal"  />
+                    <asp:Button ID="btn_edit" CssClass="btn btn-default" runat="server" Text="Kemaskini" ClientIDMode="Static" OnClick="btn_edit_Click1" OnClientClick="validate_view()" />
+                    <asp:Button ID="btn_cancel" CssClass="btn btn-info waves-light" data-dismiss="modal" ClientIDMode="Static" runat="server" Text="Batal" />
                 </div>
             </div>
         </div>
