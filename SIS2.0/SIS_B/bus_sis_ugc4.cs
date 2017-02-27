@@ -14,6 +14,10 @@ namespace SIS_B
 
         public int areaType { get; set; }
 
+        public int rid { get; set; }
+
+        public String comment { get; set; }
+
         public DataTable fill_lamporan()
         {
             return data.data_lamboran("sp_fetch_daily_report", "i", sid);
@@ -42,6 +46,21 @@ namespace SIS_B
         public DataTable currentElectionInfo()
         {
             return data.data_currentElectionInfo();
+        }
+
+        public DataTable fill_area_analysis()
+        {
+            return data.data_lamboran("sp_fetch_area_analysis", "i", sid);
+        }
+
+        public DataTable get_area_analysis()
+        {
+            return data.data_area_analysis("sp_fetch_indivi_area_report", rid);
+        }
+
+        public int update_area_analysis()
+        {
+            return data.update_justifiaction("sp_update_area_justification", comment, rid);
         }
         
     }
