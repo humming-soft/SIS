@@ -385,6 +385,7 @@
     <Content Include="state\utama.aspx" />
     <Content Include="state\WebForm1.aspx" />
     <Content Include="state\winnable_candidate.aspx" />
+    <Content Include="state\Win_Candidate.aspx" />
     <Content Include="unauthorised.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -773,6 +774,13 @@
     </Compile>
     <Compile Include="state\winnable_candidate.aspx.designer.cs">
       <DependentUpon>winnable_candidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\Win_Candidate.aspx.cs">
+      <DependentUpon>Win_Candidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\Win_Candidate.aspx.designer.cs">
+      <DependentUpon>Win_Candidate.aspx</DependentUpon>
     </Compile>
     <Compile Include="unauthorised.aspx.cs">
       <DependentUpon>unauthorised.aspx</DependentUpon>
