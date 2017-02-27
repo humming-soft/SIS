@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="winnable_candidate.aspx.cs" Inherits="SIS_V.state.winnable_candidate" MasterPageFile="~/state/state_master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Win_Candidate.aspx.cs" Inherits="SIS_V.state.Win_Candidate" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
@@ -23,10 +23,10 @@
                     type: "POST",
                     contentType: "application/json",
                     data: '{"sid":"' + sid + '"}',
-                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("winnable_candidate.aspx/parlimen_WC")%>',
+                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Win_Candidate.aspx/parlimen_WC")%>',
                 dataType: "json",
                 success: function (data) {
-
+                    console.log(data.d);
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log(errorThrown);
@@ -101,5 +101,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>
