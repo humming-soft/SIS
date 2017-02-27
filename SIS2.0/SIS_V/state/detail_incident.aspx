@@ -10,15 +10,15 @@
         });
     </script>
     <style>
-        .table-bordered tr td.va-top{
-            vertical-align:top !important;
+        .table-bordered tr td.va-top {
+            vertical-align: top !important;
         }
     </style>
     <div class="row">
         <div class="col-lg-3">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Kod Kawasan</h4>
-                <div class="table-responsive mCustomScrollbar" style="height:942px;" data-mcs-theme="dark-3">
+                <div class="table-responsive mCustomScrollbar" style="height: 942px;" data-mcs-theme="dark-3">
                     <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" OnPreRender="grid_kodkawasan_PreRender">
                         <Columns>
                             <asp:BoundField DataField="area_code" HeaderText="#" SortExpression="area_code" />
@@ -33,10 +33,10 @@
         <div class="col-lg-5">
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Maklumat Kawasan</h4>
-                <div class="mCustomScrollbar" style="height:220px;" data-mcs-theme="dark-3">
+                <div class="mCustomScrollbar" style="height: 220px;" data-mcs-theme="dark-3">
                     <table class="table">
                         <tr>
-                            <th colspan="4" style="padding-left:0px">Nama Kawasan :&nbsp;<asp:Label ID="lbl_area_code" runat="server" Text=""></asp:Label>
+                            <th colspan="4" style="padding-left: 0px">Nama Kawasan :&nbsp;<asp:Label ID="lbl_area_code" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="lbl_area_name" runat="server" Text=""></asp:Label></th>
                         </tr>
                         <tr>
@@ -67,10 +67,10 @@
 
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Calon</h4>
-                 <div>
+                <div>
                     <asp:Image ID="img_candidate" runat="server" class="img-responsive img-rounded" alt="user" />
                     <%--<img src="../assets/images/users/avatar-0.jpg" class="img-responsive img-rounded" alt="user">--%>
-                    <div class="wid-u-info mCustomScrollbar" style="height:255px;" data-mcs-theme="dark-3">
+                    <div class="wid-u-info mCustomScrollbar" style="height: 255px;" data-mcs-theme="dark-3">
                         <table class="table">
                             <tr>
                                 <td>
@@ -111,7 +111,7 @@
 
             <div class="card-box widget-user">
                 <h4 class="text-dark  header-title m-t-0">Masalah Dalaman Parti</h4>
-                <div class="mCustomScrollbar" style="height:155px;" data-mcs-theme="dark-3">
+                <div class="mCustomScrollbar" style="height: 155px;" data-mcs-theme="dark-3">
                     <h6 class="m-t-0 m-b-5">MASALAH</h6>
                     <p class="text-muted m-b-5 font-13">
                         <asp:Label ID="lbl_issue" runat="server" Text=""></asp:Label>
@@ -140,27 +140,29 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
-                            <th style="padding-left:0px;"><span style="font-size:12px"> STATUS SEMASA KAWASAN :</span></th>
-                            <td><asp:Label ID="lbl_status" runat="server" Text=""></asp:Label></td>
+                            <th style="padding-left: 0px;"><span style="font-size: 12px">STATUS SEMASA KAWASAN :</span></th>
+                            <td>
+                                <asp:Label ID="lbl_status" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <th style="padding-left:0px;"><span style="font-size:12px"> JUSTIFIKASI :</span></th>
-                            <td><asp:Label ID="lbl_justification" runat="server" Text=""></asp:Label></td>
+                            <th style="padding-left: 0px;"><span style="font-size: 12px">JUSTIFIKASI :</span></th>
+                            <td>
+                                <asp:Label ID="lbl_justification" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <%--<tr>
                             <th>PROJEK :</th>
                             <td>Tiada maklumat diperolehi</td>
                         </tr>--%>
-                        </table>
-                            <%--<th>ACTIVITI :</th>--%>
-                    <div class="table-responsive mCustomScrollbar" style="height:855px;" data-mcs-theme="dark-3">
-                                <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
-                                    <Columns>
-                                        <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" HeaderText="#" ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top"/>
-                                        <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="ACTIVITI :" SortExpression="details" />
-                                    </Columns>
-                                </asp:GridView>
-                        </div>
+                    </table>
+                    <%--<th>ACTIVITI :</th>--%>
+                    <div class="table-responsive mCustomScrollbar" style="height: 855px;" data-mcs-theme="dark-3">
+                        <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
+                            <Columns>
+                                <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" HeaderText="#" ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="ACTIVITI :" SortExpression="details" />
+                            </Columns>
+                        </asp:GridView>
+                    </div>
                 </div>
             </div>
         </div>
