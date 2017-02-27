@@ -9,6 +9,29 @@
             });
         });
     </script>--%>
+    <script>
+        function fill_polling_district() {
+            var area_id = $('#ddlParlimen option:selected').val();
+            alert(area_id);
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: { area_id: area_id },
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("activiti_bakal_ci_add.aspx/GetPollingDistrict")%>',
+                dataType: "json",
+                success: function (data) {
+                    $('#ddlDaerah').empty();
+                    $('#ddlDaerah').append("<option value=''>-----SELECT-----</option>");
+                    $.each(data.d, function (key, value) {
+                        //$("#ddlDaerah").append($("<option></option>").val(value.dsg_id).html(value.designation));
+                    });
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        }
+ </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -35,7 +58,7 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Parlimen - DUN</label>
-                            <asp:DropDownList ID="ddlParlimen" CssClass="form-control" runat="server" DataTextField="area_name" DataValueField="area_id">
+                            <asp:DropDownList ID="ddlParlimen" CssClass="form-control" runat="server" DataTextField="area_name" DataValueField="area_id" onchange="fill_polling_district()">
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -43,7 +66,6 @@
                         <div class="form-group">
                             <label for="userName">Daerah Mengundi</label>
                             <asp:DropDownList ID="ddlDaerah" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -135,7 +157,7 @@
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label for="field-2" class="control-label">Keyword</label>
-                                <asp:TextBox ID="TextBox4" CssClass="form-control" placeholder="Doe" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-lg-2">
