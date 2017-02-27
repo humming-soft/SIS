@@ -16,7 +16,7 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_DataTable();
+                //fill_DataTable();
             }
         }
 

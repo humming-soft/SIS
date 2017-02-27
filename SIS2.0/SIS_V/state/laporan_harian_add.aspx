@@ -336,59 +336,59 @@
         //ACTIVITY
 
         $(document).on("change", ".item_kodkawasan", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         $(document).on("change", ".item_activity", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         $(document).on("change", ".item_parti", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         //ISSUE
 
         $(document).on("change", ".item_kod_kawasanI", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         $(document).on("change", ".item_KategoriIsu", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         $(document).on("change", ".item_SumberIsu", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
         $(document).on("change", ".item_PartiI", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         //JANJI
 
         $(document).on("change", ".item_kod_kawasanj", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         //INSIDEN
 
         $(document).on("change", ".item_kod_kawasanIn", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
         $(document).on("change", ".item_partiIn", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
 
         //STATUS KAWASAN
 
         $(document).on("change", ".item_kod_kawasanKawasan", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
         $(document).on("change", ".item_statusKawasan", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
         $(document).on("change", ".item_Wujud", function () {
-            $(this).next().val($(this).val());
+            $(this).prev().val($(this).val());
         });
     </script>
 
@@ -456,23 +456,25 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:HiddenField ID="key" Value="2" runat="server" />
-                                        <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         <asp:HiddenField ID="hfkodkawasan" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Jenis Aktiviti</label>
-                                        <asp:DropDownList ID="ddlAktiviti" CssClass="form-control item_activity" runat="server" DataTextField="ad" DataValueField="aid"></asp:DropDownList>
                                         <asp:HiddenField ID="hfkaktiviti" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlAktiviti" CssClass="form-control item_activity" runat="server" DataTextField="ad" DataValueField="aid"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:DropDownList ID="ddlparti" CssClass="form-control item_parti" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
                                         <asp:HiddenField ID="hfparti" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlparti" CssClass="form-control item_parti" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -494,7 +496,7 @@
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfkaktivitiM" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan_Click" />
-                            <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                            <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;"/>
                         </div>
                     </div>
                     <div class="tab-pane" id="profile1">
@@ -509,29 +511,33 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:DropDownList ID="ddlKod_KawasanI" CssClass="form-control item_kod_kawasanI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         <asp:HiddenField ID="kod_kawasanI" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKod_KawasanI" CssClass="form-control item_kod_kawasanI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                       
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kategori Isu</label>
-                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="current_issue_name" DataValueField="current_issue_id"></asp:DropDownList>
                                         <asp:HiddenField ID="KategoriIsu" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="current_issue_name" DataValueField="current_issue_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Sumber Isu</label>
+                                         <asp:HiddenField ID="SumberIsu" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
-                                        <asp:HiddenField ID="SumberIsu" runat="server" ClientIDMode="Static" />
+                                       
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:DropDownList ID="ddlPartiI" CssClass="form-control item_PartiI" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
                                         <asp:HiddenField ID="PartiI" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlPartiI" CssClass="form-control item_PartiI" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -555,7 +561,7 @@
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfisu" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan1" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan1_Click" />
-                            <asp:Button ID="btnbatal1" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                            <asp:Button ID="btnbatal1" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;" />
                         </div>
                     </div>
                     <div class="tab-pane" id="messages1">
@@ -570,8 +576,9 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:DropDownList ID="ddlKodKawasanj" CssClass="form-control item_kod_kawasanj" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         <asp:HiddenField ID="kod_kawasanJ" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKodKawasanj" CssClass="form-control item_kod_kawasanj" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
@@ -600,7 +607,7 @@
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfjanji" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan2" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan2_Click" />
-                            <asp:Button ID="btnbatal2" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                            <asp:Button ID="btnbatal2" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;" />
                         </div>
                     </div>
                     <div class="tab-pane" id="settings1">
@@ -615,15 +622,17 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:DropDownList ID="ddlKodKawasanIn" CssClass="form-control item_kod_kawasanIn" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         <asp:HiddenField ID="hfKodKawasanIn" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKodKawasanIn" CssClass="form-control item_kod_kawasanIn" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parti</label>
-                                        <asp:DropDownList ID="ddlPartiIn" CssClass="form-control item_partiIn" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
                                         <asp:HiddenField ID="hfPartiIn" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlPartiIn" CssClass="form-control item_partiIn" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -647,7 +656,7 @@
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfinsiden" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan3" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan3_Click" />
-                            <asp:Button ID="btnbatal3" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                            <asp:Button ID="btnbatal3" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;" />
                         </div>
                     </div>
                     <div class="tab-pane" id="settings2">
@@ -662,15 +671,17 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Kod Kawasan</label>
-                                        <asp:DropDownList ID="ddlKodKawasanKawasan" CssClass="form-control item_kod_kawasanKawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         <asp:HiddenField ID="hfKodKawasanKawasan" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlKodKawasanKawasan" CssClass="form-control item_kod_kawasanKawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Status</label>
-                                        <asp:DropDownList ID="ddlstatusKawasan" CssClass="form-control item_statusKawasan" runat="server" DataTextField="Text" DataValueField="Value"></asp:DropDownList>
                                         <asp:HiddenField ID="hfstatusKawasan" runat="server" ClientIDMode="Static" />
+                                        <asp:DropDownList ID="ddlstatusKawasan" CssClass="form-control item_statusKawasan" runat="server" DataTextField="Text" DataValueField="Value"></asp:DropDownList>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -682,12 +693,13 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Data Wujud (Ya/Tidak)</label>
+                                         <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlWujud" CssClass="form-control item_Wujud" runat="server" DataTextField="areacode" DataValueField="area_id">
                                             <asp:ListItem Value="">--- SELECT ---</asp:ListItem>
                                             <asp:ListItem Value="1">Yes</asp:ListItem>
                                             <asp:ListItem Value="2">No</asp:ListItem>
                                         </asp:DropDownList>
-                                        <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -703,7 +715,7 @@
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfkawasan" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan4" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan4_Click" />
-                            <asp:Button ID="btnbatal4" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                            <asp:Button ID="btnbatal4" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;" />
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
     <meta name="author" content="Coderthemes" />
 
-        <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon/apple-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/favicon/apple-icon-76x76.png" />
@@ -40,13 +40,13 @@
     <link href="../assets/css/core_sn.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
 
-        <!-- DataTables -->
+    <!-- DataTables -->
     <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/scroller/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/plugins/scroller/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -64,34 +64,28 @@
     <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../assets/js/highcharts/highcharts.js"></script>
     <script src="../assets/js/highcharts/highcharts-more.js"></script>
-    <script src="../assets/js/highcharts/no-data-to-display.js"></script>  
+    <script src="../assets/js/highcharts/no-data-to-display.js"></script>
     <script src="../assets/plugins/scroller/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
-    <%--<script type="text/javascript">
-        $(function () {
-            //if ($('#hd_password').val() == "0") {
-            $('#sis-ape-modal').modal('show');
-            //}
-        });
-    </script>--%>  
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    	<div class="splash"> 
-<!-- 			<div class="color-line"></div> -->
-			<div class="splash-title">
-<!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
-<!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
-				<div class="spinner"> 
-					<div class="rect1"></div> 
-					<div class="rect2"></div> 
-					<div class="rect3"></div> 
-					<div class="rect4"></div> 
-					<div class="rect5"></div> 
-				</div> 
-				<h4>Loading..</h4> 
-			</div> 
-		</div>
+    <div class="splash">
+        <!-- 			<div class="color-line"></div> -->
+        <div class="splash-title">
+            <!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
+            <!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <h4>Loading..</h4>
+        </div>
+    </div>
     <!-- Navigation Bar-->
     <header id="topnav">
         <div class="topbar-main">
@@ -99,7 +93,7 @@
 
                 <!-- Logo container-->
                 <div class="logo">
-                    <a href="index-2.html" class="logo">
+                    <a href="#" class="logo">
                         <img src="../assets/images/logo/logo_4.png" alt="user-img" class="hidden-xs" />
                         <img src="../assets/images/logo/logo_xs.png" alt="user-img" class="visible-xs logo-img" />
                         <span class="hidden-xs">STRATEGIC INFORMATION SYSTEM</span></a>
@@ -148,42 +142,42 @@
                             <a href="Dash"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
-                            <a href="#"><i class="md md-color-lens"></i> Dashboard</a>
+                            <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
-                                <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                <li><a href="kawasan_operasi"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
-                                <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
-                                <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
-                                <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
-                                <li><a href="percentage_voters"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
+                                <li><a href="utama"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
+                                <li><a href="kawasan_operasi"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
+                                <li><a href="parlimen_tumpuan"><i class="md md-compare"></i>Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                <li><a href="status_kawasan"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
+                                <li><a href="winnable_candidate"><i class="md md-contacts"></i>Winnable Candidate</a></li>
+                                <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="prapiliha" runat="server">
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a>
+                                    <a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a>
+                                    <a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="laporan_harian_view"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                <li><a href="laporan_harian_view"><i class="md md-question-answer"></i>Laporan Harian Dari Negeri</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
-                            <a href="#"><i class="md md-stars"></i> Pilihanraya</a>
+                            <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
-                            <a href="#"><i class="md md-place"></i> Analisis Kawasan</a>
+                            <a href="analisis_kawasan_view"><i class="md md-place"></i>Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="tetapan" runat="server">
-                            <a href="#"><i class="md md-settings"></i> Tetapan</a>
+                            <a href="#"><i class="md md-settings"></i>Tetapan</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a>
+                                    <a href="parlimen_info_view"><i class="md md-info"></i>Parlimen Info</a>
                                 </li>
                             </ul>
                         </li>
@@ -200,7 +194,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 visible-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"></i> PRU 13</h1>
+                            <h3 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"></i> <span class="current_election"></span></h3>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 visible-xs">
@@ -213,7 +207,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 hidden-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"></i> PRU 13</h1>
+                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"></i> <span class="current_election"></span></h1>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 hidden-xs">
@@ -388,7 +382,7 @@
     </form>
     <!-- jQuery  -->
     <script src="../assets/js/jquery.min.js"></script>
-<%--    <script src="../assets/js/bootstrap.min.js"></script>--%>
+    <%--    <script src="../assets/js/bootstrap.min.js"></script>--%>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -397,7 +391,7 @@
     <script src="../assets/js/jquery.nicescroll.js"></script>
     <script src="../assets/js/jquery.scrollTo.min.js"></script>
 
-            <!-- peity charts -->
+    <!-- peity charts -->
     <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
     <script src="../assets/pages/jquery.peity.init.js"></script>
 
@@ -427,6 +421,9 @@
     <!-- skycons -->
     <script src="../assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
 
+    <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
+    <script src="../assets/plugins/moment/moment.js"></script>
+
     <!-- Page js  -->
     <script src="../assets/pages/jquery.dashboard.js"></script>
 
@@ -447,8 +444,6 @@
     <!-- Datepicker -->
     <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
-    <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
-    <script src="../assets/plugins/moment/moment.js"></script>
 
     <!-- Jquery Custom Validation -->
     <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -468,42 +463,10 @@
             get_date();
             get_time();
             watch();
-            //$('#collapseOne-2').on('show.bs.collapse', function () {
-            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
-            //});
-            //$('#collapseTwo-2').on('shown.bs.collapse', function () {
-            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
-            //});
-            //$('#collapseThree-2').on('shown.bs.collapse', function () {
-            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
-            //});
-            //$('#collapseThree-3').on('shown.bs.collapse', function () {
-            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
-            //});
-            //$('#collapseThree-5').on('shown.bs.collapse', function () {
-            //    $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
-            //});
+            election();
         });
-
-        /* BEGIN SVG WEATHER ICON */
-        if (typeof Skycons !== 'undefined') {
-            var icons = new Skycons(
-                { "color": "#3bafda" },
-                { "resizeClear": true }
-                ),
-                list = [
-                    "clear-day", "clear-night", "partly-cloudy-day",
-                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                    "fog"
-                ],
-                i;
-
-            for (i = list.length; i--;)
-                icons.set(list[i], list[i]);
-            icons.play();
-        };
-
     </script>
+
     <script type="text/javascript">
         function get_date() {
             var today = moment(new Date()).format("DD MMM YYYY");
@@ -511,6 +474,7 @@
             $('#dts').text(today);
         }
     </script>
+
     <script type="text/javascript">
         function get_time() {
             function checkTime(i) {
@@ -554,15 +518,16 @@
             Timer();
         }
     </script>
+
     <script type="text/javascript">
-        function watch() {
+        function watch(d, m, y) {
             if ($.find('#watch')[0]) {
 
                 $('#watch').countDown({
                     targetDate: {
-                        'day': 12,
-                        'month': 03,
-                        'year': 2017,
+                        'day': d,
+                        'month': m,
+                        'year': y,
                         'hour': 12,
                         'min': 00,
                         'sec': 00
@@ -576,10 +541,41 @@
             }
         }
     </script>
-    <script type ="text/javascript">
+
+    <script type="text/javascript">
         function validation() {
             Password_Check.init();
         }
     </script>
+
+    <script type="text/javascript">
+        function election() {
+            var cd, d = 0, m = 0, m1 = 0, y = 0;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: {},
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/electionInfo")%>',
+                dataType: "json",
+                success: function (data) {
+                    $(".current_election").each(function () {
+                        $(this).text(data.d[0].electionName);
+                    });
+                    cd = new Date(data.d[0].electionDate);
+                    d = cd.getDate();
+                    m = cd.getMonth();
+                    m1 = ++m;
+                    y = cd.getFullYear();
+                    watch(d, m1, y);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                },
+                complete: function (data) {
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>

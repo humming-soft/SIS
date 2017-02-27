@@ -14,7 +14,7 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>Tambah Aktiviti Bakal Calon/Individu</b></h4>
                 <p class="text-muted font-13 m-b-30">
-                    Description (if needed).
+
                 </p>
                     <div class="row">
                         <div class="col-lg-3">

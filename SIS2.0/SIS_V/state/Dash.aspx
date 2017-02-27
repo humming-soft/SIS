@@ -60,8 +60,8 @@
                                 <li><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul>
                                         <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
-                                        <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="kawasan_operasi"><i class="md md-details"></i> Parlimen Tumpuan</a></li>
+                                        <li><a href="parlimen_tumpuan"><i class="md md-compare"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                         <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="percentage_voters"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
@@ -69,9 +69,9 @@
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
                                     <ul>
-                                        <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
-                                        <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_view"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
+                                        <li><a href="laporan_harian_view"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -79,7 +79,7 @@
                                         <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="md md-place"></i> Analisis Kawasan</a></li>
+                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
                                 <li><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul>
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
@@ -99,8 +99,8 @@
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul class="dl-submenu">
                                         <li><a href="utama"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
-                                        <li><a href="parlimen_tumpuan"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="kawasan_operasi"><i class="md md-details"></i> Parlimen Tumpuan</a></li>
+                                        <li><a href="parlimen_tumpuan"><i class="md md-compare"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
                                         <li><a href="status_kawasan"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="winnable_candidate"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="percentage_voters"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
@@ -108,9 +108,9 @@
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
-                                        <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_view"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
+                                        <li><a href="laporan_harian_view"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -118,7 +118,7 @@
                                         <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="Dash"><i class="md md-place"></i> Analisis Kawasan</a></li>
+                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul class="dl-submenu">
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
