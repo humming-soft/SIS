@@ -22,39 +22,27 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Pilihanraya</label>
-                            <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
-                            </asp:DropDownList>
+                            <asp:DropDownList ID="ddlPilihanraya" CssClass="form-control" runat="server" DataTextField="election_name" DataValueField="election_id"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Negeri</label>
-                            <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
+                            <asp:DropDownList ID="ddlNegeri" CssClass="form-control" runat="server" DataTextField="state_name" DataValueField="state_id">
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <label for="userName">Parlimen</label>
-                            <asp:DropDownList ID="DropDownList3" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="form-group">
-                            <label for="userName">DUN</label>
-                            <asp:DropDownList ID="DropDownList4" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
+                            <label for="userName">Parlimen - DUN</label>
+                            <asp:DropDownList ID="ddlParlimen" CssClass="form-control" runat="server" DataTextField="area_name" DataValueField="area_id">
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Daerah Mengundi</label>
-                            <asp:DropDownList ID="DropDownList5" CssClass="form-control" runat="server">
+                            <asp:DropDownList ID="ddlDaerah" CssClass="form-control" runat="server">
                                 <asp:ListItem>Sila Pilih</asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -81,7 +69,7 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Jenis Aktiviti</label>
-                            <asp:DropDownList ID="DropDownList6" CssClass="form-control" runat="server">
+                            <asp:DropDownList ID="ddlJenis" CssClass="form-control" runat="server">
                                 <asp:ListItem>Sila Pilih</asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -89,7 +77,7 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Sumber Maklumat</label>
-                            <asp:DropDownList ID="DropDownList7" CssClass="form-control" runat="server">
+                            <asp:DropDownList ID="ddlSumber" CssClass="form-control" runat="server">
                                 <asp:ListItem>Sila Pilih</asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -97,7 +85,7 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Tahap Kesahihan Maklumat</label>
-                            <asp:DropDownList ID="DropDownList8" CssClass="form-control" runat="server">
+                            <asp:DropDownList ID="ddlTahap" CssClass="form-control" runat="server">
                                 <asp:ListItem>Sila Pilih</asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -105,7 +93,7 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Tarikh dan Masa</label>
-                            <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="dtTarikh" CssClass="form-control" runat="server"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -113,7 +101,7 @@
                     <div class="col-lg-8">
                         <div class="form-group">
                             <%--                                    <textarea class="form-control" style="width: 100%; min-height: 300px"></textarea>--%>
-                            <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
+                            <asp:TextBox ID="txtButiran" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
                 </div>
