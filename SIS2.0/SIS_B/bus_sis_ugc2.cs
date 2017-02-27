@@ -84,6 +84,18 @@ namespace SIS_B
         {
             return objDAL.GetUserDetails(log_name);
         }
+        public DataTable GetElectionList()
+        {
+            return objDAL.GetElectionList();
+        }
+        public DataTable GetStateList()
+        {
+            return objDAL.GetStateList(state_id);
+        }
+        public DataTable GetAreaCodeList()
+        {
+            return objDAL.GetAreaCodeList(state_id);
+        }
 
     }
 }

@@ -70,7 +70,7 @@
                                                 </asp:BoundField>
                                                 <asp:TemplateField HeaderText="Area">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="lnk_arn2" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False"  OnClick="lnk_arn2_Click"></asp:LinkButton>
+                                                        <asp:LinkButton ID="lnk_arn2" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn2_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
@@ -149,7 +149,8 @@
                                     <div class="content">
                                         <asp:GridView ID="OpGridView2" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView2_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="#"></asp:BoundField><asp:BoundField DataField="row_color">
+                                                <asp:BoundField DataField="area_code" HeaderText="#"></asp:BoundField>
+                                                <asp:BoundField DataField="row_color">
                                                     <ControlStyle CssClass="hiddencol"></ControlStyle>
 
                                                     <FooterStyle CssClass="hiddencol"></FooterStyle>
@@ -176,7 +177,8 @@
                                     <div class="content">
                                         <asp:GridView ID="OpGridView3" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView3_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="#"></asp:BoundField><asp:BoundField DataField="row_color">
+                                                <asp:BoundField DataField="area_code" HeaderText="#"></asp:BoundField>
+                                                <asp:BoundField DataField="row_color">
                                                     <ControlStyle CssClass="hiddencol"></ControlStyle>
 
                                                     <FooterStyle CssClass="hiddencol"></FooterStyle>
