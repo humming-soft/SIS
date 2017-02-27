@@ -69,8 +69,8 @@
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
                                     <ul>
-                                        <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
-                                        <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
+                                        <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
                                         <li><a href="laporan_harian_view"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
@@ -79,7 +79,7 @@
                                         <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="md md-place"></i> Analisis Kawasan</a></li>
+                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
                                 <li><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul>
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
@@ -108,8 +108,8 @@
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
-                                        <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
+                                        <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
                                         <li><a href="laporan_harian_view"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a></li>
                                     </ul>
                                 </li>
@@ -118,7 +118,7 @@
                                         <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="Dash"><i class="md md-place"></i> Analisis Kawasan</a></li>
+                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul class="dl-submenu">
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>

@@ -156,10 +156,10 @@
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
+                                    <a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
+                                    <a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
                                 </li>
                                 <li><a href="laporan_harian_view"><i class="md md-question-answer"></i>Laporan Harian Dari Negeri</a></li>
                             </ul>
@@ -171,7 +171,7 @@
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
-                            <a href="#"><i class="md md-place"></i>Analisis Kawasan</a>
+                            <a href="analisis_kawasan_view"><i class="md md-place"></i>Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="tetapan" runat="server">
                             <a href="#"><i class="md md-settings"></i>Tetapan</a>
