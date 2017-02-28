@@ -121,5 +121,9 @@ namespace SIS_B
         {
             return data1.dun_WC(stateid);
         }
+        public DataTable fill_candidates()
+        {
+            return data1.fill_candidates(areaid);
+        }
     }
 }
