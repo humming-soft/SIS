@@ -20,6 +20,14 @@ namespace SIS_B
         public string pass { get; set; }
         public int state_id { get; set; }
         public int area_id { get; set; }
+        public int polling_District_id { get; set; }
+        public int election_id { get; set; }
+        public int party_id { get; set; }
+        public int activity_id { get; set; }
+        public int info_source { get; set; }
+        public int info_valdity { get; set; }
+        public string detail { get; set; }
+
         public DataTable fetch_states()
         {
             return data.fetch_state();
@@ -76,6 +84,38 @@ namespace SIS_B
         public DataTable fill_comment()
         {
             return data.fill_comment(area_id);
+        }
+        public DataTable fill_Negeri()
+        {
+            return data.fill_Negeri(state_id);
+        }
+        public DataTable fill_parlimen()
+        {
+            return data.fill_parlimen(state_id);
+        }
+        public DataTable fill_Election()
+        {
+            return data.fill_Election();
+        }
+        public DataTable fill_Party()
+        {
+            return data.fill_Party();
+        }
+        public DataTable fill_InfoType()
+        {
+            return data.fill_InfoType(1);
+        }
+        public DataTable fill_Drop_Sumber()
+        {
+            return data.fill_Drop_Sumber(5);
+        }
+        public DataTable fill_validInfo()
+        {
+            return data.fill_validInfo();
+        }
+        public DataTable DistrictInfo()
+        {
+            return data.DistrictInfo(area_id);
         }
     }
 }
