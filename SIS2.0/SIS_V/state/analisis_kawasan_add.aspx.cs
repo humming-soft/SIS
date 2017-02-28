@@ -36,8 +36,6 @@ namespace SIS_V.state
                     {
                         LabParlimen.Text = row["dist"].ToString();
                         LabDun.Text = row["subdist"].ToString();
-                        LabPollDistrict.Text = row["poll"].ToString();
-                        LabLocaliti.Text = row["locality"].ToString();
                         LabStatus.Text = row["color"].ToString();
                         LabDate.Text = row["date"].ToString();
                         TextComment.Text = row["comment"].ToString();

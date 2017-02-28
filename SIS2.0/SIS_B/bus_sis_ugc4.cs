@@ -62,6 +62,11 @@ namespace SIS_B
         {
             return data.update_justifiaction("sp_update_area_justification", comment, rid);
         }
+
+        public int delete_area_analysis()
+        {
+            return data.delete_justifiaction("sp_DeleteStateAnalysisRecord", rid);
+        }
         
     }
 }

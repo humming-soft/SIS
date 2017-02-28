@@ -186,6 +186,7 @@
     <Content Include="assets\js\jquery.slimscroll.js" />
     <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
+    <Content Include="assets\js\Validations\activiti_bakal.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\Validations\parliment_info.js" />
@@ -277,6 +278,7 @@
     <Content Include="assets\plugins\isotope\dist\isotope.pkgd.min.js" />
     <Content Include="assets\plugins\jquery-circliful\css\jquery.circliful.css" />
     <Content Include="assets\plugins\jquery-circliful\js\jquery.circliful.min.js" />
+    <Content Include="assets\plugins\jquery-confirm\jquery-confirm.min.js" />
     <Content Include="assets\plugins\jquery-datatables-editable\datatables.css" />
     <Content Include="assets\plugins\jquery-datatables-editable\jquery.dataTables.js" />
     <Content Include="assets\plugins\jquery-knob\jquery.knob.js" />

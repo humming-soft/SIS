@@ -313,5 +313,38 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public int SaveCandidateAreaDetails(int pilihanraya, int negeri, int parlimen, int daerah, string name, int jenis, int sumber, int tahap, DateTime tarikh_masa, string butiran)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_InsertCandidateAreaDetails";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pilihanraya", pilihanraya);
+                cmd.Parameters.AddWithValue("@negeri", negeri);
+                cmd.Parameters.AddWithValue("@parlimen", parlimen);
+                cmd.Parameters.AddWithValue("@daerah", daerah);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@jenis", jenis);
+                cmd.Parameters.AddWithValue("@sumber", sumber);
+                cmd.Parameters.AddWithValue("@tahap", tahap);
+                cmd.Parameters.AddWithValue("@tarikh_masa", tarikh_masa);
+                cmd.Parameters.AddWithValue("@butiran", butiran);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

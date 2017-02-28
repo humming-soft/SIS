@@ -58,6 +58,17 @@ namespace SIS_B
         public int state_id { get; set; }
         public string log_name { get; set; }
 
+        public int pilihanraya { get; set; }
+        public int negeri { get; set; }
+        public int parlimen { get; set; }
+        public int daerah { get; set; }
+        public string name { get; set; }
+        public int jenis { get; set; }
+        public int sumber { get; set; }
+        public int tahap { get; set; }
+        public DateTime tarikh_masa { get; set; }
+        public string butiran { get; set; }
+
         public DataTable fill_DataTable()
         {
             return objDAL.fill_DataTable();
@@ -115,6 +126,11 @@ namespace SIS_B
         public DataTable GetCandidateList()
         {
             return objDAL.GetCandidateList();
+        }
+
+        public int SaveCandidateAreaDetails()
+        {
+            return objDAL.SaveCandidateAreaDetails(pilihanraya, negeri, parlimen, daerah, name, jenis, sumber, tahap, tarikh_masa, butiran);
         }
 
     }
