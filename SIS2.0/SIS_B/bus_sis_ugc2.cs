@@ -132,6 +132,10 @@ namespace SIS_B
         {
             return objDAL.SaveCandidateAreaDetails(pilihanraya, negeri, parlimen, daerah, name, jenis, sumber, tahap, tarikh_masa, butiran);
         }
+        public DataTable FillActivitiDataTable()
+        {
+            return objDAL.FillActivitiDataTable();
+        }
 
     }
 }

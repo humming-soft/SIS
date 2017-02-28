@@ -11,14 +11,24 @@ namespace SIS_V.state
 {
     public partial class activiti_bakal_ci_view : System.Web.UI.Page
     {
-        bus_sis_ugc1 bus = new bus_sis_ugc1();
+        bus_sis_ugc2 objBUS = new bus_sis_ugc2();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                FillActivitiDataTable();
             }
         }
 
+        public void FillActivitiDataTable()
+        {
+            DataTable dt = objBUS.FillActivitiDataTable();
+            if (dt.Rows.Count > 0)
+            {
+                GridDataTable.DataSource = dt;
+                GridDataTable.DataBind();
+            }
+        }
 
         protected void GridDataTable_PreRender(object sender, EventArgs e)
         {

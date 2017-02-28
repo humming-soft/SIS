@@ -15,9 +15,8 @@
                     <h4 class="m-t-0 header-title"><b>Paparan Aktiviti Bakal Calon / Individu</b></h4>
                     <a href="activiti_bakal_ci_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
                     <p class="text-muted font-13 m-b-30">
-                        Your description goes here(Malay / English).
                     </p>
-                    <asp:GridView ID="GridDataTable" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable_PreRender">
+                    <asp:GridView ID="GridDataTable" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static"  AutoGenerateColumns="False" OnPreRender="GridDataTable_PreRender">
                     <Columns>
                         <asp:BoundField DataField="name" HeaderText="Candidate Name"></asp:BoundField>
                         <asp:BoundField DataField="party_name_bm" HeaderText="Party"></asp:BoundField>
