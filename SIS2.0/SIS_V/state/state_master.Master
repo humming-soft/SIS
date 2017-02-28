@@ -457,11 +457,12 @@
     <script src="../assets/js/Validations/custom_laporanactivity.js"></script>
     <script src="../assets/js/Validations/parliment_info.js"></script>
     <script src="../assets/js/Validations/password_check.js"></script>
+    <script src="../assets/js/Validations/activiti_bakal.js"></script>
 
     <script src="../assets/js/masonry/masonry.min.js"></script>
 
     <!-- Searchable Dropdown -->
-    <%--<script src="../assets/js/jquery.searchabledropdown.min.js"></script>--%>
+    <script src="../assets/js/jquery.searchabledropdown.min.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {

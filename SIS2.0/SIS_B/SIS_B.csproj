@@ -53,6 +53,7 @@
     <Compile Include="encrypt.cs" />
     <Compile Include="Parliment.cs" />
     <Compile Include="ParlimentChart.cs" />
+    <Compile Include="Candidate.cs" />	
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleSessionEnforcement.cs" />
     <Compile Include="SingleSessionPreparation.cs" />

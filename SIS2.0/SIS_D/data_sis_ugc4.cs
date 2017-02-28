@@ -170,5 +170,30 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public int delete_justifiaction(String sp, int rid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@rid", rid);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

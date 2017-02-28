@@ -18,6 +18,7 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
+                invalid.Visible = false;
                 GetElectionList();
                 GetStateList();
                 GetAreaCodeList();
@@ -101,6 +102,52 @@ namespace SIS_V.state
             ddlName.DataSource = dt;
             ddlName.DataBind();
             ddlName.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (ddlPilihanraya.SelectedValue != "" && ddlNegeri.SelectedValue != "" && ddlParlimen.SelectedValue != "" && ddlName.SelectedValue != "" && ddlJenis.SelectedValue != "" && ddlSumber.SelectedValue != "" && ddlTahap.SelectedValue != "" && dtTarikh.Text != "" && txtButiran.Text != "")
+            {
+                objBUS.pilihanraya = int.Parse(ddlPilihanraya.SelectedValue);
+                objBUS.negeri = int.Parse(ddlNegeri.SelectedValue);
+                objBUS.parlimen = int.Parse(ddlParlimen.SelectedValue);
+                if (ddlDaerah.SelectedValue != "") { 
+                    objBUS.daerah = int.Parse(ddlDaerah.SelectedValue);
+                }
+                else
+                {
+                    objBUS.daerah = -1;
+                }
+                objBUS.name = int.Parse(ddlName.SelectedValue);
+                objBUS.jenis = int.Parse(ddlJenis.SelectedValue);
+                objBUS.sumber = int.Parse(ddlSumber.SelectedValue);
+                objBUS.tahap = int.Parse(ddlTahap.SelectedValue);
+                objBUS.tarikh_masa = DateTime.ParseExact(dtTarikh.Text, "dd/MM/yyyy HH:mm", null);
+                objBUS.butiran = txtButiran.Text;
+                int chk = objBUS.SaveCandidateAreaDetails();
+                if (chk == 0)
+                {
+                    Response.Redirect("activiti_bakal_ci_view");
+                }
+            }
+            else
+            {
+                invalid.Visible = true;
+            }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            ddlPilihanraya.SelectedValue = "";
+            ddlNegeri.SelectedValue = "";
+            ddlParlimen.SelectedValue = "";
+            ddlDaerah.SelectedValue = "";
+            ddlName.SelectedValue = "";
+            ddlJenis.SelectedValue = "";
+            ddlSumber.SelectedValue = "";
+            ddlTahap.SelectedValue = "";
+            dtTarikh.Text = "";
+            txtButiran.Text = "";
         }
     }
 }

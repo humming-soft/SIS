@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_bakal_ci_add.aspx.cs" Inherits="SIS_V.state.activiti_bakal_ci_add" MasterPageFile="~/state/state_master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_bakal_ci_add.aspx.cs" Inherits="SIS_V.state.activiti_bakal_ci_add" MasterPageFile="~/state/state_master.Master" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <%--    <script type="text/javascript">
@@ -10,6 +10,11 @@
         });
     </script>--%>
     <script type="text/javascript">
+        function validation_activiti() {
+            Activiti_Bakal.init();
+        }
+    </script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $('.item_date').datetimepicker({
                 format: "dd/mm/yyyy hh:ii",
@@ -19,19 +24,19 @@
                 autoclose: true
             });
 
-            //$("select").searchable({
-            //    maxListSize: 200, // if list size are less than maxListSize, show them all
-            //    maxMultiMatch: 300, // how many matching entries should be displayed
-            //    exactMatch: false, // Exact matching on search
-            //    wildcards: true, // Support for wildcard characters (*, ?)
-            //    ignoreCase: true, // Ignore case sensitivity
-            //    latency: 200, // how many millis to wait until starting search
-            //    warnMultiMatch: 'top {0} matches ...',
-            //    warnNoMatch: 'no matches ...',
-            //    zIndex: 'auto'
-            //});
+            $("#ContentPlaceHolder1_ddlName").searchable({
+                maxListSize: 200, // if list size are less than maxListSize, show them all
+                maxMultiMatch: 300, // how many matching entries should be displayed
+                exactMatch: false, // Exact matching on search
+                wildcards: true, // Support for wildcard characters (*, ?)
+                ignoreCase: true, // Ignore case sensitivity
+                latency: 200, // how many millis to wait until starting search
+                warnMultiMatch: 'top {0} matches ...',
+                warnNoMatch: 'No Matches Found...',
+                zIndex: 'auto'
+            });
         });
-</script>
+    </script>
     <script>
         function fill_polling_district() {
             var area_id = $('#ContentPlaceHolder1_ddlParlimen option:selected').val();
@@ -42,18 +47,24 @@
                 url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("activiti_bakal_ci_add.aspx/GetPollingDistrict")%>',
                 dataType: "json",
                 success: function (data) {
-                    $('#ContentPlaceHolder1_ddlDaerah').empty();
-                    $('#ContentPlaceHolder1_ddlDaerah').append("<option value=''>-----SELECT-----</option>");
-                    $.each(data.d, function (key, value) {
-                        $("#ContentPlaceHolder1_ddlDaerah").append($("<option></option>").val(value.polling_district_id).html(value.polling_district_name));
-                    });
+                    if (data.d.length > 0) {
+                        $('#ContentPlaceHolder1_ddlDaerah').empty();
+                        $('#ContentPlaceHolder1_ddlDaerah').append("<option value=''>-----SELECT-----</option>");
+                        $.each(data.d, function (key, value) {
+                            $("#ContentPlaceHolder1_ddlDaerah").append($("<option></option>").val(value.polling_district_id).html(value.polling_district_name));
+
+                        });
+                    } else {
+                        $('#ContentPlaceHolder1_ddlDaerah').empty();
+                        $("#ContentPlaceHolder1_ddlDaerah").append($("<option></option>").attr("value", null).text("NO DATA"));
+                    }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log(errorThrown);
                 }
             });
         }
- </script>
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -61,7 +72,6 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>Tambah Aktiviti Bakal Calon/Individu</b></h4>
                 <p class="text-muted font-13 m-b-30">
-                    Description (if needed).
                 </p>
                 <div class="row">
                     <div class="col-lg-2">
@@ -96,20 +106,10 @@
                     <div class="col-lg-8">
                         <div class="form-group">
                             <label for="userName">Name Calon</label>
-                            <%--<input type="text" name="nick" parsley-trigger="change" required class="form-control" id="name">--%>
-                            <%--<asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>--%>
-                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_ic">
+                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <%--<div class="col-lg-4">
-                        <div class="form-group">
-                            <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal" type="button" style="margin-top: 24px;">
-                                Cari Calon
-                            </button>
-                            <asp:Button ID="Button1" CssClass="btn btn-primary waves-light" Style="margin-top: 24px;" runat="server" Text="Cari Calon" OnClick="Button1_Click" />
-                        </div>
-                    </div>--%>
                 </div>
                 <div class="row">
                     <div class="col-lg-2">
@@ -143,20 +143,25 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <%--                                    <textarea class="form-control" style="width: 100%; min-height: 300px"></textarea>--%>
+                            <%--<textarea class="form-control" style="width: 100%; min-height: 300px"></textarea>--%>
                             <asp:TextBox ID="txtButiran" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" />
-                    <asp:Button ID="Button3" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan"  OnClientClick="validation_activiti()" OnClick="btnSubmit_Click" />
+                    <asp:Button ID="btnClear" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" OnClick="btnClear_Click" />
                 </div>
+
+                <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <p>We could not process your request, please check your form fields!</p>
+                </div> 
             </div>
         </div>
     </div>
     <!-- modal -->
-    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <%--<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -169,7 +174,7 @@
                             <div class="form-group">
                                 <label for="field-1" class="control-label">Jenis Carian</label>
                                 <asp:DropDownList ID="DropDownList9" runat="server">
-                                <asp:ListItem>Nama Bakal Calon/Individu</asp:ListItem>
+                                    <asp:ListItem>Nama Bakal Calon/Individu</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -183,7 +188,7 @@
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <asp:Button ID="Button1" CssClass="btn btn-default" style="margin-top: 24px;" runat="server" Text="Cari" />
+                                <asp:Button ID="Button1" CssClass="btn btn-default" Style="margin-top: 24px;" runat="server" Text="Cari" />
                             </div>
                         </div>
                     </div>
@@ -239,7 +244,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
     <!-- /.modal -->
 </asp:Content>
 
