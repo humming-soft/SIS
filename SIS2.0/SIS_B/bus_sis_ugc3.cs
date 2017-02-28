@@ -27,7 +27,12 @@ namespace SIS_B
         public int info_source { get; set; }
         public int info_valdity { get; set; }
         public string detail { get; set; }
-
+        public int current_issue_id { get; set; }
+        public int issue_source { get; set; }
+        public int action_status { get; set; }
+        public int source_election_status { get; set; }
+        public int info_source_agency_id { get; set; }
+        public DateTime ele_date { get; set; }
         public DataTable fetch_states()
         {
             return data.fetch_state();
@@ -116,6 +121,30 @@ namespace SIS_B
         public DataTable DistrictInfo()
         {
             return data.DistrictInfo(area_id);
+        }
+        public DataTable fill_category()
+        {
+            return data.fill_category();
+        }
+        public DataTable fill_drop_sumber_isu()
+        {
+            return data.fill_Drop_Sumber(8);
+        }
+        public DataTable fill_drop_status()
+        {
+            return data.fill_Drop_Sumber(6);
+        }
+        public DataTable fill_drop_statusjanji()
+        {
+            return data.fill_Drop_Sumber(9);
+        }
+        public DataTable fill_agency()
+        {
+            return data.fill_agency();
+        }
+        public int areaInfoElectionParty()
+        {
+            return data.areaInfoElectionParty(election_id, area_id, party_id, activity_id, ele_date, detail, current_issue_id, polling_District_id, info_source, info_valdity, action_status, source_election_status, issue_source, info_source_agency_id);
         }
     }
 }

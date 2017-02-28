@@ -485,5 +485,87 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataTable fill_category()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetAllCurrentIssue";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable fill_agency()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetAllAgencies";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int areaInfoElectionParty(int election_id, int area_id,int party_id,int activity_id,DateTime ele_date,string detail,int current_issue_id,int polling_District_id,int info_source,int info_valdity,int action_status,int source_election_status,int issue_source,int info_source_agency_id)
+        {
+            try
+            {
+                //cmd.Connection = db.disconnect();
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_InsertElectionParty_state";
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Connection = db.connect();
+                cmd.Parameters.AddWithValue("@election_id", election_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@party_id", party_id);
+                cmd.Parameters.AddWithValue("@activity_id", activity_id);
+                cmd.Parameters.AddWithValue("@date", ele_date);
+                cmd.Parameters.AddWithValue("@details", detail);
+                cmd.Parameters.AddWithValue("@current_issue_id", current_issue_id);
+                cmd.Parameters.AddWithValue("@polling_district_id", polling_District_id);
+                cmd.Parameters.AddWithValue("@info_source", info_source);
+                cmd.Parameters.AddWithValue("@info_validity", info_valdity);
+                cmd.Parameters.AddWithValue("@action_status", action_status);
+                cmd.Parameters.AddWithValue("@source_election_status", source_election_status);
+                cmd.Parameters.AddWithValue("@issue_source", issue_source);
+                cmd.Parameters.AddWithValue("@info_source_agency_id", info_source_agency_id);
+                cmd.Parameters.AddWithValue("@info_source_ngo_id", null);
+                cmd.Parameters.AddWithValue("@source_election_status_agency_id", null);
+                cmd.Parameters.AddWithValue("@source_election_status_ngo_id", null);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputId";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputId"].Value.ToString());
+                //cmd.Dispose();
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        
     }
 }

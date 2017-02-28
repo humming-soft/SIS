@@ -16,7 +16,9 @@ namespace SIS_V.state
         bus_sis_ugc3 bus = new bus_sis_ugc3();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack){
+            if (!IsPostBack)
+            {
+                log_valid.Visible = false;
                 fill_txtNegeri();
                 fill_parlimen();
                 fill_Election();
@@ -24,6 +26,12 @@ namespace SIS_V.state
                 fill_InfoType();
                 fill_Drop_Sumber();
                 fill_validInfo();
+                fill_category();
+                fill_drop_sumber_isu();
+                fill_drop_status();
+                fill_drop_statusjanji();
+                fill_agency();
+
             }
         }
         protected void fill_txtNegeri()
@@ -44,7 +52,7 @@ namespace SIS_V.state
             DataTable dt1 = bus.fill_parlimen();
             if (dt1.Rows.Count > 0)
             {
-                drop_prlimen .DataSource = dt1;
+                drop_prlimen.DataSource = dt1;
                 drop_prlimen.DataBind();
                 drop_prlimen.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
             }
@@ -123,6 +131,77 @@ namespace SIS_V.state
 
             }
         }
+        protected void fill_category()
+        {
+            DataTable dt1 = bus.fill_category();
+            if (dt1.Rows.Count > 0)
+            {
+                drop_category.DataSource = dt1;
+                drop_category.DataBind();
+                drop_category.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+            }
+            else
+            {
+
+            }
+        }
+        protected void fill_drop_sumber_isu()
+        {
+            DataTable dt1 = bus.fill_drop_sumber_isu();
+            if (dt1.Rows.Count > 0)
+            {
+                drop_sumbar_isu.DataSource = dt1;
+                drop_sumbar_isu.DataBind();
+                drop_sumbar_isu.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+            }
+            else
+            {
+
+            }
+        }
+
+        protected void fill_drop_status()
+        {
+            DataTable dt1 = bus.fill_drop_status();
+            if (dt1.Rows.Count > 0)
+            {
+                drop_status.DataSource = dt1;
+                drop_status.DataBind();
+                drop_status.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+            }
+            else
+            {
+
+            }
+        }
+        protected void fill_drop_statusjanji()
+        {
+            DataTable dt1 = bus.fill_drop_statusjanji();
+            if (dt1.Rows.Count > 0)
+            {
+                drop_statusjanji.DataSource = dt1;
+                drop_statusjanji.DataBind();
+                drop_statusjanji.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+            }
+            else
+            {
+
+            }
+        }
+        protected void fill_agency()
+        {
+            DataTable dt1 = bus.fill_agency();
+            if (dt1.Rows.Count > 0)
+            {
+                drop_agency.DataSource = dt1;
+                drop_agency.DataBind();
+                drop_agency.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+            }
+            else
+            {
+
+            }
+        }
         [WebMethod]
         public static List<District> vot_district(int area_id)
         {
@@ -142,12 +221,79 @@ namespace SIS_V.state
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
-            bus.state_id = int.Parse(Session["state"].ToString());
-            bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
-            bus.polling_District_id = int.Parse(drop_mengudi.SelectedValue.ToString());
-            bus.election_id = int.Parse(drop_pilihnraya.SelectedValue.ToString());
-            bus.party_id = int.Parse(drop_parti.SelectedValue.ToString());
-            bus.activity_id = int.Parse(drop_parti.SelectedValue.ToString());
+            int flag = 0;
+            if (txt_detail.Text.Trim() == "" || txt_datetime.Text.Trim() == "" || drop_prlimen.SelectedValue.ToString() == "" || drop_pilihnraya.SelectedValue.ToString() == "" ||
+                drop_parti.SelectedValue.ToString() == "" || drop_jenis.SelectedValue.ToString() == "")
+            {
+                log_valid.Visible = true;
+                flag = 1;
+            }
+            if (drop_jenis.SelectedValue.ToString() != "")
+            {
+                int act_id = int.Parse(drop_jenis.SelectedValue.ToString());
+                if (act_id == 6)
+                {
+                    if (drop_category.SelectedValue.ToString() == "" || drop_sumbar_isu.SelectedValue.ToString() == "")
+                    {
+                        hd_valid.Value ="0";
+                        log_valid.Visible = true;
+                        flag = 1;
+                    }
+                }
+                if (act_id == 14)
+                {
+                    if (drop_sumber.SelectedValue.ToString() == "" || drop_tahap.SelectedValue.ToString() == "")
+                    {
+                        hd_valid.Value = "1";
+                        flag = 1;
+                        log_valid.Visible = true;
+                    }
+                }
+            }
+            if (flag==0)
+            {
+                bus.state_id = int.Parse(Session["state"].ToString());
+                bus.detail = txt_detail.Text.Trim();
+                bus.ele_date = Convert.ToDateTime(txt_datetime.Text.Trim());
+                bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
+                if (drop_mengudi.SelectedValue.ToString() != "")
+                {
+                    bus.polling_District_id = int.Parse(drop_mengudi.SelectedValue.ToString());
+                }
+                else
+                {
+                    bus.polling_District_id = -1;
+                }
+                bus.election_id = int.Parse(drop_pilihnraya.SelectedValue.ToString());
+                bus.party_id = int.Parse(drop_parti.SelectedValue.ToString());
+                int activityid = int.Parse(drop_jenis.SelectedValue.ToString());
+                bus.activity_id = activityid;
+                if (activityid == 6)
+                {
+                    bus.current_issue_id = int.Parse(drop_category.SelectedValue.ToString());
+                    int issue_source = int.Parse(drop_sumbar_isu.SelectedValue.ToString());
+                    bus.issue_source = issue_source;
+                    if (issue_source == 230)
+                    {
+                        bus.info_source_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
+                    }
+                }
+                if (activityid == 14)
+                {
+                    bus.action_status = int.Parse(drop_sumber.SelectedValue.ToString());
+                    int id = int.Parse(drop_tahap.SelectedValue.ToString());
+                    bus.source_election_status = id;
+                    if (id == 254)
+                    {
+                        bus.info_source_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
+                    }
+                }
+                int res =bus.areaInfoElectionParty();
+                //if (res==0)
+                //{
+
+                //}
+            }
         }
     }
 }

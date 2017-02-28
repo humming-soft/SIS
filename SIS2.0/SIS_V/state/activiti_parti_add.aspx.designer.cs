@@ -13,6 +13,24 @@ namespace SIS_V.state {
     public partial class activiti_parti_add {
         
         /// <summary>
+        /// hd_valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hd_valid;
+        
+        /// <summary>
+        /// log_valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl log_valid;
+        
+        /// <summary>
         /// txt_negeri control.
         /// </summary>
         /// <remarks>
@@ -58,13 +76,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList drop_parti;
         
         /// <summary>
-        /// dt_Tarikh control.
+        /// txt_datetime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dt_Tarikh;
+        protected global::System.Web.UI.WebControls.TextBox txt_datetime;
         
         /// <summary>
         /// drop_jenis control.
@@ -74,6 +92,51 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList drop_jenis;
+        
+        /// <summary>
+        /// drop_category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drop_category;
+        
+        /// <summary>
+        /// drop_sumbar_isu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drop_sumbar_isu;
+        
+        /// <summary>
+        /// drop_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drop_status;
+        
+        /// <summary>
+        /// drop_statusjanji control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drop_statusjanji;
+        
+        /// <summary>
+        /// drop_agency control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drop_agency;
         
         /// <summary>
         /// drop_sumber control.
@@ -94,13 +157,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList drop_tahap;
         
         /// <summary>
-        /// TextBox3 control.
+        /// txt_detail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txt_detail;
         
         /// <summary>
         /// btn_submit control.
