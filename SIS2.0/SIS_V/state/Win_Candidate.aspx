@@ -25,7 +25,7 @@
                         for (var j = 0; j < data.d[i].dun.length; j++) {
                             $sub += '<p class="ta-center">' + data.d[i].dun[j] + '</p>';
                         }
-                        var url = "candidate_detail?id=" + data.d[i].par_id;
+                        var url = "winnable_candidate?id=" + data.d[i].par_id;
                         var twist = '<div class="grid-item"> <div class="ibox"><a href="' + url + '" class="txt-inherit redir"><div class="ibox-content bg-info txt-black"><div class="ibox-top"><h4 class="font-bold">PARLIMEN</h4><p class="f-w-600 ta-center">' + $dist + '</p></div><div class="ibox-bottom"><h4 class="font-bold">DUN</h4>' + $sub + '</div></div></a></div></div>';
                         $container += twist;
                     }

@@ -47,6 +47,7 @@
     <Compile Include="bus_sis_ugc3.cs" />
     <Compile Include="bus_sis_ugc4.cs" />
     <Compile Include="bus_sis_ugc5.cs" />
+    <Compile Include="Candidate.cs" />
     <Compile Include="Daerah.cs" />
     <Compile Include="Election.cs" />
     <Compile Include="encrypt.cs" />
