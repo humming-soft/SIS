@@ -118,7 +118,7 @@ namespace SIS_V.state
                 {
                     objBUS.daerah = -1;
                 }
-                objBUS.name = ddlName.SelectedValue.Trim();
+                objBUS.name = int.Parse(ddlName.SelectedValue);
                 objBUS.jenis = int.Parse(ddlJenis.SelectedValue);
                 objBUS.sumber = int.Parse(ddlSumber.SelectedValue);
                 objBUS.tahap = int.Parse(ddlTahap.SelectedValue);
@@ -138,6 +138,16 @@ namespace SIS_V.state
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
+            ddlPilihanraya.SelectedValue = "";
+            ddlNegeri.SelectedValue = "";
+            ddlParlimen.SelectedValue = "";
+            ddlDaerah.SelectedValue = "";
+            ddlName.SelectedValue = "";
+            ddlJenis.SelectedValue = "";
+            ddlSumber.SelectedValue = "";
+            ddlTahap.SelectedValue = "";
+            dtTarikh.Text = "";
+            txtButiran.Text = "";
         }
     }
 }

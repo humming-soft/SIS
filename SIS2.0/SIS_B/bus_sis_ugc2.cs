@@ -62,7 +62,7 @@ namespace SIS_B
         public int negeri { get; set; }
         public int parlimen { get; set; }
         public int daerah { get; set; }
-        public string name { get; set; }
+        public int name { get; set; }
         public int jenis { get; set; }
         public int sumber { get; set; }
         public int tahap { get; set; }
