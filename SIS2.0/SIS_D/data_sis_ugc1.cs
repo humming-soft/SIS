@@ -500,7 +500,7 @@ namespace SIS_D
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "sp_GetConDetDashboardWinnableCandidate]";
+                cmd.CommandText = "sp_GetConDetDashboardWinnableCandidate";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@area_id", areaid);
                 SqlDataAdapter da = new SqlDataAdapter();
