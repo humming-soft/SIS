@@ -12,6 +12,8 @@ namespace SIS_V.state
 {
     public partial class candidate_detail : System.Web.UI.Page
     {
+        DataTable final = new DataTable();
+        string cand_image;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,12 +26,33 @@ namespace SIS_V.state
         public void fill_can()
         {
             bus_sis_ugc1 buspar = new bus_sis_ugc1();
-            buspar.areaid = 134;
+            buspar.areaid = int.Parse(Session["area_id"].ToString());
             DataTable dt = buspar.fill_candidates();
+
+            final.Columns.Add("name", typeof(string));
+            final.Columns.Add("image", typeof(string));
+            final.Columns.Add("choice_no_name", typeof(string));
+            final.Columns.Add("occupation", typeof(string));
+            final.Columns.Add("political_post", typeof(string));
+            final.Columns.Add("party_shortcode", typeof(string));
+            final.Columns.Add("education", typeof(string));
+            final.Columns.Add("election_id", typeof(string));
+            final.Columns.Add("election_name", typeof(string));
 
             if (dt.Rows.Count > 0)
             {
-                DataList1.DataSource = dt;
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    byte[] bytes = (byte[])dt.Rows[i]["image"];
+                    string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                    cand_image = "data:image/png;base64," + base64String;
+
+                    final.Rows.Add(dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString());
+                }
+
+                lblelection.Text = dt.Rows[0]["election_name"].ToString();
+                DataList1.DataSource = final;
                 DataList1.DataBind();
             }
         }
