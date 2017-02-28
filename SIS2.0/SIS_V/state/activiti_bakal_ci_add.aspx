@@ -32,7 +32,7 @@
                 ignoreCase: true, // Ignore case sensitivity
                 latency: 200, // how many millis to wait until starting search
                 warnMultiMatch: 'top {0} matches ...',
-                warnNoMatch: 'no matches ...',
+                warnNoMatch: 'No Matches Found...',
                 zIndex: 'auto'
             });
         });
@@ -107,7 +107,7 @@
                     <div class="col-lg-8">
                         <div class="form-group">
                             <label for="userName">Name Calon</label>
-                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_ic">
+                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
                     </div>

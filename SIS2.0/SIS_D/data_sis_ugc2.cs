@@ -313,7 +313,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int SaveCandidateAreaDetails(int pilihanraya, int negeri, int parlimen, int daerah, string name, int jenis, int sumber, int tahap, DateTime tarikh_masa, string butiran)
+        public int SaveCandidateAreaDetails(int pilihanraya, int negeri, int parlimen, int daerah, int name, int jenis, int sumber, int tahap, DateTime tarikh_masa, string butiran)
         {
             try
             {

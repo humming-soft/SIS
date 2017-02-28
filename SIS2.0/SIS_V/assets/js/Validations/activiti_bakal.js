@@ -14,33 +14,31 @@ var Activiti_Bakal = function () {
                 ctl00$ContentPlaceHolder1$ddlPilihanraya: {
                     required: true
                 },
-                //ctl00$ContentPlaceHolder1$txtNamaKawasan: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtBil: {
-                //    required: true,
-                //    number: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtKeluasanKawasan: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtSempadanKawasan: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtKegiatanEkonomi: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtPecahanKaum: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtPopulasiPenduduk: {
-                //    required: true,
-                //    number: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtPurataUmur: {
-                //    required: true,
-                //    number: true
-                //},
+                ctl00$ContentPlaceHolder1$ddlNegeri: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlParlimen: {
+                    required: true,
+                    number: true
+                },
+                ctl00$ContentPlaceHolder1$ddlName: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlJenis: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlSumber: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$ddlTahap: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$dtTarikh: {
+                    required: true
+                },
+                ctl00$ContentPlaceHolder1$txtButiran: {
+                    required: true
+                }
                 //ctl00$ContentPlaceHolder1$txtPurataJantina: {
                 //    required: true
                 //},

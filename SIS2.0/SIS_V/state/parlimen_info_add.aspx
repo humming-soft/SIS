@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-        function validation() {
+        function validation_parliment() {
             Parliment_Info.init();
         }
 
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="btnUpdate" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan"  OnClientClick="validation()" OnClick="btnUpdate_Click" />
+                        <asp:Button ID="btnUpdate" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan"  OnClientClick="validation_parliment()" OnClick="btnUpdate_Click" />
                         <asp:Button ID="btnClear" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" OnClick="btnClear_Click"/>
                     </div>
                     <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
