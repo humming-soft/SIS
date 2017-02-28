@@ -19,6 +19,8 @@ namespace SIS_V.state
             {
                 fillAreaAnalysis();
                 Session["report_id"] = "";
+                invalid.Visible = false;
+                valid.Visible = false;
             }
         }
 
@@ -51,6 +53,23 @@ namespace SIS_V.state
             int report_id = int.Parse(GridKawasan.DataKeys[row.RowIndex].Value.ToString());
             Session["report_id"] = report_id;
             Response.Redirect("analisis_kawasan_add");
+        }
+
+        protected void GridKawasan_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridKawasan.Rows[e.RowIndex];
+            bus.rid = int.Parse(GridKawasan.DataKeys[row.RowIndex].Value.ToString());
+            if (bus.delete_area_analysis() > 0)
+            {
+                lblsuccess.Text = "Data Dimasukkan Berjaya!";
+                valid.Visible = true;
+            }
+            else
+            {
+                lblinvalid.Text = "Ralat yang tidak dijangka, Masukkan Gagal!";
+                invalid.Visible = true;
+            }
+            fillAreaAnalysis();
         }
     }
 }
