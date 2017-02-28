@@ -40,7 +40,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card-box ta-center">
-                <h4>BAKAL CALON PILIHANRAYA UMUM KE-13</h4>
+                
+                <h4><asp:Label ID="lblelection" runat="server"></asp:Label></h4>
                 <h5>PULAU PINANG - SEHINGGA 07 Feb 2017</h5>
             </div>
         </div>
@@ -52,25 +53,24 @@
                     <div class="contact-box">              
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <img alt="image" class="img-circle m-t-xs img-responsive" src="../assets/images/users/avatar-0.jpg">
-                                <div class="m-t-xs font-bold">(BN - UMNO)</div>
+                                <asp:Image ID="cand_image" CssClass="img-circle m-t-xs img-responsive" ImageUrl='<%# Eval("image") %>' runat="server" />
+                                <div class="m-t-xs font-bold">BN - <%# Eval("party_shortcode") %></div>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <h4><strong>HILMI BIN ABD RASHID; DATO'</strong></h4>
-                            <p><span class="label label-success fs-13">PILIHAN PERTAMA</span></p>
+                            <h4><strong><%# Eval("name") %></strong></h4>
+                            <p><span class="label label-success fs-13"><%# Eval("choice_no_name") %></span></p>
                             <address>
                                 <strong>PEKERJAAN</strong><br>
-                                BEKAS PENGERUSI UDA
+                                <%# Eval("occupation") %>
                             </address>
                             <address>
                                 <strong>JAWATAN</strong><br>
-                                TIMBALAN KETUA BAHAGIAN UMNO
+                                <%# Eval("political_post") %>
                             </address>
                             <address>
                                 <strong>PENDIDIKAN</strong><br>
-                                SARJANA PENGURUSAN PERNIAGAAN, MARSHALL
-                                    UNIVERSITY, USA
+                               <%# Eval("education") %>
                             </address>
                             <address>
                                 <strong>ULASAN</strong><br>
