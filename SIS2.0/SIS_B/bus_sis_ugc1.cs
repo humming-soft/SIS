@@ -113,5 +113,13 @@ namespace SIS_B
         {
             return data1.isu_utama(stateid);
         }
+        public DataTable parlimen_WC() 
+        {
+            return data1.parlimen_WC(stateid);
+        }
+        public DataTable dun_WC()
+        {
+            return data1.dun_WC(stateid);
+        }
     }
 }

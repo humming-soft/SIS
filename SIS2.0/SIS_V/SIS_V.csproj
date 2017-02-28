@@ -182,6 +182,7 @@
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\jquery.nicescroll.js" />
     <Content Include="assets\js\jquery.scrollTo.min.js" />
+    <Content Include="assets\js\jquery.searchabledropdown.min.js" />
     <Content Include="assets\js\jquery.slimscroll.js" />
     <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
@@ -218,6 +219,8 @@
     <Content Include="assets\plugins\bootstrap-datepicker\dist\js\bootstrap-datepicker.min.js" />
     <Content Include="assets\plugins\bootstrap-daterangepicker\daterangepicker.css" />
     <Content Include="assets\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="assets\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
     <Content Include="assets\plugins\bootstrap-inputmask\bootstrap-inputmask.min.js" />
     <Content Include="assets\plugins\bootstrap-sweetalert\sweet-alert.css" />
     <Content Include="assets\plugins\bootstrap-sweetalert\sweet-alert.min.js" />
@@ -385,6 +388,7 @@
     <Content Include="state\utama.aspx" />
     <Content Include="state\WebForm1.aspx" />
     <Content Include="state\winnable_candidate.aspx" />
+    <Content Include="state\Win_Candidate.aspx" />
     <Content Include="unauthorised.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -773,6 +777,13 @@
     </Compile>
     <Compile Include="state\winnable_candidate.aspx.designer.cs">
       <DependentUpon>winnable_candidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\Win_Candidate.aspx.cs">
+      <DependentUpon>Win_Candidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\Win_Candidate.aspx.designer.cs">
+      <DependentUpon>Win_Candidate.aspx</DependentUpon>
     </Compile>
     <Compile Include="unauthorised.aspx.cs">
       <DependentUpon>unauthorised.aspx</DependentUpon>

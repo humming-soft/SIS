@@ -84,6 +84,38 @@ namespace SIS_B
         {
             return objDAL.GetUserDetails(log_name);
         }
+        public DataTable GetElectionList()
+        {
+            return objDAL.GetElectionList();
+        }
+        public DataTable GetStateList()
+        {
+            return objDAL.GetStateList(state_id);
+        }
+        public DataTable GetAreaCodeList()
+        {
+            return objDAL.GetAreaCodeList(state_id);
+        }
+        public DataTable GetPollingDistrict()
+        {
+            return objDAL.GetPollingDistrict(area_id);
+        }
+        public DataTable GetActivityList()
+        {
+            return objDAL.GetActivityList();
+        }
+        public DataTable GetLookUpList()
+        {
+            return objDAL.GetLookUpList();
+        }
+        public DataTable GetValidityList()
+        {
+            return objDAL.GetValidityList();
+        }
+        public DataTable GetCandidateList()
+        {
+            return objDAL.GetCandidateList();
+        }
 
     }
 }
