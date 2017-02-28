@@ -278,6 +278,7 @@
     <Content Include="assets\plugins\isotope\dist\isotope.pkgd.min.js" />
     <Content Include="assets\plugins\jquery-circliful\css\jquery.circliful.css" />
     <Content Include="assets\plugins\jquery-circliful\js\jquery.circliful.min.js" />
+    <Content Include="assets\plugins\jquery-confirm\jquery-confirm.min.js" />
     <Content Include="assets\plugins\jquery-datatables-editable\datatables.css" />
     <Content Include="assets\plugins\jquery-datatables-editable\jquery.dataTables.js" />
     <Content Include="assets\plugins\jquery-knob\jquery.knob.js" />

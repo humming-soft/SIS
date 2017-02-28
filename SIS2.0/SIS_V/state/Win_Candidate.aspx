@@ -4,7 +4,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             parlimen_WC();
-            //dun_WC();
         });
     </script>
 
@@ -19,9 +18,15 @@
                 url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("Win_Candidate.aspx/parlimen_WC")%>',
                 dataType: "json",
                 success: function (data) {
-                    var $container="";
+                    var $container = "";
                     for (var i = 0; i < data.d.length; i++) {
-                        var twist = '<div class="grid-item"> <div class="ibox"> <a href="candidate_detail" class="txt-inherit"><div class="ibox-content bg-info txt-black"><div class="ibox-top"><h4 class="font-bold">PARLIMEN</h4><p class="f-w-600 ta-center">' + data.d[i].area_name + '</p></div><div class="ibox-bottom"><h4 class="font-bold">DUN</h4><p>N.1 - PENAGA</p><p>N.2 - BERTAM</p><p>N.3 - PINANG TUNGGAL</p></div></div></a></div></div>';
+                        $dist = data.d[i].par_name;
+                        var $sub = '';
+                        for (var j = 0; j < data.d[i].dun.length; j++) {
+                            $sub += '<p class="ta-center">' + data.d[i].dun[j] + '</p>';
+                        }
+                        var url = "candidate_detail?id=" + data.d[i].par_id;
+                        var twist = '<div class="grid-item"> <div class="ibox"><a href="' + url + '" class="txt-inherit redir"><div class="ibox-content bg-info txt-black"><div class="ibox-top"><h4 class="font-bold">PARLIMEN</h4><p class="f-w-600 ta-center">' + $dist + '</p></div><div class="ibox-bottom"><h4 class="font-bold">DUN</h4>' + $sub + '</div></div></a></div></div>';
                         $container += twist;
                     }
                     $("#par").html($container);
@@ -39,28 +44,14 @@
             });
         }
     </script>
+
+<%--    <script type="text/javascript">
+        $(document).on("click", ".redir", function () {
+            //console.log($(this).prev().val());
+        });
+    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="grid" id="par">
-        <div class="grid-item">
-            <div class="ibox">
-                <a href="candidate_detail" class="txt-inherit">
-                    <div class="ibox-content bg-info txt-black">
-                        <div class="ibox-top">
-                            <h4 class="font-bold">-
-                            </h4>
-                            <p>-</p>
-                        </div>
-                        <div class="ibox-bottom">
-                            <h4 class="font-bold">-
-                            </h4>
-                            <p>-</p>
-                            <p>-</p>
-                            <p>-</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
     </div>
 </asp:Content>

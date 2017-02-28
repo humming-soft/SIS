@@ -38,9 +38,38 @@ var _sn = function (options) {
         }
     }
 }();
+var justifikasi = function () {
 
+    var Splash = $('.splash');
+
+    var runLoginValidator = function () {
+        var form = $('#form1');
+        var errorHandler = $('.errorHandler', form);
+        form.validate({
+            rules: {
+                ctl00$ContentPlaceHolder1$TextComment: {
+                    minlength: 2,
+                    required: true
+                }
+            },
+            submitHandler: function (form) {
+                errorHandler.hide();
+                form.submit();
+                Splash.fadeIn('slow');
+            },
+            invalidHandler: function (event, validator) { //display error alert on form submit
+                errorHandler.show();
+            }
+        });
+    };
+    return {
+        //main function to initiate template pages
+        init: function () {
+            runLoginValidator();
+        }
+    };
+}();
 jQuery(document).ready(function () {
     "use strict";
     _sn.init();
-
 });
