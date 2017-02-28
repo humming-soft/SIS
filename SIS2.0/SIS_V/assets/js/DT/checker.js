@@ -3,7 +3,20 @@
     //DataTable is a highly flexible tool, based upon the foundations of progressive enhancement, 
     //which will add advanced interaction controls to any HTML table
     //For more information, please visit https://datatables.net/
+    jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+        "date-uk-pre": function (a) {
+            var ukDatea = a.split('-');
+            return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+        },
 
+        "date-uk-asc": function (a, b) {
+            return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+        },
+
+        "date-uk-desc": function (a, b) {
+            return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+        }
+    });
     var runDataTable = function () {
         var oTable = $('#GridDataTable').dataTable({
             "aoColumnDefs": [{
@@ -54,16 +67,25 @@
 
     var kawasan = function () {
         var oTable = $('#GridKawasan').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null,
+                null
+            ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [7, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],

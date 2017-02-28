@@ -182,6 +182,7 @@
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\jquery.nicescroll.js" />
     <Content Include="assets\js\jquery.scrollTo.min.js" />
+    <Content Include="assets\js\jquery.searchabledropdown.min.js" />
     <Content Include="assets\js\jquery.slimscroll.js" />
     <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
@@ -218,6 +219,8 @@
     <Content Include="assets\plugins\bootstrap-datepicker\dist\js\bootstrap-datepicker.min.js" />
     <Content Include="assets\plugins\bootstrap-daterangepicker\daterangepicker.css" />
     <Content Include="assets\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="assets\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
     <Content Include="assets\plugins\bootstrap-inputmask\bootstrap-inputmask.min.js" />
     <Content Include="assets\plugins\bootstrap-sweetalert\sweet-alert.css" />
     <Content Include="assets\plugins\bootstrap-sweetalert\sweet-alert.min.js" />
