@@ -432,7 +432,17 @@
 .splash {
     position: fixed;
     z-index: 2000;
-    background: rgba(237, 231, 231, 0.6);
+    background: rgba(234, 234, 234, 0.98);
+    /*background-color: #363d4a;
+    background: -moz-linear-gradient(left, #1e5799 18%, #207cca 39%, #207cca 39%, #2989d8 50%, #7db9e8 100%);
+    background: -webkit-linear-gradient(left, #1e5799 18%,#207cca 39%,#207cca 39%,#2989d8 50%,#7db9e8 100%);
+    background: linear-gradient(to right, #1e5799 18%,#207cca 39%,#207cca 39%,#2989d8 50%,#7db9e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
+    background-color: #363d4a;
+    background: -moz-linear-gradient(left, #1e5799 18%, #207cca 39%, #207cca 39%, #2989d8 50%, #ef4a2b 100%);
+    background: -webkit-linear-gradient(left, #1e5799 18%,#207cca 39%,#207cca 39%,#2989d8 50%,#ef4a2b 100%);
+    background: linear-gradient(to right, #1e5799 18%,#207cca 39%,#207cca 39%,#2989d8 50%,#ef4a2b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#ef4a2b',GradientType=1 );*/
     color: gray;
     top: 0;
     bottom: 0;
@@ -544,4 +554,10 @@
 }
 .rest-height-250{
     height:250px !important;
+}
+.rest-height-65{
+    height: 65px !important;
+}
+.w-125{
+    width:125px;
 }

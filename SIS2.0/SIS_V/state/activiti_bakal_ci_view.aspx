@@ -26,6 +26,7 @@
                         <asp:BoundField DataField="activity_details" HeaderText="Activity Details"></asp:BoundField>
                         <asp:BoundField DataField="lookup_name" HeaderText="Lookup Name"></asp:BoundField>
                         <asp:BoundField DataField="validity_type" HeaderText="Validity Type"></asp:BoundField>
+                        <asp:BoundField DataField="polling_district_name" HeaderText="Polling District"></asp:BoundField>
                         <asp:BoundField DataField="date" HeaderText="Date"></asp:BoundField>
                         <asp:BoundField DataField="details" HeaderText="Details"></asp:BoundField>
                     </Columns>
