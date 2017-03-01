@@ -523,6 +523,25 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataTable fill_pertubuhan()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_fetch_NGO";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
         public int areaInfoElectionParty(int election_id, int area_id,int party_id,int activity_id,DateTime ele_date,string detail,int current_issue_id,int polling_District_id,int info_source,int info_valdity,int action_status,int source_election_status,int issue_source,int info_source_agency_id)
         {
             try
@@ -566,6 +585,25 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        
+        public DataTable fill_gridElectionParty(int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_fetch_areaInfoElectionParty";
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

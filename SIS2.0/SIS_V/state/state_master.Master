@@ -458,7 +458,7 @@
     <script src="../assets/js/Validations/parliment_info.js"></script>
     <script src="../assets/js/Validations/password_check.js"></script>
     <script src="../assets/js/Validations/activiti_bakal.js"></script>
-
+    <script src="../assets/js/Validations/activiti_parti_add.js"></script>
     <script src="../assets/js/masonry/masonry.min.js"></script>
 
     <!-- Searchable Dropdown -->

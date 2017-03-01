@@ -192,7 +192,29 @@
         $('#grid_user_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
-    
+    var gri_party = function () {
+        var oTable = $('#grid_areaInfoElectionParty').dataTable({
+            "aoColumnDefs": [{
+                "aTargets": [0]
+            }],
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers"
+            },
+            "aaSorting": [
+                [0, 'asc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "iDisplayLength": 5,
+        });
+        $('#grid_user_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        // modify table search input
+    };
     return {
         //main function to initiate template pages
         init: function () {
@@ -203,6 +225,7 @@
             pi();
             tetapan();
             guser();
+            gri_party();
         }
     };
 }();

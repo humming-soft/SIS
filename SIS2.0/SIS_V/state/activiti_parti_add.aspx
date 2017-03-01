@@ -20,6 +20,12 @@
                  if (id1 == 254) {
                      $('#dr_five').show();
                  }
+                 if (id1 == 234) {
+                     $('#dr_six').show();
+                 }
+                 if (id1 == 256) {
+                     $('#dr_six').show();
+                 }
 
              });
              $('.item_date').datetimepicker({
@@ -39,6 +45,7 @@
                      $('#dr_three').hide();
                      $('#dr_four').hide();
                      $('#dr_five').hide();
+                     $('#dr_six').hide();
 
                  } else if (id == 14) {
                      $('#drop_status').val("");
@@ -48,6 +55,7 @@
                      $('#dr_three').show();
                      $('#dr_four').show();
                      $('#dr_five').hide();
+                     $('#dr_six').hide();
 
                  } else {
                      $('#dr_one').hide();
@@ -55,6 +63,7 @@
                      $('#dr_three').hide();
                      $('#dr_four').hide();
                      $('#dr_five').hide();
+                     $('#dr_six').hide();
                  }
              })
              $('#drop_statusjanji').on('change', function () {
@@ -62,11 +71,14 @@
                  if (id == 254) {
                      $('#drop_agency').val("");
                      $('#dr_five').show();
+                     $('#dr_six').hide();
                  } else if (id == 256) {
+                     $('#drop_prtubuhan').val("");
                      $('#dr_five').hide();
-
+                     $('#dr_six').show();
                  } else {
                      $('#dr_five').hide();
+                     $('#dr_six').hide();
                  }
              })
              $('#drop_sumbar_isu').on('change', function () {
@@ -74,11 +86,15 @@
                  if (id == 230) {
                      $('#drop_agency').val("");
                      $('#dr_five').show();
+                     $('#dr_six').hide();
                  } else if (id == 234) {
+                     $('#drop_prtubuhan').val("");
                      $('#dr_five').hide();
+                     $('#dr_six').show();
 
                  } else {
                      $('#dr_five').hide();
+                     $('#dr_six').hide();
                  }
              })
          });
@@ -236,9 +252,17 @@
                         </div>
                        <div class="col-lg-3" id="dr_five" hidden="hidden" >
                             <div class="form-group">
-                                <label for="userName" id="ag_pertu">Agensi</label>
+                                <label for="userName" id="ag_agency">Agensi</label>
                                 <asp:DropDownList ID="drop_agency" CssClass="form-control" runat="server"
                                     ClientIDMode="Static" DataTextField="agency_name" DataValueField="agency_id">
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                          <div class="col-lg-3" id="dr_six" hidden="hidden" >
+                            <div class="form-group">
+                                <label for="userName" id="ag_pertu">Pertubuhan</label>
+                                <asp:DropDownList ID="drop_prtubuhan" CssClass="form-control" runat="server"
+                                    ClientIDMode="Static" DataTextField="ngo_name" DataValueField="ngo_id">
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -270,11 +294,16 @@
                         </div>
                     </div>
                  <div class="form-group text-left m-b-0 m-t-15">
-                        <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_submit_Click" />
+                        <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_submit_Click"  OnClientClick="validate_activity()"/>
                         <asp:Button ID="btn_cancel" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
                  </div>
             </div>
         </div>
     </div>
+     <script type="text/javascript">
+         function validate_activity() {
+             Add.init();
+         }
+    </script>
 </asp:Content>
 
