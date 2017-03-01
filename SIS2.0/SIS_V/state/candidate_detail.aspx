@@ -53,8 +53,8 @@
                     <div class="contact-box">              
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <asp:Image ID="cand_image" CssClass="img-circle m-t-xs img-responsive w-125" ImageUrl='<%# Eval("image") %>' runat="server" />
-                                <div class="m-t-xs font-bold w-125">BN - <%# Eval("party_shortcode") %></div>
+                                <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-160 img-c-border" ImageUrl='<%# Eval("image") %>' runat="server" />
+                                <div class="m-t-xs font-bold w-125"><%# Eval("party_shortcode") %></div>
                             </div>
                         </div>
                         <div class="col-sm-8">
