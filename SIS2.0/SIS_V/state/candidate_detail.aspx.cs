@@ -57,7 +57,8 @@ namespace SIS_V.state
                     }
                     cand_image = "data:image/png;base64," + base64String;
 
-                    final.Rows.Add(dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString(),dt.Rows[i]["comments"].ToString());
+                    final.Rows.Add(dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString(),"ABC");
+                    //final.Rows.Add(dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString(),dt.Rows[i]["comments"].ToString());
                     //(dt.Rows[i]["comments"].ToString() == "" ? "N/A" : dt.Rows[i]["comments"].ToString()
                 }
 
