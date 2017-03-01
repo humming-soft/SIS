@@ -110,7 +110,7 @@
                             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" style="z-index: 10000;">
                                 <li><a href="#" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
                                 <li><a href="../Logout"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
