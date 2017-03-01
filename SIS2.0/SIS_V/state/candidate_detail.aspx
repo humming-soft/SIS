@@ -53,8 +53,8 @@
                     <div class="contact-box">              
                         <div class="col-sm-4">
                             <div class="text-center">
-                                <asp:Image ID="cand_image" CssClass="img-circle m-t-xs img-responsive" ImageUrl='<%# Eval("image") %>' runat="server" />
-                                <div class="m-t-xs font-bold">BN - <%# Eval("party_shortcode") %></div>
+                                <asp:Image ID="cand_image" CssClass="img-circle m-t-xs img-responsive w-125" ImageUrl='<%# Eval("image") %>' runat="server" />
+                                <div class="m-t-xs font-bold w-125">BN - <%# Eval("party_shortcode") %></div>
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -74,10 +74,10 @@
                             </address>
                             <address>
                                 <strong>ULASAN</strong><br>
-                                TIADA SEBARANG KONTROVERSI<br>
-                                DITIMBULKAN, MULA BERGITI MENDEKATI<br>
-                                PENGUNDI AKAR UMBI, MENANG DENGAN<br>
-                                MAJORITI SELESA PADA PRU - 11<br>
+                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
+                                    <%# Eval("comments") %>
+
+                                </div>
                             </address>
                         </div>
                         <div class="clearfix"></div>
