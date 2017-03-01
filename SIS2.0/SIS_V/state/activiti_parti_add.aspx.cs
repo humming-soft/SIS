@@ -31,6 +31,7 @@ namespace SIS_V.state
                 fill_drop_status();
                 fill_drop_statusjanji();
                 fill_agency();
+                fill_pertubuhan();
 
             }
         }
@@ -100,7 +101,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_jenis.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_Drop_Sumber()
@@ -114,7 +115,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_sumber.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_validInfo()
@@ -128,7 +129,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_tahap.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_category()
@@ -142,7 +143,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_category.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_drop_sumber_isu()
@@ -156,7 +157,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_sumbar_isu.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
 
@@ -171,7 +172,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_status.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_drop_statusjanji()
@@ -185,7 +186,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_statusjanji.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_agency()
@@ -199,7 +200,21 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_agency.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+            }
+        }
+        protected void fill_pertubuhan()
+        {
+            DataTable dt1 = bus.fill_pertubuhan();
+            if (dt1.Rows.Count > 0)
+            {
+                drop_prtubuhan.DataSource = dt1;
+                drop_prtubuhan.DataBind();
+                drop_prtubuhan.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+            }
+            else
+            {
+                drop_prtubuhan.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         [WebMethod]
@@ -223,7 +238,7 @@ namespace SIS_V.state
         {
             int flag = 0;
             if (txt_detail.Text.Trim() == "" || txt_datetime.Text.Trim() == "" || drop_prlimen.SelectedValue.ToString() == "" || drop_pilihnraya.SelectedValue.ToString() == "" ||
-                drop_parti.SelectedValue.ToString() == "" || drop_jenis.SelectedValue.ToString() == "")
+                drop_parti.SelectedValue.ToString() == "" || drop_jenis.SelectedValue.ToString() == "" || drop_sumber.SelectedValue.ToString() == "" || drop_tahap.SelectedValue.ToString() == "")
             {
                 log_valid.Visible = true;
                 flag = 1;
@@ -242,7 +257,51 @@ namespace SIS_V.state
                 }
                 if (act_id == 14)
                 {
-                    if (drop_sumber.SelectedValue.ToString() == "" || drop_tahap.SelectedValue.ToString() == "")
+                    if (drop_status.SelectedValue.ToString() == "" || drop_statusjanji.SelectedValue.ToString() == "")
+                    {
+                        hd_valid.Value = "1";
+                        flag = 1;
+                        log_valid.Visible = true;
+                    }
+                }
+            }
+            if (drop_sumbar_isu.SelectedValue.ToString()!="")
+            {
+                int issueid = int.Parse(drop_sumbar_isu.SelectedValue.ToString());
+                if (issueid == 230)
+                {
+                    if (drop_agency.SelectedValue.ToString() == "")
+                    {
+                        hd_valid.Value = "1";
+                        flag = 1;
+                        log_valid.Visible = true;
+                    }
+                }
+                if (issueid == 234)
+                {
+                    if (drop_prtubuhan.SelectedValue.ToString() == "")
+                    {
+                        hd_valid.Value = "1";
+                        flag = 1;
+                        log_valid.Visible = true;
+                    }
+                }
+            }
+            if (drop_statusjanji.SelectedValue.ToString() != "")
+            {
+                int issueid = int.Parse(drop_statusjanji.SelectedValue.ToString());
+                if (issueid == 254)
+                {
+                    if (drop_agency.SelectedValue.ToString() == "")
+                    {
+                        hd_valid.Value = "1";
+                        flag = 1;
+                        log_valid.Visible = true;
+                    }
+                }
+                if (issueid == 256)
+                {
+                    if (drop_prtubuhan.SelectedValue.ToString() == "")
                     {
                         hd_valid.Value = "1";
                         flag = 1;
@@ -256,6 +315,8 @@ namespace SIS_V.state
                 bus.detail = txt_detail.Text.Trim();
                 bus.ele_date = Convert.ToDateTime(txt_datetime.Text.Trim());
                 bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
+                bus.info_source = int.Parse(drop_sumber.SelectedValue.ToString());
+                bus.info_valdity = int.Parse(drop_tahap.SelectedValue.ToString());
                 if (drop_mengudi.SelectedValue.ToString() != "")
                 {
                     bus.polling_District_id = int.Parse(drop_mengudi.SelectedValue.ToString());
@@ -277,22 +338,30 @@ namespace SIS_V.state
                     {
                         bus.info_source_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
                     }
+                    if (issue_source == 234)
+                    {
+                        bus.info_source_ngo_id = int.Parse(drop_prtubuhan.SelectedValue.ToString());
+                    }
                 }
                 if (activityid == 14)
                 {
-                    bus.action_status = int.Parse(drop_sumber.SelectedValue.ToString());
-                    int id = int.Parse(drop_tahap.SelectedValue.ToString());
+                    bus.action_status = int.Parse(drop_status.SelectedValue.ToString());
+                    int id = int.Parse(drop_statusjanji.SelectedValue.ToString());
                     bus.source_election_status = id;
                     if (id == 254)
                     {
-                        bus.info_source_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
+                        bus.source_election_status_agency_id= int.Parse(drop_agency.SelectedValue.ToString());
+                    }
+                    if (id == 256)
+                    {
+                        bus.source_election_status_ngo_id= int.Parse(drop_prtubuhan.SelectedValue.ToString());
                     }
                 }
                 int res =bus.areaInfoElectionParty();
-                //if (res==0)
-                //{
-
-                //}
+                if (res == 0)
+                {
+                    Response.Redirect("activiti_parti_view");
+                }
             }
         }
     }
