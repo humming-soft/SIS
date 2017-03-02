@@ -56,11 +56,11 @@ namespace SIS_V.state
             {
                 drop_prlimen.DataSource = dt1;
                 drop_prlimen.DataBind();
-                drop_prlimen.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_prlimen.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_prlimen.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_prlimen.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_Election()
@@ -70,11 +70,11 @@ namespace SIS_V.state
             {
                 drop_pilihnraya.DataSource = dt1;
                 drop_pilihnraya.DataBind();
-                drop_pilihnraya.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_pilihnraya.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_pilihnraya.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_pilihnraya.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_Party()
@@ -84,11 +84,11 @@ namespace SIS_V.state
             {
                 drop_parti.DataSource = dt1;
                 drop_parti.DataBind();
-                drop_parti.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_parti.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_parti.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_parti.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_InfoType()
@@ -98,11 +98,11 @@ namespace SIS_V.state
             {
                 drop_jenis.DataSource = dt1;
                 drop_jenis.DataBind();
-                drop_jenis.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_jenis.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_jenis.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_jenis.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_Drop_Sumber()
@@ -112,11 +112,11 @@ namespace SIS_V.state
             {
                 drop_sumber.DataSource = dt1;
                 drop_sumber.DataBind();
-                drop_sumber.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_sumber.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_sumber.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_sumber.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_validInfo()
@@ -126,11 +126,11 @@ namespace SIS_V.state
             {
                 drop_tahap.DataSource = dt1;
                 drop_tahap.DataBind();
-                drop_tahap.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_tahap.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_tahap.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_tahap.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_category()
@@ -140,11 +140,11 @@ namespace SIS_V.state
             {
                 drop_category.DataSource = dt1;
                 drop_category.DataBind();
-                drop_category.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_category.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_category.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_category.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_drop_sumber_isu()
@@ -154,11 +154,11 @@ namespace SIS_V.state
             {
                 drop_sumbar_isu.DataSource = dt1;
                 drop_sumbar_isu.DataBind();
-                drop_sumbar_isu.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_sumbar_isu.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_sumbar_isu.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_sumbar_isu.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
 
@@ -169,11 +169,11 @@ namespace SIS_V.state
             {
                 drop_status.DataSource = dt1;
                 drop_status.DataBind();
-                drop_status.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_status.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_status.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_status.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_drop_statusjanji()
@@ -183,11 +183,11 @@ namespace SIS_V.state
             {
                 drop_statusjanji.DataSource = dt1;
                 drop_statusjanji.DataBind();
-                drop_statusjanji.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_statusjanji.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_statusjanji.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_statusjanji.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_agency()
@@ -197,11 +197,11 @@ namespace SIS_V.state
             {
                 drop_agency.DataSource = dt1;
                 drop_agency.DataBind();
-                drop_agency.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_agency.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_agency.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_agency.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         protected void fill_pertubuhan()
@@ -211,11 +211,11 @@ namespace SIS_V.state
             {
                 drop_prtubuhan.DataSource = dt1;
                 drop_prtubuhan.DataBind();
-                drop_prtubuhan.Items.Insert(0, new ListItem("----------------SELECT----------------", ""));
+                drop_prtubuhan.Items.Insert(0, new ListItem("---SELECT---", ""));
             }
             else
             {
-                drop_prtubuhan.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
+                drop_prtubuhan.Items.Insert(0, new ListItem("---NO DATA---", ""));
             }
         }
         [WebMethod]
