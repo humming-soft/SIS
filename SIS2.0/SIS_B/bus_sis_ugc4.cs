@@ -18,6 +18,8 @@ namespace SIS_B
 
         public String comment { get; set; }
 
+        //Release-2
+
         public DataTable fill_lamporan()
         {
             return data.data_lamboran("sp_fetch_daily_report", "i", sid);
@@ -48,6 +50,8 @@ namespace SIS_B
             return data.data_currentElectionInfo();
         }
 
+        //Release-3
+
         public DataTable fill_area_analysis()
         {
             return data.data_lamboran("sp_fetch_area_analysis", "i", sid);
@@ -67,6 +71,8 @@ namespace SIS_B
         {
             return data.delete_justifiaction("sp_DeleteStateAnalysisRecord", rid);
         }
+
+        //Release-4
         
     }
 }
