@@ -54,7 +54,6 @@
                         columnWidth: 250,
                         gutter: 25
                     });
-                    jQuery('.scrollbar-inner').scrollbar();
                 }
             });
         }

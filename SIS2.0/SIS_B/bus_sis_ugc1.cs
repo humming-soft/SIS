@@ -125,5 +125,9 @@ namespace SIS_B
         {
             return data1.fill_candidates(areaid);
         }
+        public DataTable fill_candidates_dun()
+        {
+            return data1.fill_candidates_dun(areaid);
+        }
     }
 }
