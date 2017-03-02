@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="candidate_detail.aspx.cs" Inherits="SIS_V.state.candidate_detail"  MasterPageFile="~/state/state_master.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="candidate_detail.aspx.cs" Inherits="SIS_V.state.candidate_detail" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <script type="text/javascript">
-            $(document).ready(function () {
-                //fill_candidates();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //fill_candidates();
         });
     </script>
     <script type="text/javascript">
@@ -16,7 +16,7 @@
                 data: '{"areaid":"' + areaid + '"}',
                 url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("candidate_detail.aspx/fill_candidates")%>',
                 dataType: "json",
-                success: function (data) {               
+                success: function (data) {
                     var $container = "";
                     for (var i = 0; i < data.d.length; i++) {
                         $dist = data.d[i].par_name;
@@ -40,17 +40,24 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card-box ta-center">
-                
-                <h4><asp:Label ID="lblelection" runat="server"></asp:Label></h4>
+                <h4>
+                    <asp:Label ID="lblelection" runat="server"></asp:Label></h4>
                 <h5>PULAU PINANG - SEHINGGA 07 Feb 2017</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger alert-dismissable" id="norec" runat="server">
+                <p style="text-align:center"><b>No Records Found !</b></p>
             </div>
         </div>
     </div>
     <div class="row" id="container">
         <asp:DataList ID="DataList1" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
             <ItemTemplate>
-                 <div class="col-lg-4">
-                    <div class="contact-box">              
+                <div class="col-lg-4">
+                    <div class="contact-box">
                         <div class="col-sm-4">
                             <div class="text-center">
                                 <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-160 img-c-border" ImageUrl='<%# Eval("image") %>' runat="server" />
@@ -66,17 +73,18 @@
                             </address>
                             <address>
                                 <strong>JAWATAN</strong><br>
-                                <%# Eval("political_post") %>
+                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
+                                    <%# Eval("political_post") %>
+                                </div>
                             </address>
                             <address>
                                 <strong>PENDIDIKAN</strong><br>
-                               <%# Eval("education") %>
+                                <%# Eval("education") %>
                             </address>
                             <address>
                                 <strong>ULASAN</strong><br>
                                 <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
                                     <%# Eval("comments") %>
-
                                 </div>
                             </address>
                         </div>
