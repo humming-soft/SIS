@@ -14,6 +14,7 @@ namespace SIS_V.state
     {
         DataTable final = new DataTable();
         string cand_image;
+        int wc_id;
         bus_sis_ugc1 bus1 = new bus_sis_ugc1();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,16 +22,16 @@ namespace SIS_V.state
             norec.Visible = false;
             if (!IsPostBack)
             {
-                fill_can();
+                wc_id = int.Parse(Session["area_wc_id"].ToString());
+                fill_can(wc_id);
             }
         }
 
-        public void fill_can()
+        public void fill_can(int wid)
         {
             bus_sis_ugc1 buspar = new bus_sis_ugc1();
-            buspar.areaid = int.Parse(Session["area_id"].ToString());
+            buspar.areaid = wid;
             DataTable dt = buspar.fill_candidates();
-
             final.Columns.Add("name", typeof(string));
             final.Columns.Add("image", typeof(string));
             final.Columns.Add("choice_no_name", typeof(string));
@@ -61,12 +62,13 @@ namespace SIS_V.state
                     final.Rows.Add(dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString(),dt.Rows[i]["comments"].ToString());
                 }
 
-                lblelection.Text = dt.Rows[0]["election_name"].ToString();
+                lblelection.Text = Session["election"].ToString();
                 DataList1.DataSource = final;
                 DataList1.DataBind();
             }
             else
             {
+                lblelection.Text = Session["election"].ToString();
                 norec.Visible = true;
             }
         }

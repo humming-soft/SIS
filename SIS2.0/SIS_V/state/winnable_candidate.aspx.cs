@@ -18,7 +18,7 @@ namespace SIS_V.state
             {
                 if (Request["id"] != null)
                 {
-                    Session["area_id"] = Request["id"];
+                    Session["area_wc_id"] = Request["id"];
                     Response.Redirect("candidate_detail");
                 }
             }

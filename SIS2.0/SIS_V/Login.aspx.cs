@@ -77,6 +77,7 @@ namespace SIS_V
                 Session["log_lvl"] = dt.Rows[0][6].ToString();
                 Session["state"] = dt.Rows[0][7].ToString();
                 Session["role"] = dt.Rows[0][8].ToString();
+                Session["election"] = dt.Rows[0][9].ToString();
                 Session["is_login"] = "t";
                 //Let us now set the authentication cookie so that we can use that later.
                 FormsAuthentication.SetAuthCookie(dt.Rows[0][0].ToString(), false);
