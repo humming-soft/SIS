@@ -65,10 +65,21 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 5
         });
         $('#GridDataTable3_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
+
+        //$('#GridDataTable3').on('page.dt', function () {
+        //    console.log($("#GridDataTable3 .mCustomScrollbar:visible").find(".mCSB_inside").length);
+        //    if ($("#GridDataTable3 .mCustomScrollbar").find(".mCSB_inside").length == 0) {
+        //        $.getScript("../assets/plugins/scroller/jquery.mCustomScrollbar.concat.min.js")
+        //                .done(function (script, textStatus) {
+        //                        console.log("in");
+        //                        $("#GridDataTable3 .mCustomScrollbar").mCustomScrollbar();
+        //                });
+        //    }
+        //});
     };
 
     var runDataTable4 = function () {
