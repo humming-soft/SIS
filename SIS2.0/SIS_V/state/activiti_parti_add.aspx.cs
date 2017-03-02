@@ -18,6 +18,7 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
+                txt_datetime.Attributes.Add("readonly", "readonly");
                 log_valid.Visible = false;
                 fill_txtNegeri();
                 fill_parlimen();
@@ -59,7 +60,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_prlimen.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_Election()
@@ -73,7 +74,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_pilihnraya.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_Party()
@@ -87,7 +88,7 @@ namespace SIS_V.state
             }
             else
             {
-
+                drop_parti.Items.Insert(0, new ListItem("----------------NO DATA----------------", ""));
             }
         }
         protected void fill_InfoType()
@@ -363,6 +364,25 @@ namespace SIS_V.state
                     Response.Redirect("activiti_parti_view");
                 }
             }
+        }
+
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+            txt_detail.Text= "" ;
+            txt_datetime.Text= "";
+            fill_txtNegeri();
+            fill_parlimen();
+            fill_Election();
+            fill_Party();
+            fill_InfoType();
+            fill_Drop_Sumber();
+            fill_validInfo();
+            fill_category();
+            fill_drop_sumber_isu();
+            fill_drop_status();
+            fill_drop_statusjanji();
+            fill_agency();
+            fill_pertubuhan();
         }
     }
 }
