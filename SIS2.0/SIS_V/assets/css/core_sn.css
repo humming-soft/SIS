@@ -567,3 +567,6 @@
 .img-c-border{
    border: 3px solid #C2C4C5;
 }
+.rest-max-height-65{
+    max-height: 65px !important;
+}

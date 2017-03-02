@@ -58,6 +58,8 @@
                      $('#dr_six').hide();
 
                  } else {
+                     $('#drop_status').val("");
+                     $('#drop_statusjanji').val("");
                      $('#dr_one').hide();
                      $('#dr_two').hide();
                      $('#dr_three').hide();
@@ -67,6 +69,8 @@
                  }
              })
              $('#drop_statusjanji').on('change', function () {
+                 $('#drop_agency').val("");
+                 $('#drop_prtubuhan').val("");
                  var id = $('#drop_statusjanji').val();
                  if (id == 254) {
                      $('#drop_agency').val("");
@@ -83,6 +87,8 @@
              })
              $('#drop_sumbar_isu').on('change', function () {
                  var id = $('#drop_sumbar_isu').val();
+                 $('#drop_agency').val("");
+                 $('#drop_prtubuhan').val("");
                  if (id == 230) {
                      $('#drop_agency').val("");
                      $('#dr_five').show();
@@ -295,7 +301,7 @@
                     </div>
                  <div class="form-group text-left m-b-0 m-t-15">
                         <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_submit_Click"  OnClientClick="validate_activity()"/>
-                        <asp:Button ID="btn_cancel" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" />
+                        <asp:Button ID="btn_cancel" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" OnClick="btn_cancel_Click" />
                  </div>
             </div>
         </div>

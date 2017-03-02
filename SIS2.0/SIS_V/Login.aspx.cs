@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SIS_B;
 using System.Data;
-using System.Web;
 using System.Web.Security;
 
 namespace SIS_V
@@ -18,6 +17,10 @@ namespace SIS_V
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
+            Response.Cache.SetNoStore();
+
             if(!IsPostBack)
             {
                 invalid.Visible = false;
