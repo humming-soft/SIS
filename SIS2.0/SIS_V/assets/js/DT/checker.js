@@ -194,16 +194,22 @@
     };
     var gri_party = function () {
         var oTable = $('#grid_areaInfoElectionParty').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null,
+                null,
+                null
+            ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [3, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],
@@ -212,7 +218,7 @@
             // set the initial value
             "iDisplayLength": 5,
         });
-        $('#grid_user_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#grid_areaInfoElectionParty_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
     return {

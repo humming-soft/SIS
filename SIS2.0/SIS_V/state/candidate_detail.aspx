@@ -41,7 +41,7 @@
         <div class="col-lg-12">
             <div class="card-box ta-center">
                 <h4><asp:Label ID="lblelection" runat="server"></asp:Label></h4>
-                <h5><asp:Label ID="lblstate" runat="server"></asp:Label></h5>
+                <h5><asp:Label ID="lblstate" CssClass="t-t-upper" runat="server"></asp:Label></h5>
             </div>
         </div>
     </div>
