@@ -99,6 +99,7 @@ namespace SIS_V.state
                     {
                         FormsAuthentication.SignOut();
                         FormsAuthentication.RedirectToLoginPage();
+                        Response.End();
                     }
                 }
             }
