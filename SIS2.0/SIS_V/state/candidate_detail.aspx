@@ -53,83 +53,135 @@
         </div>
     </div>
     <div class="row" id="container">
+        <div class="col-lg-12">
+            <div class="panel bg-gray">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h3 class="m-0"><span class="fa fa-institution"></span> PARLIMEN</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <asp:DataList ID="DataList1" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
             <ItemTemplate>
                 <div class="col-lg-4">
-                    <div class="contact-box">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-160 img-c-border" ImageUrl='<%# Eval("image") %>' runat="server" />
-                                <div class="m-t-xs font-bold w-125"><%# Eval("party_shortcode") %></div>
+                    <div class="portlet">
+                            <div class="portlet-heading bg-success">
+                                <h3 class="portlet-title">
+                                    P.134 : MASJID TANAH
+                                </h3>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="bg-primary" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                   <%-- <div class="contact-box">--%>
+                                        <div class="col-sm-4">
+                                            <div class="text-center">
+                                                <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-160 img-c-border" ImageUrl='<%# Eval("image") %>' runat="server" />
+                                                <div class="m-t-xs font-bold w-125"><%# Eval("party_shortcode") %></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <h4><strong><%# Eval("name") %></strong></h4>
+                                            <p><span class="label label-success fs-13"><%# Eval("choice_no_name") %></span></p>
+                                            <address>
+                                                <strong>PEKERJAAN</strong><br>
+                                                <%# Eval("occupation") %>
+                                            </address>
+                                            <address>
+                                                <strong>JAWATAN</strong><br>
+                                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
+                                                    <%# Eval("political_post") %>
+                                                </div>
+                                            </address>
+                                            <address>
+                                                <strong>PENDIDIKAN</strong><br>
+                                                <%# Eval("education") %>
+                                            </address>
+                                            <address>
+                                                <strong>ULASAN</strong><br>
+                                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
+                                                    <%# Eval("comments") %>
+                                                </div>
+                                            </address>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                   <%-- </div>--%>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-8">
-                            <h4><strong><%# Eval("name") %></strong></h4>
-                            <p><span class="label label-success fs-13"><%# Eval("choice_no_name") %></span></p>
-                            <address>
-                                <strong>PEKERJAAN</strong><br>
-                                <%# Eval("occupation") %>
-                            </address>
-                            <address>
-                                <strong>JAWATAN</strong><br>
-                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
-                                    <%# Eval("political_post") %>
-                                </div>
-                            </address>
-                            <address>
-                                <strong>PENDIDIKAN</strong><br>
-                                <%# Eval("education") %>
-                            </address>
-                            <address>
-                                <strong>ULASAN</strong><br>
-                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
-                                    <%# Eval("comments") %>
-                                </div>
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
                 </div>
             </ItemTemplate>
         </asp:DataList>
     </div>
     <div class="row">
+      <div class="col-lg-12">
+            <div class="panel bg-gray">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h3 class="m-0"><span class="fa fa-institution"></span> DUN</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <asp:DataList ID="DataList2" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
             <ItemTemplate>
                 <div class="col-lg-4">
-                    <div class="contact-box">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-160 img-c-border" ImageUrl='<%# Eval("imaged") %>' runat="server" />
-                                <div class="m-t-xs font-bold w-125"><%# Eval("party_shortcoded") %></div>
+                    <div class="portlet">
+                            <div class="portlet-heading bg-warning">
+                                <h3 class="portlet-title">
+                                    P.134 : MASJID TANAH
+                                </h3>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="bg-primary" class="panel-collapse collapse in">
+                                <div class="portlet-body">
+                                    <div class="col-sm-4">
+                                        <div class="text-center">
+                                            <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-160 img-c-border" ImageUrl='<%# Eval("imaged") %>' runat="server" />
+                                            <div class="m-t-xs font-bold w-125"><%# Eval("party_shortcoded") %></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h4><strong><%# Eval("named") %></strong></h4>
+                                        <p><span class="label label-success fs-13"><%# Eval("choice_no_named") %></span></p>
+                                        <address>
+                                            <strong>PEKERJAAN</strong><br>
+                                            <%# Eval("occupationd") %>
+                                        </address>
+                                        <address>
+                                            <strong>JAWATAN</strong><br>
+                                            <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
+                                                <%# Eval("political_postd") %>
+                                            </div>
+                                        </address>
+                                        <address>
+                                            <strong>PENDIDIKAN</strong><br>
+                                            <%# Eval("educationd") %>
+                                        </address>
+                                        <address>
+                                            <strong>ULASAN</strong><br>
+                                            <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
+                                                <%# Eval("commentsd") %>
+                                            </div>
+                                        </address>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-8">
-                            <h4><strong><%# Eval("named") %></strong></h4>
-                            <p><span class="label label-success fs-13"><%# Eval("choice_no_named") %></span></p>
-                            <address>
-                                <strong>PEKERJAAN</strong><br>
-                                <%# Eval("occupationd") %>
-                            </address>
-                            <address>
-                                <strong>JAWATAN</strong><br>
-                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
-                                    <%# Eval("political_postd") %>
-                                </div>
-                            </address>
-                            <address>
-                                <strong>PENDIDIKAN</strong><br>
-                                <%# Eval("educationd") %>
-                            </address>
-                            <address>
-                                <strong>ULASAN</strong><br>
-                                <div class="rest-height-65 mCustomScrollbar m-b-15" data-mcs-theme="dark-3">
-                                    <%# Eval("commentsd") %>
-                                </div>
-                            </address>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
                 </div>
             </ItemTemplate>
         </asp:DataList>

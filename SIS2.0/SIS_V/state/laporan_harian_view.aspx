@@ -35,12 +35,12 @@
                                             <asp:BoundField HeaderText="Jenis Aktiviti" DataField="activity_type" ItemStyle-Width="10%"></asp:BoundField>
                                              <asp:TemplateField HeaderText="Butiran Aktiviti">
                                                  <ItemTemplate>
-                                                     <div class="rest-max-height-65 mCustomScrollbar" data-mcs-theme="dark-3">
+                                                     <div class="rest-max-height-65" style="overflow:auto">
                                                          <%#Eval("details") %>
                                                      </div>
                                                  </ItemTemplate>
                                              </asp:TemplateField>
-                                            <%--<asp:BoundField HeaderText="Butiran Aktiviti" ItemStyle-CssClass="rest-max-height-65 mCustomScrollbar" DataField="details"></asp:BoundField>--%>
+                                            <%--<asp:BoundField HeaderText="Butiran Aktiviti" DataField="details"></asp:BoundField>--%>
                                             <asp:BoundField HeaderText="Parti" DataField="party_name_bm" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Masa" DataField="time" ItemStyle-Width="10%"></asp:BoundField>
@@ -65,12 +65,12 @@
                                             <asp:BoundField HeaderText="Kategori Isu" DataField="current_issue_name" ItemStyle-Width="10%"></asp:BoundField>
                                              <asp:TemplateField HeaderText="Butiran Isu">
                                                  <ItemTemplate>
-                                                     <div class="rest-max-height-65 mCustomScrollbar" data-mcs-theme="dark-3">
+                                                     <div class="rest-max-height-65" style="overflow:auto">
                                                          <%#Eval("details") %>
                                                      </div>
                                                  </ItemTemplate>
                                              </asp:TemplateField>
-                                            <%--<asp:BoundField HeaderText="Butiran Isu" ItemStyle-CssClass="rest-max-height-65 mCustomScrollbar" DataField="details"></asp:BoundField>--%>
+                                            <%--<asp:BoundField HeaderText="Butiran Isu" DataField="details"></asp:BoundField>--%>
                                             <asp:BoundField HeaderText="Sumber Isu" DataField="lookup_name" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Parti" DataField="party_name_bm" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
@@ -96,7 +96,7 @@
                                             <asp:BoundField HeaderText="Janji Yg Diberi" DataField="details"></asp:BoundField>
                                              <asp:TemplateField HeaderText="Nama Tokoh">
                                                  <ItemTemplate>
-                                                     <div class="rest-max-height-65 mCustomScrollbar" data-mcs-theme="dark-3">
+                                                     <div class="rest-max-height-65" style="overflow:auto">
                                                          <%#Eval("details") %>
                                                      </div>
                                                  </ItemTemplate>
@@ -124,7 +124,7 @@
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
                                              <asp:TemplateField HeaderText="Butiran Insiden">
                                                  <ItemTemplate>
-                                                     <div class="rest-max-height-65 mCustomScrollbar" data-mcs-theme="dark-3">
+                                                    <div class="rest-max-height-65" style="overflow:auto">
                                                          <%#Eval("details") %>
                                                      </div>
                                                  </ItemTemplate>
@@ -154,7 +154,7 @@
                                             <asp:BoundField HeaderText="Status" DataField="color" ItemStyle-Width="10%"></asp:BoundField>
                                              <asp:TemplateField HeaderText="Justifikasi/Kaveat">
                                                  <ItemTemplate>
-                                                     <div class="rest-max-height-65 mCustomScrollbar" data-mcs-theme="dark-3">
+                                                    <div class="rest-max-height-65" style="overflow:auto">
                                                          <%#Eval("comment") %>
                                                      </div>
                                                  </ItemTemplate>
