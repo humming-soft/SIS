@@ -542,7 +542,9 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int areaInfoElectionParty(int election_id, int area_id,int party_id,int activity_id,DateTime ele_date,string detail,int current_issue_id,int polling_District_id,int info_source,int info_valdity,int action_status,int source_election_status,int issue_source,int info_source_agency_id)
+        public int areaInfoElectionParty(int election_id, int area_id,int party_id,int activity_id,DateTime ele_date,string detail,int current_issue_id,int polling_District_id,int info_source,
+            int info_valdity,int action_status,int source_election_status,int issue_source,int info_source_agency_id,
+            int info_source_ngo_id,int source_election_status_agency_id,int source_election_status_ngo_id)
         {
             try
             {
@@ -565,9 +567,9 @@ namespace SIS_D
                 cmd.Parameters.AddWithValue("@source_election_status", source_election_status);
                 cmd.Parameters.AddWithValue("@issue_source", issue_source);
                 cmd.Parameters.AddWithValue("@info_source_agency_id", info_source_agency_id);
-                cmd.Parameters.AddWithValue("@info_source_ngo_id", null);
-                cmd.Parameters.AddWithValue("@source_election_status_agency_id", null);
-                cmd.Parameters.AddWithValue("@source_election_status_ngo_id", null);
+                cmd.Parameters.AddWithValue("@info_source_ngo_id", info_source_ngo_id);
+                cmd.Parameters.AddWithValue("@source_election_status_agency_id", source_election_status_agency_id);
+                cmd.Parameters.AddWithValue("@source_election_status_ngo_id", source_election_status_ngo_id);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@OutputId";
                 outparam.Direction = ParameterDirection.InputOutput;

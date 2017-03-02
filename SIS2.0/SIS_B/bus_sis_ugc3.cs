@@ -151,7 +151,7 @@ namespace SIS_B
         }
         public int areaInfoElectionParty()
         {
-            return data.areaInfoElectionParty(election_id, area_id, party_id, activity_id, ele_date, detail, current_issue_id, polling_District_id, info_source, info_valdity, action_status, source_election_status, issue_source, info_source_agency_id);
+            return data.areaInfoElectionParty(election_id, area_id, party_id, activity_id, ele_date, detail, current_issue_id, polling_District_id, info_source, info_valdity, action_status, source_election_status, issue_source, info_source_agency_id,info_source_ngo_id,source_election_status_agency_id,source_election_status_ngo_id);
         }
         public DataTable fill_gridElectionParty()
         {
@@ -159,3 +159,4 @@ namespace SIS_B
         }
     }
 }
+               

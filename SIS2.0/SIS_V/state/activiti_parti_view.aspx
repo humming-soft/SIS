@@ -24,9 +24,16 @@
                         <asp:BoundField DataField="party_name_bm" HeaderText="Parti" SortExpression="party_name_bm" />
                         <asp:BoundField DataField="date" HeaderText="Tarikh dan Masa" SortExpression="date" />
                         <asp:BoundField DataField="activity_details" HeaderText="Jenis Maklumat" SortExpression="activity_details" />
-                        <asp:BoundField DataField="current_issue_name" HeaderText="Isu Semasa" SortExpression="current_issue_name"/>
+                        <asp:BoundField DataField="current_issue_name" HeaderText="Isu Semasa" SortExpression="current_issue_name" />
                         <asp:BoundField DataField="lookup_name" HeaderText="Sumber Isu" SortExpression="lookup_name" />
-                        <asp:BoundField DataField="details" HeaderText="Comments" SortExpression="details" />
+                        <%--                        <asp:BoundField DataField="details" HeaderText="Comments" SortExpression="details" />--%>
+                        <%--<asp:TemplateField HeaderText="Comments">
+                            <ItemTemplate>
+                                <div class="rest-max-height-65 mCustomScrollbar" data-mcs-theme="dark-3">
+                                    <%#Eval("details") %>
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>--%>
                     </Columns>
                 </asp:GridView>
                 <%--                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">                       
