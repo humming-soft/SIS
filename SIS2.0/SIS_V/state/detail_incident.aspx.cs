@@ -16,16 +16,22 @@ namespace SIS_V.state
         bus_sis_ugc3 bus = new bus_sis_ugc3();
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = int.Parse(Session["area"].ToString());
-            state = int.Parse(Session["state"].ToString());
-            if(!IsPostBack){
-               fill_kod_kawasan();
-               fill_maklumat_kawasan();
-               fill_calon();
-               fill_masalah_dalaman_parti();
-               fill_keluar_mengundi();
-               fill_semasa();
-               fill_comment();
+
+            if (!IsPostBack)
+            {
+                id = int.Parse(Session["area"].ToString());
+                state = int.Parse(Session["state"].ToString());
+                fill_kod_kawasan();
+                fill_maklumat_kawasan();
+                fill_calon();
+                fill_masalah_dalaman_parti();
+                fill_keluar_mengundi();
+                fill_semasa();
+                fill_comment();
+            }
+            else
+            {
+
             }
         }
         public void fill_kod_kawasan()
@@ -76,7 +82,7 @@ namespace SIS_V.state
             DataTable dt = bus.fill_keluar_mengundi();
             if (dt.Rows.Count > 0)
             {
-                lbl_perc.Text = dt.Rows[0]["percent_turnout_vote"].ToString()+"%";
+                lbl_perc.Text = dt.Rows[0]["percent_turnout_vote"].ToString() + "%";
             }
         }
         public void fill_semasa()
@@ -91,14 +97,14 @@ namespace SIS_V.state
         }
         public void fill_masalah_dalaman_parti()
         {
-            string issue=null;
+            string issue = null;
             bus.state_id = state;
             DataTable dt = bus.fill_masalah_dalaman_parti();
             if (dt.Rows.Count > 0)
             {
-                for (int i = 0; i< dt.Rows.Count;i++ )
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    if (i == dt.Rows.Count-1)
+                    if (i == dt.Rows.Count - 1)
                     {
                         issue += dt.Rows[i]["issue_name"].ToString();
                     }
@@ -116,7 +122,7 @@ namespace SIS_V.state
             DataTable dt = bus.fill_comment();
             if (dt.Rows.Count > 0)
             {
-                if (dt.Rows[0]["comment"].ToString()=="")
+                if (dt.Rows[0]["comment"].ToString() == "")
                 {
                     lbl_justification.Text = "N/A";
                 }
@@ -133,7 +139,8 @@ namespace SIS_V.state
 
         protected void grid_kodkawasan_PreRender(object sender, EventArgs e)
         {
-            if (grid_kodkawasan.Rows.Count > 0){
+            if (grid_kodkawasan.Rows.Count > 0)
+            {
                 grid_kodkawasan.UseAccessibleHeader = true;
                 grid_kodkawasan.HeaderRow.TableSection = TableRowSection.TableHeader;
             }

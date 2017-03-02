@@ -32,6 +32,9 @@ namespace SIS_B
         public int action_status { get; set; }
         public int source_election_status { get; set; }
         public int info_source_agency_id { get; set; }
+        public int info_source_ngo_id { get; set; }
+        public int source_election_status_agency_id { get; set; }
+        public int source_election_status_ngo_id { get; set; }
         public DateTime ele_date { get; set; }
         public DataTable fetch_states()
         {
@@ -142,9 +145,17 @@ namespace SIS_B
         {
             return data.fill_agency();
         }
+        public DataTable fill_pertubuhan()
+        {
+            return data.fill_pertubuhan();
+        }
         public int areaInfoElectionParty()
         {
             return data.areaInfoElectionParty(election_id, area_id, party_id, activity_id, ele_date, detail, current_issue_id, polling_District_id, info_source, info_valdity, action_status, source_election_status, issue_source, info_source_agency_id);
+        }
+        public DataTable fill_gridElectionParty()
+        {
+            return data.fill_gridElectionParty(state_id);
         }
     }
 }

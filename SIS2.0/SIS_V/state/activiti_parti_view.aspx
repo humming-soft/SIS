@@ -17,7 +17,17 @@
                 <p class="text-muted font-13 m-b-30">
                     Your description goes here(Malay / English).
                 </p>
-                <asp:GridView ID="GridDataTable2" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridDataTable2_PreRender"></asp:GridView>
+                <asp:GridView ID="grid_areaInfoElectionParty" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="grid_areaInfoElectionParty_PreRender" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="election_name" HeaderText="Pilihanraya" SortExpression="election_name" />
+                        <asp:BoundField DataField="area_name" HeaderText="Kawasan" SortExpression="area_name" />
+                        <asp:BoundField DataField="party_name_bm" HeaderText="Parti" SortExpression="party_name_bm" />
+                        <asp:BoundField DataField="date" HeaderText="Tarikh dan Masa" SortExpression="date" />
+                        <asp:BoundField DataField="activity_details" HeaderText="Jenis Maklumat" SortExpression="activity_details" />
+                        <asp:BoundField DataField="current_issue_name" HeaderText="Isu Semasa" SortExpression="current_issue_name"  ItemStyle-Width="10%"/>
+                        <asp:BoundField DataField="lookup_name" HeaderText="Sumber Isu" SortExpression="lookup_name" />
+                    </Columns>
+                </asp:GridView>
                 <%--                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">                       
                     </table>--%>
             </div>

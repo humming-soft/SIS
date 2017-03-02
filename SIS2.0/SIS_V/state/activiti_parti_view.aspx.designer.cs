@@ -13,12 +13,12 @@ namespace SIS_V.state {
     public partial class activiti_parti_view {
         
         /// <summary>
-        /// GridDataTable2 control.
+        /// grid_areaInfoElectionParty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridDataTable2;
+        protected global::System.Web.UI.WebControls.GridView grid_areaInfoElectionParty;
     }
 }

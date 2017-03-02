@@ -20,18 +20,18 @@ namespace SIS_V.state
         string log_name;
         protected void Page_Load(object sender, EventArgs e)
         {
+            checker();
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
+            Response.Cache.SetNoStore();
+
             if (!IsPostBack)
-            {
-                checker();
+            {        
                 valid_empty.Visible = false;
                 valid_match.Visible = false;
                 GetUserDetails();
             }
-            else
-            {
-                checker();
-            }
-
+         
         }
 
         public void GetUserDetails()
@@ -99,6 +99,7 @@ namespace SIS_V.state
                     {
                         FormsAuthentication.SignOut();
                         FormsAuthentication.RedirectToLoginPage();
+                        Response.End();
                     }
                 }
             }
