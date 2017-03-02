@@ -558,6 +558,15 @@
 .rest-height-65{
     height: 65px !important;
 }
+.rest-height-160{
+    height: 160px !important;
+}
 .w-125{
     width:125px;
+}
+.img-c-border{
+   border: 3px solid #C2C4C5;
+}
+.rest-max-height-65{
+    max-height: 65px !important;
 }

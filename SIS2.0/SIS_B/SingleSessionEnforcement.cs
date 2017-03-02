@@ -38,6 +38,8 @@ namespace SIS_B
                     // No authentication ticket found so logout this user
                     // Should never hit this code
                     FormsAuthentication.SignOut();
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
+                    cookie.Expires = DateTime.Now.AddYears(-1);
                     FormsAuthentication.RedirectToLoginPage();
                     return;
                 }
