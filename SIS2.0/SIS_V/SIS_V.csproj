@@ -352,6 +352,7 @@
     <Content Include="assets\plugins\tablesaw\dist\tablesaw-init.js" />
     <Content Include="assets\plugins\tablesaw\dist\tablesaw.css" />
     <Content Include="assets\plugins\tablesaw\dist\tablesaw.js" />
+    <Content Include="assets\plugins\timeout\session_timeout.min.js" />
     <Content Include="assets\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="assets\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="assets\plugins\tiny-editable\mindmup-editabletable.js" />

@@ -25,12 +25,20 @@ namespace SIS_V
             {
                 invalid.Visible = false;
                 mulogin.Visible = false;
+                stimeout.Visible = false;
                 if (Session["message"] != null)
                 {
                     if (Session["message"].ToString() == "yes")
                     {
                         Session["message"] = "no";
                         mulogin.Visible = true;
+                    }
+                }
+                if (Session["timeout"] != null)
+                {
+                    if (Session["timeout"].ToString() == "t")
+                    {
+                        stimeout.Visible = true;
                     }
                 }
                 
@@ -57,6 +65,7 @@ namespace SIS_V
                    txtpassword.Text = "";
                    invalid.Visible = true;
                    mulogin.Visible = false;
+                   stimeout.Visible = false;
                }
             }
             else
