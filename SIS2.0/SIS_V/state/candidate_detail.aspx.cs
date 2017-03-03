@@ -38,6 +38,7 @@ namespace SIS_V.state
             buspar.areaid = wid;
             DataTable dtdun = buspar.fill_candidates_dun();
 
+            final.Columns.Add("state_name", typeof(string));
             final.Columns.Add("name", typeof(string));
             final.Columns.Add("image", typeof(string));
             final.Columns.Add("choice_no_name", typeof(string));
@@ -49,6 +50,7 @@ namespace SIS_V.state
             final.Columns.Add("election_name", typeof(string));
             final.Columns.Add("comments", typeof(string));
 
+            finald.Columns.Add("dun_name", typeof(string));
             finald.Columns.Add("named", typeof(string));
             finald.Columns.Add("imaged", typeof(string));
             finald.Columns.Add("choice_no_named", typeof(string));
@@ -83,7 +85,7 @@ namespace SIS_V.state
                         }
                     }
                     cand_image = "data:image/png;base64," + base64String;               
-                    final.Rows.Add(dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString(),dt.Rows[i]["comments"].ToString());
+                    final.Rows.Add(dt.Rows[i]["state_name"].ToString(),dt.Rows[i]["name"].ToString(), cand_image, dt.Rows[i]["choice_no_name"].ToString(), dt.Rows[i]["occupation"].ToString(), dt.Rows[i]["political_post"].ToString(), dt.Rows[i]["party_shortcode"].ToString(), dt.Rows[i]["education"].ToString(), dt.Rows[i]["election_id"].ToString(), dt.Rows[i]["election_name"].ToString(),dt.Rows[i]["comments"].ToString());
                 }
 
                 lblelection.Text = Session["election"].ToString();
@@ -124,7 +126,7 @@ namespace SIS_V.state
                         }
                     }
                     cand_imaged = "data:image/png;base64," + base64Stringd;
-                    finald.Rows.Add(dtdun.Rows[i]["name"].ToString(), cand_imaged, dtdun.Rows[i]["choice_no_name"].ToString(), dtdun.Rows[i]["occupation"].ToString(), dtdun.Rows[i]["political_post"].ToString(), dtdun.Rows[i]["party_shortcode"].ToString(), dtdun.Rows[i]["education"].ToString(), dtdun.Rows[i]["election_id"].ToString(), dtdun.Rows[i]["election_name"].ToString(), dtdun.Rows[i]["comments"].ToString());
+                    finald.Rows.Add(dtdun.Rows[i]["area_name"].ToString(),dtdun.Rows[i]["name"].ToString(), cand_imaged, dtdun.Rows[i]["choice_no_name"].ToString(), dtdun.Rows[i]["occupation"].ToString(), dtdun.Rows[i]["political_post"].ToString(), dtdun.Rows[i]["party_shortcode"].ToString(), dtdun.Rows[i]["education"].ToString(), dtdun.Rows[i]["election_id"].ToString(), dtdun.Rows[i]["election_name"].ToString(), dtdun.Rows[i]["comments"].ToString());
                 }
 
                 lblelection.Text = Session["election"].ToString();

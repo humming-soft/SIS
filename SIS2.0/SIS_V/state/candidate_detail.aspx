@@ -41,7 +41,7 @@
         <div class="col-lg-12">
             <div class="card-box ta-center">
                 <h4><asp:Label ID="lblelection" runat="server"></asp:Label></h4>
-                <h5><asp:Label ID="lblstate" runat="server"></asp:Label></h5>
+                <h5><asp:Label ID="lblstate" CssClass="t-t-upper" runat="server"></asp:Label></h5>
             </div>
         </div>
     </div>
@@ -74,7 +74,7 @@
                     <div class="portlet">
                             <div class="portlet-heading bg-success">
                                 <h3 class="portlet-title">
-                                    P.134 : MASJID TANAH
+                                    <asp:Label ID="lblparlimen" CssClass="t-t-upper" runat="server" Text='<%# Eval("state_name")%>'></asp:Label>
                                 </h3>
                                 <div class="clearfix"></div>
                             </div>
@@ -142,7 +142,7 @@
                     <div class="portlet">
                             <div class="portlet-heading bg-warning">
                                 <h3 class="portlet-title">
-                                    P.134 : MASJID TANAH
+                                    <asp:Label ID="lbldun" runat="server" Text='<%# Eval("dun_name")%>'></asp:Label>
                                 </h3>
                                 <div class="clearfix"></div>
                             </div>

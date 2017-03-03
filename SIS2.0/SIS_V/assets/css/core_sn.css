@@ -573,3 +573,6 @@
 .bg-gray{
    background-color: #b6babd !important;
 }
+.t-t-upper{
+    text-transform:uppercase;
+}

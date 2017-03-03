@@ -37,6 +37,16 @@
     <link href="../assets/js/dl-menu/component.css" rel="stylesheet" />
     <link href="../assets/css/core_sn.css" rel="stylesheet" />
     <link href="../assets/css/dashboard/responsive.css" rel="stylesheet" />
+    <script type="text/javascript">
+        //Disables the browser back button
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+    </script>
 </head>
 <body>
     <!--Kode Wrapper Start-->
@@ -71,7 +81,12 @@
                                     <ul>
                                         <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_view"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="#"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri <i class="md md-chevron-right pull-right"></i></a>
+                                            <ul>
+                                                <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i> Tambah</a></li>
+                                                <li><a href="laporan_harian_view"><i class="md md-search"></i> Paparan</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -86,7 +101,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                   <%-- <a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a>--%>
+                                    <%-- <a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a>--%>
 
                                 </li>
                             </ul>
@@ -110,7 +125,12 @@
                                     <ul class="dl-submenu">
                                         <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="laporan_harian_view"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li class="dl-submenu"><a href="#"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a>
+                                            <ul class="dl-submenu">
+                                                <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i> Tambah</a></li>
+                                                <li><a href="laporan_harian_view"><i class="md md-search"></i> Paparan</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -124,7 +144,7 @@
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                              <%--  <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>--%>
+                                <%--  <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>--%>
                             </ul>
                         </div>
                         <!--DL Menu End-->
@@ -177,7 +197,9 @@
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="#">
                                     <p class="days_ref b35">
-                                        Peratusan <br />Keluar Mengundi
+                                        Peratusan
+                                        <br />
+                                        Keluar Mengundi
                                     </p>
                                 </a>
                             </li>
