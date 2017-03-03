@@ -18,17 +18,43 @@
         }
     });
     var runDataTable = function () {
+            jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+                "date-uk-pre": function (a) {
+                    var c = a.split(' ');
+                    var ukDatea = c[0].split('-');
+                    return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+                },
+
+                "date-uk-asc": function (a, b) {
+                    return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+                },
+
+                "date-uk-desc": function (a, b) {
+                    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+                }
+            });
         var oTable = $('#GridDataTable').dataTable({
-            "aoColumnDefs": [{
-                "aTargets": [0]
-            }],
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null
+            ],
+
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers"
             },
             "aaSorting": [
-                [0, 'asc']
+                [9, 'desc']
             ],
             "aLengthMenu": [
                 [5, 10, 15, 20, -1],

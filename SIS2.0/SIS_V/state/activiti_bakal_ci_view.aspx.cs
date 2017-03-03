@@ -22,6 +22,7 @@ namespace SIS_V.state
 
         public void FillActivitiDataTable()
         {
+            objBUS.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = objBUS.FillActivitiDataTable();
             if (dt.Rows.Count > 0)
             {
