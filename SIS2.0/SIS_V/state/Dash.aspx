@@ -346,9 +346,6 @@
     <script type="text/javascript">
         function sessiontimeout() {
                     $.sessionTimeout({
-                        heading: 'h5',
-                        title: 'Session Timeout',
-                        message: 'Your session is about to expire. Do you want to stay connected?',
                         ignoreUserActivity: true,
                         warnAfter: 270000, //4.5 minute
                         redirAfter: 300000, // 5 minute

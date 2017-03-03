@@ -285,6 +285,7 @@
     <Content Include="assets\plugins\jquery-knob\jquery.knob.js" />
     <Content Include="assets\plugins\jquery-quicksearch\jquery.quicksearch.js" />
     <Content Include="assets\plugins\jquery-sparkline\jquery.sparkline.min.js" />
+    <Content Include="assets\plugins\jquery-ui\jquery-ui.min.css" />
     <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\jquery.validate.min.js" />
