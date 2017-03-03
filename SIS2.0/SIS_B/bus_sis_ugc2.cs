@@ -134,7 +134,7 @@ namespace SIS_B
         }
         public DataTable FillActivitiDataTable()
         {
-            return objDAL.FillActivitiDataTable();
+            return objDAL.FillActivitiDataTable(state_id);
         }
 
     }
