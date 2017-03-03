@@ -269,6 +269,10 @@
     <script src="../assets/js/dl-menu/modernizr.custom.js"></script>
     <script src="../assets/js/dl-menu/jquery.dlmenu.js"></script>
     <script src="../assets/js/core_sn.js"></script>
+
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             get_date(); // to show current date
@@ -288,6 +292,7 @@
                     $(this).dlmenu();
                 });
             }
+            sessiontimeout();
         });
     </script>
     <script type="text/javascript">
@@ -338,6 +343,20 @@
             Timer();
         }
     </script>
-
+    <script type="text/javascript">
+        function sessiontimeout() {
+                    $.sessionTimeout({
+                        heading: 'h5',
+                        title: 'Session Timeout',
+                        message: 'Your session is about to expire. Do you want to stay connected?',
+                        ignoreUserActivity: true,
+                        warnAfter: 270000, //4.5 minute
+                        redirAfter: 300000, // 5 minute
+                        keepAliveUrl: '/',
+                        redirUrl: '../sessiontimeout',
+                        logoutUrl: '../Logout'
+                    });
+        }
+    </script>
 </body>
 </html>

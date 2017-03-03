@@ -615,7 +615,6 @@
     </script>
     <script type="text/javascript">
         function sessiontimeout() {
-            console.log('inside');
             $.getScript("../assets/js/bootstrap.min.js")
                 .done(function (script, textStatus) {
                     $.sessionTimeout({
