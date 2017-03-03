@@ -52,7 +52,8 @@
             </div>
             <div class="col-sm-6">
                 <div class="message-box m-t-30-percent">
-                    <h1 class="m-b-0 above error-title">404</h1>
+                    <h1 class="m-b-0 above error-title hidden-xs">404</h1>
+                    <h1 class="m-b-0 above error-title visible-xs" style="font-size:100px !important;">404</h1>
                     <p>Oops, an error has occurred. Page not found!</p>
 <%--                    <div class="buttons-con">
                         <div class="action-link-wrap">
