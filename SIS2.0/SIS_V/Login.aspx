@@ -75,8 +75,19 @@
             </div>
         </div>
     </header>
-    <div class="wrapper-page login-md">
-
+    <div class="splash" style="display:none; background-color: transparent !important;">
+        <div class="splash-title">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <h4>Authenticating..</h4>
+        </div>
+    </div>
+    <div class="wrapper-page login-md" id="login-con">
         <div class="text-center">
             <img src="assets/images/logojatanegara_small.png" alt="Jata Negara" class="image image-jata-negara" />
             <p class="head-jata-negara">Majlis Keselamatan Negara</p>
@@ -109,7 +120,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <p>Please check your <b>username</b> or <b>password</b>!</p>
             </div>
-             <div class="alert alert-danger alert-dismissable" id="mulogin" runat="server">
+                <div class="alert alert-danger alert-dismissable" id="mulogin" runat="server">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <p>You have been logged out.<br />Multiple login for a single user are not allowed!</p>
             </div>

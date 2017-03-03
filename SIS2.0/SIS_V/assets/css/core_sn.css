@@ -431,8 +431,9 @@
 /* Splash on Screen Load */
 .splash {
     position: fixed;
-    z-index: 2000;
-    background: rgba(234, 234, 234, 0.98);
+    z-index: 999999;
+    /*background: rgba(86, 86, 86, 0.98);*/
+    background: rgba(234, 234, 234, 0.93);
     /*background-color: #363d4a;
     background: -moz-linear-gradient(left, #1e5799 18%, #207cca 39%, #207cca 39%, #2989d8 50%, #7db9e8 100%);
     background: -webkit-linear-gradient(left, #1e5799 18%,#207cca 39%,#207cca 39%,#2989d8 50%,#7db9e8 100%);

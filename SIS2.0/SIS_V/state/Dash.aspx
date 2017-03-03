@@ -49,6 +49,21 @@
     </script>
 </head>
 <body>
+    <div class="splash">
+        <!-- 			<div class="color-line"></div> -->
+        <div class="splash-title">
+            <!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
+            <!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <h4>Loading..</h4>
+        </div>
+    </div>
     <!--Kode Wrapper Start-->
     <div class="kode_wrapper">
 
@@ -253,6 +268,7 @@
     <script src="../assets/plugins/moment/moment.js"></script>
     <script src="../assets/js/dl-menu/modernizr.custom.js"></script>
     <script src="../assets/js/dl-menu/jquery.dlmenu.js"></script>
+    <script src="../assets/js/core_sn.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             get_date(); // to show current date
