@@ -194,6 +194,21 @@
     };
 
     var gri_party = function () {
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function (a) {
+                var c = a.split(' ');
+                var ukDatea = c[0].split('-');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
         var oTable = $('#grid_areaInfoElectionParty').dataTable({
             "aoColumns": [
                 null,
