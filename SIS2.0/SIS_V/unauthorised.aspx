@@ -52,8 +52,10 @@
             </div>
             <div class="col-sm-7">
                 <div class="message-box m-t-30-percent">
-                    <h1 class="m-b-0 above error-title" style="font-size:90px !important">UNAUTHORIZED!</h1>
-                    <p class="ta-center" style="width: 684px;">Oops, an error has occurred. Access Denied!</p>
+                    <h1 class="m-b-0 above error-title hidden-xs" style="font-size:90px !important">UNAUTHORIZED!</h1>
+                    <h1 class="m-b-0 above error-title visible-xs" style="font-size:30px !important">UNAUTHORIZED!</h1>
+                    <p class="ta-center hidden-xs" style="width: 684px;">Oops, an error has occurred. Access Denied!</p>
+                    <p class="ta-center visible-xs" style="width: 220px;">Oops, an error has occurred. Access Denied!</p>
 <%--                    <div class="buttons-con">
                         <div class="action-link-wrap">
                             <a onclick="history.back(-1)" class="btn btn-custom btn-success waves-effect waves-light m-t-20"> Previous page</a>

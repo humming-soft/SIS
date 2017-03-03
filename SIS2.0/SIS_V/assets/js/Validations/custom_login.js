@@ -7,6 +7,8 @@ Custom login validation script
 var Login = function () {
 
     var runLoginValidator = function () {
+        var Splash = $('.splash');
+        var loginCon = $('#login-con');
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
         form.validate({
@@ -24,6 +26,8 @@ var Login = function () {
             submitHandler: function (form) {
                 errorHandler.hide();
                 form.submit();
+                loginCon.fadeOut('slow');
+                Splash.fadeIn('slow');
             },
             invalidHandler: function (event, validator) { //display error alert on form submit
                 errorHandler.show();
