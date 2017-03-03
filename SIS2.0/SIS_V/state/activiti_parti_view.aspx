@@ -11,12 +11,19 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-
-                <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
+                 <div class="row m-b-30">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+                             <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2">
+                            <a href="activiti_parti_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
+                        </div>
+                    </div>
+               <%-- <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
                 <a href="activiti_parti_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
                     Your description goes here(Malay / English).
-                </p>
+                </p>--%>
                 <asp:GridView ID="grid_areaInfoElectionParty" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="grid_areaInfoElectionParty_PreRender" AutoGenerateColumns="False">
                     <Columns>
                         <asp:BoundField DataField="election_name" HeaderText="Pilihanraya" SortExpression="election_name" />
