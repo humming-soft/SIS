@@ -192,6 +192,7 @@
         $('#grid_user_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
+
     var gri_party = function () {
         var oTable = $('#grid_areaInfoElectionParty').dataTable({
             "aoColumns": [
