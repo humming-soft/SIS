@@ -171,7 +171,12 @@
                                 <li>
                                     <a href="#"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="#"><i class="md md-report"></i>Laporan Harian Dari Negeri</a></li>
+                                <li class="has-submenu"><a href="#"><i class="md md-report"></i>Laporan Harian Dari Negeri</a>
+                                    <ul class="submenu">
+                                        <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
@@ -439,6 +444,8 @@
     <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
     <script src="../assets/js/Validations/tetapan_pentadbir_view.js"></script>
 
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {

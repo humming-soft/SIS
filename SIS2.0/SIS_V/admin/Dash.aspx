@@ -81,7 +81,12 @@
                                     <ul>
                                         <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a>
+                                            <ul>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i> Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i> Paparan</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -117,7 +122,12 @@
                                     <ul class="dl-submenu">
                                         <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a>
+                                            <ul class="dl-submenu">
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i> Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i> Paparan</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -238,6 +248,10 @@
     <script src="../assets/plugins/moment/moment.js"></script>
     <script src="../assets/js/dl-menu/modernizr.custom.js"></script>
     <script src="../assets/js/dl-menu/jquery.dlmenu.js"></script>
+
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             get_date(); // to show current date
@@ -257,6 +271,8 @@
                     $(this).dlmenu();
                 });
             }
+
+            sessiontimeout();
         });
     </script>
     <script type="text/javascript">
@@ -305,6 +321,19 @@
                 }, 500);
             }
             Timer();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function sessiontimeout() {
+            $.sessionTimeout({
+                ignoreUserActivity: true,
+                warnAfter: 270000, //4.5 minute
+                redirAfter: 300000, // 5 minute
+                keepAliveUrl: '/',
+                redirUrl: '../sessiontimeout',
+                logoutUrl: '../Logout'
+            });
         }
     </script>
 
