@@ -189,7 +189,7 @@
                         <li class="has-submenu" id="piliha" runat="server">
                             <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="#"><i class="md md-poll"></i>Keluar Mengundi</a></li>
+                                <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
