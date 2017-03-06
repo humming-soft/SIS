@@ -197,7 +197,7 @@
                             <li>
                                 <img src="../assets/images/gallery/003_d.png" alt="Logo Image Here" />
                                 <a href="#">
-                                    <p class="minutes_ref">Ramusan Status Kawasan</p>
+                                    <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
                             <li>
