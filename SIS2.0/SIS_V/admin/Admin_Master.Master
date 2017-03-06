@@ -68,6 +68,17 @@
     <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
     <script src="../assets/pages/jquery.peity.init.js"></script>
 
+    <script type="text/javascript">
+        //Disables the browser back button
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+    </script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -142,46 +153,51 @@
                             <a href="Dash"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
-                            <a href="#"><i class="md md-color-lens"></i> Dashboard</a>
+                            <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
-                                <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
-                                <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
-                                <li><a href="#"><i class="md md-contacts"></i> Winnable Candidate</a></li>
-                                <li><a href="#"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
+                                <li><a href="#"><i class="md md-place"></i>Parlimen Tumpuan</a></li>
+                                <li><a href="#"><i class="md md-place"></i>Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                <li><a href="#"><i class="md md-contacts"></i>Winnable Candidate</a></li>
+                                <li><a href="#"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="prapiliha" runat="server">
-                            <a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
+                            <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a>
+                                    <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a>
+                                    <a href="#"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
                                 </li>
-                                <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                <li class="has-submenu"><a href="#"><i class="md md-report"></i>Laporan Harian Dari Negeri</a>
+                                    <ul class="submenu">
+                                        <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="piliha" runat="server">
                             <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                             </ul>
                         </li>
                         <li id="analisis" runat="server">
-                            <a href="#"><i class="md md-place"></i> Analisis Kawasan</a>
+                            <a href="#"><i class="md md-place"></i>Analisis Kawasan</a>
                         </li>
                         <li class="has-submenu" id="tetapan" runat="server">
-                            <a href="#"><i class="md md-settings"></i> Tetapan</a>
+                            <a href="#"><i class="md md-settings"></i>Tetapan</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="#"><i class="md md-info"></i> Parlimen Info</a>
+                                    <a href="#"><i class="md md-info"></i>Parlimen Info</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-submenu" id="teta" runat="server">
-                            <a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i> Tetapan Pentadbir</a>
+                            <a href="tetapan_pentadbir_view"><i class="md md-person-add"></i>Tetapan Pentadbir</a>
                         </li>
                     </ul>
                     <!-- End navigation menu -->
@@ -193,7 +209,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 visible-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"></i> PRU 13</h1>
+                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"> </i><span class="current_election"></span></h1>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 visible-xs">
@@ -206,7 +222,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 hidden-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"></i> PRU 13</h1>
+                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"> </i><span class="current_election"> </span></h1>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 hidden-xs">
@@ -428,6 +444,8 @@
     <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
     <script src="../assets/js/Validations/tetapan_pentadbir_view.js"></script>
 
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -439,7 +457,8 @@
             get_date();
             get_time();
             watch();
-
+            election();
+            sessiontimeout();
         });
 
         /* BEGIN SVG WEATHER ICON */
@@ -511,14 +530,14 @@
         }
     </script>
     <script type="text/javascript">
-        function watch() {
+        function watch(d, m, y) {
             if ($.find('#watch')[0]) {
 
                 $('#watch').countDown({
                     targetDate: {
-                        'day': 12,
-                        'month': 03,
-                        'year': 2017,
+                        'day': d,
+                        'month': m,
+                        'year': y,
                         'hour': 12,
                         'min': 00,
                         'sec': 00
@@ -537,5 +556,48 @@
             Add.init();
         }
     </script>
+    <script type="text/javascript">
+        function election() {
+            var cd, d = 0, m = 0, m1 = 0, y = 0;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: {},
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/electionInfo")%>',
+                    dataType: "json",
+                    success: function (data) {
+                        $(".current_election").each(function () {
+                            $(this).text(data.d[0].electionName);
+                        });
+                        cd = new Date(data.d[0].electionDate);
+                        d = cd.getDate();
+                        m = cd.getMonth();
+                        m1 = ++m;
+                        y = cd.getFullYear();
+                        watch(d, m1, y);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    },
+                    complete: function (data) {
+                    }
+                });
+            }
+    </script>
+
+
+    <script type="text/javascript">
+        function sessiontimeout() {
+            $.sessionTimeout({
+                ignoreUserActivity: true,
+                warnAfter: 270000, //4.5 minute
+                redirAfter: 300000, // 5 minute
+                keepAliveUrl: '/',
+                redirUrl: '../sessiontimeout',
+                logoutUrl: '../Logout'
+            });
+        }
+    </script>
+    ';
 </body>
 </html>

@@ -13,40 +13,40 @@ namespace SIS_V.state {
     public partial class keluar_mengundi {
         
         /// <summary>
-        /// DropDownList1 control.
+        /// lblPilihanraya control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Label lblPilihanraya;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// lblNageri control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Label lblNageri;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// ddlKawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlKawasan;
         
         /// <summary>
-        /// DropDownList4 control.
+        /// ddlAreaList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAreaList;
         
         /// <summary>
         /// GridKM control.
