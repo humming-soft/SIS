@@ -16,11 +16,30 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                if (Request["id"] != null)
+                CheckIsLogin();
+            }
+        }
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
                 {
-                    Session["area_wc_id"] = Request["id"];
-                    Response.Redirect("candidate_detail");
+                    if (Request["id"] != null)
+                    {
+                        Session["area_wc_id"] = Request["id"];
+                        Response.Redirect("candidate_detail");
+                    }
                 }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
