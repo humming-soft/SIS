@@ -17,10 +17,29 @@ namespace SIS_V.admin
         {
             if (!IsPostBack)
             {
-                log_valid.Visible = false;
-                log_uname.Visible = false;
-                fill_state();
-                fill_role();
+                CheckIsLogin();
+            }
+        }
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    log_valid.Visible = false;
+                    log_uname.Visible = false;
+                    fill_state();
+                    fill_role();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
         protected void fill_state()

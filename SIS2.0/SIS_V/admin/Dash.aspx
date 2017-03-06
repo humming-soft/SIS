@@ -37,6 +37,17 @@
     <link href="../assets/js/dl-menu/component.css" rel="stylesheet" />
     <link href="../assets/css/core_sn.css" rel="stylesheet" />
     <link href="../assets/css/dashboard/responsive.css" rel="stylesheet" />
+
+        <script type="text/javascript">
+            //Disables the browser back button
+            function DisableBackButton() {
+                window.history.forward()
+            }
+            DisableBackButton();
+            window.onload = DisableBackButton;
+            window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+            window.onunload = function () { void (0) }
+    </script>
 </head>
 <body>
     <!--Kode Wrapper Start-->
@@ -84,7 +95,7 @@
                                         <li><a href="#"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
+                                <li><a href="tetapan_pentadbir_view"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
                             </ul>
                         </div>
                         <!--Navigation Wrap End-->
@@ -120,7 +131,7 @@
                                         <li><a href="#"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
+                                <li><a href="tetapan_pentadbir_view"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
                             </ul>
                         </div>
                         <!--DL Menu End-->
