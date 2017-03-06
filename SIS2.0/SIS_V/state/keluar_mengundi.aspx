@@ -6,6 +6,35 @@
             TableData.init();
         });
     </script>
+    <script>
+        function fill_area_list() {
+            var area_type_id = $('#ContentPlaceHolder1_ddlKawasan option:selected').val();
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: '{"area_type_id":"' + area_type_id + '"}',
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("keluar_mengundi.aspx/GetAreaList")%>',
+                dataType: "json",
+                success: function (data) {
+                    if (data.d.length > 0) {
+                        alert('here');
+                        $('#ContentPlaceHolder1_ddlAreaList').empty();
+                        $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                        $.each(data.d, function (key, value) {
+                            $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").val(value.area_id).html(value.area_name));
+
+                        });
+                    } else {
+                        $('#ContentPlaceHolder1_ddlAreaList').empty();
+                        $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").attr("value", null).text("NO DATA"));
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card-box">
@@ -19,32 +48,35 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="userName">Pilihanraya</label>
-                            <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
+                            <asp:Label ID="lblPilihanraya" runat="server" CssClass="form-control"></asp:Label>
+                            <%--<asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
                                 <asp:ListItem>Sila Pilih</asp:ListItem>
-                            </asp:DropDownList>
+                            </asp:DropDownList>--%>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="userName">Negeri</label>
-                            <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server">
+                            <asp:Label ID="lblNageri" runat="server" CssClass="form-control"></asp:Label>
+                            <%--<asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server">
                                 <asp:ListItem>Sila Pilih</asp:ListItem>
-                            </asp:DropDownList>
+                            </asp:DropDownList>--%>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Kawasan</label>
-                            <asp:DropDownList ID="DropDownList3" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
+                            <asp:DropDownList ID="ddlKawasan" CssClass="form-control" runat="server"  onchange="fill_area_list()">
+                                <asp:ListItem Value="">-----SELECT-----</asp:ListItem>
+                                <asp:ListItem Value="1">Parliment</asp:ListItem>
+                                <asp:ListItem Value="2">DUN</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <label for="userName"></label>
-                            <asp:DropDownList ID="DropDownList4" CssClass="form-control" runat="server">
-                                <asp:ListItem>Sila Pilih</asp:ListItem>
+                            <label for="areaList">Area</label>
+                            <asp:DropDownList ID="ddlAreaList" CssClass="form-control" runat="server">
                             </asp:DropDownList>
                         </div>
                     </div>
