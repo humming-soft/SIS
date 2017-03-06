@@ -40,7 +40,7 @@
                             $sub += '<p class="ta-center">' + data.d[i].dun[j] + '</p>';
                         }
                         var url = "winnable_candidate?id=" + data.d[i].par_id;
-                        var twist = '<div class="grid-item"> <div class="ibox"><a href="' + url + '" class="txt-inherit redir"><div class="ibox-content bg-info txt-black"><div class="ibox-top"><h4 class="font-bold">PARLIMEN</h4><p class="f-w-600 ta-center">' + $dist + '</p></div><div class="ibox-bottom"><h4 class="font-bold">DUN</h4><div style="height:200px !important">' + $sub + '</div></div></div></a></div></div>';
+                        var twist = '<div class="grid-item"> <div class="ibox"><a href="' + url + '" class="txt-inherit redir"><div class="ibox-content bg-info txt-black"><div class="ibox-top"><h4 class="font-bold">PARLIMEN</h4><p class="f-w-600 ta-center" style="height:50px !important">' + $dist + '</p></div><div class="ibox-bottom"><h4 class="font-bold">DUN</h4><div style="height:200px !important">' + $sub + '</div></div></div></a></div></div>';
                         $container += twist;
                     }
                     $("#par").html($container);
