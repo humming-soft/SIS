@@ -195,5 +195,28 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataSet data_turnout(string sp, int sid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", sid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                ds.Relations.Add(new DataRelation("SubDistRelation", ds.Tables[0].Columns["dist_id"], ds.Tables[1].Columns["parent_area_id"]));
+                ds.Relations.Add(new DataRelation("VotersRelation", ds.Tables[1].Columns["subdist_id"], ds.Tables[2].Columns["area_id"]));
+                return ds;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

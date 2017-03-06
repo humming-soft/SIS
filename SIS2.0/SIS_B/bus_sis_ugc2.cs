@@ -69,6 +69,8 @@ namespace SIS_B
         public DateTime tarikh_masa { get; set; }
         public string butiran { get; set; }
 
+        public int area_type_id { get; set; }
+
         public DataTable fill_DataTable()
         {
             return objDAL.fill_DataTable();
@@ -135,6 +137,10 @@ namespace SIS_B
         public DataTable FillActivitiDataTable()
         {
             return objDAL.FillActivitiDataTable(state_id);
+        }
+        public DataTable GetAreaList()
+        {
+            return objDAL.GetAreaList(area_type_id);
         }
 
     }

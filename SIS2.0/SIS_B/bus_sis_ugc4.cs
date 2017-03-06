@@ -50,7 +50,7 @@ namespace SIS_B
             return data.data_currentElectionInfo();
         }
 
-        //Release-3
+        //Release-4
 
         public DataTable fill_area_analysis()
         {
@@ -72,7 +72,11 @@ namespace SIS_B
             return data.delete_justifiaction("sp_DeleteStateAnalysisRecord", rid);
         }
 
-        //Release-4
+        //Release-5
+        public DataSet fill_turnout()
+        {
+            return data.data_turnout("sp_GetVoterTurnout", sid);
+        }
         
     }
 }
