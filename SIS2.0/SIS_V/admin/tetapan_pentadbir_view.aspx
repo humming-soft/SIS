@@ -35,9 +35,9 @@
             <div class="card-box table-responsive">
 
                 <h4 class="m-t-0 header-title"><b>Paparan Pengguna SIS</b></h4>
-                <a href="tetapan_pentadbir_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
+                <a href="tetapan_pentadbir_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
-                    Your description goes here(Malay / English).
+<%--                    Your description goes here(Malay / English).--%>
                 </p>
                 <asp:GridView ID="grid_user" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="Gridteta_PreRender" AutoGenerateColumns="False">
                     <Columns>

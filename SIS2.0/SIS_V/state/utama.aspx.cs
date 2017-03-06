@@ -26,8 +26,27 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                jumlah_insiden();
-                isu_utama();
+                CheckIsLogin();
+            }
+        }
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    jumlah_insiden();
+                    isu_utama();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 

@@ -18,21 +18,40 @@ namespace SIS_V.state
         string KodKawasanKawasan, statusKawasan, tarikhKawasan, WujudKawasan, KaveatKawasan;
         protected void Page_Load(object sender, EventArgs e)
         {
+            invalid.Visible = false;
+            valid.Visible = false;
             if(!IsPostBack)
             {
-                invalid.Visible = false;
-                valid.Visible = false;
-                fill_kodkawasan();
-                fill_jenis();
-                fill_parti();
-                fill_sumber();
-                fill_isu();
-                fill_status();
-                txtdate.Attributes.Add("readonly", "readonly");
-                txtTarikh.Attributes.Add("readonly", "readonly");
-                txtTarikhj.Attributes.Add("readonly", "readonly");
-                txtTarikhIn.Attributes.Add("readonly", "readonly");
-                txtTarikhKawasan.Attributes.Add("readonly", "readonly");
+                CheckIsLogin();
+            }
+        }
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fill_kodkawasan();
+                    fill_jenis();
+                    fill_parti();
+                    fill_sumber();
+                    fill_isu();
+                    fill_status();
+                    txtdate.Attributes.Add("readonly", "readonly");
+                    txtTarikh.Attributes.Add("readonly", "readonly");
+                    txtTarikhj.Attributes.Add("readonly", "readonly");
+                    txtTarikhIn.Attributes.Add("readonly", "readonly");
+                    txtTarikhKawasan.Attributes.Add("readonly", "readonly");
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
