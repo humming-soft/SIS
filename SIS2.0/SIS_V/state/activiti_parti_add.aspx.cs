@@ -14,26 +14,61 @@ namespace SIS_V.state
     public partial class activiti_parti_add : System.Web.UI.Page
     {
         bus_sis_ugc3 bus = new bus_sis_ugc3();
+        int state_id;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                txt_datetime.Attributes.Add("readonly", "readonly");
-                log_valid.Visible = false;
-                fill_txtNegeri();
-                fill_parlimen();
-                fill_Election();
-                fill_Party();
-                fill_InfoType();
-                fill_Drop_Sumber();
-                fill_validInfo();
-                fill_category();
-                fill_drop_sumber_isu();
-                fill_drop_status();
-                fill_drop_statusjanji();
-                fill_agency();
-                fill_pertubuhan();
+                CheckIsLogin();
+                //txt_datetime.Attributes.Add("readonly", "readonly");
+                //log_valid.Visible = false;
+                //fill_txtNegeri();
+                //fill_parlimen();
+                //fill_Election();
+                //fill_Party();
+                //fill_InfoType();
+                //fill_Drop_Sumber();
+                //fill_validInfo();
+                //fill_category();
+                //fill_drop_sumber_isu();
+                //fill_drop_status();
+                //fill_drop_statusjanji();
+                //fill_agency();
+                //fill_pertubuhan();
 
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    state_id = int.Parse(Session["state"].ToString());
+                    txt_datetime.Attributes.Add("readonly", "readonly");
+                    log_valid.Visible = false;
+                    fill_txtNegeri();
+                    fill_parlimen();
+                    fill_Election();
+                    fill_Party();
+                    fill_InfoType();
+                    fill_Drop_Sumber();
+                    fill_validInfo();
+                    fill_category();
+                    fill_drop_sumber_isu();
+                    fill_drop_status();
+                    fill_drop_statusjanji();
+                    fill_agency();
+                    fill_pertubuhan();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
         protected void fill_txtNegeri()

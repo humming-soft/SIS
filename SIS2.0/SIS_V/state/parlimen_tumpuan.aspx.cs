@@ -18,6 +18,7 @@ namespace SIS_V.state
         string area_code;
         string name;
         string color;
+        int state_id;
         DataTable one = new DataTable();
         DataTable two = new DataTable();
         DataTable three = new DataTable();
@@ -28,10 +29,30 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_senarai_kawasan();
-                fill_senarai_kawasan_pem();
+                CheckIsLogin();
             }
         }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    state_id = int.Parse(Session["state"].ToString());
+                    fill_senarai_kawasan();
+                    fill_senarai_kawasan_pem();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
+            }
+        }
+
         public void fill_senarai_kawasan()
         {
             one.Columns.Add("area_code", typeof(string));

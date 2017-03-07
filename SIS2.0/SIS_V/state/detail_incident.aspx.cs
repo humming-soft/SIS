@@ -12,26 +12,41 @@ namespace SIS_V.state
     public partial class detail_incident : System.Web.UI.Page
     {
         int id, state;
+        int state_id;
         bus_sis_ugc2 objBUS = new bus_sis_ugc2();
         bus_sis_ugc3 bus = new bus_sis_ugc3();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
-                id = int.Parse(Session["area"].ToString());
-                state = int.Parse(Session["state"].ToString());
-                fill_kod_kawasan();
-                fill_maklumat_kawasan();
-                fill_calon();
-                fill_masalah_dalaman_parti();
-                fill_keluar_mengundi();
-                fill_semasa();
-                fill_comment();
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    state_id = int.Parse(Session["state"].ToString());
+                    id = int.Parse(Session["area"].ToString());
+                    state = int.Parse(Session["state"].ToString());
+                    fill_kod_kawasan();
+                    fill_maklumat_kawasan();
+                    fill_calon();
+                    fill_masalah_dalaman_parti();
+                    fill_keluar_mengundi();
+                    fill_semasa();
+                    fill_comment();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
             }
             else
             {
-
+                Response.Redirect("~/Login");
             }
         }
         public void fill_kod_kawasan()
