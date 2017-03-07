@@ -21,6 +21,7 @@ namespace SIS_V.state
         protected void Page_Load(object sender, EventArgs e)
         {
             checker();
+            SetCurrentPage();
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
             Response.Cache.SetNoStore();
@@ -108,6 +109,62 @@ namespace SIS_V.state
                 FormsAuthentication.SignOut();
                 FormsAuthentication.RedirectToLoginPage();
             }
+        }
+
+        private void SetCurrentPage()
+        {
+            var pageName = GetPageName();
+
+            switch (pageName)
+            {
+                case "utama":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "kawasan_operasi":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "parlimen_tumpuan":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "detail_incident":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "status_kawasan":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "Win_Candidate":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "candidate_detail":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "percentage_voters":
+                    dash.Attributes["class"] = "has-submenu active";
+                    break;
+                case "activiti_bakal_ci_view":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+                case "activiti_bakal_ci_add":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+                case "activiti_parti_view":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+                case "activiti_parti_add":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+                case "laporan_harian_add":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+                case "laporan_harian_view":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+            }
+        }
+
+        private string GetPageName()
+        {
+            return Request.Url.ToString().Split('/').Last();
         }
 
 

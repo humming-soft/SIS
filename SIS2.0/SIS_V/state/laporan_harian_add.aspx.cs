@@ -61,23 +61,23 @@ namespace SIS_V.state
             dt = objAktivitiBUS.fill_kodkawasan();
             ddlKodKawasan.DataSource = dt;
             ddlKodKawasan.DataBind();
-            ddlKodKawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlKodKawasan.Items.Insert(0, new ListItem("---SELECT---", ""));
 
             ddlKod_KawasanI.DataSource = dt;
             ddlKod_KawasanI.DataBind();
-            ddlKod_KawasanI.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlKod_KawasanI.Items.Insert(0, new ListItem("---SELECT---", ""));
 
             ddlKodKawasanj.DataSource = dt;
             ddlKodKawasanj.DataBind();
-            ddlKodKawasanj.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlKodKawasanj.Items.Insert(0, new ListItem("---SELECT---", ""));
 
             ddlKodKawasanIn.DataSource = dt;
             ddlKodKawasanIn.DataBind();
-            ddlKodKawasanIn.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlKodKawasanIn.Items.Insert(0, new ListItem("---SELECT---", ""));
 
             ddlKodKawasanKawasan.DataSource = dt;
             ddlKodKawasanKawasan.DataBind();
-            ddlKodKawasanKawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlKodKawasanKawasan.Items.Insert(0, new ListItem("---SELECT---", ""));
         }
 
         public void fill_jenis()
@@ -85,7 +85,7 @@ namespace SIS_V.state
             dt1 = objAktivitiBUS.fill_jenis();
             ddlAktiviti.DataSource = dt1;
             ddlAktiviti.DataBind();
-            ddlAktiviti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlAktiviti.Items.Insert(0, new ListItem("---SELECT---", ""));
         }
 
         public void fill_parti()
@@ -93,15 +93,15 @@ namespace SIS_V.state
             dt2 = objAktivitiBUS.fill_parti();
             ddlparti.DataSource = dt2;
             ddlparti.DataBind();
-            ddlparti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlparti.Items.Insert(0, new ListItem("---SELECT---", ""));
 
             ddlPartiI.DataSource = dt2;
             ddlPartiI.DataBind();
-            ddlPartiI.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlPartiI.Items.Insert(0, new ListItem("---SELECT---", ""));
 
             ddlPartiIn.DataSource = dt2;
             ddlPartiIn.DataBind();
-            ddlPartiIn.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlPartiIn.Items.Insert(0, new ListItem("---SELECT---", ""));
         }
 
         public void fill_sumber()
@@ -109,21 +109,21 @@ namespace SIS_V.state
             dt3 = objAktivitiBUS.fill_sumber();
             ddlSumberIsu.DataSource = dt3;
             ddlSumberIsu.DataBind();
-            ddlSumberIsu.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlSumberIsu.Items.Insert(0, new ListItem("---SELECT---", ""));
         }
         public void fill_isu()
         {
             dt4 = objAktivitiBUS.fill_isu();
             ddlKategoriIsu.DataSource = dt4;
             ddlKategoriIsu.DataBind();
-            ddlKategoriIsu.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlKategoriIsu.Items.Insert(0, new ListItem("---SELECT---", ""));
         }
         public void fill_status()
         {
             dt5 = objAktivitiBUS.fill_status();
             ddlstatusKawasan.DataSource = dt5;
             ddlstatusKawasan.DataBind();
-            ddlstatusKawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlstatusKawasan.Items.Insert(0, new ListItem("---SELECT---", ""));
         }
         protected void btnsimpan_Click(object sender, EventArgs e)
         {

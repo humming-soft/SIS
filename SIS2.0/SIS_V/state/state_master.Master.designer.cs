@@ -40,22 +40,22 @@ namespace SIS_V.state {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dash;
         
         /// <summary>
-        /// prapiliha control.
+        /// prapilihanraya control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prapiliha;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prapilihanraya;
         
         /// <summary>
-        /// piliha control.
+        /// pilihanraya control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl piliha;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pilihanraya;
         
         /// <summary>
         /// analisis control.
