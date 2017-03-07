@@ -242,6 +242,8 @@ namespace SIS_V.state
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
+            grid_areaInfoElectionParty.DataSource = null;
+            grid_areaInfoElectionParty.DataBind();
             int activityid=0;
             bus.state_id = int.Parse(Session["state"].ToString());
             if (drop_prlimen.SelectedValue.ToString()!="")
