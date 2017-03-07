@@ -157,6 +157,10 @@ namespace SIS_B
         {
             return data.fill_gridElectionParty(state_id);
         }
+        public DataTable fill_gridElectionParty_viewAll()
+        {
+            return data.fill_gridElectionParty_viewAll(state_id,election_id, area_id, party_id, activity_id,current_issue_id, polling_District_id, info_source, info_valdity, action_status, source_election_status, issue_source, info_source_agency_id, info_source_ngo_id, source_election_status_agency_id, source_election_status_ngo_id);
+        }
     }
 }
                
