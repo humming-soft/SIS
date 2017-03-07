@@ -18,12 +18,30 @@ namespace SIS_V.admin
         {
             if (!IsPostBack)
             {
-                fill_state();
-                fill_role();
-                fill_DataTable_user();
-                log_valid.Visible = false;
-                valid_empty.Visible = false;
-                valid_match.Visible = false;
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fill_state();
+                    fill_role();
+                    fill_DataTable_user();
+                    log_valid.Visible = false;
+                    valid_empty.Visible = false;
+                    valid_match.Visible = false;
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
         public void fill_DataTable_user()

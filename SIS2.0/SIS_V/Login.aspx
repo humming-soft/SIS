@@ -4,16 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" class="html-login">
 <head runat="server">
-            <script type="text/javascript">
-                function DisableBack() {
-                    window.history.forward();
-                }
-                DisableBack();
-                window.onload = DisableBack;
-                window.onpageshow = function (evt) {
-                    if (evt.persisted) DisableBack();
-                }
-                window.onunload = function () { void (0); }
+    <script type="text/javascript">
+        function DisableBack() {
+            window.history.forward();
+        }
+        DisableBack();
+        window.onload = DisableBack;
+        window.onpageshow = function (evt) {
+            if (evt.persisted) DisableBack();
+        }
+        window.onunload = function () { void (0); }
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -75,8 +75,19 @@
             </div>
         </div>
     </header>
-    <div class="wrapper-page login-md">
-
+    <div class="splash" style="display: none; background-color: transparent !important;">
+        <div class="splash-title">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <h4>Authenticating..</h4>
+        </div>
+    </div>
+    <div class="wrapper-page login-md" id="login-con">
         <div class="text-center">
             <img src="assets/images/logojatanegara_small.png" alt="Jata Negara" class="image image-jata-negara" />
             <p class="head-jata-negara">Majlis Keselamatan Negara</p>
@@ -109,9 +120,16 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <p>Please check your <b>username</b> or <b>password</b>!</p>
             </div>
-             <div class="alert alert-danger alert-dismissable" id="mulogin" runat="server">
+            <div class="alert alert-danger alert-dismissable" id="mulogin" runat="server">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <p>You have been logged out.<br />Multiple login for a single user are not allowed!</p>
+                <p>
+                    You have been logged out.<br />
+                    Multiple login for a single user are not allowed!
+                </p>
+            </div>
+            <div class="alert alert-danger alert-dismissable" id="stimeout" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p>You have been logged out.Session Expired!</p>
             </div>
         </form>
     </div>

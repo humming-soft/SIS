@@ -37,6 +37,17 @@
     <link href="../assets/js/dl-menu/component.css" rel="stylesheet" />
     <link href="../assets/css/core_sn.css" rel="stylesheet" />
     <link href="../assets/css/dashboard/responsive.css" rel="stylesheet" />
+
+        <script type="text/javascript">
+            //Disables the browser back button
+            function DisableBackButton() {
+                window.history.forward()
+            }
+            DisableBackButton();
+            window.onload = DisableBackButton;
+            window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+            window.onunload = function () { void (0) }
+    </script>
 </head>
 <body>
     <!--Kode Wrapper Start-->
@@ -60,8 +71,9 @@
                                 <li><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul>
                                         <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
-                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="#"><i class="md md-details"></i> Parlimen Tumpuan</a></li>
+                                        <li><a href="#"><i class="md md-compare"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="#"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="#"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="#"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
@@ -70,7 +82,12 @@
                                     <ul>
                                         <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="#"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a>
+                                            <ul>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i> Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i> Paparan</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -84,7 +101,7 @@
                                         <li><a href="#"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
+                                <li><a href="tetapan_pentadbir_view"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
                             </ul>
                         </div>
                         <!--Navigation Wrap End-->
@@ -96,8 +113,9 @@
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-color-lens"></i> Dashboard</a>
                                     <ul class="dl-submenu">
                                         <li><a href="#"><i class="md md-desktop-windows"></i> Dashboard Utama</a></li>
-                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan</a></li>
-                                        <li><a href="#"><i class="md md-place"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="#"><i class="md md-details"></i> Parlimen Tumpuan</a></li>
+                                        <li><a href="#"><i class="md md-compare"></i> Parlimen Tumpuan BN VS Pembangkang</a></li>
+                                        <li><a href="#"><i class="md md-place"></i> Rumusan Status Kawasan</a></li>
                                         <li><a href="#"><i class="md md-contacts"></i> Winnable Candidate</a></li>
                                         <li><a href="#"><i class="md md-group"></i> Peratusan Keluar Mengundi</a></li>
                                     </ul>
@@ -106,7 +124,12 @@
                                     <ul class="dl-submenu">
                                         <li><a href="#"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="#"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
-                                        <li><a href="#"><i class="md md-report"></i> Laporan Harian Dari Negeri</a></li>
+                                        <li><a href="#"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri</a>
+                                            <ul class="dl-submenu">
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i> Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i> Paparan</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
@@ -120,7 +143,7 @@
                                         <li><a href="#"><i class="md md-info"></i> Parlimen Info</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="tetapan_pentadbir_view.aspx"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
+                                <li><a href="tetapan_pentadbir_view"><i class="md md-person-add"></i> Tetapan Pentadbir</a></li>
                             </ul>
                         </div>
                         <!--DL Menu End-->
@@ -158,7 +181,7 @@
                             <li>
                                 <img src="../assets/images/gallery/003_d.png" alt="Logo Image Here" />
                                 <a href="#">
-                                    <p class="minutes_ref">Ramusan Status Kawasan</p>
+                                    <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
                             <li>
@@ -227,6 +250,10 @@
     <script src="../assets/plugins/moment/moment.js"></script>
     <script src="../assets/js/dl-menu/modernizr.custom.js"></script>
     <script src="../assets/js/dl-menu/jquery.dlmenu.js"></script>
+
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             get_date(); // to show current date
@@ -246,6 +273,8 @@
                     $(this).dlmenu();
                 });
             }
+
+            sessiontimeout();
         });
     </script>
     <script type="text/javascript">
@@ -294,6 +323,19 @@
                 }, 500);
             }
             Timer();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function sessiontimeout() {
+            $.sessionTimeout({
+                ignoreUserActivity: true,
+                warnAfter: 270000, //4.5 minute
+                redirAfter: 300000, // 5 minute
+                keepAliveUrl: '/',
+                redirUrl: '../sessiontimeout',
+                logoutUrl: '../Logout'
+            });
         }
     </script>
 

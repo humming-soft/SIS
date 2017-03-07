@@ -23,8 +23,26 @@ namespace SIS_V.state
             norec.Visible = false;
             if (!IsPostBack)
             {
-                wc_id = int.Parse(Session["area_wc_id"].ToString());
-                fill_can(wc_id);
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "f")
+                {
+                    Response.Redirect("~/Login");
+                }
+                else
+                {
+                    wc_id = int.Parse(Session["area_wc_id"].ToString());
+                    fill_can(wc_id);
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 

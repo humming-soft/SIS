@@ -285,6 +285,7 @@
     <Content Include="assets\plugins\jquery-knob\jquery.knob.js" />
     <Content Include="assets\plugins\jquery-quicksearch\jquery.quicksearch.js" />
     <Content Include="assets\plugins\jquery-sparkline\jquery.sparkline.min.js" />
+    <Content Include="assets\plugins\jquery-ui\jquery-ui.min.css" />
     <Content Include="assets\plugins\jquery-ui\jquery-ui.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\additional-methods.min.js" />
     <Content Include="assets\plugins\jquery-validation\dist\jquery.validate.min.js" />
@@ -352,6 +353,7 @@
     <Content Include="assets\plugins\tablesaw\dist\tablesaw-init.js" />
     <Content Include="assets\plugins\tablesaw\dist\tablesaw.css" />
     <Content Include="assets\plugins\tablesaw\dist\tablesaw.js" />
+    <Content Include="assets\plugins\timeout\session_timeout.min.js" />
     <Content Include="assets\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="assets\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="assets\plugins\tiny-editable\mindmup-editabletable.js" />
@@ -381,6 +383,7 @@
     <Content Include="state\kawasan_operasi.aspx" />
     <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
+    <Content Include="state\laporan_harian_aktiviti.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
     <Content Include="state\parlimen_info_add.aspx" />
     <Content Include="state\parlimen_info_view.aspx" />
@@ -704,6 +707,13 @@
     </Compile>
     <Compile Include="state\laporan_harian_add.aspx.designer.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_aktiviti.aspx.cs">
+      <DependentUpon>laporan_harian_aktiviti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_aktiviti.aspx.designer.cs">
+      <DependentUpon>laporan_harian_aktiviti.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\laporan_harian_view.aspx.cs">
       <DependentUpon>laporan_harian_view.aspx</DependentUpon>

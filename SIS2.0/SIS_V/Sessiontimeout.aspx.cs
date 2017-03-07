@@ -11,7 +11,15 @@ namespace SIS_V
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            logout();
+        }
 
+        protected void logout()
+        {
+            Session.Clear();
+            Session["is_login"] = "f";
+            Session["timeout"] = "t";
+            Response.Redirect("~/Login");
         }
     }
 }

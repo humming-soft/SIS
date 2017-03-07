@@ -9,7 +9,7 @@
             <div class="card-box" style="margin: 0 25%;">
                 <h4 class="m-t-0 header-title"><b>Tambah Aktiviti Bakal Calon/Individu</b></h4>
                 <p class="text-muted font-13 m-b-30">
-                    Description (if needed).
+<%--                    Description (if needed).--%>
                 </p>
                 <div class="row">
                      <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">

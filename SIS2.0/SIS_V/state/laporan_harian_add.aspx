@@ -485,7 +485,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-8">
                                     <div class="form-group">
                                         <label for="userName">Butiran Aktiviti</label>
                                         <asp:TextBox ID="txtButiran" runat="server" TextMode="MultiLine" CssClass="form-control item_butiran"></asp:TextBox>
@@ -549,7 +549,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-8">
                                     <div class="form-group">
                                         <label for="userName">Butiran Isu</label>
                                         <asp:TextBox ID="txtButiran_Isu" runat="server" TextMode="MultiLine" CssClass="form-control item_Butiran_Isu"></asp:TextBox>
@@ -590,13 +590,15 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="userName">Janji yg Diberi</label>
                                         <asp:TextBox ID="txtjanji" runat="server" TextMode="MultiLine" CssClass="form-control item_janji"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="userName">Nama Tokoh</label>
                                         <asp:TextBox ID="txtNamaTokoh" runat="server" TextMode="MultiLine" CssClass="form-control item_NamaTokoh"></asp:TextBox>
@@ -644,7 +646,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="userName">Butiran Insiden</label>
                                         <asp:TextBox ID="txtButiranInsiden" runat="server" TextMode="MultiLine" CssClass="form-control item_ButiranInsiden"></asp:TextBox>
@@ -695,7 +697,7 @@
                                         <label for="userName">Data Wujud (Ya/Tidak)</label>
                                          <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlWujud" CssClass="form-control item_Wujud" runat="server" DataTextField="areacode" DataValueField="area_id">
-                                            <asp:ListItem Value="">--- SELECT ---</asp:ListItem>
+                                            <asp:ListItem Value="">---SELECT---</asp:ListItem>
                                             <asp:ListItem Value="1">Yes</asp:ListItem>
                                             <asp:ListItem Value="2">No</asp:ListItem>
                                         </asp:DropDownList>
@@ -704,7 +706,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-8">
                                     <div class="form-group">
                                         <label for="userName">Justifikasi/Kaveat</label>
                                         <asp:TextBox ID="txtJustifikasi" runat="server" TextMode="MultiLine" CssClass="form-control item_Justifikasi"></asp:TextBox>

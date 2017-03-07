@@ -49,6 +49,21 @@
     </script>
 </head>
 <body>
+    <div class="splash">
+        <!-- 			<div class="color-line"></div> -->
+        <div class="splash-title">
+            <!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
+            <!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <h4>Loading..</h4>
+        </div>
+    </div>
     <!--Kode Wrapper Start-->
     <div class="kode_wrapper">
 
@@ -91,7 +106,7 @@
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
                                     <ul>
-                                        <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
+                                        <li><a href="keluar_mengundi"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
@@ -135,7 +150,7 @@
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
+                                        <li><a href="keluar_mengundi"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
@@ -181,13 +196,13 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/003_d.png" alt="Logo Image Here" />
-                                <a href="#">
-                                    <p class="minutes_ref">Ramusan Status Kawasan</p>
+                                <a href="status_kawasan">
+                                    <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="winnable_candidate">
+                                <a href="Win_Candidate">
                                     <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
@@ -195,7 +210,7 @@
                         <ul class="countdown m-t-25">
                             <li>
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="percentage_voters">
                                     <p class="days_ref b35">
                                         Peratusan
                                         <br />
@@ -253,6 +268,11 @@
     <script src="../assets/plugins/moment/moment.js"></script>
     <script src="../assets/js/dl-menu/modernizr.custom.js"></script>
     <script src="../assets/js/dl-menu/jquery.dlmenu.js"></script>
+    <script src="../assets/js/core_sn.js"></script>
+
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             get_date(); // to show current date
@@ -272,6 +292,7 @@
                     $(this).dlmenu();
                 });
             }
+            sessiontimeout();
         });
     </script>
     <script type="text/javascript">
@@ -322,6 +343,17 @@
             Timer();
         }
     </script>
-
+    <script type="text/javascript">
+        function sessiontimeout() {
+                    $.sessionTimeout({
+                        ignoreUserActivity: true,
+                        warnAfter: 270000, //4.5 minute
+                        redirAfter: 300000, // 5 minute
+                        keepAliveUrl: '/',
+                        redirUrl: '../sessiontimeout',
+                        logoutUrl: '../Logout'
+                    });
+        }
+    </script>
 </body>
 </html>
