@@ -141,6 +141,7 @@
             ],
             // set the initial value
             "iDisplayLength": 5,
+            "bPaginate": false
         });
         $('#GridKM_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input

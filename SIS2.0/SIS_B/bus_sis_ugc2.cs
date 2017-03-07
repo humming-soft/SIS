@@ -71,6 +71,9 @@ namespace SIS_B
 
         public int area_type_id { get; set; }
 
+        public int polling_district_id { get; set; }
+        public int no_of_vote { get; set; }
+
         public DataTable fill_DataTable()
         {
             return objDAL.fill_DataTable();
@@ -140,7 +143,15 @@ namespace SIS_B
         }
         public DataTable GetAreaList()
         {
-            return objDAL.GetAreaList(area_type_id);
+            return objDAL.GetAreaList(area_type_id, state_id);
+        }
+        public DataTable GetPollingDetails()
+        {
+            return objDAL.GetPollingDetails(area_id);
+        }
+        public int UpdateNoVote()
+        {
+            return objDAL.UpdateNoVote(polling_district_id, no_of_vote);
         }
 
     }
