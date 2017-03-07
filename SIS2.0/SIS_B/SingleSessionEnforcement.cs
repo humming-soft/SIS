@@ -39,7 +39,7 @@ namespace SIS_B
                     // Should never hit this code
                     FormsAuthentication.SignOut();
                     HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
-                    cookie.Expires = DateTime.Now.AddYears(-1);
+                    cookie.Expires = DateTime.Now.AddMinutes(5);
                     FormsAuthentication.RedirectToLoginPage();
                     return;
                 }
@@ -58,7 +58,7 @@ namespace SIS_B
                     // ticket so logout the user
                     FormsAuthentication.SignOut();
                     HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, "");
-                    cookie.Expires = DateTime.Now.AddYears(-1);
+                    cookie.Expires = DateTime.Now.AddMinutes(5);
                     httpContext.Response.Redirect("~/logout?ml=5jg90sjrkkms0-8jj");
                     //FormsAuthentication.RedirectToLoginPage();
                 }
