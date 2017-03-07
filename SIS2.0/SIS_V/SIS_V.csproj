@@ -382,6 +382,7 @@
     <Content Include="state\kawasan_operasi.aspx" />
     <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
+    <Content Include="state\laporan_harian_aktiviti.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
     <Content Include="state\parlimen_info_add.aspx" />
     <Content Include="state\parlimen_info_view.aspx" />
@@ -698,6 +699,13 @@
     </Compile>
     <Compile Include="state\laporan_harian_add.aspx.designer.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_aktiviti.aspx.cs">
+      <DependentUpon>laporan_harian_aktiviti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_aktiviti.aspx.designer.cs">
+      <DependentUpon>laporan_harian_aktiviti.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\laporan_harian_view.aspx.cs">
       <DependentUpon>laporan_harian_view.aspx</DependentUpon>
