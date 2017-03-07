@@ -10,177 +10,150 @@
 namespace SIS_V.state {
     
     
-    public partial class state_master {
+    public partial class activiti_parti_view_all {
         
         /// <summary>
-        /// head control.
+        /// lbl_negeri control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lbl_negeri;
         
         /// <summary>
-        /// utama control.
+        /// drop_prlimen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl utama;
+        protected global::System.Web.UI.WebControls.DropDownList drop_prlimen;
         
         /// <summary>
-        /// dash control.
+        /// drop_mengudi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dash;
+        protected global::System.Web.UI.WebControls.DropDownList drop_mengudi;
         
         /// <summary>
-        /// prapilihanraya control.
+        /// drop_pilihnraya control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prapilihanraya;
+        protected global::System.Web.UI.WebControls.DropDownList drop_pilihnraya;
         
         /// <summary>
-        /// pilihanraya control.
+        /// drop_parti control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pilihanraya;
+        protected global::System.Web.UI.WebControls.DropDownList drop_parti;
         
         /// <summary>
-        /// analisis control.
+        /// drop_jenis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl analisis;
+        protected global::System.Web.UI.WebControls.DropDownList drop_jenis;
         
         /// <summary>
-        /// tetapan control.
+        /// drop_category control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tetapan;
+        protected global::System.Web.UI.WebControls.DropDownList drop_category;
         
         /// <summary>
-        /// form1 control.
+        /// drop_sumbar_isu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DropDownList drop_sumbar_isu;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// drop_status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.DropDownList drop_status;
         
         /// <summary>
-        /// txtLogName control.
+        /// drop_statusjanji control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLogName;
+        protected global::System.Web.UI.WebControls.DropDownList drop_statusjanji;
         
         /// <summary>
-        /// txtFullName control.
+        /// drop_agency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFullName;
+        protected global::System.Web.UI.WebControls.DropDownList drop_agency;
         
         /// <summary>
-        /// txtIC control.
+        /// drop_prtubuhan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIC;
+        protected global::System.Web.UI.WebControls.DropDownList drop_prtubuhan;
         
         /// <summary>
-        /// txtPosition control.
+        /// drop_sumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPosition;
+        protected global::System.Web.UI.WebControls.DropDownList drop_sumber;
         
         /// <summary>
-        /// txtNewPassword control.
+        /// drop_tahap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+        protected global::System.Web.UI.WebControls.DropDownList drop_tahap;
         
         /// <summary>
-        /// txtConfirmPassword control.
+        /// btn_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+        protected global::System.Web.UI.WebControls.Button btn_submit;
         
         /// <summary>
-        /// valid_match control.
+        /// grid_areaInfoElectionParty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid_match;
-        
-        /// <summary>
-        /// valid_empty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid_empty;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
-        /// <summary>
-        /// btnClear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClear;
+        protected global::System.Web.UI.WebControls.GridView grid_areaInfoElectionParty;
     }
 }

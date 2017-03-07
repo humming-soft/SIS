@@ -24,6 +24,7 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="true" class="collapsed no-loader">1.0 AKTIVITI
                                     </a>
+                                    <a href="laporan_harian_aktiviti" class="pull-right">more..</a>
                                 </h4>
                             </div>
                             <div id="collapseOne-2" class="panel-collapse collapse in">

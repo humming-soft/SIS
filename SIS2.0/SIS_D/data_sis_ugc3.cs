@@ -75,7 +75,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int insert_user(string log_name,string name,string icnumber, int role, int state,string position)
+        public int insert_user(string log_name, string name, string icnumber, int role, int state, string position)
         {
             try
             {
@@ -174,7 +174,7 @@ namespace SIS_D
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "GetConDashboardAreaList_state";
-                cmd.Parameters.AddWithValue("@state_id",state_id);
+                cmd.Parameters.AddWithValue("@state_id", state_id);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
@@ -542,9 +542,9 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int areaInfoElectionParty(int election_id, int area_id,int party_id,int activity_id,DateTime ele_date,string detail,int current_issue_id,int polling_District_id,int info_source,
-            int info_valdity,int action_status,int source_election_status,int issue_source,int info_source_agency_id,
-            int info_source_ngo_id,int source_election_status_agency_id,int source_election_status_ngo_id)
+        public int areaInfoElectionParty(int election_id, int area_id, int party_id, int activity_id, DateTime ele_date, string detail, int current_issue_id, int polling_District_id, int info_source,
+            int info_valdity, int action_status, int source_election_status, int issue_source, int info_source_agency_id,
+            int info_source_ngo_id, int source_election_status_agency_id, int source_election_status_ngo_id)
         {
             try
             {
@@ -581,6 +581,43 @@ namespace SIS_D
                 int res = int.Parse(cmd.Parameters["@OutputId"].Value.ToString());
                 //cmd.Dispose();
                 return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable fill_gridElectionParty_viewAll(int state_id, int election_id, int area_id, int party_id, int activity_id, int current_issue_id, int polling_District_id, int info_source,
+          int info_valdity, int action_status, int source_election_status, int issue_source, int info_source_agency_id,
+          int info_source_ngo_id, int source_election_status_agency_id, int source_election_status_ngo_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_fetch_areaInfoElectionParty_viewAll";
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.Parameters.AddWithValue("@election_id", election_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@party_id", party_id);
+                cmd.Parameters.AddWithValue("@activity_id", activity_id);
+                cmd.Parameters.AddWithValue("@current_issue_id", current_issue_id);
+                cmd.Parameters.AddWithValue("@polling_district_id", polling_District_id);
+                cmd.Parameters.AddWithValue("@info_source", info_source);
+                cmd.Parameters.AddWithValue("@info_validity", info_valdity);
+                cmd.Parameters.AddWithValue("@action_status", action_status);
+                cmd.Parameters.AddWithValue("@source_election_status", source_election_status);
+                cmd.Parameters.AddWithValue("@issue_source", issue_source);
+                cmd.Parameters.AddWithValue("@info_source_agency_id", info_source_agency_id);
+                cmd.Parameters.AddWithValue("@info_source_ngo_id", info_source_ngo_id);
+                cmd.Parameters.AddWithValue("@source_election_status_agency_id", source_election_status_agency_id);
+                cmd.Parameters.AddWithValue("@source_election_status_ngo_id", source_election_status_ngo_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
             }
             finally
             {

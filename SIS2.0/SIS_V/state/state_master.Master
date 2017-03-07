@@ -168,7 +168,7 @@
                                 <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
                             </ul>
                         </li>
-                        <li class="has-submenu" id="prapiliha" runat="server">
+                        <li class="has-submenu" id="prapilihanraya" runat="server">
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
@@ -186,7 +186,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-submenu" id="piliha" runat="server">
+                        <li class="has-submenu" id="pilihanraya" runat="server">
                             <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
                                 <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>

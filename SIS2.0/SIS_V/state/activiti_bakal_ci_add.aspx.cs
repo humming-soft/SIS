@@ -18,14 +18,33 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                invalid.Visible = false;
-                GetElectionList();
-                GetStateList();
-                GetAreaCodeList();
-                GetActivityList();
-                GetLookUpList();
-                GetValidityList();
-                GetCandidateList();
+                CheckIsLogin();
+            }
+        }
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    invalid.Visible = false;
+                    GetElectionList();
+                    GetStateList();
+                    GetAreaCodeList();
+                    GetActivityList();
+                    GetLookUpList();
+                    GetValidityList();
+                    GetCandidateList();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 

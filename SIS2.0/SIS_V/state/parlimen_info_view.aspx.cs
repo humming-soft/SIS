@@ -16,10 +16,28 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_DataTable();
+                CheckIsLogin();
             }
         }
 
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fill_DataTable();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
+            }
+        }
         public void fill_DataTable()
         {
             DataTable dt = bus.fill_DataTable();
