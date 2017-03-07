@@ -106,7 +106,7 @@
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
                                     <ul>
-                                        <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
+                                        <li><a href="keluar_mengundi"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
@@ -150,7 +150,7 @@
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i> Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="#"><i class="md md-poll"></i> Keluar Mengundi</a></li>
+                                        <li><a href="keluar_mengundi"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
@@ -196,7 +196,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/003_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="status_kawasan">
                                     <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
@@ -210,7 +210,7 @@
                         <ul class="countdown m-t-25">
                             <li>
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="percentage_voters">
                                     <p class="days_ref b35">
                                         Peratusan
                                         <br />
