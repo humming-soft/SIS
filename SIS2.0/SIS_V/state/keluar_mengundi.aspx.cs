@@ -29,7 +29,6 @@ namespace SIS_V.state
                 if (Session["is_login"].ToString() == "t")
                 {
                     FillDetails();
-                    //ddlAreaList.SelectedIndex = Convert.ToInt32(Session["ddlSelection"]);
                 }
                 else
                 {
@@ -49,10 +48,6 @@ namespace SIS_V.state
             lblNageri.Text = dt.Rows[0]["state_name"].ToString();
             lblPilihanraya.Text = Session["election"].ToString();
         }
-        //protected void ddlChanged(object sender, EventArgs e)
-        //{
-        //    Session["ddlSelection"] = ddlAreaList.SelectedIndex;
-        //}
 
         [WebMethod]
         public static List<Area> GetAreaList(int area_type_id, int sid)
@@ -111,6 +106,8 @@ namespace SIS_V.state
 
         protected void GridKM_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            objBUS.area_id = int.Parse(hiddenArea.Value);
+            objBUS.election_id = int.Parse(Session["election_id"].ToString());
             objBUS.polling_district_id = int.Parse(GridKM.DataKeys[e.RowIndex].Value.ToString());
             objBUS.no_of_vote = int.Parse(((TextBox)GridKM.Rows[e.RowIndex].FindControl("txtVotes")).Text);
             int chk = objBUS.UpdateNoVote();

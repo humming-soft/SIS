@@ -74,6 +74,8 @@ namespace SIS_B
         public int polling_district_id { get; set; }
         public int no_of_vote { get; set; }
 
+        public int election_id { get; set; }
+
         public DataTable fill_DataTable()
         {
             return objDAL.fill_DataTable();
@@ -151,7 +153,7 @@ namespace SIS_B
         }
         public int UpdateNoVote()
         {
-            return objDAL.UpdateNoVote(polling_district_id, no_of_vote);
+            return objDAL.UpdateNoVote(area_id, election_id, polling_district_id, no_of_vote);
         }
 
     }

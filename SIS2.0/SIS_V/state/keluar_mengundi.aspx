@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="keluar_mengundi.aspx.cs" Inherits="SIS_V.state.keluar_mengundi" MasterPageFile="~/state/state_master.Master"  EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="keluar_mengundi.aspx.cs" Inherits="SIS_V.state.keluar_mengundi" MasterPageFile="~/state/state_master.Master" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             TableData.init();
-            fill_area_list();           
+            fill_area_list();
         });
     </script>
     <script type="text/javascript">
@@ -16,23 +16,24 @@
         function fill_area_list() {
             var area_type_id = $('#ContentPlaceHolder1_ddlKawasan option:selected').val();
             var sid = '<%= Session["state"] %>';
-            $.ajax({
-                type: "POST",
-                contentType: "application/json",
-                data: '{"area_type_id":"' + area_type_id + '","sid":"' + sid + '"}',
-                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("keluar_mengundi.aspx/GetAreaList")%>',
+            if (area_type_id != '') {
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    data: '{"area_type_id":"' + area_type_id + '","sid":"' + sid + '"}',
+                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("keluar_mengundi.aspx/GetAreaList")%>',
                 dataType: "json",
                 success: function (data) {
                     if (data.d.length > 0) {
                         $('#ContentPlaceHolder1_ddlAreaList').empty();
-                        //$('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                        $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
                         $.each(data.d, function (key, value) {
                             $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").val(value.area_id).html(value.area_name));
 
                         });
                         var hid_val = $('#ContentPlaceHolder1_hiddenArea').val();
                         if (hid_val) {
-                            $('#ContentPlaceHolder1_ddlAreaList').val(hid_val).attr("selected", "selected");                         
+                            $('#ContentPlaceHolder1_ddlAreaList').val(hid_val).attr("selected", "selected");
                         }
                     } else {
                         $('#ContentPlaceHolder1_ddlAreaList').empty();
@@ -43,7 +44,11 @@
                     console.log(errorThrown);
                 }
             });
+        } else {
+            $('#ContentPlaceHolder1_ddlAreaList').empty();
+            $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
         }
+    }
     </script>
     <script>
         function get_area_selected() {
@@ -90,9 +95,9 @@
                             <asp:HiddenField ID="hiddenArea" runat="server" Value='' />
                         </div>
                     </div>
-                    <div class="col-lg-2" style="padding-top:25px;">
+                    <div class="col-lg-2" style="padding-top: 25px;">
                         <div class="form-group">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Show" OnClick="btnSubmit_Click" OnClientClick ="validation_keluar()"  />
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Show" OnClick="btnSubmit_Click" OnClientClick="validation_keluar()" />
                         </div>
                     </div>
                 </div>
@@ -103,14 +108,20 @@
                             <asp:TemplateField HeaderText="TELAH KELUAR">
                                 <EditItemTemplate>
                                     <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtVotes"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes"></asp:RequiredFieldValidator>
+                                    <span style="color: red">
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes"></asp:RequiredFieldValidator>
+                                        <asp:CompareValidator runat="server" id="cmpValues" controltovalidate="txtVotes" controltocompare="txtJumlah" operator="LessThan" Type="Integer" errormessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number!" />
+                                    </span>
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label runat="server" Text='<%# Bind("no_of_vote") %>' ID="Label1"></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-
-                            <asp:BoundField DataField="total_voters" HeaderText="JUMLAH PENGUNDI" ReadOnly="true" />
+                            <asp:TemplateField HeaderText="JUMLAH PENGUNDI">
+                                <ItemTemplate>
+                                    <asp:TextBox runat="server" Text='<%# Bind("total_voters") %>' ID="txtJumlah" ReadOnly="true" style="border: none;"></asp:TextBox>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="percentage" HeaderText="PERATUS" ReadOnly="true" />
                             <asp:TemplateField HeaderText="Actions">
                                 <ItemTemplate>
