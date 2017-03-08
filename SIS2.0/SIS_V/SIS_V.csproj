@@ -235,6 +235,14 @@
     <Content Include="assets\plugins\chart.js\chart.min.js" />
     <Content Include="assets\plugins\chartist\dist\chartist.min.css" />
     <Content Include="assets\plugins\chartist\dist\chartist.min.js" />
+    <Content Include="assets\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="assets\plugins\chosen\chosen-sprite.png" />
+    <Content Include="assets\plugins\chosen\chosen.css" />
+    <Content Include="assets\plugins\chosen\chosen.jquery.js" />
+    <Content Include="assets\plugins\chosen\chosen.jquery.min.js" />
+    <Content Include="assets\plugins\chosen\chosen.min.css" />
+    <Content Include="assets\plugins\chosen\chosen.proto.js" />
+    <Content Include="assets\plugins\chosen\chosen.proto.min.js" />
     <Content Include="assets\plugins\countdown\dest\jquery.countdown.min.js" />
     <Content Include="assets\plugins\counterup\jquery.counterup.min.js" />
     <Content Include="assets\plugins\custombox\dist\custombox.min.css" />

@@ -28,6 +28,9 @@ namespace SIS_B
         public DateTime tarikhA { get; set; }
         public int stateid { get; set; }
         public int areaid { get; set; }
+        public int name { get; set; }
+        public int jenis { get; set; }
+        public int tahap { get; set; }
 
         public int check_login()
         {
@@ -128,6 +131,10 @@ namespace SIS_B
         public DataTable fill_candidates_dun()
         {
             return data1.fill_candidates_dun(areaid);
+        }
+        public DataTable GetCandidateList_All()
+        {
+            return data1.GetCandidateList_All(stateid,name, jenis, sumber, tahap);
         }
     }
 }
