@@ -39,6 +39,7 @@ namespace SIS_V
                     if (Session["timeout"].ToString() == "t")
                     {
                         stimeout.Visible = true;
+                        Session.Clear();
                     }
                 }
                 
