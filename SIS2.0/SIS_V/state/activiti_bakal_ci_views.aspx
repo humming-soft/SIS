@@ -4,17 +4,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function () {
             TableData.init();
-            $("#ContentPlaceHolder1_ddlName").searchable({
-                maxListSize: 200, // if list size are less than maxListSize, show them all
-                maxMultiMatch: 300, // how many matching entries should be displayed
-                exactMatch: false, // Exact matching on search
-                wildcards: true, // Support for wildcard characters (*, ?)
-                ignoreCase: true, // Ignore case sensitivity
-                latency: 200, // how many millis to wait until starting search
-                warnMultiMatch: 'top {0} matches ...',
-                warnNoMatch: 'No Matches Found...',
-                zIndex: 'auto'
-            });
+            $("#ddlName").customselect();
         });
     </script>
 </asp:Content>
@@ -26,10 +16,10 @@
                 <p class="text-muted font-13 m-b-30">
                 </p>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="form-group">
                             <label for="userName">Name Calon</label>
-                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_id">
+                            <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
                     </div>

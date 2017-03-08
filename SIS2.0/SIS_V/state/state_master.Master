@@ -76,6 +76,9 @@
     <%--chosen--%>
     <link href="../assets/plugins/chosen/chosen.css" rel="stylesheet" />
 
+    <%--Custom Select--%>
+    <link href="../assets/plugins/Customselect/jquery-customselect.css" rel="stylesheet" />
+
     <script type="text/javascript">
         //Disables the browser back button
         function DisableBackButton() {
@@ -496,6 +499,9 @@
     <%--chosen--%>
     <script src="../assets/plugins/chosen/chosen.jquery.js"></script>
     <script src="../assets/plugins/chosen/chosen.proto.js"></script>
+
+    <%--Custom Select--%>
+    <script src="../assets/plugins/Customselect/jquery-customselect.js"></script>
 
     <script type="text/javascript">
 
