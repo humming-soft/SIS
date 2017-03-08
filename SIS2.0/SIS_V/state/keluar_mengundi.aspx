@@ -4,20 +4,12 @@
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             TableData.init();
-            fill_area_list();
-            //fill_hid_val();            
+            fill_area_list();           
         });
     </script>
-    <script>
-        function fill_hid_val() {
-            var hid_val = $('#ContentPlaceHolder1_hiddenArea').val();
-            //alert(hid_val);
-            if (hid_val) {
-                $('#ContentPlaceHolder1_ddlAreaList').val(hid_val).attr("selected", "selected");
-                //$("#ContentPlaceHolder1_ddlAreaList option:selected").val(id);
-            } else {
-                alert('no');
-            }
+    <script type="text/javascript">
+        function validation_keluar() {
+            Keluar_Mengundi.init();
         }
     </script>
     <script>
@@ -93,14 +85,14 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="areaList">Area</label>
-                            <asp:DropDownList ID="ddlAreaList" CssClass="form-control" runat="server">
+                            <asp:DropDownList ID="ddlAreaList" CssClass="form-control" runat="server" onChange="get_area_selected()">
                             </asp:DropDownList>
                             <asp:HiddenField ID="hiddenArea" runat="server" Value='' />
                         </div>
                     </div>
                     <div class="col-lg-2" style="padding-top:25px;">
                         <div class="form-group">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Show" OnClick="btnSubmit_Click" OnClientClick ="get_area_selected()"  />
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Show" OnClick="btnSubmit_Click" OnClientClick ="validation_keluar()"  />
                         </div>
                     </div>
                 </div>
