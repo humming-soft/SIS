@@ -16,6 +16,7 @@
         function fill_area_list() {
             var area_type_id = $('#ContentPlaceHolder1_ddlKawasan option:selected').val();
             var sid = '<%= Session["state"] %>';
+            if (area_type_id!='') {
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
@@ -25,7 +26,7 @@
                 success: function (data) {
                     if (data.d.length > 0) {
                         $('#ContentPlaceHolder1_ddlAreaList').empty();
-                        //$('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                        $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
                         $.each(data.d, function (key, value) {
                             $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").val(value.area_id).html(value.area_name));
 
@@ -43,6 +44,10 @@
                     console.log(errorThrown);
                 }
             });
+            } else {
+                $('#ContentPlaceHolder1_ddlAreaList').empty();
+                $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+            }
         }
     </script>
     <script>
@@ -102,8 +107,10 @@
                             <asp:BoundField DataField="polling_district" HeaderText="NAMA DAERAH MENGUNDI" ReadOnly="true" />
                             <asp:TemplateField HeaderText="TELAH KELUAR">
                                 <EditItemTemplate>
-                                    <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtVotes"></asp:TextBox>
+                                    <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtVotes" MaxLength="5"></asp:TextBox>
+                                    <span style="color:red">
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes"></asp:RequiredFieldValidator>
+                                    </span>
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label runat="server" Text='<%# Bind("no_of_vote") %>' ID="Label1"></asp:Label>

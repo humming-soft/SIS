@@ -407,13 +407,15 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int UpdateNoVote(int polling_district_id, int no_of_vote)
+        public int UpdateNoVote(int area_id, int election_id, int polling_district_id, int no_of_vote)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "usp_UpdateNoVote";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@election_id", election_id);
                 cmd.Parameters.AddWithValue("@polling_district_id", polling_district_id);
                 cmd.Parameters.AddWithValue("@no_of_vote", no_of_vote);
                 SqlParameter outparam = new SqlParameter();
