@@ -124,5 +124,14 @@ namespace SIS_V.state
                 GridView_Cdetails.DataBind();
             }
         }
+
+        protected void GridView_Cdetails_PreRender(object sender, EventArgs e)
+        {
+            if (GridView_Cdetails.Rows.Count > 0)
+            {
+                GridView_Cdetails.UseAccessibleHeader = true;
+                GridView_Cdetails.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
     }
 }

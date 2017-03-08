@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         jQuery(document).ready(function () {
+            TableData.init();
             $("#ContentPlaceHolder1_ddlName").searchable({
                 maxListSize: 200, // if list size are less than maxListSize, show them all
                 maxMultiMatch: 300, // how many matching entries should be displayed
@@ -63,7 +64,21 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <asp:GridView ID="GridView_Cdetails" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server"></asp:GridView>
+                        <asp:GridView ID="GridView_Cdetails" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static"  AutoGenerateColumns="False" OnPreRender="GridView_Cdetails_PreRender">
+                            <Columns>
+                                <asp:BoundField DataField="name" HeaderText="Candidate Name"></asp:BoundField>
+                                <asp:BoundField DataField="party_name_bm" HeaderText="Party"></asp:BoundField>
+                                <asp:BoundField DataField="election_name" HeaderText="Election"></asp:BoundField>
+                                <asp:BoundField DataField="state_name" HeaderText="State"></asp:BoundField>
+                                <asp:BoundField DataField="coalition_name" HeaderText="Coalition"></asp:BoundField>
+                                <asp:BoundField DataField="activity_details" HeaderText="Activity Details"></asp:BoundField>
+                                <asp:BoundField DataField="lookup_name" HeaderText="Lookup Name"></asp:BoundField>
+                                <asp:BoundField DataField="validity_type" HeaderText="Validity Type"></asp:BoundField>
+                                <asp:BoundField DataField="polling_district_name" HeaderText="Polling District"></asp:BoundField>
+                                <asp:BoundField DataField="date" HeaderText="Date"></asp:BoundField>
+                                <asp:BoundField DataField="details" HeaderText="Details"></asp:BoundField>
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
             </div>
