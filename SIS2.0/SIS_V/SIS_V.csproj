@@ -190,6 +190,7 @@
     <Content Include="assets\js\Validations\activiti_parti_add.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
+    <Content Include="assets\js\Validations\keluar_mengundi.js" />
     <Content Include="assets\js\Validations\parliment_info.js" />
     <Content Include="assets\js\Validations\password_check.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
