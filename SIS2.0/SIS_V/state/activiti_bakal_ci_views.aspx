@@ -15,6 +15,12 @@
                 <h4 class="m-t-0 header-title"><b>Paparan Aktiviti Bakal Calon / Individu</b></h4>
                 <p class="text-muted font-13 m-b-30">
                 </p>
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="form-group">
@@ -54,7 +60,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <asp:GridView ID="GridView_Cdetails" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static"  AutoGenerateColumns="False" OnPreRender="GridView_Cdetails_PreRender">
+                        <asp:GridView ID="GridView_Cdetails" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="False" OnPreRender="GridView_Cdetails_PreRender">
                             <Columns>
                                 <asp:BoundField DataField="name" HeaderText="Candidate Name"></asp:BoundField>
                                 <asp:BoundField DataField="party_name_bm" HeaderText="Party"></asp:BoundField>
