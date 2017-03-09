@@ -124,6 +124,13 @@
 
     var km = function () {
         var oTable = $('#GridKM').dataTable({
+            "columns": [
+                null,
+               { "orderable": false },
+               { "orderable": false },
+               { "orderable": false },
+               { "orderable": false }
+            ],
             "aoColumnDefs": [{
                 "aTargets": [0]
             }],
