@@ -49,6 +49,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Label lblsuccess;
         
         /// <summary>
+        /// log_valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl log_valid;
+        
+        /// <summary>
         /// drop_kawasan control.
         /// </summary>
         /// <remarks>

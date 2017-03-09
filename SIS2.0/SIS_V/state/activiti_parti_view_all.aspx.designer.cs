@@ -13,6 +13,15 @@ namespace SIS_V.state {
     public partial class activiti_parti_view_all {
         
         /// <summary>
+        /// log_valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl log_valid;
+        
+        /// <summary>
         /// lbl_negeri control.
         /// </summary>
         /// <remarks>

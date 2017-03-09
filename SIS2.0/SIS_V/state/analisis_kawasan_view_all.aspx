@@ -37,14 +37,18 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>Tambah Maklumat Analisis Kawasan</b></h4>
                 <div>
-                 <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <asp:Label ID="lblinvalid" runat="server"></asp:Label>
-                </div>
-                <div class="alert alert-success alert-dismissable" id="valid" runat="server">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <asp:Label ID="lblsuccess" runat="server"></asp:Label>
-                </div>
+                    <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+                    </div>
+                    <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <asp:Label ID="lblsuccess" runat="server"></asp:Label>
+                    </div>
+                    <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>Please Select from the list to filter the result!</p>
+                    </div>
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="form-group">
@@ -53,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3" id="dr_one" hidden="hidden">
-                            <div class="form-group" >
+                            <div class="form-group">
                                 <label for="userName">Parlimen :</label>
                                 <asp:DropDownList ID="drop_parlimen" CssClass="form-control" runat="server" ClientIDMode="Static" DataTextField="area_name" DataValueField="area_id"></asp:DropDownList>
                             </div>
@@ -92,9 +96,9 @@
                                             <asp:LinkButton ID="lnkEdit" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkEdit_Click"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                   <asp:TemplateField HeaderText="BUANG" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                    <asp:TemplateField HeaderText="BUANG" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Are you sure you want to delete?')) return false;"  CommandName="Delete"></asp:LinkButton>
+                                            <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Are you sure you want to delete?')) return false;" CommandName="Delete"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

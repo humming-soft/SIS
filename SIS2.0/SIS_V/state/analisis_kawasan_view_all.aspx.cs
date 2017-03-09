@@ -25,6 +25,7 @@ namespace SIS_V.state
                 CheckIsLogin();
                 invalid.Visible = false;
                 valid.Visible = false;
+                log_valid.Visible = false;
             }
         }
         protected void CheckIsLogin()
@@ -121,36 +122,52 @@ namespace SIS_V.state
 
         protected void btn_search_Click(object sender, EventArgs e)
         {
+            GridKawasan.DataSource = null;
+            GridKawasan.DataBind();
             bus.state_id = int.Parse(Session["state"].ToString());
-            if (drop_kawasan.SelectedValue.ToString() != "")
+            if (drop_kawasan.SelectedValue.ToString() != "" || drop_parlimen.SelectedValue.ToString() != "" || drop_dun.SelectedValue.ToString() != "")
             {
-                bus.area_type = int.Parse(drop_kawasan.SelectedValue.ToString());
+                log_valid.Visible = false;
+                if (drop_kawasan.SelectedValue.ToString() != "")
+                {
+                    bus.area_type = int.Parse(drop_kawasan.SelectedValue.ToString());
+                }
+                else
+                {
+                    bus.area_type = -1;
+                }
+                if (drop_parlimen.SelectedValue.ToString() != "")
+                {
+                    bus.parlimen_id = int.Parse(drop_parlimen.SelectedValue.ToString());
+                }
+                else
+                {
+                    bus.parlimen_id = -1;
+                }
+                if (drop_dun.SelectedValue.ToString() != "")
+                {
+                    bus.dun_id = int.Parse(drop_dun.SelectedValue.ToString());
+                }
+                else
+                {
+                    bus.dun_id = -1;
+                }
+
+                areaAnalysis = bus.fill_area_analysis_ViewAll();
+                if (areaAnalysis.Rows.Count > 0)
+                {
+                    GridKawasan.DataSource = areaAnalysis;
+                    GridKawasan.DataBind();
+                }
+                else
+                {
+                    GridKawasan.DataSource = null;
+                    GridKawasan.DataBind();
+                }
             }
             else
             {
-                bus.area_type = -1;
-            }
-            if (drop_parlimen.SelectedValue.ToString() != "")
-            {
-                bus.parlimen_id = int.Parse(drop_parlimen.SelectedValue.ToString());
-            }
-            else
-            {
-                bus.parlimen_id = -1;
-            } 
-            if (drop_dun.SelectedValue.ToString() != "")
-            {
-                bus.dun_id = int.Parse(drop_dun.SelectedValue.ToString());
-            }
-            else
-            {
-                bus.dun_id = -1;
-            }
-            areaAnalysis = bus.fill_area_analysis_ViewAll();
-            if (areaAnalysis.Rows.Count > 0)
-            {
-                GridKawasan.DataSource = areaAnalysis;
-                GridKawasan.DataBind();
+                log_valid.Visible = true;
             }
        
         }
