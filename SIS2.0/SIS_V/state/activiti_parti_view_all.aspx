@@ -145,9 +145,10 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>Paparan Tambah Maklumat Parti Bertanding</b></h4>
                 <p class="text-muted font-13 m-b-30">
+
                 </p>
-                <div class="row">
-                    <div class="col-lg-6">
+                <div class="row hidden">
+                    <div class="col-lg-12" >
                         <div class="form-group">
                             <label for="userName">Negeri : </label>
                             <asp:Label ID="lbl_negeri" runat="server" Text="Label"></asp:Label>
@@ -156,7 +157,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="form-group">
                             <label for="userName">Parlimen-DUN</label>
                             <asp:DropDownList ID="drop_prlimen" CssClass="form-control parlimen-list" runat="server"
@@ -164,14 +165,6 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <%-- <div class="col-lg-2">
-                            <div class="form-group">
-                                <label for="userName">DUN</label>
-                                <asp:DropDownList ID="drop_dun" CssClass="form-control" runat="server"
-                                    ClientIDMode="Static" DataTextField="rolename" DataValueField="roleid">
-                                </asp:DropDownList>
-                            </div>
-                        </div>--%>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Daerah Mengundi</label>
@@ -180,8 +173,6 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label for="userName">Pilihanraya</label>
@@ -275,14 +266,15 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="form-group text-left m-b-0 m-t-15">
-                            <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_submit_Click" OnClientClick="" />
+                        <div class="form-group text-left m-b-0 m-t-25">
+                            <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary waves-light" Text="Carian" OnClick="btn_submit_Click" OnClientClick="" />
                         </div>
                     </div>
                 </div>
+                <hr />
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="card-box table-responsive">
+                       <%-- <div class="card-box table-responsive">--%>
                           <%-- <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
                                  <a href="activiti_parti_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
                              <p class="text-muted font-13 m-b-30">
@@ -309,7 +301,7 @@
                             </asp:GridView>
                             <%--<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">                       
                                 </table>--%>
-                        </div>
+                        <%--</div>--%>
                     </div>
                 </div>
             </div>

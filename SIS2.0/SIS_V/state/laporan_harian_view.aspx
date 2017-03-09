@@ -13,9 +13,9 @@
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                 <h4 class="m-t-0 header-title"><b>Paparan Lamporan harian Dari Negeri</b></h4>
-                <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
+                <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
--                    Your description goes here(Malay / English).
+                    500 Rekod Terkini.
                 </p>
                 <div class="col-lg-12">
                     <div class="panel-group" id="accordion-test-2">
@@ -24,7 +24,7 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="true" class="collapsed no-loader">1.0 AKTIVITI
                                     </a>
-                                    <a href="laporan_harian_aktiviti">more..</a>
+                                    <a class="sub-text hidden-xs" style="margin-left:90px" href="laporan_harian_aktiviti">more..</a>
                                 </h4>
                             </div>
                             <div id="collapseOne-2" class="panel-collapse collapse in">
@@ -55,7 +55,7 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed no-loader" aria-expanded="true">2.0 ISu-ISU
                                     </a>
-                                    <a href="laporan_harian_issue">more..</a>
+                                    <a class="sub-text hidden-xs" style="margin-left:90px" href="laporan_harian_issue">more..</a>
                                 </h4>
                             </div>
                             <div id="collapseTwo-2" class="panel-collapse collapse in">
@@ -87,7 +87,7 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-2" class="collapsed no-loader" aria-expanded="true">3.0 JANJI PILIHANRAYA
                                     </a>
-                                    <a href="laporan_harian_promises">more..</a>
+                                    <a class="sub-text hidden-xs" style="margin-left:170px" href="laporan_harian_promises">more..</a>
                                 </h4>
                             </div>
                             <div id="collapseThree-2" class="panel-collapse collapse in">
@@ -117,7 +117,7 @@
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-3" class="collapsed no-loader" aria-expanded="true">4.0 INSIDEN
                                     </a>
-                                    <a href="laporan_harian_incident">more..</a>
+                                    <a class="sub-text hidden-xs" style="margin-left:90px" href="laporan_harian_incident">more..</a>
                                 </h4>
                             </div>
                             <div id="collapseThree-3" class="panel-collapse collapse in">
@@ -144,11 +144,12 @@
                         </div>
                         <div class="panel panel-default panel-custom">
                             <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-5" class="collapsed no-loader" aria-expanded="true">5.0 ANALISIS STATUS KAWASAN
+                                <h4 class="panel-title">                                   
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-5" class="collapsed no-loader" aria-expanded="true">5.0 ANALISIS STATUS KAWASAN                                       
                                     </a>
-                                    <a href="laporan_harian_area_status">more..</a>
-                                </h4>
+                                    <a class="sub-text hidden-xs" style="margin-left:233px" href="laporan_harian_area_status">more..</a>
+<%--                                   <a href="laporan_harian_area_status" class="visible-xs"><span class="glyphicon glyphicon-search"></span></a>--%>
+                                </h4>                             
                             </div>
                             <div id="collapseThree-5" class="panel-collapse collapse in">
                                 <div class="panel-body">

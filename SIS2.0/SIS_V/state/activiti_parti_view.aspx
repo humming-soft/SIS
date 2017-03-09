@@ -12,20 +12,17 @@
         <div class="col-sm-12">
             <div class="card-box table-responsive">
                  <div class="row m-b-30">
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                              <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
+                             <p class="text-muted font-13 m-b-30">500 Rekod Terkini.</p>
                         </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2">
-                            <a href="activiti_parti_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
-                            <%--<a href="activiti_parti_view_all" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>--%>
-                           <%--<a href="analisis_kawasan_view_all" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>--%>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="btn-group m-b-10 pull-right">
+                                 <a href="activiti_parti_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
+                                <a href="activiti_parti_view_all" class="btn btn-primary pull-right"><i class="fa fa-search"></i> CARIAN TERPERINCI</a>
+                             </div>
                         </div>
                     </div>
-               <%-- <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
-                <a href="activiti_parti_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
-                <p class="text-muted font-13 m-b-30">
-                    Your description goes here(Malay / English).
-                </p>--%>
                 <asp:GridView ID="grid_areaInfoElectionParty" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="grid_areaInfoElectionParty_PreRender" AutoGenerateColumns="False">
                     <Columns>
                         <asp:BoundField DataField="election_name" HeaderText="Pilihanraya" SortExpression="election_name" />
