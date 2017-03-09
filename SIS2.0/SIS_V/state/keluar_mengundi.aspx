@@ -109,9 +109,9 @@
                                 <EditItemTemplate>
                                     <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtVotes"></asp:TextBox>
                                     <span style="color: red">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator runat="server" ID="cmpValues" ControlToValidate="txtVotes" ControlToCompare="txtJumlah" Operator="LessThanEqual" Type="Integer" ErrorMessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number " />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <asp:CompareValidator runat="server" ID="cmpValues" ControlToValidate="txtVotes" ControlToCompare="txtJumlah" Operator="LessThanEqual" Type="Integer" ErrorMessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number " Display="Dynamic" />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$" Display="Dynamic"></asp:RegularExpressionValidator>
                                     </span>
                                 </EditItemTemplate>
                                 <ItemTemplate>
