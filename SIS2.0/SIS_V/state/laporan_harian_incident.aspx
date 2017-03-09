@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="laporan_harian_aktiviti.aspx.cs" Inherits="SIS_V.state.laporan_harian_more" MasterPageFile="~/state/state_master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="laporan_harian_incident.aspx.cs" Inherits="SIS_V.state.laporan_harian_incident" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <script type="text/javascript">
@@ -11,10 +11,10 @@
         <div class="row">
         <div class="col-lg-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>Paparan laporan Harian Aktiviti</b></h4>
+                <h4 class="m-t-0 header-title"><b>Paparan Laporan Harian Insiden</b></h4>
                 <div class="grid-structure m-t-30">
                     <div class="grid-container">
-                        <h5 class="m-t-0 header-title" style="font-size:13px"><b>Filter laporan Harian Aktiviti</b></h5>
+                        <h5 class="m-t-0 header-title" style="font-size:13px"><b>Filter Laporan Harian Insiden</b></h5>
                         <div class="row">
                                 <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -25,14 +25,6 @@
                                     <label for="userName">Kawasan</label>
                                         <asp:DropDownList ID="dp_kawasan" CssClass="form-control area-list" runat="server"
                                         ClientIDMode="Static" DataTextField="area_name" DataValueField="area_id">
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <label for="userName">Jenis Aktiviti</label>
-                                    <asp:DropDownList ID="dp_aktiviti" CssClass="form-control parlimen-list" runat="server"
-                                        ClientIDMode="Static" DataTextField="activity_details" DataValueField="activity_id">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -57,18 +49,18 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">   
-                            <asp:GridView ID="GridDataTable3" CssClass="table table-striped table-bordered dt-responsive nowrap" CellSpacing="0" Width="100%" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDtActivity_PreRender">                                   
+                            <asp:GridView ID="GridDataTable6" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable6_PreRender">
                                 <Columns>
                                     <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                     <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
-                                    <asp:BoundField HeaderText="Jenis Aktiviti" DataField="activity_type" ItemStyle-Width="10%"></asp:BoundField>
-                                    <asp:TemplateField HeaderText="Butiran Aktiviti">
-                                        <ItemTemplate>
+                                        <asp:TemplateField HeaderText="Butiran Insiden">
+                                            <ItemTemplate>
                                             <div class="rest-max-height-65" style="overflow:auto">
-                                                <%#Eval("details") %>
-                                            </div>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                                    <%#Eval("details") %>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    <%--<asp:BoundField HeaderText="Butiran Insiden" DataField="details"></asp:BoundField>--%>
                                     <asp:BoundField HeaderText="Parti" DataField="party_name_bm" ItemStyle-Width="10%"></asp:BoundField>
                                     <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
                                     <asp:BoundField HeaderText="Masa" DataField="time" ItemStyle-Width="10%"></asp:BoundField>
@@ -79,8 +71,7 @@
                                     <tr>
                                         <th>Kod Kawasan</th>
                                         <th>Nama Kawasan</th>
-                                        <th>Jenis Aktiviti</th>
-                                        <th>Butiran Aktiviti</th>
+                                        <th>Butiran Insiden</th>
                                         <th>Parti</th>
                                         <th>Tarikh</th>
                                         <th>Masa</th>

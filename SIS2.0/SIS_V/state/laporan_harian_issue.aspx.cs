@@ -9,13 +9,14 @@ using SIS_B;
 
 namespace SIS_V.state
 {
-    public partial class laporan_harian_more : System.Web.UI.Page
+    public partial class laporan_harian_issue : System.Web.UI.Page
     {
         bus_sis_ugc4 bus = new bus_sis_ugc4();
         DataTable areaList = new DataTable();
-        DataTable activityTypeList = new DataTable();
+        DataTable issueList = new DataTable();
+        DataTable sourceList;
         DataTable partyList = new DataTable();
-        DataTable activity = new DataTable();
+        DataTable issues = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["state"].ToString() == null)
@@ -28,7 +29,8 @@ namespace SIS_V.state
                 log_valid.Visible = false;
                 log_empty.Visible = false;
                 setAreaList();
-                setActivityType();
+                setIssueList();
+                setSource();
                 setPartyList();
             }
         }
@@ -40,17 +42,6 @@ namespace SIS_V.state
                 dp_kawasan.DataSource = areaList;
                 dp_kawasan.DataBind();
                 dp_kawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
-            }
-        }
-        protected void setActivityType()
-        {
-            bus.areaTypes = new List<int>(new int[] { 1, 2, 3, 4, 5, 6, 10, 12, 13, 14 });
-            activityTypeList = bus.fill_activity_type();
-            if (activityTypeList.Rows.Count > 0)
-            {
-                dp_aktiviti.DataSource = activityTypeList;
-                dp_aktiviti.DataBind();
-                dp_aktiviti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
             }
         }
 
@@ -66,52 +57,78 @@ namespace SIS_V.state
 
         }
 
-        protected void GridDtActivity_PreRender(object sender, EventArgs e)
+        protected void setIssueList()
         {
-            if (GridDataTable3.Rows.Count > 0)
+            issueList = bus.fill_issue_list();
+            if (issueList.Rows.Count > 0)
             {
-                GridDataTable3.UseAccessibleHeader = true;
-                GridDataTable3.HeaderRow.TableSection = TableRowSection.TableHeader;
+                dp_category.DataSource = issueList;
+                dp_category.DataBind();
+                dp_category.Items.Insert(0, new ListItem("-----SELECT-----", ""));
             }
         }
 
+        protected void setSource()
+        {
+            sourceList = new DataTable();
+            sourceList = bus.fill_info_source();
+            if (sourceList.Rows.Count > 0)
+            {
+                dp_source.DataSource = sourceList;
+                dp_source.DataBind();
+                dp_source.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            }
+
+
+        }
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
             int area_id = (dp_kawasan.SelectedItem.Value != "") ? int.Parse(dp_kawasan.SelectedItem.Value) : -1;
-            int activity_id = (dp_aktiviti.SelectedItem.Value != "") ? int.Parse(dp_aktiviti.SelectedItem.Value) : -1;
+            int issue_id = (dp_category.SelectedItem.Value != "") ? int.Parse(dp_category.SelectedItem.Value) : -1;
+            int lookup_id = (dp_source.SelectedItem.Value != "") ? int.Parse(dp_source.SelectedItem.Value) : -1;
             int party_id = (dp_parti.SelectedItem.Value != "") ? int.Parse(dp_parti.SelectedItem.Value) : -1;
 
-            if (area_id == -1 && activity_id == -1 && party_id == -1)
+            if (area_id == -1 && issue_id == -1 && lookup_id == -1 && party_id == -1)
             {
                 log_valid.Visible = true;
-                GridDataTable3.DataSource = null;
-                GridDataTable3.DataBind();
+                GridDataTable4.DataSource = null;
+                GridDataTable4.DataBind();
             }
             else
             {
                 log_valid.Visible = false;
-                filterActivity(area_id,activity_id,party_id);
+                filterIssue(area_id, issue_id, lookup_id, party_id);
             }
         }
 
-        protected void filterActivity(int area_id, int activity_id, int party_id)
+        protected void filterIssue(int area_id, int issue_id, int lookup_id, int party_id)
         {
             bus.area_id = area_id;
-            bus.activity_id = activity_id;
+            bus.current_issue_id = issue_id;
+            bus.lookup_id = lookup_id;
             bus.party_id = party_id;
-            GridDataTable3.DataSource = null;
-            GridDataTable3.DataBind();
-            activity = bus.fill_filtered_list();
-            if (activity.Rows.Count > 0)
+            GridDataTable4.DataSource = null;
+            GridDataTable4.DataBind();
+            issues = bus.fill_filtered_lssue();
+            if (issues.Rows.Count > 0)
             {
                 log_empty.Visible = false;
-                GridDataTable3.DataSource = activity;
-                GridDataTable3.DataBind();
+                GridDataTable4.DataSource = issues;
+                GridDataTable4.DataBind();
             }
             else
             {
                 log_empty.Visible = true;
+            }
+        }
+
+        protected void GridDataTable4_PreRender(object sender, EventArgs e)
+        {
+            if (GridDataTable4.Rows.Count > 0)
+            {
+                GridDataTable4.UseAccessibleHeader = true;
+                GridDataTable4.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
     }

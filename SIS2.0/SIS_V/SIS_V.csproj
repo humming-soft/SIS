@@ -382,6 +382,10 @@
     <Content Include="state\kawasan_operasi.aspx" />
     <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
+    <Content Include="state\laporan_harian_incident.aspx" />
+    <Content Include="state\laporan_harian_area_status.aspx" />
+    <Content Include="state\laporan_harian_promises.aspx" />
+    <Content Include="state\laporan_harian_issue.aspx" />
     <Content Include="state\laporan_harian_aktiviti.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
     <Content Include="state\parlimen_info_add.aspx" />
@@ -699,6 +703,34 @@
     </Compile>
     <Compile Include="state\laporan_harian_add.aspx.designer.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_incident.aspx.cs">
+      <DependentUpon>laporan_harian_incident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_incident.aspx.designer.cs">
+      <DependentUpon>laporan_harian_incident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_area_status.aspx.cs">
+      <DependentUpon>laporan_harian_area_status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_area_status.aspx.designer.cs">
+      <DependentUpon>laporan_harian_area_status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_promises.aspx.cs">
+      <DependentUpon>laporan_harian_promises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_promises.aspx.designer.cs">
+      <DependentUpon>laporan_harian_promises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_issue.aspx.cs">
+      <DependentUpon>laporan_harian_issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_issue.aspx.designer.cs">
+      <DependentUpon>laporan_harian_issue.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\laporan_harian_aktiviti.aspx.cs">
       <DependentUpon>laporan_harian_aktiviti.aspx</DependentUpon>

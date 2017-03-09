@@ -82,6 +82,34 @@
         //});
     };
 
+    var runGridDtActivity = function () {
+        var oTable = $('#GridDtActivity').dataTable({
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers"
+            },
+            "aaSorting": [
+                [5, 'desc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"]
+            ],
+            "iDisplayLength": 5
+        });
+        $('#GridDtActivity_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+    };
+
     var runDataTable4 = function () {
         var oTable = $('#GridDataTable4').dataTable({
             "aoColumns": [
@@ -203,6 +231,7 @@
         init: function () {
             runDataTable2();
             runDataTable3();
+            runGridDtActivity();
             runDataTable4();
             runDataTable5();
             runDataTable6();
