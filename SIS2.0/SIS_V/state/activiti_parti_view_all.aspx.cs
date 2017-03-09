@@ -17,19 +17,38 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_txtNegeri();
-                fill_parlimen();
-                fill_Election();
-                fill_Party();
-                fill_InfoType();
-                fill_Drop_Sumber();
-                fill_validInfo();
-                fill_category();
-                fill_drop_sumber_isu();
-                fill_drop_status();
-                fill_drop_statusjanji();
-                fill_agency();
-                fill_pertubuhan();
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fill_txtNegeri();
+                    fill_parlimen();
+                    fill_Election();
+                    fill_Party();
+                    fill_InfoType();
+                    fill_Drop_Sumber();
+                    fill_validInfo();
+                    fill_category();
+                    fill_drop_sumber_isu();
+                    fill_drop_status();
+                    fill_drop_statusjanji();
+                    fill_agency();
+                    fill_pertubuhan();
+                    //fill_dun();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
         protected void fill_txtNegeri()
