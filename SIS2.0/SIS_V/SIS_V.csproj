@@ -389,6 +389,7 @@
     <Content Include="state\activiti_parti_view_all.aspx" />
     <Content Include="state\analisis_kawasan_add.aspx" />
     <Content Include="state\analisis_kawasan_view.aspx" />
+    <Content Include="state\analisis_kawasan_view_all.aspx" />
     <Content Include="state\candidate_detail.aspx" />
     <Content Include="state\Dash.aspx" />
     <Content Include="state\detail_incident.aspx" />
@@ -688,6 +689,13 @@
     </Compile>
     <Compile Include="state\analisis_kawasan_view.aspx.designer.cs">
       <DependentUpon>analisis_kawasan_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\analisis_kawasan_view_all.aspx.cs">
+      <DependentUpon>analisis_kawasan_view_all.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\analisis_kawasan_view_all.aspx.designer.cs">
+      <DependentUpon>analisis_kawasan_view_all.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\candidate_detail.aspx.cs">
       <DependentUpon>candidate_detail.aspx</DependentUpon>

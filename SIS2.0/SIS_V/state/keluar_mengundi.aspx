@@ -131,7 +131,7 @@
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                     <asp:LinkButton ID="lnkUpdate" runat="server" CssClass="fa fa-refresh no-loader" CommandName="Update"></asp:LinkButton>
-                                    <asp:LinkButton ID="lnkCancel" runat="server" CssClass="fa fa-close" CommandName="Cancel"></asp:LinkButton>
+                                    <asp:LinkButton ID="lnkCancel" runat="server" CssClass="fa fa-close no-loader" CommandName="Cancel"></asp:LinkButton>
                                 </EditItemTemplate>
                             </asp:TemplateField>
                         </Columns>
