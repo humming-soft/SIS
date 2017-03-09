@@ -10,7 +10,7 @@
 namespace SIS_V.state {
     
     
-    public partial class laporan_harian_more {
+    public partial class laporan_harian_issue {
         
         /// <summary>
         /// log_valid control.
@@ -31,13 +31,22 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList dp_kawasan;
         
         /// <summary>
-        /// dp_aktiviti control.
+        /// dp_category control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_aktiviti;
+        protected global::System.Web.UI.WebControls.DropDownList dp_category;
+        
+        /// <summary>
+        /// dp_source control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dp_source;
         
         /// <summary>
         /// dp_parti control.
@@ -67,13 +76,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Button btn_cancel;
         
         /// <summary>
-        /// GridDataTable3 control.
+        /// GridDataTable4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridDataTable3;
+        protected global::System.Web.UI.WebControls.GridView GridDataTable4;
         
         /// <summary>
         /// log_empty control.

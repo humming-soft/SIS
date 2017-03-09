@@ -218,5 +218,184 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataTable data_areaList(string sp, int sid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", sid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable data_activityType(String sp, int typeId)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@activity_type", typeId);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable data_partyList(String sp)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable data_filterActivity(String sp, int state_id, int area_id, int activity_id, int party_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@activity_id", activity_id);
+                cmd.Parameters.AddWithValue("@party_id", party_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable data_filterIssue(String sp, int state_id, int area_id, int current_issue_id, int lookup_id, int party_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@cissue_id", current_issue_id);
+                cmd.Parameters.AddWithValue("@lookup_id", lookup_id);
+                cmd.Parameters.AddWithValue("@party_id", party_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+
+        public DataTable fill_filtered_promises(string sp, int sid, int area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", sid);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_filtered_incident(string sp, int sid, int area_id, int party_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", sid);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@party_id", party_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_filtered_status(string sp, int sid, int area_id, string status)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", sid);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@status_name", status);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }
