@@ -59,7 +59,13 @@
         }
 
         function showGrid() {
-            $("#voteGrid").show();
+            var area_type_id = $('#ContentPlaceHolder1_ddlKawasan option:selected').val();
+            var area = $('#ContentPlaceHolder1_ddlAreaList option:selected').val();
+            if (area_type_id != '' && area != '') {
+                $("#voteGrid").show();
+            } else {
+                hideGrid();
+            }
         }
     </script>
 </asp:Content>
@@ -105,6 +111,10 @@
                         <div class="form-group">
                             <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Show" OnClick="btnSubmit_Click" OnClientClick="validation_keluar();showGrid();" />
                         </div>
+                    </div>
+                    <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>We could not process your request, please check your form fields!</p>
                     </div>
                 </div>
                 <div id="voteGrid" class="">

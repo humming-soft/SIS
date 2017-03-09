@@ -16,6 +16,7 @@ namespace SIS_V.state
         DataTable dt, dt1;
         protected void Page_Load(object sender, EventArgs e)
         {
+            invalid.Visible = false;
             if (!IsPostBack)
             {
                 CheckIsLogin();
@@ -69,7 +70,15 @@ namespace SIS_V.state
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            fill_grid();
+            if (ddlKawasan.SelectedIndex != 0 && ddlAreaList.SelectedIndex != 0)
+            {
+                invalid.Visible = false;
+                fill_grid();
+            }
+            else
+            {
+                invalid.Visible = true;
+            }
         }
 
         protected void fill_grid()
