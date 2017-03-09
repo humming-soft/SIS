@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <asp:GridView ID="GridKM" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="polling_district_id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing" OnRowUpdating="GridKM_RowUpdating">
+                    <asp:GridView ID="GridKM" runat="server" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="polling_district_id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing" OnRowUpdating="GridKM_RowUpdating">
                         <Columns>
                             <asp:BoundField DataField="polling_district" HeaderText="NAMA DAERAH MENGUNDI" ReadOnly="true" />
                             <asp:TemplateField HeaderText="TELAH KELUAR">
@@ -120,7 +120,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="JUMLAH PENGUNDI">
                                 <ItemTemplate>
-                                    <asp:TextBox runat="server" Text='<%# Bind("total_voters") %>' ID="txtJumlah" ReadOnly="true" Style="border: none;"></asp:TextBox>
+                                    <asp:TextBox runat="server" Text='<%# Bind("total_voters") %>' ID="txtJumlah" ReadOnly="true" Style="border: none; display:inline-block"></asp:TextBox>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="percentage" HeaderText="PERATUS" ReadOnly="true" />
