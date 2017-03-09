@@ -17,6 +17,8 @@
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2">
                             <a href="activiti_parti_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
+                            <%--<a href="activiti_parti_view_all" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>--%>
+                           <%--<a href="analisis_kawasan_view_all" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>--%>
                         </div>
                     </div>
                <%-- <h4 class="m-t-0 header-title"><b>Paparan Maklumat Parti Bertanding</b></h4>
