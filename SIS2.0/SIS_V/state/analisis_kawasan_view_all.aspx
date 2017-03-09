@@ -37,6 +37,14 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>Tambah Maklumat Analisis Kawasan</b></h4>
                 <div>
+                 <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+                </div>
+                <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <asp:Label ID="lblsuccess" runat="server"></asp:Label>
+                </div>
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="form-group">
@@ -57,31 +65,40 @@
                             </div>
                         </div>
                         <div class="col-lg-3">
-                            <div class="form-group text-left m-b-0 m-t-15">
-                                <asp:Button ID="btn_search" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClick="btn_search_Click" />
+                            <div class="form-group text-left m-b-0 m-t-25">
+                                <asp:Button ID="btn_search" runat="server" CssClass="btn btn-primary waves-light" Text="Carian" OnClick="btn_search_Click" />
                             </div>
                         </div>
                     </div>
+                    <hr />
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                                <asp:GridView ID="GridKawasan" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridKawasan_PreRender" AutoGenerateColumns="False">
-                                    <Columns>
-                                        <asp:TemplateField HeaderText="#" ItemStyle-Width="3%">
-                                            <ItemTemplate>
-                                                <span>
-                                                    <%#Container.DataItemIndex + 1%>
-                                                </span>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="area_type_name" HeaderText="KAWASAN" />
-                                        <asp:BoundField DataField="areacode" HeaderText="KODE KAWASAN" />
-                                        <asp:BoundField DataField="areaname" HeaderText="NAMA KAWASAN" />
-                                        <asp:BoundField DataField="color" HeaderText="STATUS" />
-                                        <asp:BoundField DataField="date" HeaderText="TARIKH" />
-                                    </Columns>
-                                </asp:GridView>
-                            </div>
+                            <asp:GridView ID="GridKawasan" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridKawasan_PreRender" AutoGenerateColumns="False" DataKeyNames="record_id" OnRowDeleting="GridKawasan_RowDeleting">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="#" ItemStyle-Width="3%">
+                                        <ItemTemplate>
+                                            <span>
+                                                <%#Container.DataItemIndex + 1%>
+                                            </span>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="area_type_name" HeaderText="KAWASAN" />
+                                    <asp:BoundField DataField="areacode" HeaderText="KODE KAWASAN" />
+                                    <asp:BoundField DataField="areaname" HeaderText="NAMA KAWASAN" />
+                                    <asp:BoundField DataField="color" HeaderText="STATUS" />
+                                    <asp:BoundField DataField="date" HeaderText="TARIKH" />
+                                    <asp:TemplateField HeaderText="MAKLUMAT" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkEdit" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkEdit_Click"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                   <asp:TemplateField HeaderText="BUANG" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Are you sure you want to delete?')) return false;"  CommandName="Delete"></asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
                         </div>
                     </div>
                 </div>

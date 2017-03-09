@@ -28,11 +28,17 @@
                     <asp:Label ID="lblsuccess" runat="server"></asp:Label>
                 </div>
                 <div class="card-box table-responsive">
-
-                    <h4 class="m-t-0 header-title"><b>Senarai Maklumat Analisis Kawasan</b></h4>
-<%--                    <p class="text-muted font-13 m-b-30">
-                        Your description goes here(Malay / English).
-                    </p>--%>
+                   <div class="row m-b-10">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                              <h4 class="m-t-0 header-title"><b>Senarai Maklumat Analisis Kawasan</b></h4>
+                             <p class="text-muted font-13 m-b-30">500 Rekod Terkini.</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="btn-group m-b-10 pull-right">
+                                <a href="analisis_kawasan_view_all" class="btn btn-primary pull-right"><i class="fa fa-search"></i> CARIAN TERPERINCI</a>
+                             </div>
+                        </div>
+                    </div>
                   <asp:GridView ID="GridKawasan" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="GridKawasan_PreRender" AutoGenerateColumns="False" DataKeyNames="record_id" OnRowDeleting="GridKawasan_RowDeleting">
                     <Columns>
                         <asp:TemplateField HeaderText="#" ItemStyle-Width="3%">

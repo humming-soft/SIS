@@ -580,3 +580,20 @@
 .t-t-upper{
     text-transform:uppercase;
 }
+.sub-text{
+    position: absolute;
+    margin: -21px;
+    margin-left: 91px;
+    font-size: 13px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: #2d81e0 !important;
+}
+
+.poi{
+    text-align:right;
+    font-size: 13px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: #2d81e0 !important;
+}

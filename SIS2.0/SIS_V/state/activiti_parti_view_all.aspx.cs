@@ -264,6 +264,7 @@ namespace SIS_V.state
             grid_areaInfoElectionParty.DataSource = null;
             grid_areaInfoElectionParty.DataBind();
             bus.state_id = int.Parse(Session["state"].ToString());
+
             if (drop_prlimen.SelectedValue.ToString() != "")
             {
                 bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
@@ -390,6 +391,9 @@ namespace SIS_V.state
             if (data.Rows.Count > 0)
             {
                 grid_areaInfoElectionParty.DataSource = data;
+                grid_areaInfoElectionParty.DataBind();
+            }else{
+                grid_areaInfoElectionParty.DataSource = null;
                 grid_areaInfoElectionParty.DataBind();
             }
         }

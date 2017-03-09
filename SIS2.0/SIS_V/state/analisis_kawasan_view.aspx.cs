@@ -61,12 +61,12 @@ namespace SIS_V.state
             bus.rid = int.Parse(GridKawasan.DataKeys[row.RowIndex].Value.ToString());
             if (bus.delete_area_analysis() > 0)
             {
-                lblsuccess.Text = "Data Dimasukkan Berjaya!";
+                lblsuccess.Text = "Rekod Dipadam Berjaya!";
                 valid.Visible = true;
             }
             else
             {
-                lblinvalid.Text = "Ralat yang tidak dijangka, Masukkan Gagal!";
+                lblinvalid.Text = "Ralat Tidak Dijangka, Pemotongan Gagal!";
                 invalid.Visible = true;
             }
             fillAreaAnalysis();

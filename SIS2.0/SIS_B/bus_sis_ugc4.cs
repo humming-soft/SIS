@@ -91,7 +91,7 @@ namespace SIS_B
         {
             return data.data_turnout("sp_GetVoterTurnout", sid);
         }
-        //Bug Fixing
+        //Bug Fixing - Additional
         public DataTable fill_area_list()
         {
             return data.data_areaList("usp_GetAreaList", sid);
