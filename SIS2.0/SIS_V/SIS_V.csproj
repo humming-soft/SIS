@@ -190,6 +190,7 @@
     <Content Include="assets\js\Validations\activiti_parti_add.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
+    <Content Include="assets\js\Validations\keluar_mengundi.js" />
     <Content Include="assets\js\Validations\parliment_info.js" />
     <Content Include="assets\js\Validations\password_check.js" />
     <Content Include="assets\js\Validations\tetapan_pentadbir_add.js" />
@@ -234,11 +235,21 @@
     <Content Include="assets\plugins\chart.js\chart.min.js" />
     <Content Include="assets\plugins\chartist\dist\chartist.min.css" />
     <Content Include="assets\plugins\chartist\dist\chartist.min.js" />
+    <Content Include="assets\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="assets\plugins\chosen\chosen-sprite.png" />
+    <Content Include="assets\plugins\chosen\chosen.css" />
+    <Content Include="assets\plugins\chosen\chosen.jquery.js" />
+    <Content Include="assets\plugins\chosen\chosen.jquery.min.js" />
+    <Content Include="assets\plugins\chosen\chosen.min.css" />
+    <Content Include="assets\plugins\chosen\chosen.proto.js" />
+    <Content Include="assets\plugins\chosen\chosen.proto.min.js" />
     <Content Include="assets\plugins\countdown\dest\jquery.countdown.min.js" />
     <Content Include="assets\plugins\counterup\jquery.counterup.min.js" />
     <Content Include="assets\plugins\custombox\dist\custombox.min.css" />
     <Content Include="assets\plugins\custombox\dist\custombox.min.js" />
     <Content Include="assets\plugins\custombox\dist\legacy.min.js" />
+    <Content Include="assets\plugins\Customselect\jquery-customselect.css" />
+    <Content Include="assets\plugins\Customselect\jquery-customselect.js" />
     <Content Include="assets\plugins\d3\d3.min.js" />
     <Content Include="assets\plugins\datatables\buttons.bootstrap.min.css" />
     <Content Include="assets\plugins\datatables\buttons.bootstrap.min.js" />
@@ -372,6 +383,7 @@
     <Content Include="Sessiontimeout.aspx" />
     <Content Include="state\activiti_bakal_ci_add.aspx" />
     <Content Include="state\activiti_bakal_ci_view.aspx" />
+    <Content Include="state\activiti_bakal_ci_views.aspx" />
     <Content Include="state\activiti_parti_add.aspx" />
     <Content Include="state\activiti_parti_view.aspx" />
     <Content Include="state\activiti_parti_view_all.aspx" />
@@ -384,6 +396,10 @@
     <Content Include="state\kawasan_operasi.aspx" />
     <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
+    <Content Include="state\laporan_harian_incident.aspx" />
+    <Content Include="state\laporan_harian_area_status.aspx" />
+    <Content Include="state\laporan_harian_promises.aspx" />
+    <Content Include="state\laporan_harian_issue.aspx" />
     <Content Include="state\laporan_harian_aktiviti.aspx" />
     <Content Include="state\laporan_harian_view.aspx" />
     <Content Include="state\parlimen_info_add.aspx" />
@@ -632,6 +648,13 @@
     <Compile Include="state\activiti_bakal_ci_view.aspx.designer.cs">
       <DependentUpon>activiti_bakal_ci_view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="state\activiti_bakal_ci_views.aspx.cs">
+      <DependentUpon>activiti_bakal_ci_views.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\activiti_bakal_ci_views.aspx.designer.cs">
+      <DependentUpon>activiti_bakal_ci_views.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\activiti_parti_add.aspx.cs">
       <DependentUpon>activiti_parti_add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -715,6 +738,34 @@
     </Compile>
     <Compile Include="state\laporan_harian_add.aspx.designer.cs">
       <DependentUpon>laporan_harian_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_incident.aspx.cs">
+      <DependentUpon>laporan_harian_incident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_incident.aspx.designer.cs">
+      <DependentUpon>laporan_harian_incident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_area_status.aspx.cs">
+      <DependentUpon>laporan_harian_area_status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_area_status.aspx.designer.cs">
+      <DependentUpon>laporan_harian_area_status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_promises.aspx.cs">
+      <DependentUpon>laporan_harian_promises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_promises.aspx.designer.cs">
+      <DependentUpon>laporan_harian_promises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\laporan_harian_issue.aspx.cs">
+      <DependentUpon>laporan_harian_issue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\laporan_harian_issue.aspx.designer.cs">
+      <DependentUpon>laporan_harian_issue.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\laporan_harian_aktiviti.aspx.cs">
       <DependentUpon>laporan_harian_aktiviti.aspx</DependentUpon>

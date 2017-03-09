@@ -10,78 +10,78 @@
 namespace SIS_V.state {
     
     
-    public partial class laporan_harian_more {
+    public partial class activiti_bakal_ci_views {
         
         /// <summary>
-        /// log_valid control.
+        /// invalid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl log_valid;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
         
         /// <summary>
-        /// dp_kawasan control.
+        /// lblinvalid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_kawasan;
+        protected global::System.Web.UI.WebControls.Label lblinvalid;
         
         /// <summary>
-        /// dp_aktiviti control.
+        /// ddlName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_aktiviti;
+        protected global::System.Web.UI.WebControls.DropDownList ddlName;
         
         /// <summary>
-        /// dp_parti control.
+        /// ddlJenis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_parti;
+        protected global::System.Web.UI.WebControls.DropDownList ddlJenis;
         
         /// <summary>
-        /// btn_submit control.
+        /// ddlSumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSumber;
         
         /// <summary>
-        /// btn_cancel control.
+        /// ddlTahap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancel;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTahap;
         
         /// <summary>
-        /// GridDataTable3 control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridDataTable3;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// log_empty control.
+        /// GridView_Cdetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable log_empty;
+        protected global::System.Web.UI.WebControls.GridView GridView_Cdetails;
     }
 }

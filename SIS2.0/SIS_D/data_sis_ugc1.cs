@@ -535,5 +535,30 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataTable GetCandidateList_All(int state_id,int name, int jenis, int sumber, int tahap)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetCandidateAreaElectionDetails_All";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@jenis", jenis);
+                cmd.Parameters.AddWithValue("@sumber", sumber);
+                cmd.Parameters.AddWithValue("@tahap", tahap);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

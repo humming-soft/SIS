@@ -1,14 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_bakal_ci_add.aspx.cs" Inherits="SIS_V.state.activiti_bakal_ci_add" MasterPageFile="~/state/state_master.Master" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%--    <script type="text/javascript">
-        $(function () {
-            $("#Button1").click(function () {
-                alert('hi');
-                $('#con-close-modal').modal('show');
-            });
-        });
-    </script>--%>
     <script type="text/javascript">
         function validation_activiti() {
             Activiti_Bakal.init();
@@ -23,18 +15,18 @@
                 orientation: "bottom auto",
                 autoclose: true
             });
-
-            $("#ContentPlaceHolder1_ddlName").searchable({
-                maxListSize: 200, // if list size are less than maxListSize, show them all
-                maxMultiMatch: 300, // how many matching entries should be displayed
-                exactMatch: false, // Exact matching on search
-                wildcards: true, // Support for wildcard characters (*, ?)
-                ignoreCase: true, // Ignore case sensitivity
-                latency: 200, // how many millis to wait until starting search
-                warnMultiMatch: 'top {0} matches ...',
-                warnNoMatch: 'No Matches Found...',
-                zIndex: 'auto'
-            });
+            $("#ddlName").customselect();
+            //$("#ContentPlaceHolder1_ddlName").searchable({
+            //    maxListSize: 200, // if list size are less than maxListSize, show them all
+            //    maxMultiMatch: 300, // how many matching entries should be displayed
+            //    exactMatch: false, // Exact matching on search
+            //    wildcards: true, // Support for wildcard characters (*, ?)
+            //    ignoreCase: true, // Ignore case sensitivity
+            //    latency: 200, // how many millis to wait until starting search
+            //    warnMultiMatch: 'top {0} matches ...',
+            //    warnNoMatch: 'No Matches Found...',
+            //    zIndex: 'auto'
+            //});
         });
     </script>
     <script>
@@ -106,7 +98,7 @@
                     <div class="col-lg-8">
                         <div class="form-group">
                             <label for="userName">Name Calon</label>
-                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_id">
+                            <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -143,108 +135,22 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <%--<textarea class="form-control" style="width: 100%; min-height: 300px"></textarea>--%>
+                            <label for="userName">Butiran Aktiviti</label>
                             <asp:TextBox ID="txtButiran" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan"  OnClientClick="validation_activiti()" OnClick="btnSubmit_Click" />
+                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="validation_activiti()" OnClick="btnSubmit_Click" />
                     <asp:Button ID="btnClear" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" OnClick="btnClear_Click" />
                 </div>
 
                 <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <p>We could not process your request, please check your form fields!</p>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
-    <!-- modal -->
-    <%--<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Carian Bakal Calon / Individu</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Jenis Carian</label>
-                                <asp:DropDownList ID="DropDownList9" runat="server">
-                                    <asp:ListItem>Nama Bakal Calon/Individu</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="form-group">
-                                <label for="field-2" class="control-label">Keyword</label>
-                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <asp:Button ID="Button1" CssClass="btn btn-default" Style="margin-top: 24px;" runat="server" Text="Cari" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <table class="table table-responsive table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Nama</th>
-                                        <th>No K.P</th>
-                                        <th>Parti</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="Button4" runat="server" CssClass="btn btn-default" Text="Okay" />
-                    <asp:Button ID="Button5" runat="server" CssClass="btn btn-info" Text="Batal" />
-                </div>
-            </div>
-        </div>
-    </div>--%>
-    <!-- /.modal -->
 </asp:Content>
 

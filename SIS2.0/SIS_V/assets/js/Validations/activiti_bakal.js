@@ -10,6 +10,7 @@ var Activiti_Bakal = function () {
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
         form.validate({
+            ignore: [],
             rules: {
                 ctl00$ContentPlaceHolder1$ddlPilihanraya: {
                     required: true
@@ -39,21 +40,6 @@ var Activiti_Bakal = function () {
                 ctl00$ContentPlaceHolder1$txtButiran: {
                     required: true
                 }
-                //ctl00$ContentPlaceHolder1$txtPurataJantina: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtKemudahanAwam: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtTaburanPenduduk: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtKomposisiEtnik: {
-                //    required: true
-                //},
-                //ctl00$ContentPlaceHolder1$txtKedarPertumbuhanPenduduk: {
-                //    required: true
-                //}
             },
             submitHandler: function (form) {
                 errorHandler.hide();

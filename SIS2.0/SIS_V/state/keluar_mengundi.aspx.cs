@@ -13,7 +13,7 @@ namespace SIS_V.state
     public partial class keluar_mengundi : System.Web.UI.Page
     {
         bus_sis_ugc2 objBUS = new bus_sis_ugc2();
-        DataTable dt;
+        DataTable dt, dt1;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -50,11 +50,12 @@ namespace SIS_V.state
         }
 
         [WebMethod]
-        public static List<Area> GetAreaList(int area_type_id)
+        public static List<Area> GetAreaList(int area_type_id, int sid)
         {
             List<Area> area = new List<Area>();
             bus_sis_ugc2 objBUS = new bus_sis_ugc2();
             objBUS.area_type_id = area_type_id;
+            objBUS.state_id = sid;
             DataTable dt = objBUS.GetAreaList();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -64,6 +65,22 @@ namespace SIS_V.state
                 area.Add(_Area);
             }
             return area;
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            fill_grid();
+        }
+
+        protected void fill_grid()
+        {
+            objBUS.area_id = int.Parse(Request.Form[ddlAreaList.UniqueID]);
+            dt1 = objBUS.GetPollingDetails();
+            if (dt1.Rows.Count > 0)
+            {
+                GridKM.DataSource = dt1;
+                GridKM.DataBind();
+            }
         }
 
         protected void GridKM_PreRender(object sender, EventArgs e)
@@ -78,11 +95,27 @@ namespace SIS_V.state
         protected void GridKM_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridKM.EditIndex = e.NewEditIndex;
+            fill_grid();
         }
 
         protected void GridKM_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridKM.EditIndex = -1;
+            fill_grid();
+        }
+
+        protected void GridKM_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            objBUS.area_id = int.Parse(hiddenArea.Value);
+            objBUS.election_id = int.Parse(Session["election_id"].ToString());
+            objBUS.polling_district_id = int.Parse(GridKM.DataKeys[e.RowIndex].Value.ToString());
+            objBUS.no_of_vote = int.Parse(((TextBox)GridKM.Rows[e.RowIndex].FindControl("txtVotes")).Text);
+            int chk = objBUS.UpdateNoVote();
+            if (chk == 0)
+            {
+                GridKM.EditIndex = -1;
+                fill_grid();
+            }
         }
     }
 }

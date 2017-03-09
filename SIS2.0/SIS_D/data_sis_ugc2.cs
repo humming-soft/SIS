@@ -366,7 +366,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataTable GetAreaList(int area_type_id)
+        public DataTable GetAreaList(int area_type_id, int state_id)
         {
             try
             {
@@ -374,12 +374,60 @@ namespace SIS_D
                 cmd.CommandText = "usp_GetAreaCodeName";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@area_type_id", area_type_id);
+                cmd.Parameters.AddWithValue("@state_id", state_id);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();
                 da.SelectCommand = cmd;
                 da.Fill(dt);
                 return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable GetPollingDetails(int area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetPollingDetails";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int UpdateNoVote(int area_id, int election_id, int polling_district_id, int no_of_vote)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_UpdateNoVote";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@election_id", election_id);
+                cmd.Parameters.AddWithValue("@polling_district_id", polling_district_id);
+                cmd.Parameters.AddWithValue("@no_of_vote", no_of_vote);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
             }
             finally
             {

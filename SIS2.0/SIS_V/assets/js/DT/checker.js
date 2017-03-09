@@ -61,7 +61,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -85,7 +85,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable2_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -124,6 +124,13 @@
 
     var km = function () {
         var oTable = $('#GridKM').dataTable({
+            "columns": [
+                null,
+               { "orderable": false },
+               { "orderable": false },
+               { "orderable": false },
+               { "orderable": false }
+            ],
             "aoColumnDefs": [{
                 "aTargets": [0]
             }],
@@ -141,6 +148,7 @@
             ],
             // set the initial value
             "iDisplayLength": 5,
+            "bPaginate": false
         });
         $('#GridKM_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -164,7 +172,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridPinfo_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -188,7 +196,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#Gridteta_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -213,7 +221,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#grid_user_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -258,9 +266,60 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#grid_areaInfoElectionParty_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        // modify table search input
+    };
+
+    var ci_filters = function () {
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function (a) {
+                var c = a.split(' ');
+                var ukDatea = c[0].split('-');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
+        var oTable = $('#GridView_Cdetails').dataTable({
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null
+            ],
+
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers",
+                "sEmptyTable": "My Custom Message On Empty Table"
+            },
+            "aaSorting": [
+                [9, 'desc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "iDisplayLength": 10,
+        });
+        $('#GridView_Cdetails_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
     return {
@@ -274,6 +333,7 @@
             tetapan();
             guser();
             gri_party();
+            ci_filters();
         }
     };
 }();

@@ -35,7 +35,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable2_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -65,7 +65,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5
+            "iDisplayLength": 10
         });
         $('#GridDataTable3_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -80,6 +80,34 @@
         //                });
         //    }
         //});
+    };
+
+    var runGridDtActivity = function () {
+        var oTable = $('#GridDtActivity').dataTable({
+            "aoColumns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                { "sType": "date-uk" },
+                null
+            ],
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers"
+            },
+            "aaSorting": [
+                [5, 'desc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"]
+            ],
+            "iDisplayLength": 10
+        });
+        $('#GridDtActivity_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
     };
 
     var runDataTable4 = function () {
@@ -107,7 +135,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable4_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -136,7 +164,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable5_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -165,7 +193,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable6_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -193,7 +221,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable7_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -203,6 +231,7 @@
         init: function () {
             runDataTable2();
             runDataTable3();
+            runGridDtActivity();
             runDataTable4();
             runDataTable5();
             runDataTable6();

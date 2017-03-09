@@ -23,36 +23,12 @@ namespace SIS_V.admin
 
             switch (pageName)
             {
-                case "utama":
-                    dash.Attributes["class"] = "has-submenu active";
-                    //pr.InnerHtml = "Dashboard";
-                    //cr.InnerHtml = "Dashboard Utama";
+                case "tetapan_pentadbir_view":
+                    teta.Attributes["class"] = "has-submenu active";
                     break;
-                case "activiti_bakal_ci_view":
-                    prapiliha.Attributes["class"] = "has-submenu active";
-                    //pr.InnerHtml = "Pra-Pilihanraya";
-                    //cr.InnerHtml = "Aktiviti Bakal Calon / Individu";
+                case "tetapan_pentadbir_add":
+                    teta.Attributes["class"] = "has-submenu active";
                     break;
-                //case "JournalList.aspx":
-                //    design.Attributes["class"] = "has-submenu active";
-                //    design2.Attributes["class"] = "active";
-                //    break;
-                //case "Journal.aspx":
-                //    design.Attributes["class"] = "has-submenu active";
-                //    design2.Attributes["class"] = "active";
-                //    break;
-                //case "start_journal.aspx":
-                //    design.Attributes["class"] = "has-submenu active";
-                //    design1.Attributes["class"] = "active";
-                //    break;
-                //case "Report1.aspx":
-                //    report.Attributes["class"] = "has-submenu active";
-                //    report1.Attributes["class"] = "active";
-                //    break;
-                //case "Report2.aspx":
-                //    report.Attributes["class"] = "has-submenu active";
-                //    report2.Attributes["class"] = "active";
-                //    break;
             }
         }
 
