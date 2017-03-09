@@ -91,7 +91,7 @@
         <div class="text-center">
             <img src="assets/images/logojatanegara_small.png" alt="Jata Negara" class="image image-jata-negara" />
             <p class="head-jata-negara">Majlis Keselamatan Negara</p>
-            <a href="index-2.html" class="logo logo-lg"><span>Strategic Information System</span> </a>
+            <a href="#" class="logo logo-lg"><span>Strategic Information System</span> </a>
         </div>
         <form id="form1" runat="server" class="form-horizontal m-t-20">
             <div class="section">
