@@ -16,11 +16,29 @@ namespace SIS_V.state
         int area_id;
         protected void Page_Load(object sender, EventArgs e)
         {
+            invalid.Visible = false;            
             if (!IsPostBack)
             {
-                //area_id = int.Parse(Session["area_id"].ToString());
-                GetPInfoDetails();
-                invalid.Visible = false;
+                CheckIsLogin();
+
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    GetPInfoDetails();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 

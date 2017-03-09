@@ -33,8 +33,26 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                state_id = int.Parse(Session["state"].ToString());
-                GetConOpAreaList();
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    state_id = int.Parse(Session["state"].ToString());
+                    GetConOpAreaList();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 

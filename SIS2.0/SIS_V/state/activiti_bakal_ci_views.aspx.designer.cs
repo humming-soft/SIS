@@ -10,52 +10,43 @@
 namespace SIS_V.state {
     
     
-    public partial class keluar_mengundi {
+    public partial class activiti_bakal_ci_views {
         
         /// <summary>
-        /// lblPilihanraya control.
+        /// ddlName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPilihanraya;
+        protected global::System.Web.UI.WebControls.DropDownList ddlName;
         
         /// <summary>
-        /// lblNageri control.
+        /// ddlJenis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNageri;
+        protected global::System.Web.UI.WebControls.DropDownList ddlJenis;
         
         /// <summary>
-        /// ddlKawasan control.
+        /// ddlSumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlKawasan;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSumber;
         
         /// <summary>
-        /// ddlAreaList control.
+        /// ddlTahap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAreaList;
-        
-        /// <summary>
-        /// hiddenArea control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hiddenArea;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTahap;
         
         /// <summary>
         /// btnSubmit control.
@@ -67,12 +58,12 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// GridKM control.
+        /// GridView_Cdetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridKM;
+        protected global::System.Web.UI.WebControls.GridView GridView_Cdetails;
     }
 }

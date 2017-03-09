@@ -143,7 +143,6 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <%--<textarea class="form-control" style="width: 100%; min-height: 300px"></textarea>--%>
                             <asp:TextBox ID="txtButiran" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
@@ -160,91 +159,5 @@
             </div>
         </div>
     </div>
-    <!-- modal -->
-    <%--<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Carian Bakal Calon / Individu</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Jenis Carian</label>
-                                <asp:DropDownList ID="DropDownList9" runat="server">
-                                    <asp:ListItem>Nama Bakal Calon/Individu</asp:ListItem>
-                                </asp:DropDownList>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="form-group">
-                                <label for="field-2" class="control-label">Keyword</label>
-                                <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <asp:Button ID="Button1" CssClass="btn btn-default" Style="margin-top: 24px;" runat="server" Text="Cari" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <table class="table table-responsive table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Nama</th>
-                                        <th>No K.P</th>
-                                        <th>Parti</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="Button4" runat="server" CssClass="btn btn-default" Text="Okay" />
-                    <asp:Button ID="Button5" runat="server" CssClass="btn btn-info" Text="Batal" />
-                </div>
-            </div>
-        </div>
-    </div>--%>
-    <!-- /.modal -->
 </asp:Content>
 

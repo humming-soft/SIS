@@ -159,6 +159,21 @@ namespace SIS_V.state
                 case "laporan_harian_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     break;
+                case "keluar_mengundi":
+                    pilihanraya.Attributes["class"] = "has-submenu active";
+                    break;
+                case "analisis_kawasan_view":
+                    analisis.Attributes["class"] = "has-submenu active";
+                    break;
+                case "analisis_kawasan_add":
+                    analisis.Attributes["class"] = "has-submenu active";
+                    break;
+                case "parlimen_info_view":
+                    tetapan.Attributes["class"] = "has-submenu active";
+                    break;
+                case "parlimen_info_add":
+                    tetapan.Attributes["class"] = "has-submenu active";
+                    break;
             }
         }
 

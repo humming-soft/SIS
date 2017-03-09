@@ -16,10 +16,29 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                FillActivitiDataTable();
+                CheckIsLogin();
             }
         }
 
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    FillActivitiDataTable();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
+            }
+        }
         public void FillActivitiDataTable()
         {
             objBUS.state_id = int.Parse(Session["state"].ToString());
