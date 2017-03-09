@@ -18,6 +18,7 @@ namespace SIS_V.state
             if (!IsPostBack)
             {
                 CheckIsLogin();
+                log_valid.Visible = false;
             }
         }
         protected void CheckIsLogin()
@@ -264,7 +265,14 @@ namespace SIS_V.state
             grid_areaInfoElectionParty.DataSource = null;
             grid_areaInfoElectionParty.DataBind();
             bus.state_id = int.Parse(Session["state"].ToString());
-
+            if (drop_prlimen.SelectedValue.ToString() != "" || drop_sumber.SelectedValue.ToString() != ""
+                || drop_tahap.SelectedValue.ToString() != "" || drop_mengudi.SelectedValue.ToString() != "" ||
+                drop_pilihnraya.SelectedValue.ToString() != "" || drop_parti.SelectedValue.ToString() != ""
+                || drop_jenis.SelectedValue.ToString() != "" || drop_category.SelectedValue.ToString() != "" ||
+                drop_sumbar_isu.SelectedValue.ToString() != "" || drop_agency.SelectedValue.ToString() != "" ||
+               drop_prtubuhan.SelectedValue.ToString() != "" )
+            {
+                log_valid.Visible = false;
             if (drop_prlimen.SelectedValue.ToString() != "")
             {
                 bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
@@ -387,6 +395,11 @@ namespace SIS_V.state
             {
                 bus.source_election_status_ngo_id = -1;
             }
+            }
+            else{
+                log_valid.Visible = true;
+            }
+        
             DataTable data = bus.fill_gridElectionParty_viewAll();
             if (data.Rows.Count > 0)
             {

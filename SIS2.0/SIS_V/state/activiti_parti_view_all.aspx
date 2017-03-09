@@ -147,6 +147,10 @@
                 <p class="text-muted font-13 m-b-30">
 
                 </p>
+                <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>Please Select from the list to filter the result!</p>
+                    </div>
                 <div class="row hidden">
                     <div class="col-lg-12" >
                         <div class="form-group">
