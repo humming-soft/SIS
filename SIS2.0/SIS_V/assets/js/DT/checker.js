@@ -61,7 +61,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -85,7 +85,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridDataTable2_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -165,7 +165,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridPinfo_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -189,7 +189,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#Gridteta_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -214,7 +214,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#grid_user_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -259,7 +259,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#grid_areaInfoElectionParty_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
@@ -310,7 +310,7 @@
                 [5, 10, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
-            "iDisplayLength": 5,
+            "iDisplayLength": 10,
         });
         $('#GridView_Cdetails_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input

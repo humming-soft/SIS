@@ -135,19 +135,20 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
+                            <label for="userName">Butiran Aktiviti</label>
                             <asp:TextBox ID="txtButiran" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan"  OnClientClick="validation_activiti()" OnClick="btnSubmit_Click" />
+                    <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="validation_activiti()" OnClick="btnSubmit_Click" />
                     <asp:Button ID="btnClear" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" OnClick="btnClear_Click" />
                 </div>
 
                 <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <p>We could not process your request, please check your form fields!</p>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
