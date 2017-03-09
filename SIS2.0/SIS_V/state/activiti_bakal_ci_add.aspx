@@ -1,14 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activiti_bakal_ci_add.aspx.cs" Inherits="SIS_V.state.activiti_bakal_ci_add" MasterPageFile="~/state/state_master.Master" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%--    <script type="text/javascript">
-        $(function () {
-            $("#Button1").click(function () {
-                alert('hi');
-                $('#con-close-modal').modal('show');
-            });
-        });
-    </script>--%>
     <script type="text/javascript">
         function validation_activiti() {
             Activiti_Bakal.init();
@@ -23,18 +15,18 @@
                 orientation: "bottom auto",
                 autoclose: true
             });
-
-            $("#ContentPlaceHolder1_ddlName").searchable({
-                maxListSize: 200, // if list size are less than maxListSize, show them all
-                maxMultiMatch: 300, // how many matching entries should be displayed
-                exactMatch: false, // Exact matching on search
-                wildcards: true, // Support for wildcard characters (*, ?)
-                ignoreCase: true, // Ignore case sensitivity
-                latency: 200, // how many millis to wait until starting search
-                warnMultiMatch: 'top {0} matches ...',
-                warnNoMatch: 'No Matches Found...',
-                zIndex: 'auto'
-            });
+            $("#ddlName").customselect();
+            //$("#ContentPlaceHolder1_ddlName").searchable({
+            //    maxListSize: 200, // if list size are less than maxListSize, show them all
+            //    maxMultiMatch: 300, // how many matching entries should be displayed
+            //    exactMatch: false, // Exact matching on search
+            //    wildcards: true, // Support for wildcard characters (*, ?)
+            //    ignoreCase: true, // Ignore case sensitivity
+            //    latency: 200, // how many millis to wait until starting search
+            //    warnMultiMatch: 'top {0} matches ...',
+            //    warnNoMatch: 'No Matches Found...',
+            //    zIndex: 'auto'
+            //});
         });
     </script>
     <script>
@@ -106,7 +98,7 @@
                     <div class="col-lg-8">
                         <div class="form-group">
                             <label for="userName">Name Calon</label>
-                            <asp:DropDownList ID="ddlName" CssClass="form-control" runat="server" DataTextField="Name" DataValueField="Candidate_id">
+                            <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
                     </div>

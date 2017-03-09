@@ -16,6 +16,7 @@ namespace SIS_V.state
         DataTable dt, dt1, dt2, dt3, dt4;
         protected void Page_Load(object sender, EventArgs e)
         {
+            invalid.Visible = false;
             if (!IsPostBack)
             {
                 CheckIsLogin();
@@ -120,8 +121,14 @@ namespace SIS_V.state
             }
             else
             {
+                GetActivityList();
+                GetLookUpList();
+                GetValidityList();
+                GetCandidateList();
+                lblinvalid.Text = "No Records Found!";
                 GridView_Cdetails.DataSource = null;
                 GridView_Cdetails.DataBind();
+                invalid.Visible = true;
             }
         }
 
