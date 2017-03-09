@@ -35,6 +35,9 @@ namespace SIS_B
         public int info_source_ngo_id { get; set; }
         public int source_election_status_agency_id { get; set; }
         public int source_election_status_ngo_id { get; set; }
+        public int parlimen_id { get; set; }
+        public int dun_id { get; set; }
+        public int area_type { get; set; }
         public DateTime ele_date { get; set; }
         public DataTable fetch_states()
         {
@@ -160,6 +163,18 @@ namespace SIS_B
         public DataTable fill_gridElectionParty_viewAll()
         {
             return data.fill_gridElectionParty_viewAll(state_id,election_id, area_id, party_id, activity_id,current_issue_id, polling_District_id, info_source, info_valdity, action_status, source_election_status, issue_source, info_source_agency_id, info_source_ngo_id, source_election_status_agency_id, source_election_status_ngo_id);
+        }
+        public DataTable fill_kawasan()
+        {
+            return data.fill_kawasan();
+        }
+        public DataTable fill_parlimen_dun()
+        {
+            return data.fill_parlimen_dun(state_id);
+        }
+        public DataTable fill_area_analysis_ViewAll()
+        {
+            return data.fill_area_analysis_ViewAll(state_id,area_type,parlimen_id,dun_id);
         }
     }
 }

@@ -33,12 +33,14 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card-box table-responsive">
-
-                <h4 class="m-t-0 header-title"><b>Paparan Pengguna SIS</b></h4>
-                <a href="tetapan_pentadbir_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
-                <p class="text-muted font-13 m-b-30">
-<%--                    Your description goes here(Malay / English).--%>
-                </p>
+                <div class="row m-b-30">
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+                        <h4 class="m-t-0 header-title"><b>Paparan Pengguna SIS</b></h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-2">
+                        <a href="tetapan_pentadbir_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
+                    </div>
+                </div>
                 <asp:GridView ID="grid_user" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="Gridteta_PreRender" AutoGenerateColumns="False">
                     <Columns>
                         <asp:BoundField DataField="fullname" HeaderText="Name" />
@@ -58,8 +60,6 @@
                                 <asp:HiddenField ID="s_id" ClientIDMode="Static" runat="server" Value='<%#Eval("state_id")%>' />
                                 <a id="lock" href="#" class="fa fa-lock lock"></a>
                                 <a id="edit" href="#" class="fa fa-edit edit"></a>
-                                <%--                                <asp:LinkButton ID="lnkcp" runat="server" CssClass="fa fa-lock" Font-Underline="False" OnClick="lnkcp_Click"></asp:LinkButton>
-                                <asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkdelete_Click"></asp:LinkButton>--%>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

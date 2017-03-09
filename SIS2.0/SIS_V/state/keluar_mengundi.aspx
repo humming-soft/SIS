@@ -22,33 +22,33 @@
                     contentType: "application/json",
                     data: '{"area_type_id":"' + area_type_id + '","sid":"' + sid + '"}',
                     url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("keluar_mengundi.aspx/GetAreaList")%>',
-                dataType: "json",
-                success: function (data) {
-                    if (data.d.length > 0) {
-                        $('#ContentPlaceHolder1_ddlAreaList').empty();
-                        $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
-                        $.each(data.d, function (key, value) {
-                            $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").val(value.area_id).html(value.area_name));
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.d.length > 0) {
+                            $('#ContentPlaceHolder1_ddlAreaList').empty();
+                            $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                            $.each(data.d, function (key, value) {
+                                $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").val(value.area_id).html(value.area_name));
 
-                        });
-                        var hid_val = $('#ContentPlaceHolder1_hiddenArea').val();
-                        if (hid_val) {
-                            $('#ContentPlaceHolder1_ddlAreaList').val(hid_val).attr("selected", "selected");
+                            });
+                            var hid_val = $('#ContentPlaceHolder1_hiddenArea').val();
+                            if (hid_val) {
+                                $('#ContentPlaceHolder1_ddlAreaList').val(hid_val).attr("selected", "selected");
+                            }
+                        } else {
+                            $('#ContentPlaceHolder1_ddlAreaList').empty();
+                            $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").attr("value", null).text("NO DATA"));
                         }
-                    } else {
-                        $('#ContentPlaceHolder1_ddlAreaList').empty();
-                        $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").attr("value", null).text("NO DATA"));
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(errorThrown);
                     }
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log(errorThrown);
-                }
-            });
-        } else {
-            $('#ContentPlaceHolder1_ddlAreaList').empty();
-            $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                });
+            } else {
+                $('#ContentPlaceHolder1_ddlAreaList').empty();
+                $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+            }
         }
-    }
     </script>
     <script>
         function get_area_selected() {
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <asp:GridView ID="GridKM" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="polling_district_id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing" OnRowUpdating="GridKM_RowUpdating">
+                    <asp:GridView ID="GridKM" runat="server" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="polling_district_id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing" OnRowUpdating="GridKM_RowUpdating">
                         <Columns>
                             <asp:BoundField DataField="polling_district" HeaderText="NAMA DAERAH MENGUNDI" ReadOnly="true" />
                             <asp:TemplateField HeaderText="TELAH KELUAR">
@@ -110,7 +110,8 @@
                                     <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtVotes"></asp:TextBox>
                                     <span style="color: red">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator runat="server" id="cmpValues" controltovalidate="txtVotes" controltocompare="txtJumlah" operator="LessThan" Type="Integer" errormessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number!" />
+                                        <asp:CompareValidator runat="server" ID="cmpValues" ControlToValidate="txtVotes" ControlToCompare="txtJumlah" Operator="LessThanEqual" Type="Integer" ErrorMessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number " />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
                                     </span>
                                 </EditItemTemplate>
                                 <ItemTemplate>
@@ -119,7 +120,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="JUMLAH PENGUNDI">
                                 <ItemTemplate>
-                                    <asp:TextBox runat="server" Text='<%# Bind("total_voters") %>' ID="txtJumlah" ReadOnly="true" style="border: none;"></asp:TextBox>
+                                    <asp:TextBox runat="server" Text='<%# Bind("total_voters") %>' ID="txtJumlah" ReadOnly="true" Style="border: none; display:inline-block"></asp:TextBox>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="percentage" HeaderText="PERATUS" ReadOnly="true" />
@@ -130,7 +131,7 @@
                                 </ItemTemplate>
                                 <EditItemTemplate>
                                     <asp:LinkButton ID="lnkUpdate" runat="server" CssClass="fa fa-refresh no-loader" CommandName="Update"></asp:LinkButton>
-                                    <asp:LinkButton ID="lnkCancel" runat="server" CssClass="fa fa-close" CommandName="Cancel"></asp:LinkButton>
+                                    <asp:LinkButton ID="lnkCancel" runat="server" CssClass="fa fa-close no-loader" CommandName="Cancel"></asp:LinkButton>
                                 </EditItemTemplate>
                             </asp:TemplateField>
                         </Columns>

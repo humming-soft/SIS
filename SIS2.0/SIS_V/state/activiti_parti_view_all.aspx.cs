@@ -238,21 +238,20 @@ namespace SIS_V.state
                 grid_areaInfoElectionParty.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
-      
+
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
             grid_areaInfoElectionParty.DataSource = null;
             grid_areaInfoElectionParty.DataBind();
-            int activityid=0;
             bus.state_id = int.Parse(Session["state"].ToString());
-            if (drop_prlimen.SelectedValue.ToString()!="")
+            if (drop_prlimen.SelectedValue.ToString() != "")
             {
                 bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
             }
             else
             {
-                bus.area_id = 0;
+                bus.area_id = -1;
             }
             if (drop_sumber.SelectedValue.ToString() != "")
             {
@@ -260,7 +259,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.info_source = 0;
+                bus.info_source = -1;
             }
             if (drop_tahap.SelectedValue.ToString() != "")
             {
@@ -268,7 +267,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.info_valdity = 0;
+                bus.info_valdity = -1;
             }
             if (drop_mengudi.SelectedValue.ToString() != "")
             {
@@ -278,88 +277,101 @@ namespace SIS_V.state
             {
                 bus.polling_District_id = -1;
             }
-            if (drop_pilihnraya.SelectedValue.ToString()!="")
+            if (drop_pilihnraya.SelectedValue.ToString() != "")
             {
                 bus.election_id = int.Parse(drop_pilihnraya.SelectedValue.ToString());
             }
             else
             {
-                bus.election_id = 0;
-            } if (drop_parti.SelectedValue.ToString()!="")
+                bus.election_id = -1;
+            } 
+            if (drop_parti.SelectedValue.ToString() != "")
             {
                 bus.party_id = int.Parse(drop_parti.SelectedValue.ToString());
             }
             else
             {
-                bus.party_id = 0;
+                bus.party_id = -1;
             }
-           //bus.election_id = int.Parse(drop_pilihnraya.SelectedValue.ToString());
-           
-            if (drop_jenis.SelectedValue.ToString()!="")
+            if (drop_jenis.SelectedValue.ToString() != "")
             {
-                
+
                 bus.activity_id = int.Parse(drop_jenis.SelectedValue.ToString());
-                activityid = int.Parse(drop_jenis.SelectedValue.ToString());
             }
             else
             {
-                bus.activity_id = 0;
+                bus.activity_id = -1;
             }
-            if (activityid == 6)
+            if (drop_category.SelectedValue.ToString() != "")
             {
-                if (drop_category.SelectedValue.ToString()!="")
-                {
-                    bus.current_issue_id = int.Parse(drop_category.SelectedValue.ToString());
-                }
-                else
-                {
-                    bus.current_issue_id = 0;
-                }
-                if (drop_sumbar_isu.SelectedValue.ToString()!="")
-                {
-                    int issue_source = int.Parse(drop_sumbar_isu.SelectedValue.ToString());
-                    bus.issue_source = issue_source;
-                    if (issue_source == 230)
-                    {
-                        bus.info_source_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
-                    }
-                    if (issue_source == 234)
-                    {
-                        bus.info_source_ngo_id = int.Parse(drop_prtubuhan.SelectedValue.ToString());
-                    }
-                }
-               
+                bus.current_issue_id = int.Parse(drop_category.SelectedValue.ToString());
             }
-            if (activityid == 14)
+            else
             {
-                if (drop_status.SelectedValue.ToString()!="")
-                {
-                    bus.action_status = int.Parse(drop_status.SelectedValue.ToString());
-                }
-                else
-                {
-                    bus.action_status = 0;
-                }
-                if (drop_statusjanji.SelectedValue.ToString()!="")
-                {
-                    int id = int.Parse(drop_statusjanji.SelectedValue.ToString());
-                    bus.source_election_status = id;
-                    if (id == 254)
-                    {
-                        bus.source_election_status_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
-                    }
-                    if (id == 256)
-                    {
-                        bus.source_election_status_ngo_id = int.Parse(drop_prtubuhan.SelectedValue.ToString());
-                    }
-                }
-               
+                bus.current_issue_id = -1;
             }
-            DataTable dt = bus.fill_gridElectionParty_viewAll();
-            if (dt.Rows.Count > 0)
+            if (drop_sumbar_isu.SelectedValue.ToString() != "")
             {
-               grid_areaInfoElectionParty.DataSource = dt;
-               grid_areaInfoElectionParty.DataBind();
+                bus.issue_source = int.Parse(drop_sumbar_isu.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.issue_source = -1;
+            }
+            if (drop_agency.SelectedValue.ToString() != "")
+            {
+                bus.info_source_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.info_source_agency_id = -1;
+            }
+            if (drop_prtubuhan.SelectedValue.ToString() != "")
+            {
+                bus.info_source_ngo_id = int.Parse(drop_prtubuhan.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.info_source_ngo_id = -1;
+            }
+
+            if (drop_status.SelectedValue.ToString() != "")
+            {
+                bus.action_status = int.Parse(drop_status.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.action_status = -1;
+            }
+            if (drop_statusjanji.SelectedValue.ToString() != "")
+            {
+                bus.source_election_status = int.Parse(drop_statusjanji.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.source_election_status = -1;
+            }
+            if (drop_agency.SelectedValue.ToString() != "")
+            {
+                bus.source_election_status_agency_id = int.Parse(drop_agency.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.source_election_status_agency_id = -1;
+            }
+            if (drop_prtubuhan.SelectedValue.ToString() != "")
+            {
+                bus.source_election_status_ngo_id = int.Parse(drop_prtubuhan.SelectedValue.ToString());
+            }
+            else
+            {
+                bus.source_election_status_ngo_id = -1;
+            }
+            DataTable data = bus.fill_gridElectionParty_viewAll();
+            if (data.Rows.Count > 0)
+            {
+                grid_areaInfoElectionParty.DataSource = data;
+                grid_areaInfoElectionParty.DataBind();
             }
         }
     }

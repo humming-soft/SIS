@@ -344,7 +344,7 @@ namespace SIS_V.state
                 }
                 else
                 {
-                    bus.polling_District_id = -1;
+                    bus.polling_District_id = 0;
                 }
                 bus.election_id = int.Parse(drop_pilihnraya.SelectedValue.ToString());
                 bus.party_id = int.Parse(drop_parti.SelectedValue.ToString());

@@ -12,7 +12,7 @@
         <div class="col-sm-12">
             <div class="card-box table-responsive">
 
-                <h4 class="m-t-0 header-title"><b>SENARI KAWASAN (NAMA PARLIMEN) BAGI NEGERI PERLIS</b></h4>
+                <h4 class="m-t-0 header-title"><b>SENARI KAWASAN PARLIMEN</b></h4>
 <%--                <a href="parlimen_info_add.aspx" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>--%>
                 <p class="text-muted font-13 m-b-30">
 

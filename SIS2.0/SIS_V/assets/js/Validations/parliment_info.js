@@ -9,6 +9,15 @@ var Parliment_Info = function () {
     var runParlimentInfoValidator = function () {
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
+
+        //Validator for negative numbers.
+        jQuery.validator.addMethod("nonnegative", function (value, element) {
+            if (value < 0) {
+                return false;
+            }
+            return true;
+        }, "Value cannot be Negative");
+
         form.validate({
             rules: {
                 ctl00$ContentPlaceHolder1$txtKodKawasan: {
@@ -19,7 +28,8 @@ var Parliment_Info = function () {
                 },
                 ctl00$ContentPlaceHolder1$txtBil: {
                     required: true,
-                    number: true
+                    number: true,
+                    nonnegative: true
                 },
                 ctl00$ContentPlaceHolder1$txtKeluasanKawasan: {
                     required: true
@@ -35,11 +45,13 @@ var Parliment_Info = function () {
                 },
                 ctl00$ContentPlaceHolder1$txtPopulasiPenduduk: {
                     required: true,
-                    number: true
+                    number: true,
+                    nonnegative: true
                 },
                 ctl00$ContentPlaceHolder1$txtPurataUmur: {
                     required: true,
-                    number: true
+                    number: true,
+                    nonnegative: true
                 },
                 ctl00$ContentPlaceHolder1$txtPurataJantina: {
                     required: true
