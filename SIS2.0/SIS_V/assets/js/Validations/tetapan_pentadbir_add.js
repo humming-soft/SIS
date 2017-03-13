@@ -20,9 +20,9 @@
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txt_ic_number: {
-                    loginRegex: true,
-                    minlength: 15,
-                    maxlength: 15,
+                    //loginRegex: true,
+                    //minlength: 15,
+                    //maxlength: 15,
                     required: true
                 },
                 ctl00$ContentPlaceHolder1$txt_position: {
