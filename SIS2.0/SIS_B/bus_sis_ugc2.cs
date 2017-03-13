@@ -78,7 +78,7 @@ namespace SIS_B
 
         public DataTable fill_DataTable()
         {
-            return objDAL.fill_DataTable();
+            return objDAL.fill_DataTable(state_id);
         }
 
         public DataTable GetPInfoDetails(){

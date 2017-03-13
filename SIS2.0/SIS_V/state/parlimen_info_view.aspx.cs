@@ -40,6 +40,7 @@ namespace SIS_V.state
         }
         public void fill_DataTable()
         {
+            bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_DataTable();
             if (dt.Rows.Count > 0)
             {
