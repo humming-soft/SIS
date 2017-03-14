@@ -18,8 +18,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -85,8 +85,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -135,8 +135,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -182,8 +182,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -230,8 +230,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -287,40 +287,40 @@
             var date = new Date();
             var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
             var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-            $('.item_date').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_date').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_dateI').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_dateI').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_datej').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_datej').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_dateIn').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_dateIn').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_dateKawasan').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_dateKawasan').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
