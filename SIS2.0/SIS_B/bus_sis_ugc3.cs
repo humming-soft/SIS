@@ -53,7 +53,7 @@ namespace SIS_B
         }
         public int insert_user()
         {
-            return data.insert_user(log_name, name, icnumber, role, state, position);
+            return data.insert_user(log_name, name,pass, icnumber, role, state, position);
         }
         public int update_user()
         {

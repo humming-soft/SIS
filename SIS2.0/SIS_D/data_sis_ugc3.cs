@@ -75,7 +75,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int insert_user(string log_name, string name, string icnumber, int role, int state, string position)
+        public int insert_user(string log_name, string name, string log_pwd, string icnumber, int role, int state, string position)
         {
             try
             {
@@ -85,6 +85,7 @@ namespace SIS_D
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Connection = db.connect();
                 cmd.Parameters.AddWithValue("@log_name", log_name);
+                cmd.Parameters.AddWithValue("@log_pwd", log_pwd);
                 cmd.Parameters.AddWithValue("@icnumber", icnumber);
                 cmd.Parameters.AddWithValue("@fullname", name);
                 cmd.Parameters.AddWithValue("@position", position);
