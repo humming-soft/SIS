@@ -145,7 +145,7 @@ namespace SIS_V.state
                 objAktivitiBUS.kod_kawasan = int.Parse(split_Akodkawasan[j]);
                 objAktivitiBUS.jenis_aktiviti = int.Parse(split_Ajenisaktiviti[j]);
                 objAktivitiBUS.parti = int.Parse(split_Aparti[j]);
-                objAktivitiBUS.tarikh = DateTime.ParseExact(split_Atarikh[j], "dd/MM/yyyy", null);
+                objAktivitiBUS.tarikh = DateTime.ParseExact(split_Atarikh[j], "dd/MM/yyyy HH:mm", null);
                 objAktivitiBUS.butiran_aktiviti = split_Abaktiviti[j];
                 int act = objAktivitiBUS.insert_aktiviti();
                 if(act == 1)// success
@@ -197,7 +197,7 @@ namespace SIS_V.state
                 objAktivitiBUS.category = int.Parse(split_icategory[k]);
                 objAktivitiBUS.sumber = int.Parse(split_isumber[k]);
                 objAktivitiBUS.parti = int.Parse(split_iparti[k]);
-                objAktivitiBUS.tarikh = DateTime.ParseExact(split_itarikh[k], "dd/MM/yyyy", null);
+                objAktivitiBUS.tarikh = DateTime.ParseExact(split_itarikh[k], "dd/MM/yyyy HH:mm", null);
                 objAktivitiBUS.butiran_aktiviti = split_ibutiran[k];
                 int isu = objAktivitiBUS.insert_isu();
                 if (isu == 1)// success 
@@ -243,7 +243,7 @@ namespace SIS_V.state
             for (int l = 0; l < counter; l++)
             {
                 objAktivitiBUS.kod_kawasan = int.Parse(split_jKodKawasan[l]);
-                objAktivitiBUS.tarikh = DateTime.ParseExact(split_jtarikh[l], "dd/MM/yyyy", null);
+                objAktivitiBUS.tarikh = DateTime.ParseExact(split_jtarikh[l], "dd/MM/yyyy HH:mm", null);
                 objAktivitiBUS.diberi = split_jdiberi[l];
                 objAktivitiBUS.jnama = split_jnama[l];
                 int jan = objAktivitiBUS.insert_janji();
@@ -286,7 +286,7 @@ namespace SIS_V.state
             {
                 objAktivitiBUS.kod_kawasan = int.Parse(split_InKodKawasan[m]);
                 objAktivitiBUS.parti = int.Parse(split_Inparti[m]); ;
-                objAktivitiBUS.tarikh = DateTime.ParseExact(split_Intarikh[m], "dd/MM/yyyy", null);
+                objAktivitiBUS.tarikh = DateTime.ParseExact(split_Intarikh[m], "dd/MM/yyyy HH:mm", null);
                 objAktivitiBUS.binsiden = split_ButiranInsiden[m];
                 int insi = objAktivitiBUS.insert_insiden();
                 if (insi == 1)// success
@@ -331,7 +331,7 @@ namespace SIS_V.state
             {
                 objAktivitiBUS.kod_kawasan = int.Parse(split_KodKawasanKawasan[n]);
                 objAktivitiBUS.status_kawasan = split_statusKawasan[n];
-                objAktivitiBUS.tarikh = DateTime.ParseExact(split_tarikhKawasan[n],"dd/MM/yyyy", null);
+                objAktivitiBUS.tarikh = DateTime.ParseExact(split_tarikhKawasan[n], "dd/MM/yyyy HH:mm", null);
                 objAktivitiBUS.kaveat = split_KaveatKawasan[n];
                 int kawasa = objAktivitiBUS.insert_statuskawasan();
                 if (kawasa == 1)// success
