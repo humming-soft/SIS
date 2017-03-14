@@ -75,8 +75,9 @@
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Negeri</label>
-                            <asp:DropDownList ID="ddlNegeri" CssClass="form-control" runat="server" DataTextField="state_name" DataValueField="state_id">
-                            </asp:DropDownList>
+                            <asp:Label ID="lblNageri" runat="server" Text="" CssClass="form-control"></asp:Label>
+                            <%--<asp:DropDownList ID="ddlNegeri" CssClass="form-control" runat="server" DataTextField="state_name" DataValueField="state_id">
+                            </asp:DropDownList>--%>
                         </div>
                     </div>
                     <div class="col-lg-2">

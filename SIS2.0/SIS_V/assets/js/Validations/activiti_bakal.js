@@ -15,9 +15,9 @@ var Activiti_Bakal = function () {
                 ctl00$ContentPlaceHolder1$ddlPilihanraya: {
                     required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlNegeri: {
-                    required: true
-                },
+                //ctl00$ContentPlaceHolder1$ddlNegeri: {
+                //    required: true
+                //},
                 ctl00$ContentPlaceHolder1$ddlParlimen: {
                     required: true,
                     number: true

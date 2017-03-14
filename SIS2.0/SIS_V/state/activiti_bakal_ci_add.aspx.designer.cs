@@ -22,13 +22,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlPilihanraya;
         
         /// <summary>
-        /// ddlNegeri control.
+        /// lblNageri control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlNegeri;
+        protected global::System.Web.UI.WebControls.Label lblNageri;
         
         /// <summary>
         /// ddlParlimen control.
