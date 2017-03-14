@@ -297,6 +297,7 @@
                             <label for="userName">Butiran Aktiviti</label>
                             <asp:TextBox ID="txt_detail" CssClass="form-control" Style="width: 100%; min-height: 300px" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </div>
+                            <label for="parti" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                     </div>
                 </div>
                 <div class="form-group text-left m-b-0 m-t-15">
