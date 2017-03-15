@@ -397,5 +397,27 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataSet data_candidate_dun(string sp, int area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                ds.Relations.Add(new DataRelation("AreaRelation", ds.Tables[0].Columns["area_id"], ds.Tables[1].Columns["area_id"]));
+                return ds;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

@@ -153,5 +153,9 @@ namespace SIS_B
         {
             return data.fill_filtered_status("sp_FilterAreaStatusReport", sid, area_id, status);
         }
+        public DataSet fill_candidate_dun()
+        {
+            return data.data_candidate_dun("sp_GetConDetDashboardWinnableCandidate_dun", area_id);
+        }
     }
 }
