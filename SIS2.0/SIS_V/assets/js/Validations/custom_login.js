@@ -18,7 +18,7 @@ var Login = function () {
                     required: true
                 },
                 txtpassword: {
-                    minlength: 6,
+                    minlength: 4,
                     maxlength: 10,
                     required: true
                 }

@@ -7,6 +7,11 @@
             $("#ddlName").customselect();
         });
     </script>
+    <script type="text/javascript">
+        function vali_filter() {
+            activiti_bakal_ci_views.init();
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -25,28 +30,28 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="userName">Name Calon</label>
-                            <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
+                            <asp:DropDownList ID="ddlName" CssClass="custom-select authSelect" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Jenis Aktiviti</label>
-                            <asp:DropDownList ID="ddlJenis" CssClass="form-control" runat="server" DataTextField="activity_details" DataValueField="activity_id">
+                            <asp:DropDownList ID="ddlJenis" CssClass="form-control authSelect" runat="server" DataTextField="activity_details" DataValueField="activity_id">
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Sumber Maklumat</label>
-                            <asp:DropDownList ID="ddlSumber" CssClass="form-control" runat="server" DataTextField="lookup_name" DataValueField="lookup_id">
+                            <asp:DropDownList ID="ddlSumber" CssClass="form-control authSelect" runat="server" DataTextField="lookup_name" DataValueField="lookup_id">
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
                             <label for="userName">Tahap Kesahihan Maklumat</label>
-                            <asp:DropDownList ID="ddlTahap" CssClass="form-control" runat="server" DataTextField="validity_type" DataValueField="validity_id">
+                            <asp:DropDownList ID="ddlTahap" CssClass="form-control authSelect" runat="server" DataTextField="validity_type" DataValueField="validity_id">
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -54,7 +59,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Search" OnClick="btnSubmit_Click" />
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Search" OnClick="btnSubmit_Click" OnClientClick="vali_filter()" />
                         </div>
                     </div>
                 </div>

@@ -58,11 +58,12 @@ namespace SIS_V.state
 
         public void GetStateList()
         {
-            objBUS.state_id = int.Parse(Session["state"].ToString());
-            dt = objBUS.GetStateList();
-            ddlNegeri.DataSource = dt;
-            ddlNegeri.DataBind();
-            ddlNegeri.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            //objBUS.state_id = int.Parse(Session["state"].ToString());
+            //dt = objBUS.GetStateList();
+            //ddlNegeri.DataSource = dt;
+            //ddlNegeri.DataBind();
+            //ddlNegeri.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            lblNageri.Text = Session["statename"].ToString();
         }
 
         public void GetAreaCodeList()
@@ -125,10 +126,10 @@ namespace SIS_V.state
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (ddlPilihanraya.SelectedValue != "" && ddlNegeri.SelectedValue != "" && ddlParlimen.SelectedValue != "" && ddlName.SelectedValue != "" && ddlJenis.SelectedValue != "" && ddlSumber.SelectedValue != "" && ddlTahap.SelectedValue != "" && dtTarikh.Text != "" && txtButiran.Text != "")
+            if (ddlPilihanraya.SelectedValue != "" && ddlParlimen.SelectedValue != "" && ddlName.SelectedValue != "" && ddlJenis.SelectedValue != "" && ddlSumber.SelectedValue != "" && ddlTahap.SelectedValue != "" && dtTarikh.Text != "" && txtButiran.Text != "")
             {
                 objBUS.pilihanraya = int.Parse(ddlPilihanraya.SelectedValue);
-                objBUS.negeri = int.Parse(ddlNegeri.SelectedValue);
+                objBUS.negeri = int.Parse(Session["state"].ToString());
                 objBUS.parlimen = int.Parse(ddlParlimen.SelectedValue);
                 if (ddlDaerah.SelectedValue != "") { 
                     objBUS.daerah = int.Parse(ddlDaerah.SelectedValue);
@@ -158,7 +159,7 @@ namespace SIS_V.state
         protected void btnClear_Click(object sender, EventArgs e)
         {
             ddlPilihanraya.SelectedValue = "";
-            ddlNegeri.SelectedValue = "";
+            //ddlNegeri.SelectedValue = "";
             ddlParlimen.SelectedValue = "";
             ddlDaerah.SelectedValue = "";
             ddlName.SelectedValue = "";

@@ -13,6 +13,7 @@ namespace SIS_V.admin
     {
 
         bus_sis_ugc3 bus = new bus_sis_ugc3();
+        string hashed;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -81,6 +82,8 @@ namespace SIS_V.admin
             {
                 bus.log_name = txt_log_name.Text.Trim();
                 bus.name = txt_user_name.Text.Trim();
+                hashed = encrypt.Encrypt(txt_log_name.Text.Trim());
+                bus.pass = hashed;
                 bus.icnumber = txt_ic_number.Text.Trim();
                 bus.position = txt_position.Text.Trim();
                 bus.role = int.Parse(drop_role.SelectedValue.ToString());

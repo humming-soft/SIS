@@ -178,7 +178,7 @@
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
+                                    <a href="activiti_bakal_ci_add"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                 </li>
                                 <li>
                                     <a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
@@ -488,6 +488,9 @@
     <script src="../assets/js/Validations/activiti_bakal.js"></script>
     <script src="../assets/js/Validations/activiti_parti_add.js"></script>    
     <script src="../assets/js/Validations/keluar_mengundi.js"></script>
+    <script src="../assets/js/Validations/activiti_bakal_ci_views.js"></script>
+
+    <%--Masonry--%>
     <script src="../assets/js/masonry/masonry.min.js"></script>
 
     <!-- Searchable Dropdown -->

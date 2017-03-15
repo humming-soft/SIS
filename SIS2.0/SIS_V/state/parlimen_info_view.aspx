@@ -20,7 +20,7 @@
                 <asp:GridView ID="GridPinfo" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" runat="server" OnPreRender="GridPinfo_PreRender" AutoGenerateColumns="False" DataKeyNames="area_id">
                     <Columns>
                         <%--<asp:BoundField DataField="area_code" HeaderText="Area Code" />--%>
-                        <asp:BoundField DataField="area_name" HeaderText="Area Name" />
+                        <asp:BoundField DataField="area" HeaderText="Area" />
                         <asp:BoundField DataField="no_of_villages" HeaderText="No of Villages" />
                         <asp:BoundField DataField="area_size" HeaderText="Area Size" />
                         <asp:BoundField DataField="border_area" HeaderText="Border Area" />

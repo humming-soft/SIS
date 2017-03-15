@@ -79,45 +79,59 @@ namespace SIS_V.state
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            bus1.stateid = int.Parse(Session["state"].ToString());
-            if (ddlName.SelectedIndex == 0)
+            if (ddlName.SelectedIndex != 0 || ddlJenis.SelectedIndex != 0 || ddlSumber.SelectedIndex != 0 || ddlTahap.SelectedIndex != 0)
             {
-                bus1.name = 0;
-            }
-            else
-            {
-                bus1.name = int.Parse(ddlName.SelectedValue);
-            }
-            if (ddlJenis.SelectedIndex == 0)
-            {
-                bus1.jenis = 0;
-            }
-            else
-            {
-                bus1.jenis = int.Parse(ddlJenis.SelectedValue);
-            }
-            if (ddlSumber.SelectedIndex == 0)
-            {
-                bus1.sumber = 0;
-            }
-            else
-            {
-                bus1.sumber = int.Parse(ddlSumber.SelectedValue);
-            }
-            if (ddlTahap.SelectedIndex == 0)
-            {
-                bus1.tahap = 0;
-            }
-            else
-            {
-                bus1.tahap = int.Parse(ddlTahap.SelectedValue);
-            }
-            dt = bus1.GetCandidateList_All();
-            if(dt.Rows.Count > 0)
-            {
-                GridView_Cdetails.DataSource = dt;
-                GridView_Cdetails.DataBind();
+                bus1.stateid = int.Parse(Session["state"].ToString());
+                if (ddlName.SelectedIndex == 0)
+                {
+                    bus1.name = 0;
+                }
+                else
+                {
+                    bus1.name = int.Parse(ddlName.SelectedValue);
+                }
+                if (ddlJenis.SelectedIndex == 0)
+                {
+                    bus1.jenis = 0;
+                }
+                else
+                {
+                    bus1.jenis = int.Parse(ddlJenis.SelectedValue);
+                }
+                if (ddlSumber.SelectedIndex == 0)
+                {
+                    bus1.sumber = 0;
+                }
+                else
+                {
+                    bus1.sumber = int.Parse(ddlSumber.SelectedValue);
+                }
+                if (ddlTahap.SelectedIndex == 0)
+                {
+                    bus1.tahap = 0;
+                }
+                else
+                {
+                    bus1.tahap = int.Parse(ddlTahap.SelectedValue);
+                }
+                dt = bus1.GetCandidateList_All();
+                if (dt.Rows.Count > 0)
+                {
+                    GridView_Cdetails.DataSource = dt;
+                    GridView_Cdetails.DataBind();
 
+                }
+                else
+                {
+                    GetActivityList();
+                    GetLookUpList();
+                    GetValidityList();
+                    GetCandidateList();
+                    lblinvalid.Text = "Tiada Rekod Dijumpai!";
+                    GridView_Cdetails.DataSource = null;
+                    GridView_Cdetails.DataBind();
+                    invalid.Visible = true;
+                }
             }
             else
             {
@@ -125,7 +139,7 @@ namespace SIS_V.state
                 GetLookUpList();
                 GetValidityList();
                 GetCandidateList();
-                lblinvalid.Text = "No Records Found!";
+                lblinvalid.Text = "Pilih Atleast Satu Penapis!";
                 GridView_Cdetails.DataSource = null;
                 GridView_Cdetails.DataBind();
                 invalid.Visible = true;

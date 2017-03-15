@@ -17,7 +17,26 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_turnout();
+                CheckIsLogin();
+            }
+        }
+
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fill_turnout();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
@@ -51,7 +70,7 @@ namespace SIS_V.state
             {
                 DataRowView drv = e.Item.DataItem as DataRowView;
                 DataList MainDataList = e.Item.FindControl("MainDataList") as DataList;
-                MainDataList.DataSource = drv.CreateChildView("VotersRelation");           
+                MainDataList.DataSource = drv.CreateChildView("VotersRelation");
                 MainDataList.DataBind();
             }
         }

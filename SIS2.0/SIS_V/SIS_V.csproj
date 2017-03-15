@@ -187,6 +187,7 @@
     <Content Include="assets\js\masonry\masonry.min.js" />
     <Content Include="assets\js\modernizr.min.js" />
     <Content Include="assets\js\Validations\activiti_bakal.js" />
+    <Content Include="assets\js\Validations\activiti_bakal_ci_views.js" />
     <Content Include="assets\js\Validations\activiti_parti_add.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />

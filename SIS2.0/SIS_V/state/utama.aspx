@@ -50,9 +50,9 @@
 
         function guage(total, vals) {
             var fty = 0, tn = 0, frty = 0;
-            fty = (total * 50) / 100;
-            tn = fty + (total * 10) / 100;
-            frty = tn + (total * 40) / 100;
+            frty = (total * 40) / 100;
+            tn = frty + (total * 10) / 100;
+            fty = tn + (total * 50) / 100;
             //console.log(fty + '---' + frty + '---' + tn);
             Highcharts.chart('gauge', {
 
@@ -126,16 +126,16 @@
                     },
                     plotBands: [{
                         from: 0,
-                        to: fty,          //50 % of total
-                        color: '#55BF3B' // green
+                        to: frty,          //40 % of total
+                        color: '#DF5353' // red
                     }, {
-                        from: fty,
+                        from: frty,
                         to: tn,            //10 % of total
                         color: '#DDDF0D' // yellow
                     }, {
                         from: tn,
-                        to: total,        //40 % of total
-                        color: '#DF5353' // red
+                        to: total,        //50 % of total
+                        color: '#55BF3B' // green
                     }]
                 },
 
@@ -392,7 +392,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
             <div class="card-box">
-                <h4 class="text-dark header-title m-t-0 m-b-30">Parlimen</h4>
+                <h4 class="text-dark header-title m-t-0 m-b-30">Dun</h4>
                 <div class="widget-chart text-center">
                     <div id="gauge"></div>
                 </div>

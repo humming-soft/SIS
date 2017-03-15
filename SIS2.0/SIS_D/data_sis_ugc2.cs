@@ -13,13 +13,14 @@ namespace SIS_D
         SqlCommand cmd = new SqlCommand();
         db_connect db = new db_connect();
 
-        public DataTable fill_DataTable()
+        public DataTable fill_DataTable(int state_id)
         {
             try
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "sp_GetAreaInfo";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", state_id);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();

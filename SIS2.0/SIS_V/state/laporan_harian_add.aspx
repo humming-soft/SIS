@@ -18,8 +18,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -85,8 +85,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -135,8 +135,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -182,8 +182,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -230,8 +230,8 @@
                 $cloned = $copy.clone();
                 $cloned.find('input:text').each(function () {
                     $(this).val('');
-                    $(this).datepicker({
-                        format: "dd/mm/yyyy",
+                    $(this).datetimepicker({
+                        format: "dd/mm/yyyy hh:ii",
                         keyboardNavigation: false,
                         todayHighlight: true, // to highlight today
                         orientation: "bottom auto",
@@ -287,40 +287,40 @@
             var date = new Date();
             var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
             var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-            $('.item_date').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_date').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_dateI').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_dateI').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_datej').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_datej').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_dateIn').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_dateIn').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
                 autoclose: true
             });
 
-            $('.item_dateKawasan').datepicker({
-                format: "dd/mm/yyyy",
+            $('.item_dateKawasan').datetimepicker({
+                format: "dd/mm/yyyy hh:ii",
                 keyboardNavigation: false,
                 todayHighlight: true, // to highlight today
                 orientation: "bottom auto",
@@ -455,7 +455,7 @@
                             <div class="row pre_here m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Kod Kawasan</label>
+                                        <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="hfkodkawasan" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         
@@ -510,7 +510,7 @@
                             <div class="row pre_here m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Kod Kawasan</label>
+                                        <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="kod_kawasanI" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKod_KawasanI" CssClass="form-control item_kod_kawasanI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                        
@@ -575,7 +575,7 @@
                             <div class="row m-t-20">
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Kod Kawasan</label>
+                                        <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="kod_kawasanJ" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasanj" CssClass="form-control item_kod_kawasanj" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         
@@ -623,7 +623,7 @@
                             <div class="row m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Kod Kawasan</label>
+                                        <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="hfKodKawasanIn" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasanIn" CssClass="form-control item_kod_kawasanIn" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         
@@ -672,7 +672,7 @@
                             <div class="row m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Kod Kawasan</label>
+                                        <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="hfKodKawasanKawasan" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasanKawasan" CssClass="form-control item_kod_kawasanKawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
                                         
