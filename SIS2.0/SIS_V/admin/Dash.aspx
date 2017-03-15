@@ -274,7 +274,7 @@
                 });
             }
 
-            sessiontimeout();
+            //sessiontimeout();
         });
     </script>
     <script type="text/javascript">
@@ -327,16 +327,16 @@
     </script>
 
     <script type="text/javascript">
-        function sessiontimeout() {
-            $.sessionTimeout({
-                ignoreUserActivity: true,
-                warnAfter: 270000, //4.5 minute
-                redirAfter: 300000, // 5 minute
-                keepAliveUrl: '/',
-                redirUrl: '../sessiontimeout',
-                logoutUrl: '../Logout'
-            });
-        }
+        //function sessiontimeout() {
+        //    $.sessionTimeout({
+        //        ignoreUserActivity: true,
+        //        warnAfter: 270000, //4.5 minute
+        //        redirAfter: 300000, // 5 minute
+        //        keepAliveUrl: '/',
+        //        redirUrl: '../sessiontimeout',
+        //        logoutUrl: '../Logout'
+        //    });
+        //}
     </script>
 
 </body>

@@ -114,59 +114,165 @@ namespace SIS_V.state
         private void SetCurrentPage()
         {
             var pageName = GetPageName();
-
             switch (pageName)
             {
                 case "utama":
+                    Session["pre_page"] = "Dashboard Utama";
+                    Session["pre_url"] = "utama";
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Dashboard Utama";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    grant_child_li.Visible = false;
+                    child_li.Attributes["class"] = "active";
                     break;
                 case "kawasan_operasi":
+                    Session["pre_page"] = "Parlimen Tumpuan";
+                    Session["pre_url"] = "kawasan_operasi";
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Parlimen Tumpuan";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "parlimen_tumpuan":
+                    Session["pre_page"] = "Parlimen Tumpuan BN VS Pembangkang";
+                    Session["pre_url"] = "parlimen_tumpuan";
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Parlimen Tumpuan BN VS Pembangkang";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "detail_incident":
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = Session["pre_page"].ToString();
+                    breadcrum_child.Attributes["href"] = Session["pre_url"].ToString();
+                    breadcrum_grant_child.InnerText = "Maklumat Kawasan";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "status_kawasan":
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Rumusan Status Kawasan";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "Win_Candidate":
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Winnable Candidate";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    grant_child_li.Visible = false;
+                    child_li.Attributes["class"] = "active";
                     break;
                 case "candidate_detail":
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Winnable Candidate";
+                    breadcrum_child.Attributes["href"] = "Win_Candidate";
+                    breadcrum_grant_child.InnerText = "Candidate Details";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "percentage_voters":
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Peratusan Keluar Mengundi";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "activiti_bakal_ci_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     break;
                 case "activiti_bakal_ci_add":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "activiti_parti_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Aktiviti Parti Bertanding";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "activiti_parti_add":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Aktiviti Parti Bertanding";
+                    breadcrum_grant_child.InnerText = "Tambah Maklumat Parti Bertanding";
+                    breadcrum_child.Attributes["href"] = "activiti_parti_view";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    grant_child_li.Attributes["class"] = "active";
+                    break;
+                case "activiti_parti_view_all":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Aktiviti Parti Bertanding";
+                    breadcrum_grant_child.InnerText = "Paparan Tambah Maklumat Parti Bertanding";
+                    breadcrum_child.Attributes["href"] = "activiti_parti_view";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    grant_child_li.Attributes["class"] = "active";
                     break;
                 case "laporan_harian_add":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_grant_child.InnerText = "Tambah";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "laporan_harian_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_grant_child.InnerText = "Parparan";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "keluar_mengundi":
                     pilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pilihanraya";
+                    breadcrum_child.InnerText = "Keluar Mengundi";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "analisis_kawasan_view":
                     analisis.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Analisis Kawasan";
+                    breadcrum_parent.Attributes["class"] = "b-600";
+                    child_li.Visible = false;
+                    grant_child_li.Visible = false;
                     break;
                 case "analisis_kawasan_add":
                     analisis.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Analisis Kawasan";
+                    breadcrum_parent.Attributes["href"] = "analisis_kawasan_view";
+                    breadcrum_child.InnerText = "Tambah Maklumat Analisis Kawasan";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
+                    break;
+                case "analisis_kawasan_view_all":
+                    analisis.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Analisis Kawasan";
+                    breadcrum_parent.Attributes["href"] = "analisis_kawasan_view";
+                    breadcrum_child.InnerText = "Carian Terperinci";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "parlimen_info_view":
                     tetapan.Attributes["class"] = "has-submenu active";
@@ -174,6 +280,52 @@ namespace SIS_V.state
                 case "parlimen_info_add":
                     tetapan.Attributes["class"] = "has-submenu active";
                     break;
+                case "laporan_harian_aktiviti":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_child.Attributes["href"] = "laporan_harian_view";
+                    breadcrum_grant_child.InnerText = "Paparan laporan Harian Aktiviti";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "laporan_harian_issue":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_child.Attributes["href"] = "laporan_harian_view";
+                    breadcrum_grant_child.InnerText = "Paparan Laporan Harian Isu-Isu";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "laporan_harian_incident":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_child.Attributes["href"] = "laporan_harian_view";
+                    breadcrum_grant_child.InnerText = "Paparan Laporan Harian Insiden";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "laporan_harian_promises":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_child.Attributes["href"] = "laporan_harian_view";
+                    breadcrum_grant_child.InnerText = "Paparan Laporan Harian Janji Pilihanraya";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "laporan_harian_area_status":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_child.Attributes["href"] = "laporan_harian_view";
+                    breadcrum_grant_child.InnerText = "Paparan Laporan Harian Analysis Status Kawasan";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                    
             }
         }
 
