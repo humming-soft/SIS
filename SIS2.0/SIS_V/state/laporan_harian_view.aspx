@@ -11,6 +11,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
+            <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+            </div>
+            <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <asp:Label ID="lblsuccess" runat="server"></asp:Label>
+            </div>
             <div class="card-box table-responsive">
                 <h4 class="m-t-0 header-title"><b>Paparan Lamporan harian Dari Negeri</b></h4>
                 <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
@@ -153,7 +161,7 @@
                             </div>
                             <div id="collapseThree-5" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    <asp:GridView ID="GridDataTable7" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable7_PreRender">
+                                    <asp:GridView ID="GridDataTable7" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="false" OnPreRender="GridDataTable7_PreRender" DataKeyNames="record_id" OnRowDeleting="GridDataTable7_RowDeleting">
                                         <Columns>
                                             <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
@@ -168,6 +176,16 @@
                                             <%--<asp:BoundField HeaderText="Justifikasi/Kaveat" DataField="comment"></asp:BoundField>--%>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
                                             <%--<asp:BoundField HeaderText="Data Wujud (Ya/Tidak)" DataField="date" ItemStyle-Width="10%"></asp:BoundField>--%>
+                                            <asp:TemplateField HeaderText="MAKLUMAT" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="lnkEdit" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkEdit_Click"></asp:LinkButton>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                           <asp:TemplateField HeaderText="BUANG" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Are you sure you want to delete?')) return false;"  CommandName="Delete"></asp:LinkButton>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
                                         </Columns>
                                     </asp:GridView>
 

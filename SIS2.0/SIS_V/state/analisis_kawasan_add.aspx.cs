@@ -69,7 +69,7 @@ namespace SIS_V.state
 
         protected void cancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("analisis_kawasan_view");
+            Response.Redirect("laporan_harian_view");
         }
 
    }
