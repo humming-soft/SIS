@@ -24,7 +24,7 @@
                             <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
                             <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="link_area_name_sktwo" runat="server" OnClick="link_area_name_sktwo_Click"  CssClass="txt-grey"><%# Eval("area_name")%></asp:LinkButton>
+                                    <asp:LinkButton ID="link_area_name_sktwo" runat="server" OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
                                 </ItemTemplate>
                              </asp:TemplateField>
                            <%-- <asp:BoundField DataField="area_name" HeaderText="Kawasan" SortExpression="area_name" />--%>
@@ -57,12 +57,12 @@
                                 <asp:Label ID="lbl_spoilt_vote" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PENIYANG DANG
+                            <td colspan="4">PENYANDANG
                                 <br />
                                 <asp:Label ID="lbl_winner" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PECHAHUM KAUM
+                            <td colspan="4">PECAHAN
                                 <br />
                                 <asp:Label ID="lbl_raceFragment" runat="server" Text=""></asp:Label></td>
                         </tr>

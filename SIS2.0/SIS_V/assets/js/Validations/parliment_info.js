@@ -31,18 +31,18 @@ var Parliment_Info = function () {
                     number: true,
                     nonnegative: true
                 },
-                ctl00$ContentPlaceHolder1$txtKeluasanKawasan: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtSempadanKawasan: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtKegiatanEkonomi: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtPecahanKaum: {
-                    required: true
-                },
+                //ctl00$ContentPlaceHolder1$txtKeluasanKawasan: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtSempadanKawasan: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtKegiatanEkonomi: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtPecahanKaum: {
+                //    required: true
+                //},
                 ctl00$ContentPlaceHolder1$txtPopulasiPenduduk: {
                     required: true,
                     number: true,
@@ -53,21 +53,21 @@ var Parliment_Info = function () {
                     number: true,
                     nonnegative: true
                 },
-                ctl00$ContentPlaceHolder1$txtPurataJantina: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtKemudahanAwam: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtTaburanPenduduk: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtKomposisiEtnik: {
-                    required: true
-                },
-                ctl00$ContentPlaceHolder1$txtKedarPertumbuhanPenduduk: {
-                    required: true
-                }
+                //ctl00$ContentPlaceHolder1$txtPurataJantina: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtKemudahanAwam: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtTaburanPenduduk: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtKomposisiEtnik: {
+                //    required: true
+                //},
+                //ctl00$ContentPlaceHolder1$txtKedarPertumbuhanPenduduk: {
+                //    required: true
+                //}
             },
             submitHandler: function (form) {
                 errorHandler.hide();

@@ -123,8 +123,10 @@
                 <!-- End Logo container-->
 
                 <div class="menu-extras">
-
                     <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown no-loader">
+                            <a href="#" class="state" id="statename" runat="server" style="cursor:default"></a>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />

@@ -256,7 +256,6 @@ namespace SIS_V.state
                         {
                             one_one.Rows.Add(area_code, name, color, id, is_con);
                         }
-
                     }
                 }
                 grid_one.DataSource = one_one;
