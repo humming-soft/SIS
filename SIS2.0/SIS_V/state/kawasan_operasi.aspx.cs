@@ -155,6 +155,8 @@ namespace SIS_V.state
 
                 isconccount = isconc.Rows.Count / 3;
                 isopercount = isopera.Rows.Count / 3;
+                lblCon.Text = isconc.Rows.Count.ToString();
+                lblOp.Text = isopera.Rows.Count.ToString();
 
                 int isconmod = isconc.Rows.Count % 3;
                 int isopermod = isopera.Rows.Count % 3;
