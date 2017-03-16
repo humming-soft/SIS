@@ -127,7 +127,7 @@
                                     <span style="color: red">
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:CompareValidator runat="server" ID="cmpValues" ControlToValidate="txtVotes" ControlToCompare="txtJumlah" Operator="LessThanEqual" Type="Integer" ErrorMessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number " Display="Dynamic" />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$" Display="Dynamic"></asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="negativevalidator" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$" Display="Dynamic"></asp:RegularExpressionValidator>
                                     </span>
                                 </EditItemTemplate>
                                 <ItemTemplate>
