@@ -420,8 +420,8 @@
                     </li>
                     <li class="">
                         <a href="#profile1" data-toggle="tab" aria-expanded="true" class="no-loader">
-                            <span class="visible-xs">2.0 ISI-ISU</span>
-                            <span class="hidden-xs">2.0 ISI-ISU</span>
+                            <span class="visible-xs">2.0 ISU-ISU</span>
+                            <span class="hidden-xs">2.0 ISU-ISU</span>
                         </a>
                     </li>
                     <li class="">
