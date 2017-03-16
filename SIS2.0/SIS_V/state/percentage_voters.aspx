@@ -21,10 +21,10 @@
                                                             <h4 class="text-dark  header-title m-t-0"><%#Eval("subdist_name") %> <%# Eval("perc") %>%</h4>
                                                             <div class="row">
                                                                 <div class="col-sm-12 col-lg-12">
-                                                                    <div style="padding-left: 30%;">
+                                                                    <div style="padding: 15px 0;">
                                                                         <asp:DataList ID="MainDataList" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
                                                                             <ItemTemplate>
-                                                                                <div class="col-lg-1" style="padding:0 !important; width:120px;">
+                                                                                <div class="col-lg-2">
                                                                                     <div class="col-lg-12">
                                                                                         <span class="round-top"><%# Eval("perc") %>%</span>
                                                                                     </div>
@@ -37,6 +37,7 @@
                                                                                 </div>
                                                                             </ItemTemplate>
                                                                         </asp:DataList>
+                                                                        <hr />
                                                                     </div>
                                                                 </div>
                                                             </div>
