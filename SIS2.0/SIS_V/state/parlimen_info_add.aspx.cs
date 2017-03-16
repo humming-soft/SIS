@@ -91,7 +91,7 @@ namespace SIS_V.state
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtKodKawasan.Text != "" && txtNamaKawasan.Text != "" && txtBil.Text != "" && txtKeluasanKawasan.Text != "" && txtSempadanKawasan.Text != "" && txtKegiatanEkonomi.Text != "" && txtPecahanKaum.Text != "" && txtKegiatanEkonomi.Text != "" && txtPopulasiPenduduk.Text != "" && txtPurataUmur.Text != "" && txtPurataJantina.Text != "" && txtKemudahanAwam.Text != "" && txtTaburanPenduduk.Text != "" && txtKomposisiEtnik.Text != "" && txtKedarPertumbuhanPenduduk.Text != "")
+            if (txtKodKawasan.Text != "" && txtNamaKawasan.Text != "" && txtBil.Text != "" && txtPopulasiPenduduk.Text != "" && txtPurataUmur.Text != "" )
             {
                 objPInfoBUS.area_id = int.Parse(Session["area_id"].ToString());
                 objPInfoBUS.p_kod_kawasan = txtKodKawasan.Text;
