@@ -94,7 +94,7 @@
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i> Pra-Pilihanraya</a>
                                     <ul>
-                                        <li><a href="activiti_bakal_ci_view"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
+                                        <li><a href="activiti_bakal_ci_add"><i class="md md-brightness-auto"></i> Aktiviti Bakal Calon / Individu</a></li>
                                         <li><a href="activiti_parti_view"><i class="md md-nature-people"></i> Aktiviti Parti Bertanding</a></li>
                                         <li><a href="#"><i class="md md-question-answer"></i> Laporan Harian Dari Negeri <i class="md md-chevron-right pull-right"></i></a>
                                             <ul>
