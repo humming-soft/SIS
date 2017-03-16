@@ -169,5 +169,14 @@ namespace SIS_V.state
                 grid_activity.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+
+        protected void link_area_name_sktwo_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(grid_kodkawasan.DataKeys[row.RowIndex].Value.ToString());
+            Session["area"] = id;
+            Response.Redirect("detail_incident");
+        }
     }
 }

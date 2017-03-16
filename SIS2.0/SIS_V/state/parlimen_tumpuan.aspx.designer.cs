@@ -13,6 +13,15 @@ namespace SIS_V.state {
     public partial class parlimen_tumpuan {
         
         /// <summary>
+        /// k_count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label k_count;
+        
+        /// <summary>
         /// sena1 control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grid_senarai_three;
+        
+        /// <summary>
+        /// pem_count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pem_count;
         
         /// <summary>
         /// pem1 control.
