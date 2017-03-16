@@ -76,6 +76,7 @@ namespace SIS_V.state
             bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_senarai_kawasan();
             int count = dt.Rows.Count;
+            k_count.Text = count.ToString();
             int modCount = count % 3;
             if (count == 1)
             {
@@ -197,6 +198,7 @@ namespace SIS_V.state
             bus.state_id = int.Parse(Session["state"].ToString());
             DataTable dt = bus.fill_senarai_kawasan_pem();
             int count = dt.Rows.Count;
+            pem_count.Text = count.ToString();
             int modCount = count % 3;
             if (count == 1)
             {
