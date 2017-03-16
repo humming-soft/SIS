@@ -24,6 +24,8 @@ namespace SIS_V.state
             {
                 log_valid.Visible = false;
                 log_empty.Visible = false;
+                invalid.Visible = false;
+                valid.Visible = false;
                 setAreaList();
                 setStatus();
             }
@@ -97,6 +99,45 @@ namespace SIS_V.state
             {
                 GridDataTable7.UseAccessibleHeader = true;
                 GridDataTable7.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void lnkEdit_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int report_id = int.Parse(GridDataTable7.DataKeys[row.RowIndex].Value.ToString());
+            Session["report_id"] = report_id;
+            Response.Redirect("analisis_kawasan_add");
+        }
+
+        protected void GridDataTable7_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridDataTable7.Rows[e.RowIndex];
+            bus.rid = int.Parse(GridDataTable7.DataKeys[row.RowIndex].Value.ToString());
+            if (bus.delete_area_analysis() > 0)
+            {
+                lblsuccess.Text = "Rekod Dipadam Berjaya!";
+                valid.Visible = true;
+            }
+            else
+            {
+                lblinvalid.Text = "Ralat Tidak Dijangka, Pemotongan Gagal!";
+                invalid.Visible = true;
+            }
+            int area_id = (dp_kawasan.SelectedItem.Value != "") ? int.Parse(dp_kawasan.SelectedItem.Value) : -1;
+            string status = (dp_status.SelectedItem.Value != "") ? dp_status.SelectedItem.Value : "null";
+
+            if (area_id == -1 && status == "null")
+            {
+                log_valid.Visible = true;
+                GridDataTable7.DataSource = null;
+                GridDataTable7.DataBind();
+            }
+            else
+            {
+                log_valid.Visible = false;
+                filterIssue(area_id, status);
             }
         }
     }
