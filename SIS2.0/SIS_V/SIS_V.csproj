@@ -394,6 +394,7 @@
     <Content Include="state\candidate_detail.aspx" />
     <Content Include="state\Dash.aspx" />
     <Content Include="state\detail_incident.aspx" />
+    <Content Include="state\detail_info.aspx" />
     <Content Include="state\kawasan_operasi.aspx" />
     <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
@@ -718,6 +719,13 @@
     </Compile>
     <Compile Include="state\detail_incident.aspx.designer.cs">
       <DependentUpon>detail_incident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\detail_info.aspx.cs">
+      <DependentUpon>detail_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\detail_info.aspx.designer.cs">
+      <DependentUpon>detail_info.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\kawasan_operasi.aspx.cs">
       <DependentUpon>kawasan_operasi.aspx</DependentUpon>

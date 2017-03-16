@@ -136,5 +136,13 @@ namespace SIS_B
         {
             return data1.GetCandidateList_All(stateid,name, jenis, sumber, tahap);
         }
+        public DataTable fill_incident()
+        {
+            return data1.fill_incident(areaid);
+        }
+        public DataTable fill_issue()
+        {
+            return data1.fill_issue(areaid);
+        }
     }
 }

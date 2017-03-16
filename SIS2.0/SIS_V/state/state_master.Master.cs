@@ -21,6 +21,7 @@ namespace SIS_V.state
         protected void Page_Load(object sender, EventArgs e)
         {
             checker();
+            setstatename();
             SetCurrentPage();
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
@@ -154,6 +155,9 @@ namespace SIS_V.state
                     breadcrum_grant_child.InnerText = "Maklumat Kawasan";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "detail_info":
+                    dash.Attributes["class"] = "has-submenu active";
                     break;
                 case "status_kawasan":
                     dash.Attributes["class"] = "has-submenu active";
@@ -345,6 +349,10 @@ namespace SIS_V.state
             return Request.Url.ToString().Split('/').Last();
         }
 
+        private void setstatename()
+        {
+            statename.InnerHtml = "STATE : " + Session["statename"].ToString().ToUpper();
+        }
 
     }
 }
