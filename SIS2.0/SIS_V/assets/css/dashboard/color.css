@@ -284,7 +284,8 @@ ul.kode_tab_lnk li:after,
 .dl-menuwrapper button:hover,
 .dl-menuwrapper button:hover, .dl-menuwrapper button.dl-active
 {
-	background-color:#ef4a2b;	
+	/*background-color:#ef4a2b;*/	
+    background-color:#1daee5;
 }
 
 
