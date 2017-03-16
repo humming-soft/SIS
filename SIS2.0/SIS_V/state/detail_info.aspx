@@ -1,8 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="detail_incident.aspx.cs" Inherits="SIS_V.state.detail_incident" MasterPageFile="~/state/state_master.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="detail_info.aspx.cs" Inherits="SIS_V.state.detail_info" MasterPageFile="~/state/state_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script type="text/javascript">
         $(window).load(function () {
@@ -26,8 +25,7 @@
                                 <ItemTemplate>
                                     <asp:LinkButton ID="link_area_name_sktwo" runat="server" OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
                                 </ItemTemplate>
-                             </asp:TemplateField>
-                           <%-- <asp:BoundField DataField="area_name" HeaderText="Kawasan" SortExpression="area_name" />--%>
+                            </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -74,7 +72,6 @@
                 <h4 class="text-dark  header-title m-t-0">Calon</h4>
                 <div>
                     <asp:Image ID="img_candidate" runat="server" class="img-responsive img-rounded" alt="user" />
-                    <%--<img src="../assets/images/users/avatar-0.jpg" class="img-responsive img-rounded" alt="user">--%>
                     <div class="wid-u-info mCustomScrollbar" style="height: 255px;" data-mcs-theme="dark-3">
                         <table class="table">
                             <tr>
@@ -138,9 +135,6 @@
         <div class="col-lg-4">
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Maklumat Semasa</h4>
-                <%--<p class="text-muted m-b-25 font-13">
-                    Your awesome text goes here.
-                </p>--%>
 
                 <div class="table-responsive">
                     <table class="table">
@@ -154,12 +148,7 @@
                             <td>
                                 <asp:Label ID="lbl_justification" runat="server" Text=""></asp:Label></td>
                         </tr>
-                        <%--<tr>
-                            <th>PROJEK :</th>
-                            <td>Tiada maklumat diperolehi</td>
-                        </tr>--%>
                     </table>
-                    <%--<th>ACTIVITI :</th>--%>
                     <div class="table-responsive mCustomScrollbar" style="height: 855px;" data-mcs-theme="dark-3">
                         <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
                             <Columns>

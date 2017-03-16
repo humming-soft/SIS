@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>MAKLUMAT TERERINCI KAWASAN PARLIMEN</b></h4>
+                <h4 class="m-t-0 header-title"><b>MAKLUMAT TERPERINCI KAWASAN PARLIMEN</b></h4>
                 <p class="text-muted font-13 m-b-30">
 
                 </p>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="checkbox checkbox-pink">
                                 <asp:CheckBox ID="chkKawasanTumpuanPenbangkang" runat="server" />
-                                <label for="checkbox2">Kawasan Tumpuan Penbangkang </label>
+                                <label for="checkbox2">Kawasan Tumpuan Pembangkang </label>
                             </div>
                             <div class="checkbox checkbox-pink">
                                 <asp:CheckBox ID="chkKawasanOperasi" runat="server" />
