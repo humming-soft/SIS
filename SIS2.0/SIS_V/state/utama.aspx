@@ -406,7 +406,7 @@
                         <div class="table-responsive">
                             <asp:GridView ID="grdinsident1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Area">
+                                    <asp:TemplateField HeaderText="Kawasan">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkgrdinsid1" runat="server" Text='<%# Bind("Area") %>' Font-Underline="False" OnClick="lnkgrdinsid1_Click"></asp:LinkButton>
                                         </ItemTemplate>
@@ -421,7 +421,7 @@
                         <div class="table-responsive">
                             <asp:GridView ID="grdinsident2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None" AutoGenerateColumns="False" DataKeyNames="id">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Area">
+                                    <asp:TemplateField HeaderText="Kawasan">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkgrdinsid2" runat="server" Text='<%# Bind("Area") %>' Font-Underline="False" OnClick="lnkgrdinsid2_Click"></asp:LinkButton>
                                         </ItemTemplate>
@@ -443,12 +443,12 @@
                         <div class="table-responsive">
                             <asp:GridView ID="grdisu1" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None"  DataKeyNames="id1" AutoGenerateColumns="False">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Area">
+                                    <asp:TemplateField HeaderText="Kawasan">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkisu1" runat="server" Text='<%# Bind("Name1") %>' Font-Underline="False" OnClick="lnkisu1_Click"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="ciname1" HeaderText="Issue"></asp:BoundField>
+                                    <asp:BoundField DataField="ciname1" HeaderText="Isu"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -457,12 +457,12 @@
                         <div class="table-responsive">
                             <asp:GridView ID="grdisu2" CssClass="table" runat="server" BorderColor="White" BorderStyle="None" GridLines="None"  DataKeyNames="id1" AutoGenerateColumns="False">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Area">
+                                    <asp:TemplateField HeaderText="Kawasan">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="lnkisu2" runat="server" Text='<%# Bind("Name1") %>' Font-Underline="False" OnClick="lnkisu2_Click"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="ciname1" HeaderText="Issue"></asp:BoundField>
+                                    <asp:BoundField DataField="ciname1" HeaderText="Isu"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
                         </div>
