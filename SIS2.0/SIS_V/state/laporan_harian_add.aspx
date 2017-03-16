@@ -490,6 +490,7 @@
                                         <label for="userName">Butiran Aktiviti</label>
                                         <asp:TextBox ID="txtButiran" runat="server" TextMode="MultiLine" CssClass="form-control item_butiran"></asp:TextBox>
                                     </div>
+                                    <label for="activitiButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
                             </div>
                         </div>
@@ -554,6 +555,7 @@
                                         <label for="userName">Butiran Isu</label>
                                         <asp:TextBox ID="txtButiran_Isu" runat="server" TextMode="MultiLine" CssClass="form-control item_Butiran_Isu"></asp:TextBox>
                                     </div>
+                                    <label for="isuButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
 
                             </div>
@@ -603,6 +605,7 @@
                                         <label for="userName">Nama Tokoh</label>
                                         <asp:TextBox ID="txtNamaTokoh" runat="server" TextMode="MultiLine" CssClass="form-control item_NamaTokoh"></asp:TextBox>
                                     </div>
+                                    <label for="janjiButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
                             </div>
                         </div>
@@ -651,6 +654,7 @@
                                         <label for="userName">Butiran Insiden</label>
                                         <asp:TextBox ID="txtButiranInsiden" runat="server" TextMode="MultiLine" CssClass="form-control item_ButiranInsiden"></asp:TextBox>
                                     </div>
+                                    <label for="insidenButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
 
                             </div>
@@ -711,6 +715,7 @@
                                         <label for="userName">Justifikasi/Kaveat</label>
                                         <asp:TextBox ID="txtJustifikasi" runat="server" TextMode="MultiLine" CssClass="form-control item_Justifikasi"></asp:TextBox>
                                     </div>
+                                    <label for="analysisButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
                             </div>
                         </div>
