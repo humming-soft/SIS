@@ -21,6 +21,11 @@
                                             <Columns>
                                                 <asp:BoundField HeaderText="Kod Kawasan" DataField="area_code" ItemStyle-Width="15%"></asp:BoundField>
                                                 <asp:BoundField HeaderText="Nama Kawasan" DataField="area_name"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="" ItemStyle-Width="10%">
+                                                    <ItemTemplate>
+                                                         <h3 class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-circle" : "" %>"></h3>
+                                                    </ItemTemplate> 
+                                                </asp:TemplateField>
                                                   <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
                                                     <ItemTemplate>
                                                          <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
