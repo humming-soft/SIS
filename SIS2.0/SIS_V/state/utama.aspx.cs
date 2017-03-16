@@ -183,7 +183,8 @@ namespace SIS_V.state
             if (id != 0)
             {
                 Session["area"] = id;
-                Response.Redirect("~/state/detail_incident");
+                Session["utype"] = "insident";
+                Response.Redirect("~/state/detail_info");
             }
         }
         protected void lnkgrdinsid2_Click(object sender, EventArgs e)
@@ -194,7 +195,8 @@ namespace SIS_V.state
             if (id1 != 0)
             {
                 Session["area"] = id1;
-                Response.Redirect("~/state/detail_incident");
+                Session["utype"] = "insident";
+                Response.Redirect("~/state/detail_info");
             }
         }
         public void isu_utama()
@@ -277,7 +279,8 @@ namespace SIS_V.state
             if (id2 != 0)
             {
                 Session["area"] = id2;
-                Response.Redirect("~/state/detail_incident");
+                Session["utype"] = "issue";
+                Response.Redirect("~/state/detail_info");
             }
         }
         protected void lnkisu2_Click(object sender, EventArgs e)
@@ -288,7 +291,8 @@ namespace SIS_V.state
             if (id3 != 0)
             {
                 Session["area"] = id3;
-                Response.Redirect("~/state/detail_incident");
+                Session["utype"] = "issue";
+                Response.Redirect("~/state/detail_info");
             }
         }
 
