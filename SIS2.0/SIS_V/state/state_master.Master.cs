@@ -21,6 +21,7 @@ namespace SIS_V.state
         protected void Page_Load(object sender, EventArgs e)
         {
             checker();
+            setstatename();
             SetCurrentPage();
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
@@ -348,6 +349,10 @@ namespace SIS_V.state
             return Request.Url.ToString().Split('/').Last();
         }
 
+        private void setstatename()
+        {
+            statename.InnerHtml = "STATE : " + Session["statename"].ToString().ToUpper();
+        }
 
     }
 }
