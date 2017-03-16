@@ -28,6 +28,9 @@ namespace SIS_V.state
             if (!IsPostBack)
             {
                 fill_lamporan();
+                Session["report_id"] = "";
+                invalid.Visible = false;
+                valid.Visible = false;
             }
         }
 
@@ -107,6 +110,30 @@ namespace SIS_V.state
                 GridDataTable7.UseAccessibleHeader = true;
                 GridDataTable7.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
+        }
+
+        protected void GridDataTable7_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridDataTable7.Rows[e.RowIndex];
+            bus4.rid = int.Parse(GridDataTable7.DataKeys[row.RowIndex].Value.ToString());
+            if (bus4.delete_area_analysis() > 0)
+            {
+                lblsuccess.Text = "Rekod Dipadam Berjaya!";
+                valid.Visible = true;
+            }else{
+                lblinvalid.Text = "Ralat Tidak Dijangka, Pemotongan Gagal!";
+                invalid.Visible = true;
+            }
+            fill_lamporan();
+        }
+
+        protected void lnkEdit_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int report_id = int.Parse(GridDataTable7.DataKeys[row.RowIndex].Value.ToString());
+            Session["report_id"] = report_id;
+            Response.Redirect("analisis_kawasan_add");
         }
     }
 }

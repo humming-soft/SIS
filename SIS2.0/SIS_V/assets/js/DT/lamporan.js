@@ -206,7 +206,9 @@
                 null,
                 null,
                 null,
-                { "sType": "date-uk" }
+                { "sType": "date-uk" },
+                null,
+                null
             ],
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
