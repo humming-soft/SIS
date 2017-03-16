@@ -19,10 +19,15 @@
             <div class="card-box">
                 <h4 class="text-dark  header-title m-t-0">Kod Kawasan</h4>
                 <div class="table-responsive mCustomScrollbar" style="height: 942px;" data-mcs-theme="dark-3">
-                    <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" OnPreRender="grid_kodkawasan_PreRender">
+                    <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" OnPreRender="grid_kodkawasan_PreRender" DataKeyNames="area_id">
                         <Columns>
-                            <asp:BoundField DataField="area_code" HeaderText="#" SortExpression="area_code" />
-                            <asp:BoundField DataField="area_name" HeaderText="Area Name" SortExpression="area_name" />
+                            <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                            <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="link_area_name_sktwo" runat="server" OnClick="link_area_name_sktwo_Click"  CssClass="txt-grey"><%# Eval("area_name")%></asp:LinkButton>
+                                </ItemTemplate>
+                             </asp:TemplateField>
+                           <%-- <asp:BoundField DataField="area_name" HeaderText="Kawasan" SortExpression="area_name" />--%>
                         </Columns>
                     </asp:GridView>
                 </div>

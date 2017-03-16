@@ -276,9 +276,20 @@ namespace SIS_V.state
                     break;
                 case "parlimen_info_view":
                     tetapan.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Tetapan";
+                    breadcrum_child.InnerText = "Parlimen Info";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
                     break;
                 case "parlimen_info_add":
                     tetapan.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Tetapan";
+                    breadcrum_child.InnerText = "Parlimen Info";
+                    breadcrum_child.Attributes["href"] = "parlimen_info_view";
+                    breadcrum_grant_child.InnerText = "Maklumat Tererinci Kawasan Parlimen";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "laporan_harian_aktiviti":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
