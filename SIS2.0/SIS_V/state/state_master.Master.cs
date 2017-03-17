@@ -316,7 +316,7 @@ namespace SIS_V.state
                     breadcrum_parent.InnerText = "Tetapan";
                     breadcrum_child.InnerText = "Parlimen Info";
                     breadcrum_child.Attributes["href"] = "parlimen_info_view";
-                    breadcrum_grant_child.InnerText = "Maklumat Tererinci Kawasan Parlimen";
+                    breadcrum_grant_child.InnerText = "Maklumat Terperinci Kawasan Parlimen";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;

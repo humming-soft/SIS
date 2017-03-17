@@ -91,7 +91,7 @@
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <label for="userName">Kawasan</label>
+                            <label for="userName">Bahagian</label>
                             <asp:DropDownList ID="ddlKawasan" CssClass="form-control" runat="server" onchange="fill_area_list();hideGrid()">
                                 <asp:ListItem Value="">-----SELECT-----</asp:ListItem>
                                 <asp:ListItem Value="1">Parlimen</asp:ListItem>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <label for="areaList">Area</label>
+                            <label for="areaList">Kawasan</label>
                             <asp:DropDownList ID="ddlAreaList" CssClass="form-control" runat="server" onChange="get_area_selected();hideGrid();">
                             </asp:DropDownList>
                             <asp:HiddenField ID="hiddenArea" runat="server" Value='' />
@@ -109,7 +109,7 @@
                     </div>
                     <div class="col-lg-2" style="padding-top: 25px;">
                         <div class="form-group">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Show" OnClick="btnSubmit_Click" OnClientClick="validation_keluar();showGrid();" />
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Papar" OnClick="btnSubmit_Click" OnClientClick="validation_keluar();showGrid();" />
                         </div>
                     </div>
                     <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
@@ -140,7 +140,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="percentage" HeaderText="PERATUS" ReadOnly="true" />
-                            <asp:TemplateField HeaderText="Actions">
+                            <asp:TemplateField HeaderText="Tindakan">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-pencil no-loader" CommandName="Edit"></asp:LinkButton>
                                     <%--<asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-trash" CommandName="Delete"></asp:LinkButton>--%>
