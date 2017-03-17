@@ -118,7 +118,7 @@
                 success: function (data) {
                     if (data.d.length > 0) {
                         $('#drop_mengudi').empty();
-                        $('#drop_mengudi').append($("<option></option>").attr("value", -1).text("-----SELECT----"));
+                        $('#drop_mengudi').append($("<option></option>").attr("value", -1).text("-----PILIH----"));
                         $.each(data.d, function (key, value) {
                             $('#drop_mengudi').append($("<option></option>").attr("value", value.Dist_id).text(value.dist_name));
                         });

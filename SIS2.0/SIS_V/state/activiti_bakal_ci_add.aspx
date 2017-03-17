@@ -41,7 +41,7 @@
                 success: function (data) {
                     if (data.d.length > 0) {
                         $('#ContentPlaceHolder1_ddlDaerah').empty();
-                        $('#ContentPlaceHolder1_ddlDaerah').append("<option value=''>-----SELECT-----</option>");
+                        $('#ContentPlaceHolder1_ddlDaerah').append("<option value=''>-----PILIH-----</option>");
                         $.each(data.d, function (key, value) {
                             $("#ContentPlaceHolder1_ddlDaerah").append($("<option></option>").val(value.polling_district_id).html(value.polling_district_name));
 
@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <label for="userName">Name Calon</label>
+                            <label for="userName">Nama Calon</label>
                             <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>

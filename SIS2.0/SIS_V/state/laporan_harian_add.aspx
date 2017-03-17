@@ -701,7 +701,7 @@
                                         <label for="userName">Data Wujud (Ya/Tidak)</label>
                                          <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlWujud" CssClass="form-control item_Wujud" runat="server" DataTextField="areacode" DataValueField="area_id">
-                                            <asp:ListItem Value="">---SELECT---</asp:ListItem>
+                                            <asp:ListItem Value="">---PILIH---</asp:ListItem>
                                             <asp:ListItem Value="1">Ya</asp:ListItem>
                                             <asp:ListItem Value="2">Tidak</asp:ListItem>
                                         </asp:DropDownList>

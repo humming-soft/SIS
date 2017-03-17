@@ -28,7 +28,7 @@ namespace SIS_V.state
             {
                 drop_state.DataSource = dt1;
                 drop_state.DataBind();
-                drop_state.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                drop_state.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
             else
             {
@@ -42,7 +42,7 @@ namespace SIS_V.state
             {
                 drop_role.DataSource = dt1;
                 drop_role.DataBind();
-                drop_role.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                drop_role.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
             else
             {

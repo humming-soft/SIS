@@ -19,7 +19,7 @@
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <div class="btn-group m-b-10 pull-right">
                                  <a href="activiti_parti_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
-                                <a href="activiti_parti_view_all" class="btn btn-primary pull-right"><i class="fa fa-search"></i> CARIAN TERPERINCI</a>
+                                <a href="activiti_parti_view_all" class="btn btn-primary pull-right"><i class="fa fa-search"></i> CARIAN </a>
                              </div>
                         </div>
                     </div>

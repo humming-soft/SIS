@@ -53,7 +53,7 @@ namespace SIS_V.state
             dt = objBUS.GetElectionList();
             ddlPilihanraya.DataSource = dt;
             ddlPilihanraya.DataBind();
-            ddlPilihanraya.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlPilihanraya.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetStateList()
@@ -62,7 +62,7 @@ namespace SIS_V.state
             //dt = objBUS.GetStateList();
             //ddlNegeri.DataSource = dt;
             //ddlNegeri.DataBind();
-            //ddlNegeri.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            //ddlNegeri.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             lblNageri.Text = Session["statename"].ToString();
         }
 
@@ -72,7 +72,7 @@ namespace SIS_V.state
             dt = objBUS.GetAreaCodeList();
             ddlParlimen.DataSource = dt;
             ddlParlimen.DataBind();
-            ddlParlimen.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlParlimen.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         [WebMethod]
@@ -97,7 +97,7 @@ namespace SIS_V.state
             dt = objBUS.GetActivityList();
             ddlJenis.DataSource = dt;
             ddlJenis.DataBind();
-            ddlJenis.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlJenis.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetLookUpList()
@@ -105,7 +105,7 @@ namespace SIS_V.state
             dt = objBUS.GetLookUpList();
             ddlSumber.DataSource = dt;
             ddlSumber.DataBind();
-            ddlSumber.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlSumber.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetValidityList()
@@ -113,7 +113,7 @@ namespace SIS_V.state
             dt = objBUS.GetValidityList();
             ddlTahap.DataSource = dt;
             ddlTahap.DataBind();
-            ddlTahap.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlTahap.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetCandidateList()
@@ -121,7 +121,7 @@ namespace SIS_V.state
             dt = objBUS.GetCandidateList();
             ddlName.DataSource = dt;
             ddlName.DataBind();
-            ddlName.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlName.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
