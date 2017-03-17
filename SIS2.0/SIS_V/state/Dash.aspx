@@ -109,7 +109,7 @@
                                         <li><a href="keluar_mengundi"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
+<%--                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>--%>
                                 <li><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul>
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>
@@ -153,7 +153,7 @@
                                         <li><a href="keluar_mengundi"><i class="md md-poll"></i> Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>
+<%--                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>--%>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-settings"></i> Tetapan</a>
                                     <ul class="dl-submenu">
                                         <li><a href="parlimen_info_view"><i class="md md-info"></i> Parlimen Info</a></li>

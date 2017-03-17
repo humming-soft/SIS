@@ -28,12 +28,12 @@ namespace SIS_V.state
             Response.Cache.SetNoStore();
 
             if (!IsPostBack)
-            {        
+            {
                 valid_empty.Visible = false;
                 valid_match.Visible = false;
                 GetUserDetails();
             }
-         
+
         }
 
         public void GetUserDetails()
@@ -138,11 +138,11 @@ namespace SIS_V.state
                     grant_child_li.Visible = false;
                     break;
                 case "parlimen_tumpuan":
-                    Session["pre_page"] = "Parlimen Tumpuan BN VS Pembangkang";
+                    Session["pre_page"] = "Kawasan Tumpuan BN / Kawasan Tumpuan Pembangkang";
                     Session["pre_url"] = "parlimen_tumpuan";
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
-                    breadcrum_child.InnerText = "Parlimen Tumpuan BN VS Pembangkang";
+                    breadcrum_child.InnerText = "Kawasan Tumpuan BN / Kawasan Tumpuan Pembangkang";
                     breadcrum_child.Attributes["class"] = "b-600";
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
@@ -198,7 +198,7 @@ namespace SIS_V.state
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
-                case "activiti_bakal_ci_view": 
+                case "activiti_bakal_ci_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon / Individu";
@@ -207,12 +207,12 @@ namespace SIS_V.state
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
-               case "activiti_bakal_ci_views":
+                case "activiti_bakal_ci_views":
                     //Session["pre_page"] = "Paparan Aktiviti Bakal Calon / Individu";
                     //Session["pre_url"] = "activiti_bakal_ci_views";
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
-                    breadcrum_child.InnerText ="Paparan Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.InnerText = "Paparan Aktiviti Bakal Calon / Individu";
                     breadcrum_child.Attributes["href"] = "activiti_bakal_ci_view";
                     breadcrum_grant_child.InnerText = "Carian Terperinci";
                     grant_child_li.Attributes["class"] = "active";
@@ -278,31 +278,31 @@ namespace SIS_V.state
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
-                case "analisis_kawasan_view":
-                    analisis.Attributes["class"] = "has-submenu active";
-                    breadcrum_parent.InnerText = "Analisis Kawasan";
-                    breadcrum_parent.Attributes["class"] = "b-600";
-                    child_li.Visible = false;
-                    grant_child_li.Visible = false;
-                    break;
+                //case "analisis_kawasan_view":
+                //    analisis.Attributes["class"] = "has-submenu active";
+                //    breadcrum_parent.InnerText = "Analisis Kawasan";
+                //    breadcrum_parent.Attributes["class"] = "b-600";
+                //    child_li.Visible = false;
+                //    grant_child_li.Visible = false;
+                //    break;
                 case "analisis_kawasan_add":
-                    analisis.Attributes["class"] = "has-submenu active";
-                    breadcrum_parent.InnerText = "Analisis Kawasan";
-                    breadcrum_parent.Attributes["href"] = "analisis_kawasan_view";
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Laporan Harian Dari Negeri";
+                    breadcrum_parent.Attributes["href"] = "laporan_harian_view";
                     breadcrum_child.InnerText = "Tambah Maklumat Analisis Kawasan";
                     breadcrum_child.Attributes["class"] = "b-600";
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
-                case "analisis_kawasan_view_all":
-                    analisis.Attributes["class"] = "has-submenu active";
-                    breadcrum_parent.InnerText = "Analisis Kawasan";
-                    breadcrum_parent.Attributes["href"] = "analisis_kawasan_view";
-                    breadcrum_child.InnerText = "Carian Terperinci";
-                    breadcrum_child.Attributes["class"] = "b-600";
-                    child_li.Attributes["class"] = "active";
-                    grant_child_li.Visible = false;
-                    break;
+                //case "analisis_kawasan_view_all":
+                //    analisis.Attributes["class"] = "has-submenu active";
+                //    breadcrum_parent.InnerText = "Analisis Kawasan";
+                //    breadcrum_parent.Attributes["href"] = "analisis_kawasan_view";
+                //    breadcrum_child.InnerText = "Carian Terperinci";
+                //    breadcrum_child.Attributes["class"] = "b-600";
+                //    child_li.Attributes["class"] = "active";
+                //    grant_child_li.Visible = false;
+                //    break;
                 case "parlimen_info_view":
                     tetapan.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Tetapan";
@@ -316,7 +316,7 @@ namespace SIS_V.state
                     breadcrum_parent.InnerText = "Tetapan";
                     breadcrum_child.InnerText = "Parlimen Info";
                     breadcrum_child.Attributes["href"] = "parlimen_info_view";
-                    breadcrum_grant_child.InnerText = "Maklumat Tererinci Kawasan Parlimen";
+                    breadcrum_grant_child.InnerText = "Maklumat Terperinci Kawasan Parlimen";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
@@ -365,7 +365,7 @@ namespace SIS_V.state
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
-                    
+
             }
         }
 
