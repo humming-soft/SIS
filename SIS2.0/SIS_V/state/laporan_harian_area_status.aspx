@@ -90,7 +90,7 @@
                                         <th>Kod Kawasan</th>
                                         <th>Nama Kawasan</th>
                                         <th>Status</th>
-                                        <th>Justifikasi/Kaveat</th>
+                                        <th>Justifikasi / Halangan</th>
                                         <th>Tarikh</th> 
                                         <th>Maklumat</th> 
                                         <th>Buang</th> 

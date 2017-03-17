@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="form-group">
-                            <label for="userName">Name Calon</label>
+                            <label for="userName">Nama Calon</label>
                             <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
