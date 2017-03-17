@@ -67,17 +67,17 @@
                     <div class="col-lg-12">
                         <asp:GridView ID="GridView_Cdetails" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="False" OnPreRender="GridView_Cdetails_PreRender">
                             <Columns>
-                                <asp:BoundField DataField="name" HeaderText="Candidate Name"></asp:BoundField>
-                                <asp:BoundField DataField="party_name_bm" HeaderText="Party"></asp:BoundField>
-                                <asp:BoundField DataField="election_name" HeaderText="Election"></asp:BoundField>
-                                <asp:BoundField DataField="state_name" HeaderText="State"></asp:BoundField>
-                                <asp:BoundField DataField="coalition_name" HeaderText="Coalition"></asp:BoundField>
-                                <asp:BoundField DataField="activity_details" HeaderText="Activity Details"></asp:BoundField>
-                                <asp:BoundField DataField="lookup_name" HeaderText="Lookup Name"></asp:BoundField>
-                                <asp:BoundField DataField="validity_type" HeaderText="Validity Type"></asp:BoundField>
-                                <asp:BoundField DataField="polling_district_name" HeaderText="Polling District"></asp:BoundField>
-                                <asp:BoundField DataField="date" HeaderText="Date"></asp:BoundField>
-                                <asp:BoundField DataField="details" HeaderText="Details"></asp:BoundField>
+                                <asp:BoundField DataField="name" HeaderText="Nama Calon"></asp:BoundField>
+                                <asp:BoundField DataField="party_name_bm" HeaderText="Parti"></asp:BoundField>
+                                <asp:BoundField DataField="election_name" HeaderText="Pilihanraya"></asp:BoundField>
+                                <asp:BoundField DataField="state_name" HeaderText="Negeri"></asp:BoundField>
+                                <asp:BoundField DataField="coalition_name" HeaderText="Pakatan"></asp:BoundField>
+                                <asp:BoundField DataField="activity_details" HeaderText="Jenis Aktiviti"></asp:BoundField>
+                                <asp:BoundField DataField="lookup_name" HeaderText="Sumber Maklumat"></asp:BoundField>
+                                <asp:BoundField DataField="validity_type" HeaderText="Tahap Kesahihan"></asp:BoundField>
+                                <asp:BoundField DataField="polling_district_name" HeaderText="Daerah Mengundi"></asp:BoundField>
+                                <asp:BoundField DataField="date" HeaderText="Tarikh"></asp:BoundField>
+                                <asp:BoundField DataField="details" HeaderText="Butiran Aktiviti"></asp:BoundField>
                             </Columns>
                         </asp:GridView>
                     </div>

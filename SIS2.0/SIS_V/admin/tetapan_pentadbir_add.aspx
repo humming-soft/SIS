@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card-box" style="margin: 0 25%;">
-                <h4 class="m-t-0 header-title"><b>Tambah Aktiviti Bakal Calon/Individu</b></h4>
+                <h4 class="m-t-0 header-title"><b>Tambah Pengguna SIS</b></h4>
                 <p class="text-muted font-13 m-b-30">
 <%--                    Description (if needed).--%>
                 </p>
@@ -22,7 +22,7 @@
                         </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="field-1" class="control-label">Login Pengguna</label>
+                            <label for="field-1" class="control-label">Nama Pengguna</label>
                             <asp:TextBox ID="txt_log_name" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
@@ -37,13 +37,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="field-1" class="control-label">IC Number</label>
+                            <label for="field-1" class="control-label">No Kad Pengenalan</label>
                             <asp:TextBox ID="txt_ic_number" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="field-1" class="control-label">Position</label>
+                            <label for="field-1" class="control-label">Jawatan</label>
                             <asp:TextBox ID="txt_position" CssClass="form-control" ClientIDMode="Static" runat="server"></asp:TextBox>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="field-1" class="control-label">State</label>
+                            <label for="field-1" class="control-label">Negeri</label>
                             <asp:DropDownList ID="drop_state" CssClass="form-control" runat="server"
                                 ClientIDMode="Static" DataTextField="state_name" DataValueField="state_id">
                             </asp:DropDownList>

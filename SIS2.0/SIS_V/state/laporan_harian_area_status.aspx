@@ -14,7 +14,7 @@
                 <h4 class="m-t-0 header-title"><b>Paparan Laporan Harian Analysis Status Kawasan</b></h4>
                 <div class="grid-structure m-t-30">
                     <div class="grid-container">
-                        <h5 class="m-t-0 header-title" style="font-size:13px"><b>Filter Laporan Harian Analysis Status Kawasan</b></h5>
+                        <h5 class="m-t-0 header-title" style="font-size:13px"><b>Filter Laporan Harian Analisis Status Kawasan </b></h5>
                         <div class="row">
                             <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label for="userName">Parlimen-DUN</label>
+                                    <label for="userName">Parlimen - DUN</label>
                                         <asp:DropDownList ID="dp_kawasan" CssClass="form-control area-list" runat="server"
                                         ClientIDMode="Static" DataTextField="area_name" DataValueField="area_id">
                                     </asp:DropDownList>
@@ -62,7 +62,7 @@
                                     <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                     <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
                                     <asp:BoundField HeaderText="Status" DataField="color" ItemStyle-Width="10%"></asp:BoundField>
-                                        <asp:TemplateField HeaderText="Justifikasi/Kaveat">
+                                        <asp:TemplateField HeaderText="Justifikasi / Halangan">
                                             <ItemTemplate>
                                             <div class="rest-max-height-65" style="overflow:auto">
                                                     <%#Eval("comment") %>

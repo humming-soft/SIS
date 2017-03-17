@@ -155,7 +155,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label for="userName">Parlimen-DUN</label>
+                            <label for="userName">Parlimen - DUN</label>
                             <asp:DropDownList ID="drop_prlimen" CssClass="form-control parlimen-list" runat="server"
                                 ClientIDMode="Static" DataTextField="area_name" OnChange="getDistrict()" DataValueField="area_id">
                             </asp:DropDownList>
@@ -207,7 +207,7 @@
                         </div>--%>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="userName">Tarik_Masa</label>
+                            <label for="userName">Tarikh dan Masa</label>
                             <%--  <input type="text" name="nick" parsley-trigger="change" required class="form-control" id="time">--%>
                             <%--<asp:TextBox ID="txt_masa" CssClass="form-control" runat="server"></asp:TextBox>--%>
                             <asp:TextBox ID="txt_datetime" CssClass="form-control item_date" runat="server"></asp:TextBox>
@@ -226,7 +226,7 @@
                     </div>
                     <div class="col-lg-3" id="dr_one" hidden="hidden">
                         <div class="form-group">
-                            <label for="userName">Kategory</label>
+                            <label for="userName">Kategori</label>
                             <asp:DropDownList ID="drop_category" CssClass="form-control" runat="server"
                                 ClientIDMode="Static" DataTextField="current_issue_name" DataValueField="current_issue_id">
                             </asp:DropDownList>
@@ -242,7 +242,7 @@
                     </div>
                     <div class="col-lg-3" id="dr_three" hidden="hidden">
                         <div class="form-group">
-                            <label for="userName">Tindikan Status</label>
+                            <label for="userName">Tindakan Status</label>
                             <asp:DropDownList ID="drop_status" CssClass="form-control" runat="server"
                                 ClientIDMode="Static" DataTextField="lookup_name" DataValueField="lookup_id">
                             </asp:DropDownList>

@@ -412,7 +412,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:BoundField DataField="Num" HeaderText="#"></asp:BoundField>
+                                    <asp:BoundField DataField="Num" HeaderText="No"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -427,7 +427,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:BoundField DataField="Num" HeaderText="#"></asp:BoundField>
+                                    <asp:BoundField DataField="Num" HeaderText="No"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -448,7 +448,7 @@
                                             <asp:LinkButton ID="lnkisu1" runat="server" Text='<%# Bind("Name1") %>' Font-Underline="False" OnClick="lnkisu1_Click"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="ciname1" HeaderText="Isu"></asp:BoundField>
+                                    <asp:BoundField DataField="ciname1" HeaderText="Isu-isu"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
                         </div>
@@ -462,7 +462,7 @@
                                             <asp:LinkButton ID="lnkisu2" runat="server" Text='<%# Bind("Name1") %>' Font-Underline="False" OnClick="lnkisu2_Click"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="ciname1" HeaderText="Isu"></asp:BoundField>
+                                    <asp:BoundField DataField="ciname1" HeaderText="Isu-isu"></asp:BoundField>
                                 </Columns>
                             </asp:GridView>
                         </div>
