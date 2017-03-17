@@ -335,13 +335,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Profile Pengguna SIS</h4>
+                        <h4 class="modal-title">Butiran Pengguna SIS</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-1" class="control-label">Login Pengguna</label>
+                                    <label for="field-1" class="control-label">Nama Pengguna</label>
                                     <asp:TextBox ID="txtLogName" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
@@ -365,7 +365,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-1" class="control-label">Position</label>
+                                    <label for="field-1" class="control-label">Jawatan</label>
                                     <asp:TextBox ID="txtPosition" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>

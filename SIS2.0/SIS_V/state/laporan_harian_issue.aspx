@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="userName">Kategory Isu</label>
+                                    <label for="userName">Ketegori Isu</label>
                                     <asp:DropDownList ID="dp_category" CssClass="form-control parlimen-list" runat="server"
                                         ClientIDMode="Static" DataTextField="current_issue_name" DataValueField="current_issue_id">
                                     </asp:DropDownList>

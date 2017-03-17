@@ -19,23 +19,23 @@
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div class="btn-group m-b-10 pull-right">
                             <a href="activiti_bakal_ci_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i>TAMBAH</a>
-                            <a href="activiti_bakal_ci_views" class="btn btn-primary pull-right"><i class="fa fa-search"></i>CARIAN TERPERINCI</a>
+                            <a href="activiti_bakal_ci_views" class="btn btn-primary pull-right"><i class="fa fa-search"></i>CARIAN </a>
                         </div>
                     </div>
                 </div>
                 <asp:GridView ID="GridDataTable" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" AutoGenerateColumns="False" OnPreRender="GridDataTable_PreRender">
                     <Columns>
-                        <asp:BoundField DataField="name" HeaderText="Candidate Name"></asp:BoundField>
-                        <asp:BoundField DataField="party_name_bm" HeaderText="Party"></asp:BoundField>
-                        <asp:BoundField DataField="election_name" HeaderText="Election"></asp:BoundField>
-                        <asp:BoundField DataField="state_name" HeaderText="State"></asp:BoundField>
-                        <asp:BoundField DataField="coalition_name" HeaderText="Coalition"></asp:BoundField>
-                        <asp:BoundField DataField="activity_details" HeaderText="Activity Details"></asp:BoundField>
-                        <asp:BoundField DataField="lookup_name" HeaderText="Lookup Name"></asp:BoundField>
-                        <asp:BoundField DataField="validity_type" HeaderText="Validity Type"></asp:BoundField>
-                        <asp:BoundField DataField="polling_district_name" HeaderText="Polling District"></asp:BoundField>
-                        <asp:BoundField DataField="date" HeaderText="Date"></asp:BoundField>
-                        <asp:BoundField DataField="details" HeaderText="Details"></asp:BoundField>
+                        <asp:BoundField DataField="name" HeaderText="Nama Calon"></asp:BoundField>
+                        <asp:BoundField DataField="party_name_bm" HeaderText="Parti"></asp:BoundField>
+                        <asp:BoundField DataField="election_name" HeaderText="Pilihanraya"></asp:BoundField>
+                        <asp:BoundField DataField="state_name" HeaderText="Negeri"></asp:BoundField>
+                        <asp:BoundField DataField="coalition_name" HeaderText="Pakatan"></asp:BoundField>
+                        <asp:BoundField DataField="activity_details" HeaderText="Jenis Aktiviti"></asp:BoundField>
+                        <asp:BoundField DataField="lookup_name" HeaderText="Sumber Maklumat"></asp:BoundField>
+                        <asp:BoundField DataField="validity_type" HeaderText="Tahap Kesahihan"></asp:BoundField>
+                        <asp:BoundField DataField="polling_district_name" HeaderText="Daerah Mengundi"></asp:BoundField>
+                        <asp:BoundField DataField="date" HeaderText="Tarikh"></asp:BoundField>
+                        <asp:BoundField DataField="details" HeaderText="Butiran Aktiviti"></asp:BoundField>
                     </Columns>
                 </asp:GridView>
             </div>

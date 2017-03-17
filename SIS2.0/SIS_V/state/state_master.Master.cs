@@ -223,7 +223,7 @@ namespace SIS_V.state
                     //Session["pre_url"] = "activiti_bakal_ci_add";
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
-                    breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon/Individu";
                     breadcrum_child.Attributes["class"] = "b-600";
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
