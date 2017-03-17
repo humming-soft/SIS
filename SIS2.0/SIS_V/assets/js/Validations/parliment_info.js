@@ -7,6 +7,7 @@ Parliment Info login validation script
 var Parliment_Info = function () {
 
     var runParlimentInfoValidator = function () {
+        console.log("IN");
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
 
@@ -28,7 +29,7 @@ var Parliment_Info = function () {
                 },
                 ctl00$ContentPlaceHolder1$txtBil: {
                     required: true,
-                    number: true,
+                    digits: true,
                     nonnegative: true
                 },
                 //ctl00$ContentPlaceHolder1$txtKeluasanKawasan: {
@@ -45,14 +46,14 @@ var Parliment_Info = function () {
                 //},
                 ctl00$ContentPlaceHolder1$txtPopulasiPenduduk: {
                     required: true,
-                    number: true,
+                    digits: true,
                     nonnegative: true
                 },
                 ctl00$ContentPlaceHolder1$txtPurataUmur: {
                     required: true,
                     number: true,
                     nonnegative: true
-                },
+                }
                 //ctl00$ContentPlaceHolder1$txtPurataJantina: {
                 //    required: true
                 //},

@@ -117,7 +117,7 @@
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <label for="userName">Kedar Pertumbuhan Penduduk</label>
+                                <label for="userName">Kadar Pertumbuhan Penduduk</label>
                                 <asp:TextBox ID="txtKedarPertumbuhanPenduduk" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
