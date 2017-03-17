@@ -26,7 +26,7 @@
                         <h4 class="m-t-0 m-b-20 header-title"><b>KAWASAN TUMPUAN -</b>
                         <asp:Label ID="lblCon" runat="server" Text="Label"></asp:Label>
                         </h4>
-                        <div class="container table-custom">
+                        <div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="content">
