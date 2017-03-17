@@ -119,8 +119,6 @@
     <Content Include="assets\images\favicon\apple-icon-114x114.png" />
     <Content Include="assets\images\favicon\apple-icon-120x120.png" />
     <Content Include="assets\images\favicon\apple-icon-144x144.png" />
-    <Content Include="assets\images\favicon\apple-icon-152x152.png" />
-    <Content Include="assets\images\favicon\apple-icon-180x180.png" />
     <Content Include="assets\images\favicon\apple-icon-57x57.png" />
     <Content Include="assets\images\favicon\apple-icon-60x60.png" />
     <Content Include="assets\images\favicon\apple-icon-72x72.png" />
@@ -151,7 +149,6 @@
     <Content Include="assets\images\logo\logo_3.png" />
     <Content Include="assets\images\logo\logo_4.png" />
     <Content Include="assets\images\logo\logo_5.png" />
-    <Content Include="assets\images\logo\logo_6.png" />
     <Content Include="assets\images\logo\logo_6_1.png" />
     <Content Include="assets\images\logo\logo_xs.png" />
     <Content Include="assets\images\pattern\001_p.png" />

@@ -240,11 +240,12 @@ header{
 }
 /*UI Element Style*/
 .kode_ui_element{
-	float:right;
+	/*float:right;*/
 	padding-top:18px;	
 }
 .kode_menu{
 	float:left;	
+    margin-left: 40px;
 }
 .kode_menu ul{
 	float:left;
