@@ -38,7 +38,7 @@ namespace SIS_V.state
             {
                 dp_kawasan.DataSource = dt;
                 dp_kawasan.DataBind();
-                dp_kawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_kawasan.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
         }
 
@@ -50,7 +50,7 @@ namespace SIS_V.state
             {
                 dp_status.DataSource = dt;
                 dp_status.DataBind();
-                dp_status.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_status.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
 
         }

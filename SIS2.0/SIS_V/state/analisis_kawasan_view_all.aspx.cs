@@ -55,7 +55,7 @@ namespace SIS_V.state
             {
                 drop_kawasan.DataSource = dt1;
                 drop_kawasan.DataBind();
-                drop_kawasan.Items.Insert(0, new ListItem("---SELECT---", ""));
+                drop_kawasan.Items.Insert(0, new ListItem("---PILIH---", ""));
             }
             else
             {
@@ -94,7 +94,7 @@ namespace SIS_V.state
             {
                 drop_parlimen.DataSource = one;
                 drop_parlimen.DataBind();
-                drop_parlimen.Items.Insert(0, new ListItem("---SELECT---", ""));
+                drop_parlimen.Items.Insert(0, new ListItem("---PILIH---", ""));
             }
             else
             {
@@ -104,7 +104,7 @@ namespace SIS_V.state
             {
                 drop_dun.DataSource = two;
                 drop_dun.DataBind();
-                drop_dun.Items.Insert(0, new ListItem("---SELECT---", ""));
+                drop_dun.Items.Insert(0, new ListItem("---PILIH---", ""));
             }
             else
             {

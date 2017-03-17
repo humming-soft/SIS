@@ -41,7 +41,7 @@ namespace SIS_V.state
             {
                 dp_kawasan.DataSource = areaList;
                 dp_kawasan.DataBind();
-                dp_kawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_kawasan.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
         }
 
@@ -52,7 +52,7 @@ namespace SIS_V.state
             {
                 dp_parti.DataSource = partyList;
                 dp_parti.DataBind();
-                dp_parti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_parti.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
 
         }
@@ -64,7 +64,7 @@ namespace SIS_V.state
             {
                 dp_category.DataSource = issueList;
                 dp_category.DataBind();
-                dp_category.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_category.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
         }
 
@@ -76,7 +76,7 @@ namespace SIS_V.state
             {
                 dp_source.DataSource = sourceList;
                 dp_source.DataBind();
-                dp_source.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_source.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
 
 

@@ -41,7 +41,7 @@
                 success: function (data) {
                     if (data.d.length > 0) {
                         $('#ContentPlaceHolder1_ddlDaerah').empty();
-                        $('#ContentPlaceHolder1_ddlDaerah').append("<option value=''>-----SELECT-----</option>");
+                        $('#ContentPlaceHolder1_ddlDaerah').append("<option value=''>-----PILIH-----</option>");
                         $.each(data.d, function (key, value) {
                             $("#ContentPlaceHolder1_ddlDaerah").append($("<option></option>").val(value.polling_district_id).html(value.polling_district_name));
 

@@ -81,15 +81,15 @@ namespace SIS_V.state
                 {
                     if (subDistricts.Rows[i]["color"].ToString() == "HITAM")
                     {
-                        color = "&nbsp;<h2 class='fa fa-square' style='color:black;border: 1px solid gray;border-radius: 3px;'></h2>&nbsp;";
+                        color = "&nbsp;<h2 class='fa fa-square' style='color:black;border: 1px solid gray;border-radius: 2px; width: 20px;height: 15px;background-color:black;'></h2>&nbsp;";
                     }
                     else if (subDistricts.Rows[i]["color"].ToString() == "KELABU")
                     {
-                        color = "&nbsp;<h2 class='fa fa-square' style='color:grey;border: 1px solid gray;border-radius: 3px;'></h2>&nbsp;";
+                        color = "&nbsp;<h2 class='fa fa-square' style='color:grey;border: 1px solid gray;border-radius: 2px; width: 20px;height: 15px;background-color:grey;'></h2>&nbsp;";
                     }
                     else if (subDistricts.Rows[i]["color"].ToString() == "PUTIH")
                     {
-                        color = "&nbsp;<h2 class='fa fa-square' style='color:white;border: 1px solid gray;border-radius: 3px;'></h2>&nbsp;";
+                        color = "&nbsp;<h2 class='fa fa-square' style='color:white;border: 1px solid gray;border-radius: 2px; width: 20px;height: 15px;background-color:white;'></h2>&nbsp;";
                     }
                     if (i == 0)
                     {

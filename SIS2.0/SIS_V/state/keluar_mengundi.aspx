@@ -25,7 +25,7 @@
                     success: function (data) {
                         if (data.d.length > 0) {
                             $('#ContentPlaceHolder1_ddlAreaList').empty();
-                            $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                            $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----PILIH-----</option>");
                             $.each(data.d, function (key, value) {
                                 $("#ContentPlaceHolder1_ddlAreaList").append($("<option></option>").val(value.area_id).html(value.area_name));
 
@@ -45,7 +45,7 @@
                 });
             } else {
                 $('#ContentPlaceHolder1_ddlAreaList').empty();
-                $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----SELECT-----</option>");
+                $('#ContentPlaceHolder1_ddlAreaList').append("<option value=''>-----PILIH-----</option>");
             }
         }
 
@@ -93,7 +93,7 @@
                         <div class="form-group">
                             <label for="userName">Bahagian</label>
                             <asp:DropDownList ID="ddlKawasan" CssClass="form-control" runat="server" onchange="fill_area_list();hideGrid()">
-                                <asp:ListItem Value="">-----SELECT-----</asp:ListItem>
+                                <asp:ListItem Value="">-----PILIH-----</asp:ListItem>
                                 <asp:ListItem Value="1">Parlimen</asp:ListItem>
                                 <asp:ListItem Value="2">DUN</asp:ListItem>
                             </asp:DropDownList>

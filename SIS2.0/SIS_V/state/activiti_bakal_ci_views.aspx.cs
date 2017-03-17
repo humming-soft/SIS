@@ -50,7 +50,7 @@ namespace SIS_V.state
             dt1 = objBUS.GetActivityList();
             ddlJenis.DataSource = dt1;
             ddlJenis.DataBind();
-            ddlJenis.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlJenis.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetLookUpList()
@@ -58,7 +58,7 @@ namespace SIS_V.state
             dt2 = objBUS.GetLookUpList();
             ddlSumber.DataSource = dt2;
             ddlSumber.DataBind();
-            ddlSumber.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlSumber.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetValidityList()
@@ -66,7 +66,7 @@ namespace SIS_V.state
             dt3 = objBUS.GetValidityList();
             ddlTahap.DataSource = dt3;
             ddlTahap.DataBind();
-            ddlTahap.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlTahap.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void GetCandidateList()
@@ -74,7 +74,7 @@ namespace SIS_V.state
             dt4 = objBUS.GetCandidateList();
             ddlName.DataSource = dt4;
             ddlName.DataBind();
-            ddlName.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+            ddlName.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
