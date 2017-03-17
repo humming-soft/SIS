@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <asp:GridView ID="ConGridView1" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="ConGridView1_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="ConGridView1" CssClass="table table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="ConGridView1_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField DataField="area_code" HeaderText="Kod"></asp:BoundField>
                                                 <asp:BoundField DataField="row_color">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <asp:GridView ID="ConGridView2" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" GridLines="None" AutoGenerateColumns="False" runat="server" OnPreRender="ConGridView2_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="ConGridView2" CssClass="table table-bordered dt-responsive nowrap m-t-10" GridLines="None" AutoGenerateColumns="False" runat="server" OnPreRender="ConGridView2_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField DataField="area_code" HeaderText="Kod"></asp:BoundField>
                                                 <asp:BoundField DataField="row_color">
@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <asp:GridView ID="ConGridView3" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="ConGridView3_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="ConGridView3" CssClass="table table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="ConGridView3_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField DataField="area_code" HeaderText="Kod"></asp:BoundField>
                                                 <asp:BoundField DataField="row_color">
@@ -123,7 +123,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <asp:GridView ID="OpGridView1" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView1_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="OpGridView1" CssClass="table table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView1_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField DataField="area_code" HeaderText="Kod"></asp:BoundField>
                                                 <asp:BoundField DataField="row_color">
@@ -151,7 +151,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <asp:GridView ID="OpGridView2" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView2_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="OpGridView2" CssClass="table table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView2_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField DataField="area_code" HeaderText="Kod"></asp:BoundField>
                                                 <asp:BoundField DataField="row_color">
@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="content">
-                                        <asp:GridView ID="OpGridView3" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView3_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="OpGridView3" CssClass="table table-bordered dt-responsive nowrap m-t-10" AutoGenerateColumns="False" runat="server" OnPreRender="OpGridView3_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField DataField="area_code" HeaderText="Kod"></asp:BoundField>
                                                 <asp:BoundField DataField="row_color">

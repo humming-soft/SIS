@@ -200,9 +200,9 @@
                                 <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                             </ul>
                         </li>
-                        <li id="analisis" runat="server">
+<%--                        <li id="analisis" runat="server">
                             <a href="analisis_kawasan_view"><i class="md md-place"></i>Analisis Kawasan</a>
-                        </li>
+                        </li>--%>
                         <li class="has-submenu" id="tetapan" runat="server">
                             <a href="#"><i class="md md-settings"></i>Tetapan</a>
                             <ul class="submenu">
@@ -476,6 +476,7 @@
     <script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
+    <script src="../assets/js/Validations/detail_info.js"></script>
 
     <!-- Datepicker -->
     <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
