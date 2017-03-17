@@ -25,7 +25,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [0, 'asc']
@@ -55,7 +61,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [5, 'desc']
@@ -96,7 +108,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [5, 'desc']
@@ -125,7 +143,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [6, 'desc']
@@ -154,7 +178,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [4, 'desc']
@@ -183,7 +213,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [4, 'desc']
@@ -213,7 +249,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [4, 'desc']

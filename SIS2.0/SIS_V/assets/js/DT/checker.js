@@ -18,21 +18,21 @@
         }
     });
     var runDataTable = function () {
-            jQuery.extend(jQuery.fn.dataTableExt.oSort, {
-                "date-uk-pre": function (a) {
-                    var c = a.split(' ');
-                    var ukDatea = c[0].split('-');
-                    return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
-                },
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function (a) {
+                var c = a.split(' ');
+                var ukDatea = c[0].split('-');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
 
-                "date-uk-asc": function (a, b) {
-                    return ((a < b) ? -1 : ((a > b) ? 1 : 0));
-                },
+            "date-uk-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
 
-                "date-uk-desc": function (a, b) {
-                    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
-                }
-            });
+            "date-uk-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
         var oTable = $('#GridDataTable').dataTable({
             "aoColumns": [
                 null,
@@ -51,7 +51,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [9, 'desc']
@@ -75,7 +81,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [0, 'asc']
@@ -106,7 +118,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [5, 'desc']
@@ -137,7 +155,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [0, 'asc']
@@ -162,7 +186,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [0, 'asc']
@@ -186,7 +216,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [0, 'asc']
@@ -211,7 +247,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [0, 'asc']
@@ -256,7 +298,13 @@
             "oLanguage": {
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
-                "pagingType": "full_numbers"
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [3, 'desc']
@@ -307,7 +355,13 @@
                 "sLengthMenu": "Show _MENU_ Rows",
                 "sSearch": "",
                 "pagingType": "full_numbers",
-                "sEmptyTable": "My Custom Message On Empty Table"
+                "sEmptyTable": "My Custom Message On Empty Table",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
             },
             "aaSorting": [
                 [9, 'desc']
