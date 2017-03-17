@@ -17,19 +17,19 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="content">
-                                        <asp:GridView ID="status_kawasan_dist"  CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender">
+                                        <asp:GridView ID="status_kawasan_dist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender">
                                             <Columns>
-                                                <asp:BoundField HeaderText="Kod Kawasan" DataField="area_code" ItemStyle-Width="15%"></asp:BoundField>
-                                                <asp:BoundField HeaderText="Nama Kawasan" DataField="area_name"></asp:BoundField>
-                                                <asp:TemplateField HeaderText="" ItemStyle-Width="10%">
+                                                <asp:BoundField HeaderText="Kod Kawasan" DataField="area_code" ItemStyle-Width="25%"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Nama Kawasan">
                                                     <ItemTemplate>
-                                                         <h3 class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-circle" : "" %>"></h3>
-                                                    </ItemTemplate> 
+                                                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("area_name") %>'></asp:Label>
+                                                        <i class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-star" : "" %>"></i>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
-                                                  <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
                                                     <ItemTemplate>
-                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
-                                                    </ItemTemplate> 
+                                                        <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
                                         </asp:GridView>
@@ -48,14 +48,14 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="content">
-                                        <asp:GridView ID="status_kawasan_subdist"  CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_subdist_PreRender">
+                                        <asp:GridView ID="status_kawasan_subdist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="False" runat="server" OnPreRender="status_kawasan_subdist_PreRender">
                                             <Columns>
-                                                <asp:BoundField HeaderText="Kod Kawasan" DataField="area_code" ItemStyle-Width="15%"></asp:BoundField>
-                                                <asp:BoundField HeaderText="Nama Kawasan" DataField="area_name"></asp:BoundField>
-                                                  <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
+                                                <asp:TemplateField HeaderText="Nama Kawasan">
                                                     <ItemTemplate>
-                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
-                                                    </ItemTemplate> 
+                                                        <div class="rest-max-height-44 mCustomScrollbar">
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("names") %>'></asp:Label>
+                                                        </div>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
                                         </asp:GridView>
