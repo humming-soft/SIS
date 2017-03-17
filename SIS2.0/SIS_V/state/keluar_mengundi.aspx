@@ -118,6 +118,10 @@
                     </div>
                 </div>
                 <div id="voteGrid" class="">
+                    <div class="alert alert-danger alert-dismissable" id="input_error" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>Telah Keluar should be less than or equal to Jumlah Pengundi!</p>
+                    </div>
                     <asp:GridView ID="GridKM" runat="server" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="polling_district_id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing" OnRowUpdating="GridKM_RowUpdating">
                         <Columns>
                             <asp:BoundField DataField="polling_district" HeaderText="NAMA DAERAH MENGUNDI" ReadOnly="true" />
@@ -125,9 +129,9 @@
                                 <EditItemTemplate>
                                     <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtVotes"></asp:TextBox>
                                     <span style="color: red">
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes" Display="Dynamic"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator runat="server" ID="cmpValues" ControlToValidate="txtVotes" ControlToCompare="txtJumlah" Operator="LessThanEqual" Type="Integer" ErrorMessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number " Display="Dynamic" />
-                                        <%--<asp:RegularExpressionValidator ID="negativevalidator" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$" Display="Dynamic"></asp:RegularExpressionValidator>--%>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Value" ControlToValidate="txtVotes" Type="Integer" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <%--<asp:CompareValidator runat="server" ID="cmpValues" ControlToValidate="txtVotes" ControlToCompare="txtJumlah" Operator="LessThanEqual" Type="Integer" ErrorMessage="Telah Keluar should be smaller than the Jumlah Pengundi and value must be a whole number " Display="Dynamic" />--%>
+                                        <asp:RegularExpressionValidator ID="negativevalidator" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtVotes" ValidationExpression="^[1-9]\d*$" Display="Dynamic"></asp:RegularExpressionValidator>
                                     </span>
                                 </EditItemTemplate>
                                 <ItemTemplate>
@@ -140,7 +144,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="percentage" HeaderText="PERATUS" ReadOnly="true" />
-                            <asp:TemplateField HeaderText="Tindakan">
+                            <asp:TemplateField HeaderText="TINDAKAN">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-pencil no-loader" CommandName="Edit"></asp:LinkButton>
                                     <%--<asp:LinkButton ID="lnkdelete" runat="server" CssClass="fa fa-trash" CommandName="Delete"></asp:LinkButton>--%>

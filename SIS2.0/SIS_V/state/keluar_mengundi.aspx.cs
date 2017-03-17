@@ -17,6 +17,7 @@ namespace SIS_V.state
         protected void Page_Load(object sender, EventArgs e)
         {
             invalid.Visible = false;
+            input_error.Visible = false;
             if (!IsPostBack)
             {
                 CheckIsLogin();
@@ -115,15 +116,24 @@ namespace SIS_V.state
 
         protected void GridKM_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            objBUS.area_id = int.Parse(hiddenArea.Value);
-            objBUS.election_id = int.Parse(Session["election_id"].ToString());
-            objBUS.polling_district_id = int.Parse(GridKM.DataKeys[e.RowIndex].Value.ToString());
-            objBUS.no_of_vote = int.Parse(((TextBox)GridKM.Rows[e.RowIndex].FindControl("txtVotes")).Text);
-            int chk = objBUS.UpdateNoVote();
-            if (chk == 0)
+            int votes = int.Parse(((TextBox)GridKM.Rows[e.RowIndex].FindControl("txtVotes")).Text);
+            int jumlah = int.Parse(((TextBox)GridKM.Rows[e.RowIndex].FindControl("txtJumlah")).Text);
+            if (votes > jumlah)
             {
-                GridKM.EditIndex = -1;
-                fill_grid();
+                input_error.Visible = true;
+            }
+            else
+            {
+                objBUS.area_id = int.Parse(hiddenArea.Value);
+                objBUS.election_id = int.Parse(Session["election_id"].ToString());
+                objBUS.polling_district_id = int.Parse(GridKM.DataKeys[e.RowIndex].Value.ToString());
+                objBUS.no_of_vote = int.Parse(((TextBox)GridKM.Rows[e.RowIndex].FindControl("txtVotes")).Text);
+                int chk = objBUS.UpdateNoVote();
+                if (chk == 0)
+                {
+                    GridKM.EditIndex = -1;
+                    fill_grid();
+                }
             }
         }
     }
