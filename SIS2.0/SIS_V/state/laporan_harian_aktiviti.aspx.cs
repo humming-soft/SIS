@@ -39,7 +39,7 @@ namespace SIS_V.state
             {
                 dp_kawasan.DataSource = areaList;
                 dp_kawasan.DataBind();
-                dp_kawasan.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_kawasan.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
         }
         protected void setActivityType()
@@ -50,7 +50,7 @@ namespace SIS_V.state
             {
                 dp_aktiviti.DataSource = activityTypeList;
                 dp_aktiviti.DataBind();
-                dp_aktiviti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_aktiviti.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
         }
 
@@ -61,7 +61,7 @@ namespace SIS_V.state
             {
                 dp_parti.DataSource = partyList;
                 dp_parti.DataBind();
-                dp_parti.Items.Insert(0, new ListItem("-----SELECT-----", ""));
+                dp_parti.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
 
         }
