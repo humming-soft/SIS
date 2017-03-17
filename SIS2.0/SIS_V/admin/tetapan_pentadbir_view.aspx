@@ -43,14 +43,14 @@
                 </div>
                 <asp:GridView ID="grid_user" CssClass="table table-striped table-bordered dt-responsive nowrap" runat="server" ClientIDMode="Static" OnPreRender="Gridteta_PreRender" AutoGenerateColumns="False">
                     <Columns>
-                        <asp:BoundField DataField="fullname" HeaderText="Name" />
-                        <asp:BoundField DataField="log_name" HeaderText="Log Name" />
+                        <asp:BoundField DataField="fullname" HeaderText="Nama Penuh" />
+                        <asp:BoundField DataField="log_name" HeaderText="Nama Pengguna" />
                         <asp:BoundField DataField="rolename" HeaderText="Role" />
-                        <asp:BoundField DataField="icnumber" HeaderText="IC Number" />
-                        <asp:BoundField DataField="position" HeaderText="Position" />
-                        <asp:BoundField DataField="regdate" HeaderText="Register Date" />
-                        <asp:BoundField DataField="state_name" HeaderText="State" />
-                        <asp:TemplateField HeaderText="Actions">
+                        <asp:BoundField DataField="icnumber" HeaderText="No Kad Pengenalan" />
+                        <asp:BoundField DataField="position" HeaderText="Jawatan" />
+                        <asp:BoundField DataField="regdate" HeaderText="Tarikh Daftar" />
+                        <asp:BoundField DataField="state_name" HeaderText="Negeri" />
+                        <asp:TemplateField HeaderText="Tindakan">
                             <ItemTemplate>
                                 <asp:HiddenField ID="f_name" ClientIDMode="Static" runat="server" Value='<%#Eval("fullname")%>' />
                                 <asp:HiddenField ID="l_name" ClientIDMode="Static" runat="server" Value='<%#Eval("log_name")%>' />
@@ -83,12 +83,12 @@
 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Kemaskini Katalulan</h4>
+                    <h4 class="modal-title">Kemaskini Katalaluan</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <h4>Kemaskini Kaka Laiuan untuk
-                            (nama user)
+                        <h4>Kemaskini Katalaluan untuk 
+                            (Nama Pengguna)
                         </h4>
                         <div class="col-md-12">
                             <div class="form-group">
@@ -120,7 +120,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">JPengguna Baru</h4>
+                    <h4 class="modal-title">Butiran Pengguna</h4>
                 </div>
                 <div class="modal-body">
                     <asp:HiddenField ID="hd_validation" ClientIDMode="Static" runat="server" />
@@ -131,7 +131,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-1" class="control-label">Login Pengguna</label>
+                                <label for="field-1" class="control-label">Nama Pengguna</label>
                                 <asp:TextBox ID="txt_log_name" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-1" class="control-label">IC Number</label>
+                                <label for="field-1" class="control-label">No Kad Pengenalan</label>
                                 <asp:TextBox ID="txt_ic_number" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-1" class="control-label">Position</label>
+                                <label for="field-1" class="control-label">Jawatan</label>
                                 <asp:TextBox ID="txt_position" CssClass="form-control" runat="server" ClientIDMode="Static"></asp:TextBox>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="field-1" class="control-label">State</label>
+                                <label for="field-1" class="control-label">Negeri</label>
                                 <asp:DropDownList ID="drop_state" CssClass="form-control" runat="server"
                                     ClientIDMode="Static" DataTextField="state_name" DataValueField="state_id">
                                 </asp:DropDownList>

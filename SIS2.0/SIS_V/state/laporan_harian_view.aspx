@@ -20,7 +20,7 @@
                 <asp:Label ID="lblsuccess" runat="server"></asp:Label>
             </div>
             <div class="card-box table-responsive">
-                <h4 class="m-t-0 header-title"><b>Paparan Lamporan harian Dari Negeri</b></h4>
+                <h4 class="m-t-0 header-title"><b>Paparan Laporan harian Dari Negeri </b></h4>
                 <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
                     500 Rekod Terkini.
@@ -104,7 +104,7 @@
                                        <Columns>
                                             <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Janji Yg Diberi" DataField="details"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Janji Yang Diberi" DataField="details"></asp:BoundField>
                                              <asp:TemplateField HeaderText="Nama Tokoh">
                                                  <ItemTemplate>
                                                      <div class="rest-max-height-65" style="overflow:auto">
@@ -166,7 +166,7 @@
                                             <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
                                             <asp:BoundField HeaderText="Status" DataField="color" ItemStyle-Width="10%"></asp:BoundField>
-                                             <asp:TemplateField HeaderText="Justifikasi/Kaveat">
+                                             <asp:TemplateField HeaderText="Justifikasi / Halangan">
                                                  <ItemTemplate>
                                                     <div class="rest-max-height-65" style="overflow:auto">
                                                          <%#Eval("comment") %>

@@ -45,7 +45,7 @@
                                 <Columns>
                                     <asp:BoundField HeaderText="Kod Kawasan" DataField="areacode" ItemStyle-Width="10%"></asp:BoundField>
                                     <asp:BoundField HeaderText="Nama Kawasan" DataField="areaname" ItemStyle-Width="10%"></asp:BoundField>
-                                    <asp:BoundField HeaderText="Janji Yg Diberi" DataField="details"></asp:BoundField>
+                                    <asp:BoundField HeaderText="Janji Yang Diberi" DataField="details"></asp:BoundField>
                                         <asp:TemplateField HeaderText="Nama Tokoh">
                                             <ItemTemplate>
                                                 <div class="rest-max-height-65" style="overflow:auto">

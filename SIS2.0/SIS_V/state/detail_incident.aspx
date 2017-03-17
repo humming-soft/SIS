@@ -22,7 +22,7 @@
                     <asp:GridView ID="grid_kodkawasan" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" OnPreRender="grid_kodkawasan_PreRender" DataKeyNames="area_id">
                         <Columns>
                             <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
-                            <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
+                            <asp:TemplateField HeaderText="Nama Kawasan" SortExpression="area_name">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="link_area_name_sktwo" runat="server" OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
                                 </ItemTemplate>
@@ -163,8 +163,8 @@
                     <div class="table-responsive mCustomScrollbar" style="height: 855px;" data-mcs-theme="dark-3">
                         <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
                             <Columns>
-                                <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" HeaderText="#" ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
-                                <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="ACTIVITI :" SortExpression="details" />
+                                <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" HeaderText="Kod" ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
                             </Columns>
                         </asp:GridView>
                     </div>

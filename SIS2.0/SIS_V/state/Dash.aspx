@@ -221,7 +221,7 @@
                             <li>
                                 <img src="../assets/images/gallery/007_d.png" alt="Logo Image Here" />
                                 <a href="#">
-                                    <p class="minutes_ref b35">Keputusan Pilihanriya </p>
+                                    <p class="minutes_ref b35">Keputusan Pilihanraya </p>
                                 </a>
                             </li>
                             <li>

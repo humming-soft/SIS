@@ -396,7 +396,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Start row -->
     <div class="card-box">
-        <h4 class="text-dark  header-title m-t-0">Import Laporan Harian Dari Negeri</h4>
+        <h4 class="text-dark  header-title m-t-0">Tambah Laporan Harian Dari Negeri</h4>
         <p class="text-muted m-b-25 font-13">
         </p>
         <div class="col-md-12">
@@ -447,7 +447,7 @@
                     <div class="tab-pane active" id="home1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable"><i class="fa fa-plus"></i>Add Baru Aktiviti</button>
+                                <button type="button" class="btn btn-success pull-right addToTable"><i class="fa fa-plus"></i>Tambah Aktiviti Baru</button>
                             </div>
                         </div>
                         <div class="c-here active lamporan_act">
@@ -479,7 +479,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Tarikh</label>
+                                        <label for="userName">Tarikh dan Masa</label>
                                         <asp:TextBox ID="txtdate" runat="server" CssClass="form-control item_date"></asp:TextBox>
                                     </div>
                                 </div>
@@ -503,7 +503,7 @@
                     <div class="tab-pane" id="profile1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable1"><i class="fa fa-plus"></i>Add Baru Isu</button>
+                                <button type="button" class="btn btn-success pull-right addToTable1"><i class="fa fa-plus"></i>Tambah Isu Baru</button>
                             </div>
                         </div>
                         <div class="c-here active lamporan_isu">
@@ -543,7 +543,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Tarikh</label>
+                                        <label for="userName">Tarikh dan Masa</label>
                                         <asp:TextBox ID="txtTarikh" runat="server" CssClass="form-control item_dateI"></asp:TextBox>
                                     </div>
                                 </div>
@@ -569,7 +569,7 @@
                     <div class="tab-pane" id="messages1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable2"><i class="fa fa-plus"></i>Add Baru Janji</button>
+                                <button type="button" class="btn btn-success pull-right addToTable2"><i class="fa fa-plus"></i>Tambah Janji Baru</button>
                             </div>
                         </div>
                         <div class="c-here active lamporan_janji">
@@ -585,7 +585,7 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label for="userName">Tarikh</label>
+                                        <label for="userName">Tarikh dan Masa</label>
                                         <asp:TextBox ID="txtTarikhj" runat="server" CssClass="form-control item_datej"></asp:TextBox>
                                     </div>
                                 </div>
@@ -594,7 +594,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="userName">Janji yg Diberi</label>
+                                        <label for="userName">Janji Yang Diberi</label>
                                         <asp:TextBox ID="txtjanji" runat="server" TextMode="MultiLine" CssClass="form-control item_janji"></asp:TextBox>
                                     </div>
                                 </div>
@@ -618,7 +618,7 @@
                     <div class="tab-pane" id="settings1">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable3"><i class="fa fa-plus"></i>Add Baru Insiden</button>
+                                <button type="button" class="btn btn-success pull-right addToTable3"><i class="fa fa-plus"></i>Tambah Insiden Baru</button>
                             </div>
                         </div>
                         <div class="c-here active laporan_insiden">
@@ -642,7 +642,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Tarikh</label>
+                                        <label for="userName">Tarikh dan Masa</label>
                                         <asp:TextBox ID="txtTarikhIn" runat="server" CssClass="form-control item_dateIn"></asp:TextBox>
                                     </div>
                                 </div>
@@ -668,7 +668,7 @@
                     <div class="tab-pane" id="settings2">
                         <div class="row">
                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-success pull-right addToTable4"><i class="fa fa-plus"></i>Add Baru Status Kawasan</button>
+                                <button type="button" class="btn btn-success pull-right addToTable4"><i class="fa fa-plus"></i>Tambah Status Kawasan Baru</button>
                             </div>
                         </div>
                         <div class="c-here active laporan_kawasan">
@@ -692,7 +692,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label for="userName">Tarikh</label>
+                                        <label for="userName">Tarikh dan Masa</label>
                                         <asp:TextBox ID="txtTarikhKawasan" runat="server" CssClass="form-control item_dateKawasan"></asp:TextBox>
                                     </div>
                                 </div>
@@ -702,8 +702,8 @@
                                          <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlWujud" CssClass="form-control item_Wujud" runat="server" DataTextField="areacode" DataValueField="area_id">
                                             <asp:ListItem Value="">---SELECT---</asp:ListItem>
-                                            <asp:ListItem Value="1">Yes</asp:ListItem>
-                                            <asp:ListItem Value="2">No</asp:ListItem>
+                                            <asp:ListItem Value="1">Ya</asp:ListItem>
+                                            <asp:ListItem Value="2">Tidak</asp:ListItem>
                                         </asp:DropDownList>
                                        
                                     </div>
@@ -712,7 +712,7 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="form-group">
-                                        <label for="userName">Justifikasi/Kaveat</label>
+                                        <label for="userName">Justifikasi / Halangan</label>
                                         <asp:TextBox ID="txtJustifikasi" runat="server" TextMode="MultiLine" CssClass="form-control item_Justifikasi"></asp:TextBox>
                                     </div>
                                     <label for="analysisButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>

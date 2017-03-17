@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="form-group">
-                                    <label for="userName">Parlimen-DUN</label>
+                                    <label for="userName">Parlimen - DUN</label>
                                         <asp:DropDownList ID="dp_kawasan" CssClass="form-control area-list" runat="server"
                                         ClientIDMode="Static" DataTextField="area_name" DataValueField="area_id">
                                     </asp:DropDownList>
