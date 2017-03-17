@@ -28,12 +28,12 @@ namespace SIS_V.state
             Response.Cache.SetNoStore();
 
             if (!IsPostBack)
-            {        
+            {
                 valid_empty.Visible = false;
                 valid_match.Visible = false;
                 GetUserDetails();
             }
-         
+
         }
 
         public void GetUserDetails()
@@ -198,7 +198,7 @@ namespace SIS_V.state
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
-                case "activiti_bakal_ci_view": 
+                case "activiti_bakal_ci_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon / Individu";
@@ -207,12 +207,12 @@ namespace SIS_V.state
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
-               case "activiti_bakal_ci_views":
+                case "activiti_bakal_ci_views":
                     //Session["pre_page"] = "Paparan Aktiviti Bakal Calon / Individu";
                     //Session["pre_url"] = "activiti_bakal_ci_views";
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
-                    breadcrum_child.InnerText ="Paparan Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.InnerText = "Paparan Aktiviti Bakal Calon / Individu";
                     breadcrum_child.Attributes["href"] = "activiti_bakal_ci_view";
                     breadcrum_grant_child.InnerText = "Carian Terperinci";
                     grant_child_li.Attributes["class"] = "active";
@@ -365,7 +365,7 @@ namespace SIS_V.state
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
-                    
+
             }
         }
 
