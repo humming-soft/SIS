@@ -36,8 +36,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </ItemTemplate>
-                                                                        </asp:DataList>
-                                                                        <hr />
+                                                                        </asp:DataList>                                                                  
                                                                     </div>
                                                                 </div>
                                                             </div>
