@@ -633,6 +633,7 @@ namespace SIS_D
                 cmd.CommandText = "sp_fetch_areaInfoElectionParty";
                 cmd.Parameters.AddWithValue("@state_id", state_id);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 0;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();
