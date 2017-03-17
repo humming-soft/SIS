@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label for="userName">Name Calon</label>
+                            <label for="userName">Nama Calon</label>
                             <asp:DropDownList ID="ddlName" CssClass="custom-select authSelect" ClientIDMode="Static" runat="server" DataTextField="Name" DataValueField="Candidate_id">
                             </asp:DropDownList>
                         </div>
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Search" OnClick="btnSubmit_Click" OnClientClick="vali_filter()" />
+                            <asp:Button ID="btnSubmit" runat="server" CssClass="btn btn-primary waves-light" Text="Carian" OnClick="btnSubmit_Click" OnClientClick="vali_filter()" />
                         </div>
                     </div>
                 </div>
