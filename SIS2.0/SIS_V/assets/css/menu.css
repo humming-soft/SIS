@@ -609,7 +609,8 @@ File: Menu
   float:left;
   width:100%;
   position:relative;
-  background-color:#1daee5;
+  /*background-color:#1daee5;*/
+  background-color: #ef4a2b;
 }
 .kode_navigation_outr_wrap:before{
   content:"";
@@ -624,7 +625,8 @@ File: Menu
   position:absolute;
   bottom:-4px;
   right:0px;
-  background-color: #1daee5;
+  /*background-color: #1daee5;*/
+  background-color:#ef4a2b;
   height:2px;
   width:65%;
 }
@@ -838,7 +840,8 @@ File: Menu
   top:8px;
 }
 .kode_navigation_outr_wrap::before, .kode_logo, .kode_logo::before, .kode_logo::after{
-  background-color: #ef4a2b;
+  /*background-color: #ef4a2b;*/
+  background-color: #1daee5;
 }
 header {
   position: absolute;

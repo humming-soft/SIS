@@ -283,7 +283,8 @@ header{
 }
 /*1st DropDown Menu*/
 .kode_menu ul ul{
-	width:326px;
+	/*width:326px;*/
+    width:450px;
 	position:absolute;
 	top:50%;
 	left:-50px;

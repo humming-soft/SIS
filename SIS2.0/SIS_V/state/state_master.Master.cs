@@ -21,6 +21,7 @@ namespace SIS_V.state
         protected void Page_Load(object sender, EventArgs e)
         {
             checker();
+            setstatename();
             SetCurrentPage();
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
@@ -157,6 +158,12 @@ namespace SIS_V.state
                     break;
                 case "detail_info":
                     dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = Session["pre_page"].ToString();
+                    breadcrum_child.Attributes["href"] = Session["pre_url"].ToString();
+                    breadcrum_grant_child.InnerText = "Melihat Maklumat Terperinci";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "status_kawasan":
                     dash.Attributes["class"] = "has-submenu active";
@@ -191,13 +198,32 @@ namespace SIS_V.state
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
-                case "activiti_bakal_ci_view":
-                    prapilihanraya.Attributes["class"] = "has-submenu active";
-                    break;
-                case "activiti_bakal_ci_add":
+                case "activiti_bakal_ci_view": 
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
-                    breadcrum_child.InnerText = "Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.Attributes["href"] = "activiti_bakal_ci_add";
+                    breadcrum_grant_child.InnerText = "Paparan Aktiviti Bakal Calon / Individu";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+               case "activiti_bakal_ci_views":
+                    //Session["pre_page"] = "Paparan Aktiviti Bakal Calon / Individu";
+                    //Session["pre_url"] = "activiti_bakal_ci_views";
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText ="Paparan Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.Attributes["href"] = "activiti_bakal_ci_view";
+                    breadcrum_grant_child.InnerText = "Carian Terperinci";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "activiti_bakal_ci_add":
+                    //Session["pre_page"] = "Tambah Aktiviti Bakal Calon / Individu";
+                    //Session["pre_url"] = "activiti_bakal_ci_add";
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon / Individu";
                     breadcrum_child.Attributes["class"] = "b-600";
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
@@ -348,6 +374,10 @@ namespace SIS_V.state
             return Request.Url.ToString().Split('/').Last();
         }
 
+        private void setstatename()
+        {
+            statename.InnerHtml = "STATE : " + Session["statename"].ToString().ToUpper();
+        }
 
     }
 }
