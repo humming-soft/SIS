@@ -21,6 +21,7 @@ namespace SIS_V.state
             atype = Session["utype"].ToString();
             if (!IsPostBack)
             {
+
                 CheckIsLogin();
             }
         }
@@ -86,6 +87,14 @@ namespace SIS_V.state
         {
             if (GridView_All.Rows.Count > 0)
             {
+                if (atype == "insident") 
+                {
+                    GridView_All.HeaderRow.Cells[0].Text = "Butiran Insiden";
+                }
+                else
+                {
+                    GridView_All.HeaderRow.Cells[0].Text = "Butiran Isu-isu";
+                }
                 GridView_All.UseAccessibleHeader = true;
                 GridView_All.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
