@@ -11,7 +11,7 @@ namespace SIS_V.state
 {
     public partial class detail_info : System.Web.UI.Page
     {
-        int id, state;
+        int id, state, area;
         string atype;
         DataTable dt;
         bus_sis_ugc1 bus = new bus_sis_ugc1();
@@ -19,10 +19,15 @@ namespace SIS_V.state
         {
 
             atype = Session["utype"].ToString();
+            area = int.Parse(Session["area"].ToString());
             if (!IsPostBack)
             {
 
                 CheckIsLogin();
+                if (area != null){
+                    dp_kawasan.SelectedValue = area.ToString();
+                    fill_details();
+                }
             }
         }
         protected void CheckIsLogin()
@@ -104,5 +109,34 @@ namespace SIS_V.state
         {
             Response.Redirect("utama");
         }
+
+        protected void fill_details()
+        {
+            if (dp_kawasan.SelectedIndex != 0)
+            {
+                if (atype == "insident")
+                {
+                    bus.areaid = int.Parse(dp_kawasan.SelectedValue);
+                    dt = bus.fill_incident();
+                    if (dt.Rows.Count > 0)
+                    {
+                        GridView_All.DataSource = dt;
+                        GridView_All.DataBind();
+                    }
+                }
+                else
+                {
+                    bus.areaid = int.Parse(dp_kawasan.SelectedValue);
+                    dt = bus.fill_issue();
+                    if (dt.Rows.Count > 0)
+                    {
+                        GridView_All.DataSource = dt;
+                        GridView_All.DataBind();
+                    }
+                }
+            }
+        } 
+
+
     }
 }
