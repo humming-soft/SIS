@@ -47,7 +47,7 @@
                                                         <asp:LinkButton ID="lnk_arn1" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn1_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -75,7 +75,7 @@
                                                         <asp:LinkButton ID="lnk_arn2" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn2_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -103,7 +103,7 @@
                                                         <asp:LinkButton ID="lnk_arn3" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn3_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -140,7 +140,7 @@
                                                         <asp:LinkButton ID="lnk_arn4" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn4_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -168,7 +168,7 @@
                                                         <asp:LinkButton ID="lnk_arn5" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn5_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -196,7 +196,7 @@
                                                         <asp:LinkButton ID="lnk_arn6" runat="server" CssClass='<%# Isset((string)Eval("row_color")) %>' Text='<%# Bind("area_name") %>' Font-Underline="False" OnClick="lnk_arn6_Click"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
