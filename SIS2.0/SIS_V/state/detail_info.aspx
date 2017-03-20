@@ -39,7 +39,7 @@
                         <div class="col-lg-12">
                             <asp:GridView ID="GridView_All" runat="server" CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="False" OnPreRender="GridView_All_PreRender">
                                 <Columns>
-                                    <asp:BoundField DataField="details" HeaderText="Details" />
+                                    <asp:BoundField DataField="details" HeaderText="" />
                                 </Columns>
                             </asp:GridView>
                         </div>
