@@ -56,6 +56,7 @@
                                                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("names") %>'></asp:Label>
                                                         </div>
                                                     </ItemTemplate>
+                                                    <ItemStyle Height="61px"></ItemStyle>
                                                 </asp:TemplateField>
                                             </Columns>
                                         </asp:GridView>

@@ -20,7 +20,7 @@
                 <asp:Label ID="lblsuccess" runat="server"></asp:Label>
             </div>
             <div class="card-box table-responsive">
-                <h4 class="m-t-0 header-title"><b>Paparan Laporan harian Dari Negeri </b></h4>
+                <h4 class="m-t-0 header-title"><b>Paparan Laporan harian Negeri </b></h4>
                 <a href="laporan_harian_add" class="btn btn-success pull-right"><i class="fa fa-file-text"></i> TAMBAH</a>
                 <p class="text-muted font-13 m-b-30">
                     500 Rekod Terkini.
