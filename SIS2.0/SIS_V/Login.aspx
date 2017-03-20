@@ -95,8 +95,8 @@
         </div>
         <form id="form1" runat="server" class="form-horizontal m-t-20">
             <div class="section">
-                <h4>Sign in to your account</h4>
-                <p>Please enter your <code>username</code> and <code>password</code> to log in.</p>
+                <h4>Daftar masuk ke akaun andat</h4>
+                <p>Sila masukkan<code>nama pengguna</code> dan <code>kata laluan anda</code> untuk log masuk.</p>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
