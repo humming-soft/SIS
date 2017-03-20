@@ -79,7 +79,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Buang" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Are you sure you want to delete?')) return false;"  CommandName="Delete"></asp:LinkButton>
+                                            <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Adakah anda mahu rekod ini dipadamkan?')) return false;"  CommandName="Delete"></asp:LinkButton>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>

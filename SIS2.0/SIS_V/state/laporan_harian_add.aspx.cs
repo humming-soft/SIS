@@ -13,8 +13,8 @@ namespace SIS_V.state
     public partial class laporan_harian_add : System.Web.UI.Page
     {
         bus_sis_ugc1 objAktivitiBUS = new bus_sis_ugc1();
-        DataTable dt,dt1,dt2,dt3,dt4,dt5;
-        string Akodkawasan, Ajenisaktiviti, Aparti, Atarikh, Abaktiviti, iKodKawasan, icategory, isumber, iparti, itarikh, ibutiran, jKodKawasan, jtarikh, jdiberi, jnama, InKodKawasan, Inparti, Intarikh, ButiranInsiden;
+        DataTable dt, dt1, dt2, dt3, dt4, dt5, dtSumber, dttahap;
+        string Akodkawasan, Ajenisaktiviti, Aparti, Ainfo, Avalid, Atarikh, Abaktiviti, iKodKawasan, icategory, isumber, iparti, itarikh, ibutiran, jKodKawasan, jtarikh, jdiberi, jnama, InKodKawasan, Inparti, Intarikh, ButiranInsiden;
         string KodKawasanKawasan, statusKawasan, tarikhKawasan, WujudKawasan, KaveatKawasan;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,6 +36,8 @@ namespace SIS_V.state
                     fill_jenis();
                     fill_parti();
                     fill_sumber();
+                    fill_sumberM();
+                    fill_tahap();
                     fill_isu();
                     fill_status();
                     txtdate.Attributes.Add("readonly", "readonly");
@@ -111,6 +113,20 @@ namespace SIS_V.state
             ddlSumberIsu.DataBind();
             ddlSumberIsu.Items.Insert(0, new ListItem("---PILIH---", ""));
         }
+        public void fill_sumberM()
+        {
+            dtSumber = objAktivitiBUS.fill_sumberM();
+            ddlSumberM.DataSource = dtSumber;
+            ddlSumberM.DataBind();
+            ddlSumberM.Items.Insert(0, new ListItem("---PILIH---", ""));
+        }
+        public void fill_tahap()
+        {
+            dttahap = objAktivitiBUS.fill_tahap();
+            ddlTahapK.DataSource = dttahap;
+            ddlTahapK.DataBind();
+            ddlTahapK.Items.Insert(0, new ListItem("---PILIH---", ""));
+        }
         public void fill_isu()
         {
             dt4 = objAktivitiBUS.fill_isu();
@@ -133,12 +149,16 @@ namespace SIS_V.state
             Ajenisaktiviti = hfkaktiviti.Value;
             Aparti = hfparti.Value;
             Atarikh = txtdate.Text;
+            Ainfo = hfsumberm.Value;
+            Avalid = hftahapk.Value;
             Abaktiviti = txtButiran.Text;
 
             string[] split_Akodkawasan = Akodkawasan.Split(',');
             string[] split_Ajenisaktiviti = Ajenisaktiviti.Split(',');
             string[] split_Aparti = Aparti.Split(',');
             string[] split_Atarikh = Atarikh.Split(',');
+            string[] split_Ainfo = Ainfo.Split(',');
+            string[] split_Avalid = Avalid.Split(',');
             string[] split_Abaktiviti = Abaktiviti.Split(',');
             for (int j = 0; j < counter; j++)
             {
@@ -146,6 +166,8 @@ namespace SIS_V.state
                 objAktivitiBUS.jenis_aktiviti = int.Parse(split_Ajenisaktiviti[j]);
                 objAktivitiBUS.parti = int.Parse(split_Aparti[j]);
                 objAktivitiBUS.tarikh = DateTime.ParseExact(split_Atarikh[j], "dd/MM/yyyy HH:mm", null);
+                objAktivitiBUS.info = int.Parse(split_Ainfo[j]);
+                objAktivitiBUS.valid = int.Parse(split_Avalid[j]);
                 objAktivitiBUS.butiran_aktiviti = split_Abaktiviti[j];
                 int act = objAktivitiBUS.insert_aktiviti();
                 if(act == 1)// success
