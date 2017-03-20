@@ -39,7 +39,12 @@
                         <div class="col-lg-12">
                             <asp:GridView ID="GridView_All" runat="server" CssClass="table table-striped table-bordered nowrap" AutoGenerateColumns="False" OnPreRender="GridView_All_PreRender">
                                 <Columns>
-                                    <asp:BoundField DataField="details" HeaderText="" />
+                                    <asp:BoundField DataField="area_code" HeaderText="Kod Kawasan" />
+                                    <asp:BoundField DataField="area_name" HeaderText="Nama Kawasan" />
+                                    <asp:BoundField DataField="details" HeaderText="" />                                    
+                                    <asp:BoundField DataField="party_name_bm" HeaderText="Parti" />
+                                    <asp:BoundField DataField="activity_date" HeaderText="Tarikh" />
+                                    <asp:BoundField DataField="activity_time" HeaderText="Masa" />
                                 </Columns>
                             </asp:GridView>
                         </div>
