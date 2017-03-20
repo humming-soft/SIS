@@ -28,7 +28,7 @@
                         <div class="col-lg-3">
                             <div class="form-group text-left m-b-0 m-t-15">
                                 <asp:Button ID="btn_submit" runat="server" CssClass="btn btn-primary waves-light" Text="Carian" OnClick="btn_submit_Click" OnClientClick="detail_validate()" />
-                                <asp:Button ID="btn_cancel" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;" />
+                                <asp:Button ID="btn_cancel" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClick="btn_cancel_Click" />
                             </div>
                         </div>
                     </div>
