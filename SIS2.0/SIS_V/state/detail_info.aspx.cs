@@ -90,5 +90,10 @@ namespace SIS_V.state
                 GridView_All.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+
+        protected void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("utama");
+        }
     }
 }

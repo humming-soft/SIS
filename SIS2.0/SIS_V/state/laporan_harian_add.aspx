@@ -396,7 +396,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Start row -->
     <div class="card-box">
-        <h4 class="text-dark  header-title m-t-0">Tambah Laporan Harian Dari Negeri</h4>
+        <h4 class="text-dark  header-title m-t-0">Tambah Laporan Harian Negeri</h4>
         <p class="text-muted m-b-25 font-13">
         </p>
         <div class="col-md-12">

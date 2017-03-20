@@ -11,10 +11,10 @@
         <div class="row">
         <div class="col-lg-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>Paparan laporan Harian Aktiviti</b></h4>
+                <h4 class="m-t-0 header-title"><b>Paparan Aktiviti</b></h4>
                 <div class="grid-structure m-t-30">
                     <div class="grid-container">
-                        <h5 class="m-t-0 header-title" style="font-size:13px"><b>Filter laporan Harian Aktiviti</b></h5>
+<%--                        <h5 class="m-t-0 header-title" style="font-size:13px"><b>Filter laporan Harian Aktiviti</b></h5>--%>
                         <div class="row">
                                 <div class="alert alert-danger alert-dismissable" id="log_valid" runat="server">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
