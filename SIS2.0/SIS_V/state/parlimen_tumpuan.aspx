@@ -16,10 +16,10 @@
                                     <div class="content">
                                         <asp:GridView ID="grid_senarai_one" CssClass="table table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_senarai_one_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" ItemStyle-CssClass="txt-black"/>
                                                 <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="link_area_name_skone" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-grey" %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
+                                                        <asp:LinkButton ID="link_area_name_skone" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
@@ -35,10 +35,10 @@
                                     <div class="content">
                                         <asp:GridView ID="grid_senarai_two" CssClass="table table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_senarai_two_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" ItemStyle-CssClass="txt-black"/>
                                                 <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="link_area_name_sktwo" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-grey" %>' OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
+                                                        <asp:LinkButton ID="link_area_name_sktwo" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
@@ -55,10 +55,10 @@
                                         <div class="content">
                                             <asp:GridView ID="grid_senarai_three" CssClass="table table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_senarai_three_PreRender" DataKeyNames="area_id">
                                                 <Columns>
-                                                    <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                                                    <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" ItemStyle-CssClass="txt-black"/>
                                                     <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                                         <ItemTemplate>
-                                                            <asp:LinkButton ID="link_area_name_skthree" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-grey" %>' OnClick="link_area_name_skthree_Click"><%# Eval("area_name")%></asp:LinkButton>
+                                                            <asp:LinkButton ID="link_area_name_skthree" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skthree_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
@@ -83,10 +83,10 @@
                                     <div class="content">
                                         <asp:GridView ID="grid_one" CssClass="table table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_one_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" ItemStyle-CssClass="txt-black"/>
                                                 <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="link_area_name_skpone" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-grey" %>' OnClick="link_area_name_skpone_Click1">  <%# Eval("area_name")%></asp:LinkButton>
+                                                        <asp:LinkButton ID="link_area_name_skpone" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skpone_Click1">  <%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
@@ -102,10 +102,10 @@
                                     <div class="content">
                                         <asp:GridView ID="grid_two" CssClass="table table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_two_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" ItemStyle-CssClass="txt-black" />
                                                 <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="link_area_name_skptwo" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-grey" %>' OnClick="link_area_name_skptwo_Click1"><%# Eval("area_name")%></asp:LinkButton>
+                                                        <asp:LinkButton ID="link_area_name_skptwo" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skptwo_Click1"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
@@ -121,10 +121,10 @@
                                     <div class="content">
                                         <asp:GridView ID="grid_three" CssClass="table table-bordered dt-responsive nowrap m-t-10" runat="server" AutoGenerateColumns="False" ClientIDMode="Static" OnPreRender="grid_three_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" />
+                                                <asp:BoundField DataField="area_code" HeaderText="Kod" SortExpression="area_code" ItemStyle-CssClass="txt-black" />
                                                 <asp:TemplateField HeaderText="Kawasan" SortExpression="area_name">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="link_area_name_skpthree" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-grey" %>' OnClick="link_area_name_skpthree_Click1"><%# Eval("area_name")%></asp:LinkButton>
+                                                        <asp:LinkButton ID="link_area_name_skpthree" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skpthree_Click1"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
