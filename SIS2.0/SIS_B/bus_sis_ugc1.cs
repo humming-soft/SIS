@@ -31,6 +31,8 @@ namespace SIS_B
         public int name { get; set; }
         public int jenis { get; set; }
         public int tahap { get; set; }
+        public int info { get; set; }
+        public int valid { get; set; }
 
         public int check_login()
         {
@@ -64,12 +66,20 @@ namespace SIS_B
 
         public int insert_aktiviti()
         {
-            return data1.insert_aktiviti(kod_kawasan,jenis_aktiviti,parti,tarikh,butiran_aktiviti);
+            return data1.insert_aktiviti(kod_kawasan,jenis_aktiviti,parti,tarikh,info,valid,butiran_aktiviti);
         }
 
         public DataTable fill_sumber()
         {
             return data1.fill_sumber();
+        }
+        public DataTable fill_sumberM()
+        {
+            return data1.fill_sumberM();
+        }
+        public DataTable fill_tahap()
+        {
+            return data1.fill_tahap();
         }
         public DataTable fill_isu()
         {

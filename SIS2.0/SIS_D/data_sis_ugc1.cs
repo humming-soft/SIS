@@ -143,7 +143,7 @@ namespace SIS_D
             }
         }
 
-        public int insert_aktiviti(int kod_kawasan, int jenis_aktiviti, int parti, DateTime tarikh, string butiran_aktiviti)
+        public int insert_aktiviti(int kod_kawasan, int jenis_aktiviti, int parti, DateTime tarikh,int info, int valid, string butiran_aktiviti)
         {
             try
             {
@@ -154,6 +154,8 @@ namespace SIS_D
                 cmd.Parameters.AddWithValue("@jenis_aktiviti", jenis_aktiviti);
                 cmd.Parameters.AddWithValue("@parti", parti);
                 cmd.Parameters.AddWithValue("@tarikh", tarikh);
+                cmd.Parameters.AddWithValue("@info", info);
+                cmd.Parameters.AddWithValue("@valid", valid);
                 cmd.Parameters.AddWithValue("@butiran_aktiviti", butiran_aktiviti);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
@@ -193,6 +195,45 @@ namespace SIS_D
             }
         }
 
+        public DataTable fill_sumberM()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetLookup";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lookupType", 5);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable fill_tahap()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetValidityInfo";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
         public DataTable fill_isu()
         {
             try

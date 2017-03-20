@@ -112,6 +112,42 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.TextBox txtdate;
         
         /// <summary>
+        /// hfsumberm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfsumberm;
+        
+        /// <summary>
+        /// ddlSumberM control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSumberM;
+        
+        /// <summary>
+        /// hftahapk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hftahapk;
+        
+        /// <summary>
+        /// ddlTahapK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTahapK;
+        
+        /// <summary>
         /// txtButiran control.
         /// </summary>
         /// <remarks>

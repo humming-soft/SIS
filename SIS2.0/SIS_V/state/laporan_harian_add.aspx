@@ -48,6 +48,8 @@
                 $cloned.find('.item_activity').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlAktiviti" + ($length));
                 $cloned.find('.item_parti').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlparti" + ($length));
                 $cloned.find('.item_kodkawasan').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlKodKawasan" + ($length));
+                $cloned.find('.item_sumberm').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlSumberM" + ($length));
+                $cloned.find('.item_tahapk').removeAttr("id").attr("id", "ContentPlaceHolder1_ddlTahapK" + ($length));
                 $cloned.find('.item_butiran').removeAttr("id").attr("id", "ContentPlaceHolder1_txtButiran" + ($length));
 
                 $copy.removeClass('active');
@@ -347,6 +349,14 @@
             $(this).prev().val($(this).val());
         });
 
+        $(document).on("change", ".item_sumberm", function () {
+            $(this).prev().val($(this).val());
+        });
+
+        $(document).on("change", ".item_tahapk", function () {
+            $(this).prev().val($(this).val());
+        });
+
         //ISSUE
 
         $(document).on("change", ".item_kod_kawasanI", function () {
@@ -451,14 +461,14 @@
                             </div>
                         </div>
                         <div class="c-here active lamporan_act">
-                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)" ><i class="fa fa-trash f-s-20"></i></a>
+                            <a class="pull-right row_remove hidden no-loader" href="javascript:void(0)"><i class="fa fa-trash f-s-20"></i></a>
                             <div class="row pre_here m-t-20">
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="hfkodkawasan" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasan" CssClass="form-control item_kodkawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -466,7 +476,7 @@
                                         <label for="userName">Jenis Aktiviti</label>
                                         <asp:HiddenField ID="hfkaktiviti" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlAktiviti" CssClass="form-control item_activity" runat="server" DataTextField="ad" DataValueField="aid"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -474,13 +484,27 @@
                                         <label for="userName">Parti</label>
                                         <asp:HiddenField ID="hfparti" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlparti" CssClass="form-control item_parti" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Tarikh dan Masa</label>
                                         <asp:TextBox ID="txtdate" runat="server" CssClass="form-control item_date"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Sumber Maklumat</label>
+                                        <asp:HiddenField ID="hfsumberm" runat="server" />
+                                        <asp:DropDownList ID="ddlSumberM" runat="server" CssClass="form-control item_sumberm" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="userName">Tahap Kesahihan</label>
+                                        <asp:HiddenField ID="hftahapk" runat="server" />
+                                        <asp:DropDownList ID="ddlTahapK" runat="server" CssClass="form-control item_tahapk" DataTextField="validity_type" DataValueField="validity_id"></asp:DropDownList>
                                     </div>
                                 </div>
                             </div>
@@ -490,14 +514,14 @@
                                         <label for="userName">Butiran Aktiviti</label>
                                         <asp:TextBox ID="txtButiran" runat="server" TextMode="MultiLine" CssClass="form-control item_butiran"></asp:TextBox>
                                     </div>
-                                    <label for="activitiButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
+                                    <label for="activitiButiran" style="color: #1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group text-left m-b-0 m-t-15">
                             <asp:HiddenField ID="hfkaktivitiM" runat="server" ClientIDMode="Static" />
                             <asp:Button ID="btnsimpan" runat="server" CssClass="btn btn-primary waves-light" Text="Simpan" OnClientClick="vali()" OnClick="btnsimpan_Click" />
-                            <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;"/>
+                            <asp:Button ID="btnbatal" runat="server" CssClass="btn btn-default waves-light m-l-5" Text="Batal" CausesValidation="false" OnClientClick="this.form.reset();return false;" />
                         </div>
                     </div>
                     <div class="tab-pane" id="profile1">
@@ -514,7 +538,7 @@
                                         <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="kod_kawasanI" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKod_KawasanI" CssClass="form-control item_kod_kawasanI" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                       
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -522,15 +546,15 @@
                                         <label for="userName">Kategori Isu</label>
                                         <asp:HiddenField ID="KategoriIsu" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKategoriIsu" CssClass="form-control item_KategoriIsu" runat="server" DataTextField="current_issue_name" DataValueField="current_issue_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Sumber Isu</label>
-                                         <asp:HiddenField ID="SumberIsu" runat="server" ClientIDMode="Static" />
+                                        <asp:HiddenField ID="SumberIsu" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlSumberIsu" CssClass="form-control item_SumberIsu" runat="server" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
-                                       
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -538,7 +562,7 @@
                                         <label for="userName">Parti</label>
                                         <asp:HiddenField ID="PartiI" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlPartiI" CssClass="form-control item_PartiI" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -555,7 +579,7 @@
                                         <label for="userName">Butiran Isu</label>
                                         <asp:TextBox ID="txtButiran_Isu" runat="server" TextMode="MultiLine" CssClass="form-control item_Butiran_Isu"></asp:TextBox>
                                     </div>
-                                    <label for="isuButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
+                                    <label for="isuButiran" style="color: #1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
 
                             </div>
@@ -580,7 +604,7 @@
                                         <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="kod_kawasanJ" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasanj" CssClass="form-control item_kod_kawasanj" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
@@ -605,7 +629,7 @@
                                         <label for="userName">Nama Tokoh</label>
                                         <asp:TextBox ID="txtNamaTokoh" runat="server" TextMode="MultiLine" CssClass="form-control item_NamaTokoh"></asp:TextBox>
                                     </div>
-                                    <label for="janjiButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
+                                    <label for="janjiButiran" style="color: #1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
                             </div>
                         </div>
@@ -629,7 +653,7 @@
                                         <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="hfKodKawasanIn" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasanIn" CssClass="form-control item_kod_kawasanIn" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -637,7 +661,7 @@
                                         <label for="userName">Parti</label>
                                         <asp:HiddenField ID="hfPartiIn" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlPartiIn" CssClass="form-control item_partiIn" runat="server" DataTextField="party_name_bm" DataValueField="party_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -654,7 +678,7 @@
                                         <label for="userName">Butiran Insiden</label>
                                         <asp:TextBox ID="txtButiranInsiden" runat="server" TextMode="MultiLine" CssClass="form-control item_ButiranInsiden"></asp:TextBox>
                                     </div>
-                                    <label for="insidenButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
+                                    <label for="insidenButiran" style="color: #1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
 
                             </div>
@@ -679,7 +703,7 @@
                                         <label for="userName">Parlimen - DUN</label>
                                         <asp:HiddenField ID="hfKodKawasanKawasan" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlKodKawasanKawasan" CssClass="form-control item_kod_kawasanKawasan" runat="server" DataTextField="areacode" DataValueField="area_id"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -687,7 +711,7 @@
                                         <label for="userName">Status</label>
                                         <asp:HiddenField ID="hfstatusKawasan" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlstatusKawasan" CssClass="form-control item_statusKawasan" runat="server" DataTextField="Text" DataValueField="Value"></asp:DropDownList>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
@@ -699,13 +723,13 @@
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="userName">Data Wujud (Ya/Tidak)</label>
-                                         <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
+                                        <asp:HiddenField ID="hfWujud" runat="server" ClientIDMode="Static" />
                                         <asp:DropDownList ID="ddlWujud" CssClass="form-control item_Wujud" runat="server" DataTextField="areacode" DataValueField="area_id">
                                             <asp:ListItem Value="">---PILIH---</asp:ListItem>
                                             <asp:ListItem Value="1">Ya</asp:ListItem>
                                             <asp:ListItem Value="2">Tidak</asp:ListItem>
                                         </asp:DropDownList>
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -715,7 +739,7 @@
                                         <label for="userName">Justifikasi / Halangan</label>
                                         <asp:TextBox ID="txtJustifikasi" runat="server" TextMode="MultiLine" CssClass="form-control item_Justifikasi"></asp:TextBox>
                                     </div>
-                                    <label for="analysisButiran" style="color:#1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
+                                    <label for="analysisButiran" style="color: #1e90ff">* AKTIVITI, PENGANJUR,  TEMPAT, PENCERAMAH, VIP, KUMPULAN SASAR, JUMLAH KEHADIRAN, LAIN-LAIN</label>
                                 </div>
                             </div>
                         </div>
