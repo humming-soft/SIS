@@ -150,7 +150,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>
-                                        <li class="dl-submenu"><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri</a>
+                                        <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri</a>
                                             <ul class="dl-submenu">
                                                 <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
                                                 <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
