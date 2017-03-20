@@ -179,8 +179,12 @@
                         <li class="has-submenu" id="prapilihanraya" runat="server">
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
-                                <li>
-                                    <a href="activiti_bakal_ci_add"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
+                                    <ul class="submenu">
+                                        <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
