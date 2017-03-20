@@ -22,7 +22,7 @@
                                                         <asp:LinkButton ID="link_area_name_skone" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -41,7 +41,7 @@
                                                         <asp:LinkButton ID="link_area_name_sktwo" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -61,7 +61,7 @@
                                                             <asp:LinkButton ID="link_area_name_skthree" runat="server" CssClass='<%# Eval("isconcentrated_opposition").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skthree_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                    <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                         <ItemTemplate>
                                                             <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                         </ItemTemplate>
@@ -89,7 +89,7 @@
                                                         <asp:LinkButton ID="link_area_name_skpone" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skpone_Click1">  <%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -108,7 +108,7 @@
                                                         <asp:LinkButton ID="link_area_name_skptwo" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skptwo_Click1"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -127,7 +127,7 @@
                                                         <asp:LinkButton ID="link_area_name_skpthree" runat="server" CssClass='<%# Eval("isconcentrated").Equals("True") ? "txt-red" : "txt-black" %>' OnClick="link_area_name_skpthree_Click1"><%# Eval("area_name")%></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="13%" ItemStyle-BackColor="Orange">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
