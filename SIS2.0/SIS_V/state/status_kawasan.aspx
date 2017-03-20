@@ -23,7 +23,7 @@
                                                 <asp:TemplateField HeaderText="Nama Kawasan">
                                                     <ItemTemplate>
                                                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("area_name") %>'></asp:Label>
-                                                        <i class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-star" : "" %>"></i>
+                                                        <i class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-flag text-primary" : "" %>"></i>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
