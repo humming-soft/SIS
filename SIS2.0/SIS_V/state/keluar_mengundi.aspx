@@ -120,7 +120,7 @@
                 <div id="voteGrid" class="">
                     <div class="alert alert-danger alert-dismissable" id="input_error" runat="server">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <p>Telah Keluar should be less than or equal to Jumlah Pengundi!</p>
+                        <p>Telah Keluar harus kurang daripada atau sama dengan Jumlah Pengundi!</p>
                     </div>
                     <asp:GridView ID="GridKM" runat="server" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridKM_PreRender" AutoGenerateColumns="False" DataKeyNames="polling_district_id" OnRowCancelingEdit="GridKM_RowCancelingEdit" OnRowEditing="GridKM_RowEditing" OnRowUpdating="GridKM_RowUpdating">
                         <Columns>
