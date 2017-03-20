@@ -176,14 +176,14 @@
                                             <%--<asp:BoundField HeaderText="Justifikasi/Kaveat" DataField="comment"></asp:BoundField>--%>
                                             <asp:BoundField HeaderText="Tarikh" DataField="date" ItemStyle-Width="10%"></asp:BoundField>
                                             <%--<asp:BoundField HeaderText="Data Wujud (Ya/Tidak)" DataField="date" ItemStyle-Width="10%"></asp:BoundField>--%>
-                                            <asp:TemplateField HeaderText="MAKLUMAT" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                            <asp:TemplateField HeaderText="Maklumat" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="lnkEdit" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkEdit_Click"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                           <asp:TemplateField HeaderText="BUANG" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
+                                           <asp:TemplateField HeaderText="Hapus" ItemStyle-Width="5%" ItemStyle-CssClass="ta-center">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Are you sure you want to delete?')) return false;"  CommandName="Delete"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lnkDelete" runat="server" CssClass="fa fa-trash no-loader" Font-Underline="False" OnClientClick="if (!confirm('Adakah anda mahu rekod ini dipadamkan?')) return false;"  CommandName="Delete"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>

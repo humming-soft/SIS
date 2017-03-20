@@ -58,7 +58,7 @@
                 $sp = $(this).parent().parent();
                 $c = $(this).parent();
                 $length = $sp.find('.c-here').length;
-                if (confirm("Do you want to Delete?")) {
+                if (confirm("Anda pasti ingin memadamkan?")) {
                     $c.remove();
                     if ($sp.find('.c-here.active').length == 0) {
                         $sp.find('.c-here:first').addClass('active');
