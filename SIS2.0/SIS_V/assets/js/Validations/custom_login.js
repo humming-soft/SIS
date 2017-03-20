@@ -19,7 +19,7 @@ var Login = function () {
                 },
                 txtpassword: {
                     minlength: 4,
-                    maxlength: 10,
+                    maxlength: 30,
                     required: true
                 }
             },

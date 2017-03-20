@@ -334,7 +334,7 @@ namespace SIS_V.state
             {
                 bus.state_id = int.Parse(Session["state"].ToString());
                 bus.detail = txt_detail.Text.Trim();
-                bus.ele_date = Convert.ToDateTime(txt_datetime.Text.Trim());
+                bus.ele_date = DateTime.ParseExact(txt_datetime.Text, "dd/MM/yyyy HH:mm", null);
                 bus.area_id = int.Parse(drop_prlimen.SelectedValue.ToString());
                 bus.info_source = int.Parse(drop_sumber.SelectedValue.ToString());
                 bus.info_valdity = int.Parse(drop_tahap.SelectedValue.ToString());
