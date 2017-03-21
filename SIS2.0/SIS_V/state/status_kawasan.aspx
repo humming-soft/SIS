@@ -8,14 +8,17 @@
             <div class="card-box">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="col-xs-12 col-md-4 col-lg-4">
-                            <h4 class="m-t-0 m-b-20 header-title w96"><b class="m-l-40">PARLIMEN</b></h4>
-                        </div>
-                        <div class="col-xs-12 col-md-8 col-lg-8">
-                            <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack" runat="server"></span>
-                            <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray" runat="server"></span>
-                            <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite" runat="server"></span>
-                    
+                      <div class="row">
+                          <div class="container">
+                            <div class="col-xs-12 col-md-4 col-lg-4">
+                                <h4 class="m-t-10 m-b-20 header-title w96"><b>PARLIMEN</b></h4>
+                            </div>
+                            <div class="col-xs-12 col-md-8 col-lg-8 p-0">
+                                <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack" runat="server"></span>
+                                <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray" runat="server"></span>
+                                <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite" runat="server"></span>                   
+                            </div>
+                           </div>
                         </div>
                         <div class="container">
                             <div class="row">
@@ -44,11 +47,18 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <h4 class="m-t-0 m-b-20 header-title w96"><b class="m-l-40">DUN</b>
-                            <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack_sd" runat="server"></span>
-                            <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray_sd" runat="server"></span>
-                            <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite_sd" runat="server"></span>
-                        </h4>
+                        <div class="row">
+                          <div class="container">
+                            <div class="col-xs-12 col-md-4 col-lg-4">
+                                <h4 class="m-t-10 m-b-20 header-title w96"><b>DUN</b></h4>
+                            </div>
+                            <div class="col-xs-12 col-md-8 col-lg-8 p-0">
+                                <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack_sd" runat="server"></span>
+                                <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray_sd" runat="server"></span>
+                                <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite_sd" runat="server"></span>             
+                            </div>
+                           </div>
+                        </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
