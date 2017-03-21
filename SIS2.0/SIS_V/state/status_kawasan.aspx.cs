@@ -251,5 +251,28 @@ namespace SIS_V.state
                 status_kawasan_subdist.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+
+        protected Boolean IsEnabled(bool conc)
+        {
+            if (conc == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        protected void link_area_name_skone_Click(object sender, EventArgs e)
+        {
+            Session["pre_page"] = "Rumusan Status Kawasan";
+            Session["pre_url"] = "status_kawasan";
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int id = int.Parse(status_kawasan_dist.DataKeys[row.RowIndex].Value.ToString());
+            Session["area"] = id;
+            Response.Redirect("detail_incident");
+        }
     }
 }

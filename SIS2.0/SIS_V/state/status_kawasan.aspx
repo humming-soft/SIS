@@ -17,12 +17,13 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="content">
-                                        <asp:GridView ID="status_kawasan_dist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender">
+                                        <asp:GridView ID="status_kawasan_dist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender" DataKeyNames="area_id">
                                             <Columns>
                                                 <asp:BoundField HeaderText="Kod Kawasan" DataField="area_code" ItemStyle-Width="25%"></asp:BoundField>
                                                 <asp:TemplateField HeaderText="Nama Kawasan">
                                                     <ItemTemplate>
-                                                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("area_name") %>'></asp:Label>
+                                                        <asp:LinkButton ID="link_area_name_skone" CssClass="no-loader" runat="server" Enabled='<%# IsEnabled((bool)Eval("isconcentrated")) %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
+                                                        <%--<asp:Label ID="Label2" runat="server" Text='<%# Bind("area_name") %>'></asp:Label>--%>
                                                         <i class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-flag text-primary" : "" %>"></i>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>

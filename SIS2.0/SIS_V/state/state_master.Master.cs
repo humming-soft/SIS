@@ -138,11 +138,11 @@ namespace SIS_V.state
                     grant_child_li.Visible = false;
                     break;
                 case "parlimen_tumpuan":
-                    Session["pre_page"] = "Kawasan Tumpuan BN / Kawasan Tumpuan Pembangkang";
+                    Session["pre_page"] = "Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang";
                     Session["pre_url"] = "parlimen_tumpuan";
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
-                    breadcrum_child.InnerText = "Kawasan Tumpuan BN / Kawasan Tumpuan Pembangkang";
+                    breadcrum_child.InnerText = "Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang";
                     breadcrum_child.Attributes["class"] = "b-600";
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
