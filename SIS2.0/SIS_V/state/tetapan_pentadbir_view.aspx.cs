@@ -17,10 +17,27 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fill_state();
-                fill_role();
-                fill_DataTable_user();
-
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fill_state();
+                    fill_role();
+                    fill_DataTable_user();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
         public void fill_DataTable_user()

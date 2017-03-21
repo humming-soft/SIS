@@ -21,10 +21,28 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                loadDistrictStatus();
-                loadSubDistrictStatus();
+                CheckIsLogin();
             }
 
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    loadDistrictStatus();
+                    loadSubDistrictStatus();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
+            }
         }
 
         public void loadDistrictStatus()
