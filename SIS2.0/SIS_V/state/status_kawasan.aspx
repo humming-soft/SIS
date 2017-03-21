@@ -7,15 +7,19 @@
         <div class="col-md-12">
             <div class="card-box">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title w96"><b class="m-l-40">PARLIMEN</b>
+                    <div class="col-md-4">
+                        <div class="col-xs-12 col-md-4 col-lg-4">
+                            <h4 class="m-t-0 m-b-20 header-title w96"><b class="m-l-40">PARLIMEN</b></h4>
+                        </div>
+                        <div class="col-xs-12 col-md-8 col-lg-8">
                             <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack" runat="server"></span>
                             <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray" runat="server"></span>
                             <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite" runat="server"></span>
-                        </h4>
+                    
+                        </div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="content">
                                         <asp:GridView ID="status_kawasan_dist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender" DataKeyNames="area_id">
                                             <Columns>
@@ -39,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h4 class="m-t-0 m-b-20 header-title w96"><b class="m-l-40">DUN</b>
                             <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack_sd" runat="server"></span>
                             <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray_sd" runat="server"></span>
