@@ -17,7 +17,10 @@ namespace SIS_V.state
         bus_sis_ugc1 bus = new bus_sis_ugc1();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["utype"] == null)
+            {
+                Response.Redirect("/logout");
+            }
             atype = Session["utype"].ToString();
             area = int.Parse(Session["area"].ToString());
             if (!IsPostBack)
