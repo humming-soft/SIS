@@ -29,7 +29,7 @@
                                                 <asp:BoundField HeaderText="Kod Kawasan" DataField="area_code" ItemStyle-Width="25%"></asp:BoundField>
                                                 <asp:TemplateField HeaderText="Nama Kawasan">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="link_area_name_skone" CssClass="no-loader" runat="server" Enabled='<%# IsEnabled((bool)Eval("isconcentrated")) %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
+                                                        <asp:LinkButton ID="link_area_name_skone" CssClass='<%# Convert.ToBoolean(Eval("isconcentrated")) ? "no-loader" : "no-loader; test;" %>' runat="server" Enabled='<%# IsEnabled((bool)Eval("isconcentrated")) %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                         <%--<asp:Label ID="Label2" runat="server" Text='<%# Bind("area_name") %>'></asp:Label>--%>
                                                         <i class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-flag text-primary" : "" %>"></i>
                                                     </ItemTemplate>
