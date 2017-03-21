@@ -65,7 +65,7 @@
                     <div class="kode_ui_element">
 
                         <!--Navigation Wrap Start-->
-                        <div class="kode_menu">
+                        <div class="kode_menu kode_menu_admin">
                             <ul>
                                 <%--<li><a href="Dash.aspx">Laman Utama</a></li>--%>
                                 <li><a href="#"><i class="md md-color-lens"></i> Dashboard</a>

@@ -610,3 +610,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
+.kode_menu_admin{
+    float:right;
+    margin-left:0px;
+}
