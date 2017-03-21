@@ -18,9 +18,27 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                invalid.Visible = false;
-                valid.Visible = false;
-                getIndividualRecord();
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    invalid.Visible = false;
+                    valid.Visible = false;
+                    getIndividualRecord();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
@@ -48,7 +66,7 @@ namespace SIS_V.state
             {
                 Response.Redirect("analisis_kawasan_view");
             }
-           
+
         }
 
         protected void saveJustification_Click(object sender, EventArgs e)
@@ -72,5 +90,5 @@ namespace SIS_V.state
             Response.Redirect("laporan_harian_view");
         }
 
-   }
+    }
 }

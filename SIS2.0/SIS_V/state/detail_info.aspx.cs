@@ -24,7 +24,8 @@ namespace SIS_V.state
             {
 
                 CheckIsLogin();
-                if (area != null){
+                if (area != null)
+                {
                     dp_kawasan.SelectedValue = area.ToString();
                     fill_details();
                 }
@@ -92,7 +93,7 @@ namespace SIS_V.state
         {
             if (GridView_All.Rows.Count > 0)
             {
-                if (atype == "insident") 
+                if (atype == "insident")
                 {
                     GridView_All.HeaderRow.Cells[2].Text = "Butiran Insiden";
                 }
@@ -135,7 +136,7 @@ namespace SIS_V.state
                     }
                 }
             }
-        } 
+        }
 
 
     }

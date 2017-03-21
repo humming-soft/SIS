@@ -17,10 +17,28 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
-                fillAreaAnalysis();
-                Session["report_id"] = "";
-                invalid.Visible = false;
-                valid.Visible = false;
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    fillAreaAnalysis();
+                    Session["report_id"] = "";
+                    invalid.Visible = false;
+                    valid.Visible = false;
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
