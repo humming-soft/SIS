@@ -10,7 +10,8 @@
                     <div class="col-md-4">
                       <div class="row">
                           <div class="container">
-                            <div class="col-xs-12 col-md-4 col-lg-4"><h4 class="m-t-10 m-b-20 header-title w96"><b>PARLIMEN</b></h4></div>
+                            <div class="col-xs-12 col-md-4 col-lg-4"><h4 class="m-t-10 m-b-20 header-title w96"><b>PARLIMEN</b></h4>
+                            </div>
                             <div class="col-xs-12 col-md-8 col-lg-8 p-0">
                                 <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack" runat="server"></span>
                                 <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray" runat="server"></span>
