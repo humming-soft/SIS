@@ -11,7 +11,25 @@ namespace SIS_V.state
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckIsLogin();
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "f")
+                {
+                    Response.Redirect("~/Login");
+                }
+                else
+                {
 
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
+            }
         }
     }
 }
