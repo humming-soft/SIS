@@ -240,7 +240,7 @@ namespace SIS_V.state
             {
                 if (dt.Rows[0]["comment"].ToString() == "")
                 {
-                    lbl_justification.Text = "N/A";
+                    lbl_justification.Text = "Tiada Data";
                 }
                 else
                 {
@@ -249,7 +249,7 @@ namespace SIS_V.state
             }
             else
             {
-                lbl_justification.Text = "N/A";
+                lbl_justification.Text = "Tiada Data";
             }
         }
 
