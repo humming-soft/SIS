@@ -26,8 +26,8 @@
                                 <ItemTemplate>
                                     <asp:LinkButton ID="link_area_name_sktwo" runat="server" OnClick="link_area_name_sktwo_Click"><%# Eval("area_name")%></asp:LinkButton>
                                 </ItemTemplate>
-                             </asp:TemplateField>
-                           <%-- <asp:BoundField DataField="area_name" HeaderText="Kawasan" SortExpression="area_name" />--%>
+                            </asp:TemplateField>
+                            <%-- <asp:BoundField DataField="area_name" HeaderText="Kawasan" SortExpression="area_name" />--%>
                         </Columns>
                     </asp:GridView>
                 </div>
@@ -136,7 +136,7 @@
 
         </div>
         <div class="col-lg-4">
-            <div class="card-box">
+            <div class="card-box" style="height: 1006px;">
                 <h4 class="text-dark  header-title m-t-0">Maklumat Semasa</h4>
                 <%--<p class="text-muted m-b-25 font-13">
                     Your awesome text goes here.
@@ -160,13 +160,144 @@
                         </tr>--%>
                     </table>
                     <%--<th>ACTIVITI :</th>--%>
-                    <div class="table-responsive mCustomScrollbar" style="height: 855px;" data-mcs-theme="dark-3">
-                        <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
-                            <Columns>
-                                <asp:BoundField DataField="#" ItemStyle-CssClass="va-top f-w-600" HeaderText="Kod" ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
-                                <asp:BoundField DataField="details" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
-                            </Columns>
-                        </asp:GridView>
+                    <div class="panel-group" id="accordion-test-2">
+                        <div class="panel panel-default panel-custom">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseOne-2" aria-expanded="true" class="no-loader">AKTIVITI
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseOne-2" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <table runat="server" id="log_activity" class="table table-striped table-bordered dt-responsive nowrap m-t-10">
+                                        <thead>
+                                            <tr>
+                                                <th>Kod</th>
+                                                <th>AKTIVITI :</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="activity_scroll"  ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 610px;" data-mcs-theme="dark-3">
+                                        <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
+                                            <Columns>
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>                                 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-custom">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed no-loader" aria-expanded="true">ISu-ISU
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseTwo-2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table runat="server" id="log_isu" class="table table-striped table-bordered dt-responsive nowrap m-t-10">
+                                        <thead>
+                                            <tr>
+                                                <th>Kod</th>
+                                                <th>AKTIVITI :</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mCustomScrollbar" ClientIDMode="Static" id="isu_scroll" runat="server"  style="height: 610px;" data-mcs-theme="dark-3">
+                                        <asp:GridView ID="grid_isu" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10 " OnPreRender="grid_isu_PreRender">
+                                            <Columns>
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-custom">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-2" class="collapsed no-loader" aria-expanded="true">JANJI PILIHANRAYA
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseThree-2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                     <table runat="server" id="log_janji" class="table table-striped table-bordered dt-responsive nowrap m-t-10">
+                                        <thead>
+                                            <tr>
+                                                <th>Kod</th>
+                                                <th>AKTIVITI :</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div  id="janji_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 610px;" data-mcs-theme="dark-3">
+                                        <asp:GridView ID="grid_janji" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_janji_PreRender">
+                                            <Columns>
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default panel-custom">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseThree-3" class="collapsed no-loader" aria-expanded="true">INSIDEN
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="collapseThree-3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table runat="server" id="log_insiden" class="table table-striped table-bordered dt-responsive nowrap m-t-10">
+                                        <thead>
+                                            <tr>
+                                                <th>Kod</th>
+                                                <th>AKTIVITI :</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="insiden_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 610px;" data-mcs-theme="dark-3">
+                                        <asp:GridView ID="grid_insiden" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_insiden_PreRender">
+                                            <Columns>
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

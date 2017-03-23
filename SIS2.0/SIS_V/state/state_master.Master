@@ -186,9 +186,9 @@
                                         <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                               <%-- <li>
                                     <a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
-                                </li>
+                                </li>--%>
                                 <li class="has-submenu">
                                     <a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri</a>
                                     <ul class="submenu">
