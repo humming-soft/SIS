@@ -8,15 +8,17 @@
             <div class="card-box">
                 <div class="row">
                     <div class="col-md-4">
-                      <div class="row">
-                          <div class="container">
-                            <div class="col-xs-12 col-md-4 col-lg-4"><h4 class="m-t-10 m-b-20 header-title w96"><b>PARLIMEN</b></h4></div>
-                            <div class="col-xs-12 col-md-8 col-lg-8 p-0">
-                                <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack" runat="server"></span>
-                                <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray" runat="server"></span>
-                                <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite" runat="server"></span>                   
+                        <div class="row">
+                            <div class="container">
+                                <div class="col-xs-12 col-md-4 col-lg-4">
+                                    <h4 class="m-t-10 m-b-20 header-title w96"><b>PARLIMEN</b></h4>
+                                </div>
+                                <div class="col-xs-12 col-md-8 col-lg-8 p-0">
+                                    <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack" runat="server"></span>
+                                    <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray" runat="server"></span>
+                                    <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite" runat="server"></span>
+                                </div>
                             </div>
-                           </div>
                         </div>
                         <div class="container">
                             <div class="row">
@@ -28,8 +30,7 @@
                                                 <asp:TemplateField HeaderText="Nama Kawasan">
                                                     <ItemTemplate>
                                                         <asp:LinkButton ID="link_area_name_skone" CssClass="no-loader" runat="server" Enabled='<%# IsEnabled((bool)Eval("isconcentrated")) %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
-                                                        <%--<asp:Label ID="Label2" runat="server" Text='<%# Bind("area_name") %>'></asp:Label>--%>
-                                                        <i class="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "fa fa-flag text-primary" : "" %>"></i>
+                                                        <img src="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "../assets/images/logo/subaru.ico" : "" %>"></img>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
@@ -46,16 +47,16 @@
                     </div>
                     <div class="col-md-8">
                         <div class="row">
-                          <div class="container">
-                            <div class="col-xs-12 col-md-4 col-lg-4">
-                                <h4 class="m-t-10 m-b-20 header-title w96"><b>DUN</b></h4>
+                            <div class="container">
+                                <div class="col-xs-12 col-md-4 col-lg-4">
+                                    <h4 class="m-t-10 m-b-20 header-title w96"><b>DUN</b></h4>
+                                </div>
+                                <div class="col-xs-12 col-md-8 col-lg-8 p-0">
+                                    <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack_sd" runat="server"></span>
+                                    <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray_sd" runat="server"></span>
+                                    <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite_sd" runat="server"></span>
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-md-8 col-lg-8 p-0">
-                                <span class="label label-default label-custom pull-right portlet-status status-black" id="statusblack_sd" runat="server"></span>
-                                <span class="label label-primary label-custom pull-right portlet-status status-gray" id="statusgray_sd" runat="server"></span>
-                                <span class="label label-success label-custom pull-right portlet-status status-white txt-black" id="statuswhite_sd" runat="server"></span>             
-                            </div>
-                           </div>
                         </div>
                         <div class="container">
                             <div class="row">

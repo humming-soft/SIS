@@ -144,6 +144,7 @@
     <Content Include="assets\images\gallery\008_d.png" />
     <Content Include="assets\images\gallery\009_d.png" />
     <Content Include="assets\images\login_logo_small.png" />
+    <Content Include="assets\images\logo\sabaru_logo.ico" />
     <Content Include="assets\images\logo\logo_1.png" />
     <Content Include="assets\images\logo\logo_2.png" />
     <Content Include="assets\images\logo\logo_3.png" />
@@ -151,6 +152,8 @@
     <Content Include="assets\images\logo\logo_5.png" />
     <Content Include="assets\images\logo\logo_6_1.png" />
     <Content Include="assets\images\logo\logo_xs.png" />
+    <Content Include="assets\images\logo\subaru.ico" />
+    <Content Include="assets\images\logo\subaru.png" />
     <Content Include="assets\images\pattern\001_p.png" />
     <Content Include="assets\images\small\img1.jpg" />
     <Content Include="assets\images\small\img2.jpg" />
