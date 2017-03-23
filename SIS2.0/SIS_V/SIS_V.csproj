@@ -152,6 +152,8 @@
     <Content Include="assets\images\logo\logo_5.png" />
     <Content Include="assets\images\logo\logo_6_1.png" />
     <Content Include="assets\images\logo\logo_xs.png" />
+    <Content Include="assets\images\logo\subaru.ico" />
+    <Content Include="assets\images\logo\subaru.png" />
     <Content Include="assets\images\pattern\001_p.png" />
     <Content Include="assets\images\small\img1.jpg" />
     <Content Include="assets\images\small\img2.jpg" />
