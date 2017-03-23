@@ -21,11 +21,12 @@ namespace SIS_V.state
         int area_type;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack){
+            invalid.Visible = false;
+            valid.Visible = false;
+            log_valid.Visible = false;
+            if (!IsPostBack)
+            {
                 CheckIsLogin();
-                invalid.Visible = false;
-                valid.Visible = false;
-                log_valid.Visible = false;
             }
         }
         protected void CheckIsLogin()
@@ -64,7 +65,7 @@ namespace SIS_V.state
         }
         protected void fill_parlimen_dun()
         {
-            
+
             one.Columns.Add("area_name", typeof(string));
             one.Columns.Add("area_id", typeof(int));
 
@@ -81,7 +82,7 @@ namespace SIS_V.state
                 {
                     area_id = int.Parse(dt1.Rows[i]["area_id"].ToString());
                     area_name = dt1.Rows[i]["area_name"].ToString();
-                    one.Rows.Add(area_name,area_id);
+                    one.Rows.Add(area_name, area_id);
                 }
                 if (area_type == 2)
                 {
@@ -169,7 +170,7 @@ namespace SIS_V.state
             {
                 log_valid.Visible = true;
             }
-       
+
         }
 
         protected void lnkEdit_Click(object sender, EventArgs e)

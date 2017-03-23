@@ -19,7 +19,7 @@ namespace SIS_V.state
         DataTable issues = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["state"].ToString() == null)
+            if (Session["state"] == null)
             {
                 Response.Redirect("../logout");
             }
