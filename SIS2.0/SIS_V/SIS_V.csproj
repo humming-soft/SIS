@@ -144,6 +144,7 @@
     <Content Include="assets\images\gallery\008_d.png" />
     <Content Include="assets\images\gallery\009_d.png" />
     <Content Include="assets\images\login_logo_small.png" />
+    <Content Include="assets\images\logo\sabaru_logo.ico" />
     <Content Include="assets\images\logo\logo_1.png" />
     <Content Include="assets\images\logo\logo_2.png" />
     <Content Include="assets\images\logo\logo_3.png" />
