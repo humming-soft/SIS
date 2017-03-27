@@ -100,7 +100,7 @@
                                                 <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>
+                                        <%--<li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
                                         <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri <i class="md md-chevron-right pull-right"></i></a>
                                             <ul>
                                                 <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
@@ -149,7 +149,7 @@
                                                 <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>
+                                        <%-- <li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
                                         <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri</a>
                                             <ul class="dl-submenu">
                                                 <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
@@ -205,19 +205,33 @@
                                 </a>
                             </li>
                             <li>
+                                <img src="../assets/images/gallery/006_d.png" alt="Logo Image Here" />
+                                <a href="parlimen_tumpuan">
+                                    <p class="days_ref">
+                                        Parlimen Tumpuan BN VS Pembangkang
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
                                 <img src="../assets/images/gallery/003_d.png" alt="Logo Image Here" />
                                 <a href="status_kawasan">
                                     <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
                             <li>
-                                <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
+                                <img src="../assets/images/gallery/007_d.png" alt="Logo Image Here" />
                                 <a href="Win_Candidate">
-                                    <p class="seconds_ref">Calon Bertanding</p>
+                                    <p class="seconds_ref">Winnable Candidate</p>
                                 </a>
                             </li>
                         </ul>
                         <ul class="countdown m-t-25">
+                            <li>
+                                <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
+                                <a href="#">
+                                    <p class="seconds_ref">Calon Bertanding</p>
+                                </a>
+                            </li>
                             <li>
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="percentage_voters">
@@ -229,7 +243,7 @@
                                 </a>
                             </li>
                             <li>
-                                <img src="../assets/images/gallery/007_d.png" alt="Logo Image Here" />
+                                <img src="../assets/images/gallery/008_d.png" alt="Logo Image Here" />
                                 <a href="#">
                                     <p class="minutes_ref b35">Keputusan Pilihanraya </p>
                                 </a>

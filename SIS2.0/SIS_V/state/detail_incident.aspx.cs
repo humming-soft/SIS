@@ -15,10 +15,20 @@ namespace SIS_V.state
         int state_id;
         bus_sis_ugc2 objBUS = new bus_sis_ugc2();
         bus_sis_ugc3 bus = new bus_sis_ugc3();
+        DataTable activity = new DataTable();
+        DataTable isu = new DataTable();
+        DataTable janji = new DataTable();
+        DataTable insiden = new DataTable();
+        int number;
+        string issue;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                log_activity.Visible = false;
+                log_isu.Visible = false;
+                log_janji.Visible = false;
+                log_insiden.Visible = false;
                 CheckIsLogin();
             }
         }
@@ -102,13 +112,104 @@ namespace SIS_V.state
         }
         public void fill_semasa()
         {
+            int activity_id;
             bus.area_id = id;
             DataTable dt = bus.fill_semasa();
-            if (dt.Rows.Count > 0)
+
+            activity.Columns.Add("number", typeof(int));
+            activity.Columns.Add("issue", typeof(string));
+
+            isu.Columns.Add("number", typeof(int));
+            isu.Columns.Add("issue", typeof(string));
+
+            janji.Columns.Add("number", typeof(int));
+            janji.Columns.Add("issue", typeof(string));
+
+            insiden.Columns.Add("number", typeof(int));
+            insiden.Columns.Add("issue", typeof(string));
+            int a_count = 1;
+            int i_count = 1;
+            int j_count = 1;
+            int in_count = 1;
+            for (int j = 0; j < dt.Rows.Count; j++) 
             {
-                grid_activity.DataSource = dt;
+                activity_id = int.Parse(dt.Rows[j]["activity_id"].ToString());
+                if (activity_id != 6 && activity_id != 10 && activity_id != 14)
+                {
+                    number = a_count;
+                    issue = dt.Rows[j]["details"].ToString();
+                    activity.Rows.Add(number, issue);
+                    a_count++;
+                }
+               
+                if (activity_id == 6)
+                {
+                    number = i_count;
+                    issue = dt.Rows[j]["details"].ToString();
+                    isu.Rows.Add(number, issue);
+                    i_count++;
+                }
+                if (activity_id == 14)
+                {
+                    number = j_count;
+                    issue = dt.Rows[j]["details"].ToString();
+                    janji.Rows.Add(number, issue);
+                    j_count++;
+                }
+                if (activity_id == 10)
+                {
+                    //number = int.Parse(dt.Rows[j]["#"].ToString());
+                    number = in_count;
+                    issue = dt.Rows[j]["details"].ToString();
+                    insiden.Rows.Add(number, issue);
+                    in_count++;
+                }
+            }
+            if (activity.Rows.Count > 0)
+            {
+                activity_scroll.Visible = true;
+                grid_activity.DataSource = activity;
                 grid_activity.DataBind();
             }
+            else
+            {
+                log_activity.Visible = true;
+                activity_scroll.Visible = false;
+            }
+            if (isu.Rows.Count > 0)
+            {
+                isu_scroll.Visible = true;
+                grid_isu.DataSource = isu;
+                grid_isu.DataBind();
+            }
+            else
+            {
+                log_isu.Visible = true;
+                isu_scroll.Visible = false;
+            }
+            if (janji.Rows.Count > 0)
+            {
+                janji_scroll.Visible = true;
+                grid_janji.DataSource = janji;
+                grid_janji.DataBind();
+            }
+            else
+            {
+                log_janji.Visible = true;
+                janji_scroll.Visible = false;
+            }
+            if (insiden.Rows.Count > 0)
+            {
+                insiden_scroll.Visible = true;
+                grid_insiden.DataSource = insiden;
+                grid_insiden.DataBind();
+            }
+            else
+            {
+                log_insiden.Visible = true;
+                insiden_scroll.Visible = false;
+            }
+            
         }
         public void fill_masalah_dalaman_parti()
         {
@@ -139,7 +240,7 @@ namespace SIS_V.state
             {
                 if (dt.Rows[0]["comment"].ToString() == "")
                 {
-                    lbl_justification.Text = "N/A";
+                    lbl_justification.Text = "Tiada Data";
                 }
                 else
                 {
@@ -148,7 +249,7 @@ namespace SIS_V.state
             }
             else
             {
-                lbl_justification.Text = "N/A";
+                lbl_justification.Text = "Tiada Data";
             }
         }
 
@@ -177,6 +278,33 @@ namespace SIS_V.state
             int id = int.Parse(grid_kodkawasan.DataKeys[row.RowIndex].Value.ToString());
             Session["area"] = id;
             Response.Redirect("detail_incident");
+        }
+
+        protected void grid_isu_PreRender(object sender, EventArgs e)
+        {
+            if (grid_isu.Rows.Count > 0)
+            {
+                grid_isu.UseAccessibleHeader = true;
+                grid_isu.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void grid_janji_PreRender(object sender, EventArgs e)
+        {
+            if (grid_janji.Rows.Count > 0)
+            {
+                grid_janji.UseAccessibleHeader = true;
+                grid_janji.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void grid_insiden_PreRender(object sender, EventArgs e)
+        {
+            if (grid_insiden.Rows.Count > 0)
+            {
+                grid_insiden.UseAccessibleHeader = true;
+                grid_insiden.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
         }
     }
 }
