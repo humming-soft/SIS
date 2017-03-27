@@ -69,6 +69,139 @@ var justifikasi = function () {
         }
     };
 }();
+
+
+var dtReference = function () {
+    var runDtCandidate = function () {
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function (a) {
+                var ukDatea = a.split('-');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
+        var oTable = $('#candidate_list').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
+            },
+            "aaSorting": [
+                [0, 'asc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "iDisplayLength": 10,
+        });
+        $('#candidate_list_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        // modify table search input
+    };
+    var runDtElection = function () {
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function (a) {
+                var ukDatea = a.split('-');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
+        var oTable = $('#candidate_list1').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
+            },
+            "aaSorting": [
+                [0, 'asc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "iDisplayLength": 10,
+        });
+        $('#candidate_list1_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        // modify table search input
+    };
+    var temp = function () {
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "date-uk-pre": function (a) {
+                var ukDatea = a.split('-');
+                return (ukDatea[2] + ukDatea[1] + ukDatea[0]) * 1;
+            },
+
+            "date-uk-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "date-uk-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
+        var oTable = $('.temp').dataTable({
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
+            },
+            "aaSorting": [
+                [0, 'asc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "iDisplayLength": 10,
+        });
+        $('#DataTables_Table_0_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        // modify table search input
+    };
+    return {
+        //main function to initiate template pages
+        init: function () {
+            runDtCandidate();
+            runDtElection();
+            temp();
+        }
+    };
+}();
+
 jQuery(document).ready(function () {
     "use strict";
     _sn.init();
