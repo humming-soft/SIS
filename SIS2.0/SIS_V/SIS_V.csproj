@@ -169,6 +169,7 @@
     <Content Include="assets\js\DT\checker.js" />
     <Content Include="assets\js\DT\lamporan.js" />
     <Content Include="assets\js\fastclick.js" />
+    <Content Include="assets\js\fileupload\boostrap.fileupload.min.css" />
     <Content Include="assets\js\highcharts\custom.js" />
     <Content Include="assets\js\highcharts\dark-blue.js" />
     <Content Include="assets\js\highcharts\dark-green.js" />
@@ -396,6 +397,9 @@
     <Content Include="state\candidate_profile_list.aspx" />
     <Content Include="state\candidate_profile_view.aspx" />
     <Content Include="state\candidate_profile.aspx" />
+    <Content Include="state\candidate_winnable_add.aspx" />
+    <Content Include="state\candidate_winnable_list.aspx" />
+    <Content Include="state\candidate_winnable_view.aspx" />
     <Content Include="state\Dash.aspx" />
     <Content Include="state\detail_incident.aspx" />
     <Content Include="state\detail_info.aspx" />
@@ -731,6 +735,27 @@
     <Compile Include="state\candidate_profile.aspx.designer.cs">
       <DependentUpon>candidate_profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="state\candidate_winnable_add.aspx.cs">
+      <DependentUpon>candidate_winnable_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\candidate_winnable_add.aspx.designer.cs">
+      <DependentUpon>candidate_winnable_add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\candidate_winnable_list.aspx.cs">
+      <DependentUpon>candidate_winnable_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\candidate_winnable_list.aspx.designer.cs">
+      <DependentUpon>candidate_winnable_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\candidate_winnable_view.aspx.cs">
+      <DependentUpon>candidate_winnable_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\candidate_winnable_view.aspx.designer.cs">
+      <DependentUpon>candidate_winnable_view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\Dash.aspx.cs">
       <DependentUpon>Dash.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -939,6 +964,7 @@
     <Content Include="assets\fonts\weathericons-regular-webfont.woff2" />
     <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
     <Content Include="assets\images\favicon\manifest.json" />
+    <Content Include="assets\js\fileupload\boostrap.fileupload.min.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

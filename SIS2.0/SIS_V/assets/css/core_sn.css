@@ -628,3 +628,23 @@
     background: #ffffff;
     border: 2px solid #7bc1c6;
 }
+.panel-custom-bg-danger{
+     background: #ffffff;
+     border: 2px solid #ef5350;
+}
+.panel-custom-info > .panel-heading {
+    background-color: #31649f;
+}
+.panel-custom-bg-custom-info{
+     background: #ffffff;
+     border: 2px solid #31649f;
+}
+.client-detail {
+    position: relative;
+}
+.f-s-15{
+    font-size: 15px;
+}
+.f-w-100{
+    font-weight: 100;
+}
