@@ -402,7 +402,7 @@
             // set the initial value
             "iDisplayLength": 10,
         });
-        $('#GridCInfo_wrapper.dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        $('#GridCInfo_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
 

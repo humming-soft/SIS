@@ -13,13 +13,13 @@ namespace SIS_V.state {
     public partial class candidate_profilelist {
         
         /// <summary>
-        /// ddlName control.
+        /// ddlNameC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlNameC;
         
         /// <summary>
         /// ddlIC control.
