@@ -97,7 +97,7 @@
                                                 <a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                    <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                                    <li><a href="candidate_profile_list"><i class="md md-search"></i>Paparan</a></li>
                                                 </ul>
                                             </li>
                                             <li class="has-submenu">
@@ -153,7 +153,7 @@
                                         <li><a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu</a>
                                             <ul class="dl-submenu">
                                                 <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                                <li><a href="candidate_profile_list"><i class="md md-search"></i>Paparan</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>

@@ -155,6 +155,19 @@ namespace SIS_B
         {
             return data1.fill_issue(areaid);
         }
+        public DataTable fill_race()
+        {
+            return data1.fill_race();
+        }
+        public DataTable fill_relegion()
+        {
+            return data1.fill_relegion();
+        }
+
+
+
+
+
         public int image_upload()
         {
             return data1.image_upload(image);

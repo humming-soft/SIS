@@ -13,12 +13,16 @@ namespace SIS_V.state
     public partial class candidate_profile : System.Web.UI.Page
     {
         bus_sis_ugc1 bus = new bus_sis_ugc1();
+        DataTable race;
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
                 TextBox4.Attributes.Add("readonly", "readonly");
+                TextBox29.Attributes.Add("readonly", "readonly");
                 //fill_image();
+                fill_race();
+                fill_relegion();
             }
         }
 
@@ -26,6 +30,7 @@ namespace SIS_V.state
         {
             if (FileUpload1.HasFile)
             {
+                string filename = FileUpload1.FileName;
                 System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
                 System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
                 Byte[] bytes = br.ReadBytes((Int32)fs.Length);
@@ -33,6 +38,29 @@ namespace SIS_V.state
                 int res = bus.image_upload();
                
             }
+        }
+
+        public void fill_race()
+        {
+            race = bus.fill_race();
+            if(race.Rows.Count > 0)
+            {
+                DropDownList2.DataSource = race;
+                DropDownList2.DataBind();
+                DropDownList2.Items.Insert(0, new ListItem("---PILIH---", ""));
+            }
+
+        }
+        public void fill_relegion()
+        {
+            race = bus.fill_relegion();
+            if (race.Rows.Count > 0)
+            {
+                DropDownList3.DataSource = race;
+                DropDownList3.DataBind();
+                DropDownList3.Items.Insert(0, new ListItem("---PILIH---", ""));
+            }
+
         }
 
         public void fill_image()

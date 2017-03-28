@@ -7,18 +7,27 @@
             var ret = txtval.split("-");
             if (ret.length != 3) {
                 alert('Invalid Format');
+                $('#TextBox29').val('');
+                $('#TextBox4').val('');
             }
             else {
                 yr = new Date().getFullYear().toString().substr(-2);
                 dob = ret[0];
                 gen = ret[2];
-                if (parseInt(dob.substring(0, 2)) <= parseInt(yr))
-                {
-                    dob2 = dob.substring(4,6) + '/' + dob.substring(2, 4) + '/' + '20' + dob.substring(0, 2);
+                if (parseInt(dob.substring(0, 2)) <= parseInt(yr)) {
+                    dob2 = dob.substring(4, 6) + '/' + dob.substring(2, 4) + '/' + '20' + dob.substring(0, 2);
 
                 }
                 else {
                     dob2 = dob.substring(4, 6) + '/' + dob.substring(2, 4) + '/' + '19' + dob.substring(0, 2);
+                }
+                gen2 = gen.substring(0, 4);
+                if (parseInt(gen2) % 2 == 0) // even number
+                {
+                    $('#TextBox29').val('Perempuan'); // Women
+                }
+                else {
+                    $('#TextBox29').val('Lelaki'); // Men
                 }
                 $('#TextBox4').val(dob2);
 
@@ -26,7 +35,6 @@
         }
         function showBrowseDialog() {
             $('#FileUpload1').click();
-<%--            document.getElementById('<%=FileUpload1.ClientID%>').click();--%>
         }
         function showBrowseDialogAdd() {
             document.getElementById('<%=FileUpload2.ClientID%>').click();
@@ -35,13 +43,24 @@
     <script type="text/javascript">
         function readURL(input) {
             if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#imager').attr('src', e.target.result);
+                var filename = $("#FileUpload1").val();
+                var extension = filename.replace(/^.*\./, '');
+                if (extension == filename) {
+                    extension = '';
+                } else {
+                    extension = extension.toLowerCase();
                 }
-
-                reader.readAsDataURL(input.files[0]);
+                if (extension == 'jpg' || extension == 'jpeg' || extension == 'png') {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#imager').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+                else {
+                    $("#FileUpload1").val('');
+                    alert("Invalid Extension - Supported Image types(JPG, JPEG, PNG) !");
+                }
             }
         }
     </script>
@@ -62,13 +81,13 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="userName">Gelaran</label>
-                                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <label for="title">Gelaran</label>
+                                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="form-group">
-                                            <label for="userName">Kad Pengenalan Calon (Format: 670112-01-2893)</label>
+                                            <label for="ic">Kad Pengenalan Calon (Format: 670112-01-2893)</label>
                                             <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ClientIDMode="Static" onchange="set()"></asp:TextBox>
                                         </div>
                                     </div>
@@ -76,13 +95,13 @@
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="form-group">
-                                            <label for="userName">Nama Calon</label>
-                                            <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <label for="name">Nama Calon</label>
+                                            <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="userName">Tarikh Lahir</label>
+                                            <label for="dob">Tarikh Lahir</label>
                                             <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                         </div>
                                     </div>
@@ -90,20 +109,20 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="userName">Jantina</label>
-                                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static"></asp:DropDownList>
+                                            <label for="gender">Jantina</label>
+                                            <asp:TextBox ID="TextBox29" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="userName">Kaum</label>
-                                            <asp:DropDownList ID="DropDownList2" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static"></asp:DropDownList>
+                                            <label for="race">Kaum</label>
+                                            <asp:DropDownList ID="DropDownList2" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="userName">Agama</label>
-                                            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static"></asp:DropDownList>
+                                            <label for="religion">Agama</label>
+                                            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static" DataTextField="lookup_name" DataValueField="lookup_id"></asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +135,7 @@
                         <div class="gal-detail thumb panel-custom-bg" style="margin-top: 0px">
                             <div style="width: 100%; padding: 0 28%">
                                 <div class="gal-detail thumb" style="margin-top: 0px">
-                                    <img id="imager" src="../assets/images/users/avatar-0.jpg" class="thumb-img" alt="work-thumbnail" style="width: 156px;"/>
+                                    <img id="imager" src="../assets/images/users/avatar-0.jpg" class="thumb-img" alt="work-thumbnail" style="width: 156px;" />
                                 </div>
                             </div>
                             <h4 class="text-center" style="margin-top: 10px !important">Calon Profile Image</h4>
@@ -138,20 +157,20 @@
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="alamat">Alamat</label>
+                                            <label for="address">Alamat</label>
                                             <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" TextMode="MultiLine" Height="110px"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="userName">Telefon Rumah</label>
+                                                <label for="House_Phone">Telefon Rumah</label>
                                                 <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="userName">Nombor Fax</label>
+                                                <label for="Fax_Number">Nombor Fax</label>
                                                 <asp:TextBox ID="TextBox11" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
@@ -159,20 +178,20 @@
                                     <div class="col-lg-3">
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="userName">Telefon Pejabat</label>
+                                                <label for="Office_Phone">Telefon Pejabat</label>
                                                 <asp:TextBox ID="TextBox9" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="userName">Emel</label>
+                                                <label for="Email">Emel</label>
                                                 <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="userName">Telefon Bimbit</label>
+                                            <label for="Cell_Phone">Telefon Bimbit</label>
                                             <asp:TextBox ID="TextBox10" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -191,7 +210,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="alamat">Blog</label>
+                                            <label for="Blog">Blog</label>
                                             <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -199,13 +218,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="alamat">Facebook</label>
+                                            <label for="Facebook">Facebook</label>
                                             <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="alamat">Twitter</label>
+                                            <label for="Twitter">Twitter</label>
                                             <asp:TextBox ID="TextBox13" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -222,7 +241,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="alamat">Pekerjaan</label>
+                                            <label for="job">Pekerjaan</label>
                                             <asp:TextBox ID="TextBox17" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -230,7 +249,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="alamat">Pendapatan (RM)</label>
+                                            <label for="earnings">Pendapatan (RM)</label>
                                             <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -247,7 +266,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="alamat">Nama Pasangan</label>
+                                            <label for="Spouse_Name">Nama Pasangan</label>
                                             <asp:TextBox ID="TextBox15" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -255,7 +274,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="alamat">Bil. Anak</label>
+                                            <label for="Num.Young">Bil. Anak</label>
                                             <asp:TextBox ID="TextBox16" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
@@ -274,13 +293,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="alamat">Parti Gabungan</label>
+                                            <label for="Party_Affiliation">Parti Gabungan</label>
                                             <asp:TextBox ID="TextBox18" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="userName">Parti</label>
+                                            <label for="Parti">Parti</label>
                                             <asp:DropDownList ID="DropDownList4" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static"></asp:DropDownList>
                                         </div>
                                     </div>
