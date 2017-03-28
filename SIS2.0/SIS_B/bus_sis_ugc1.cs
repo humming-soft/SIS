@@ -33,6 +33,7 @@ namespace SIS_B
         public int tahap { get; set; }
         public int info { get; set; }
         public int valid { get; set; }
+        public Byte[] image { get; set; }
 
         public int check_login()
         {
@@ -153,6 +154,14 @@ namespace SIS_B
         public DataTable fill_issue()
         {
             return data1.fill_issue(areaid);
+        }
+        public int image_upload()
+        {
+            return data1.image_upload(image);
+        }
+        public DataTable fill_image()
+        {
+            return data1.fill_image();
         }
     }
 }
