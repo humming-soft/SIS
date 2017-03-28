@@ -1,42 +1,36 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/state/state_master.Master" AutoEventWireup="true" CodeBehind="candidate_profile_list.aspx.cs" Inherits="SIS_V.state.candidate_profile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/state/state_master.Master" AutoEventWireup="true" CodeBehind="candidate_winnable_list.aspx.cs" Inherits="SIS_V.state.candidate_winnable_list" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            "use strict";
-            dtReference.init();
-        });
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>TAMBAH PROFIL BAKAL CALON / INDIVIDU</b></h4>
+                <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL CALON BOLEH MENANG</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="panel panel-color panel-success">
+                        <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title">Search Candidate</h3>
+                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search Candidate</h3>
                             </div>
-                            <div class="panel-body panel-custom-bg-success">
+                            <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="userName">Nama Calon</label>
-                                            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static"></asp:DropDownList>
+                                            <label for="userName">JENIS CARIAN</label>
+                                            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static">
+                                                <asp:ListItem Text="----Select-----" Value=""></asp:ListItem>
+                                                <asp:ListItem Text="Nama Calon" Value="1"></asp:ListItem>
+                                                <asp:ListItem Text="Nombor IC" Value="2"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group">
-                                            <label for="userName">Nombor IC</label>
-                                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static"></asp:DropDownList>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group text-left m-b-0 m-t-25">
-                                            <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" />
-                                            <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal"/>
+                                    <div class="col-lg-6 ">
+                                        <div class="input-group m-t-25">
+                                            <asp:TextBox ID="TextBox1" runat="server" CssClass="input form-control" placeholder="CARI CALON..."></asp:TextBox>
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> CARIAN</button>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -46,11 +40,11 @@
                 </div>
                 <div class="row">
                      <div class="col-lg-12">
-                         <div class="panel panel-color panel-success">
+                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title">Candidate List</h3>
+                                <h3 class="panel-title"><i class="md md-contacts"></i> Candidate List</h3>
                             </div>
-                            <div class="panel-body panel-custom-bg-success">
+                            <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="col-lg-12">
                                     <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10">
                                         <thead>
@@ -74,7 +68,7 @@
                                                 <td>550615-12-5069</td>
                                                 <td>Lajim Bin Ukin</td>
                                                 <td>PKR - Parti-Keadilan Rakyat</td>
-                                                <td><a href="candidate_profile_view"><i class="fa fa-edit"></i></a></td>
+                                                <td><a href="candidate_winnable_view"><i class="fa fa-edit"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>
@@ -85,7 +79,7 @@
                                                 <td>550615-12-5069</td>
                                                 <td>Lajim Bin Ukin</td>
                                                 <td>PKR - Parti-Keadilan Rakyat</td>
-                                                <td><a href="candidate_profile_view"><i class="fa fa-edit"></i></a></td>
+                                                <td><a href="candidate_winnable_view"><i class="fa fa-edit"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>
@@ -96,7 +90,7 @@
                                                 <td>550615-12-5069</td>
                                                 <td>Lajim Bin Ukin</td>
                                                 <td>PKR - Parti-Keadilan Rakyat</td>
-                                                <td><a href="candidate_profile_view"><i class="fa fa-edit"></i></a></td>
+                                                <td><a href="candidate_winnable_view"><i class="fa fa-edit"></i></a></td>
                                             </tr>
                                             <tr>
                                                 <td>1</td>
@@ -107,7 +101,7 @@
                                                 <td>550615-12-5069</td>
                                                 <td>Lajim Bin Ukin</td>
                                                 <td>PKR - Parti-Keadilan Rakyat</td>
-                                                <td><a href="candidate_profile_view"><i class="fa fa-edit"></i></a></td>
+                                                <td><a href="candidate_winnable_view"><i class="fa fa-edit"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table>

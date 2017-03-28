@@ -241,7 +241,7 @@
                         <ul class="countdown m-t-25">
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="calon_bertanding">
                                     <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
