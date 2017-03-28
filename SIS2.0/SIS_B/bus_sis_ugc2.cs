@@ -155,6 +155,14 @@ namespace SIS_B
         {
             return objDAL.UpdateNoVote(area_id, election_id, polling_district_id, no_of_vote);
         }
+        public DataTable GetCandidateNames()
+        {
+            return objDAL.GetCandidateNames();
+        }
+        public DataTable fill_CandidateDataTable()
+        {
+            return objDAL.fill_CandidateDataTable();
+        }
 
     }
 }

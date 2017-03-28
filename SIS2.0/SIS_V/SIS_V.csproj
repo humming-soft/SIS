@@ -166,6 +166,7 @@
     <Content Include="assets\js\dl-menu\component.css" />
     <Content Include="assets\js\dl-menu\jquery.dlmenu.js" />
     <Content Include="assets\js\dl-menu\modernizr.custom.js" />
+    <Content Include="assets\js\DT\candidate.js" />
     <Content Include="assets\js\DT\checker.js" />
     <Content Include="assets\js\DT\lamporan.js" />
     <Content Include="assets\js\fastclick.js" />
