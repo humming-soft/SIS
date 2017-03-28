@@ -682,7 +682,25 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-
+        public DataTable fill_party()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "Fetchparty";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
 
 
 
