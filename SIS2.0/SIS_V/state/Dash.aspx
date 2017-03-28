@@ -93,21 +93,28 @@
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                                     <ul>
-                                        <li class="has-submenu">
-                                            <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
-                                            <ul>
-                                                <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
-                                            </ul>
-                                        </li>
-                                        <%--<li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
-                                        <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri <i class="md md-chevron-right pull-right"></i></a>
-                                            <ul>
-                                                <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                            <li class="has-submenu">
+                                                <a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                    <li><a href="candidate_profilelist"><i class="md md-search"></i>Paparan</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
+                                                <ul>
+                                                    <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                    <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
+                                                </ul>
+                                            </li>
+                                            <%--<li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
+                                            <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri <i class="md md-chevron-right pull-right"></i></a>
+                                                <ul>
+                                                    <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                    <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                                     <ul>
@@ -143,6 +150,12 @@
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                                     <ul class="dl-submenu">
+                                        <li><a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu</a>
+                                            <ul class="dl-submenu">
+                                                <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="candidate_profilelist"><i class="md md-search"></i>Paparan</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                             <ul class="dl-submenu">
                                                 <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
@@ -228,7 +241,7 @@
                         <ul class="countdown m-t-25">
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="calon_bertanding">
                                     <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>

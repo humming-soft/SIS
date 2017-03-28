@@ -180,6 +180,13 @@
                             <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
                                 <li class="has-submenu">
+                                    <a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu</a>
+                                    <ul class="submenu">
+                                        <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="candidate_profilelist"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
                                     <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                     <ul class="submenu">
                                         <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
