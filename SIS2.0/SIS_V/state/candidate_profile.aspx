@@ -6,6 +6,30 @@
             $('#DropDownList2').customselect();
             $('#DropDownList3').customselect();
             $('#DropDownList4').customselect();
+
+            $('#TextBox25').datepicker({
+                format: "dd/mm/yyyy",
+                keyboardNavigation: false,
+                todayHighlight: true, // to highlight today
+                orientation: "bottom auto",
+                autoclose: true
+            });
+
+            $('#TextBox26').datepicker({
+                format: "dd/mm/yyyy",
+                keyboardNavigation: false,
+                todayHighlight: true, // to highlight today
+                orientation: "bottom auto",
+                autoclose: true
+            });
+
+            $('#TextBox27').datepicker({
+                format: "dd/mm/yyyy",
+                keyboardNavigation: false,
+                todayHighlight: true, // to highlight today
+                orientation: "bottom auto",
+                autoclose: true
+            });
         });
     </script>
     <script type="text/javascript">
@@ -388,7 +412,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="date_join">Tarik Luput Ahli</label>
-                                    <asp:TextBox ID="TextBox25" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox25" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -396,13 +420,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="date_left">Tarik Daftar Parti</label>
-                                    <asp:TextBox ID="TextBox26" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox26" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="expiry_date">Tarik Keluar Parti</label>
-                                    <asp:TextBox ID="TextBox27" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox27" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                         </div>

@@ -19,6 +19,9 @@ namespace SIS_V.state
             if(!IsPostBack)
             {
                 TextBox4.Attributes.Add("readonly", "readonly");
+                TextBox25.Attributes.Add("readonly", "readonly");
+                TextBox26.Attributes.Add("readonly", "readonly");
+                TextBox27.Attributes.Add("readonly", "readonly");
                 TextBox29.Attributes.Add("readonly", "readonly");
                 //fill_image();
                 fill_race();
