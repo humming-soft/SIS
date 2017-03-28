@@ -117,7 +117,6 @@
                             <div style="width: 100%; padding: 0 28%">
                                 <div class="gal-detail thumb" style="margin-top: 0px">
                                     <img id="imager" src="../assets/images/users/avatar-0.jpg" class="thumb-img" alt="work-thumbnail" style="width: 156px;"/>
-                                    <asp:Image ID="Image1" runat="server" CssClass="thumb-img" style="width: 156px;" />
                                 </div>
                             </div>
                             <h4 class="text-center" style="margin-top: 10px !important">Calon Profile Image</h4>

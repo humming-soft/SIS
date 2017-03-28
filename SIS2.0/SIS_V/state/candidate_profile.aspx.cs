@@ -44,7 +44,7 @@ namespace SIS_V.state
                 if (bytes.Length > 0)
                 {
                     string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
-                    Image1.ImageUrl = "data:image/png;base64," + base64String;
+                    //Image1.ImageUrl = "data:image/png;base64," + base64String;
                 }
             }
         }
