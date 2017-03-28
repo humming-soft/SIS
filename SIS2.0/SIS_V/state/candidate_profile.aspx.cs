@@ -13,7 +13,7 @@ namespace SIS_V.state
     public partial class candidate_profile : System.Web.UI.Page
     {
         bus_sis_ugc1 bus = new bus_sis_ugc1();
-        DataTable race;
+        DataTable race, relegion, parti;
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -23,6 +23,7 @@ namespace SIS_V.state
                 //fill_image();
                 fill_race();
                 fill_relegion();
+                fill_party();
             }
         }
 
@@ -37,6 +38,15 @@ namespace SIS_V.state
                 bus.image = bytes;
                 int res = bus.image_upload();
                
+            }
+            else
+            {
+                string filename2 = FileUpload2.FileName;
+                System.IO.Stream fs2 = FileUpload2.PostedFile.InputStream;
+                System.IO.BinaryReader br = new System.IO.BinaryReader(fs2);
+                Byte[] bytes = br.ReadBytes((Int32)fs2.Length);
+                bus.image = bytes;
+                int res = bus.image_upload();
             }
         }
 
@@ -53,14 +63,24 @@ namespace SIS_V.state
         }
         public void fill_relegion()
         {
-            race = bus.fill_relegion();
-            if (race.Rows.Count > 0)
+            relegion = bus.fill_relegion();
+            if (relegion.Rows.Count > 0)
             {
-                DropDownList3.DataSource = race;
+                DropDownList3.DataSource = relegion;
                 DropDownList3.DataBind();
                 DropDownList3.Items.Insert(0, new ListItem("---PILIH---", ""));
             }
 
+        }
+        public void fill_party()
+        {
+            parti = bus.fill_party();
+            if (parti.Rows.Count > 0)
+            {
+                DropDownList4.DataSource = parti;
+                DropDownList4.DataBind();
+                DropDownList4.Items.Insert(0, new ListItem("---PILIH---", ""));
+            }
         }
 
         public void fill_image()
@@ -76,5 +96,26 @@ namespace SIS_V.state
                 }
             }
         }
+
+        //protected void lnkDownload_Click(object sender, EventArgs e)
+        //{
+        //    DataTable dt = bus.fill_image();
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        byte[] bytes = (byte[])dt.Rows[0]["image"];
+        //        if (bytes.Length > 0)
+        //        {
+        //            Response.Clear();
+        //            Response.Buffer = true;
+        //            Response.Charset = "";
+        //            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+        //            Response.AddHeader("content-disposition", "attachment;filename=files.zip ");
+        //            Response.ContentType = "application/zip";
+        //            Response.BinaryWrite(bytes);
+        //            Response.Flush();
+        //            Response.End();
+        //        }
+        //    }
+        //}
     }
 }

@@ -376,6 +376,36 @@
         $('#GridView_Cdetails_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
         // modify table search input
     };
+    var ci = function () {
+        var oTable = $('#GridCInfo').dataTable({
+            "aoColumnDefs": [{
+                "aTargets": [0]
+            }],
+            "oLanguage": {
+                "sLengthMenu": "Show _MENU_ Rows",
+                "sSearch": "",
+                "pagingType": "full_numbers",
+                "oPaginate": {
+                    "sFirst": "Muka Surat Pertama", // This is the link to the first page
+                    "sPrevious": "Selepas", // This is the link to the previous page
+                    "sNext": "Seterusnya", // This is the link to the next page
+                    "sLast": "Muka Surat Terakhir" // This is the link to the last page
+                }
+            },
+            "aaSorting": [
+                [5, 'asc']
+            ],
+            "aLengthMenu": [
+                [5, 10, 15, 20, -1],
+                [5, 10, 15, 20, "All"] // change per page values here
+            ],
+            // set the initial value
+            "iDisplayLength": 10,
+        });
+        $('#GridCInfo_wrapper.dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+        // modify table search input
+    };
+
     return {
         //main function to initiate template pages
         init: function () {
@@ -388,6 +418,7 @@
             guser();
             gri_party();
             ci_filters();
+            ci();
         }
     };
 }();

@@ -163,7 +163,10 @@ namespace SIS_B
         {
             return data1.fill_relegion();
         }
-
+        public DataTable fill_party()
+        {
+            return data1.fill_party();
+        }
 
 
 
