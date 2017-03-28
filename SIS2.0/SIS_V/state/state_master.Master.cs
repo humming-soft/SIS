@@ -373,6 +373,12 @@ namespace SIS_V.state
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
+                case "calon_bertanding":
+                    breadcrum_parent.InnerText = "Calon Bertanding";
+                    breadcrum_parent.Attributes["class"] = "b-600";
+                    child_li.Visible = false;
+                    grant_child_li.Visible = false;
+                    break;
             }
         }
 
