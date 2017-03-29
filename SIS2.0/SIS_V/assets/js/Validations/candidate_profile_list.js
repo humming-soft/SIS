@@ -1,25 +1,16 @@
 ﻿/*
 Author : Jane
-16/02/2017
-Parliment Info login validation script
+29/03/2017
+Candidate profile validation script
 */
 
 var Candidate_Profile_List = function () {
 
     var runCandidateProfileValidator = function () {
-        console.log("IN");
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
-
-        //Validator for negative numbers.
-        jQuery.validator.addMethod("nonnegative", function (value, element) {
-            if (value < 0) {
-                return false;
-            }
-            return true;
-        }, "Value cannot be Negative");
-
         form.validate({
+            ignore: [],
             rules: {
                 ctl00$ContentPlaceHolder1$ddlNameC: {
                     required: true
