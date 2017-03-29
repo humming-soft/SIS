@@ -13,6 +13,15 @@ namespace SIS_V.state {
     public partial class candidate_profilelist {
         
         /// <summary>
+        /// invalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
+        
+        /// <summary>
         /// ddlNameC control.
         /// </summary>
         /// <remarks>
@@ -22,22 +31,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlNameC;
         
         /// <summary>
-        /// ddlIC control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlIC;
-        
-        /// <summary>
-        /// button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button1;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
         /// button2 control.
