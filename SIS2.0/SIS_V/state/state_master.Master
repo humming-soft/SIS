@@ -506,6 +506,7 @@
     <script src="../assets/js/Validations/activiti_parti_add.js"></script>    
     <script src="../assets/js/Validations/keluar_mengundi.js"></script>
     <script src="../assets/js/Validations/activiti_bakal_ci_views.js"></script>
+    <script src="../assets/js/Validations/cand_profile.js"></script>
 
     <%--Masonry--%>
     <script src="../assets/js/masonry/masonry.min.js"></script>

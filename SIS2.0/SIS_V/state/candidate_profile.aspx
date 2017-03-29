@@ -136,6 +136,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>TAMBAH PROFIL BAKAL CALON / INDIVIDU</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
@@ -501,7 +509,7 @@
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
                                 </div>
-                                <%--                                <div class ="col-lg-6">
+                                <%--                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkDownload_Click"></asp:LinkButton>
                                     </div>
@@ -512,13 +520,16 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="padding-left:10px">
             <div class="col-sm-12 col-lg-12 p-0">
                 <div class="form-group text-left m-b-0 m-t-15">
                     <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="button1_Click" ClientIDMode="Static" />
                     <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" ClientIDMode="Static" OnClientClick="reseter();this.form.reset();return false;" />
                 </div>
             </div>
+        </div>
+        <div class="row" style="margin-top:10px">
+
         </div>
     </div>
 </asp:Content>
