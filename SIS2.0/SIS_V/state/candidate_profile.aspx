@@ -70,6 +70,13 @@
         function showBrowseDialogAdd() {
             $('#FileUpload2').click();
         }
+        function setter() {
+            chk = $('#DropDownList4 option:selected').val();
+            split_chk = chk.split("~");
+            $('#TextBox18').val(split_chk[3]);
+            $('#TextBox19').val(split_chk[2]);
+            $('#TextBox20').val(split_chk[1]);
+        }
     </script>
     <script type="text/javascript">
         function readURL(input) {
@@ -111,9 +118,18 @@
                 }
                 else {
                     $("#FileUpload2").val('');
+                    $('#rar_name').text('');
                     alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
                 }
             }
+        }
+    </script>
+    <script type="text/javascript">
+        function reseter() {
+            $("#FileUpload1").val('');
+            $('#imager').attr('src', '../assets/images/users/avatar-0.jpg');
+            $("#FileUpload2").val('');
+            $('#rar_name').text('');
         }
     </script>
 </asp:Content>
@@ -214,20 +230,20 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label for="address">Alamat</label>
-                                    <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" TextMode="MultiLine" Height="110px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" TextMode="MultiLine" Height="110px" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="House_Phone">Telefon Rumah</label>
-                                        <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="Fax_Number">Nombor Fax</label>
-                                        <asp:TextBox ID="TextBox11" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox11" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -235,20 +251,20 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="Office_Phone">Telefon Pejabat</label>
-                                        <asp:TextBox ID="TextBox9" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox9" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="Email">Emel</label>
-                                        <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label for="Cell_Phone">Telefon Bimbit</label>
-                                    <asp:TextBox ID="TextBox10" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox10" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -267,7 +283,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="Blog">Blog</label>
-                                    <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -275,13 +291,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Facebook">Facebook</label>
-                                    <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Twitter">Twitter</label>
-                                    <asp:TextBox ID="TextBox13" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox13" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -298,7 +314,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="job">Pekerjaan</label>
-                                    <asp:TextBox ID="TextBox17" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox17" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -306,7 +322,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="earnings">Pendapatan (RM)</label>
-                                    <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +339,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="Spouse_Name">Nama Pasangan</label>
-                                    <asp:TextBox ID="TextBox15" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox15" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -331,7 +347,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="Num.Young">Bil. Anak</label>
-                                    <asp:TextBox ID="TextBox16" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox16" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -350,13 +366,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Party_Affiliation">Parti Gabungan</label>
-                                    <asp:TextBox ID="TextBox18" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox18" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Parti">Parti</label>
-                                    <asp:DropDownList ID="DropDownList4" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static" DataValueField="party_id" DataTextField="party"></asp:DropDownList>
+                                    <asp:DropDownList ID="DropDownList4" runat="server" CssClass="custom-select authSelect" ClientIDMode="Static" onchange="setter()" DataValueField="id" DataTextField="party"></asp:DropDownList>
                                 </div>
                             </div>
                         </div>
@@ -364,13 +380,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Coalition_Party_Code">Kod Parti Gabungan</label>
-                                    <asp:TextBox ID="TextBox19" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox19" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Party_Code">Kod Parti</label>
-                                    <asp:TextBox ID="TextBox20" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox20" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -379,26 +395,26 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="Member">Nombar Ahli</label>
-                                        <asp:TextBox ID="TextBox21" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox21" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkbox checkbox-pink" style="margin-top: 32px;">
-                                        <asp:CheckBox ID="CheckBox2" runat="server" />
+                                        <asp:CheckBox ID="CheckBox2" runat="server" ClientIDMode="Static" />
                                         <label for="lifetime">Ahil Seumur Hidup</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="branches">Cawangan</label>
-                                        <asp:TextBox ID="TextBox23" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="TextBox23" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Political_Office">Jawatan Politik</label>
-                                    <asp:TextBox ID="TextBox22" runat="server" CssClass="form-control" TextMode="MultiLine" Height="110px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox22" runat="server" CssClass="form-control" TextMode="MultiLine" Height="110px" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +422,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="Section">Bahagian</label>
-                                    <asp:TextBox ID="TextBox24" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox24" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -443,13 +459,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="asset">Asset</label>
-                                    <asp:TextBox ID="TextBox34" runat="server" CssClass="form-control" TextMode="MultiLine" Height="184px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox34" runat="server" CssClass="form-control" TextMode="MultiLine" Height="184px" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label for="education">Pendidikan</label>
-                                    <asp:TextBox ID="TextBox35" runat="server" CssClass="form-control" TextMode="MultiLine" Height="184px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox35" runat="server" CssClass="form-control" TextMode="MultiLine" Height="184px" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -457,7 +473,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="Additional_Info">Maklumat Tambahan</label>
-                                    <asp:TextBox ID="TextBox37" runat="server" CssClass="form-control" TextMode="MultiLine" Height="184px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox37" runat="server" CssClass="form-control" TextMode="MultiLine" Height="184px" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -485,7 +501,7 @@
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
                                 </div>
-<%--                                <div class ="col-lg-6">
+                                <%--                                <div class ="col-lg-6">
                                     <div class="form-group">
                                         <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkDownload_Click"></asp:LinkButton>
                                     </div>
@@ -499,8 +515,8 @@
         <div class="row">
             <div class="col-sm-12 col-lg-12 p-0">
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="button1_Click" />
-                    <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
+                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="button1_Click" ClientIDMode="Static" />
+                    <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" ClientIDMode="Static" OnClientClick="reseter();this.form.reset();return false;" />
                 </div>
             </div>
         </div>
