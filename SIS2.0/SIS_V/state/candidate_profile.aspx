@@ -2,6 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
+        $(document).ready(function () {
+            $('#DropDownList2').customselect();
+            $('#DropDownList3').customselect();
+            $('#DropDownList4').customselect();
+        });
+    </script>
+    <script type="text/javascript">
         function set() {
             var txtval = $("#TextBox2").val();
             var ret = txtval.split("-");

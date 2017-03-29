@@ -48,9 +48,9 @@ namespace SIS_V.state
         public void fill_name()
         {
             dt = objBUS.GetCandidateNames();
-            ddlName.DataSource = dt;
-            ddlName.DataBind();
-            ddlName.Items.Insert(0, new ListItem("-----PILIH-----", ""));
+            ddlNameC.DataSource = dt;
+            ddlNameC.DataBind();
+            ddlNameC.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
         public void fill_ic()

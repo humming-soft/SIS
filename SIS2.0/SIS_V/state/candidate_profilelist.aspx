@@ -2,8 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-        jQuery(document).ready(function ($) {
+        jQuery(document).ready(function () {
             TableData.init();
+            $("#ddlNameC").customselect();
         });
     </script>
 </asp:Content>
@@ -24,7 +25,7 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="userName">Nama Calon</label>
-                                            <asp:DropDownList ID="ddlName" runat="server" CssClass="custom-select authSelect" DataTextField="name" DataValueField="candidate_id" ClientIDMode="Static"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlNameC" runat="server" CssClass="custom-select authSelect" DataTextField="name" DataValueField="candidate_id" ClientIDMode="Static"></asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
