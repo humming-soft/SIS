@@ -12,18 +12,46 @@ var cand_profile = function () {
         form.validate({
             ignore: [],
             rules: {
-                ctl00$ContentPlaceHolder1$ddlName: {
-                    require_from_group: [1, ".authSelect"]
+                ctl00$ContentPlaceHolder1$TextBox2: {
+                    required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlJenis: {
-                    require_from_group: [1, ".authSelect"]
+                ctl00$ContentPlaceHolder1$TextBox3: {
+                    required: true
                 },
-                ctl00$ContentPlaceHolder1$ddlSumber: {
-                    require_from_group: [1, ".authSelect"]
+                ctl00$ContentPlaceHolder1$TextBox4: {
+                    required : true
                 },
-                ctl00$ContentPlaceHolder1$ddlTahap: {
-                    require_from_group: [1, ".authSelect"]
+                ctl00$ContentPlaceHolder1$TextBox29: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$DropDownList2: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$DropDownList3: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$FileUpload1: {
+                    required: true,
+                    accept: "image/jpeg,image/jpg,image/png"
+                },
+                ctl00$ContentPlaceHolder1$TextBox18: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$DropDownList4: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$TextBox19: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$TextBox20: {
+                    required : true
+                },
+                ctl00$ContentPlaceHolder1$FileUpload2: {
+                    extension: "rar,zip"
                 }
+
+
+
             },
             submitHandler: function (form) {
                 errorHandler.hide();

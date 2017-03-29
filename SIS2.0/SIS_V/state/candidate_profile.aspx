@@ -132,6 +132,11 @@
             $('#rar_name').text('');
         }
     </script>
+    <script type="text/javascript">
+        function canprof(){
+            cand_profile.init();
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -523,7 +528,7 @@
         <div class="row" style="padding-left:10px">
             <div class="col-sm-12 col-lg-12 p-0">
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClick="button1_Click" ClientIDMode="Static" />
+                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClientClick="canprof()" OnClick="button1_Click" ClientIDMode="Static" />
                     <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" ClientIDMode="Static" OnClientClick="reseter();this.form.reset();return false;" />
                 </div>
             </div>
