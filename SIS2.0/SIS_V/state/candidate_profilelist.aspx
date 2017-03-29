@@ -5,7 +5,13 @@
         jQuery(document).ready(function () {
             TableData.init();
             $("#ddlNameC").customselect();
+            //$("#ddlIC").customselect();
         });
+    </script>
+    <script type="text/javascript">
+        function validate_profile_filter() {
+            Candidate_Profile_List.init();
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -14,6 +20,12 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>TAMBAH PROFIL BAKAL CALON / INDIVIDU</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>We could not process your request, please check your form fields!</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-success">
@@ -28,15 +40,15 @@
                                             <asp:DropDownList ID="ddlNameC" runat="server" CssClass="custom-select authSelect" DataTextField="name" DataValueField="candidate_id" ClientIDMode="Static"></asp:DropDownList>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <%--<div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="userName">Nombor IC</label>
                                             <asp:DropDownList ID="ddlIC" runat="server" CssClass="custom-select authSelect" DataTextField="candidate_ic" DataValueField="candidate_id" ClientIDMode="Static"></asp:DropDownList>
                                         </div>
-                                    </div>
+                                    </div>--%>
                                     <div class="col-lg-3">
                                         <div class="form-group text-left m-b-0 m-t-25">
-                                            <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" />
+                                            <asp:Button ID="btnSubmit" CssClass="btn btn-primary waves-light" runat="server" Text="Carian" OnClick="btnSubmit_Click" OnClientClick="validate_profile_filter()" />
                                             <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Batal" />
                                         </div>
                                     </div>

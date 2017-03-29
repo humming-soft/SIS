@@ -17,6 +17,7 @@ namespace SIS_V.state
         string cand_image;
         protected void Page_Load(object sender, EventArgs e)
         {
+            invalid.Visible = false;
             if (!IsPostBack)
             {
                 CheckIsLogin();
@@ -31,8 +32,8 @@ namespace SIS_V.state
                 if (Session["is_login"].ToString() == "t")
                 {
                     fill_name();
-                    fill_ic();
-                    fill_dt();
+                    //fill_ic();
+                    //fill_dt();
                 }
                 else
                 {
@@ -53,13 +54,13 @@ namespace SIS_V.state
             ddlNameC.Items.Insert(0, new ListItem("-----PILIH-----", ""));
         }
 
-        public void fill_ic()
-        {
-            dt = objBUS.GetCandidateNames();
-            ddlIC.DataSource = dt;
-            ddlIC.DataBind();
-            ddlIC.Items.Insert(0, new ListItem("-----PILIH-----", ""));
-        }
+        //public void fill_ic()
+        //{
+        //    dt = objBUS.GetCandidateNames();
+        //    ddlIC.DataSource = dt;
+        //    ddlIC.DataBind();
+        //    ddlIC.Items.Insert(0, new ListItem("-----PILIH-----", ""));
+        //}
         public void fill_dt()
         {
             DataTable dt = objBUS.fill_CandidateDataTable();
@@ -107,6 +108,45 @@ namespace SIS_V.state
             {
                 GridCInfo.UseAccessibleHeader = true;
                 GridCInfo.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (ddlNameC.SelectedIndex != 0)
+            {
+                //bus1.stateid = int.Parse(Session["state"].ToString());
+                if (ddlNameC.SelectedIndex == 0)
+                {
+                    objBUS.name = 0;
+                }
+                else
+                {
+                    objBUS.name = int.Parse(ddlNameC.SelectedValue);
+                }
+
+                dt = objBUS.GetCandidateSearchList();
+                if (dt.Rows.Count > 0)
+                {
+                    GridCInfo.DataSource = dt;
+                    GridCInfo.DataBind();
+
+                }
+                else
+                {
+                    fill_name();
+                    //fill_ic();
+                    GridCInfo.DataSource = null;
+                    GridCInfo.DataBind();
+                    invalid.Visible = true;
+                }
+            }
+            else
+            {
+                fill_name();
+                //fill_ic();
+                GridCInfo.DataSource = null;
+                GridCInfo.DataBind();
+                invalid.Visible = true;
             }
         }
     }
