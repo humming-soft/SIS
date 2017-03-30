@@ -133,13 +133,19 @@
         }
     </script>
     <script type="text/javascript">
-        function canprof(){
+        function canprof() {
             cand_profile.init();
         }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <asp:Label ID="lblvalid" runat="server"></asp:Label>
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -525,7 +531,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="padding-left:10px">
+        <div class="row" style="padding-left: 10px">
             <div class="col-sm-12 col-lg-12 p-0">
                 <div class="form-group text-left m-b-0 m-t-15">
                     <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClientClick="canprof()" OnClick="button1_Click" ClientIDMode="Static" />
@@ -533,8 +539,7 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-top:10px">
-
+        <div class="row" style="margin-top: 10px">
         </div>
     </div>
 </asp:Content>
