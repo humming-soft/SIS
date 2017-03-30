@@ -19,18 +19,35 @@ namespace SIS_V.state
             invalid.Visible = false;
             if(!IsPostBack)
             {
-                TextBox4.Attributes.Add("readonly", "readonly");
-                TextBox18.Attributes.Add("readonly", "readonly");
-                TextBox19.Attributes.Add("readonly", "readonly");
-                TextBox20.Attributes.Add("readonly", "readonly");
-                TextBox25.Attributes.Add("readonly", "readonly");
-                TextBox26.Attributes.Add("readonly", "readonly");
-                TextBox27.Attributes.Add("readonly", "readonly");
-                TextBox29.Attributes.Add("readonly", "readonly");
-                //fill_image();
-                fill_race();
-                fill_relegion();
-                fill_party();
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    TextBox4.Attributes.Add("readonly", "readonly");
+                    TextBox18.Attributes.Add("readonly", "readonly");
+                    TextBox19.Attributes.Add("readonly", "readonly");
+                    TextBox20.Attributes.Add("readonly", "readonly");
+                    TextBox25.Attributes.Add("readonly", "readonly");
+                    TextBox26.Attributes.Add("readonly", "readonly");
+                    TextBox27.Attributes.Add("readonly", "readonly");
+                    TextBox29.Attributes.Add("readonly", "readonly");
+                    fill_race();
+                    fill_relegion();
+                    fill_party();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
