@@ -16,20 +16,44 @@ namespace SIS_V.state
         DataTable race, relegion, parti;
         protected void Page_Load(object sender, EventArgs e)
         {
+            invalid.Visible = false;
             if(!IsPostBack)
             {
-                TextBox4.Attributes.Add("readonly", "readonly");
-                TextBox29.Attributes.Add("readonly", "readonly");
-                //fill_image();
-                fill_race();
-                fill_relegion();
-                fill_party();
+                CheckIsLogin();
+            }
+        }
+        protected void CheckIsLogin()
+        {
+            if (Session["is_login"] != null)
+            {
+                if (Session["is_login"].ToString() == "t")
+                {
+                    TextBox4.Attributes.Add("readonly", "readonly");
+                    TextBox18.Attributes.Add("readonly", "readonly");
+                    TextBox19.Attributes.Add("readonly", "readonly");
+                    TextBox20.Attributes.Add("readonly", "readonly");
+                    TextBox25.Attributes.Add("readonly", "readonly");
+                    TextBox26.Attributes.Add("readonly", "readonly");
+                    TextBox27.Attributes.Add("readonly", "readonly");
+                    TextBox29.Attributes.Add("readonly", "readonly");
+                    fill_race();
+                    fill_relegion();
+                    fill_party();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
 
         protected void button1_Click(object sender, EventArgs e)
         {
-            if (FileUpload1.HasFile)
+            if (TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "" && TextBox29.Text != "" && DropDownList2.SelectedIndex != 0 && DropDownList3.SelectedIndex != 0 && FileUpload1.HasFile && TextBox18.Text != "" && DropDownList4.SelectedIndex != 0 && TextBox19.Text != "" && TextBox20.Text !="")
             {
                 string filename = FileUpload1.FileName;
                 System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
@@ -41,12 +65,14 @@ namespace SIS_V.state
             }
             else
             {
-                string filename2 = FileUpload2.FileName;
-                System.IO.Stream fs2 = FileUpload2.PostedFile.InputStream;
-                System.IO.BinaryReader br = new System.IO.BinaryReader(fs2);
-                Byte[] bytes = br.ReadBytes((Int32)fs2.Length);
-                bus.image = bytes;
-                int res = bus.image_upload();
+                invalid.Visible = true;
+                lblinvalid.Text = "Anda mempunyai beberapa kesilapan dalam pengisian borang. Sila isikan butiran yang diperlukan !";
+                //string filename2 = FileUpload2.FileName;
+                //System.IO.Stream fs2 = FileUpload2.PostedFile.InputStream;
+                //System.IO.BinaryReader br = new System.IO.BinaryReader(fs2);
+                //Byte[] bytes = br.ReadBytes((Int32)fs2.Length);
+                //bus.image = bytes;
+                //int res = bus.image_upload();
             }
         }
 
