@@ -211,6 +211,10 @@ namespace SIS_B
                 fax_no, Office_tel_no, email, mobile_no, blog, facebook, twitter, occupation, income, spouse_name, child_no, party, membership_no,
                 member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info);
         }
+        public DataTable GetCandidateImage()
+        {
+            return objDAL.GetCandidateImage(candidate_id);
+        }
 
     }
 }

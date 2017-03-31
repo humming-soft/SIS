@@ -13,7 +13,7 @@ namespace SIS_V.state
     {
         bus_sis_ugc1 bus = new bus_sis_ugc1();
         bus_sis_ugc2 objBUS = new bus_sis_ugc2();
-        DataTable dt, race, relegion, parti;
+        DataTable dt, race, relegion, parti, img_dt;
         string cand_image, gender, member4life;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -162,14 +162,35 @@ namespace SIS_V.state
         }
         protected void button1_Click(object sender, EventArgs e)
         {
-            if (TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "" && TextBox29.Text != "" && DropDownList2.SelectedIndex != 0 && DropDownList3.SelectedIndex != 0 && FileUpload1.HasFile && TextBox18.Text != "" && DropDownList4.SelectedIndex != 0 && TextBox19.Text != "" && TextBox20.Text != "")
+            if (TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "" && TextBox29.Text != "" && DropDownList2.SelectedIndex != 0 && DropDownList3.SelectedIndex != 0 && TextBox18.Text != "" && DropDownList4.SelectedIndex != 0 && TextBox19.Text != "" && TextBox20.Text != "")
             {
-                string filename = FileUpload1.FileName;
-                System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
-                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
-                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                objBUS.image = bytes;
                 objBUS.candidate_id = int.Parse(Session["candidate_unique_id"].ToString());
+                if (FileUpload1.HasFile)
+                {
+                    string filename = FileUpload1.FileName;
+                    System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
+                    System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                    Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                    objBUS.image = bytes;
+                }
+                else
+                {
+                    img_dt = objBUS.GetCandidateImage();
+                    if (img_dt.Rows[0]["image"].ToString() != "")
+                    {
+                        byte[] bytes = (byte[])img_dt.Rows[0]["image"];
+                        if (bytes.Length > 0)
+                        {
+                            objBUS.image = bytes;
+                        }
+                    }
+                    else
+                    {
+                        invalid.Visible = true;
+                        lblinvalid.Text = "Sila muat naik gambar profil anda!";
+                        return;
+                    }
+                }
                 objBUS.title = TextBox1.Text;
                 objBUS.candidate_ic = TextBox2.Text;
                 objBUS.candidate_name = TextBox3.Text;
