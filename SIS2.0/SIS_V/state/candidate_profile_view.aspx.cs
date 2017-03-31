@@ -296,7 +296,7 @@ namespace SIS_V.state
                 else if (chk == 1)
                 {
                     invalid.Visible = true;
-                    lblinvalid.Text = "DUPLICATE IC";
+                    lblinvalid.Text = "IC Nombor in yang sedia ada!";
                 }
                 else
                 {
