@@ -189,6 +189,7 @@ namespace SIS_V.state
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             int id = int.Parse(GridCInfo.DataKeys[row.RowIndex].Value.ToString());
+            Session["candidate_unique_id"] = id;
             Response.Redirect("candidate_profile_view");
 
         }
