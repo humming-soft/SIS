@@ -90,6 +90,7 @@
                                         <li><a href="status_kawasan"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
                                         <li><a href="Win_Candidate"><i class="md md-contacts"></i>Winnable Candidate</a></li>
                                         <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
+                                        <li><a href="calon_bertanding"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
@@ -161,6 +162,7 @@
                                         <li><a href="status_kawasan"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
                                         <li><a href="Win_Candidate"><i class="md md-contacts"></i>Winnable Candidate</a></li>
                                         <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
+                                        <li><a href="calon_bertanding"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
