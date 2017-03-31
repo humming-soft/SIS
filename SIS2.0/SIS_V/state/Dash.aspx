@@ -86,6 +86,7 @@
                                         <li><a href="utama"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
                                         <li><a href="kawasan_operasi"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
                                         <li><a href="parlimen_tumpuan"><i class="md md-compare"></i>Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang</a></li>
+                                        <li><a href="result"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a></li>
                                         <li><a href="status_kawasan"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
                                         <li><a href="Win_Candidate"><i class="md md-contacts"></i>Winnable Candidate</a></li>
                                         <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
@@ -98,6 +99,13 @@
                                                 <ul class="submenu">
                                                     <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
                                                     <li><a href="candidate_profilelist"><i class="md md-search"></i>Paparan</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-submenu">
+                                                <a href="#"><i class="md md-person"></i>Calon Boleh Menang <i class="md md-chevron-right pull-right"></i></a>
+                                                <ul>
+                                                    <li><a href="candidate_winnable_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                    <li><a href="candidate_winnable_list"><i class="md md-search"></i>Paparan</a></li>
                                                 </ul>
                                             </li>
                                             <li class="has-submenu">
@@ -118,6 +126,13 @@
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                                     <ul>
+                                        <li class="has-submenu">
+                                            <a href="#"><i class="md md-find-in-page"></i>Keputusan Pilihanraya <i class="md md-chevron-right pull-right"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="election_result"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="election_result_list"><i class="md md-add"></i>Kemaskini</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                                     </ul>
                                 </li>

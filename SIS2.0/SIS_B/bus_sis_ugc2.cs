@@ -75,6 +75,40 @@ namespace SIS_B
         public int no_of_vote { get; set; }
 
         public int election_id { get; set; }
+        public int candidate_id { get; set; }
+        public Byte[] image { get; set; }
+        public string title { get; set; }
+        public string candidate_ic { get; set; }
+        public string candidate_name { get; set; }
+        public DateTime dob { get; set; }
+        public string gender { get; set; }
+        public int race { get; set; }
+        public int religion { get; set; }
+        public string alamat { get; set; }
+        public string home_tel_no { get; set; }
+        public string fax_no { get; set; }
+        public string Office_tel_no { get; set; }
+        public string email { get; set; }
+        public string mobile_no { get; set; }
+        public string blog { get; set; }
+        public string facebook { get; set; }
+        public string twitter { get; set; }
+        public string occupation { get; set; }
+        public double income { get; set; }
+        public string spouse_name { get; set; }
+        public int child_no { get; set; }
+        public int party { get; set; }
+        public string membership_no { get; set; }
+        public string member4life { get; set; }
+        public string branch { get; set; }
+        public string political_post { get; set; }
+        public string division { get; set; }
+        public DateTime expiry_date { get; set; }
+        public DateTime date_join { get; set; }
+        public DateTime date_left { get; set; }
+        public string asset { get; set; }
+        public string education { get; set; }
+        public string add_info { get; set; }
 
         public DataTable fill_DataTable()
         {
@@ -166,6 +200,16 @@ namespace SIS_B
         public DataTable GetCandidateSearchList()
         {
             return objDAL.GetCandidateSearchList(name);
+        }
+        public DataTable GetCandidateDetails()
+        {
+            return objDAL.GetCandidateDetails(candidate_id);
+        }
+        public int UpdateCandidateDetails()
+        {
+            return objDAL.UpdateCandidateDetails(image, candidate_id, candidate_ic, candidate_name, title, dob, gender, race, religion, alamat, home_tel_no,
+                fax_no, Office_tel_no, email, mobile_no, blog, facebook, twitter, occupation, income, spouse_name, child_no, party, membership_no,
+                member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info);
         }
 
     }
