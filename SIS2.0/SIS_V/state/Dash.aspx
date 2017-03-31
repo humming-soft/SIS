@@ -272,7 +272,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/008_d.png" alt="Logo Image Here" />
-                                <a href="#">
+                                <a href="result">
                                     <p class="minutes_ref b35">Keputusan Pilihanraya </p>
                                 </a>
                             </li>
