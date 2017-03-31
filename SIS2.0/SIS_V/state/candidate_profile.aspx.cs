@@ -336,6 +336,11 @@ namespace SIS_V.state
                     valid.Visible = true;
                     lblvalid.Text = "Data Dimasukkan Berjaya!";
                 }
+                else if(result == 2)
+                {
+                    invalid.Visible = true;
+                    lblinvalid.Text = "Nombor IC Tidak Boleh Sama!";
+                }
                 else
                 {
                     invalid.Visible = true;
@@ -435,22 +440,6 @@ namespace SIS_V.state
             }
 
         }
-
-        #region ImageViewCode
-        public void fill_image()
-        {
-            DataTable dt = bus.fill_image();
-            if (dt.Rows.Count > 0)
-            {
-                byte[] bytes = (byte[])dt.Rows[0]["image"];
-                if (bytes.Length > 0)
-                {
-                    string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
-                    //Image1.ImageUrl = "data:image/png;base64," + base64String;
-                }
-            }
-        }
-        #endregion
 
         #region FileDownloadCode
         //protected void lnkDownload_Click(object sender, EventArgs e)

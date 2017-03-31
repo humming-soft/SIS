@@ -200,17 +200,5 @@ namespace SIS_B
         {
             return data1.add_candidate(title,ic,uname,dob,gender,race,religion,image,address,home_tel_no,office_tel_no,mobile,fax,email,blog,facebook,twitter,job,spouse_name,income,children,parti,member_no,member_life,branch,political_post,division,e_date,d_date,l_date,asset,education,add_info);
         }
-
-
-
-
-        public int image_upload()
-        {
-            return data1.image_upload(image);
-        }
-        public DataTable fill_image()
-        {
-            return data1.fill_image();
-        }
     }
 }
