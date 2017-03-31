@@ -281,7 +281,7 @@
                         <div class="row">
                              <div class="panel panel-color panel-success">
                                 <div class="panel-heading panel-heading-custom">
-                                    <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN SUMBER MAKLUMAT DARI AGENSI</h3>
+                                    <h3 class="panel-title"><i class="md md-brightness-auto"></i> PAPARAN SUMBER MAKLUMAT DARI AGENSI</h3>
                                 </div>
                                 <div class="panel-body panel-custom-bg-success">
                                      <div class="row">
@@ -345,7 +345,7 @@
                             <div class="col-lg-6 p-l-0">
                                  <div class="panel panel-color panel-success">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> TAMBAH MAKLUMAT ARCHIVES</h3>
+                                        <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN FAIL ARCHIVES</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-success" style="height:316px">
                                         <div class="row">

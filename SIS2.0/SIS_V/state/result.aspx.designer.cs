@@ -10,24 +10,15 @@
 namespace SIS_V.state {
     
     
-    public partial class calon_bertanding {
+    public partial class result {
         
         /// <summary>
-        /// lblelection control.
+        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblelection;
-        
-        /// <summary>
-        /// lblstate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblstate;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
     }
 }

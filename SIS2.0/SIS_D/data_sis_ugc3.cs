@@ -708,5 +708,29 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataSet fill_calon_candidates(int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_GetConDetDashboardWinnableCandidate_calon";
+                cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                ds.Relations.Add(new DataRelation("parlimenRelation", ds.Tables[0].Columns["area_id"], ds.Tables[1].Columns["area_id"]));
+                ds.Relations.Add(new DataRelation("parlimenDunRelation", ds.Tables[1].Columns["area_id"], ds.Tables[2].Columns["parent_area_id"]));
+                ds.Relations.Add(new DataRelation("parlimenDunRelation", ds.Tables[2].Columns["area_id"], ds.Tables[3].Columns["area_id"]));
+                return ds;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        
     }
 }
