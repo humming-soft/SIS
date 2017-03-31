@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL CALON BOLEH MENANG</b></h4>
+                <h4 class="m-t-0 header-title"><b>PAPARAN MAKLUMAT KEPUTUSAN PILIHANRAYA</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="row">
                     <div class="col-lg-12">
