@@ -81,7 +81,7 @@ namespace SIS_B
         public string candidate_ic { get; set; }
         public string candidate_name { get; set; }
         public DateTime dob { get; set; }
-        public string gender { get; set; }
+        public int gender { get; set; }
         public int race { get; set; }
         public int religion { get; set; }
         public string alamat { get; set; }
@@ -99,7 +99,7 @@ namespace SIS_B
         public int child_no { get; set; }
         public int party { get; set; }
         public string membership_no { get; set; }
-        public string member4life { get; set; }
+        public bool member4life { get; set; }
         public string branch { get; set; }
         public string political_post { get; set; }
         public string division { get; set; }
