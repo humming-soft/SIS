@@ -176,6 +176,11 @@ namespace SIS_B
         {
             return data.fill_area_analysis_ViewAll(state_id,area_type,parlimen_id,dun_id);
         }
+        public DataSet fill_calon_candidates()
+        {
+            return data.fill_calon_candidates(state_id);
+        }
+        
     }
 }
                

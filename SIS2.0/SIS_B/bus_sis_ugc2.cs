@@ -163,6 +163,10 @@ namespace SIS_B
         {
             return objDAL.fill_CandidateDataTable();
         }
+        public DataTable GetCandidateSearchList()
+        {
+            return objDAL.GetCandidateSearchList(name);
+        }
 
     }
 }

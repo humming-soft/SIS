@@ -702,6 +702,63 @@ namespace SIS_D
             }
         }
 
+        public int add_candidate(string title,string ic,string uname,DateTime dob,int gender,int race,int religion,Byte[] image,string address,string home_tel_no,string office_tel_no,string mobile,string fax,string email,string blog,string facebook,string twitter,string job,string spouse_name,double income,int children,int parti,string member_no,bool member_life,string branch,string political_post,string division,DateTime e_date,DateTime d_date,DateTime l_date,string asset,string education,string add_info)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_insert_candidate";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@title", title);
+                cmd.Parameters.AddWithValue("@ic", ic);
+                cmd.Parameters.AddWithValue("@uname", uname);
+                cmd.Parameters.AddWithValue("@dob", dob);
+                cmd.Parameters.AddWithValue("@gender", gender);
+                cmd.Parameters.AddWithValue("@race", race);
+                cmd.Parameters.AddWithValue("@religion", religion);
+                cmd.Parameters.AddWithValue("@image", image);
+                cmd.Parameters.AddWithValue("@address", address);
+                cmd.Parameters.AddWithValue("@home_tel_no", home_tel_no);
+                cmd.Parameters.AddWithValue("@office_tel_no", office_tel_no);
+                cmd.Parameters.AddWithValue("@mobile", mobile);
+                cmd.Parameters.AddWithValue("@fax", fax);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@blog", blog);
+                cmd.Parameters.AddWithValue("@facebook", facebook);
+                cmd.Parameters.AddWithValue("@twitter", twitter);
+                cmd.Parameters.AddWithValue("@job", job);
+                cmd.Parameters.AddWithValue("@spouse_name", spouse_name);
+                cmd.Parameters.AddWithValue("@income", income);
+                cmd.Parameters.AddWithValue("@children", children);
+                cmd.Parameters.AddWithValue("@parti", parti);
+                cmd.Parameters.AddWithValue("@member_no", member_no);
+                cmd.Parameters.AddWithValue("@member_life", member_life);
+                cmd.Parameters.AddWithValue("@branch", branch);
+                cmd.Parameters.AddWithValue("@political_post", political_post);
+                cmd.Parameters.AddWithValue("@division", division);
+                cmd.Parameters.AddWithValue("@e_date", e_date);
+                cmd.Parameters.AddWithValue("@d_date", d_date);
+                cmd.Parameters.AddWithValue("@l_date", l_date);
+                cmd.Parameters.AddWithValue("@asset", asset);
+                cmd.Parameters.AddWithValue("@education", education);
+                cmd.Parameters.AddWithValue("@add_info", add_info);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
 
 
 

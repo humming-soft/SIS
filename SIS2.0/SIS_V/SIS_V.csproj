@@ -200,6 +200,8 @@
     <Content Include="assets\js\Validations\activiti_bakal.js" />
     <Content Include="assets\js\Validations\activiti_bakal_ci_views.js" />
     <Content Include="assets\js\Validations\activiti_parti_add.js" />
+    <Content Include="assets\js\Validations\candidate_profile_list.js" />
+    <Content Include="assets\js\Validations\cand_profile.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\Validations\detail_info.js" />
