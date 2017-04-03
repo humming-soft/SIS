@@ -722,8 +722,8 @@ namespace SIS_D
                 da.SelectCommand = cmd;
                 da.Fill(ds);
                 ds.Relations.Add(new DataRelation("parlimenRelation", ds.Tables[0].Columns["area_id"], ds.Tables[1].Columns["area_id"]));
-                ds.Relations.Add(new DataRelation("parlimenDunRelation", ds.Tables[1].Columns["area_id"], ds.Tables[2].Columns["parent_area_id"]));
-                ds.Relations.Add(new DataRelation("parlimenDunRelation", ds.Tables[2].Columns["area_id"], ds.Tables[3].Columns["area_id"]));
+                ds.Relations.Add(new DataRelation("parlimenDunRelation", ds.Tables[0].Columns["area_id"], ds.Tables[2].Columns["parent_area_id"]));
+                ds.Relations.Add(new DataRelation("DunRelation", ds.Tables[2].Columns["area_id"], ds.Tables[3].Columns["area_id"]));
                 return ds;
             }
             finally
