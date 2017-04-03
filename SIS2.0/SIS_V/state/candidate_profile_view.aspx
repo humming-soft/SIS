@@ -532,11 +532,11 @@
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false"></asp:LinkButton>
-                                    </div>
+                                <%--<div class="col-lg-6">
+                                <div class="form-group">
+                                    <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkDownload_Click"></asp:LinkButton>
                                 </div>
+                                </div>--%>
                             </div>
                         </div>
                     </div>

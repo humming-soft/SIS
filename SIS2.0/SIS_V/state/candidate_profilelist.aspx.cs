@@ -15,10 +15,11 @@ namespace SIS_V.state
         DataTable dt, dt_all;
         DataTable final = new DataTable();
         DataTable final_all = new DataTable();
-        string cand_image, cand_image1;
+        string cand_image, cand_image1, original_filename;
         protected void Page_Load(object sender, EventArgs e)
         {
             invalid.Visible = false;
+            valid.Visible = false;
             if (!IsPostBack)
             {
                 CheckIsLogin();
@@ -34,13 +35,13 @@ namespace SIS_V.state
                 {
                     if (Session["profile_update"] != null && Session["profile_update"].ToString() == "success")
                     {
-                        lblinvalid.Text = "Profil berjaya dikemas kini!";
-                        invalid.Visible = true;
+                        lblvalid.Text = "Profil berjaya dikemas kini!";
+                        valid.Visible = true;
                         fill_name();
                     }
                     else
                     {
-                        invalid.Visible = false;
+                        valid.Visible = false;
                         fill_name();
                     }
                 }else
@@ -79,6 +80,7 @@ namespace SIS_V.state
             final.Columns.Add("candidate_ic", typeof(string));
             final.Columns.Add("name", typeof(string));
             final.Columns.Add("party_name_bm", typeof(string));
+            final.Columns.Add("original_filename", typeof(string));
 
             if (dt.Rows.Count > 0)
             {
@@ -102,7 +104,15 @@ namespace SIS_V.state
                         }
                     }
                     cand_image = "data:image/png;base64," + base64String;
-                    final.Rows.Add(dt.Rows[i]["candidate_id"].ToString(), cand_image, dt.Rows[i]["title"].ToString(), dt.Rows[i]["candidate_ic"].ToString(), dt.Rows[i]["name"].ToString(), dt.Rows[i]["party_name_bm"].ToString());
+                    if (dt.Rows[i]["original_filename"].ToString() != "")
+                    {
+                        original_filename = dt.Rows[i]["original_filename"].ToString();
+                    }
+                    else
+                    {
+                        original_filename = "";
+                    }
+                    final.Rows.Add(dt.Rows[i]["candidate_id"].ToString(), cand_image, dt.Rows[i]["title"].ToString(), dt.Rows[i]["candidate_ic"].ToString(), dt.Rows[i]["name"].ToString(), dt.Rows[i]["party_name_bm"].ToString(), original_filename);
                 }
 
                 GridCInfo.DataSource = final;
@@ -140,6 +150,7 @@ namespace SIS_V.state
                 final_all.Columns.Add("candidate_ic", typeof(string));
                 final_all.Columns.Add("name", typeof(string));
                 final_all.Columns.Add("party_name_bm", typeof(string));
+                final_all.Columns.Add("original_filename", typeof(string));
 
                 if (dt_all.Rows.Count > 0)
                 {
@@ -164,7 +175,15 @@ namespace SIS_V.state
                             }
                         }
                         cand_image1 = "data:image/png;base64," + base64String;
-                        final_all.Rows.Add(dt_all.Rows[i]["candidate_id"].ToString(), cand_image1, dt_all.Rows[i]["title"].ToString(), dt_all.Rows[i]["candidate_ic"].ToString(), dt_all.Rows[i]["name"].ToString(), dt_all.Rows[i]["party_name_bm"].ToString());
+                        if (dt_all.Rows[i]["original_filename"].ToString() != "")
+                        {
+                            original_filename = dt_all.Rows[i]["original_filename"].ToString();
+                        }
+                        else
+                        {
+                            original_filename = "Tidak Terdapat";
+                        }
+                        final_all.Rows.Add(dt_all.Rows[i]["candidate_id"].ToString(), cand_image1, dt_all.Rows[i]["title"].ToString(), dt_all.Rows[i]["candidate_ic"].ToString(), dt_all.Rows[i]["name"].ToString(), dt_all.Rows[i]["party_name_bm"].ToString(), original_filename);
                     }
 
                     GridCInfo.DataSource = final_all;
@@ -201,6 +220,31 @@ namespace SIS_V.state
             Session["old_ic"] = old_ic;
             Response.Redirect("candidate_profile_view");
 
+        }
+
+        protected void lnkdownload_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk2 = sender as LinkButton;
+            GridViewRow row2 = lnk2.NamingContainer as GridViewRow;
+            int id = int.Parse(GridCInfo.DataKeys[row2.RowIndex].Value.ToString());
+            objBUS.candidate_id = id;
+            DataTable file_dt = objBUS.GetFile();
+            if (file_dt.Rows.Count > 0)
+            {
+                byte[] bytes = (byte[])file_dt.Rows[0]["candidate_archive"];
+                if (bytes.Length > 0)
+                {
+                    Response.Clear();
+                    Response.Buffer = true;
+                    Response.Charset = "";
+                    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                    Response.AddHeader("content-disposition", "attachment;filename=files.zip ");
+                    Response.ContentType = "application/zip";
+                    Response.BinaryWrite(bytes);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
         }
     }
 }

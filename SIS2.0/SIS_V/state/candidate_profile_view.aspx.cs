@@ -158,6 +158,10 @@ namespace SIS_V.state
                 }
                 cand_image = "data:image/png;base64," + base64String;
                 imager.Src = cand_image;
+                if (dt.Rows[0]["original_filename"].ToString() != "")
+                {
+                    rar_name.Text = dt.Rows[0]["original_filename"].ToString();
+                }
             }
         }
         protected void button1_Click(object sender, EventArgs e)

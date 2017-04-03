@@ -218,6 +218,10 @@ namespace SIS_B
         {
             return objDAL.GetCandidateImage(candidate_id);
         }
+        public DataTable GetFile()
+        {
+            return objDAL.GetFile(candidate_id);
+        }
 
     }
 }
