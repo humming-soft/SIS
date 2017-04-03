@@ -32,11 +32,18 @@ namespace SIS_V.state
             {
                 if (Session["is_login"].ToString() == "t")
                 {
-                    fill_name();
-                    //fill_ic();
-                    //fill_dt();
-                }
-                else
+                    if (Session["profile_update"] != null && Session["profile_update"].ToString() == "success")
+                    {
+                        lblinvalid.Text = "Profil berjaya dikemas kini!";
+                        invalid.Visible = true;
+                        fill_name();
+                    }
+                    else
+                    {
+                        invalid.Visible = false;
+                        fill_name();
+                    }
+                }else
                 {
                     Response.Redirect("~/Login");
                 }
@@ -189,6 +196,7 @@ namespace SIS_V.state
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             int id = int.Parse(GridCInfo.DataKeys[row.RowIndex].Value.ToString());
+            Session["candidate_unique_id"] = id;
             Response.Redirect("candidate_profile_view");
 
         }

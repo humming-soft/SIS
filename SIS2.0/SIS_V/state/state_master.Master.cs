@@ -379,6 +379,22 @@ namespace SIS_V.state
                     child_li.Visible = false;
                     grant_child_li.Visible = false;
                     break;
+                case "candidate_profilelist":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Paparan Aktiviti Bakal Calon / Individu";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
+                    break;
+                case "candidate_profile_view":
+                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pra-Pilihanraya";
+                    breadcrum_child.InnerText = "Profil Bakal Calon / Individu";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
+                    break;
             }
         }
 

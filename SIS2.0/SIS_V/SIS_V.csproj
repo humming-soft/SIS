@@ -144,6 +144,16 @@
     <Content Include="assets\images\gallery\008_d.png" />
     <Content Include="assets\images\gallery\009_d.png" />
     <Content Include="assets\images\login_logo_small.png" />
+    <Content Include="assets\images\logo\party\logo_BN.png" />
+    <Content Include="assets\images\logo\party\logo_dap.png" />
+    <Content Include="assets\images\logo\party\logo_kita.png" />
+    <Content Include="assets\images\logo\party\logo_pas.png" />
+    <Content Include="assets\images\logo\party\logo_pkr.png" />
+    <Content Include="assets\images\logo\party\logo_psm.png" />
+    <Content Include="assets\images\logo\party\logo_sapp.png" />
+    <Content Include="assets\images\logo\party\logo_star.png" />
+    <Content Include="assets\images\logo\party\logo_swp.png" />
+    <Content Include="assets\images\logo\party\no-logo.png" />
     <Content Include="assets\images\logo\sabaru_logo.ico" />
     <Content Include="assets\images\logo\logo_1.png" />
     <Content Include="assets\images\logo\logo_2.png" />
@@ -192,6 +202,7 @@
     <Content Include="assets\js\Validations\activiti_parti_add.js" />
     <Content Include="assets\js\Validations\candidate_profile_list.js" />
     <Content Include="assets\js\Validations\cand_profile.js" />
+    <Content Include="assets\js\Validations\cand_profile_update.js" />
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\Validations\detail_info.js" />
@@ -406,6 +417,9 @@
     <Content Include="state\Dash.aspx" />
     <Content Include="state\detail_incident.aspx" />
     <Content Include="state\detail_info.aspx" />
+    <Content Include="state\election_result.aspx" />
+    <Content Include="state\election_result_list.aspx" />
+    <Content Include="state\election_result_view.aspx" />
     <Content Include="state\kawasan_operasi.aspx" />
     <Content Include="state\keluar_mengundi.aspx" />
     <Content Include="state\laporan_harian_add.aspx" />
@@ -419,6 +433,9 @@
     <Content Include="state\parlimen_info_view.aspx" />
     <Content Include="state\parlimen_tumpuan.aspx" />
     <Content Include="state\percentage_voters.aspx" />
+    <Content Include="state\result.aspx" />
+    <Content Include="state\result_desc.aspx" />
+    <Content Include="state\result_view.aspx" />
     <Content Include="state\status_kawasan.aspx" />
     <Content Include="state\tetapan_pentadbir_add.aspx" />
     <Content Include="state\tetapan_pentadbir_view.aspx" />
@@ -787,6 +804,27 @@
     <Compile Include="state\detail_info.aspx.designer.cs">
       <DependentUpon>detail_info.aspx</DependentUpon>
     </Compile>
+    <Compile Include="state\election_result.aspx.cs">
+      <DependentUpon>election_result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\election_result.aspx.designer.cs">
+      <DependentUpon>election_result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\election_result_list.aspx.cs">
+      <DependentUpon>election_result_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\election_result_list.aspx.designer.cs">
+      <DependentUpon>election_result_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\election_result_view.aspx.cs">
+      <DependentUpon>election_result_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\election_result_view.aspx.designer.cs">
+      <DependentUpon>election_result_view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="state\kawasan_operasi.aspx.cs">
       <DependentUpon>kawasan_operasi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -877,6 +915,27 @@
     </Compile>
     <Compile Include="state\percentage_voters.aspx.designer.cs">
       <DependentUpon>percentage_voters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\result_desc.aspx.cs">
+      <DependentUpon>result_desc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\result_desc.aspx.designer.cs">
+      <DependentUpon>result_desc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="state\result_view.aspx.cs">
+      <DependentUpon>result_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="state\result_view.aspx.designer.cs">
+      <DependentUpon>result_view.aspx</DependentUpon>
     </Compile>
     <Compile Include="state\state_master.Master.cs">
       <DependentUpon>state_master.Master</DependentUpon>

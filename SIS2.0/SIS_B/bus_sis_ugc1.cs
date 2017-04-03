@@ -33,8 +33,37 @@ namespace SIS_B
         public int tahap { get; set; }
         public int info { get; set; }
         public int valid { get; set; }
+        public string title { get; set; }
+        public string ic { get; set; }
+        public DateTime dob { get; set; }
+        public int gender { get; set; }
+        public int race { get; set; }
+        public int religion { get; set; }
         public Byte[] image { get; set; }
-
+        public string address { get; set; }
+        public string home_tel_no { get; set; }
+        public string office_tel_no { get; set; }
+        public string mobile { get; set; }
+        public string fax { get; set; }
+        public string email { get; set; }
+        public string blog { get; set; }
+        public string facebook { get; set; }
+        public string twitter { get; set; }
+        public string job { get; set; }
+        public string spouse_name { get; set; }
+        public double income { get; set; }
+        public int children { get; set; }
+        public string member_no { get; set; }
+        public bool member_life { get; set; }
+        public string branch { get; set; }
+        public string political_post { get; set; }
+        public string division { get; set; }
+        public DateTime e_date { get; set; }
+        public DateTime d_date { get; set; }
+        public DateTime l_date { get; set; }
+        public string asset { get; set; }
+        public string education { get; set; }
+        public string add_info { get; set; }
         public int check_login()
         {
             return data1.check_login(uname,pswd);
@@ -167,17 +196,9 @@ namespace SIS_B
         {
             return data1.fill_party();
         }
-
-
-
-
-        public int image_upload()
+        public int add_candidate()
         {
-            return data1.image_upload(image);
-        }
-        public DataTable fill_image()
-        {
-            return data1.fill_image();
+            return data1.add_candidate(title,ic,uname,dob,gender,race,religion,image,address,home_tel_no,office_tel_no,mobile,fax,email,blog,facebook,twitter,job,spouse_name,income,children,parti,member_no,member_life,branch,political_post,division,e_date,d_date,l_date,asset,education,add_info);
         }
     }
 }

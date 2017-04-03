@@ -651,3 +651,211 @@
 .f-w-100{
     font-weight: 100;
 }
+.tablec > thead:first-child > tr:first-child > th{
+    background-color: #dbdbdb;
+}
+/*Result Page A*/
+.file-manager {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.file-manager h5 {
+    text-transform: uppercase;
+}
+.file-control.active {
+    text-decoration: underline;
+}
+.file-control {
+    color: inherit;
+    font-size: 11px;
+    margin-right: 10px;
+}
+.file-manager .hr-line-dashed {
+    margin: 15px 0;
+}
+.hr-line-dashed {
+    border-top: 1px dashed #e7eaec;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 20px 0;
+}
+.float-e-margins .btn {
+    margin-bottom: 5px;
+}
+.folder-list{
+    font-size: 16px;
+}
+.folder-list li {
+    border-bottom: 1px solid #e7eaec;
+    display: block;
+}
+.folder-list-c li:hover {
+    border-bottom: 1px solid #e7eaec;
+    display: block;
+    font-size:18px;
+}
+.folder-list li a {
+    color: #666666;
+    display: block;
+    padding: 5px 0;
+}
+.folder-list .active a {
+    color: #2b6fd5;
+}
+.folder-list li i {
+    margin-right: 8px;
+    color: #3d4d5d;
+}
+.file-manager h5.tag-title {
+    margin-top: 20px;
+}
+.l-h-24{
+    line-height:24px;
+}
+.file {
+    /*border: 1px solid #e7eaec;*/
+    padding: 0;
+    background-color: #ffffff;
+    position: relative;
+    width:58px;
+}
+.file-name{
+    text-align: center;
+    font-size:16px;
+    font-weight: 600;
+}
+.file .icon, .file .image {
+    overflow: hidden;
+}
+.file-name small {
+    color: #676a6c;
+}
+
+
+.vertical-timeline-icon.gray-bg {
+    color: #ffffff;
+}
+.gray-bg {
+    background-color: #a6a6aa;
+}
+.vertical-timeline-icon {
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: 3px solid #f1f1f1;
+    text-align: center;
+}
+.vertical-timeline-icon span {
+    vertical-align: middle;
+    text-align: center;
+    display: inline;
+    margin-top: 33px;
+    padding-top: 10px;
+}
+
+
+.agile-list {
+    list-style: none;
+    margin: 0;
+}
+.sortable-list {
+    padding: 10px 0;
+}
+.agile-list li.warning-element {
+    border-left: 3px solid #f8ac59;
+}
+.agile-list li.success-element {
+    border-left: 3px solid #1ab394;
+}
+.agile-list li.success-element-both{
+    border: 3px solid #1ab394;
+}
+.agile-list li.info-element {
+    border-left: 3px solid #1c84c6;
+}
+.agile-list li.danger-element {
+    border-left: 3px solid #ed5565;
+}
+.agile-list li {
+    background: #FAFAFB;
+    border: 1px solid #e7eaec;
+    margin: 0px 0 10px 0;
+    padding: 10px;
+    border-radius: 2px;
+}
+.agile-detail {
+    margin-top: 5px;
+    font-size: 12px;
+}
+.agile-list li:hover{
+    background:#dbdbdb;
+}
+
+.chat-user {
+    padding: 8px 10px;
+}
+.chat-user-name {
+    font-size:16px;
+    font-weight:600;
+
+}
+.ibox-title {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px;
+
+    background: #bdc0c3;
+}
+.ibox-title .label {
+    float: left;
+    margin-left: 4px;
+}
+.ibox-title h5 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+}
+.icustom{
+    border:2px solid #c5c5c5;
+}
+.well {
+    border: 1px solid #e7eaec;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    font-size: 11px;
+    line-height: 16px;
+}
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFFFFF;
+    z-index: 2;
+}
+a.list-group-item.active .list-group-item-text, a.list-group-item.active:hover .list-group-item-text, a.list-group-item.active:focus .list-group-item-text{
+   color: #FFFFFF;
+}
+.list-group-item-text {
+    margin: 0 0 10px;
+    color: inherit;
+    font-size: 12px;
+    line-height: inherit;
+}
