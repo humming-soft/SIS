@@ -523,8 +523,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:FileUpload ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" />
-                                        <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" ><i class="fa fa-file-zip-o"></i>Select Archives</button>
+                                        <asp:FileUpload ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL2(this);" />
+                                        <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i>Select Archives</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -532,11 +532,11 @@
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
                                 </div>
-                                <%--<div class="col-lg-6">
+                                <div class="col-lg-6">
                                     <div class="form-group">
-                                        <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkDownload_Click"></asp:LinkButton>
+                                        <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false"></asp:LinkButton>
                                     </div>
-                                </div>--%>
+                                </div>
                             </div>
                         </div>
                     </div>
