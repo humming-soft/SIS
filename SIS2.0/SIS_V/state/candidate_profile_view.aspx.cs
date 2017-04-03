@@ -13,7 +13,7 @@ namespace SIS_V.state
     {
         bus_sis_ugc1 bus = new bus_sis_ugc1();
         bus_sis_ugc2 objBUS = new bus_sis_ugc2();
-        DataTable dt, race, relegion, parti;
+        DataTable dt, race, relegion, parti, img_dt;
         string cand_image, gender, member4life;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -162,68 +162,175 @@ namespace SIS_V.state
         }
         protected void button1_Click(object sender, EventArgs e)
         {
-            //if (TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "" && TextBox29.Text != "" && DropDownList2.SelectedIndex != 0 && DropDownList3.SelectedIndex != 0 && FileUpload1.HasFile && TextBox18.Text != "" && DropDownList4.SelectedIndex != 0 && TextBox19.Text != "" && TextBox20.Text != "")
-            //{
-            //    string filename = FileUpload1.FileName;
-            //    System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
-            //    System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
-            //    Byte[] bytes = br.ReadBytes((Int32)fs.Length);
-            //    //bus.image = bytes;
-            //    //int res = bus.image_upload();
-            //    objBUS.image = bytes;
-            //    objBUS.candidate_id = int.Parse(Session["candidate_unique_id"].ToString());
-            //    objBUS.title = TextBox1.Text;
-            //    objBUS.candidate_ic = TextBox2.Text;
-            //    objBUS.candidate_name = TextBox3.Text;
-            //    objBUS.dob = DateTime.ParseExact(TextBox4.Text, "dd/MM/yyyy", null);
-            //    objBUS.gender = TextBox29.Text;
-            //    objBUS.race = int.Parse(DropDownList2.SelectedValue);
-            //    objBUS.religion = int.Parse(DropDownList3.SelectedValue);
-            //    objBUS.alamat = TextBox5.Text;
-            //    objBUS.home_tel_no = TextBox6.Text;
-            //    objBUS.fax_no = TextBox11.Text;
-            //    objBUS.Office_tel_no = TextBox9.Text;
-            //    objBUS.email = TextBox7.Text;
-            //    objBUS.mobile_no = TextBox10.Text;
-            //    objBUS.blog = TextBox8.Text;
-            //    objBUS.facebook = TextBox12.Text;
-            //    objBUS.twitter = TextBox13.Text;
-            //    objBUS.occupation = TextBox17.Text;
-            //    objBUS.income = double.Parse(TextBox14.Text);
-            //    objBUS.spouse_name = TextBox15.Text;
-            //    objBUS.child_no = int.Parse(TextBox16.Text);
-            //    objBUS.party = int.Parse(DropDownList4.SelectedValue);
-            //    objBUS.membership_no = TextBox21.Text;                
-            //    if (CheckBox2.Checked)
-            //    {
-            //        objBUS.member4life = "Yes";
-            //    }
-            //    else
-            //    {
-            //        objBUS.member4life = "No";
-            //    }
+            if (TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "" && TextBox29.Text != "" && DropDownList2.SelectedIndex != 0 && DropDownList3.SelectedIndex != 0 && TextBox18.Text != "" && DropDownList4.SelectedIndex != 0 && TextBox19.Text != "" && TextBox20.Text != "")
+            {
+                objBUS.candidate_id = int.Parse(Session["candidate_unique_id"].ToString());
+                if (FileUpload1.HasFile)
+                {
+                    string filename = FileUpload1.FileName;
+                    System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
+                    System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                    Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                    objBUS.image = bytes;
+                }
+                else
+                {
+                    img_dt = objBUS.GetCandidateImage();
+                    if (img_dt.Rows[0]["image"].ToString() != "")
+                    {
+                        byte[] bytes = (byte[])img_dt.Rows[0]["image"];
+                        if (bytes.Length > 0)
+                        {
+                            objBUS.image = bytes;
+                        }
+                    }
+                    else
+                    {
+                        invalid.Visible = true;
+                        lblinvalid.Text = "Sila muat naik gambar profil anda!";
+                        return;
+                    }
+                }
+                objBUS.title = TextBox1.Text;
+                objBUS.candidate_ic = TextBox2.Text;
+                objBUS.candidate_name = TextBox3.Text;
+                if (TextBox4.Text == "")
+                {
+                    objBUS.dob = DateTime.ParseExact("01/01/1753", "dd/MM/yyyy", null);
+                }
+                else
+                {
+                    objBUS.dob = DateTime.ParseExact(TextBox4.Text, "dd/MM/yyyy", null);
+                }
+                if (TextBox29.Text == "")
+                {
+                    objBUS.gender = 3;
+                }
+                else
+                {
+                    if (TextBox29.Text == "Lelaki")
+                    {
+                        objBUS.gender = 1;
+                    }
+                    else
+                    {
+                        objBUS.gender = 0;
+                    }
+                }
+                if (DropDownList2.SelectedIndex == 0)
+                {
+                    objBUS.race = 0;
+                }
+                else
+                {
+                    objBUS.race = int.Parse(DropDownList2.SelectedValue);
+                }
+                if (DropDownList3.SelectedIndex == 0)
+                {
+                    objBUS.religion = 0;
+                }
+                else
+                {
+                    objBUS.religion = int.Parse(DropDownList3.SelectedValue);
+                }
+                objBUS.alamat = TextBox5.Text;
+                objBUS.home_tel_no = TextBox6.Text;
+                objBUS.fax_no = TextBox11.Text;
+                objBUS.Office_tel_no = TextBox9.Text;
+                objBUS.email = TextBox7.Text;
+                objBUS.mobile_no = TextBox10.Text;
+                objBUS.blog = TextBox8.Text;
+                objBUS.facebook = TextBox12.Text;
+                objBUS.twitter = TextBox13.Text;
+                objBUS.occupation = TextBox17.Text;
+                objBUS.spouse_name = TextBox15.Text;
+                if (TextBox14.Text == "")
+                {
+                    objBUS.income = 0.0000;
+                }
+                else
+                {
+                    objBUS.income = Double.Parse(TextBox14.Text);
+                }
+                if (TextBox16.Text == "")
+                {
+                    objBUS.child_no = 0;
+                }
+                else
+                {
+                    objBUS.child_no = int.Parse(TextBox16.Text);
+                }
+                if (DropDownList4.SelectedIndex == 0)
+                {
+                    objBUS.party = 0;
+                }
+                else
+                {
+                    string[] words = DropDownList4.SelectedValue.Split('~');
+                    objBUS.party = int.Parse(words[0]);
+                }
+                objBUS.membership_no = TextBox21.Text;
+                if (CheckBox2.Checked)
+                {
+                    objBUS.member4life = true;
+                }
+                else
+                {
+                    objBUS.member4life = false;
+                }
 
-            //    objBUS.branch = TextBox23.Text;
-            //    objBUS.political_post = TextBox22.Text;
-            //    objBUS.division = TextBox24.Text;
-            //    objBUS.expiry_date = DateTime.ParseExact(TextBox25.Text, "dd/MM/yyyy", null);
-            //    objBUS.date_join = DateTime.ParseExact(TextBox26.Text, "dd/MM/yyyy", null);
-            //    objBUS.date_left = DateTime.ParseExact(TextBox27.Text, "dd/MM/yyyy", null);
-            //    objBUS.asset = TextBox34.Text;
-            //    objBUS.education = TextBox35.Text;
-            //    objBUS.add_info = TextBox37.Text;
-            //    int chk = objBUS.UpdateCandidateDetails();
-            //    if (chk == 0)
-            //    {
-            //        Response.Redirect("candidate_profilelist");
-            //    }
-
-            //}
-            //else
-            //{
-            //    invalid.Visible = true;
-            //    lblinvalid.Text = "Anda mempunyai beberapa kesilapan dalam pengisian borang. Sila isikan butiran yang diperlukan !";
-            //}
+                objBUS.branch = TextBox23.Text;
+                objBUS.political_post = TextBox22.Text;
+                objBUS.division = TextBox24.Text;
+                if (TextBox25.Text == "")
+                {
+                    objBUS.expiry_date = DateTime.ParseExact("01/01/1753", "dd/MM/yyyy", null);
+                }
+                else
+                {
+                    objBUS.expiry_date = DateTime.ParseExact(TextBox25.Text, "dd/MM/yyyy", null);
+                }
+                if (TextBox26.Text == "")
+                {
+                    objBUS.date_join = DateTime.ParseExact("01/01/1753", "dd/MM/yyyy", null);
+                }
+                else
+                {
+                    objBUS.date_join = DateTime.ParseExact(TextBox26.Text, "dd/MM/yyyy", null);
+                }
+                if (TextBox27.Text == "")
+                {
+                    objBUS.date_left = DateTime.ParseExact("01/01/1753", "dd/MM/yyyy", null);
+                }
+                else
+                {
+                    objBUS.date_left = DateTime.ParseExact(TextBox27.Text, "dd/MM/yyyy", null);
+                }
+                objBUS.asset = TextBox34.Text;
+                objBUS.education = TextBox35.Text;
+                objBUS.add_info = TextBox37.Text;
+                int chk = objBUS.UpdateCandidateDetails();
+                if (chk == 0)
+                {
+                    Session["profile_update"] = "success";
+                    Response.Redirect("candidate_profilelist");
+                }
+                else if (chk == 1)
+                {
+                    invalid.Visible = true;
+                    lblinvalid.Text = "IC Nombor in yang sedia ada!";
+                }
+                else
+                {
+                invalid.Visible = true;
+                lblinvalid.Text = "Ralat yang tidak dijangka, Masukkan Gagal!";
+                }
+            }
+            else
+            {
+                invalid.Visible = true;
+                lblinvalid.Text = "Anda mempunyai beberapa kesilapan dalam pengisian borang. Sila isikan butiran yang diperlukan !";
+            }
         }
     }
 }

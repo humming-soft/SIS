@@ -81,7 +81,7 @@ namespace SIS_B
         public string candidate_ic { get; set; }
         public string candidate_name { get; set; }
         public DateTime dob { get; set; }
-        public string gender { get; set; }
+        public int gender { get; set; }
         public int race { get; set; }
         public int religion { get; set; }
         public string alamat { get; set; }
@@ -99,7 +99,7 @@ namespace SIS_B
         public int child_no { get; set; }
         public int party { get; set; }
         public string membership_no { get; set; }
-        public string member4life { get; set; }
+        public bool member4life { get; set; }
         public string branch { get; set; }
         public string political_post { get; set; }
         public string division { get; set; }
@@ -210,6 +210,10 @@ namespace SIS_B
             return objDAL.UpdateCandidateDetails(image, candidate_id, candidate_ic, candidate_name, title, dob, gender, race, religion, alamat, home_tel_no,
                 fax_no, Office_tel_no, email, mobile_no, blog, facebook, twitter, occupation, income, spouse_name, child_no, party, membership_no,
                 member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info);
+        }
+        public DataTable GetCandidateImage()
+        {
+            return objDAL.GetCandidateImage(candidate_id);
         }
 
     }

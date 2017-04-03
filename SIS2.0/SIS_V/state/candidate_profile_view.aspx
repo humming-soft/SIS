@@ -149,6 +149,11 @@
             $('#rar_name').text('');
         }
     </script>
+    <script type="text/javascript">
+        function canprof_update() {
+            cand_profile_update.init();
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -527,7 +532,7 @@
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
                                 </div>
-                                <%--                                <div class="col-lg-6">
+                                <%--<div class="col-lg-6">
                                     <div class="form-group">
                                         <asp:LinkButton ID="lnkDownload" runat="server" CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkDownload_Click"></asp:LinkButton>
                                     </div>
@@ -541,8 +546,8 @@
         <div class="row" style="padding-left:10px">
             <div class="col-sm-12 col-lg-12 p-0">
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" ClientIDMode="Static" OnClick="button1_Click"  />
-                    <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" OnClientClick="reseter();this.form.reset();return false;"/>
+                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" ClientIDMode="Static" OnClick="button1_Click" OnClientClick="canprof_update()" />
+                    <%--<asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" OnClientClick="reseter();this.form.reset();return false;"/>--%>
                 </div>
             </div>
         </div>
@@ -551,8 +556,7 @@
         </div>
     </div>
 
-
-
+    
 
     <%--<div class="row">
         <div class="col-md-12">

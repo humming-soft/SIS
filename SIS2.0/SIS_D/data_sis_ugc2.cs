@@ -515,9 +515,9 @@ namespace SIS_D
             }
         }
 
-        public int UpdateCandidateDetails(Byte[] image, int candidate_id, string candidate_ic, string candidate_name, string title, DateTime dob, string gender, int race, int religion, string alamat, string home_tel_no,
+        public int UpdateCandidateDetails(Byte[] image, int candidate_id, string candidate_ic, string candidate_name, string title, DateTime dob, int gender, int race, int religion, string alamat, string home_tel_no,
                 string fax_no, string Office_tel_no, string email, string mobile_no, string blog, string facebook, string twitter, string occupation, double income, string spouse_name, int child_no, int party, string membership_no,
-                string member4life, string branch, string political_post, string division, DateTime expiry_date, DateTime date_join, DateTime date_left, string asset, string education, string add_info)
+                bool member4life, string branch, string political_post, string division, DateTime expiry_date, DateTime date_join, DateTime date_left, string asset, string education, string add_info)
         {
             try
             {
@@ -526,17 +526,17 @@ namespace SIS_D
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
                 cmd.Parameters.AddWithValue("@candidate_ic", candidate_ic);
-                cmd.Parameters.AddWithValue("@candidate_name", candidate_name);
+                cmd.Parameters.AddWithValue("@name", candidate_name);
                 cmd.Parameters.AddWithValue("@title", title);
                 cmd.Parameters.AddWithValue("@image", image);
                 cmd.Parameters.AddWithValue("@dob", dob);
                 cmd.Parameters.AddWithValue("@gender", gender);
                 cmd.Parameters.AddWithValue("@race", race);
                 cmd.Parameters.AddWithValue("@religion", religion);
-                cmd.Parameters.AddWithValue("@alamat", alamat);
+                cmd.Parameters.AddWithValue("@add01", alamat);
                 cmd.Parameters.AddWithValue("@home_tel_no", home_tel_no);
                 cmd.Parameters.AddWithValue("@fax_no", fax_no);
-                cmd.Parameters.AddWithValue("@Office_tel_no", Office_tel_no);
+                cmd.Parameters.AddWithValue("@office_tel_no", Office_tel_no);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@mobile_no", mobile_no);
                 cmd.Parameters.AddWithValue("@blog", blog);
@@ -546,9 +546,9 @@ namespace SIS_D
                 cmd.Parameters.AddWithValue("@income", income);
                 cmd.Parameters.AddWithValue("@spouse_name", spouse_name);
                 cmd.Parameters.AddWithValue("@child_no", child_no);
-                cmd.Parameters.AddWithValue("@party", party);
+                cmd.Parameters.AddWithValue("@party_id", party);
                 cmd.Parameters.AddWithValue("@membership_no", membership_no);
-                cmd.Parameters.AddWithValue("@member4life", member4life);
+                cmd.Parameters.AddWithValue("@member_for_life", member4life);
                 cmd.Parameters.AddWithValue("@branch", branch);
                 cmd.Parameters.AddWithValue("@political_post", political_post);
                 cmd.Parameters.AddWithValue("@division", division);
@@ -568,6 +568,26 @@ namespace SIS_D
                 cmd.ExecuteNonQuery();
                 int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
                 return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable GetCandidateImage(int candidate_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetCandidateImage";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
             }
             finally
             {
