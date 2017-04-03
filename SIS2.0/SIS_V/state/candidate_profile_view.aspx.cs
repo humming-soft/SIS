@@ -312,6 +312,7 @@ namespace SIS_V.state
                 int chk = objBUS.UpdateCandidateDetails();
                 if (chk == 0)
                 {
+                    Session["profile_update"] = "success";
                     Response.Redirect("candidate_profilelist");
                 }
                 else if (chk == 1)
