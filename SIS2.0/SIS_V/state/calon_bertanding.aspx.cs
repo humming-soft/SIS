@@ -78,6 +78,7 @@ namespace SIS_V.state
                 lstPar.Columns.Add("name", typeof(string));
                 lstPar.Columns.Add("image", typeof(string));
                 lstPar.Columns.Add("party_shortcode", typeof(string));
+                lstPar.Columns.Add("party_name", typeof(string));
                 lstPar.Columns.Add("icnum", typeof(string));
                 lstPar.Columns.Add("dob", typeof(string));
                 lstPar.Columns.Add("age", typeof(string));
@@ -114,7 +115,7 @@ namespace SIS_V.state
                             }
                         }
                         cand_imaged = "data:image/png;base64," + base64Stringd;
-                        lstPar.Rows.Add(tempdt.Rows[i]["#"].ToString(), tempdt.Rows[i]["name"].ToString(), cand_imaged, tempdt.Rows[i]["party_shortcode"].ToString(),
+                        lstPar.Rows.Add(tempdt.Rows[i]["#"].ToString(), tempdt.Rows[i]["name"].ToString(), cand_imaged, tempdt.Rows[i]["party_shortcode"].ToString(), tempdt.Rows[i]["party_name_bm"].ToString(),
                             tempdt.Rows[i]["candidate_ic"].ToString(), tempdt.Rows[i]["dob"].ToString(), tempdt.Rows[i]["age"].ToString(),tempdt.Rows[i]["lookup_name"].ToString());
                     }
                     datalstParlimen.DataSource = lstPar;
@@ -131,6 +132,7 @@ namespace SIS_V.state
             lstDun.Columns.Add("name", typeof(string));
             lstDun.Columns.Add("image", typeof(string));
             lstDun.Columns.Add("party_shortcode", typeof(string));
+            lstDun.Columns.Add("party_name", typeof(string));
             lstDun.Columns.Add("icnum", typeof(string));
             lstDun.Columns.Add("dob", typeof(string));
             lstDun.Columns.Add("age", typeof(string));
@@ -163,7 +165,7 @@ namespace SIS_V.state
                         }
                     }
                     cand_imaged = "data:image/png;base64," + base64Stringd;
-                    lstDun.Rows.Add(tempdt.Rows[i]["#"].ToString(), tempdt.Rows[i]["name"].ToString(), cand_imaged, tempdt.Rows[i]["party_shortcode"].ToString(),
+                    lstDun.Rows.Add(tempdt.Rows[i]["#"].ToString(), tempdt.Rows[i]["name"].ToString(), cand_imaged, tempdt.Rows[i]["party_shortcode"].ToString(), tempdt.Rows[i]["party_name_bm"].ToString(),
                         tempdt.Rows[i]["candidate_ic"].ToString(), tempdt.Rows[i]["dob"].ToString(), tempdt.Rows[i]["age"].ToString(), tempdt.Rows[i]["lookup_name"].ToString());
                 }
                 datalstDun.DataSource = lstDun;

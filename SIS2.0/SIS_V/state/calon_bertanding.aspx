@@ -60,7 +60,7 @@
                                                                             <h4><strong><%# Eval("name")%></strong></h4>
                                                                             <address>
                                                                                 <strong>PARTY</strong><br>
-                                                                                <%# Eval("party_shortcode")%><br>
+                                                                                <%# Eval("party_name")%><br>
                                                                             </address>
                                                                             <address>
                                                                                 <strong>NO I/O</strong><br>
@@ -112,7 +112,7 @@
                                                                                                         <h4><strong><%# Eval("name")%></strong></h4>
                                                                                                         <address>
                                                                                                             <strong>PARTY</strong><br>
-                                                                                                            <%# Eval("party_shortcode")%><br>
+                                                                                                            <%# Eval("party_name")%><br>
                                                                                                         </address>
                                                                                                         <address>
                                                                                                             <strong>NO I/O</strong><br>
