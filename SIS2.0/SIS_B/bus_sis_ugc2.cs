@@ -222,6 +222,10 @@ namespace SIS_B
         {
             return objDAL.GetFile(candidate_id);
         }
+        public DataTable GetArea()
+        {
+            return objDAL.GetArea(state_id);
+        }
 
     }
 }
