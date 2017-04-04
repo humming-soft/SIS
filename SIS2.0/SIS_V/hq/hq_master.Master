@@ -645,7 +645,7 @@
                 type: "POST",
                 contentType: "application/json",
                 data: {},
-                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("utama.aspx/electionInfo")%>',
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("HQ_Utama.aspx/electionInfo")%>',
                 dataType: "json",
                 success: function (data) {
                     $(".current_election").each(function () {
