@@ -374,10 +374,12 @@ namespace SIS_V.state
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "calon_bertanding":
-                    breadcrum_parent.InnerText = "Calon Bertanding";
-                    breadcrum_parent.Attributes["class"] = "b-600";
-                    child_li.Visible = false;
+                    dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Calon Bertanding";
+                    breadcrum_child.Attributes["class"] = "b-600";
                     grant_child_li.Visible = false;
+                    child_li.Attributes["class"] = "active";
                     break;
                 case "candidate_profilelist":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
