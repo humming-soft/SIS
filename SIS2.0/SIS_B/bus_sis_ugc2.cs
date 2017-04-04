@@ -109,6 +109,9 @@ namespace SIS_B
         public string asset { get; set; }
         public string education { get; set; }
         public string add_info { get; set; }
+        public Byte[] archive { get; set; }
+        public string archivename { get; set; }
+        public string candidate_old_ic { get; set; }
 
         public DataTable fill_DataTable()
         {
@@ -209,11 +212,15 @@ namespace SIS_B
         {
             return objDAL.UpdateCandidateDetails(image, candidate_id, candidate_ic, candidate_name, title, dob, gender, race, religion, alamat, home_tel_no,
                 fax_no, Office_tel_no, email, mobile_no, blog, facebook, twitter, occupation, income, spouse_name, child_no, party, membership_no,
-                member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info);
+                member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info, archive, archivename, candidate_old_ic);
         }
         public DataTable GetCandidateImage()
         {
             return objDAL.GetCandidateImage(candidate_id);
+        }
+        public DataTable GetFile()
+        {
+            return objDAL.GetFile(candidate_id);
         }
 
     }
