@@ -11,7 +11,7 @@ namespace SIS_V.hq
 {
     public partial class HQ_ParlimenTumpuan : System.Web.UI.Page
     {
-        bus_sis_ugc2 objKOInfoBUS = new bus_sis_ugc2();
+        bus_sis_ugc1 objKOInfoBUS = new bus_sis_ugc1();
         DataTable dt = new DataTable();
 
         DataTable isconc = new DataTable();
@@ -70,7 +70,6 @@ namespace SIS_V.hq
 
         public void GetConOpAreaList()
         {
-            objKOInfoBUS.state_id = state_id;
             dt = objKOInfoBUS.GetConOpAreaList();
 
             if (dt.Rows.Count > 0)

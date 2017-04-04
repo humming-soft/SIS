@@ -163,7 +163,7 @@
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
                         <li class="has-submenu" id="utama" runat="server">
-                            <a href="#"><i class="md md-dashboard"></i>Laman Utama</a>
+                            <a href="HQ_Dash"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
