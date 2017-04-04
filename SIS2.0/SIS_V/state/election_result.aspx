@@ -15,21 +15,22 @@
                             </div>
                             <div class="panel-body panel-custom-bg">
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <div class="form-group">
                                             <label for="userName">PILIHANRAYA</label>
-                                            <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server"></asp:DropDownList>
+                                            <asp:TextBox ID="txtPil" CssClass="form-control" runat="server"></asp:TextBox>
                                         </div>                                            
                                     </div>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label for="userName">NEGERI</label>
+                                            <asp:TextBox ID="txtNegeri" CssClass="form-control" runat="server"></asp:TextBox>
+                                        </div>                                            
+                                    </div>
+                                    <div class="col-lg-4">
                                         <div class="form-group">
                                             <label for="userName">KAWASAN</label>
-                                            <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server"></asp:DropDownList>
-                                        </div>                                            
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <div class="form-group m-t-25">
-                                            <asp:DropDownList ID="DropDownList3" CssClass="form-control" runat="server"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlArea" CssClass="form-control" DataTextField="area" DataValueField="area_id" runat="server"></asp:DropDownList>
                                         </div>                                            
                                     </div>
                                 </div>

@@ -517,7 +517,7 @@ namespace SIS_D
 
         public int UpdateCandidateDetails(Byte[] image, int candidate_id, string candidate_ic, string candidate_name, string title, DateTime dob, int gender, int race, int religion, string alamat, string home_tel_no,
                 string fax_no, string Office_tel_no, string email, string mobile_no, string blog, string facebook, string twitter, string occupation, double income, string spouse_name, int child_no, int party, string membership_no,
-                bool member4life, string branch, string political_post, string division, DateTime expiry_date, DateTime date_join, DateTime date_left, string asset, string education, string add_info)
+                bool member4life, string branch, string political_post, string division, DateTime expiry_date, DateTime date_join, DateTime date_left, string asset, string education, string add_info, Byte[] archive, string archivename, string candidate_old_ic)
         {
             try
             {
@@ -558,6 +558,9 @@ namespace SIS_D
                 cmd.Parameters.AddWithValue("@asset", asset);
                 cmd.Parameters.AddWithValue("@education", education);
                 cmd.Parameters.AddWithValue("@add_info", add_info);
+                cmd.Parameters.AddWithValue("@archive", archive);
+                cmd.Parameters.AddWithValue("@archivename", archivename);
+                cmd.Parameters.AddWithValue("@candidate_old_ic", candidate_old_ic);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
                 outparam.Direction = ParameterDirection.InputOutput;
@@ -582,6 +585,48 @@ namespace SIS_D
                 cmd.CommandText = "usp_GetCandidateImage";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable GetFile(int candidate_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetCandidateFile";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable GetArea(int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_GetAreaInfo";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@state_id", state_id);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();

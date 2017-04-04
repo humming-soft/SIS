@@ -369,9 +369,9 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Profil Bakal Calon / Individu";
-                    breadcrum_child.Attributes["class"] = "b-600";
-                    child_li.Attributes["class"] = "active";
-                    grant_child_li.Visible = false;
+                    breadcrum_grant_child.InnerText = "Tambah";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "calon_bertanding":
                     dash.Attributes["class"] = "has-submenu active";
@@ -384,18 +384,18 @@ namespace SIS_V.state
                 case "candidate_profilelist":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
-                    breadcrum_child.InnerText = "Paparan Aktiviti Bakal Calon / Individu";
-                    breadcrum_child.Attributes["class"] = "b-600";
-                    child_li.Attributes["class"] = "active";
-                    grant_child_li.Visible = false;
+                    breadcrum_child.InnerText = "Profil Bakal Calon / Individu";
+                    breadcrum_grant_child.InnerText = "Paparan";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "candidate_profile_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Profil Bakal Calon / Individu";
-                    breadcrum_child.Attributes["class"] = "b-600";
-                    child_li.Attributes["class"] = "active";
-                    grant_child_li.Visible = false;
+                    breadcrum_grant_child.InnerText = "Maklumat";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
             }
         }
