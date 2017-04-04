@@ -79,7 +79,7 @@
                                 <asp:TemplateField HeaderText="Fail Archives">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("original_filename") %>'></asp:Label>
-                                        <asp:LinkButton ID="lnkdownload" Enabled='<%# Eval("original_filename").Equals("") ? false: true %>' CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkdownload_Click" runat="server"></asp:LinkButton>
+                                        <asp:LinkButton ID="lnkdownload" Enabled='<%# Eval("original_filename").Equals("Tidak Terdapat") ? false: true %>' CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkdownload_Click" runat="server"></asp:LinkButton>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Tindakan">
