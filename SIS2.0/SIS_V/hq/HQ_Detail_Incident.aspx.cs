@@ -30,6 +30,7 @@ namespace SIS_V.hq
                 log_janji.Visible = false;
                 log_insiden.Visible = false;
                 CheckIsLogin();
+
             }
         }
         protected void CheckIsLogin()

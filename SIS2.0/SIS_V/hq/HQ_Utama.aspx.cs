@@ -17,6 +17,7 @@ namespace SIS_V.hq
             if (!IsPostBack)
             {
                 CheckIsLogin();
+
             }
         }
 
