@@ -51,6 +51,7 @@
     <Compile Include="District.cs" />
     <Compile Include="Daerah.cs" />
     <Compile Include="Election.cs" />
+    <Compile Include="ElectionCandidate.cs" />
     <Compile Include="encrypt.cs" />
     <Compile Include="Parliment.cs" />
     <Compile Include="ParlimentChart.cs" />
