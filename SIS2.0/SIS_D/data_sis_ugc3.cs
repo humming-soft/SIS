@@ -752,6 +752,28 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        
+        public DataSet fill_results(int elect_id,int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetElectionResultDashboardPartyWin_state";
+                cmd.Parameters.AddWithValue("@stateid", state_id);
+                cmd.Parameters.AddWithValue("@electionId", elect_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                ds.Relations.Add(new DataRelation("all_par", ds.Tables[0].Columns["coalition_id"], ds.Tables[1].Columns["coalition_id"]));
+                ds.Relations.Add(new DataRelation("all_dun", ds.Tables[0].Columns["coalition_id"], ds.Tables[2].Columns["coalition_id"]));
+                return ds;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }
