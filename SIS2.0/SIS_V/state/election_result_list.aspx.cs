@@ -77,5 +77,18 @@ namespace SIS_V.state
                 GrdDetails.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
         }
+
+        protected void edit_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int elec_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[0].ToString());
+            int stat_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[1].ToString());
+            int are_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[2].ToString());
+            Session["K_elec_id"] = elec_id;
+            Session["K_stat_id"] = stat_id;
+            Session["K_are_id"] = are_id;
+            Response.Redirect("election_result_view");
+        }
     }
 }
