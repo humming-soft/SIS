@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SIS_B;
 using System.Data;
+using System.Web.Services;
 
 namespace SIS_V.state
 {
@@ -53,6 +54,23 @@ namespace SIS_V.state
                 ddlArea.DataBind();
                 ddlArea.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
+        }
+
+        [WebMethod]
+        public static List<Penyandang> GetPenyandang(int area_id, int election_id)
+        {
+            List<Penyandang> penyandang = new List<Penyandang>();
+            bus_sis_ugc2 objBUS = new bus_sis_ugc2();
+            objBUS.area_id = area_id;
+            objBUS.election_id = election_id;
+            DataTable dt = objBUS.GetPenyandang();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Penyandang _Penyandang = new Penyandang();
+                _Penyandang.winner_name = dt.Rows[i]["winner_name"].ToString();
+                penyandang.Add(_Penyandang);
+            }
+            return penyandang;
         }
     }
 }

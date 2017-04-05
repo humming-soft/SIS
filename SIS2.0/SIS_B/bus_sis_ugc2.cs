@@ -226,6 +226,10 @@ namespace SIS_B
         {
             return objDAL.GetArea(state_id);
         }
+        public DataTable GetPenyandang()
+        {
+            return objDAL.GetPenyandang(election_id, area_id);
+        }
 
     }
 }
