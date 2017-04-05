@@ -49,7 +49,7 @@
                                                         <asp:DataList ID="datalstParlimen" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" >
                                                             <ItemTemplate>
                                                                 <div class="col-lg-4">
-                                                                    <div class="contact-box">
+                                                                    <div class="contact-box" style="min-height: 435px;">
                                                                         <div class="col-sm-4">
                                                                             <div class="text-center">
                                                                                 <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-140 img-c-border" ImageUrl='<%# Eval("image") %>' runat="server" />
@@ -101,7 +101,7 @@
                                                                                     <asp:DataList ID="datalstDun" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
                                                                                         <ItemTemplate>
                                                                                             <div class="col-lg-4">
-                                                                                                <div class="contact-box">
+                                                                                                <div class="contact-box" style="min-height: 435px;">
                                                                                                     <div class="col-sm-4">
                                                                                                         <div class="text-center">
                                                                                                             <asp:Image ID="cand_image" CssClass="img-rounded m-t-xs img-responsive w-125 rest-height-140 img-c-border" ImageUrl='<%# Eval("image") %>' runat="server" />

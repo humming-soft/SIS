@@ -708,13 +708,34 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataSet fill_calon_candidates(int state_id)
+        public DataTable fill_election_details()
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "sp_GetConDetDashboardWinnableCandidate_calon";
+                cmd.CommandText = "usp_GetElection_details";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        
+        public DataSet fill_calon_candidates(int state_id,int elect_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetDashboardElectionCandidate_one";
                 cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.Parameters.AddWithValue("@election_id", elect_id);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataSet ds = new DataSet();
