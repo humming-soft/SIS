@@ -5,37 +5,37 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL CALON BOLEH MENANG</b></h4>
+                <h4 class="m-t-0 header-title"><b>PAPARAN MAKLUMAT KEPUTUSAN PILIHANRAYA</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search Candidate</h3>
+                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="userName">PILIHANRAYA</label>
-                                            <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server"></asp:DropDownList>
+                                            <asp:TextBox ID="txtPil" CssClass="form-control" runat="server"></asp:TextBox>
                                         </div>                                            
                                     </div>
                                     <div class="col-lg-2">
                                         <div class="form-group">
                                             <label for="userName">KAWASAN</label>
-                                            <asp:DropDownList ID="DropDownList2" CssClass="form-control" runat="server"></asp:DropDownList>
+                                            <asp:TextBox ID="txtNegeri" CssClass="form-control" runat="server"></asp:TextBox>
                                         </div>                                            
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group m-t-25">
-                                            <asp:DropDownList ID="DropDownList3" CssClass="form-control" runat="server"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlArea" CssClass="form-control" DataTextField="area" DataValueField="area_id" runat="server"></asp:DropDownList>
                                         </div>                                            
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <button class="btn btn-primary"><i class="fa fa-search-plus"></i> Cari</button>
+                                        <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary" Font-Underline="false" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-search-plus"></i> Cari</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
@@ -46,44 +46,23 @@
                      <div class="col-lg-12">
                          <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="md md-contacts"></i> Candidate List</h3>
+                                <h3 class="panel-title"><i class="md md-list"></i> Details</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="col-lg-12">
-                                    <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10">
-                                        <thead>
-                                            <tr>
-                                                <th style="width:3%">#</th>
-                                                <th style="width:8%">PILIHANRAYA</th>
-                                                <th>KOD KAWASAN</th>
-                                                <th>NAMA KAWASAN</th>
-                                                <th style="width:8%">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>PILIHANRAYA</td>
-                                                <td>N.1</td>
-                                                <td>AYER HANGAT</td>
-                                                <td><a href="election_result_view"><i class="fa fa-edit"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>PILIHANRAYA</td>
-                                                <td>N.2</td>
-                                                <td>KUAH</td>
-                                                <td><a href="election_result_view"><i class="fa fa-edit"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>PILIHANRAYA</td>
-                                                <td>N.3</td>
-                                                <td>KOTA SIPUTECH</td>
-                                                <td><a href="election_result_view"><i class="fa fa-edit"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <asp:GridView ID="GrdDetails" CssClass="table table-bordered dt-responsive nowrap" runat="server" OnPreRender="GrdDetails_PreRender" AutoGenerateColumns="False">
+                                        <Columns>
+                                            <asp:BoundField DataField="RowNumber" HeaderText="#"/>
+                                            <asp:BoundField DataField="election_name" HeaderText="Pilihanraya"/>
+                                            <asp:BoundField DataField="area_code" HeaderText="Kod Kawasan" />
+                                            <asp:BoundField DataField="area_name" HeaderText="Nama Kawasan" />
+                                            <asp:TemplateField HeaderText="Tindakan">
+                                                <ItemTemplate>
+                                                    <asp:LinkButton CssClass="fa fa-edit" Font-Underline="false" runat="server"></asp:LinkButton>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
                                 </div>
                             </div>
                         </div>

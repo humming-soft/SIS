@@ -66,6 +66,7 @@ namespace SIS_B
         public string add_info { get; set; }
         public Byte[] archive { get; set; }
         public string archivename { get; set; }
+        public int eid { get; set; }
         public int check_login()
         {
             return data1.check_login(uname,pswd);
@@ -201,6 +202,10 @@ namespace SIS_B
         public int add_candidate()
         {
             return data1.add_candidate(title, ic, uname, dob, gender, race, religion, image, address, home_tel_no, office_tel_no, mobile, fax, email, blog, facebook, twitter, job, spouse_name, income, children, parti, member_no, member_life, branch, political_post, division, e_date, d_date, l_date, asset, education, add_info, archive, archivename);
+        }
+        public DataTable getDetails()
+        {
+            return data1.getDetails(eid,areaid);
         }
 
         //HQ Module : START

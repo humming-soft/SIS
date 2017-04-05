@@ -397,6 +397,14 @@ namespace SIS_V.state
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
+                case "election_result_list":
+                    pilihanraya.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Pilihanraya";
+                    breadcrum_child.InnerText = "Keputusan Pilihanraya";
+                    breadcrum_grant_child.InnerText = "Kemaskini";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
             }
         }
 

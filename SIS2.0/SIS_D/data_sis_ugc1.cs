@@ -762,6 +762,28 @@ namespace SIS_D
             }
         }
 
+        public DataTable getDetails(int eid,int areaid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetElectionResult_state";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@electionId", eid);
+                cmd.Parameters.AddWithValue("@areaId", areaid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
         //HQ Module : START
         public DataTable GetConOpAreaList()
         {
