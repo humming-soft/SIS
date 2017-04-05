@@ -393,7 +393,9 @@
     <Content Include="assets\plugins\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Global.asax" />
     <Content Include="hq\HQ_Dash.aspx" />
+    <Content Include="hq\HQ_Detail_Incident.aspx" />
     <Content Include="hq\HQ_ParlimenTumpuan.aspx" />
+    <Content Include="hq\HQ_Utama.aspx" />
     <Content Include="hq\WebForm1.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -630,6 +632,13 @@
     <Compile Include="hq\HQ_Dash.aspx.designer.cs">
       <DependentUpon>HQ_Dash.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hq\HQ_Detail_Incident.aspx.cs">
+      <DependentUpon>HQ_Detail_Incident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hq\HQ_Detail_Incident.aspx.designer.cs">
+      <DependentUpon>HQ_Detail_Incident.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hq\hq_master.Master.cs">
       <DependentUpon>hq_master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -643,6 +652,13 @@
     </Compile>
     <Compile Include="hq\HQ_ParlimenTumpuan.aspx.designer.cs">
       <DependentUpon>HQ_ParlimenTumpuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="hq\HQ_Utama.aspx.cs">
+      <DependentUpon>HQ_Utama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hq\HQ_Utama.aspx.designer.cs">
+      <DependentUpon>HQ_Utama.aspx</DependentUpon>
     </Compile>
     <Compile Include="hq\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
