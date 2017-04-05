@@ -761,5 +761,68 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        //HQ Module : START
+        public DataTable GetConOpAreaList()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetConOpAreaList_HQ";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_all_parliments()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetAllParliments_HQ";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_masalah_dalaman_parti()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetConMainDashboardMainIssues_HQ";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        //HQ Module : END
     }
 }

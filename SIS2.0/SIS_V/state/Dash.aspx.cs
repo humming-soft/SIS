@@ -11,6 +11,7 @@ namespace SIS_V.state
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             CheckIsLogin();
         }
         protected void CheckIsLogin()

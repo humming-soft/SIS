@@ -86,6 +86,15 @@ namespace SIS_V.hq
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
+                case "HQ_Detail_Incident":
+                    dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = Session["pre_page"].ToString();
+                    breadcrum_child.Attributes["href"] = Session["pre_url"].ToString();
+                    breadcrum_grant_child.InnerText = "Maklumat Kawasan";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
             }
         }
 
