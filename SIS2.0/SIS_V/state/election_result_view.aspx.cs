@@ -14,8 +14,8 @@ namespace SIS_V.state
     {
         bus_sis_ugc1 bus = new bus_sis_ugc1();
         DataTable dt;
-        int pe, a, b;
-        float c;
+        int  a, b;
+        float pe,c;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -31,6 +31,7 @@ namespace SIS_V.state
                 if (Session["is_login"].ToString() == "t")
                 {
                     fill_result_list();
+                    fill_races();
                 }
                 else
                 {
@@ -58,11 +59,21 @@ namespace SIS_V.state
                 a = int.Parse(dt.Rows[0][15].ToString());
                 b = int.Parse(dt.Rows[0][8].ToString());
                 c = (float)a / b;
-                pe = int.Parse(dt.Rows[0][15].ToString()) / int.Parse(dt.Rows[0][8].ToString()) * 100;
-                lblperc.Text = pe.ToString();
+                pe = c * 100;
+                lblperc.Text = pe.ToString("F");
                 lblwinner.Text = dt.Rows[0][32].ToString() + " (" + dt.Rows[0][34].ToString() + " - " + dt.Rows[0][33].ToString() + ")";
                 txtmajority.Text = dt.Rows[0][9].ToString();
                 lblinc.Text = dt.Rows[0][35].ToString() + " (" + dt.Rows[0][37].ToString() + " - " + dt.Rows[0][36].ToString() + ") Majoriti : " + dt.Rows[0][14].ToString();
+            }
+        }
+        public void fill_races()
+        {
+            DataTable races = bus.fill_races();
+            if (races.Rows.Count > 0)
+            {
+                ddlraces.DataSource = races;
+                ddlraces.DataBind();
+                ddlraces.Items.Insert(0, new ListItem("-----PILIH-----", ""));
             }
         }
     }
