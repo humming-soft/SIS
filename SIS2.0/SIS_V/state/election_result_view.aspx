@@ -18,7 +18,7 @@
                                 <div class="col-lg-10">
                                     <label class="control-label" for="example-input1-group2">PECAHAN KAUM</label>
                                     <div class="input-group form-group">
-                                        <asp:TextBox ID="TextBox2" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtpk" runat="server" CssClass="input form-control"></asp:TextBox>
                                         <span class="input-group-btn">
                                             <button type="button" data-toggle="modal" data-target="#percent-modal" class="btn waves-effect waves-light btn-primary">KEMASKINI KAUM</button>
                                         </span>
@@ -29,19 +29,19 @@
                                 <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">JUMLAH PEMILIH BERDAFTAR</label>
-                                        <asp:TextBox ID="TextBox1" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtjpb" runat="server" CssClass="input form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                  <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">JUMLAH KERTAS UNDI DITOLAK</label>
-                                        <asp:TextBox ID="TextBox3" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtjkud" runat="server" CssClass="input form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                  <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">JUMLAH KERTAS UNDI DALAM PETI UNDI</label>
-                                        <asp:TextBox ID="TextBox4" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtjkudpu" runat="server" CssClass="input form-control"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -49,19 +49,19 @@
                                 <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">JUMLAH KERTAS UNDI DIKELUARKAN</label>
-                                        <asp:TextBox ID="TextBox5" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtjkudi" runat="server" CssClass="input form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                  <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">JUMLAH KERTAS UNDI TIDAK DIKEMBALIKAN</label>
-                                        <asp:TextBox ID="TextBox6" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtjkutd" runat="server" CssClass="input form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                  <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">PERATUS PENGUNDIAN </label>
-                                         <pre>86.33</pre>
+                                         <asp:Label ID="lblperc" runat="server" CssClass="form-control"></asp:Label>
                                     </div>
                                 </div>
                             </div>
@@ -69,19 +69,19 @@
                                 <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">MAKLUMAT PEMENANG</label>
-                                         <pre>Abu Hassan bin Sarif ( BN - UMNO )</pre>
+                                         <asp:Label ID="lblwinner" runat="server" CssClass="form-control"></asp:Label>
                                     </div>
                                 </div>
                                  <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">MAJORITI</label>
-                                        <asp:TextBox ID="TextBox9" runat="server" CssClass="input form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtmajority" runat="server" CssClass="input form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                  <div class="col-lg-3">
                                      <div class="form-group">
                                          <label for="">MAKLUMAT PENYANDANG</label>
-                                        <pre>Abu Hassan bin Sarif ( BN - UMNO ) Majoriti : 366</pre>
+                                         <asp:Label ID="lblinc" runat="server" CssClass="form-control"></asp:Label>
                                     </div>
                                 </div>
                             </div>

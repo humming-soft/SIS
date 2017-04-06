@@ -19,6 +19,7 @@ namespace SIS_V.state
             invalid.Visible = false;
             if (!IsPostBack)
             {
+
                 CheckIsLogin();
 
             }
