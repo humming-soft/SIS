@@ -234,6 +234,10 @@ namespace SIS_B
         {
             return objDAL.GetElectionCandidate(election_id, area_id);
         }
+        public DataTable GetAllCandidateNames()
+        {
+            return objDAL.GetAllCandidateNames();
+        }
 
     }
 }
