@@ -19,7 +19,7 @@ namespace SIS_V.hq
         protected void Page_Load(object sender, EventArgs e)
         {
             checker();
-            setstatename();
+            //setstatename();
             SetCurrentPage();
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(-1));
