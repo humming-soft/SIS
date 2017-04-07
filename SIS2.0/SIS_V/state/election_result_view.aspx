@@ -3,13 +3,53 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         function add_to_table() {
-            //alert($('#ddlraces').val() + ' - ' + $('#ddlraces option:selected').text() + ' - ' + $('#txtperc').val());
-            $('#tb').append('<tr><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+            var rowCount = $('#tb tr').length;
+            if (rowCount > 0) {
+            $("#tb tr").each(function () {
+                alert($(this).id);
+            });
         }
-        $(".table").on('click', 'tr', function (e) {
-            e.preventDefault();
-            var id = $(this).attr('value');
-            alert(id);
+
+
+
+
+
+            //alert($('#ddlraces').val() + ' - ' + $('#ddlraces option:selected').text() + ' - ' + $('#txtperc').val());
+            //var checker = [];
+            //var rowCount = $('#tb tr').length;
+            //if (rowCount == 0) {
+            //    $('#tb').append('<tr id=' + $('#ddlraces').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+            //}
+            //else {
+                //$("#tb tr").each(function () {
+                //    alert($(this).id);
+                //    if ($("tr:contains(" + texttocheck + ")")) {
+                //        alert("Value already added");
+                //    }
+                //    else {
+                //        $('#tb').append('<tr id=' + $('#ddlraces').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                //    }
+                //});
+                //var pid = $('#ddlraces').val();
+                //var table = $('#tb');
+                //var check_value = $(table).find("tr").data('id');
+
+                //alert(pid);
+                //alert(check_value);
+
+                //if (check_value == pid) {
+                //    alert("ID exist")
+                //}
+                //else {
+                //    alert("Not exist");
+                //}
+            //}
+           
+        }
+        $(document).ready(function () {
+            $(document).on("click", "#tb tr", function (e) {
+                alert(this.id);
+            });
         });
     </script>
 </asp:Content>
@@ -110,52 +150,24 @@
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <%--                                    <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
-                                        <thead>
-                                            <tr>
-                                                <th style="width:3%">#</th>
-                                                <th>NAMA CALON BERTANDING</th>
-                                                <th style="width:15%">PARTI</th>
-                                                <th style="width:8%">UNDI</th>
-                                                <th style="width:8%">PEMENANG</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Abu Hassan bin Sarif</td>
-                                                <td>( BN - UMNO )</td>
-                                                <td>10777</td>
-                                                <td><asp:CheckBox ID="CheckBox1" runat="server" Checked="true"/></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Ismail BIn W.Teh @ Jaziz</td>
-                                                <td>( PAS )</td>
-                                                <td>8539</td>
-                                                <td><asp:CheckBox ID="CheckBox2" runat="server"/></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>--%>
-                                        <table class="table">
+                                        <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
                                             <thead>
                                                 <tr>
                                                     <th style="width: 3%">#</th>
-                                                    <th>NAMA CALON</th>
+                                                    <th>NAMA CALON BERTANDING</th>
                                                     <th style="width: 15%">PARTI</th>
                                                     <th style="width: 8%">UNDI</th>
                                                     <th style="width: 8%">PEMENANG</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr value='Abu Hassan bin Sarif'>
+                                                <tr>
                                                     <td>1</td>
                                                     <td>Abu Hassan bin Sarif</td>
                                                     <td>( BN - UMNO )</td>
                                                     <td>10777</td>
                                                     <td>
-                                                        <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" />
-                                                    </td>
+                                                        <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
@@ -163,8 +175,7 @@
                                                     <td>( PAS )</td>
                                                     <td>8539</td>
                                                     <td>
-                                                        <asp:CheckBox ID="CheckBox2" runat="server" />
-                                                    </td>
+                                                        <asp:CheckBox ID="CheckBox2" runat="server" /></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -255,8 +266,8 @@
                                                 <th>PERATUS</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tb">
-                                        </tbody>
+                                    </table>
+                                    <table id="tb" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
                                     </table>
                                 </div>
                             </div>
