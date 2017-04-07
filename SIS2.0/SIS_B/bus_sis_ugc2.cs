@@ -112,6 +112,7 @@ namespace SIS_B
         public Byte[] archive { get; set; }
         public string archivename { get; set; }
         public string candidate_old_ic { get; set; }
+        public int election_result_id { get; set; }
 
         public DataTable fill_DataTable()
         {
@@ -237,6 +238,18 @@ namespace SIS_B
         public DataTable GetAllCandidateNames()
         {
             return objDAL.GetAllCandidateNames();
+        }
+        public int InsertElectionResult()
+        {
+            return objDAL.InsertElectionResult(election_id, area_id);
+        }
+        public int InsertElectionResultCandidateVal()
+        {
+            return objDAL.InsertElectionResultCandidateVal(election_result_id, candidate_id);
+        }
+        public int DeleteElectionResultCandidate()
+        {
+            return objDAL.DeleteElectionResultCandidate(election_result_id, candidate_id);
         }
 
     }

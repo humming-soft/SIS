@@ -703,5 +703,80 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public int InsertElectionResult(int election_id, int area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_InsertElectionResultVal";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@election_id", election_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputId";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputId"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int InsertElectionResultCandidateVal(int election_result_id, int candidate_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_InsertElectionResultCandidateVal";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@election_result_id", election_result_id);
+                cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputId";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputId"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public int DeleteElectionResultCandidate(int election_result_id, int candidate_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_DeleteElectionResultCandidateVal";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@election_result_id", election_result_id);
+                cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputId";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputId"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

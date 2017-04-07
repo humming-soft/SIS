@@ -40,15 +40,6 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.DropDownList ddlArea;
         
         /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
-        /// <summary>
         /// invalid control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,33 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
+        
+        /// <summary>
+        /// lblinvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblinvalid;
+        
+        /// <summary>
+        /// valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid;
+        
+        /// <summary>
+        /// lblvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblvalid;
         
         /// <summary>
         /// lblPen control.
@@ -92,5 +110,14 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlName;
+        
+        /// <summary>
+        /// btnPadam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPadam;
     }
 }

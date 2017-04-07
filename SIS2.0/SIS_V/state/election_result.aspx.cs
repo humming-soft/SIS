@@ -17,6 +17,7 @@ namespace SIS_V.state
         protected void Page_Load(object sender, EventArgs e)
         {
             invalid.Visible = false;
+            valid.Visible = false;
             if (!IsPostBack)
             {
 
@@ -33,6 +34,7 @@ namespace SIS_V.state
                     txtPil.Text = Session["election"].ToString();
                     txtNegeri.Text = Session["statename"].ToString();
                     fill_area();
+                    btnPadam.Visible = false;
                     //BindColumnToGridview();
                 }
                 else
@@ -146,25 +148,49 @@ namespace SIS_V.state
 
                 // Attaching one onclick event for the entire row, so that it will
                 // fire SelectedIndexChanged, while we click anywhere on the row.
-                e.Row.Attributes["onclick"] =
-                  ClientScript.GetPostBackClientHyperlink(this.CanDetails, "Select$" + e.Row.RowIndex);
+                e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.CanDetails, "Select$" + e.Row.RowIndex);
             }
         }
 
         protected void OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            ddlName.SelectedIndex = 0;
             foreach (GridViewRow row in CanDetails.Rows)
             {
                 if (row.RowIndex == CanDetails.SelectedIndex)
                 {
                     txtCanName.Text = row.Cells[1].Text + " - " + row.Cells[2].Text;
+                    Session["election_res_id"] = row.Cells[3].Text;
+                    Session["can_id"] = row.Cells[4].Text;
+                    btnPadam.Visible = true;
                 }
                 else
                 {
                 }
             }
         }
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        //protected void btnSubmit_Click(object sender, EventArgs e)
+        //{
+        //    if (ddlArea.SelectedIndex != 0)
+        //    {
+        //        invalid.Visible = false;
+        //        fill_candidate();
+        //        fill_cand_list();
+        //        fill_search_list();
+        //    }
+        //    else
+        //    {
+        //        CanDetails.DataSource = null;
+        //        CanDetails.DataBind();
+        //        txtCanName.Text = "";
+        //        btnPadam.Visible = false;
+        //        invalid.Visible = true;
+        //        lblinvalid.Text = "Anda mempunyai beberapa kesilapan dalam pengisian borang. Sila isikan butiran yang diperlukan !";
+
+        //    }
+        //}
+
+        protected void ddlArea_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlArea.SelectedIndex != 0)
             {
@@ -175,13 +201,20 @@ namespace SIS_V.state
             }
             else
             {
+                CanDetails.DataSource = null;
+                CanDetails.DataBind();
+                txtCanName.Text = "";
+                btnPadam.Visible = false;
+                lblPen.Text = "";
                 invalid.Visible = true;
+                lblinvalid.Text = "Anda mempunyai beberapa kesilapan dalam pengisian borang. Sila isikan butiran yang diperlukan !";
+
             }
         }
         protected void fill_candidate()
         {
             DataTable dt_can = new DataTable();
-            objBUS.area_id = int.Parse(ddlArea.SelectedIndex.ToString());
+            objBUS.area_id = int.Parse(ddlArea.SelectedValue);
             objBUS.election_id = int.Parse(Session["election_id"].ToString());
             dt_can = objBUS.GetPenyandang();
             if (dt_can.Rows.Count > 0)
@@ -192,26 +225,114 @@ namespace SIS_V.state
         protected void fill_cand_list()
         {
             DataTable dt_cand_list = new DataTable();
-            objBUS.area_id = int.Parse(ddlArea.SelectedIndex.ToString());
+            objBUS.area_id = int.Parse(ddlArea.SelectedValue);
             objBUS.election_id = int.Parse(Session["election_id"].ToString());
             dt_cand_list = objBUS.GetElectionCandidate();
             if (dt_cand_list.Rows.Count > 0)
             {
                 CanDetails.DataSource = dt_cand_list;
                 CanDetails.DataBind();
+                //CanDetails.Columns[2].Visible = false;
+                //CanDetails.Columns[3].Visible = false;
+            }
+            else
+            {
+                CanDetails.DataSource = null;
+                CanDetails.DataBind();
+                txtCanName.Text = "";
+                invalid.Visible = true;
+                lblinvalid.Text = "Maklumat calon kawasan yang dipilih tidak availabe. Sila masukkan butiran !";
             }
         }
         protected void fill_search_list()
         {
             DataTable dt_cand_name = new DataTable();
-            //objBUS.area_id = int.Parse(ddlArea.SelectedIndex.ToString());
-            //objBUS.election_id = int.Parse(Session["election_id"].ToString());
             dt_cand_name = objBUS.GetAllCandidateNames();
             if (dt_cand_name.Rows.Count > 0)
             {
                 ddlName.DataSource = dt_cand_name;
                 ddlName.DataBind();
                 ddlName.Items.Insert(0, new ListItem("-----PILIH-----", ""));
+            }
+        }
+        protected void ddlName_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            invalid.Visible = false;
+            valid.Visible = false;
+            objBUS.area_id = int.Parse(ddlArea.SelectedValue);
+            objBUS.election_id = int.Parse(Session["election_id"].ToString());
+            int chk = objBUS.InsertElectionResult();
+            if (chk != -1)
+            {
+                int election_result_id = chk;
+                objBUS.election_result_id = election_result_id;
+                objBUS.candidate_id = int.Parse(ddlName.SelectedValue);
+                int res = objBUS.InsertElectionResultCandidateVal();
+                if (res != -1)
+                {
+                    DataTable dt_cand_list = new DataTable();
+                    dt_cand_list = objBUS.GetElectionCandidate();
+                    if (dt_cand_list.Rows.Count > 0)
+                    {
+                        CanDetails.DataSource = dt_cand_list;
+                        CanDetails.DataBind();
+                        //CanDetails.Columns[2].Visible = false;
+                        //CanDetails.Columns[3].Visible = false;
+                        string[] stringSeparators = new string[] {"~~"};
+                        string[] words = ddlName.SelectedItem.ToString().Split(stringSeparators, StringSplitOptions.None);
+                        txtCanName.Text = "";
+                        txtCanName.Text = words[0] + " - " + words[2];
+                    }
+                    valid.Visible = true;
+                    lblvalid.Text = "Calon berjaya diletakkan !";
+                }
+                else
+                {
+                    invalid.Visible = true;
+                    lblinvalid.Text = "Calon sudah wujud di kawasan lain !";
+                }
+            }
+        }
+        protected void btnPadam_Click(object sender, EventArgs e)
+        {
+            invalid.Visible = false;
+            if ((Session["election_res_id"].ToString() != "") && (Session["can_id"].ToString() != ""))
+            {
+                ddlName.SelectedIndex = 0;
+                objBUS.election_result_id = int.Parse(Session["election_res_id"].ToString());
+                objBUS.candidate_id = int.Parse(Session["can_id"].ToString());
+                int result = objBUS.DeleteElectionResultCandidate();
+                if (result != -1)
+                {
+                    valid.Visible = true;
+                    lblvalid.Text = "Calon berjaya dipadamkan !";
+                    txtCanName.Text = "";
+                    //
+                    DataTable dt_cand_list = new DataTable();
+                    objBUS.area_id = int.Parse(ddlArea.SelectedValue);
+                    objBUS.election_id = int.Parse(Session["election_id"].ToString());
+                    dt_cand_list = objBUS.GetElectionCandidate();
+                    if (dt_cand_list.Rows.Count > 0)
+                    {
+                        CanDetails.DataSource = dt_cand_list;
+                        CanDetails.DataBind();
+                        //CanDetails.Columns[2].Visible = false;
+                        //CanDetails.Columns[3].Visible = false;
+                    }
+                    else
+                    {
+                        CanDetails.DataSource = null;
+                        CanDetails.DataBind();
+                        txtCanName.Text = "";
+                        btnPadam.Visible = false;
+                    }
+                    //
+                }
+                else
+                {
+                    invalid.Visible = true;
+                    lblinvalid.Text = "Tidak dapat membuang calon. Sila cuba lagi !";
+                }
             }
         }
 
