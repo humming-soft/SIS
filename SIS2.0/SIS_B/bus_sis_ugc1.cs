@@ -207,6 +207,10 @@ namespace SIS_B
         {
             return data1.getDetails(eid,areaid);
         }
+        public DataTable fill_races()
+        {
+            return data1.fill_races();
+        }
 
         //HQ Module : START
         public DataTable GetConOpAreaList()
