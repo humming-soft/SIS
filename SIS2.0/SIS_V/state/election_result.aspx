@@ -138,7 +138,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <strong > PENYANDANG : </strong>
-                                        <pre><asp:Label ID="lblPen" runat="server" Text=""></asp:Label></pre>                                                                            
+                                        <pre><asp:Label ID="lblPen" runat="server" Text="" Height="10px"></asp:Label></pre>                                                                            
                                     </div>
                                   </div>
                             </div>

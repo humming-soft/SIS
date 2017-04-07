@@ -206,8 +206,9 @@ namespace SIS_V.state
                 txtCanName.Text = "";
                 btnPadam.Visible = false;
                 lblPen.Text = "";
+                ddlName.SelectedIndex = 0;
                 invalid.Visible = true;
-                lblinvalid.Text = "Anda mempunyai beberapa kesilapan dalam pengisian borang. Sila isikan butiran yang diperlukan !";
+                lblinvalid.Text = "Sila isi Kawasan!";
 
             }
         }
