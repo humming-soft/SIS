@@ -31,7 +31,7 @@ namespace SIS_V.state
                 if (Session["is_login"].ToString() == "t")
                 {
                     //txtpk.Attributes.Add("readonly", "readonly");
-                    //fill_result_list();
+                    fill_result_list();
                     fill_races();
                 }
                 else
