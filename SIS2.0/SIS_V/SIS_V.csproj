@@ -206,6 +206,7 @@
     <Content Include="assets\js\Validations\custom_laporanactivity.js" />
     <Content Include="assets\js\Validations\custom_login.js" />
     <Content Include="assets\js\Validations\detail_info.js" />
+    <Content Include="assets\js\Validations\election_result.js" />
     <Content Include="assets\js\Validations\keluar_mengundi.js" />
     <Content Include="assets\js\Validations\parliment_info.js" />
     <Content Include="assets\js\Validations\password_check.js" />

@@ -783,6 +783,27 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataTable fill_races()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetLookup";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lookupType", 4);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
 
         //HQ Module : START
         public DataTable GetConOpAreaList()

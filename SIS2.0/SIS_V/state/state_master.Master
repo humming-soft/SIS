@@ -525,6 +525,7 @@
     <script src="../assets/js/Validations/candidate_profile_list.js"></script>
     <script src="../assets/js/Validations/cand_profile.js"></script>
     <script src="../assets/js/Validations/cand_profile_update.js"></script>
+    <script src="../assets/js/Validations/election_result.js"></script>
 
     <%--Masonry--%>
     <script src="../assets/js/masonry/masonry.min.js"></script>

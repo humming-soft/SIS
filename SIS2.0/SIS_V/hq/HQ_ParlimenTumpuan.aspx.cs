@@ -167,7 +167,7 @@ namespace SIS_V.hq
                     for (int j = 0; j < isconc.Rows.Count; j++) // looping through isconcentrated only
                     {
                         area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
-                        area_id = int.Parse(dt.Rows[j]["area_id"].ToString());
+                        area_id = int.Parse(isconc.Rows[j]["area_id"].ToString());
                         area_code = isconc.Rows[j]["area_code"].ToString();
                         area_name = isconc.Rows[j]["area_name"].ToString();
                         color = isconc.Rows[j]["color"].ToString();
@@ -208,14 +208,14 @@ namespace SIS_V.hq
                             }
                             if (isconmod == 2 && isconc.Rows.Count > 2)
                             {
-                                int area_id_1 = int.Parse(dt.Rows[j]["area_id"].ToString());
+                                int area_id_1 = int.Parse(isconc.Rows[j]["area_id"].ToString());
                                 string area_code_1 = isconc.Rows[j]["area_code"].ToString();
                                 string area_name_1 = isconc.Rows[j]["area_name"].ToString();
                                 string color_1 = isconc.Rows[j]["color"].ToString();
                                 string row_color_1 = isconc.Rows[j]["row_color"].ToString();
                                 con_dt1.Rows.Add(area_id_1, area_code_1, area_name_1, color_1, row_color_1);
 
-                                int area_id_2 = int.Parse(dt.Rows[j + 1]["area_id"].ToString());
+                                int area_id_2 = int.Parse(isconc.Rows[j + 1]["area_id"].ToString());
                                 string area_code_2 = isconc.Rows[j + 1]["area_code"].ToString();
                                 string area_name_2 = isconc.Rows[j + 1]["area_name"].ToString();
                                 string color_2 = isconc.Rows[j + 1]["color"].ToString();
@@ -233,7 +233,7 @@ namespace SIS_V.hq
                     for (int k = 0; k < isopera.Rows.Count; k++) // looping through operational only
                     {
                         area_id = 0; area_code = ""; area_name = ""; color = ""; row_color = "";
-                        area_id = int.Parse(dt.Rows[k]["area_id"].ToString());
+                        area_id = int.Parse(isopera.Rows[k]["area_id"].ToString());
                         area_code = isopera.Rows[k]["area_code"].ToString();
                         area_name = isopera.Rows[k]["area_name"].ToString();
                         color = isopera.Rows[k]["color"].ToString();
@@ -275,14 +275,14 @@ namespace SIS_V.hq
                             }
                             if (isopermod == 2 && isopera.Rows.Count > 2)
                             {
-                                int area_id_1 = int.Parse(dt.Rows[k]["area_id"].ToString());
+                                int area_id_1 = int.Parse(isopera.Rows[k]["area_id"].ToString());
                                 string area_code_1 = isopera.Rows[k]["area_code"].ToString();
                                 string area_name_1 = isopera.Rows[k]["area_name"].ToString();
                                 string color_1 = isopera.Rows[k]["color"].ToString();
                                 string row_color_1 = isopera.Rows[k]["row_color"].ToString();
                                 op_dt1.Rows.Add(area_id_1, area_code_1, area_name_1, color_1, row_color_1);
 
-                                int area_id_2 = int.Parse(dt.Rows[k + 1]["area_id"].ToString());
+                                int area_id_2 = int.Parse(isopera.Rows[k + 1]["area_id"].ToString());
                                 string area_code_2 = isopera.Rows[k + 1]["area_code"].ToString();
                                 string area_name_2 = isopera.Rows[k + 1]["area_name"].ToString();
                                 string color_2 = isopera.Rows[k + 1]["color"].ToString();

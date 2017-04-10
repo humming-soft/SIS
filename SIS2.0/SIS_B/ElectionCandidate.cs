@@ -13,5 +13,7 @@ namespace SIS_B
         public int party_id { get; set; }
         public string party_shortcode { get; set; }
         public string party_name_bm { get; set; }
+        public int coalition_id { get; set; }
+        public int no_of_vote { get; set; }
     }
 }

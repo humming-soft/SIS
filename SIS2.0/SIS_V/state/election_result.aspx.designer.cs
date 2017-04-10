@@ -13,6 +13,42 @@ namespace SIS_V.state {
     public partial class election_result {
         
         /// <summary>
+        /// invalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
+        
+        /// <summary>
+        /// lblinvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblinvalid;
+        
+        /// <summary>
+        /// valid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid;
+        
+        /// <summary>
+        /// lblvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblvalid;
+        
+        /// <summary>
         /// txtPil control.
         /// </summary>
         /// <remarks>
@@ -58,21 +94,30 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.GridView CanDetails;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtCanName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtCanName;
         
         /// <summary>
-        /// DropDownList4 control.
+        /// ddlName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlName;
+        
+        /// <summary>
+        /// btnPadam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPadam;
     }
 }
