@@ -110,6 +110,7 @@
     <Content Include="assets\images\001.jpg" />
     <Content Include="assets\images\002.jpg" />
     <Content Include="assets\images\003.jpg" />
+    <Content Include="assets\images\3.gif" />
     <Content Include="assets\images\favicon\android-icon-144x144.png" />
     <Content Include="assets\images\favicon\android-icon-192x192.png" />
     <Content Include="assets\images\favicon\android-icon-36x36.png" />

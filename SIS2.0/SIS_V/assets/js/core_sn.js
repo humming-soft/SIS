@@ -206,3 +206,14 @@ jQuery(document).ready(function () {
     "use strict";
     _sn.init();
 });
+
+var _winnableAdd = function (options) {
+    var validate = function (options) {
+      
+    }
+    return {
+        init: function (options) {
+            validate(options);
+        }
+    }
+}();

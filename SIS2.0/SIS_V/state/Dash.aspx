@@ -106,7 +106,7 @@
                                                 <a href="#"><i class="md md-person"></i>Calon Boleh Menang <i class="md md-chevron-right pull-right"></i></a>
                                                 <ul>
                                                     <li><a href="candidate_winnable_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                    <li><a href="candidate_winnable_list"><i class="md md-search"></i>Paparan</a></li>
+                                                    <li><a href="candidate_winnable_view"><i class="md md-search"></i>Paparan</a></li>
                                                 </ul>
                                             </li>
                                             <li class="has-submenu">
