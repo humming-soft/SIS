@@ -826,6 +826,33 @@ namespace SIS_D
             }
         }
 
+        public int update_details(int ele_r_id_u, int cand_id_u, int party_id_u, int coal_id_u)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_update_winner";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ele_r_id_u", ele_r_id_u);
+                cmd.Parameters.AddWithValue("@cand_id_u", cand_id_u);
+                cmd.Parameters.AddWithValue("@party_id_u", party_id_u);
+                cmd.Parameters.AddWithValue("@coal_id_u", coal_id_u);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@flag";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
 
         //HQ Module : START
         public DataTable GetConOpAreaList()

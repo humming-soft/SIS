@@ -111,12 +111,28 @@ namespace SIS_V.state
 
         protected void candidate_list_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            LinkButton lnk = sender as LinkButton;
-            GridViewRow row = lnk.NamingContainer as GridViewRow;
-            int elec_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[0].ToString());
-            int stat_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[1].ToString());
-            int are_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[2].ToString());
-            int res_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[3].ToString());
+            bus.ele_r_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[0].ToString());
+                //int.Parse(candidate_list.DataKeys[row.RowIndex].Values[0].ToString());
+            //CheckBox chk = candidate_list.Cells[4].Controls[0] as CheckBox;
+            //if (chk.Checked == true)
+            //{
+            //    bus.cand_id_u = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[1].ToString());
+            //}
+            //else
+            //{
+            //    bus.cand_id_u = 0;
+            //}
+            bus.party_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[2].ToString());
+            bus.coal_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[3].ToString());
+            int up = bus.update_details();
+            if(up == 1)
+            {
+                //success
+            }
+            else
+            {
+                //failure
+            }
         }
     }
 }

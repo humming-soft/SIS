@@ -68,6 +68,10 @@ namespace SIS_B
         public string archivename { get; set; }
         public int eid { get; set; }
         public int resid { get; set; }
+        public int ele_r_id_u { get; set; }
+        public int cand_id_u { get; set; }
+        public int party_id_u { get; set; }
+        public int coal_id_u { get; set; }
         public int check_login()
         {
             return data1.check_login(uname,pswd);
@@ -215,6 +219,10 @@ namespace SIS_B
         public DataTable fill_cand_list()
         {
             return data1.fill_cand_list(eid, areaid,resid);
+        }
+        public int update_details()
+        {
+            return data1.update_details(ele_r_id_u, cand_id_u, party_id_u, coal_id_u);
         }
 
         //HQ Module : START
