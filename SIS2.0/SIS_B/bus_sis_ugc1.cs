@@ -67,6 +67,7 @@ namespace SIS_B
         public Byte[] archive { get; set; }
         public string archivename { get; set; }
         public int eid { get; set; }
+        public int resid { get; set; }
         public int check_login()
         {
             return data1.check_login(uname,pswd);
@@ -210,6 +211,10 @@ namespace SIS_B
         public DataTable fill_races()
         {
             return data1.fill_races();
+        }
+        public DataTable fill_cand_list()
+        {
+            return data1.fill_cand_list(eid, areaid,resid);
         }
 
         //HQ Module : START

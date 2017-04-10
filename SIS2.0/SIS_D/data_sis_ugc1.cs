@@ -803,6 +803,28 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataTable fill_cand_list(int eid, int areaid, int resid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetElectionCanResult";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@electionId", eid);
+                cmd.Parameters.AddWithValue("@areaId", areaid);
+                //cmd.Parameters.AddWithValue("@electionResultId", resid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
 
 
         //HQ Module : START
