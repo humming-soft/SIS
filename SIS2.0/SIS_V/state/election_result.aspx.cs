@@ -220,7 +220,7 @@ namespace SIS_V.state
             dt_can = objBUS.GetPenyandang();
             if (dt_can.Rows.Count > 0)
             {
-                lblPen.Text = dt_can.Rows[0]["winner_name"].ToString();
+                lblPen.Text = dt_can.Rows[0]["winner_name"].ToString() + " - " + dt_can.Rows[0]["winner_majority"].ToString();
             }
         }
         protected void fill_cand_list()
@@ -290,7 +290,7 @@ namespace SIS_V.state
                 else
                 {
                     invalid.Visible = true;
-                    lblinvalid.Text = "Calon sudah wujud di kawasan lain !";
+                    lblinvalid.Text = "Calon atau parti sudah wujud !";
                 }
             }
         }
