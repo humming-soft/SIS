@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dash.aspx.cs" Inherits="SIS_V.state.Dash" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HQ_Dash.aspx.cs" Inherits="SIS_V.hq.HQ_Dash" %>
 
 <!DOCTYPE html>
 
@@ -83,64 +83,64 @@
                                 <%--<li><a href="Dash.aspx">Laman Utama</a></li>--%>
                                 <li><a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                                     <ul>
-                                        <li><a href="utama"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
-                                        <li><a href="parlimen_tumpuan"><i class="md md-compare"></i>Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang</a></li>
-                                        <li><a href="result"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a></li>
-                                        <li><a href="status_kawasan"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
-                                        <li><a href="Win_Candidate"><i class="md md-contacts"></i>Winnable Candidate</a></li>
-                                        <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
-                                        <li><a href="calon_bertanding"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
+                                        <li><a href="#"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
+                                        <li><a href="HQ_ParlimenTumpuan"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
+                                        <li><a href="#"><i class="md md-compare"></i>Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang</a></li>
+                                        <li><a href="#"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a></li>
+                                        <li><a href="#"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
+                                        <li><a href="#"><i class="md md-contacts"></i>Winnable Candidate</a></li>
+                                        <li><a href="#"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
+                                        <li><a href="#"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                                     <ul>
-                                            <li class="has-submenu">
-                                                <a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                    <li><a href="candidate_profilelist"><i class="md md-search"></i>Paparan</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-submenu">
-                                                <a href="#"><i class="md md-person"></i>Calon Boleh Menang <i class="md md-chevron-right pull-right"></i></a>
-                                                <ul>
-                                                    <li><a href="candidate_winnable_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                    <li><a href="candidate_winnable_view"><i class="md md-search"></i>Paparan</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-submenu">
-                                                <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
-                                                <ul>
-                                                    <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                    <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
-                                                </ul>
-                                            </li>
-                                            <%--<li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
-                                            <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri <i class="md md-chevron-right pull-right"></i></a>
-                                                <ul>
-                                                    <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                    <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                        <li class="has-submenu">
+                                            <a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-submenu">
+                                            <a href="#"><i class="md md-person"></i>Calon Boleh Menang <i class="md md-chevron-right pull-right"></i></a>
+                                            <ul>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-submenu">
+                                            <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu<i class="md md-chevron-right pull-right"></i></a>
+                                            <ul>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                            </ul>
+                                        </li>
+                                        <%--<li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
+                                        <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri <i class="md md-chevron-right pull-right"></i></a>
+                                            <ul>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li><a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                                     <ul>
                                         <li class="has-submenu">
                                             <a href="#"><i class="md md-find-in-page"></i>Keputusan Pilihanraya <i class="md md-chevron-right pull-right"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="election_result"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="election_result_list"><i class="md md-add"></i>Kemaskini</a></li>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-add"></i>Kemaskini</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>
+                                        <li><a href="#"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <%--                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>--%>
                                 <li><a href="#"><i class="md md-settings"></i>Tetapan</a>
                                     <ul>
-                                        <li><a href="parlimen_info_view"><i class="md md-info"></i>Parlimen Info</a></li>
+                                        <li><a href="#"><i class="md md-info"></i>Parlimen Info</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -156,62 +156,47 @@
                             <ul class="dl-menu">
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="utama"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
-                                        <li><a href="kawasan_operasi"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
-                                        <li><a href="parlimen_tumpuan"><i class="md md-compare"></i>Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang</a></li>
-                                        <li><a href="result"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a></li>
-                                        <li><a href="status_kawasan"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
-                                        <li><a href="Win_Candidate"><i class="md md-contacts"></i>Winnable Candidate</a></li>
-                                        <li><a href="percentage_voters"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
-                                        <li><a href="calon_bertanding"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
+                                        <li><a href="#"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
+                                        <li><a href="HQ_ParlimenTumpuan"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
+                                        <li><a href="#"><i class="md md-compare"></i>Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang</a></li>
+                                        <li><a href="#"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
+                                        <li><a href="#"><i class="md md-contacts"></i>Winnable Candidate</a></li>
+                                        <li><a href="#"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
+                                        <li><a href="#"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                                     <ul class="dl-submenu">
                                         <li><a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu</a>
                                             <ul class="dl-submenu">
-                                                <li><a href="candidate_profile"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="candidate_profilelist"><i class="md md-search"></i>Paparan</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="md md-person"></i>Calon Boleh Menang</a>
-                                            <ul class="dl-submenu">
-                                                <li><a href="candidate_winnable_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="candidate_winnable_list"><i class="md md-search"></i>Paparan</a></li>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
                                             <ul class="dl-submenu">
-                                                <li><a href="activiti_bakal_ci_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="activiti_bakal_ci_view"><i class="md md-search"></i>Paparan</a></li>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
                                             </ul>
                                         </li>
                                         <%-- <li><a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a></li>--%>
                                         <li><a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri</a>
                                             <ul class="dl-submenu">
-                                                <li><a href="laporan_harian_add"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="laporan_harian_view"><i class="md md-search"></i>Paparan</a></li>
+                                                <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                                <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                                     <ul class="dl-submenu">
-                                        <li>
-                                            <a href="#"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a>
-                                            <ul class="dl-submenu">
-                                                <li><a href="election_result"><i class="md md-add-circle-outline"></i>Tambah</a></li>
-                                                <li><a href="election_result_list"><i class="md md-add"></i>Kemaskini</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>
+                                        <li><a href="#"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                                     </ul>
                                 </li>
                                 <%--                                <li><a href="analisis_kawasan_view"><i class="md md-place"></i> Analisis Kawasan</a></li>--%>
                                 <li class="menu-item kode-parent-menu"><a href="#"><i class="md md-settings"></i>Tetapan</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="parlimen_info_view"><i class="md md-info"></i>Parlimen Info</a></li>
+                                        <li><a href="#"><i class="md md-info"></i>Parlimen Info</a></li>
                                     </ul>
                                 </li>
                                 <%--  <li><a href="tetapan_pentadbir_view.aspx">Tetapan Pentadbir</a></li>--%>
@@ -230,18 +215,18 @@
                 <div class="container">
                     <div class="kf_comming_counter">
                         <h2>Strategic Information System</h2>
-                        <h4>State Officer</h4>
+                        <h4>Headquarters</h4>
                         <ul class="countdown">
                             <li>
                                 <img src="../assets/images/gallery/001_d.png" alt="Logo Image Here" />
-                                <a href="utama">
+                                <a href="#">
 
                                     <p class="days_ref">Dashboard Utama</p>
                                 </a>
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/002_d.png" alt="Logo Image Here" />
-                                <a href="kawasan_operasi">
+                                <a href="HQ_ParlimenTumpuan">
                                     <p class="days_ref">
                                         Parlimen
                                         <br />
@@ -251,7 +236,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/006_d.png" alt="Logo Image Here" />
-                                <a href="parlimen_tumpuan">
+                                <a href="#">
                                     <p class="days_ref">
                                         Parlimen Tumpuan BN VS Pembangkang
                                     </p>
@@ -259,13 +244,13 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/003_d.png" alt="Logo Image Here" />
-                                <a href="status_kawasan">
+                                <a href="#">
                                     <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/007_d.png" alt="Logo Image Here" />
-                                <a href="Win_Candidate">
+                                <a href="#">
                                     <p class="seconds_ref">Winnable Candidate</p>
                                 </a>
                             </li>
@@ -273,13 +258,13 @@
                         <ul class="countdown m-t-25">
                             <li>
                                 <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="calon_bertanding">
+                                <a href="#">
                                     <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
-                                <a href="percentage_voters">
+                                <a href="#">
                                     <p class="days_ref b35">
                                         Peratusan
                                         <br />
@@ -289,7 +274,7 @@
                             </li>
                             <li>
                                 <img src="../assets/images/gallery/008_d.png" alt="Logo Image Here" />
-                                <a href="result">
+                                <a href="#">
                                     <p class="minutes_ref b35">Keputusan Pilihanraya </p>
                                 </a>
                             </li>
@@ -361,7 +346,6 @@
                     $(this).dlmenu();
                 });
             }
-            //sessiontimeout();
         });
     </script>
     <script type="text/javascript">
@@ -411,18 +395,6 @@
             }
             Timer();
         }
-    </script>
-    <script type="text/javascript">
-        //function sessiontimeout() {
-        //            $.sessionTimeout({
-        //                ignoreUserActivity: true,
-        //                warnAfter: 270000, //4.5 minute
-        //                redirAfter: 300000, // 5 minute
-        //                keepAliveUrl: '/',
-        //                redirUrl: '../sessiontimeout',
-        //                logoutUrl: '../Logout'
-        //            });
-        //}
     </script>
 </body>
 </html>

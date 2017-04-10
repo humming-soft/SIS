@@ -708,13 +708,34 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataSet fill_calon_candidates(int state_id)
+        public DataTable fill_election_details()
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "sp_GetConDetDashboardWinnableCandidate_calon";
+                cmd.CommandText = "usp_GetElection_details";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        
+        public DataSet fill_calon_candidates(int state_id,int elect_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetDashboardElectionCandidate_one";
                 cmd.Parameters.AddWithValue("@state_id", state_id);
+                cmd.Parameters.AddWithValue("@election_id", elect_id);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataSet ds = new DataSet();
@@ -731,6 +752,52 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        
+        public DataSet fill_results(int elect_id,int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetElectionResultDashboardPartyWin_state";
+                cmd.Parameters.AddWithValue("@stateid", state_id);
+                cmd.Parameters.AddWithValue("@electionId", elect_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                ds.Relations.Add(new DataRelation("all_par", ds.Tables[0].Columns["coalition_id"], ds.Tables[1].Columns["coalition_id"]));
+                ds.Relations.Add(new DataRelation("all_dun", ds.Tables[0].Columns["coalition_id"], ds.Tables[2].Columns["coalition_id"]));
+                return ds;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataSet fill_scoresheet(int elect_id, int state_id,int type,int coa_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetElectionResultDetailsDashboard_state";
+                cmd.Parameters.AddWithValue("@stateId", state_id);
+                cmd.Parameters.AddWithValue("@electionId", elect_id);
+                cmd.Parameters.AddWithValue("@areaType", type);
+                cmd.Parameters.AddWithValue("@coalitionId", coa_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                ds.Relations.Add(new DataRelation("election_relation", ds.Tables[0].Columns["election_result_id"], ds.Tables[1].Columns["election_result_id"]));
+                return ds;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

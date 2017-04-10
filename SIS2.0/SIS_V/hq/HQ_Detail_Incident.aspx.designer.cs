@@ -10,222 +10,276 @@
 namespace SIS_V.hq {
     
     
-    public partial class hq_master {
+    public partial class HQ_Detail_Incident {
         
         /// <summary>
-        /// head control.
+        /// grid_kodkawasan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.GridView grid_kodkawasan;
         
         /// <summary>
-        /// statename control.
+        /// lbl_area_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor statename;
+        protected global::System.Web.UI.WebControls.Label lbl_area_code;
         
         /// <summary>
-        /// utama control.
+        /// lbl_area_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl utama;
+        protected global::System.Web.UI.WebControls.Label lbl_area_name;
         
         /// <summary>
-        /// dash control.
+        /// lbl_no_voters control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dash;
+        protected global::System.Web.UI.WebControls.Label lbl_no_voters;
         
         /// <summary>
-        /// prapilihanraya control.
+        /// lbl_majority control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prapilihanraya;
+        protected global::System.Web.UI.WebControls.Label lbl_majority;
         
         /// <summary>
-        /// pilihanraya control.
+        /// lbl_percent_vote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pilihanraya;
+        protected global::System.Web.UI.WebControls.Label lbl_percent_vote;
         
         /// <summary>
-        /// tetapan control.
+        /// lbl_spoilt_vote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tetapan;
+        protected global::System.Web.UI.WebControls.Label lbl_spoilt_vote;
         
         /// <summary>
-        /// form1 control.
+        /// lbl_winner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lbl_winner;
         
         /// <summary>
-        /// breadcrum_parent control.
+        /// lbl_raceFragment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor breadcrum_parent;
+        protected global::System.Web.UI.WebControls.Label lbl_raceFragment;
         
         /// <summary>
-        /// child_li control.
+        /// img_candidate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl child_li;
+        protected global::System.Web.UI.WebControls.Image img_candidate;
         
         /// <summary>
-        /// breadcrum_child control.
+        /// lbl_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor breadcrum_child;
+        protected global::System.Web.UI.WebControls.Label lbl_name;
         
         /// <summary>
-        /// grant_child_li control.
+        /// lbl_job control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl grant_child_li;
+        protected global::System.Web.UI.WebControls.Label lbl_job;
         
         /// <summary>
-        /// breadcrum_grant_child control.
+        /// lbl_political_pos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl breadcrum_grant_child;
+        protected global::System.Web.UI.WebControls.Label lbl_political_pos;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// lbl_education control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lbl_education;
         
         /// <summary>
-        /// txtLogName control.
+        /// lbl_issue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLogName;
+        protected global::System.Web.UI.WebControls.Label lbl_issue;
         
         /// <summary>
-        /// txtFullName control.
+        /// lbl_perc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFullName;
+        protected global::System.Web.UI.WebControls.Label lbl_perc;
         
         /// <summary>
-        /// txtIC control.
+        /// lbl_status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIC;
+        protected global::System.Web.UI.WebControls.Label lbl_status;
         
         /// <summary>
-        /// txtPosition control.
+        /// lbl_justification control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPosition;
+        protected global::System.Web.UI.WebControls.Label lbl_justification;
         
         /// <summary>
-        /// txtNewPassword control.
+        /// log_activity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlTable log_activity;
         
         /// <summary>
-        /// txtConfirmPassword control.
+        /// activity_scroll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl activity_scroll;
         
         /// <summary>
-        /// valid_match control.
+        /// grid_activity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid_match;
+        protected global::System.Web.UI.WebControls.GridView grid_activity;
         
         /// <summary>
-        /// valid_empty control.
+        /// log_isu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid_empty;
+        protected global::System.Web.UI.HtmlControls.HtmlTable log_isu;
         
         /// <summary>
-        /// btnSubmit control.
+        /// isu_scroll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl isu_scroll;
         
         /// <summary>
-        /// btnClear control.
+        /// grid_isu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClear;
+        protected global::System.Web.UI.WebControls.GridView grid_isu;
+        
+        /// <summary>
+        /// log_janji control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable log_janji;
+        
+        /// <summary>
+        /// janji_scroll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl janji_scroll;
+        
+        /// <summary>
+        /// grid_janji control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grid_janji;
+        
+        /// <summary>
+        /// log_insiden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable log_insiden;
+        
+        /// <summary>
+        /// insiden_scroll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl insiden_scroll;
+        
+        /// <summary>
+        /// grid_insiden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grid_insiden;
     }
 }

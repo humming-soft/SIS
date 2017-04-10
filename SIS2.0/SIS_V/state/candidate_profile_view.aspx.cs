@@ -158,6 +158,10 @@ namespace SIS_V.state
                 }
                 cand_image = "data:image/png;base64," + base64String;
                 imager.Src = cand_image;
+                if (dt.Rows[0]["original_filename"].ToString() != "")
+                {
+                    rar_name.Text = dt.Rows[0]["original_filename"].ToString();
+                }
             }
         }
         protected void button1_Click(object sender, EventArgs e)
@@ -165,6 +169,7 @@ namespace SIS_V.state
             if (TextBox2.Text != "" && TextBox3.Text != "" && TextBox4.Text != "" && TextBox29.Text != "" && DropDownList2.SelectedIndex != 0 && DropDownList3.SelectedIndex != 0 && TextBox18.Text != "" && DropDownList4.SelectedIndex != 0 && TextBox19.Text != "" && TextBox20.Text != "")
             {
                 objBUS.candidate_id = int.Parse(Session["candidate_unique_id"].ToString());
+                objBUS.candidate_old_ic = Session["old_ic"].ToString();
                 if (FileUpload1.HasFile)
                 {
                     string filename = FileUpload1.FileName;
@@ -309,6 +314,15 @@ namespace SIS_V.state
                 objBUS.asset = TextBox34.Text;
                 objBUS.education = TextBox35.Text;
                 objBUS.add_info = TextBox37.Text;
+                if (FileUpload2.HasFile)
+                {
+                    string filename = FileUpload2.FileName;
+                    System.IO.Stream fs2 = FileUpload2.PostedFile.InputStream;
+                    System.IO.BinaryReader br2 = new System.IO.BinaryReader(fs2);
+                    Byte[] bytes2 = br2.ReadBytes((Int32)fs2.Length);
+                    objBUS.archive = bytes2;
+                    objBUS.archivename = filename;
+                }
                 int chk = objBUS.UpdateCandidateDetails();
                 if (chk == 0)
                 {

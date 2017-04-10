@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/hq/hq_master.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SIS_V.hq.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HQ_Utama.aspx.cs" Inherits="SIS_V.hq.HQ_Utama" MasterPageFile="~/hq/hq_master.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

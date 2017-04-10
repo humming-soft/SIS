@@ -703,7 +703,7 @@ namespace SIS_D
             }
         }
 
-        public int add_candidate(string title,string ic,string uname,DateTime dob,int gender,int race,int religion,Byte[] image,string address,string home_tel_no,string office_tel_no,string mobile,string fax,string email,string blog,string facebook,string twitter,string job,string spouse_name,double income,int children,int parti,string member_no,bool member_life,string branch,string political_post,string division,DateTime e_date,DateTime d_date,DateTime l_date,string asset,string education,string add_info)
+        public int add_candidate(string title, string ic, string uname, DateTime dob, int gender, int race, int religion, Byte[] image, string address, string home_tel_no, string office_tel_no, string mobile, string fax, string email, string blog, string facebook, string twitter, string job, string spouse_name, double income, int children, int parti, string member_no, bool member_life, string branch, string political_post, string division, DateTime e_date, DateTime d_date, DateTime l_date, string asset, string education, string add_info, Byte[] archive, string archivename)
         {
             try
             {
@@ -743,6 +743,8 @@ namespace SIS_D
                 cmd.Parameters.AddWithValue("@asset", asset);
                 cmd.Parameters.AddWithValue("@education", education);
                 cmd.Parameters.AddWithValue("@add_info", add_info);
+                cmd.Parameters.AddWithValue("@archive", archive);
+                cmd.Parameters.AddWithValue("@archivename", archivename);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
                 outparam.Direction = ParameterDirection.InputOutput;
@@ -759,5 +761,111 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataTable getDetails(int eid,int areaid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetElectionResult_state";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@electionId", eid);
+                cmd.Parameters.AddWithValue("@areaId", areaid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable fill_races()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetLookup";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lookupType", 4);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+
+        //HQ Module : START
+        public DataTable GetConOpAreaList()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetConOpAreaList_HQ";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_all_parliments()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetAllParliments_HQ";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public DataTable fill_masalah_dalaman_parti()
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetConMainDashboardMainIssues_HQ";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        //HQ Module : END
     }
 }

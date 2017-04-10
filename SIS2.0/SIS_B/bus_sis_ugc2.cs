@@ -109,6 +109,10 @@ namespace SIS_B
         public string asset { get; set; }
         public string education { get; set; }
         public string add_info { get; set; }
+        public Byte[] archive { get; set; }
+        public string archivename { get; set; }
+        public string candidate_old_ic { get; set; }
+        public int election_result_id { get; set; }
 
         public DataTable fill_DataTable()
         {
@@ -209,11 +213,43 @@ namespace SIS_B
         {
             return objDAL.UpdateCandidateDetails(image, candidate_id, candidate_ic, candidate_name, title, dob, gender, race, religion, alamat, home_tel_no,
                 fax_no, Office_tel_no, email, mobile_no, blog, facebook, twitter, occupation, income, spouse_name, child_no, party, membership_no,
-                member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info);
+                member4life, branch, political_post, division, expiry_date, date_join, date_left, asset, education, add_info, archive, archivename, candidate_old_ic);
         }
         public DataTable GetCandidateImage()
         {
             return objDAL.GetCandidateImage(candidate_id);
+        }
+        public DataTable GetFile()
+        {
+            return objDAL.GetFile(candidate_id);
+        }
+        public DataTable GetArea()
+        {
+            return objDAL.GetArea(state_id);
+        }
+        public DataTable GetPenyandang()
+        {
+            return objDAL.GetPenyandang(election_id, area_id);
+        }
+        public DataTable GetElectionCandidate()
+        {
+            return objDAL.GetElectionCandidate(election_id, area_id);
+        }
+        public DataTable GetAllCandidateNames()
+        {
+            return objDAL.GetAllCandidateNames();
+        }
+        public int InsertElectionResult()
+        {
+            return objDAL.InsertElectionResult(election_id, area_id);
+        }
+        public int InsertElectionResultCandidateVal()
+        {
+            return objDAL.InsertElectionResultCandidateVal(election_result_id, candidate_id);
+        }
+        public int DeleteElectionResultCandidate()
+        {
+            return objDAL.DeleteElectionResultCandidate(election_result_id, candidate_id);
         }
 
     }

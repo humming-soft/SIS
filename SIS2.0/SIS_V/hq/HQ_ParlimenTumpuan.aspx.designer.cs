@@ -7,72 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SIS_V.state {
+namespace SIS_V.hq {
     
     
-    public partial class candidate_profilelist {
+    public partial class HQ_ParlimenTumpuan {
         
         /// <summary>
-        /// valid control.
+        /// lblCon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl valid;
+        protected global::System.Web.UI.WebControls.Label lblCon;
         
         /// <summary>
-        /// lblvalid control.
+        /// ConGridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblvalid;
+        protected global::System.Web.UI.WebControls.GridView ConGridView1;
         
         /// <summary>
-        /// invalid control.
+        /// ConGridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalid;
+        protected global::System.Web.UI.WebControls.GridView ConGridView2;
         
         /// <summary>
-        /// lblinvalid control.
+        /// ConGridView3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblinvalid;
+        protected global::System.Web.UI.WebControls.GridView ConGridView3;
         
         /// <summary>
-        /// ddlNameC control.
+        /// lblOp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlNameC;
+        protected global::System.Web.UI.WebControls.Label lblOp;
         
         /// <summary>
-        /// btnSubmit control.
+        /// OpGridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.GridView OpGridView1;
         
         /// <summary>
-        /// GridCInfo control.
+        /// OpGridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridCInfo;
+        protected global::System.Web.UI.WebControls.GridView OpGridView2;
+        
+        /// <summary>
+        /// OpGridView3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView OpGridView3;
     }
 }

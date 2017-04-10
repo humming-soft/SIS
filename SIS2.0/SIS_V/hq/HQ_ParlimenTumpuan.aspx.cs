@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 using SIS_B;
 using System.Data;
 
-namespace SIS_V.state
+namespace SIS_V.hq
 {
-    public partial class kawasan_operasi : System.Web.UI.Page
+    public partial class HQ_ParlimenTumpuan : System.Web.UI.Page
     {
-        bus_sis_ugc2 objKOInfoBUS = new bus_sis_ugc2();
+        bus_sis_ugc1 objKOInfoBUS = new bus_sis_ugc1();
         DataTable dt = new DataTable();
 
         DataTable isconc = new DataTable();
@@ -70,7 +70,6 @@ namespace SIS_V.state
 
         public void GetConOpAreaList()
         {
-            objKOInfoBUS.state_id = state_id;
             dt = objKOInfoBUS.GetConOpAreaList();
 
             if (dt.Rows.Count > 0)
@@ -378,42 +377,42 @@ namespace SIS_V.state
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(ConGridView1.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident");
+            Response.Redirect("HQ_Detail_Incident");
         }
         protected void lnk_arn2_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(ConGridView2.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident");
+            Response.Redirect("HQ_Detail_Incident");
         }
         protected void lnk_arn3_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(ConGridView3.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident");
+            Response.Redirect("HQ_Detail_Incident");
         }
         protected void lnk_arn4_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(OpGridView1.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident");
+            Response.Redirect("HQ_Detail_Incident");
         }
         protected void lnk_arn5_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(OpGridView2.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident");
+            Response.Redirect("HQ_Detail_Incident");
         }
         protected void lnk_arn6_Click(Object sender, EventArgs e)
         {
             LinkButton lnk = sender as LinkButton;
             GridViewRow row = lnk.NamingContainer as GridViewRow;
             Session["area"] = int.Parse(OpGridView3.DataKeys[row.RowIndex].Value.ToString());
-            Response.Redirect("detail_incident");
+            Response.Redirect("HQ_Detail_Incident");
         }
 
     }

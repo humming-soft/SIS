@@ -6,21 +6,32 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
-    <meta name="author" content="Coderthemes" />
+    <meta name="description" content="Strategic Information System" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-    <link rel="shortcut icon" href="../assets/images/favicon_1.ico" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/images/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="../assets/images/favicon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 
     <title>HQ</title>
 
     <link href="../assets/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
-
-    <!-- DataTables -->
-    <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -31,6 +42,14 @@
     <link href="../assets/css/core_sn.css" rel="stylesheet" type="text/css" />
     <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
 
+    <!-- DataTables -->
+    <link href="../assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/scroller/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,24 +57,57 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Datepicker -->
+    <link href="../assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <!-- Datetimepicker -->
+    <link href="../assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
 
     <%--<link href="../assets/plugins/media/css/DT_bootstrap.css" rel="stylesheet" />--%>
-
+    <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="../assets/js/modernizr.min.js"></script>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../assets/js/highcharts/highcharts.js"></script>
     <script src="../assets/js/highcharts/highcharts-more.js"></script>
     <script src="../assets/js/highcharts/no-data-to-display.js"></script>
-    <script src="../assets/js/masonry/masonry.min.js"></script>
+    <script src="../assets/plugins/scroller/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
 
-    <!-- peity charts -->
-    <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
-    <script src="../assets/pages/jquery.peity.init.js"></script>
+    <%--chosen--%>
+    <link href="../assets/plugins/chosen/chosen.css" rel="stylesheet" />
+
+    <%--Custom Select--%>
+    <link href="../assets/plugins/Customselect/jquery-customselect.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        //Disables the browser back button
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+<div class="splash">
+        <!-- 			<div class="color-line"></div> -->
+        <div class="splash-title">
+            <!-- 				<h1>Homer - Responsive Admin Theme</h1> -->
+            <!-- 				<p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p> -->
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+            <h4>Loading..</h4>
+        </div>
+    </div>
     <!-- Navigation Bar-->
     <header id="topnav">
         <div class="topbar-main">
@@ -63,7 +115,7 @@
 
                 <!-- Logo container-->
                 <div class="logo">
-                    <a href="index-2.html" class="logo">
+                    <a href="#" class="logo">
                         <img src="../assets/images/logo/logo_4.png" alt="user-img" class="hidden-xs" />
                         <img src="../assets/images/logo/logo_xs.png" alt="user-img" class="visible-xs logo-img" />
                         <span class="hidden-xs">STRATEGIC INFORMATION SYSTEM</span></a>
@@ -71,24 +123,24 @@
                 <!-- End Logo container-->
 
                 <div class="menu-extras">
-
                     <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown no-loader">
+                            <a href="#" class="state" id="statename" runat="server" style="cursor:default"></a>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
                                 <img src="../assets/images/users/avatar-0.jpg" alt="user-img" class="img-circle" />
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i>Profile</a></li>
-                                <li><a href="javascript:void(0)" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i>Lock screen</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
+                            <ul class="dropdown-menu" style="z-index: 10000;">
+                                <li><a href="#" data-toggle="modal" data-target="#sis-ape-modal"><i class="ti-settings m-r-5"></i>Maklumat Pengguna</a></li>
+                                <li><a href="../Logout"><i class="ti-power-off m-r-5"></i>Keluar dari SIS</a></li>
                             </ul>
                         </li>
                     </ul>
 
                     <div class="menu-item">
                         <!-- Mobile menu toggle-->
-                        <a class="navbar-toggle">
+                        <a class="navbar-toggle no-loader">
                             <div class="lines">
                                 <span></span>
                                 <span></span>
@@ -111,49 +163,84 @@
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
                         <li class="has-submenu" id="utama" runat="server">
-                            <a href="Dash.aspx"><i class="md md-dashboard"></i>Laman Utama</a>
+                            <a href="HQ_Dash"><i class="md md-dashboard"></i>Laman Utama</a>
                         </li>
                         <li class="has-submenu" id="dash" runat="server">
                             <a href="#"><i class="md md-color-lens"></i>Dashboard</a>
                             <ul class="submenu">
-                                <li><a href="utama.aspx">Dashboard Utama</a></li>
-                                <li><a href="kawasan_operasi.aspx">Kawasan Operasi</a></li>
-                                <li><a href="winnable_candidate.aspx">Winnable Candidate</a></li>
-                                <li><a href="percentage_voters.aspx">Peratusan Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-desktop-windows"></i>Dashboard Utama</a></li>
+                                <li><a href="HQ_ParlimenTumpuan"><i class="md md-details"></i>Parlimen Tumpuan</a></li>
+                                <li><a href="#"><i class="md md-compare"></i>Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang</a></li>
+                                <li><a href="#"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a></li>
+                                <li><a href="#"><i class="md md-place"></i>Rumusan Status Kawasan</a></li>
+                                <li><a href="#"><i class="md md-contacts"></i>Winnable Candidate</a></li>
+                                <li><a href="#"><i class="md md-group"></i>Peratusan Keluar Mengundi</a></li>
+                                <li><a href="#"><i class="md md-assignment-ind"></i>Calon Bertanding</a></li>
                             </ul>
                         </li>
-                        <li class="has-submenu" id="prapiliha" runat="server">
-                            <a href="#"><i class="md md-invert-colors-on"></i>Pra-Pilihanraya</a>
+                        <li class="has-submenu" id="prapilihanraya" runat="server">
+                            <a href="#"><i class="md md-poll"></i>Pra-Pilihanraya</a>
                             <ul class="submenu">
-                                <li>
-                                    <a href="activiti_bakal_ci_view.aspx">Aktiviti Bakal Calon / Individu</a>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="md md-add-box"></i>Profil Bakal Calon / Individu</a>
+                                    <ul class="submenu">
+                                        <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a href="activiti_parti_view.aspx">Aktiviti Parti Bertanding</a>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="md md-person"></i>Calon Boleh Menang</a>
+                                    <ul class="submenu">
+                                        <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="laporan_harian_add.aspx">Laporan Harian Dari Negeri</a></li>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="md md-brightness-auto"></i>Aktiviti Bakal Calon / Individu</a>
+                                    <ul class="submenu">
+                                        <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
+                                </li>
+                               <%-- <li>
+                                    <a href="activiti_parti_view"><i class="md md-nature-people"></i>Aktiviti Parti Bertanding</a>
+                                </li>--%>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="md md-question-answer"></i>Laporan Harian Negeri</a>
+                                    <ul class="submenu">
+                                        <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="#"><i class="md md-search"></i>Paparan</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li class="has-submenu" id="piliha" runat="server">
-                            <a href="#"><i class="md md-class"></i>Pilihanraya</a>
+                        <li class="has-submenu" id="pilihanraya" runat="server">
+                            <a href="#"><i class="md md-stars"></i>Pilihanraya</a>
                             <ul class="submenu">
-                                <li><a href="keluar_mengundi.aspx">Keluar Mengundi</a></li>
+                                <li class="has-submenu">
+                                    <a href="#"><i class="md md-find-in-page"></i>Keputusan Pilihanraya</a>
+                                    <ul class="submenu">
+                                        <li><a href="#"><i class="md md-add-circle-outline"></i>Tambah</a></li>
+                                        <li><a href="#"><i class="md md-add"></i>Kemaskini</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="keluar_mengundi"><i class="md md-poll"></i>Keluar Mengundi</a></li>
                             </ul>
                         </li>
-                        <li id="analisis" runat="server">
-                            <a href="analisis_kawasan_view.aspx"><i class="md md-pages"></i>Analisis Kawasan</a>
-                        </li>
+<%--                        <li id="analisis" runat="server">
+                            <a href="analisis_kawasan_view"><i class="md md-place"></i>Analisis Kawasan</a>
+                        </li>--%>
                         <li class="has-submenu" id="tetapan" runat="server">
-                            <a href="#"><i class="md md-pages"></i>Tetapan</a>
+                            <a href="#"><i class="md md-settings"></i>Tetapan</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="parlimen_info_view.aspx">Parlimen Info</a>
+                                    <a href="#"><i class="md md-info"></i>Parlimen Info</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-submenu" id="teta" runat="server">
-                            <a href="tetapan_pentadbir_view.aspx"><i class="fa fa-user-plus"></i>Tetapan Pentadbir</a>
-                        </li>
+                        <%--                        <li class="has-submenu" id="teta" runat="server">
+                            <a href="#"><i class="md md-person-add"></i>Tetapan Pentadbir</a>
+                        </li>--%>
                     </ul>
                     <!-- End navigation menu -->
                 </div>
@@ -164,7 +251,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 visible-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"></i>PRU 13</h1>
+                            <h3 class="m-0 m-t-20 f-s-40 ta-center"><i class="fa fa-flag"> </i><span class="current_election"></span></h3>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 visible-xs">
@@ -177,7 +264,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 hidden-xs">
                         <div class="outer">
-                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"></i>PRU 13</h1>
+                            <h1 class="m-0 m-t-20 f-s-40"><i class="fa fa-flag"> </i><span class="current_election"></span></h1>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 hidden-xs">
@@ -231,25 +318,28 @@
             </div>
         </div>
     </header>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="no-loader">
         <div class="wrapper">
             <div class="container">
-                <%--                <div class="row">
+               <div class="row">
                     <div class="col-sm-12">
-                        <h4>Dashboard Utama</h4>
+                       <%-- <h4>Dashboard Utama</h4>--%>
                         <ol class="breadcrumb p-l-0">
                             <li>
-                                <a href="#"><i class="fa fa-home"></i></a>
+                                <a href="dash"><i class="fa fa-home"></i></a>
                             </li>
                             <li>
-                                <a href="#">Dashboard</a>
+                                <a runat="server" class="no-loader" id="breadcrum_parent"></a>
                             </li>
-                            <li class="active">
-                                <strong>Dashboard Utama</strong>
+                            <li runat="server" id="child_li">
+                                <a href="#" runat="server" id="breadcrum_child"></a>
+                            </li>
+                            <li runat="server" id="grant_child_li">
+                                <strong runat="server" id="breadcrum_grant_child"></strong>
                             </li>
                         </ol>
                     </div>
-                </div>--%>
+                </div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
                 <footer class="footer text-right">
@@ -268,17 +358,18 @@
         <!-- Modal -->
         <div id="sis-ape-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog">
+                <%--<asp:HiddenField ID="hd_password" ClientIDMode="Static" runat="server" />--%>
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Profile Pengguna SIS</h4>
+                        <h4 class="modal-title">Butiran Pengguna SIS</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-1" class="control-label">Login Pengguna</label>
-                                    <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <label for="field-1" class="control-label">Nama Pengguna</label>
+                                    <asp:TextBox ID="txtLogName" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -286,7 +377,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Nama Penuh</label>
-                                    <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtFullName" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -294,32 +385,32 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Kad Pengenalan</label>
-                                    <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtIC" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-1" class="control-label">Position</label>
-                                    <asp:TextBox ID="TextBox4" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <label for="field-1" class="control-label">Jawatan</label>
+                                    <asp:TextBox ID="txtPosition" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <%--<div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Level</label>
                                     <asp:TextBox ID="TextBox5" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <hr>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Kata Laluan Baru</label>
-                                    <asp:TextBox ID="TextBox6" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="txtNewPassword" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -327,23 +418,31 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Pengesahan Kata Laluan Baru</label>
-                                    <asp:TextBox ID="TextBox7" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="txtConfirmPassword" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="alert alert-danger alert-dismissable" id="valid_match" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p><b>Passwords do not match</b>!</p>
+                    </div>
+                    <div class="alert alert-danger alert-dismissable" id="valid_empty" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <p>Please check , you have some form <b>errors</b>!</p>
+                    </div>
                     <div class="modal-footer">
-                        <asp:Button ID="Button1" CssClass="btn btn-success" runat="server" Text="Kemaskini" />
-                        <asp:Button ID="Button2" CssClass="btn btn-info waves-light" runat="server" Text="Batal" />
+                        <asp:Button ID="btnSubmit" CssClass="btn btn-success" runat="server" Text="Kemaskini" />
+                        <asp:Button ID="btnClear" CssClass="btn btn-info waves-light" runat="server" Text="Batal"/>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.modal -->
     </form>
-
     <!-- jQuery  -->
-    <%--<script src="../assets/js/jquery.min.js"></script>--%>
+    <script src="../assets/js/jquery.min.js"></script>
+    <%--    <script src="../assets/js/bootstrap.min.js"></script>--%>
     <script src="../assets/js/detect.js"></script>
     <script src="../assets/js/fastclick.js"></script>
     <script src="../assets/js/jquery.blockUI.js"></script>
@@ -351,8 +450,15 @@
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/jquery.nicescroll.js"></script>
     <script src="../assets/js/jquery.scrollTo.min.js"></script>
+    <script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- peity charts -->
+    <script src="../assets/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../assets/pages/jquery.peity.init.js"></script>
+
+    <%--<script src="../assets/plugins/scroller/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>--%>
 
     <!-- Datatables-->
+
     <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../assets/plugins/datatables/dataTables.bootstrap.js"></script>
     <script src="../assets/plugins/datatables/dataTables.buttons.min.js"></script>
@@ -378,6 +484,9 @@
     <!-- skycons -->
     <script src="../assets/plugins/skyicons/skycons.min.js" type="text/javascript"></script>
 
+    <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
+    <script src="../assets/plugins/moment/moment.js"></script>
+
     <!-- Page js  -->
     <script src="../assets/pages/jquery.dashboard.js"></script>
 
@@ -388,10 +497,53 @@
     <!-- Custom DataTable Init Js -->
     <script src="../assets/js/DT/checker.js"></script>
     <script src="../assets/js/DT/lamporan.js"></script>
+    <script src="../assets/js/core_sn.js"></script>
 
-    <script src="../assets/js/countdown/jquery.lwtCountdown-1.0.js"></script>
-    <script src="../assets/plugins/moment/moment.js"></script>
+    <!-- Validation js -->
+    <script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../assets/js/Validations/tetapan_pentadbir_add.js"></script>
+    <script src="../assets/js/Validations/detail_info.js"></script>
+
+    <!-- Datepicker -->
+    <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Datetimepicker -->
+    <script src="../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+
+    <!-- Jquery Custom Validation -->
+    <script src="../assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../assets/plugins/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="../assets/js/Validations/custom_laporanactivity.js"></script>
+    <script src="../assets/js/Validations/parliment_info.js"></script>
+    <script src="../assets/js/Validations/password_check.js"></script>
+    <script src="../assets/js/Validations/activiti_bakal.js"></script>
+    <script src="../assets/js/Validations/activiti_parti_add.js"></script>    
+    <script src="../assets/js/Validations/keluar_mengundi.js"></script>
+    <script src="../assets/js/Validations/activiti_bakal_ci_views.js"></script>
+    <script src="../assets/js/Validations/candidate_profile_list.js"></script>
+    <script src="../assets/js/Validations/cand_profile.js"></script>
+    <script src="../assets/js/Validations/cand_profile_update.js"></script>
+
+    <%--Masonry--%>
+    <script src="../assets/js/masonry/masonry.min.js"></script>
+
+    <!-- Searchable Dropdown -->
+    <script src="../assets/js/jquery.searchabledropdown.min.js"></script>
+
+    <!-- Timeout -->
+    <script src="../assets/plugins/timeout/session_timeout.min.js"></script>
+
+    <%--chosen--%>
+    <script src="../assets/plugins/chosen/chosen.jquery.js"></script>
+    <script src="../assets/plugins/chosen/chosen.proto.js"></script>
+
+    <%--Custom Select--%>
+    <script src="../assets/plugins/Customselect/jquery-customselect.js"></script>
+
     <script type="text/javascript">
+
         jQuery(document).ready(function ($) {
             $('.counter').counterUp({
                 delay: 100,
@@ -401,28 +553,10 @@
             get_date();
             get_time();
             watch();
-
+            election();
         });
-
-        /* BEGIN SVG WEATHER ICON */
-        if (typeof Skycons !== 'undefined') {
-            var icons = new Skycons(
-                { "color": "#3bafda" },
-                { "resizeClear": true }
-                ),
-                list = [
-                    "clear-day", "clear-night", "partly-cloudy-day",
-                    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                    "fog"
-                ],
-                i;
-
-            for (i = list.length; i--;)
-                icons.set(list[i], list[i]);
-            icons.play();
-        };
-
     </script>
+
     <script type="text/javascript">
         function get_date() {
             var today = moment(new Date()).format("DD MMM YYYY");
@@ -430,6 +564,7 @@
             $('#dts').text(today);
         }
     </script>
+
     <script type="text/javascript">
         function get_time() {
             function checkTime(i) {
@@ -473,15 +608,16 @@
             Timer();
         }
     </script>
+
     <script type="text/javascript">
-        function watch() {
+        function watch(d, m, y) {
             if ($.find('#watch')[0]) {
 
                 $('#watch').countDown({
                     targetDate: {
-                        'day': 12,
-                        'month': 03,
-                        'year': 2017,
+                        'day': d,
+                        'month': m,
+                        'year': y,
                         'hour': 12,
                         'min': 00,
                         'sec': 00
@@ -495,5 +631,40 @@
             }
         }
     </script>
+
+    <script type="text/javascript">
+        function validation() {
+            Password_Check.init();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function election() {
+            var cd, d = 0, m = 0, m1 = 0, y = 0;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                data: {},
+                url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("HQ_Utama.aspx/electionInfo")%>',
+                dataType: "json",
+                success: function (data) {
+                    $(".current_election").each(function () {
+                        $(this).text(data.d[0].electionName);
+                    });
+                    cd = new Date(data.d[0].electionDate);
+                    d = cd.getDate();
+                    m = cd.getMonth();
+                    m1 = ++m;
+                    y = cd.getFullYear();
+                    watch(d, m1, y);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                },
+                complete: function (data) {
+                }
+            });
+        }
+    </script>        
 </body>
 </html>

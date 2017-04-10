@@ -39,6 +39,9 @@ namespace SIS_B
         public int dun_id { get; set; }
         public int area_type { get; set; }
         public DateTime ele_date { get; set; }
+        public int elec_id { get; set; }
+        public int coalition_id { get; set; }
+       
         public DataTable fetch_states()
         {
             return data.fetch_state();
@@ -178,7 +181,20 @@ namespace SIS_B
         }
         public DataSet fill_calon_candidates()
         {
-            return data.fill_calon_candidates(state_id);
+            return data.fill_calon_candidates(state_id, elec_id);
+        }
+        public DataTable fill_election_details()
+        {
+            return data.fill_election_details();
+        }
+        public DataSet fill_results()
+        {
+            return data.fill_results(elec_id,state_id);
+        }
+        public DataSet fill_scoresheet()
+        {
+           
+            return data.fill_scoresheet(elec_id, state_id,area_type,coalition_id);
         }
         
     }

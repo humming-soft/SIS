@@ -329,6 +329,15 @@ namespace SIS_V.state
                 {
                     bus.add_info = TextBox37.Text;
                 }
+                if (FileUpload2.HasFile)
+                {
+                    string filename = FileUpload2.FileName;
+                    System.IO.Stream fs2 = FileUpload2.PostedFile.InputStream;
+                    System.IO.BinaryReader br2 = new System.IO.BinaryReader(fs2);
+                    Byte[] bytes2 = br2.ReadBytes((Int32)fs2.Length);
+                    bus.archive = bytes2;
+                    bus.archivename = filename;
+                }
                 int result = bus.add_candidate();
                 if (result == 1)
                 {

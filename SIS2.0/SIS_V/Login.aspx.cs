@@ -103,7 +103,7 @@ namespace SIS_V
                 }
                 else if (int.Parse(Session["role"].ToString()) == 2) // HQ
                 {
-                    Response.Redirect("~/hq/WebForm1");
+                    Response.Redirect("~/hq/HQ_Dash");
                 }
                 else if (int.Parse(Session["role"].ToString()) == 3) // State
                 {

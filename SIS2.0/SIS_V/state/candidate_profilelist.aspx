@@ -21,6 +21,12 @@
                 <h4 class="m-t-0 header-title"><b>TAMBAH PROFIL BAKAL CALON / INDIVIDU</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <asp:Label ID="lblvalid" runat="server"></asp:Label>
+                    </div>
+                </div>
+                <div class="col-md-12">
                     <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                         <asp:Label ID="lblinvalid" runat="server"></asp:Label>
@@ -70,9 +76,16 @@
                                 <asp:BoundField DataField="candidate_ic" HeaderText="Kad Pengenalan Calon" />
                                 <asp:BoundField DataField="name" HeaderText="Nama Calon" />
                                 <asp:BoundField DataField="party_name_bm" HeaderText="Parti" />
+                                <asp:TemplateField HeaderText="Fail Archives">
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("original_filename") %>'></asp:Label>
+                                        <asp:LinkButton ID="lnkdownload" Enabled='<%# Eval("original_filename").Equals("Tidak Terdapat") ? false: true %>' CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkdownload_Click" runat="server"></asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Tindakan">
                                     <ItemTemplate>
                                         <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-edit" Font-Underline="False" OnClick="lnkedit_Click"></asp:LinkButton>
+
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

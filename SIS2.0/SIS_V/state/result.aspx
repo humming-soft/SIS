@@ -18,13 +18,11 @@
                                 <div class="col-lg-12">
                                     <div class="file-manager">
                                         <div class="hr-line-dashed"></div>
-                                        <h5>ELECTION TITLES</h5>
+                                        <h5>ELECTION TITLE</h5>
                                         <div class="hr-line-dashed"></div>
                                         <ul class="folder-list folder-list-c" style="padding: 0">
-                                            <li><a href="#"><i class="fa fa-university"></i> PILIHANRAYA UMUM KE - 12</a></li>
-                                            <li><a href="#"><i class="fa fa-university"></i> PILIHANRAYA UMUM KE - 13</a></li>
-                                            <li class="active"><a href="#"><i class="fa fa-university"></i> PILIHANRAYA KECIL N.20 SUNGAI LIMAU, JERAI, KEDAH</a></li>
-                                            <li><a href="#"><i class="fa fa-university"></i> PILIHANRAYA KECIL DUN N.25 KAJANG, SELANGOR</a></li>
+                                            <li><i class="fa fa-university">
+                                                <asp:Label ID="ele_name" runat="server" Text=""></asp:Label></i></a></li>
                                         </ul>
                                         <div class="clearfix"></div>
                                     </div>
@@ -43,7 +41,7 @@
                                 <div class="col-lg-12">
 
                                     <h2 class="font-bold m-b-xs">
-                                        PILIHAN RAYA KECIL N.20 SUNGAI LIMAU, JERAI, KEDAH
+                                        <asp:Label ID="elec_name" runat="server" Text=""></asp:Label>
                                     </h2>
 <%--                                    <small>Many desktop publishing packages and web page editors now.</small>
                                     <div class="m-t-md">
@@ -54,13 +52,17 @@
                                     <h4>ELECTION INFORMATION</h4>
                                     <dl class="dl-horizontal m-t-md" style="min-height:205px">
                                         <dt class="l-h-24">TARIKH PILIHANRAYA</dt>
-                                        <dd>04/11/2013</dd>
+                                        <dd>
+                                            <asp:Label ID="ele_date" runat="server" Text=""></asp:Label></dd>
                                         <dt class="l-h-24">TARIKH MULA KEMPEN</dt>
-                                        <dd>23/10/2013</dd>
+                                        <dd>
+                                            <asp:Label ID="ele_campign_start" runat="server" Text=""></asp:Label></dd>
                                         <dt class="l-h-24">TARIKH AKHIR KEMPEN</dt>
-                                        <dd>03/11/2013</dd>
+                                        <dd>
+                                            <asp:Label ID="ele_campign_end" runat="server" Text=""></asp:Label></dd>
                                         <dt class="l-h-24">BUTIRAN</dt>
-                                        <dd>Suruhanjaya Pilihan Raya (SPR) telah menerima pemakluman rasmi daripada Speaker Dewan Undangan Negeri Kedah pada 29 September 2013 (Ahad) berhubang dengan kekosongan kerusi bahagian pilihan raya Dewan Undangan Negeri (DUN) N.20 Sungai Limau, Kedah, berikutan kematian Ahli Dewan Undangan Negeri, Y.B. Tan Sri Azizan bin Abd.</dd>
+                                        <dd>
+                                            <asp:Label ID="ele_details" runat="server" Text="Label"></asp:Label></dd>
                                     </dl>
                                     <hr>
                                     <div>
