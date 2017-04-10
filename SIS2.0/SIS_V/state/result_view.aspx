@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title" style="font-size: 25px; text-align: center; line-height: 25px;"><i class="fa fa-university"></i><b>KEPUTUSAN PILIHANRAYA KECIL N.20 SUNGAI LIMAU, JERAI, KEDAH</b></h4>
+                <h4 class="m-t-0 header-title" style="font-size: 25px; text-align: center; line-height: 25px;"><i class="fa fa-university"></i><b>KEPUTUSAN PILIHANRAYA  <asp:Label ID="lbl_ele_name" runat="server" Text=""></asp:Label> - <asp:Label ID="lbl_state_name" runat="server" Text="Label"></asp:Label></b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="hr-line-dashed"></div>
                 <div class="row">
@@ -22,7 +22,7 @@
                                     <div class="col-lg-12">
                                         <ul class="sortable-list connectList agile-list ui-sortable">
                                             <li class="success-element-both">
-                                                <asp:LinkButton ID="lnk_par_all" runat="server" CommandName="redirect" CommandArgument='<%# string.Concat("-1", ",","1")%>'  OnClick="lnk_par_all_Click">
+                                                <asp:LinkButton ID="lnk_par_all" runat="server" CommandName="redirect" CommandArgument="-1,1"  OnClick="lnk_par_all_Click">
                                                 <div class="agile-detail">
                                                     <div class="chat-user">
                                                         <div class="vertical-timeline-icon gray-bg pull-right" style="border-radius: 0px">
@@ -88,7 +88,7 @@
 
                                         <ul class="sortable-list connectList agile-list ui-sortable">
                                             <li class="success-element-both">
-                                                <asp:LinkButton ID="lnk_dun_all" runat="server" CommandName="redirect" CommandArgument='<%# string.Concat("-1", ",","2")%>'  OnClick="lnk_dun_all_Click">
+                                                <asp:LinkButton ID="lnk_dun_all" runat="server" CommandName="redirect" CommandArgument="-1,2" OnClick="lnk_dun_all_Click">
                                                 <div class="agile-detail">
                                                     <div class="chat-user">
                                                         <div class="vertical-timeline-icon gray-bg pull-right" style="border-radius: 0px">

@@ -191,6 +191,11 @@ namespace SIS_B
         {
             return data.fill_results(elec_id,state_id);
         }
+        public DataSet fill_scoresheet()
+        {
+           
+            return data.fill_scoresheet(elec_id, state_id,area_type,coalition_id);
+        }
         
     }
 }
