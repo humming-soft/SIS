@@ -112,6 +112,9 @@
                 $('#txtperc').val(this.className);
             });
         });
+        function val_el_u() {
+            Election_Result.init();
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -254,7 +257,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="btn-block">
-                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" Text="SIMPAN" />
+                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" OnClientClick="val_el_u()" Text="SIMPAN" />
                         </div>
                     </div>
                 </div>

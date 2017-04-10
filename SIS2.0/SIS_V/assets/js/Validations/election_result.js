@@ -26,7 +26,7 @@ var Election_Result = function () {
                 ctl00$ContentPlaceHolder1$txtjkutd: {
                     number: true
                 },
-                ctl00$ContentPlaceHolder1$txtperc: {
+                ctl00$ContentPlaceHolder1$txtper: {
                     number: true,
                     min: 0,
                     max: 100,
