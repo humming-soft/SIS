@@ -198,6 +198,34 @@ namespace SIS_V.state
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
+                case "result":
+                    Session["pre_page"] = "Keputusan Pilihanraya";
+                    Session["pre_url"] = "result";
+                    dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Keputusan Pilihanraya";
+                    breadcrum_child.Attributes["class"] = "b-600";
+                    child_li.Attributes["class"] = "active";
+                    grant_child_li.Visible = false;
+                    break;
+                case "result_view":
+                    dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = Session["pre_page"].ToString();
+                    breadcrum_child.Attributes["href"] = Session["pre_url"].ToString();
+                    breadcrum_grant_child.InnerText = "Keputusan Pilihanraya Negeri";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
+                case "result_desc":
+                    dash.Attributes["class"] = "has-submenu active";
+                    breadcrum_parent.InnerText = "Dashboard";
+                    breadcrum_child.InnerText = "Keputusan Pilihanraya";
+                    breadcrum_child.Attributes["href"] = "result_view";
+                    breadcrum_grant_child.InnerText = "Keputusan Pilihanraya Details";
+                    grant_child_li.Attributes["class"] = "active";
+                    breadcrum_grant_child.Attributes["class"] = "b-600";
+                    break;
                 case "activiti_bakal_ci_view":
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";

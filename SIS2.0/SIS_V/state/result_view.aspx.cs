@@ -31,6 +31,8 @@ namespace SIS_V.state
                 }
                 else
                 {
+                    lbl_ele_name.Text = Session["election"].ToString();
+                    lbl_state_name.Text = Session["statename"].ToString();
                     objBus.state_id = int.Parse(Session["state"].ToString());
                     objBus.elec_id = int.Parse(Session["election_id"].ToString());
                     fill_result();

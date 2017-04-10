@@ -13,6 +13,24 @@ namespace SIS_V.state {
     public partial class result_view {
         
         /// <summary>
+        /// lbl_ele_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_ele_name;
+        
+        /// <summary>
+        /// lbl_state_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_state_name;
+        
+        /// <summary>
         /// lbl_state1 control.
         /// </summary>
         /// <remarks>
