@@ -32,6 +32,37 @@ namespace SIS_B
 
         public string status { get; set; }
 
+        public string candidateIc { get; set; }
+
+        public int candidate_id { get; set; }
+
+        public int election_id { get; set; }
+
+        public int choice_id { get; set; }
+
+        public int is_incumbent { get; set; }
+
+        public int agency_id { get; set; }
+
+        public string justification { get; set; }
+
+        public DateTime source_date { get; set; }
+
+        public string name { get; set; }
+
+        public string job { get; set; }
+
+        public string political_post { get; set; }
+
+        public string education { get; set; }
+
+        public byte[] archive { get; set; }
+
+        public string fileName { get; set; }
+
+        public string uniqueFilename { get; set; }
+
+        public int archive_id { get; set; }
         //Release-2
 
         public DataTable fill_lamporan()
@@ -156,6 +187,52 @@ namespace SIS_B
         public DataSet fill_candidate_dun()
         {
             return data.data_candidate_dun("sp_GetConDetDashboardWinnableCandidate_dun", area_id);
+        }
+
+        //Dev-II
+
+        public DataTable fill_Candidates()
+        {
+            return data.data_partyList("sp_GetAllCandidate");
+        }
+
+        public DataTable fill_Candidate_info()
+        {
+            return data.data_CandiateInfo("sp_GetCandidateProfileByCandidateIc", candidateIc);
+        }
+
+        public DataTable fill_Agencies()
+        {
+            return data.data_partyList("usp_GetAllAgencies");
+        }
+
+        public int insert_WinnableArea()
+        {
+            return data.data_InsertWinnableArea(candidate_id,area_id,election_id,choice_id,is_incumbent);
+        }
+        public int insert_WinnableAreaSource()
+        {
+            return data.data_InsertWinnableAreaSource(area_id,agency_id,justification,source_date);
+        }
+
+        public int insert_WinnableCandidate()
+        {
+            return data.data_InsertWinnableCandidate(candidate_id, name, job, education, political_post, comment);
+        }
+
+        public int insert_WinnableArchive()
+        {
+            return data.data_InsertWinnableAreaArchive(candidate_id, comment, fileName, uniqueFilename);
+        }
+
+        public int update_WinnableArchiveFile()
+        {
+            return data.data_UpdateWinnableArchiveFile(archive_id, archive);
+        }
+
+        public int check_WinnableCandidateExists()
+        {
+            return data.data_WinnableCandiateExists(choice_id,area_id,election_id);
         }
     }
 }

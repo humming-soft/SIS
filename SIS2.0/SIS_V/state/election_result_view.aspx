@@ -83,7 +83,8 @@
             $("#tb tr").each(function () {
             fvals +=  $(this).find("td:eq(0)").text() + ' : ' + $(this).find("td:eq(1)").text() +'%, ';
             });
-            slice = fvals.replace(/,\s*$/, ""); // removing the last comma reference from http://stackoverflow.com/questions/17720264/remove-last-comma-from-a-string
+            slice = "";
+            slice = fvals.replace(/,\s*$/, ""); // removing the last comma reference from stackoverflow.com/questions/17720264/remove-last-comma-from-a-string
             $('#txtpk').val(slice).change();
             $('#tabular tbody').html("");
             $('#txttperc').val("");
