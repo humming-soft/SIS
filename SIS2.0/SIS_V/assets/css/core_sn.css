@@ -859,3 +859,6 @@ a.list-group-item.active .list-group-item-text, a.list-group-item.active:hover .
     font-size: 12px;
     line-height: inherit;
 }
+.max-height-210{
+    max-height:210px !important;
+}
