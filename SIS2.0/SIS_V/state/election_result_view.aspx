@@ -98,7 +98,7 @@
             slice = fvals.replace(/,\s*$/, ""); // removing the last comma reference from stackoverflow.com/questions/17720264/remove-last-comma-from-a-string
             $('#txtpk').val(slice).change();
             $('#tabular tbody').html("");
-            $('#txttperc').val("");
+            $('#txttperc').val("0");
         }
         $(document).ready(function () {
             $('#lnkkamaskini').prop('disabled', true);
@@ -216,7 +216,7 @@
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <asp:GridView ID="candidate_list" CssClass="table table-bordered dt-responsive nowrap m-t-10 tablec" runat="server" ClientIDMode="Static" AutoGenerateColumns="False" OnRowEditing="candidate_list_RowEditing" OnRowCancelingEdit="candidate_list_RowCancelingEdit" OnRowUpdating="candidate_list_RowUpdating">
+                                        <asp:GridView ID="candidate_list" CssClass="table table-bordered dt-responsive nowrap m-t-10 tablec" runat="server" ClientIDMode="Static" AutoGenerateColumns="False" OnRowEditing="candidate_list_RowEditing" OnRowCancelingEdit="candidate_list_RowCancelingEdit" OnRowUpdating="candidate_list_RowUpdating" DataKeyNames="election_result_id,candidate_id,party_id,coalition_id">
                                             <Columns>
                                                 <asp:BoundField HeaderText="NAMA CALON BERTANDING" DataField="candidate_name" ReadOnly="true"></asp:BoundField>
                                                 <asp:BoundField HeaderText="PARTI" DataField="party_shortcode" ReadOnly="true"></asp:BoundField>

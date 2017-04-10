@@ -111,7 +111,12 @@ namespace SIS_V.state
 
         protected void candidate_list_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            int elec_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[0].ToString());
+            int stat_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[1].ToString());
+            int are_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[2].ToString());
+            int res_id = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[3].ToString());
         }
     }
 }
