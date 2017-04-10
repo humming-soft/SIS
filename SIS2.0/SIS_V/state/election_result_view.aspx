@@ -2,53 +2,41 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
+        var rowid;
         function add_to_table() {
-            var rowCount = $('#tb tr').length;
-            if (rowCount > 0) {
-            $("#tb tr").each(function () {
-                alert($(this).id);
-            });
+            var checker = []; // create an array
+            var rowCount = $('#tb tr').length; // get the row count
+            if (rowCount == 0) { // if row count is zero just append
+                $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                $('#txttperc').val($('#txtperc').val());
+            }
+            else { // if row count is not zero loop through the current table and push the values into array
+                $("#tb tr").each(function () {
+                    checker.push($(this).attr("id"));
+                });
+
+                // check the new selected value in the array
+                var finder = checker.includes($('#ddlraces').val());
+                if (finder == true) // if finder is true the value is already added for that race, false means not added
+                {
+                    alert('Value already Added');
+                }
+                else {
+                    $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                }
+
+            }
+
+        }
+        function del_frm_table() {
+            $('#'+ rowid).remove();
         }
 
-
-
-
-
-            //alert($('#ddlraces').val() + ' - ' + $('#ddlraces option:selected').text() + ' - ' + $('#txtperc').val());
-            //var checker = [];
-            //var rowCount = $('#tb tr').length;
-            //if (rowCount == 0) {
-            //    $('#tb').append('<tr id=' + $('#ddlraces').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
-            //}
-            //else {
-                //$("#tb tr").each(function () {
-                //    alert($(this).id);
-                //    if ($("tr:contains(" + texttocheck + ")")) {
-                //        alert("Value already added");
-                //    }
-                //    else {
-                //        $('#tb').append('<tr id=' + $('#ddlraces').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
-                //    }
-                //});
-                //var pid = $('#ddlraces').val();
-                //var table = $('#tb');
-                //var check_value = $(table).find("tr").data('id');
-
-                //alert(pid);
-                //alert(check_value);
-
-                //if (check_value == pid) {
-                //    alert("ID exist")
-                //}
-                //else {
-                //    alert("Not exist");
-                //}
-            //}
-           
-        }
         $(document).ready(function () {
             $(document).on("click", "#tb tr", function (e) {
-                alert(this.id);
+                //alert(this.id + ' - ' + this.className);
+                rowid = this.id;
+                $('#ddl_races').val('"'+ rowid +'"');
             });
         });
     </script>
@@ -252,7 +240,7 @@
                             <asp:LinkButton ID="lnkkamaskini" runat="server" CssClass="btn btn-primary w100 kamaskini"><i class="fa fa-plus"></i> KAMASKINI</asp:LinkButton>
                         </div>
                         <div class="col-lg-4">
-                            <asp:LinkButton ID="lnkdelete" runat="server" CssClass="btn btn-danger w100 hapus"><i class="fa fa-trash"></i> HAPUS</asp:LinkButton>
+                            <button type="button" id="lnkdelete" class="btn btn-danger w100 hapus" onclick="del_frm_table()"><i class="fa fa-trash"></i>HAPUS</button>
                         </div>
                     </div>
                     <div class="row m-t-15">
@@ -266,9 +254,11 @@
                                                 <th>PERATUS</th>
                                             </tr>
                                         </thead>
+                                        <tbody id="tb">
+                                        </tbody>
                                     </table>
-                                    <table id="tb" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
-                                    </table>
+                                    <%--                                    <table id="tb" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
+                                    </table>--%>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +267,7 @@
                         <div class="col-lg-12">
                             <label class="control-label" for="example-input1-group2">JUMLAH KESELURUHAN</label>
                             <div class="input-group">
-                                <asp:TextBox ID="TextBox8" runat="server" CssClass="input form-control" placeholder="0"></asp:TextBox>
+                                <asp:TextBox ID="txttperc" runat="server" ReadOnly="true" CssClass="input form-control" ClientIDMode="Static"></asp:TextBox>
                                 <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                             </div>
                         </div>
