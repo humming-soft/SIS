@@ -112,8 +112,10 @@
                 $('#txtperc').val(this.className);
             });
         });
+    </script>
+    <script type="text/javascript">
         function val_el_u() {
-            Election_Result.init();
+            Election_ResultA.init();
         }
     </script>
 </asp:Content>
@@ -177,7 +179,7 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="">PERATUS PENGUNDIAN </label>
-                                            <asp:TextBox ID="txtper" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="txtper" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
