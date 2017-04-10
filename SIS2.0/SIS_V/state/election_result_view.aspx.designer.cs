@@ -148,15 +148,6 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.TextBox txtperc;
         
         /// <summary>
-        /// lnkkamaskini control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkkamaskini;
-        
-        /// <summary>
         /// txttperc control.
         /// </summary>
         /// <remarks>
@@ -164,14 +155,5 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txttperc;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

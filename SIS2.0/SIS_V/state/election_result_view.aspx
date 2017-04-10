@@ -3,40 +3,101 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         var rowid;
+        var totp = 0;
+        var fvals ="";
         function add_to_table() {
-            var checker = []; // create an array
-            var rowCount = $('#tb tr').length; // get the row count
-            if (rowCount == 0) { // if row count is zero just append
-                $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
-                $('#txttperc').val($('#txtperc').val());
-            }
-            else { // if row count is not zero loop through the current table and push the values into array
-                $("#tb tr").each(function () {
-                    checker.push($(this).attr("id"));
-                });
+            if ($('#ddlraces').val() != "" && $('#txtperc').val() != "") {
+                var checker = []; // create an array
+                var rowCount = $('#tb tr').length; // get the row count
+                if (rowCount == 0) { // if row count is zero just append
+                    $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() +' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                    $('#txttperc').val($('#txtperc').val());
+                    $('#ddlraces').val("");
+                    $('#txtperc').val('');
 
-                // check the new selected value in the array
-                var finder = checker.includes($('#ddlraces').val());
-                if (finder == true) // if finder is true the value is already added for that race, false means not added
-                {
-                    alert('Value already Added');
                 }
-                else {
-                    $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                else { // if row count is not zero loop through the current table and push the values into array
+                    $("#tb tr").each(function () {
+                        checker.push($(this).attr("id"));
+                    });
+
+                    // check the new selected value in the array
+                    var finder = checker.includes($('#ddlraces').val());
+                    if (finder == true) // if finder is true the value is already added for that race, false means not added
+                    {
+                        alert('Value already Added');
+                    }
+                    else {
+                        totp = 0;
+                        $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + ' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                        $("#tb tr").each(function () {
+                            totp += parseInt($(this).attr("class"));
+                        });
+                        $('#ddlraces').val("");
+                        $('#txtperc').val('');
+                        $('#txttperc').val(totp);
+                    }
+
                 }
-
             }
-
+            else {
+                alert('Select Any Race and Enter Value!')
+            }
         }
+
         function del_frm_table() {
-            $('#'+ rowid).remove();
+            $('#' + rowid).remove();
+            $('#lnkkamaskini').prop('disabled', true);
+            $('#lnkdelete').prop('disabled', true);
+            $('#lnktambah').prop('disabled', false);
+            $('#ddlraces').val("");
+            $('#txtperc').val('');
+            totp = 0;
+            $("#tb tr").each(function () {
+                totp += parseInt($(this).attr("class"));
+            });
+            $('#txttperc').val(totp);
+            var rcount = $('#tb tr').length;
+            if(rcount == 0)
+            {
+                $('#lnktambah').prop('disabled', false);
+                $('#lnkkamaskini').prop('disabled', true);
+                $('#lnkdelete').prop('disabled', true);
+                $('#ddlraces').val("");
+                $('#txtperc').val('');
+            }
         }
 
+        function up_table() {
+            //first remove the row then add new row with the updated values, also can select new race at the same time
+            $('#' + rowid).remove();
+            $('#lnkkamaskini').prop('disabled', true);
+            $('#lnkdelete').prop('disabled', true);
+            add_to_table();
+            $('#lnktambah').prop('disabled', false);
+            $('#lnkkamaskini').prop('disabled', true);
+            $('#lnkdelete').prop('disabled', true);
+        }
+
+        function get_values(){
+            $("#tb tr").each(function () {
+            fvals +=  $(this).find("td:eq(0)").text() + ' : ' + $(this).find("td:eq(1)").text() +'%, ';
+            });
+            slice = fvals.replace(/,\s*$/, ""); // removing the last comma reference from http://stackoverflow.com/questions/17720264/remove-last-comma-from-a-string
+            $('#txtpk').val(slice).change();
+            $('#tabular tbody').html("");
+            $('#txttperc').val("");
+        }
         $(document).ready(function () {
+            $('#lnkkamaskini').prop('disabled', true);
+            $('#lnkdelete').prop('disabled', true);
             $(document).on("click", "#tb tr", function (e) {
-                //alert(this.id + ' - ' + this.className);
+                $('#lnktambah').prop('disabled', true);
+                $('#lnkkamaskini').prop('disabled', false);
+                $('#lnkdelete').prop('disabled', false);
                 rowid = this.id;
-                $('#ddl_races').val('"'+ rowid +'"');
+                $('#ddlraces').val(this.id).change();
+                $('#txtperc').val(this.className);
             });
         });
     </script>
@@ -58,7 +119,7 @@
                                     <div class="col-lg-10">
                                         <label class="control-label" for="example-input1-group2">PECAHAN KAUM</label>
                                         <div class="input-group form-group">
-                                            <asp:TextBox ID="txtpk" runat="server" CssClass="input form-control"></asp:TextBox>
+                                            <asp:TextBox ID="txtpk" runat="server" CssClass="input form-control" ClientIDMode="Static"></asp:TextBox>
                                             <span class="input-group-btn">
                                                 <button type="button" data-toggle="modal" data-target="#percent-modal" class="btn waves-effect waves-light btn-primary">KEMASKINI KAUM</button>
                                             </span>
@@ -210,7 +271,6 @@
     <!-- Modal -->
     <div id="percent-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
-            <%--<asp:HiddenField ID="hd_password" ClientIDMode="Static" runat="server" />--%>
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -234,13 +294,12 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <button type="button" id="lnktambah" class="btn btn-success w100" onclick="add_to_table()"><i class="fa fa-plus"></i>TAMBAH</button>
-                            <%--<asp:LinkButton ID="lnktambah" runat="server" CssClass="btn btn-success w100 tambah" ClientIDMode="Static" OnClientClick="add_to_table()"><i class="fa fa-plus"></i> TAMBAH</asp:LinkButton>--%>
                         </div>
                         <div class="col-lg-4">
-                            <asp:LinkButton ID="lnkkamaskini" runat="server" CssClass="btn btn-primary w100 kamaskini"><i class="fa fa-plus"></i> KAMASKINI</asp:LinkButton>
+                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i> KAMASKINI</button>
                         </div>
                         <div class="col-lg-4">
-                            <button type="button" id="lnkdelete" class="btn btn-danger w100 hapus" onclick="del_frm_table()"><i class="fa fa-trash"></i>HAPUS</button>
+                            <button type="button" id="lnkdelete" class="btn btn-danger w100" onclick="del_frm_table()"><i class="fa fa-trash"></i>HAPUS</button>
                         </div>
                     </div>
                     <div class="row m-t-15">
@@ -257,8 +316,6 @@
                                         <tbody id="tb">
                                         </tbody>
                                     </table>
-                                    <%--                                    <table id="tb" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
-                                    </table>--%>
                                 </div>
                             </div>
                         </div>
@@ -274,8 +331,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="btnSubmit" CssClass="btn btn-success" runat="server" Text="OK" />
-                    <button id="btnClear" class="btn btn-info waves-light">BATAL</button>
+                    <button type="button" id="btnSubmit" class="btn btn-success" onclick="get_values()" data-dismiss="modal" >OK</button>
+                    <button type="button" id="btnClear" class="btn btn-info waves-light">BATAL</button>
                 </div>
             </div>
         </div>
