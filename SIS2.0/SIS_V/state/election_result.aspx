@@ -4,10 +4,6 @@
         $(document).ready(function () {
             $("#ddlName").customselect();
         });
-
-        function validation_election() {
-            Election_Result.init();
-        }
 <%--        function fill_penyandang() {
             var area_id = $('#ContentPlaceHolder1_ddlArea option:selected').val();
             var election_id = '<%= Session["election_id"] %>';

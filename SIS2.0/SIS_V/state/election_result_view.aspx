@@ -1,43 +1,55 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/state/state_master.Master" AutoEventWireup="true" CodeBehind="election_result_view.aspx.cs" Inherits="SIS_V.state.election_result_view" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .hideGridColumn {
+            display: none;
+        }
+    </style>
     <script type="text/javascript">
         var rowid;
         var totp = 0;
-        var fvals ="";
+        var fvals = "";
+        var gper = 0;
         function add_to_table() {
             if ($('#ddlraces').val() != "" && $('#txtperc').val() != "") {
-                var checker = []; // create an array
-                var rowCount = $('#tb tr').length; // get the row count
-                if (rowCount == 0) { // if row count is zero just append
-                    $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() +' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
-                    $('#txttperc').val($('#txtperc').val());
-                    $('#ddlraces').val("");
-                    $('#txtperc').val('');
-
-                }
-                else { // if row count is not zero loop through the current table and push the values into array
-                    $("#tb tr").each(function () {
-                        checker.push($(this).attr("id"));
-                    });
-
-                    // check the new selected value in the array
-                    var finder = checker.includes($('#ddlraces').val());
-                    if (finder == true) // if finder is true the value is already added for that race, false means not added
-                    {
-                        alert('Value already Added');
-                    }
-                    else {
-                        totp = 0;
+                gper = parseInt($('#txttperc').val()) + parseInt($('#txtperc').val());
+                if (gper <= 100) { // check the total percentage if greater than 100 don't add
+                    var checker = []; // create an array
+                    var rowCount = $('#tb tr').length; // get the row count
+                    if (rowCount == 0) { // if row count is zero just append
                         $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + ' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
-                        $("#tb tr").each(function () {
-                            totp += parseInt($(this).attr("class"));
-                        });
+                        $('#txttperc').val($('#txtperc').val());
                         $('#ddlraces').val("");
                         $('#txtperc').val('');
-                        $('#txttperc').val(totp);
-                    }
 
+                    }
+                    else { // if row count is not zero loop through the current table and push the values into array
+                        $("#tb tr").each(function () {
+                            checker.push($(this).attr("id"));
+                        });
+
+                        // check the new selected value in the array
+                        var finder = checker.includes($('#ddlraces').val());
+                        if (finder == true) // if finder is true the value is already added for that race, false means not added
+                        {
+                            alert('Value already Added');
+                        }
+                        else {
+                            totp = 0;
+                            $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + ' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                            $("#tb tr").each(function () {
+                                totp += parseInt($(this).attr("class"));
+                            });
+                            $('#ddlraces').val("");
+                            $('#txtperc').val('');
+                            $('#txttperc').val(totp);
+                        }
+
+                    }
+                }
+                else {
+                    alert('Total Percentage Cannot be greater than 100 !')
                 }
             }
             else {
@@ -58,8 +70,7 @@
             });
             $('#txttperc').val(totp);
             var rcount = $('#tb tr').length;
-            if(rcount == 0)
-            {
+            if (rcount == 0) {
                 $('#lnktambah').prop('disabled', false);
                 $('#lnkkamaskini').prop('disabled', true);
                 $('#lnkdelete').prop('disabled', true);
@@ -79,15 +90,15 @@
             $('#lnkdelete').prop('disabled', true);
         }
 
-        function get_values(){
+        function get_values() {
             $("#tb tr").each(function () {
-            fvals +=  $(this).find("td:eq(0)").text() + ' : ' + $(this).find("td:eq(1)").text() +'%, ';
+                fvals += $(this).find("td:eq(0)").text() + ' : ' + $(this).find("td:eq(1)").text() + '%, ';
             });
             slice = "";
             slice = fvals.replace(/,\s*$/, ""); // removing the last comma reference from stackoverflow.com/questions/17720264/remove-last-comma-from-a-string
             $('#txtpk').val(slice).change();
             $('#tabular tbody').html("");
-            $('#txttperc').val("");
+            $('#txttperc').val("0");
         }
         $(document).ready(function () {
             $('#lnkkamaskini').prop('disabled', true);
@@ -101,6 +112,11 @@
                 $('#txtperc').val(this.className);
             });
         });
+    </script>
+    <script type="text/javascript">
+        function val_el_u() {
+            Election_ResultA.init();
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -163,7 +179,7 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="">PERATUS PENGUNDIAN </label>
-                                            <asp:Label ID="lblperc" runat="server" CssClass="form-control"></asp:Label>
+                                            <asp:TextBox ID="txtper" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -199,59 +215,41 @@
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10 tablec">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width: 3%">#</th>
-                                                    <th>NAMA CALON BERTANDING</th>
-                                                    <th style="width: 15%">PARTI</th>
-                                                    <th style="width: 8%">UNDI</th>
-                                                    <th style="width: 8%">PEMENANG</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Abu Hassan bin Sarif</td>
-                                                    <td>( BN - UMNO )</td>
-                                                    <td>10777</td>
-                                                    <td>
-                                                        <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Ismail BIn W.Teh @ Jaziz</td>
-                                                    <td>( PAS )</td>
-                                                    <td>8539</td>
-                                                    <td>
-                                                        <asp:CheckBox ID="CheckBox2" runat="server" /></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="">MAKLUMAT CALON BERTANDING</label>
-                                                    <pre>Abu Hassan bin Sarif ( BN - UMNO )</pre>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="">JUMLAH UNDI CALON</label>
-                                                    <asp:TextBox ID="TextBox7" runat="server" CssClass="input form-control" Text="10777"></asp:TextBox>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <button class="btn btn-success w100">KEMASKINI UNDI CALON</button>
-                                            </div>
-                                        </div>
+                                    <div class="col-lg-12">
+                                        <asp:GridView ID="candidate_list" CssClass="table table-bordered dt-responsive nowrap m-t-10 tablec" runat="server" ClientIDMode="Static" AutoGenerateColumns="False" OnRowEditing="candidate_list_RowEditing" OnRowCancelingEdit="candidate_list_RowCancelingEdit" OnRowUpdating="candidate_list_RowUpdating" DataKeyNames="election_result_id,candidate_id,party_id,coalition_id">
+                                            <Columns>
+                                                <asp:BoundField HeaderText="NAMA CALON BERTANDING" DataField="candidate_name" ReadOnly="true"></asp:BoundField>
+                                                <asp:BoundField HeaderText="PARTI" DataField="party_shortcode" ReadOnly="true"></asp:BoundField>
+                                                <asp:BoundField DataField="winner" HeaderText="Win" HeaderStyle-CssClass="hideGridColumn" ItemStyle-CssClass="hideGridColumn"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="UNDI">
+                                                    <EditItemTemplate>
+                                                        <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="TextBox3"></asp:TextBox>
+                                                    </EditItemTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:Label runat="server" Text='<%# Bind("no_of_vote") %>' ID="Label3"></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+
+                                                <asp:TemplateField HeaderText="PEMENANG">
+                                                    <EditItemTemplate>
+                                                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                                                    </EditItemTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:CheckBox ID="CheckBox2" runat="server" Enabled="false" Checked='<%# Eval("winner").Equals("YES") ? true : false %>' />
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Tindakan">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-pencil no-loader" CommandName="Edit"></asp:LinkButton>
+                                                    </ItemTemplate>
+                                                    <EditItemTemplate>
+                                                        <asp:LinkButton ID="lnkUpdate" runat="server" CssClass="fa fa-refresh no-loader" CommandName="Update"></asp:LinkButton>
+                                                        <asp:LinkButton ID="lnkCancel" runat="server" CssClass="fa fa-close no-loader" CommandName="Cancel"></asp:LinkButton>
+                                                    </EditItemTemplate>
+                                                </asp:TemplateField>
+
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                             </div>
@@ -261,8 +259,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="btn-block">
-                            <button class="btn btn-primary pull-right">PADAM</button>
-                            <button class="btn btn-success pull-right m-r-15">SIMPAN</button>
+                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" OnClientClick="val_el_u()" Text="SIMPAN" />
                         </div>
                     </div>
                 </div>
@@ -297,7 +294,7 @@
                             <button type="button" id="lnktambah" class="btn btn-success w100" onclick="add_to_table()"><i class="fa fa-plus"></i>TAMBAH</button>
                         </div>
                         <div class="col-lg-4">
-                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i> KAMASKINI</button>
+                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i>KAMASKINI</button>
                         </div>
                         <div class="col-lg-4">
                             <button type="button" id="lnkdelete" class="btn btn-danger w100" onclick="del_frm_table()"><i class="fa fa-trash"></i>HAPUS</button>
@@ -325,14 +322,14 @@
                         <div class="col-lg-12">
                             <label class="control-label" for="example-input1-group2">JUMLAH KESELURUHAN</label>
                             <div class="input-group">
-                                <asp:TextBox ID="txttperc" runat="server" ReadOnly="true" CssClass="input form-control" ClientIDMode="Static"></asp:TextBox>
+                                <asp:TextBox ID="txttperc" runat="server" ReadOnly="true" CssClass="input form-control" ClientIDMode="Static" Text="0"></asp:TextBox>
                                 <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="btnSubmit" class="btn btn-success" onclick="get_values()" data-dismiss="modal" >OK</button>
+                    <button type="button" id="btnSubmit" class="btn btn-success" onclick="get_values()" data-dismiss="modal">OK</button>
                     <button type="button" id="btnClear" class="btn btn-info waves-light">BATAL</button>
                 </div>
             </div>

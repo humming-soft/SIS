@@ -608,5 +608,85 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public DataTable candidate_comment(string sp, int cid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_id", cid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable candidate_area(string sp, int cid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_id", cid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable candidate_area_archive(string sp, int cid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_id", cid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        public DataTable winnable_area_sourse(string sp, int cid)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_id", cid);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

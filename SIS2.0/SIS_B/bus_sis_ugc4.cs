@@ -234,5 +234,9 @@ namespace SIS_B
         {
             return data.data_WinnableCandiateExists(choice_id,area_id,election_id);
         }
+        public DataTable fill_candidate_comment()
+        {
+            return data.candidate_comment(" usp_GetWinnableCandidateComment", candidate_id);
+        }
     }
 }
