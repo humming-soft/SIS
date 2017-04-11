@@ -167,7 +167,7 @@ namespace SIS_V.state
                     }
                     cand_imaged = "data:image/png;base64," + base64Stringd;
                     lstDun.Rows.Add(tempdt.Rows[i]["#"].ToString(), tempdt.Rows[i]["candidate_name"].ToString(), cand_imaged, tempdt.Rows[i]["party_shortcode"].ToString(), tempdt.Rows[i]["party_name_bm"].ToString(),
-               tempdt.Rows[i]["candidate_ic"].ToString(), tempdt.Rows[i]["dob"].ToString(), tempdt.Rows[i]["candidate_age"].ToString(), tempdt.Rows[i]["candidate_religion"].ToString());
+                    tempdt.Rows[i]["candidate_ic"].ToString(), tempdt.Rows[i]["dob"].ToString(), tempdt.Rows[i]["candidate_age"].ToString(), tempdt.Rows[i]["candidate_religion"].ToString());
                 }
                 datalstDun.DataSource = lstDun;
                 datalstDun.DataBind();
