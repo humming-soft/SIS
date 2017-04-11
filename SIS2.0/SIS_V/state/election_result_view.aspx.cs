@@ -30,7 +30,7 @@ namespace SIS_V.state
             {
                 if (Session["is_login"].ToString() == "t")
                 {
-                    //txtpk.Attributes.Add("readonly", "readonly");
+                    txtpk.Attributes.Add("readonly", "readonly");
                     fill_result_list();
                     fill_races();
                     fill_cand_list();
@@ -111,17 +111,17 @@ namespace SIS_V.state
 
         protected void candidate_list_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            GridViewRow row = candidate_list.Rows[e.RowIndex];
             bus.ele_r_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[0].ToString());
-                //int.Parse(candidate_list.DataKeys[row.RowIndex].Values[0].ToString());
-            //CheckBox chk = candidate_list.Cells[4].Controls[0] as CheckBox;
-            //if (chk.Checked == true)
-            //{
-            //    bus.cand_id_u = int.Parse(candidate_list.DataKeys[row.RowIndex].Values[1].ToString());
-            //}
-            //else
-            //{
-            //    bus.cand_id_u = 0;
-            //}
+            CheckBox chk = (CheckBox)row.FindControl("CheckBox1");
+            if (chk != null && chk.Checked)
+            {
+                bus.cand_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[1].ToString());
+            }
+            else
+            {
+                bus.cand_id_u = 0;
+            }
             bus.party_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[2].ToString());
             bus.coal_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[3].ToString());
             int up = bus.update_details();

@@ -91,14 +91,16 @@
         }
 
         function get_values() {
+            fvals = "";
             $("#tb tr").each(function () {
                 fvals += $(this).find("td:eq(0)").text() + ' : ' + $(this).find("td:eq(1)").text() + '%, ';
             });
-            slice = "";
-            slice = fvals.replace(/,\s*$/, ""); // removing the last comma reference from stackoverflow.com/questions/17720264/remove-last-comma-from-a-string
-            $('#txtpk').val(slice).change();
+            var slice = " ";
+            slice = fvals.replace(/,\s*$/, ""); // removing the last comma
             $('#tabular tbody').html("");
             $('#txttperc').val("0");
+            $('#txtpk').val("");
+            $('#txtpk').val(slice).change();
         }
         $(document).ready(function () {
             $('#lnkkamaskini').prop('disabled', true);
@@ -232,7 +234,7 @@
 
                                                 <asp:TemplateField HeaderText="PEMENANG">
                                                     <EditItemTemplate>
-                                                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                                                        <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("winner").Equals("YES") ? true : false %>' />
                                                     </EditItemTemplate>
                                                     <ItemTemplate>
                                                         <asp:CheckBox ID="CheckBox2" runat="server" Enabled="false" Checked='<%# Eval("winner").Equals("YES") ? true : false %>' />
@@ -240,7 +242,7 @@
                                                 </asp:TemplateField>
                                                 <asp:TemplateField HeaderText="Tindakan">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-pencil no-loader" CommandName="Edit"></asp:LinkButton>
+                                                        <asp:LinkButton ID="lnkedit" runat="server" CssClass="fa fa-edit no-loader" CommandName="Edit"></asp:LinkButton>
                                                     </ItemTemplate>
                                                     <EditItemTemplate>
                                                         <asp:LinkButton ID="lnkUpdate" runat="server" CssClass="fa fa-refresh no-loader" CommandName="Update"></asp:LinkButton>
