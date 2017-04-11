@@ -17,24 +17,6 @@
  <asp:ScriptManager ID="MainScriptManager" runat="server"></asp:ScriptManager>
     <div class="row">
         <div class="col-md-12">
-           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <asp:updateprogress id="UpdateProgress1" runat="server" associatedupdatepanelid="UpdatePanel1" dynamiclayout="true">
-                        <progresstemplate>
-                                <div class="splash">
-                                    <div class="splash-title">
-                                        <div class="spinner">
-                                            <div class="rect1"></div>
-                                            <div class="rect2"></div>
-                                            <div class="rect3"></div>
-                                            <div class="rect4"></div>
-                                            <div class="rect5"></div>
-                                        </div>
-                                        <h4>Loading..</h4>
-                                    </div>
-                                </div>
-                        </progresstemplate>
-                    </asp:updateprogress>
                     <div class="card-box">
                         <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL CALON BOLEH MENANG</b></h4>
                         <p class="text-muted font-13 m-b-30"></p>
@@ -126,12 +108,12 @@
                                                                             <strong> <%# Eval("education")%> </strong>
                                                                         </li>
                                                                     </ul>
-                                                                    <div class="row">
+<%--                                                                    <div class="row">
                                                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                                             <button type="button" class="btn btn-success w100"><i class="md md-brightness-auto"></i> AKTIVITI</button>
                                                                         </div>
-                                                                    </div>  
-                                                                    <hr />  
+                                                                    </div>  --%>
+                                                                    <%--<hr />  --%>
                                                                     <strong>Komen </strong>
                                                                         <div class="form-group">
                                                                             <asp:TextBox ID="TextBox2" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
@@ -228,190 +210,210 @@
                              </div>
                              <div class="col-lg-9">
                                 <div class="row">
-                                     <div class="panel panel-color panel-custom-info">
-                                        <div class="panel-heading panel-heading-custom">
-                                            <h3 class="panel-title"><i class="fa fa-plus-square"></i> TAMBAH KAWASAN CALON BOLEH MENANG</h3>
-                                        </div>
-                                        <div class="panel-body panel-custom-bg-custom-info">
-                                            <div class="row">
-                                               <div class="col-lg-12">
-                                                    <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>PILIHANRAYA</th>
-                                                                <th>NEGERI</th>
-                                                                <th>KAWASAN</th>
-                                                                <th>PILIHAN</th>
-                                                                <th>PENYANDANG</th>
-                                                                <th>STATUS CALON</th>
-                                                                <th style="width:8%"></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>
-                                                                    <div class="form-group m-b-0">
-                                                                        PILIHANRAYA UMUM KE-13
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        Kelantan
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                       P.20-PENGKALAN CHEPA
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        PILIHAN PERTAMA
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                       BUKAN PENYANDANG
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        BERTANDING
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-trash"></i> </button>
-                                                                    <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-edit"></i> </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>
-                                                                    <div class="form-group m-b-0">
-                                                                        PILIHANRAYA UMUM KE-13
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        Kelantan
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                       P.20-PENGKALAN CHEPA
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        PILIHAN PERTAMA
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                       BUKAN PENYANDANG
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        BERTANDING
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-trash"></i> </button>
-                                                                    <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-edit"></i> </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>
-                                                                    <div class="form-group m-b-0">
-                                                                        PILIHANRAYA UMUM KE-13
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        Kelantan
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                       P.20-PENGKALAN CHEPA
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        PILIHAN PERTAMA
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                       BUKAN PENYANDANG
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        BERTANDING
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-trash"></i> </button>
-                                                                    <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-edit"></i> </button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>
-                                                                    <div class="form-group m-b-0">
-                                                                        <asp:DropDownList ID="DropDownList21" CssClass="form-control" runat="server"></asp:DropDownList>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        <asp:DropDownList ID="DropDownList22" CssClass="form-control" runat="server"></asp:DropDownList>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        <asp:DropDownList ID="DropDownList23" CssClass="form-control" runat="server"></asp:DropDownList>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        <asp:DropDownList ID="DropDownList24" CssClass="form-control" runat="server"></asp:DropDownList>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        <asp:DropDownList ID="DropDownList25" CssClass="form-control" runat="server"></asp:DropDownList>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="form-group  m-b-0">
-                                                                        <asp:DropDownList ID="DropDownList26" CssClass="form-control" runat="server"></asp:DropDownList>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-warning w100" data-toggle="modal" data-target="#resource-modal"><i class="fa fa-globe"></i> PILIH SUMBER</button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>  
-                                               </div>
-                                            <div class="row m-t-30">
-                                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                    <button type="button" class="btn btn-success w100"><i class="fa fa-plus"></i> TAMBAH KAWASAN</button>
-                                                </div>
-                                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                    <button type="button" class="btn btn-primary w100"><i class="fa fa-plus"></i> KEMASKINI KAWASAN</button>
-                                                </div>
-                                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                    <button type="button" class="btn btn-danger w100"><i class="fa fa-trash"></i> HAPUS</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                   <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                        <ContentTemplate>
+                                            <asp:updateprogress id="UpdateProgress1" runat="server" associatedupdatepanelid="UpdatePanel1" dynamiclayout="true">
+                                                <progresstemplate>
+                                                        <div class="splash">
+                                                            <div class="splash-title">
+                                                                <div class="spinner">
+                                                                    <div class="rect1"></div>
+                                                                    <div class="rect2"></div>
+                                                                    <div class="rect3"></div>
+                                                                    <div class="rect4"></div>
+                                                                    <div class="rect5"></div>
+                                                                </div>
+                                                                <h4>Loading..</h4>
+                                                            </div>
+                                                        </div>
+                                                </progresstemplate>
+                                            </asp:updateprogress>
+                                                 <div class="panel panel-color panel-custom-info">
+                                                    <div class="panel-heading panel-heading-custom">
+                                                        <h3 class="panel-title"><i class="fa fa-plus-square"></i> TAMBAH KAWASAN CALON BOLEH MENANG</h3>
+                                                    </div>
+                                                    <div class="panel-body panel-custom-bg-custom-info">
+                                                        <div class="row">
+                                                           <div class="col-lg-12">
+                                                                <table id="candidate_list" class="table table-bordered dt-responsive nowrap m-t-10">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>#</th>
+                                                                            <th>PILIHANRAYA</th>
+                                                                            <th>NEGERI</th>
+                                                                            <th>KAWASAN</th>
+                                                                            <th>PILIHAN</th>
+                                                                            <th>PENYANDANG</th>
+                                                                            <th>STATUS CALON</th>
+                                                                            <th style="width:8%"></th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1</td>
+                                                                            <td>
+                                                                                <div class="form-group m-b-0">
+                                                                                    PILIHANRAYA UMUM KE-13
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    Kelantan
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                   P.20-PENGKALAN CHEPA
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    PILIHAN PERTAMA
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                   BUKAN PENYANDANG
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    BERTANDING
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-trash"></i> </button>
+                                                                                <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-edit"></i> </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2</td>
+                                                                            <td>
+                                                                                <div class="form-group m-b-0">
+                                                                                    PILIHANRAYA UMUM KE-13
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    Kelantan
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                   P.20-PENGKALAN CHEPA
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    PILIHAN PERTAMA
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                   BUKAN PENYANDANG
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    BERTANDING
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-trash"></i> </button>
+                                                                                <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-edit"></i> </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3</td>
+                                                                            <td>
+                                                                                <div class="form-group m-b-0">
+                                                                                    PILIHANRAYA UMUM KE-13
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    Kelantan
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                   P.20-PENGKALAN CHEPA
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    PILIHAN PERTAMA
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                   BUKAN PENYANDANG
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    BERTANDING
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-trash"></i> </button>
+                                                                                <button class="btn btn-icon waves-effect btn-default m-b-5"> <i class="fa fa-edit"></i> </button>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>
+                                                                                <div class="form-group m-b-0">
+                                                                                    <asp:DropDownList ID="DropDownList21" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    <asp:DropDownList ID="DropDownList22" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    <asp:DropDownList ID="DropDownList23" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    <asp:DropDownList ID="DropDownList24" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    <asp:DropDownList ID="DropDownList25" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div class="form-group  m-b-0">
+                                                                                    <asp:DropDownList ID="DropDownList26" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <button type="button" class="btn btn-warning w100" data-toggle="modal" data-target="#resource-modal"><i class="fa fa-globe"></i> PILIH SUMBER</button>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>  
+                                                           </div>
+                                                        <div class="row m-t-30">
+                                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                                <button type="button" class="btn btn-success w100"><i class="fa fa-plus"></i> TAMBAH KAWASAN</button>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                                <button type="button" class="btn btn-primary w100"><i class="fa fa-plus"></i> KEMASKINI KAWASAN</button>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                                <button type="button" class="btn btn-danger w100"><i class="fa fa-trash"></i> HAPUS</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -551,8 +553,6 @@
                            </div>  
                         </div>
                     </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
     </div>
     <!-- Modal -->

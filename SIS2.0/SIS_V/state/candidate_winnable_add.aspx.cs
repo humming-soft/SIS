@@ -387,8 +387,9 @@ namespace SIS_V.state
                         HiddenField hid2 = (HiddenField)GridViewRowAdd.Rows[i].Cells[6].FindControl("hdnSourceId");
                         HiddenField hid3 = (HiddenField)GridViewRowAdd.Rows[i].Cells[6].FindControl("hdnJustfication");
 
-                        // Update the DataRow with the DDL Selected Items   
+                        //ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(ddl5);
 
+                        // Update the DataRow with the DDL Selected Items   
                         dtCurrentTable.Rows[i]["Col1"] = ddl1.SelectedItem.Text;
                         dtCurrentTable.Rows[i]["Col2"] = ddl2.SelectedItem.Text;
                         dtCurrentTable.Rows[i]["Col3"] = ddl3.SelectedItem.Text;
@@ -928,6 +929,15 @@ namespace SIS_V.state
             return 0;
             
         }
+
+        //protected void GridViewRowAdd_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+        //    DropDownList lb = e.Row.FindControl("ddOptions") as DropDownList;
+        //    if (lb != null)
+        //    {
+        //        ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(lb);
+        //    }
+        //}
 
         //protected void lnkResource_Click(object sender, EventArgs e)
         //{
