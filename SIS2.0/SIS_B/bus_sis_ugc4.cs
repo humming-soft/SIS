@@ -248,7 +248,7 @@ namespace SIS_B
         }
         public DataTable fill_winnable_area_sourse()
         {
-            return data.winnable_area_sourse("usp_GetWinnableCandidate_Area_Source", candidate_id);
+            return data.winnable_area_source("usp_GetWinnableCandidate_Area_Source", candidate_id);
         }
     }
 }
