@@ -8,6 +8,16 @@
             <div class="card-box">
                 <h4 class="m-t-0 header-title"><b>PAPARAN MAKLUMAT KEPUTUSAN PILIHANRAYA</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
+                <div class="col-md-12">
+                    <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+                    </div>
+                    <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <asp:Label ID="lblvalid" runat="server"></asp:Label>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-custom-info">
@@ -60,7 +70,7 @@
                                             <asp:TemplateField HeaderText="Tindakan">
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="edit" CssClass="fa fa-edit" Font-Underline="false" OnClick="edit_Click" runat="server"></asp:LinkButton> &nbsp
-                                                    <asp:LinkButton ID="delete" CssClass="fa fa-trash" Font-Underline="false" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="delete" CssClass="fa fa-trash" Font-Underline="false" OnClick="delete_Click" runat="server"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>

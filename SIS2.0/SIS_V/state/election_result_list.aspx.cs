@@ -19,6 +19,8 @@ namespace SIS_V.state
         {
             if (!IsPostBack)
             {
+                invalid.Visible = false;
+                valid.Visible = false;
                 txtPil.Attributes.Add("readonly", "readonly");
                 txtNegeri.Attributes.Add("readonly", "readonly");
                 CheckIsLogin();
@@ -59,13 +61,28 @@ namespace SIS_V.state
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            bus.eid = int.Parse(Session["election_id"].ToString());
-            bus.areaid = int.Parse(ddlArea.SelectedValue);
-            DataTable lst = bus.getDetails();
-            if(lst.Rows.Count > 0)
+            invalid.Visible = false;
+            valid.Visible = false;
+            if (ddlArea.SelectedIndex != 0)
             {
-                GrdDetails.DataSource = lst;
-                GrdDetails.DataBind();
+                bus.eid = int.Parse(Session["election_id"].ToString());
+                bus.areaid = int.Parse(ddlArea.SelectedValue);
+                DataTable lst = bus.getDetails();
+                if (lst.Rows.Count > 0)
+                {
+                    GrdDetails.DataSource = lst;
+                    GrdDetails.DataBind();
+                }
+                else
+                {
+                    GrdDetails.DataSource = null;
+                    GrdDetails.DataBind();
+                }
+            }
+            else
+            {
+                invalid.Visible = true;
+                lblinvalid.Text = "Sila isi Kawasan!";
             }
         }
 
@@ -91,6 +108,27 @@ namespace SIS_V.state
             Session["K_are_id"] = are_id;
             Session["K_elec_r_id"] = res_id;
             Response.Redirect("election_result_view");
+        }
+        protected void delete_Click(object sender, EventArgs e)
+        {
+            LinkButton lnk = sender as LinkButton;
+            GridViewRow row = lnk.NamingContainer as GridViewRow;
+            objBUS.election_result_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[3].ToString());
+            int result = objBUS.DeleteElectionResultData();
+            if (result != -1)
+            {
+                valid.Visible = true;
+                lblvalid.Text = "Berjaya dipadamkan !";
+
+                GrdDetails.DataSource = null;
+                GrdDetails.DataBind();
+                ddlArea.SelectedIndex = 0;
+            }
+            else
+            {
+                invalid.Visible = true;
+                lblinvalid.Text = "Tidak dapat membuang. Sila cuba lagi !";
+            }
         }
     }
 }

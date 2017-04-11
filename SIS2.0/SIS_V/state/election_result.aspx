@@ -4,66 +4,6 @@
         $(document).ready(function () {
             $("#ddlName").customselect();
         });
-<%--        function fill_penyandang() {
-            var area_id = $('#ContentPlaceHolder1_ddlArea option:selected').val();
-            var election_id = '<%= Session["election_id"] %>';
-            if (area_id != '') {
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json",
-                    data: '{"area_id":"' + area_id + '","election_id":"' + election_id + '"}',
-                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("election_result.aspx/GetPenyandang")%>',
-                    dataType: "json",
-                    success: function (data) {
-                        if (data.d.length > 0) {
-                            $('#ContentPlaceHolder1_lblPen').text('');
-                            $.each(data.d, function (key, value) {
-                                $("#ContentPlaceHolder1_lblPen").text(value.winner_name);
-                            });
-                        } else {
-
-                            $('#ContentPlaceHolder1_lblPen').text('');
-                        }
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        console.log(errorThrown);
-                    }
-                });
-            } else {
-                $('#ContentPlaceHolder1_lblPen').text('');
-            }
-        }--%>
-
-        <%--function fill_candidate() {
-            var area_id = $('#ContentPlaceHolder1_ddlArea option:selected').val();
-            var election_id = '<%= Session["election_id"] %>';
-            if (area_id != '') {
-                $.ajax({
-                    type: "POST",
-                    contentType: "application/json",
-                    data: '{"area_id":"' + area_id + '","election_id":"' + election_id + '"}',
-                    url: '<%=Microsoft.AspNet.FriendlyUrls.FriendlyUrl.Resolve("election_result.aspx/GetCandidate")%>',
-                    dataType: "json",
-                    success: function (data) {
-                        $("#ContentPlaceHolder1_CanDetails").html('');
-                        if (data.d.length > 0) {
-                            $("#ContentPlaceHolder1_CanDetails").append("<tr><td><b>NAMA CALON BERTANDING</b></td><td><b>PARTI</b></td><td>ACTION</td></tr>");
-                            for (var i = 0; i < data.d.length; i++) {
-                                $("#ContentPlaceHolder1_CanDetails").append("<tr><td>" + data.d[i].candidate_name + "</td><td>" + data.d[i].party_shortcode + "</td><td style='display:none;'>" + data.d[i].election_result_id + "</td><td style='display:none;'>" + data.d[i].candidate_id + "</td><td style='display:none;'>" + data.d[i].party_id + "</td><td style='display:none;'>" + data.d[i].coalition_id + "</td><td style='display:none;'>" + data.d[i].no_of_vote + "</td><td><div class='checker'><input type='checkbox' class='checkall'></div></td</tr>");
-                            }
-                        } else {
-                            $("#ContentPlaceHolder1_CanDetails").html('');
-                        }
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        console.log(errorThrown);
-                    }
-                });
-            } else {
-                $("#ContentPlaceHolder1_CanDetails").html('');
-                $("#ContentPlaceHolder1_CanDetails").append("<tr><td><b>NAMA CALON BERTANDING</b></td><td><b>PARTI</b></td></tr>");
-            }
-        }--%>
     </script>
     <style type="text/css">
     .hideGridColumn

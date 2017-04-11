@@ -249,7 +249,11 @@ namespace SIS_B
         }
         public int DeleteElectionResultCandidate()
         {
-            return objDAL.DeleteElectionResultCandidate(election_result_id, candidate_id);
+            return objDAL.DeleteElectionResultCandidate(election_result_id, candidate_id, election_id, area_id);
+        }
+        public int DeleteElectionResultData()
+        {
+            return objDAL.DeleteElectionResultData(election_result_id);
         }
 
     }
