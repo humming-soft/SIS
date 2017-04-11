@@ -67,13 +67,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.TextBox txtjkutd;
         
         /// <summary>
-        /// lblperc control.
+        /// txtper control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblperc;
+        protected global::System.Web.UI.WebControls.TextBox txtper;
         
         /// <summary>
         /// lblwinner control.
@@ -103,31 +103,22 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Label lblinc;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// candidate_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.GridView candidate_list;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// btnsimpan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
-        
-        /// <summary>
-        /// TextBox7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.Button btnsimpan;
         
         /// <summary>
         /// ddlraces control.

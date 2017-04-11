@@ -85,9 +85,11 @@ namespace SIS_V.state
             int elec_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[0].ToString());
             int stat_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[1].ToString());
             int are_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[2].ToString());
+            int res_id = int.Parse(GrdDetails.DataKeys[row.RowIndex].Values[3].ToString());
             Session["K_elec_id"] = elec_id;
             Session["K_stat_id"] = stat_id;
             Session["K_are_id"] = are_id;
+            Session["K_elec_r_id"] = res_id;
             Response.Redirect("election_result_view");
         }
     }

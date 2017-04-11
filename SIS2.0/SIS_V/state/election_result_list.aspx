@@ -51,7 +51,7 @@
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
-                                    <asp:GridView ID="GrdDetails" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" runat="server" OnPreRender="GrdDetails_PreRender" AutoGenerateColumns="False" DataKeyNames="election_id,state_id,area_id">
+                                    <asp:GridView ID="GrdDetails" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" runat="server" OnPreRender="GrdDetails_PreRender" AutoGenerateColumns="False" DataKeyNames="election_id,state_id,area_id,election_result_id">
                                         <Columns>
                                             <asp:BoundField DataField="RowNumber" HeaderText="#" />
                                             <asp:BoundField DataField="election_name" HeaderText="Pilihanraya" />
@@ -59,7 +59,8 @@
                                             <asp:BoundField DataField="area_name" HeaderText="Nama Kawasan" />
                                             <asp:TemplateField HeaderText="Tindakan">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="edit" CssClass="fa fa-edit" Font-Underline="false" OnClick="edit_Click" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="edit" CssClass="fa fa-edit" Font-Underline="false" OnClick="edit_Click" runat="server"></asp:LinkButton> &nbsp
+                                                    <asp:LinkButton ID="delete" CssClass="fa fa-trash" Font-Underline="false" runat="server"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
