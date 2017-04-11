@@ -58,7 +58,7 @@ namespace SIS_V.state
                 txtpk.Text = dt.Rows[0][18].ToString();
                 txtjpb.Text = dt.Rows[0][8].ToString();
                 txtjkud.Text = dt.Rows[0][11].ToString();
-                if (String.IsNullOrEmpty(dt.Rows[0][12].ToString()) && String.IsNullOrEmpty(dt.Rows[0][11].ToString()))
+                if (String.IsNullOrEmpty(dt.Rows[0][12].ToString()) || String.IsNullOrEmpty(dt.Rows[0][11].ToString()))
                 {
                     we = 0;
                 }
@@ -69,7 +69,7 @@ namespace SIS_V.state
                 txtjkudpu.Text = we.ToString();
                 txtjkudi.Text = dt.Rows[0][15].ToString();
                 txtjkutd.Text = dt.Rows[0][13].ToString();
-                if (String.IsNullOrEmpty(dt.Rows[0][15].ToString()) && String.IsNullOrEmpty(dt.Rows[0][8].ToString()))
+                if (String.IsNullOrEmpty(dt.Rows[0][15].ToString()) || String.IsNullOrEmpty(dt.Rows[0][8].ToString()))
                 {
                     pe = 0;
                 }
@@ -81,7 +81,7 @@ namespace SIS_V.state
                     pe = c * 100;
                 }
                 txtper.Text = pe.ToString("F");
-                if (String.IsNullOrEmpty(dt.Rows[0][32].ToString()) && String.IsNullOrEmpty(dt.Rows[0][34].ToString()) && String.IsNullOrEmpty(dt.Rows[0][33].ToString()))
+                if (String.IsNullOrEmpty(dt.Rows[0][32].ToString()) || String.IsNullOrEmpty(dt.Rows[0][34].ToString()) || String.IsNullOrEmpty(dt.Rows[0][33].ToString()))
                 {
                     lblwinner.Text = "";
                 }
@@ -89,7 +89,7 @@ namespace SIS_V.state
                 lblwinner.Text = dt.Rows[0][32].ToString() + " (" + dt.Rows[0][34].ToString() + " - " + dt.Rows[0][33].ToString() + ")";
                 }
                 txtmajority.Text = dt.Rows[0][9].ToString();
-                if (String.IsNullOrEmpty(dt.Rows[0][35].ToString()) && String.IsNullOrEmpty(dt.Rows[0][37].ToString()) && String.IsNullOrEmpty(dt.Rows[0][36].ToString()) && String.IsNullOrEmpty(dt.Rows[0][14].ToString()))
+                if (String.IsNullOrEmpty(dt.Rows[0][35].ToString()) || String.IsNullOrEmpty(dt.Rows[0][37].ToString()) || String.IsNullOrEmpty(dt.Rows[0][36].ToString()) || String.IsNullOrEmpty(dt.Rows[0][14].ToString()))
                 {
                     lblinc.Text ="";
                 }
@@ -176,6 +176,7 @@ namespace SIS_V.state
 
         protected void btnsimpan_Click(object sender, EventArgs e)
         {
+            bus.ele_r_id_u = int.Parse(Session["K_elec_r_id"].ToString());
             if (txtpk.Text.Trim() != "")
             {
                 bus.race_frg = txtpk.Text.Trim();
@@ -221,6 +222,7 @@ namespace SIS_V.state
             if( simpan == 1)
             {
                 //success
+                Response.Redirect("election_result_list");
             }
             else
             {
