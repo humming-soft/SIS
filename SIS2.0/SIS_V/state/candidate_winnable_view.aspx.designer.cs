@@ -49,6 +49,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl candidateInfoPanel;
         
         /// <summary>
+        /// HfCandidateId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HfCandidateId;
+        
+        /// <summary>
         /// CandidateDataList control.
         /// </summary>
         /// <remarks>
@@ -76,85 +85,76 @@ namespace SIS_V.state {
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
         
         /// <summary>
-        /// DropDownList21 control.
+        /// GridViewUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList21;
+        protected global::System.Web.UI.WebControls.GridView GridViewUpdate;
         
         /// <summary>
-        /// DropDownList22 control.
+        /// invalidAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList22;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalidAdd;
         
         /// <summary>
-        /// DropDownList23 control.
+        /// invalidOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList23;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invalidOption;
         
         /// <summary>
-        /// DropDownList24 control.
+        /// updateStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList24;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl updateStatus;
         
         /// <summary>
-        /// DropDownList25 control.
+        /// updateLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList25;
+        protected global::System.Web.UI.WebControls.Label updateLabel;
         
         /// <summary>
-        /// DropDownList26 control.
+        /// GridViewAgency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList26;
+        protected global::System.Web.UI.WebControls.GridView GridViewAgency;
         
         /// <summary>
-        /// TextBox1 control.
+        /// noAgency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlTable noAgency;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// agencyGroupBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// TextBox8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl agencyGroupBtn;
         
         /// <summary>
         /// FileUpload1 control.

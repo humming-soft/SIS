@@ -608,6 +608,35 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public int data_WinnableCandiateExists(int candidate_id, int choice_id, int area_id, int election_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_GetWinnableCandidateChoiceExistedExSelf";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidateId", candidate_id);
+                cmd.Parameters.AddWithValue("@electionId", election_id);
+                cmd.Parameters.AddWithValue("@areaId", area_id);
+                cmd.Parameters.AddWithValue("@choiceId", choice_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+        
         public DataTable candidate_comment(string sp, int cid)
         {
             try
@@ -675,13 +704,71 @@ namespace SIS_D
                 cmd.Parameters.Clear();
                 cmd.CommandText = sp;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@candidate_id", cid);
+                cmd.Parameters.AddWithValue("@candidate_area_id", cid);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();
                 da.SelectCommand = cmd;
                 da.Fill(dt);
                 return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int data_UpdateWinnableArea(int candidate_area_id, int candidate_id, int area_id, int election_id, int choice_no, int is_incumbent)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_UpdateWinnableCandidateArea";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_area_id", candidate_area_id);
+                cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@election_id", election_id);
+                cmd.Parameters.AddWithValue("@choice_no", choice_no);
+                cmd.Parameters.AddWithValue("@is_incumbent", is_incumbent);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int data_DeleteWinnableArea(int candidate_area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_DeleteWinnableCandidateArea";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_place_id", candidate_area_id);
+                 cmd.Parameters.AddWithValue("@candidate_id", 0);
+                 cmd.Parameters.AddWithValue("@area_id", 0);
+                 cmd.Parameters.AddWithValue("@election_id", 0);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
             }
             finally
             {

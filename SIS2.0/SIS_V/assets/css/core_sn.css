@@ -66,6 +66,9 @@
     text-transform: uppercase;
     line-height: 30px;
 }
+.z-i-99999{
+    z-index:99999;
+}
 .w100{
     width: 100%;
 }

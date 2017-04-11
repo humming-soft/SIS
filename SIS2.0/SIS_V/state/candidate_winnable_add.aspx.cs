@@ -723,7 +723,7 @@ namespace SIS_V.state
                                 bus.is_incumbent = Int32.Parse(ddl2.SelectedValue);
                                 bus.area_id = Int32.Parse(ddl4.SelectedValue);
                                 bus.choice_id = Int32.Parse(ddl5.SelectedValue);
-                                bus.insert_WinnableArea();
+                                bus.candidate_area_id = bus.insert_WinnableArea();
                                 string[] sourceDate = hid1.Value.Split(',');
                                 string[] sourceId = hid2.Value.Split(',');
                                 string[] sourceJust = hid3.Value.Split(',');
@@ -741,7 +741,7 @@ namespace SIS_V.state
                     }
                     invalid.Visible = false;
                     valid.Visible = true;
-                    lblinvalid.Text = "Rekod berjaya disimpan.";
+                    lblvalid.Text = "Rekod berjaya disimpan.";
             }
             else
             {
@@ -929,6 +929,7 @@ namespace SIS_V.state
             return 0;
             
         }
+
 
         //protected void GridViewRowAdd_RowDataBound(object sender, GridViewRowEventArgs e)
         //{
