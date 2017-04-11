@@ -443,7 +443,7 @@ namespace SIS_V.state
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
                 case "election_result":
-                    prapilihanraya.Attributes["class"] = "has-submenu active";
+                    pilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pilihanraya";
                     breadcrum_child.InnerText = "Keputusan Pilihanraya";
                     breadcrum_child.Attributes["href"] = "election_result_list";
