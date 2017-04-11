@@ -29,7 +29,6 @@ namespace SIS_V.state
                 }
                 else
                 {
-                    
                     ele_name.Text = Session["election"].ToString();
                     elec_name.Text = Session["election"].ToString();
                     fill_election_details();

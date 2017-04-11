@@ -63,18 +63,26 @@ namespace SIS_V.state
         {
             invalid.Visible = false;
             valid.Visible = false;
-            bus.eid = int.Parse(Session["election_id"].ToString());
-            bus.areaid = int.Parse(ddlArea.SelectedValue);
-            DataTable lst = bus.getDetails();
-            if(lst.Rows.Count > 0)
+            if (ddlArea.SelectedIndex != 0)
             {
-                GrdDetails.DataSource = lst;
-                GrdDetails.DataBind();
+                bus.eid = int.Parse(Session["election_id"].ToString());
+                bus.areaid = int.Parse(ddlArea.SelectedValue);
+                DataTable lst = bus.getDetails();
+                if (lst.Rows.Count > 0)
+                {
+                    GrdDetails.DataSource = lst;
+                    GrdDetails.DataBind();
+                }
+                else
+                {
+                    GrdDetails.DataSource = null;
+                    GrdDetails.DataBind();
+                }
             }
             else
             {
-                GrdDetails.DataSource = null;
-                GrdDetails.DataBind();
+                invalid.Visible = true;
+                lblinvalid.Text = "Sila isi Kawasan!";
             }
         }
 
@@ -114,6 +122,7 @@ namespace SIS_V.state
 
                 GrdDetails.DataSource = null;
                 GrdDetails.DataBind();
+                ddlArea.SelectedIndex = 0;
             }
             else
             {

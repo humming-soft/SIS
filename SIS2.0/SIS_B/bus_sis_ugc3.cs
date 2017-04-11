@@ -41,6 +41,7 @@ namespace SIS_B
         public DateTime ele_date { get; set; }
         public int elec_id { get; set; }
         public int coalition_id { get; set; }
+        public Byte[] image { get; set; }
        
         public DataTable fetch_states()
         {
@@ -196,7 +197,14 @@ namespace SIS_B
            
             return data.fill_scoresheet(elec_id, state_id,area_type,coalition_id);
         }
-        
+        //public int insert_image()
+        //{
+        //    return data.add_candidate(image);
+        //}
+        public DataTable fill_flag()
+        {
+            return data.fill_flag(state_id);
+        }
     }
 }
                

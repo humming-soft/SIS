@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Text;
 using SIS_B;
+using System.Web.UI.HtmlControls;
+using System.Drawing;
 
 namespace SIS_V.state
 {
@@ -21,6 +23,10 @@ namespace SIS_V.state
                 fillCandidate();
                 clientInvocation();
                 candidateInfoPanel.Visible = false;
+                invalidAdd.Visible = false;
+                invalidOption.Visible = false;
+                updateStatus.Visible = false;
+                agencyGroupBtn.Visible = false;
             }
         }
 
@@ -45,6 +51,10 @@ namespace SIS_V.state
                 bus.candidateIc = candidateIc;
                 fillCandidateInfo();
                 clientInvocation();
+                invalidAdd.Visible = false;
+                invalidOption.Visible = false;
+                updateStatus.Visible = false;
+                agencyGroupBtn.Visible = false;
             }
             else
             {
@@ -83,6 +93,10 @@ namespace SIS_V.state
                 }
                 CandidateDataList.DataSource = instanceDt;
                 CandidateDataList.DataBind();
+                HfCandidateId.Value = instanceDt.Rows[0]["candidate_id"].ToString();
+                fillComment(Int32.Parse(instanceDt.Rows[0]["candidate_id"].ToString()));
+                fillWinnableArea(Int32.Parse(instanceDt.Rows[0]["candidate_id"].ToString()));
+
                 candidateInfoPanel.Visible = true;
                 //alternate.Visible = false;
             }
@@ -90,6 +104,41 @@ namespace SIS_V.state
             {
                 candidateInfoPanel.Visible = false;
                 //alternate.Visible = true;
+            }
+        }
+
+        private void fillComment(int candidate_id)
+        {
+            instanceDt = new DataTable();
+            bus.candidate_id = candidate_id;
+            TextBox tt1 = (TextBox)CandidateDataList.Items[0].FindControl("txtComment");
+            instanceDt = bus.fill_candidate_comment();
+            if (instanceDt.Rows.Count > 0)
+            {
+                tt1.Text = instanceDt.Rows[0]["comments"].ToString();
+            }
+        }
+
+        private void fillElection(DropDownList ddElection)
+        {
+            instanceDt = new DataTable();
+            instanceDt = bus.currentElectionInfo();
+            if (instanceDt.Rows.Count > 0)
+            {
+                ddElection.DataSource = instanceDt;
+                ddElection.DataBind();
+            }
+        }
+
+        private void fillWinnableArea(int candidate_id)
+        {
+            instanceDt = new DataTable();
+            bus.candidate_id = candidate_id;
+            instanceDt = bus.fill_candidate_area();
+            if (instanceDt.Rows.Count > 0)
+            {
+                GridViewUpdate.DataSource = instanceDt;
+                GridViewUpdate.DataBind();
             }
         }
 
@@ -101,5 +150,427 @@ namespace SIS_V.state
             strScript.Append("});");
             ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "Script", strScript.ToString(), true);
         }
+
+        protected void GridViewUpdate_PreRender(object sender, EventArgs e)
+        {
+            if (GridViewUpdate.Rows.Count > 0)
+            {
+                GridViewUpdate.UseAccessibleHeader = true;
+                GridViewUpdate.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void ddArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList lb = (DropDownList)sender;
+            GridViewRow row = (GridViewRow)lb.NamingContainer;
+
+            DropDownList ddarea = (DropDownList)row.FindControl("ddArea");
+            DropDownList ddareacode = (DropDownList)row.FindControl("ddAreaCode");
+            if (ddarea.SelectedIndex != 0)
+            {
+                int areaType = Int32.Parse(ddarea.SelectedValue);
+
+                instanceDt = new DataTable();
+                bus.areaType = areaType;
+                bus.sid = int.Parse(Session["state"].ToString());
+                instanceDt = bus.fill_status_districts();
+                if (instanceDt.Rows.Count > 0)
+                {
+                    ddareacode.DataSource = instanceDt;
+                    ddareacode.DataBind();
+                    ddareacode.Items.Insert(0, new ListItem("----SILA PILIH----", ""));
+                }
+                ddareacode.Enabled = true;
+                clientInvocation();
+            }
+        }
+
+        protected void ddOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        protected void lbDelete_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)lb.NamingContainer;
+            if (lb.CommandArgument == "delete")
+            {
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    HiddenField hfvalue = (HiddenField)GridViewUpdate.Rows[index].Cells[1].FindControl("hfPid");
+                    bus.candidate_area_id = int.Parse(hfvalue.Value);
+                    invalidOption.Visible = false;
+                    invalidAdd.Visible = false;
+                    if (bus.delete_WinnableCandidateArea() == 0)
+                    {
+                        updateLabel.Text = "Rekod berjaya dipadamkan.";
+                        updateStatus.Attributes.Remove("class");
+                        updateStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                        updateStatus.Visible = true;
+                        if (candidates.SelectedIndex != 0)
+                        {
+                            string candidateIc = candidates.SelectedValue;
+                            bus.candidateIc = candidateIc;
+                            fillCandidateInfo();
+                        }
+                    }
+                    else
+                    {
+                        updateLabel.Text = "Tidak dapat memadam rekod.";
+                        updateStatus.Attributes.Remove("class");
+                        updateStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                        updateStatus.Visible = true;
+                    }
+                }
+            }
+        }
+
+        protected void lbEdit_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)lb.NamingContainer;
+            if (lb.CommandArgument == "edit")
+            {
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    DropDownList ddl1 = (DropDownList)GridViewUpdate.Rows[index].Cells[1].FindControl("ddElection");
+                    DropDownList ddl2 = (DropDownList)GridViewUpdate.Rows[index].Cells[2].FindControl("ddPosition");
+                    DropDownList ddl3 = (DropDownList)GridViewUpdate.Rows[index].Cells[3].FindControl("ddArea");
+                    DropDownList ddl4 = (DropDownList)GridViewUpdate.Rows[index].Cells[4].FindControl("ddAreaCode");
+                    DropDownList ddl5 = (DropDownList)GridViewUpdate.Rows[index].Cells[5].FindControl("ddOptions");
+
+                    Label lb1 = (Label)GridViewUpdate.Rows[index].Cells[1].FindControl("LblElection");
+                    Label lb2 = (Label)GridViewUpdate.Rows[index].Cells[2].FindControl("LblPosition");
+                    Label lb3 = (Label)GridViewUpdate.Rows[index].Cells[3].FindControl("LblArea");
+                    Label lb4 = (Label)GridViewUpdate.Rows[index].Cells[4].FindControl("LblAreaCode");
+                    Label lb5 = (Label)GridViewUpdate.Rows[index].Cells[5].FindControl("LblOptions");
+
+                    HtmlGenericControl itag = (HtmlGenericControl)GridViewUpdate.Rows[index].Cells[6].FindControl("iconEdit");
+
+                    itag.Attributes.Remove("class");
+                    itag.Attributes.Add("class", "fa fa-save");
+
+                    fillElection(ddl1);
+                    ddl1.ClearSelection();
+                    ddl1.Items.FindByText(lb1.Text).Selected = true;
+
+                    ddl2.ClearSelection();
+                    ddl2.Items.FindByText(lb2.Text).Selected = true;
+
+                    ddl3.ClearSelection();
+                    ddl3.Items.FindByText(lb3.Text).Selected = true;
+
+                    int areaType = Int32.Parse(ddl3.SelectedValue);
+                    instanceDt = new DataTable();
+                    bus.areaType = areaType;
+                    bus.sid = int.Parse(Session["state"].ToString());
+                    instanceDt = bus.fill_status_districts();
+                    if (instanceDt.Rows.Count > 0)
+                    {
+                        ddl4.DataSource = instanceDt;
+                        ddl4.DataBind();
+                        ddl4.Items.Insert(0, new ListItem("----SILA PILIH----", ""));
+                    }
+                    ddl4.ClearSelection();
+                    ddl4.Items.FindByText(lb4.Text).Selected = true;
+
+                    ddl5.ClearSelection();
+                    ddl5.Items.FindByText(lb5.Text).Selected = true;
+
+                    ddl1.Visible = true;
+                    ddl2.Visible = true;
+                    ddl3.Visible = true;
+                    ddl4.Visible = true;
+                    ddl5.Visible = true;
+
+                    lb1.Visible = false;
+                    lb2.Visible = false;
+                    lb3.Visible = false;
+                    lb4.Visible = false;
+                    lb5.Visible = false;
+
+                    updateStatus.Visible = false;
+                    invalidOption.Visible = false;
+                    invalidAdd.Visible = false;
+                    lb.CommandArgument = "save";
+                }
+            }
+            else if (lb.CommandArgument == "save")
+            {
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    DropDownList ddl1 = (DropDownList)GridViewUpdate.Rows[index].Cells[1].FindControl("ddElection");
+                    DropDownList ddl2 = (DropDownList)GridViewUpdate.Rows[index].Cells[2].FindControl("ddPosition");
+                    DropDownList ddl3 = (DropDownList)GridViewUpdate.Rows[index].Cells[3].FindControl("ddArea");
+                    DropDownList ddl4 = (DropDownList)GridViewUpdate.Rows[index].Cells[4].FindControl("ddAreaCode");
+                    DropDownList ddl5 = (DropDownList)GridViewUpdate.Rows[index].Cells[5].FindControl("ddOptions");
+
+                    Label lb1 = (Label)GridViewUpdate.Rows[index].Cells[1].FindControl("LblElection");
+                    Label lb2 = (Label)GridViewUpdate.Rows[index].Cells[2].FindControl("LblPosition");
+                    Label lb3 = (Label)GridViewUpdate.Rows[index].Cells[3].FindControl("LblArea");
+                    Label lb4 = (Label)GridViewUpdate.Rows[index].Cells[4].FindControl("LblAreaCode");
+                    Label lb5 = (Label)GridViewUpdate.Rows[index].Cells[5].FindControl("LblOptions");
+
+                    HiddenField hf1 = (HiddenField)GridViewUpdate.Rows[index].Cells[1].FindControl("hfPid");
+
+                    HtmlGenericControl itag = (HtmlGenericControl)GridViewUpdate.Rows[index].Cells[6].FindControl("iconEdit");
+
+                    if (rowValidate(ddl1, ddl2, ddl3, ddl4, ddl5) == 1)
+                    {
+
+                        if (hf1.Value != "")
+                        {
+                            bus.candidate_area_id = int.Parse(hf1.Value);
+                            bus.candidate_id = 0;
+                            bus.area_id = int.Parse(ddl4.SelectedValue);
+                            bus.election_id = int.Parse(ddl1.SelectedValue);
+                            bus.choice_id = int.Parse(ddl5.SelectedValue);
+                            bus.is_incumbent = int.Parse(ddl2.SelectedValue);
+                            if (bus.update_WinnableCandidateArea() == 0)
+                            {
+                                updateLabel.Text = "Dikemaskini Berjaya.";
+                                updateStatus.Attributes.Remove("class");
+                                updateStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                                updateStatus.Visible = true;
+                                invalidOption.Visible = false;
+                                invalidAdd.Visible = false;
+                                lb1.Text = ddl1.SelectedItem.Text;
+                                lb2.Text = ddl2.SelectedItem.Text;
+                                lb3.Text = ddl3.SelectedItem.Text;
+                                lb4.Text = ddl4.SelectedItem.Text;
+                                lb5.Text = ddl5.SelectedItem.Text;
+                            }
+                            else
+                            {
+                                updateLabel.Text = "Tidak dapat mengemas kini maklumat kawasan.";
+                                updateStatus.Attributes.Remove("class");
+                                updateStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                                updateStatus.Visible = true;
+                                invalidOption.Visible = false;
+                                invalidAdd.Visible = false;
+                            }
+                            ddl1.Visible = false;
+                            ddl2.Visible = false;
+                            ddl3.Visible = false;
+                            ddl4.Visible = false;
+                            ddl5.Visible = false;
+
+                            lb1.Visible = true;
+                            lb2.Visible = true;
+                            lb3.Visible = true;
+                            lb4.Visible = true;
+                            lb5.Visible = true;
+
+                            lb.CommandArgument = "edit";
+                            itag.Attributes.Remove("class");
+                            itag.Attributes.Add("class", "fa fa-edit");
+                        }
+                    }
+                }
+            }
+        }
+
+        private int rowValidate(DropDownList ddl1, DropDownList ddl2, DropDownList ddl3, DropDownList ddl4, DropDownList ddl5)
+        {
+            int flag = 0;
+            int iflag = 0;
+
+            if (ddl1.SelectedValue == "")
+            {
+                flag++;
+                ddl1.Attributes.CssStyle.Add("border-color", "red");
+            }
+            else
+            {
+                ddl1.Attributes.CssStyle.Remove("border-color");
+            }
+            if (ddl2.SelectedValue == "")
+            {
+                flag++;
+                ddl2.Attributes.CssStyle.Add("border-color", "red");
+            }
+            else
+            {
+                ddl2.Attributes.CssStyle.Remove("border-color");
+            }
+            if (ddl3.SelectedValue == "")
+            {
+                flag++;
+                ddl3.Attributes.CssStyle.Add("border-color", "red");
+            }
+            else
+            {
+                ddl3.Attributes.CssStyle.Remove("border-color");
+            }
+            if (ddl4.SelectedValue == "")
+            {
+                flag++;
+                ddl4.Attributes.CssStyle.Add("border-color", "red");
+            }
+            else
+            {
+                ddl4.Attributes.CssStyle.Remove("border-color");
+            }
+            if (ddl5.SelectedValue == "")
+            {
+                flag++;
+                ddl5.Attributes.CssStyle.Add("border-color", "red");
+            }
+            else
+            {
+                ddl5.Attributes.CssStyle.Remove("border-color");
+            }
+            if (flag == 0)
+            {
+                if (AreaCandidateExists(ddl4.SelectedValue.ToString(), ddl1.SelectedValue.ToString(), ddl5.SelectedValue.ToString()) == 1)
+                {
+                    iflag++;
+                    ddl5.Attributes.CssStyle.Add("border-color", "red");
+                }
+                else
+                {
+                    ddl5.Attributes.CssStyle.Remove("border-color");
+                }
+            }
+            if (flag == 0)
+            {
+                if (iflag == 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    invalidOption.Visible = true;
+                    return 0;
+                }
+
+            }
+            else
+            {
+                invalidAdd.Visible = true;
+                return 0;
+            }
+        }
+
+        private int AreaCandidateExists(string ddareacode, string ddelection, string ddoptions)
+        {
+            bus.candidate_id = Int32.Parse(HfCandidateId.Value);
+            bus.area_id = Int32.Parse(ddareacode);
+            bus.election_id = Int32.Parse(ddelection);
+            bus.choice_id = Int32.Parse(ddoptions);
+            int exists = bus.check_WinnableCandidateExistsExcludeSelf();
+            return exists;
+        }
+
+        protected void GridViewUpdate_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+
+                Label lbel = e.Row.FindControl("rowNumber") as Label;
+                lbel.Text = ((e.Row.RowIndex)+1).ToString();
+                DropDownList ddl1 = e.Row.FindControl("ddElection") as DropDownList;
+                DropDownList ddl2 = e.Row.FindControl("ddPosition") as DropDownList;
+                DropDownList ddl3 = e.Row.FindControl("ddArea") as DropDownList;
+                DropDownList ddl4 = e.Row.FindControl("ddAreaCode") as DropDownList;
+                DropDownList ddl5 = e.Row.FindControl("ddOptions") as DropDownList;
+
+                LinkButton lbn1 = e.Row.FindControl("lbEdit") as LinkButton;
+                LinkButton lbn2 = e.Row.FindControl("lbDelete") as LinkButton;
+                LinkButton lbn3 = e.Row.FindControl("lbAgency") as LinkButton;
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(lbn1);
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(lbn2);
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(lbn3);
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(ddl5);
+
+                ddl1.Visible = false;
+                ddl2.Visible = false;
+                ddl3.Visible = false;
+                ddl4.Visible = false;
+                ddl5.Visible = false;
+            }
+        }
+
+        protected void lbAgency_Click(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)lb.NamingContainer;
+            if (lb.CommandArgument == "agencyView")
+            {
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    HiddenField hf1 = (HiddenField)GridViewUpdate.Rows[index].Cells[1].FindControl("hfPid");
+                    instanceDt = new DataTable();
+                    bus.candidate_area_id = int.Parse(hf1.Value);
+                    instanceDt = bus.fill_winnable_area_source();
+                    if (instanceDt.Rows.Count > 0)
+                    {
+                        GridViewAgency.DataSource = instanceDt;
+                        GridViewAgency.DataBind();
+                        agencyGroupBtn.Visible = true;
+                        noAgency.Visible = false;
+                    }
+                    else
+                    {
+                        GridViewAgency.DataSource = null;
+                        GridViewAgency.DataBind();
+                        noAgency.Visible = false;
+                    }
+                }
+            }
+        }
+
+        protected void GridViewAgency_PreRender(object sender, EventArgs e)
+        {
+            if (GridViewAgency.Rows.Count > 0)
+            {
+                GridViewAgency.UseAccessibleHeader = true;
+                GridViewAgency.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+        }
+
+        protected void GridViewAgency_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+
+                Label lbel = e.Row.FindControl("rowNumber") as Label;
+                lbel.Text = ((e.Row.RowIndex) + 1).ToString();
+                TextBox txt1 = e.Row.FindControl("sourceDate") as TextBox;
+                DropDownList ddl2 = e.Row.FindControl("ddAgency") as DropDownList;
+                TextBox txt2 = e.Row.FindControl("txtjustification") as TextBox;
+
+                LinkButton lbn1 = e.Row.FindControl("lbEdit") as LinkButton;
+                LinkButton lbn2 = e.Row.FindControl("lbDelete") as LinkButton;
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(lbn1);
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(lbn2);
+
+                txt1.Visible = false;
+                ddl2.Visible = false;
+                txt2.Visible = false;
+            }
+        }
+
+        //protected void GridViewUpdate_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    foreach (GridViewRow row in GridViewUpdate.Rows)
+        //    {
+        //        if (row.RowIndex == GridViewUpdate.SelectedIndex)
+        //        {
+        //            row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+        //            row.ToolTip = string.Empty;
+        //        }
+        //        else
+        //        {
+        //            row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+        //            row.ToolTip = "Click to select this row.";
+        //        }
+        //    }
+        //}
     }
 }

@@ -63,6 +63,8 @@ namespace SIS_B
         public string uniqueFilename { get; set; }
 
         public int archive_id { get; set; }
+
+        public int candidate_area_id { get; set; }
         //Release-2
 
         public DataTable fill_lamporan()
@@ -212,7 +214,7 @@ namespace SIS_B
         }
         public int insert_WinnableAreaSource()
         {
-            return data.data_InsertWinnableAreaSource(area_id,agency_id,justification,source_date);
+            return data.data_InsertWinnableAreaSource(candidate_area_id,agency_id,justification,source_date);
         }
 
         public int insert_WinnableCandidate()
@@ -234,6 +236,10 @@ namespace SIS_B
         {
             return data.data_WinnableCandiateExists(choice_id,area_id,election_id);
         }
+        public int check_WinnableCandidateExistsExcludeSelf()
+        {
+            return data.data_WinnableCandiateExists(candidate_id,choice_id, area_id, election_id);
+        }
         public DataTable fill_candidate_comment()
         {
             return data.candidate_comment("usp_GetWinnableCandidateComment", candidate_id);
@@ -246,9 +252,20 @@ namespace SIS_B
         {
             return data.candidate_area_archive("usp_GetWinnableCandidateAreaArchive_state", candidate_id);
         }
-        public DataTable fill_winnable_area_sourse()
+        public DataTable fill_winnable_area_source()
         {
-            return data.winnable_area_source("usp_GetWinnableCandidate_Area_Source", candidate_id);
+            return data.winnable_area_source("usp_GetWinnableCandidate_Area_Source", candidate_area_id);
         }
+
+        public int update_WinnableCandidateArea()
+        {
+            return data.data_UpdateWinnableArea(candidate_area_id, candidate_id, area_id, election_id, choice_id, is_incumbent);
+        }
+
+        public int delete_WinnableCandidateArea()
+        {
+            return data.data_DeleteWinnableArea(candidate_area_id);
+        }
+
     }
 }
