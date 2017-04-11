@@ -113,25 +113,35 @@ namespace SIS_V.state
         {
             GridViewRow row = candidate_list.Rows[e.RowIndex];
             bus.ele_r_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[0].ToString());
-            CheckBox chk = (CheckBox)row.FindControl("CheckBox1");
+            bus.votes = int.Parse(((TextBox)candidate_list.Rows[e.RowIndex].FindControl("txtvotes")).Text);
+            CheckBox chk = (CheckBox)row.FindControl("chkwinner");
             if (chk != null && chk.Checked)
             {
-                bus.cand_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[1].ToString());
+                bus.winn = 1;
             }
             else
             {
-                bus.cand_id_u = 0;
+                bus.winn = 0;
             }
+            bus.cand_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[1].ToString());
             bus.party_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[2].ToString());
             bus.coal_id_u = int.Parse(candidate_list.DataKeys[e.RowIndex].Values[3].ToString());
             int up = bus.update_details();
             if(up == 1)
             {
                 //success
+                candidate_list.EditIndex = -1;
+                fill_result_list();
+                fill_races();
+                fill_cand_list();
             }
             else
             {
                 //failure
+                candidate_list.EditIndex = -1;
+                fill_result_list();
+                fill_races();
+                fill_cand_list();
             }
         }
     }

@@ -72,6 +72,8 @@ namespace SIS_B
         public int cand_id_u { get; set; }
         public int party_id_u { get; set; }
         public int coal_id_u { get; set; }
+        public int votes { get; set; }
+        public int winn { get; set; }
         public int check_login()
         {
             return data1.check_login(uname,pswd);
@@ -222,7 +224,7 @@ namespace SIS_B
         }
         public int update_details()
         {
-            return data1.update_details(ele_r_id_u, cand_id_u, party_id_u, coal_id_u);
+            return data1.update_details(winn,ele_r_id_u, cand_id_u, party_id_u, coal_id_u, votes);
         }
 
         //HQ Module : START

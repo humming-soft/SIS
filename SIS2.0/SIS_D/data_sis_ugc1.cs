@@ -826,17 +826,19 @@ namespace SIS_D
             }
         }
 
-        public int update_details(int ele_r_id_u, int cand_id_u, int party_id_u, int coal_id_u)
+        public int update_details(int winn, int ele_r_id_u, int cand_id_u, int party_id_u, int coal_id_u, int votes)
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "usp_update_winner";
+                cmd.CommandText = "usp_update_winner_details";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@winn", winn);
                 cmd.Parameters.AddWithValue("@ele_r_id_u", ele_r_id_u);
                 cmd.Parameters.AddWithValue("@cand_id_u", cand_id_u);
                 cmd.Parameters.AddWithValue("@party_id_u", party_id_u);
                 cmd.Parameters.AddWithValue("@coal_id_u", coal_id_u);
+                cmd.Parameters.AddWithValue("@votes", votes);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@flag";
                 outparam.Direction = ParameterDirection.InputOutput;

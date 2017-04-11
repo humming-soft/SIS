@@ -236,7 +236,19 @@ namespace SIS_B
         }
         public DataTable fill_candidate_comment()
         {
-            return data.candidate_comment(" usp_GetWinnableCandidateComment", candidate_id);
+            return data.candidate_comment("usp_GetWinnableCandidateComment", candidate_id);
+        }
+        public DataTable fill_candidate_area()
+        {
+            return data.candidate_area("usp_GetWinnableCandidate_Area", candidate_id);
+        }
+        public DataTable fill_candidate_area_archive()
+        {
+            return data.candidate_area_archive("usp_GetWinnableCandidateAreaArchive_state", candidate_id);
+        }
+        public DataTable fill_winnable_area_sourse()
+        {
+            return data.winnable_area_source("usp_GetWinnableCandidate_Area_Source", candidate_id);
         }
     }
 }

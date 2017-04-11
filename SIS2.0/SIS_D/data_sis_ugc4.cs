@@ -668,7 +668,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataTable winnable_area_sourse(string sp, int cid)
+        public DataTable winnable_area_source(string sp, int cid)
         {
             try
             {
