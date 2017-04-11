@@ -235,7 +235,7 @@ namespace SIS_B
 
         public int update_simpan()
         {
-            return data1.update_simpan();
+            return data1.update_simpan(ele_r_id_u,race_frg,totalvote,spolit_vote,turn_vote,majority);
         }
 
         //HQ Module : START
