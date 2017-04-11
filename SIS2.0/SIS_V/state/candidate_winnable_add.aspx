@@ -20,16 +20,62 @@
             });
 
             $(document).on("click", ".rsrce", function () {
+
                 $("#indexId").val($(this).data("index"));
+                $(".resourceTable tbody tr").each(function () {
+                    if (!$(this).is(':first-child')) {
+                        $(this).remove();
+                    } else {
+                        $(this).find('#agencyList').val("");
+                        $(this).find('#justification').val("");
+                    }
+                });
+                $sourceDate = $(this).parent().find("#hdnSourceDate").val();
+                $hdnSourceId = $(this).parent().find("#hdnSourceId").val();
+                $justification = $(this).parent().find("#hdnJustfication").val();
+                if ($sourceDate != "" && $hdnSourceId != "" && $justification != "") {
+                    var $dateArray = $sourceDate.split(',');
+                    var $idArray = $hdnSourceId.split(',');
+                    var jArray = $justification.split(',');
+                    for (var x = 0; x < $dateArray.length; x++) {
+                        if (x == 0) {
+                            $(".resourceTable tbody tr:first").find('#sourceDate').val((typeof ($dateArray[x]) == "undefined") ? "" : $dateArray[x]);
+                            $(".resourceTable tbody tr:first").find('#agencyList').val((typeof ($idArray[x]) == "undefined") ? "" : $idArray[x]);
+                            $(".resourceTable tbody tr:first").find('#justification').val((typeof (jArray[x]) == "undefined") ? "" : jArray[x]);
+                        } else {
+                            $cloned = $(".resourceTable tbody tr:first").clone();
+                            $cloned.find("td:first").text(parseInt($(".resourceTable tbody tr").length) + 1);
+                            $cloned.find('#agencyList').val((typeof ($idArray[x]) == "undefined") ? "" : $idArray[x]);
+                            $cloned.find('#justification').val((typeof (jArray[x]) == "undefined") ? "" : jArray[x]);
+                            $cloned.find(".dateagency").datepicker({
+                                autoclose: true,
+                                todayHighlight: true,
+                                format: 'dd/mm/yyyy',
+                                orientation: 'bottom auto',
+                                keyboardNavigation: false
+                            });
+                            $cloned.find('#sourceDate').val((typeof ($dateArray[x]) == "undefined") ? "" : $dateArray[x]);
+                            $(".resourceTable tr:last").after($cloned);
+                        }
+                    }
+                    $length = $(".resourceTable tbody tr").length;
+                    if ($length > 1) {
+                        $("#dupRowRemove").show();
+                    }
+                }
+
             });
 
             $("#dupRow").click(function () {
-                $cloned = $("#baseRow").clone();
+                $cloned = $(".resourceTable tbody tr:first").clone();
                 //$selectClone = $cloned.find("#agencyListDup").clone().removeClass("hidden");
                 //$selectClone.customselect();
                 //$selectClone.appendTo($cloned.find("td:nth-child(3)").html(""));
+                $cloned.find("td:first").text(parseInt($(".resourceTable tbody tr").length)+1);
                 $cloned.find(".parsley-error").removeClass("parsley-error");
                 $cloned.find("#sourceDate").val("");
+                $cloned.find("#agencyList").val("");
+                $cloned.find("#justification").val("");
                 $cloned.find(".dateagency").datepicker({
                     autoclose: true,
                     todayHighlight: true,
@@ -39,7 +85,6 @@
                 });
                 $(".resourceTable tr:last").after($cloned);
                 $length = $(".resourceTable tbody tr").length;
-                console.log($length);
                 if ($length > 1) {
                     $("#dupRowRemove").show();
                 }
@@ -132,6 +177,20 @@
                     <div class="card-box">
                         <h4 class="m-t-0 header-title"><b>TAMBAH PROFIL CALON BOLEH MENANG</b></h4>
                         <p class="text-muted font-13 m-b-30"></p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <asp:Label ID="lblvalid" runat="server"></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="panel panel-color panel-success">
@@ -257,7 +316,7 @@
                                             <div class="row">
                                                <div class="col-lg-12">
                                                    <input type="hidden" id="indexId" />
-                                                   <div class="table-responsive" runat="server" id="scrollWrapper">
+                                                   <div class="table-responsive max-height-210 mCustomScrollbar" data-mcs-theme="dark-3">
                                                        <asp:GridView ID="GridViewRowAdd" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridViewRowAdd_PreRender" AutoGenerateColumns="False">
                                                            <Columns>
                                                                <asp:BoundField DataField="RowNumber" HeaderText="#"/>
@@ -300,7 +359,7 @@
                                                                    <ItemTemplate>
 <%--                                                                        <asp:UpdatePanel ID="OptionsUpdatePanel" runat="server" UpdateMode="Conditional">
                                                                             <ContentTemplate>--%>
-                                                                               <asp:DropDownList ID="ddOptions" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddOptions_SelectedIndexChanged">
+                                                                               <asp:DropDownList ID="ddOptions" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddOptions_SelectedIndexChanged" EnableViewState="true">
                                                                                     <asp:ListItem Text="----SILA PILIH----" Value="" />
                                                                                     <asp:ListItem Text="Pilihan Pertama" Value="0"/>
                                                                                     <asp:ListItem Text="Pilihan Kedua" Value="1"/>
@@ -338,15 +397,15 @@
                                                     </div>
                                                     <div class="alert alert-danger alert-dismissable" id="invalidOption" runat="server">
                                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                                         Pilihan ini telah memilih calon lain.
+                                                            Pilihan ini telah memilih calon lain.
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                        <asp:LinkButton ID="rowRemove" runat="server" Visible="false" CssClass="btn btn-danger w100" OnClick="rowRemove_Click"><i class="fa fa-trash"></i> KELUAR DARI SENARAI</asp:LinkButton>
+                                                        <asp:LinkButton ID="rowRemove" runat="server" Visible="false" CssClass="btn btn-danger w100 no-loader" OnClick="rowRemove_Click"><i class="fa fa-trash"></i> KELUAR DARI SENARAI</asp:LinkButton>
                                                     </div>
                                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                        <asp:LinkButton ID="rowAdd" runat="server" CssClass="btn btn-primary w100" OnClick="rowAdd_Click"><i class="fa fa-plus"></i> TAMBAH KAWASAN</asp:LinkButton>
+                                                        <asp:LinkButton ID="rowAdd" runat="server" CssClass="btn btn-primary w100 no-loader" OnClick="rowAdd_Click"><i class="fa fa-plus"></i> TAMBAH KAWASAN</asp:LinkButton>
                                                     </div> 
                                                 </div>
                                             </div>
@@ -362,7 +421,7 @@
                                         </div>
                                         <div class="panel-body panel-custom-bg-success">
                                             <div class="row">
-                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 m-b-15">
                                                      <label for="userName">PILIH FAIL YANG ANDA KENHANDAKI DI BAWAH</label><br />
 <%--                                                      <div class="fileupload fileupload-new" data-provides="fileupload">
                                                         <span class="btn btn-primary btn-file" style="width:50%"><span class="fileupload-new"><i class="fa fa-file-text"></i> Select file</span>
@@ -372,7 +431,7 @@
                                                       </div>--%>
                                                     <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
                                                     <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Select Archives</button>
-                                                     <span id="fileName"></span>
+                                                     <span id="fileName" runat="server" ClientIDMode="Static"></span>
                                                  </div>
                                             </div>
                                             <div class="row">
@@ -390,11 +449,10 @@
                           <div class="row">
                              <div class="col-lg-12">
                                  <div class="panel panel-color panel-success">
-                                    <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="md md-contacts"></i> Candidate Informaton</h3>
-                                    </div>
                                     <div class="panel-body panel-custom-bg-success">
-                                        <asp:Button ID="saveAll" runat="server" Text="Simplan" OnClick="saveAll_Click" /> <asp:Button ID="Button2" runat="server" Text="Cancel" />
+                                        <div class="btn-group pull-right">
+                                            <asp:Button ID="saveAll" runat="server" Text="Simplan" CssClass="btn btn-success" OnClick="saveAll_Click" /> <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Cancel" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -467,7 +525,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr id="baseRow">
+                                                    <tr>
                                                         <td>1</td>
                                                         <td>
                                                             <div class="form-group m-b-0">
@@ -493,8 +551,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="alert alert-danger alert-dismissable" id="agencyAlert" style="display:none;">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <div class="alert alert-danger alert-dismissable" id="agencyAlert" style="display:none;">                                   
                                         Sila lengkapkan borang untuk menambah.
                                 </div>
                             </div>

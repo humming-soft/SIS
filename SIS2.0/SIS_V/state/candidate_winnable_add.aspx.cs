@@ -34,6 +34,8 @@ namespace SIS_V.state
                 SetAgencyInitialRow();
                 invalidAdd.Visible = false;
                 invalidOption.Visible = false;
+                valid.Visible = false;
+                invalid.Visible = false;
             }
         }
 
@@ -221,99 +223,133 @@ namespace SIS_V.state
 
             DropDownList ddarea = (DropDownList)row.FindControl("ddArea");
             DropDownList ddareacode = (DropDownList)row.FindControl("ddAreaCode");
-
-            int areaType = Int32.Parse(ddarea.SelectedValue);
-
-            instanceDt = new DataTable();
-            bus.areaType = areaType;
-            bus.sid = int.Parse(Session["state"].ToString());
-            instanceDt = bus.fill_status_districts();
-            if (instanceDt.Rows.Count > 0)
+            if (ddarea.SelectedIndex != 0)
             {
-                ddareacode.DataSource = instanceDt;
-                ddareacode.DataBind();
-                ddareacode.Items.Insert(0, new ListItem("----SILA PILIH----",""));
+                int areaType = Int32.Parse(ddarea.SelectedValue);
+
+                instanceDt = new DataTable();
+                bus.areaType = areaType;
+                bus.sid = int.Parse(Session["state"].ToString());
+                instanceDt = bus.fill_status_districts();
+                if (instanceDt.Rows.Count > 0)
+                {
+                    ddareacode.DataSource = instanceDt;
+                    ddareacode.DataBind();
+                    ddareacode.Items.Insert(0, new ListItem("----SILA PILIH----", ""));
+                }
+                ddareacode.Enabled = true;
+                clientInvocation();
             }
-            ddareacode.Enabled = true;
-            clientInvocation();
 
         }
 
         protected void rowAdd_Click(object sender, EventArgs e)
         {
-            int flag = 0;
             int rowCount = GridViewRowAdd.Rows.Count;
-            if (GridViewRowAdd.Rows.Count > 0)
+            if (rowValidation(rowCount) == 1)
             {
-                for (int i = 0; i < rowCount; i++)
-                {
-                    DropDownList ddl1 = (DropDownList)GridViewRowAdd.Rows[i].Cells[1].FindControl("ddElection");
-                    DropDownList ddl2 = (DropDownList)GridViewRowAdd.Rows[i].Cells[2].FindControl("ddPosition");
-                    DropDownList ddl3 = (DropDownList)GridViewRowAdd.Rows[i].Cells[3].FindControl("ddArea");
-                    DropDownList ddl4 = (DropDownList)GridViewRowAdd.Rows[i].Cells[4].FindControl("ddAreaCode");
-                    DropDownList ddl5 = (DropDownList)GridViewRowAdd.Rows[i].Cells[5].FindControl("ddOptions");
+                AddNewRowToGrid();
+                int delay = (rowCount > 5) ? 5000 : rowCount * 1000;
+                System.Threading.Thread.Sleep(delay);
+                invalidAdd.Visible = false;
+                invalidOption.Visible = false;
+            }
 
-                    if (ddl1.SelectedValue =="")
-                    {
-                        flag++;
-                        ddl1.Attributes.CssStyle.Add("border-color", "red");
-                    }
-                    else
-                    {
-                        ddl1.Attributes.CssStyle.Remove("border-color");
-                    }
-                    if (ddl2.SelectedValue == "")
-                    {
-                        flag++;
-                        ddl2.Attributes.CssStyle.Add("border-color", "red");
-                    }
-                    else
-                    {
-                        ddl2.Attributes.CssStyle.Remove("border-color");
-                    }
-                    if (ddl3.SelectedValue == "")
-                    {
-                        flag++;
-                        ddl3.Attributes.CssStyle.Add("border-color", "red");
-                    }
-                    else
-                    {
-                        ddl3.Attributes.CssStyle.Remove("border-color");
-                    }
-                    if (ddl4.SelectedValue == "")
-                    {
-                        flag++;
-                        ddl4.Attributes.CssStyle.Add("border-color", "red");
-                    }
-                    else
-                    {
-                        ddl4.Attributes.CssStyle.Remove("border-color");
-                    }
-                    if (ddl5.SelectedValue == "")
-                    {
-                        flag++;
-                        ddl5.Attributes.CssStyle.Add("border-color", "red");
-                    }
-                    else
-                    {
-                        ddl5.Attributes.CssStyle.Remove("border-color");
-                    }
-                }
+            //int flag = 0;
+            //int iflag = 0;
+            //int rowCount = GridViewRowAdd.Rows.Count;
+            //if (GridViewRowAdd.Rows.Count > 0)
+            //{
+            //    for (int i = 0; i < rowCount; i++)
+            //    {
+            //        DropDownList ddl1 = (DropDownList)GridViewRowAdd.Rows[i].Cells[1].FindControl("ddElection");
+            //        DropDownList ddl2 = (DropDownList)GridViewRowAdd.Rows[i].Cells[2].FindControl("ddPosition");
+            //        DropDownList ddl3 = (DropDownList)GridViewRowAdd.Rows[i].Cells[3].FindControl("ddArea");
+            //        DropDownList ddl4 = (DropDownList)GridViewRowAdd.Rows[i].Cells[4].FindControl("ddAreaCode");
+            //        DropDownList ddl5 = (DropDownList)GridViewRowAdd.Rows[i].Cells[5].FindControl("ddOptions");
 
-                if (flag == 0)
-                {
-                    AddNewRowToGrid();
-                    int delay = (rowCount>5)? 5000 : rowCount * 1000;
-                    System.Threading.Thread.Sleep(delay);
-                    invalidAdd.Visible = false;
-                }
-                else
-                {
-                    invalidAdd.Visible = true;
-                }
+            //        if (ddl1.SelectedValue =="")
+            //        {
+            //            flag++;
+            //            ddl1.Attributes.CssStyle.Add("border-color", "red");
+            //        }
+            //        else
+            //        {
+            //            ddl1.Attributes.CssStyle.Remove("border-color");
+            //        }
+            //        if (ddl2.SelectedValue == "")
+            //        {
+            //            flag++;
+            //            ddl2.Attributes.CssStyle.Add("border-color", "red");
+            //        }
+            //        else
+            //        {
+            //            ddl2.Attributes.CssStyle.Remove("border-color");
+            //        }
+            //        if (ddl3.SelectedValue == "")
+            //        {
+            //            flag++;
+            //            ddl3.Attributes.CssStyle.Add("border-color", "red");
+            //        }
+            //        else
+            //        {
+            //            ddl3.Attributes.CssStyle.Remove("border-color");
+            //        }
+            //        if (ddl4.SelectedValue == "")
+            //        {
+            //            flag++;
+            //            ddl4.Attributes.CssStyle.Add("border-color", "red");
+            //        }
+            //        else
+            //        {
+            //            ddl4.Attributes.CssStyle.Remove("border-color");
+            //        }
+            //        if (ddl5.SelectedValue == "")
+            //        {
+            //            flag++;
+            //            ddl5.Attributes.CssStyle.Add("border-color", "red");
+            //        }
+            //        else
+            //        {
+            //            ddl5.Attributes.CssStyle.Remove("border-color");
+            //        }
+            //        if (flag == 0)
+            //        {
+            //            if (AreaCandidateExists(ddl4.SelectedValue.ToString(), ddl1.SelectedValue.ToString(), ddl5.SelectedValue.ToString()) == 1)
+            //            {
+            //                iflag++;
+            //                ddl5.Attributes.CssStyle.Add("border-color", "red");
+            //            }
+            //            else
+            //            {
+            //                ddl5.Attributes.CssStyle.Remove("border-color");
+            //            }
+            //        }
+            //    }
+
+            //    if (flag == 0)
+            //    {
+            //        if (iflag == 0)
+            //        {
+            //            AddNewRowToGrid();
+            //            int delay = (rowCount > 5) ? 5000 : rowCount * 1000;
+            //            System.Threading.Thread.Sleep(delay);
+            //            invalidAdd.Visible = false;
+            //            invalidOption.Visible = false;
+            //        }
+            //        else
+            //        {
+            //            invalidOption.Visible = true;
+            //        }
+
+            //    }
+            //    else
+            //    {
+            //        invalidAdd.Visible = true;
+            //    }
                 clientInvocation();
 
-            }
+            //}
         }
 
         private void AddNewRowToGrid()
@@ -637,69 +673,121 @@ namespace SIS_V.state
         {
             int rowIndex = 0;
             TextBox tt1 = (TextBox)CandidateDataList.Items[0].FindControl("txtComment");
-            if (ViewState["CurrentTable"] != null)
+            if (formValidate(tt1) == 0)
             {
-                DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
-                DataTable dtCurrentCandidate = (DataTable)ViewState["currentCandidate"];
-                if (dtCurrentTable.Rows.Count > 0)
-                {
-
-                    bus.candidate_id = Int32.Parse(dtCurrentCandidate.Rows[0]["candidate_id"].ToString());
-                    bus.name = dtCurrentCandidate.Rows[0]["name"].ToString();
-                    bus.job = dtCurrentCandidate.Rows[0]["job"].ToString();
-                    bus.education = dtCurrentCandidate.Rows[0]["education"].ToString();
-                    bus.political_post = dtCurrentCandidate.Rows[0]["political_post"].ToString();
-                    bus.comment = tt1.Text;
-                    bus.insert_WinnableCandidate();
-                    if (FileUpload1.HasFile)
+                    if (ViewState["CurrentTable"] != null)
                     {
-                        string filename = FileUpload1.FileName;
-                        System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
-                        System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
-                        Byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                        bus.fileName = filename;
-                        bus.uniqueFilename = filename + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss");
-                        bus.comment = infoFile.Text;
-                        int aid = bus.insert_WinnableArchive();
-                        if (aid > 0 || aid != null)
+                        DataTable dtCurrentTable = (DataTable)ViewState["CurrentTable"];
+                        DataTable dtCurrentCandidate = (DataTable)ViewState["currentCandidate"];
+                        if (dtCurrentTable.Rows.Count > 0)
                         {
-                            bus.archive_id = aid;
-                            bus.archive = bytes;
-                            bus.update_WinnableArchiveFile();
+
+                            bus.candidate_id = Int32.Parse(dtCurrentCandidate.Rows[0]["candidate_id"].ToString());
+                            bus.name = dtCurrentCandidate.Rows[0]["name"].ToString();
+                            bus.job = dtCurrentCandidate.Rows[0]["job"].ToString();
+                            bus.education = dtCurrentCandidate.Rows[0]["education"].ToString();
+                            bus.political_post = dtCurrentCandidate.Rows[0]["political_post"].ToString();
+                            bus.comment = tt1.Text;
+                            bus.insert_WinnableCandidate();
+                            if (FileUpload1.HasFile)
+                            {
+                                string filename = FileUpload1.FileName;
+                                System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
+                                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                                bus.fileName = filename;
+                                bus.uniqueFilename = filename + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss");
+                                bus.comment = infoFile.Text;
+                                int aid = bus.insert_WinnableArchive();
+                                if (aid > 0 || aid != null)
+                                {
+                                    bus.archive_id = aid;
+                                    bus.archive = bytes;
+                                    bus.update_WinnableArchiveFile();
+                                }
+                            }
+                            for (int i = 0; i < dtCurrentTable.Rows.Count; i++)
+                            {
+                                //extract the TextBox values  
+                                DropDownList ddl1 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[1].FindControl("ddElection");
+                                DropDownList ddl2 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[2].FindControl("ddPosition");
+                                DropDownList ddl3 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[3].FindControl("ddArea");
+                                DropDownList ddl4 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[4].FindControl("ddAreaCode");
+                                DropDownList ddl5 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[5].FindControl("ddOptions");
+
+                                HiddenField hid1 = (HiddenField)GridViewRowAdd.Rows[rowIndex].Cells[6].FindControl("hdnSourceDate");
+                                HiddenField hid2 = (HiddenField)GridViewRowAdd.Rows[rowIndex].Cells[6].FindControl("hdnSourceId");
+                                HiddenField hid3 = (HiddenField)GridViewRowAdd.Rows[rowIndex].Cells[6].FindControl("hdnJustfication");
+                                bus.election_id = Int32.Parse(ddl1.SelectedValue);
+                                bus.is_incumbent = Int32.Parse(ddl2.SelectedValue);
+                                bus.area_id = Int32.Parse(ddl4.SelectedValue);
+                                bus.choice_id = Int32.Parse(ddl5.SelectedValue);
+                                bus.insert_WinnableArea();
+                                string[] sourceDate = hid1.Value.Split(',');
+                                string[] sourceId = hid2.Value.Split(',');
+                                string[] sourceJust = hid3.Value.Split(',');
+                                for (int j = 0; j < sourceDate.Length; j++)
+                                {
+                                    bus.agency_id = Int32.Parse(sourceId[j]);
+                                    bus.justification = sourceJust[j];
+                                    bus.source_date = DateTime.ParseExact(sourceDate[j], "dd/MM/yyyy", null);
+                                    bus.insert_WinnableAreaSource();
+                                }
+
+                                rowIndex++;
+                            }
                         }
                     }
-                    for (int i = 0; i < dtCurrentTable.Rows.Count; i++)
-                    {
-                        //extract the TextBox values  
-                        DropDownList ddl1 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[1].FindControl("ddElection");
-                        DropDownList ddl2 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[2].FindControl("ddPosition");
-                        DropDownList ddl3 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[3].FindControl("ddArea");
-                        DropDownList ddl4 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[4].FindControl("ddAreaCode");
-                        DropDownList ddl5 = (DropDownList)GridViewRowAdd.Rows[rowIndex].Cells[5].FindControl("ddOptions");
+                    invalid.Visible = false;
+                    valid.Visible = true;
+                    lblinvalid.Text = "Rekod berjaya disimpan.";
+            }
+            else
+            {
+                valid.Visible = false;
+                invalid.Visible = true;
+                lblinvalid.Text = "Sila lengkapkan bidang.";
+            }
+        }
 
-                        HiddenField hid1 = (HiddenField)GridViewRowAdd.Rows[rowIndex].Cells[6].FindControl("hdnSourceDate");
-                        HiddenField hid2 = (HiddenField)GridViewRowAdd.Rows[rowIndex].Cells[6].FindControl("hdnSourceId");
-                        HiddenField hid3 = (HiddenField)GridViewRowAdd.Rows[rowIndex].Cells[6].FindControl("hdnJustfication");
-                        bus.election_id = Int32.Parse(ddl1.SelectedValue);
-                        bus.is_incumbent = Int32.Parse(ddl2.SelectedValue);
-                        bus.area_id = Int32.Parse(ddl4.SelectedValue);
-                        bus.choice_id = Int32.Parse(ddl5.SelectedValue);
-                        bus.insert_WinnableArea();
-                        string[] sourceDate = hid1.Value.Split(',');
-                        string[] sourceId = hid2.Value.Split(',');
-                        string[] sourceJust = hid3.Value.Split(',');
-                        for (int j = 0; j < sourceDate.Length; j++)
-                        {
-                            bus.agency_id = Int32.Parse(sourceId[j]);
-                            bus.justification = sourceJust[j];
-                            bus.source_date = DateTime.ParseExact(sourceDate[j], "dd/MM/yyyy", null);
-                            bus.insert_WinnableAreaSource();
-                        }
+        private int formValidate(TextBox txtComment)
+        {
+            int flag = 0;
+            if (!FileUpload1.HasFile)
+            {
+                fileName.InnerText = "Sila pilih fail.";
+                fileName.Attributes.CssStyle.Add("color", "red");
+                flag++;
+            }
+            else
+            {
+                fileName.InnerText = "";
+            }
+            if (infoFile.Text == "")
+            {
+                infoFile.Attributes.CssStyle.Add("border-color", "red");
+                flag++;
+            }
+            else
+            {
+                infoFile.Attributes.CssStyle.Remove("border-color");
+            }
+            if (txtComment.Text == "")
+            {
+                txtComment.Attributes.CssStyle.Add("border-color", "red");
+                flag++;
 
-                        rowIndex++;
-                    }
-                }
-            }  
+            }
+            else
+            {
+                txtComment.Attributes.CssStyle.Remove("border-color");
+            }
+            if (rowValidation(GridViewRowAdd.Rows.Count) != 1)
+            {
+                flag++;
+            }
+            return flag;
+
         }
 
         protected void ddOptions_SelectedIndexChanged(object sender, EventArgs e)
@@ -711,22 +799,134 @@ namespace SIS_V.state
             DropDownList ddoptions = (DropDownList)row.FindControl("ddOptions");
             DropDownList ddelection = (DropDownList)row.FindControl("ddElection");
 
-            if (ViewState["currentCandidate"] != null)
+            if (ddareacode.SelectedIndex != 0 && ddoptions.SelectedIndex != 0 && ddelection.SelectedIndex != 1)
             {
-                DataTable dtCurrentCandidate = (DataTable)ViewState["currentCandidate"];
-                bus.area_id = Int32.Parse(ddareacode.SelectedValue.ToString());
-                bus.election_id = Int32.Parse(ddelection.SelectedValue.ToString());
-                bus.choice_id = Int32.Parse(ddoptions.SelectedValue.ToString());
-                int exists = bus.check_WinnableCandidateExists();
-                if (exists == 1)
+                if (AreaCandidateExists(ddareacode.SelectedValue.ToString(), ddelection.SelectedValue.ToString(), ddoptions.SelectedValue.ToString()) == 1)
                 {
+
                     invalidOption.Visible = true;
+                    invalidAdd.Visible = false;
+                    ddoptions.Attributes.CssStyle.Add("border-color", "red");
                 }
                 else
                 {
                     invalidOption.Visible = false;
+                    ddoptions.Attributes.CssStyle.Remove("border-color");
                 }
             }
+        }
+
+        private int AreaCandidateExists(string ddareacode, string ddelection, string ddoptions)
+        {
+        
+            if (ViewState["currentCandidate"] != null)
+            {
+                DataTable dtCurrentCandidate = (DataTable)ViewState["currentCandidate"];
+                bus.area_id = Int32.Parse(ddareacode);
+                bus.election_id = Int32.Parse(ddelection);
+                bus.choice_id = Int32.Parse(ddoptions);
+                int exists = bus.check_WinnableCandidateExists();
+                return exists;
+
+            }
+
+            return 0;
+        }
+
+        private int rowValidation(int rowCount)
+        {
+            int flag = 0;
+            int iflag = 0;
+            if (GridViewRowAdd.Rows.Count > 0)
+            {
+                for (int i = 0; i < rowCount; i++)
+                {
+                    DropDownList ddl1 = (DropDownList)GridViewRowAdd.Rows[i].Cells[1].FindControl("ddElection");
+                    DropDownList ddl2 = (DropDownList)GridViewRowAdd.Rows[i].Cells[2].FindControl("ddPosition");
+                    DropDownList ddl3 = (DropDownList)GridViewRowAdd.Rows[i].Cells[3].FindControl("ddArea");
+                    DropDownList ddl4 = (DropDownList)GridViewRowAdd.Rows[i].Cells[4].FindControl("ddAreaCode");
+                    DropDownList ddl5 = (DropDownList)GridViewRowAdd.Rows[i].Cells[5].FindControl("ddOptions");
+
+                    if (ddl1.SelectedValue == "")
+                    {
+                        flag++;
+                        ddl1.Attributes.CssStyle.Add("border-color", "red");
+                    }
+                    else
+                    {
+                        ddl1.Attributes.CssStyle.Remove("border-color");
+                    }
+                    if (ddl2.SelectedValue == "")
+                    {
+                        flag++;
+                        ddl2.Attributes.CssStyle.Add("border-color", "red");
+                    }
+                    else
+                    {
+                        ddl2.Attributes.CssStyle.Remove("border-color");
+                    }
+                    if (ddl3.SelectedValue == "")
+                    {
+                        flag++;
+                        ddl3.Attributes.CssStyle.Add("border-color", "red");
+                    }
+                    else
+                    {
+                        ddl3.Attributes.CssStyle.Remove("border-color");
+                    }
+                    if (ddl4.SelectedValue == "")
+                    {
+                        flag++;
+                        ddl4.Attributes.CssStyle.Add("border-color", "red");
+                    }
+                    else
+                    {
+                        ddl4.Attributes.CssStyle.Remove("border-color");
+                    }
+                    if (ddl5.SelectedValue == "")
+                    {
+                        flag++;
+                        ddl5.Attributes.CssStyle.Add("border-color", "red");
+                    }
+                    else
+                    {
+                        ddl5.Attributes.CssStyle.Remove("border-color");
+                    }
+                    if (flag == 0)
+                    {
+                        if (AreaCandidateExists(ddl4.SelectedValue.ToString(), ddl1.SelectedValue.ToString(), ddl5.SelectedValue.ToString()) == 1)
+                        {
+                            iflag++;
+                            ddl5.Attributes.CssStyle.Add("border-color", "red");
+                        }
+                        else
+                        {
+                            ddl5.Attributes.CssStyle.Remove("border-color");
+                        }
+                    }
+                }
+
+                if (flag == 0)
+                {
+                    if (iflag == 0)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        invalidOption.Visible = true;
+                        return 0;
+                    }
+
+                }
+                else
+                {
+                    invalidAdd.Visible = true;
+                    return 0;
+                }
+            }
+            return 0;
+            
         }
 
         //protected void lnkResource_Click(object sender, EventArgs e)
