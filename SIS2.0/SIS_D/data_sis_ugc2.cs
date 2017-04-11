@@ -780,5 +780,29 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+        public int DeleteElectionResultData(int election_result_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_DeleteElectionResult";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@election_result_id", election_result_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputId";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputId"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }
