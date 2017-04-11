@@ -753,7 +753,7 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public int DeleteElectionResultCandidate(int election_result_id, int candidate_id)
+        public int DeleteElectionResultCandidate(int election_result_id, int candidate_id, int election_id, int area_id)
         {
             try
             {
@@ -762,6 +762,8 @@ namespace SIS_D
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@election_result_id", election_result_id);
                 cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
+                //cmd.Parameters.AddWithValue("@election_id", election_id);
+                //cmd.Parameters.AddWithValue("@area_id", area_id);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@OutputId";
                 outparam.Direction = ParameterDirection.InputOutput;
