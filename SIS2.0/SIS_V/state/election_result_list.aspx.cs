@@ -71,6 +71,11 @@ namespace SIS_V.state
                 GrdDetails.DataSource = lst;
                 GrdDetails.DataBind();
             }
+            else
+            {
+                GrdDetails.DataSource = null;
+                GrdDetails.DataBind();
+            }
         }
 
         protected void GrdDetails_PreRender(object sender, EventArgs e)
