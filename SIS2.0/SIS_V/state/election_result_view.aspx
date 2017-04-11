@@ -102,6 +102,16 @@
             $('#txtpk').val("");
             $('#txtpk').val(slice).change();
         }
+
+        function clear_values() {
+            $('#ddlraces').val("");
+            $('#lnktambah').prop('disabled', false);
+            $('#lnkkamaskini').prop('disabled', true);
+            $('#lnkdelete').prop('disabled', true);
+            $('#tabular tbody').html("");
+            $('#txttperc').val("0");
+            $('#txtperc').val("0");
+        }
         $(document).ready(function () {
             $('#lnkkamaskini').prop('disabled', true);
             $('#lnkdelete').prop('disabled', true);
@@ -222,10 +232,16 @@
                                             <Columns>
                                                 <asp:BoundField HeaderText="NAMA CALON BERTANDING" DataField="candidate_name" ReadOnly="true"></asp:BoundField>
                                                 <asp:BoundField HeaderText="PARTI" DataField="party_shortcode" ReadOnly="true"></asp:BoundField>
-                                                <asp:BoundField DataField="winner" HeaderText="Win" HeaderStyle-CssClass="hideGridColumn" ItemStyle-CssClass="hideGridColumn"></asp:BoundField>
+                                                <asp:BoundField DataField="winner" HeaderText="Win" HeaderStyle-CssClass="hideGridColumn" ItemStyle-CssClass="hideGridColumn">
+                                                    <HeaderStyle CssClass="hideGridColumn"></HeaderStyle>
+
+                                                    <ItemStyle CssClass="hideGridColumn"></ItemStyle>
+                                                </asp:BoundField>
                                                 <asp:TemplateField HeaderText="UNDI">
                                                     <EditItemTemplate>
-                                                        <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="TextBox3"></asp:TextBox>
+                                                        <asp:TextBox runat="server" Text='<%# Bind("no_of_vote") %>' ID="txtvotes"></asp:TextBox>
+                                                        <asp:RequiredFieldValidator ID="Required" runat="server" ErrorMessage="This Field is Required" Type="Integer" ControlToValidate="txtvotes" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                        <asp:RegularExpressionValidator ID="negativevalidator" runat="server" ErrorMessage="Invalid Value" ControlToValidate="txtvotes" ValidationExpression="^[1-9]\d*$" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
                                                     </EditItemTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label runat="server" Text='<%# Bind("no_of_vote") %>' ID="Label3"></asp:Label>
@@ -234,7 +250,7 @@
 
                                                 <asp:TemplateField HeaderText="PEMENANG">
                                                     <EditItemTemplate>
-                                                        <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Eval("winner").Equals("YES") ? true : false %>' />
+                                                        <asp:CheckBox ID="chkwinner" runat="server" Checked='<%# Eval("winner").Equals("YES") ? true : false %>' />
                                                     </EditItemTemplate>
                                                     <ItemTemplate>
                                                         <asp:CheckBox ID="CheckBox2" runat="server" Enabled="false" Checked='<%# Eval("winner").Equals("YES") ? true : false %>' />
@@ -261,7 +277,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="btn-block">
-                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" OnClientClick="val_el_u()" Text="SIMPAN" />
+                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" OnClientClick="val_el_u()" Text="SIMPAN" OnClick="btnsimpan_Click" />
                         </div>
                     </div>
                 </div>
@@ -332,7 +348,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="btnSubmit" class="btn btn-success" onclick="get_values()" data-dismiss="modal">OK</button>
-                    <button type="button" id="btnClear" class="btn btn-info waves-light">BATAL</button>
+                    <button type="button" id="btnClear" class="btn btn-info waves-light" onclick="clear_values()" data-dismiss="modal">BATAL</button>
                 </div>
             </div>
         </div>

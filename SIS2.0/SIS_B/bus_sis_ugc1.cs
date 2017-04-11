@@ -72,6 +72,14 @@ namespace SIS_B
         public int cand_id_u { get; set; }
         public int party_id_u { get; set; }
         public int coal_id_u { get; set; }
+        public int votes { get; set; }
+        public int winn { get; set; }
+        public string race_frg { get; set; }
+        public int totalvote { get; set; }
+        public int spolit_vote { get; set; }
+        public int turn_vote { get; set; }
+        public int majority { get; set; }
+
         public int check_login()
         {
             return data1.check_login(uname,pswd);
@@ -222,7 +230,12 @@ namespace SIS_B
         }
         public int update_details()
         {
-            return data1.update_details(ele_r_id_u, cand_id_u, party_id_u, coal_id_u);
+            return data1.update_details(winn,ele_r_id_u, cand_id_u, party_id_u, coal_id_u, votes);
+        }
+
+        public int update_simpan()
+        {
+            return data1.update_simpan(ele_r_id_u,race_frg,totalvote,spolit_vote,turn_vote,majority);
         }
 
         //HQ Module : START
