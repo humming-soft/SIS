@@ -104,9 +104,13 @@
         }
 
         function clear_values() {
+            $('#ddlraces').val("");
             $('#lnktambah').prop('disabled', false);
             $('#lnkkamaskini').prop('disabled', true);
             $('#lnkdelete').prop('disabled', true);
+            $('#tabular tbody').html("");
+            $('#txttperc').val("0");
+            $('#txtperc').val("0");
         }
         $(document).ready(function () {
             $('#lnkkamaskini').prop('disabled', true);
@@ -273,7 +277,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="btn-block">
-                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" OnClientClick="val_el_u()" Text="SIMPAN" />
+                            <asp:Button ID="btnsimpan" CssClass="btn btn-success pull-right m-r-15" runat="server" OnClientClick="val_el_u()" Text="SIMPAN" OnClick="btnsimpan_Click" />
                         </div>
                     </div>
                 </div>
