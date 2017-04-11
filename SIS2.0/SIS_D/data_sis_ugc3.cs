@@ -799,5 +799,50 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        //public int add_candidate( Byte[] image)
+        //{
+        //    try
+        //    {
+        //        cmd.Parameters.Clear();
+        //        cmd.CommandText = "insert_flag";
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@image", image);
+        //        SqlParameter outparam = new SqlParameter();
+        //        outparam.ParameterName = "@flag";
+        //        outparam.Direction = ParameterDirection.InputOutput;
+        //        outparam.DbType = DbType.Int32;
+        //        outparam.Value = 0;
+        //        cmd.Parameters.Add(outparam);
+        //        cmd.Connection = db.connect();
+        //        cmd.ExecuteNonQuery();
+        //        int res = int.Parse(cmd.Parameters["@flag"].Value.ToString());
+        //        return res;
+        //    }
+        //    finally
+        //    {
+        //        db.disconnect();
+        //    }
+        //}
+        public DataTable fill_flag(int state_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_select_flag";
+                cmd.Parameters.AddWithValue("@state", state_id);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

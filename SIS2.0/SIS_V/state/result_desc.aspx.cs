@@ -18,6 +18,7 @@ namespace SIS_V.state
             {
                 norec_1.Visible = false;
                 norec_2.Visible = false;
+                noimage.Visible = false;
                 CheckIsLogin();
             }
         }
@@ -31,12 +32,12 @@ namespace SIS_V.state
                 }
                 else
                 {
-
+                    objBus.state_id = int.Parse(Session["state"].ToString());
+                    fill_image();
                     lbl_state_name.Text = (int.Parse(Session["area_type"].ToString()) == 1) ? "PARLIMEN NEGERI " + Session["statename"].ToString() : "DUN NEGERI " + Session["statename"].ToString();
                     lbl_ele_name.Text = Session["election"].ToString();
                     objBus.coalition_id = int.Parse(Session["coalition_id"].ToString());
                     objBus.area_type = int.Parse(Session["area_type"].ToString());
-                    objBus.state_id = int.Parse(Session["state"].ToString());
                     objBus.elec_id = int.Parse(Session["election_id"].ToString());
                     fill_scoresheet();
                 }
@@ -44,6 +45,39 @@ namespace SIS_V.state
             else
             {
                 Response.Redirect("~/Login");
+            }
+        }
+        public void fill_image()
+        {
+
+            string cand_image;
+            string base64String = "";
+            DataTable dt = objBus.fill_flag();
+            if (dt.Rows.Count == 0)
+            {
+                noimage.Visible = false;
+            }
+            else
+            {
+                if (dt.Rows[0]["image_flag"].ToString() == "")
+                {
+                    noimage.Visible = false;
+                }
+                else
+                {
+                    byte[] bytes = (byte[])dt.Rows[0]["image_flag"];
+                    if (bytes.Length > 0)
+                    {
+                        noimage.Visible = true;
+                        base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                    }
+                    else
+                    {
+                        noimage.Visible = false;
+                    }
+                }
+                cand_image = "data:image/png;base64," + base64String;
+                cand_image1.ImageUrl = cand_image;
             }
         }
         public void fill_scoresheet()

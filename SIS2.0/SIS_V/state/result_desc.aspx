@@ -10,12 +10,11 @@
                     <h4 class="m-t-0 header-title" style="font-size: 25px; text-align: center; line-height: 25px;"><i class="fa fa-university"></i><b>KEPUTUSAN PILIHANRAYA 
                         <asp:Label ID="lbl_ele_name" runat="server" Text=""></asp:Label></b></h4>
                 </div>
-                <br />
-                <%--<div class="file" style="width: 70px;">
-                    <div class="image" style="align-content:center">
-                        <asp:Image ID="state_image" CssClass="img-responsive" Style="width: 70px; height: 40px;" ImageUrl='<img src="../assets/images/login_logo_small.png" />' runat="server" />
+                <div class="col-md-12" id="noimage" runat="server">
+                    <div class="col-lg-4" style="margin-left: 45%; margin-bottom: 10px; margin-top: 10px; align-content:center">
+                        <asp:Image ID="cand_image1" CssClass="img-responsive" Style="width: 113px; height: 63px;" runat="server" />
                     </div>
-                </div>--%>
+                </div>
                 <div class="row">
                     <h4 class="m-t-0 header-title" style="font-size: 25px; text-align: center; line-height: 25px;"><b>
                         <asp:Label ID="lbl_state_name" runat="server" Text="Label"></asp:Label></b></h4>
@@ -86,8 +85,9 @@
                                                             <asp:DataList ID="dtlst_scoresheet_others" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
                                                                 <ItemTemplate>
                                                                     <address>
-                                                                        <strong class="f-w-600"><%# Eval("candidate_name")%>  - ( <%# Eval("party_shortcode")%> - <%# Eval("coalition_shortcode")%> ) </strong><br>
-                                                                        Undi : <%# Eval("vote")%>  <%# Eval("difference_result")%> 
+                                                                        <strong class="f-w-600"><%# Eval("candidate_name")%>  - ( <%# Eval("party_shortcode")%> - <%# Eval("coalition_shortcode")%> ) </strong>
+                                                                        <br>
+                                                                        Undi : <%# Eval("vote")%>  <%# Eval("difference_result")%>
                                                                     </address>
                                                                 </ItemTemplate>
                                                             </asp:DataList>
