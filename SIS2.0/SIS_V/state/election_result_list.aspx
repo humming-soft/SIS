@@ -59,7 +59,8 @@
                                             <asp:BoundField DataField="area_name" HeaderText="Nama Kawasan" />
                                             <asp:TemplateField HeaderText="Tindakan">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="edit" CssClass="fa fa-edit" Font-Underline="false" OnClick="edit_Click" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="edit" CssClass="fa fa-edit" Font-Underline="false" OnClick="edit_Click" runat="server"></asp:LinkButton> &nbsp
+                                                    <asp:LinkButton ID="delete" CssClass="fa fa-trash" Font-Underline="false" runat="server"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
