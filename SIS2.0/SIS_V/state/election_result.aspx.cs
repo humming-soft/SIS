@@ -195,7 +195,7 @@ namespace SIS_V.state
                         CanDetails.DataBind();
                         //CanDetails.Columns[2].Visible = false;
                         //CanDetails.Columns[3].Visible = false;
-                        string[] stringSeparators = new string[] {"~~"};
+                        string[] stringSeparators = new string[] {"**"};
                         string[] words = ddlName.SelectedItem.ToString().Split(stringSeparators, StringSplitOptions.None);
                         txtCanName.Text = "";
                         txtCanName.Text = words[0] + " - " + words[2];
