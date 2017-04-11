@@ -758,12 +758,12 @@ namespace SIS_D
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "usp_DeleteElectionResultCandidateVal";
+                cmd.CommandText = "usp_DeleteElectionResultCan";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@election_result_id", election_result_id);
                 cmd.Parameters.AddWithValue("@candidate_id", candidate_id);
-                //cmd.Parameters.AddWithValue("@election_id", election_id);
-                //cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@election_id", election_id);
+                cmd.Parameters.AddWithValue("@area_id", area_id);
                 SqlParameter outparam = new SqlParameter();
                 outparam.ParameterName = "@OutputId";
                 outparam.Direction = ParameterDirection.InputOutput;
