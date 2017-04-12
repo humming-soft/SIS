@@ -36,10 +36,11 @@ var cand_profile_update = function () {
                 ctl00$ContentPlaceHolder1$DropDownList3: {
                     required: true
                 },
-                //ctl00$ContentPlaceHolder1$FileUpload1: {
-                //    required: true,
-                //    accept: "image/jpeg,image/jpg,image/png"
-                //},
+                ctl00$ContentPlaceHolder1$FileUpload1: {
+                    //required: true,
+                    filesize: 3145728,
+                    accept: "image/jpeg,image/jpg,image/png"
+                },
                 ctl00$ContentPlaceHolder1$TextBox18: {
                     required: true
                 },
