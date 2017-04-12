@@ -9,6 +9,12 @@ var cand_profile = function () {
     var runValidator = function () {
         var form = $('#form1');
         var errorHandler = $('.errorHandler', form);
+        $.validator.addMethod('filesize', function (value, element, param) {
+            // param = size (in bytes) 
+            // element = element to validate (<input>)
+            // value = value of the element (file name)
+            return this.optional(element) || (element.files[0].size <= param)
+        }, "Image must be less than 3 Mb");
         form.validate({
             ignore: [],
             rules: {
@@ -32,6 +38,7 @@ var cand_profile = function () {
                 },
                 ctl00$ContentPlaceHolder1$FileUpload1: {
                     required: true,
+                    filesize : 3145728,
                     accept: "image/jpeg,image/jpg,image/png"
                 },
                 ctl00$ContentPlaceHolder1$TextBox18: {
