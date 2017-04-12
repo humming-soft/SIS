@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary" Font-Underline="false" runat="server" OnClientClick="validation_e_list()" OnClick="LinkButton1_Click"><i class="fa fa-search-plus"></i> Cari</asp:LinkButton>
+                                        <asp:Button ID="Button1" CssClass="btn btn-primary" OnClientClick="validation_e_list()" runat="server" Text="Cari" OnClick="Button1_Click" />
                                     </div>
                                 </div>
                             </div>

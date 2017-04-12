@@ -59,33 +59,6 @@ namespace SIS_V.state
             }
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            invalid.Visible = false;
-            valid.Visible = false;
-            if (ddlArea.SelectedIndex != 0)
-            {
-                bus.eid = int.Parse(Session["election_id"].ToString());
-                bus.areaid = int.Parse(ddlArea.SelectedValue);
-                DataTable lst = bus.getDetails();
-                if (lst.Rows.Count > 0)
-                {
-                    GrdDetails.DataSource = lst;
-                    GrdDetails.DataBind();
-                }
-                else
-                {
-                    GrdDetails.DataSource = null;
-                    GrdDetails.DataBind();
-                }
-            }
-            else
-            {
-                invalid.Visible = true;
-                lblinvalid.Text = "Sila isi Kawasan!";
-            }
-        }
-
         protected void GrdDetails_PreRender(object sender, EventArgs e)
         {
             if (GrdDetails.Rows.Count > 0)
@@ -128,6 +101,33 @@ namespace SIS_V.state
             {
                 invalid.Visible = true;
                 lblinvalid.Text = "Tidak dapat membuang. Sila cuba lagi !";
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            invalid.Visible = false;
+            valid.Visible = false;
+            if (ddlArea.SelectedIndex != 0)
+            {
+                bus.eid = int.Parse(Session["election_id"].ToString());
+                bus.areaid = int.Parse(ddlArea.SelectedValue);
+                DataTable lst = bus.getDetails();
+                if (lst.Rows.Count > 0)
+                {
+                    GrdDetails.DataSource = lst;
+                    GrdDetails.DataBind();
+                }
+                else
+                {
+                    GrdDetails.DataSource = null;
+                    GrdDetails.DataBind();
+                }
+            }
+            else
+            {
+                invalid.Visible = true;
+                lblinvalid.Text = "Sila isi Kawasan!";
             }
         }
     }
