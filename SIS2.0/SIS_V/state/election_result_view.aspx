@@ -35,7 +35,7 @@
                         var finder = checker.includes($('#ddlraces').val());
                         if (finder == true) // if finder is true the value is already added for that race, false means not added
                         {
-                            alert('Value already Added');
+                            alert('Value already Added !');
                         }
                         else {
                             totp = 0;
