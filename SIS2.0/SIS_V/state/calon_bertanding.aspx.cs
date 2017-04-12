@@ -60,10 +60,10 @@ namespace SIS_V.state
             }
             else
             {
-                string id1 = ds.Tables[0].Rows[0]["area_id"].ToString();
-                string id2 = ds.Tables[2].Rows[0]["area_id"].ToString();
-                string id3 = ds.Tables[1].Rows[0]["#"].ToString();
-                string id4 = ds.Tables[3].Rows[0]["#"].ToString();
+                //string id1 = ds.Tables[0].Rows[0]["area_id"].ToString();
+                //string id2 = ds.Tables[2].Rows[0]["area_id"].ToString();
+                //string id3 = ds.Tables[1].Rows[0]["#"].ToString();
+                //string id4 = ds.Tables[3].Rows[0]["#"].ToString();
                 datalstParlimenname.DataSource = ds.Tables[0];
                 datalstParlimenname.DataBind();
             }
