@@ -267,5 +267,10 @@ namespace SIS_B
             return data.data_DeleteWinnableArea(candidate_area_id);
         }
 
+        public int update_WinnableCandidateComment()
+        {
+            return data.data_UpdateWinnableCandidateComment(candidate_id, comment);
+        }
+
     }
 }

@@ -59,7 +59,8 @@
                                     </div>
                                     <div class="panel-body panel-custom-bg-custom-info">
                                         <asp:HiddenField ID="HfCandidateId" runat="server" />
-                                        <asp:DataList ID="CandidateDataList" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
+                                        
+                                        <asp:DataList ID="CandidateDataList" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" OnItemDataBound="CandidateDataList_ItemDataBound">
                                             <ItemTemplate>
                                                 <div class="row">
                                                     <div class="col-lg-4">
@@ -82,6 +83,8 @@
                                                     <div class="col-lg-12 m-t-10">
                                                         <div class="row">
                                                             <div class="client-detail">
+                                                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                                <ContentTemplate>                                                                
                                                                 <div class="full-height-scroll">
                                                                     <ul class="list-group clear-list">
                                                                         <li class="list-group-item fist-item">
@@ -115,20 +118,30 @@
                                                                         </div>
                                                                     </div>  --%>
                                                                     <%--<hr />  --%>
-                                                                    <strong>Komen </strong>
-                                                                        <div class="form-group">
-                                                                            <asp:TextBox ID="txtComment" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
+                                                                            <strong>Komen </strong>
+                                                                                <div class="form-group">
+                                                                                    <asp:TextBox ID="txtComment" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
+                                                                                </div>
+                                                                            <hr/>
                                                                         </div>
-                                                                    <hr/>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                                        <asp:Button ID="Button3" CssClass="btn btn-success w100" runat="server" Text="KEMASKINI" />
-                                                                    </div>
-                                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                                        <asp:Button ID="Button4" CssClass="btn btn-danger w100" runat="server" Text="HAPUS" />
-                                                                    </div>
-                                                                </div>
+                                                                        <div class="row">
+                                                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                                               <div class="alert alert-danger alert-dismissable" visible="false" id="commentStatus" runat="server">
+                                                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                                                    <asp:Label ID="commentLabel" runat="server" Text=""></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                                                <asp:Button ID="btnCommentSave" CssClass="btn btn-success w100" ClientIDMode="AutoID" runat="server" OnClick="btnCommentSave_Click" Text="KEMASKINI" />
+                                                                            </div>
+                                                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                                                <asp:Button ID="btnCommentClear" CssClass="btn btn-danger w100" ClientIDMode="AutoID" runat="server" Text="HAPUS" OnClick="btnCommentClear_Click" />
+                                                                            </div>
+                                                                        </div>
+                                                                   </ContentTemplate>
+                                                                </asp:UpdatePanel>
                                                             </div>
                                                             </div>
                                                     </div>
@@ -520,7 +533,7 @@
                                                                         <ItemTemplate>
                                                                            <div class="form-group m-b-0">
                                                                               <asp:Label ID="lbAgency" runat="server" Text='<%# Eval("agency_name") %>'></asp:Label>
-                                                                              <asp:DropDownList ID="ddAgency" CssClass="form-control" runat="server"></asp:DropDownList>
+                                                                              <asp:DropDownList ID="ddAgency" CssClass="form-control" runat="server" DataTextField="agency_name" DataValueField="agency_id"></asp:DropDownList>
                                                                             </div>
                                                                         </ItemTemplate>
                                                                      </asp:TemplateField>
@@ -532,10 +545,10 @@
                                                                             </div>
                                                                         </ItemTemplate>
                                                                      </asp:TemplateField>
-                                                                     <asp:TemplateField ItemStyle-Width="15%">
+                                                                     <asp:TemplateField ItemStyle-Width="10%">
                                                                           <ItemTemplate>
-                                                                             <asp:LinkButton ID="lbEdit" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="edit" ClientIDMode="AutoID" OnClick="lbEdit_Click"><i id="iconEdit" runat="server" class="fa fa-edit"></i></asp:LinkButton>
-                                                                             <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="delete" ClientIDMode="AutoID" OnClick="lbDelete_Click"><i class="fa fa-trash"></i></asp:LinkButton>
+                                                                             <asp:LinkButton ID="lbEdit" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="edit" ClientIDMode="AutoID" OnClick="lbEdit_Click1"><i id="iconEdit" runat="server" class="fa fa-edit"></i></asp:LinkButton>
+                                                                             <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="delete" ClientIDMode="AutoID" OnClick="lbDelete_Click1"><i class="fa fa-trash"></i></asp:LinkButton>
                                                                           </ItemTemplate>
                                                                      </asp:TemplateField>
                                                                   </Columns>                                                             

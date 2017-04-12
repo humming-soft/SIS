@@ -27,6 +27,7 @@ namespace SIS_V.state
                 invalidOption.Visible = false;
                 updateStatus.Visible = false;
                 agencyGroupBtn.Visible = false;
+                
             }
         }
 
@@ -497,6 +498,9 @@ namespace SIS_V.state
 
         protected void lbAgency_Click(object sender, EventArgs e)
         {
+
+            updateStatus.Visible = false;
+
             LinkButton lb = (LinkButton)sender;
             GridViewRow row = (GridViewRow)lb.NamingContainer;
             if (lb.CommandArgument == "agencyView")
@@ -520,6 +524,7 @@ namespace SIS_V.state
                         GridViewAgency.DataSource = null;
                         GridViewAgency.DataBind();
                         noAgency.Visible = false;
+                        agencyGroupBtn.Visible = false;
                     }
                 }
             }
@@ -554,6 +559,196 @@ namespace SIS_V.state
                 ddl2.Visible = false;
                 txt2.Visible = false;
             }
+        }
+
+        protected void btnCommentClear_Click(object sender, EventArgs e)
+        {
+            TextBox tt1 = (TextBox)CandidateDataList.Items[0].FindControl("txtComment");
+            tt1.Text = "";
+        }
+
+        protected void btnCommentSave_Click(object sender, EventArgs e)
+        {
+            TextBox tt1 = (TextBox)CandidateDataList.Items[0].FindControl("txtComment");
+            HtmlGenericControl alert = (HtmlGenericControl)CandidateDataList.Items[0].FindControl("commentStatus");
+            Label commentLabel = (Label)CandidateDataList.Items[0].FindControl("commentLabel");
+            bus.candidate_id = int.Parse(HfCandidateId.Value);
+            bus.comment = tt1.Text;
+            if (bus.update_WinnableCandidateComment() == 0)
+            {
+                commentLabel.Text = "Dikemaskini Berjaya.";
+                alert.Attributes.Remove("class");
+                alert.Attributes.Add("class", "alert alert-success alert-dismissable");
+                alert.Visible = true;
+
+            }
+            else
+            {
+                commentLabel.Text = "Tidak dapat mengemas kini komen.";
+                alert.Attributes.Remove("class");
+                alert.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                alert.Visible = true;
+            }
+        }
+
+        protected void CandidateDataList_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                Button btn1 = e.Item.FindControl("btnCommentClear") as Button;
+                Button btn2 = e.Item.FindControl("btnCommentSave") as Button;               
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(btn1);
+                ScriptManager.GetCurrent(this).RegisterAsyncPostBackControl(btn2);
+            }
+        }
+
+        protected void lbEdit_Click1(object sender, EventArgs e)
+        {
+            LinkButton lb = (LinkButton)sender;
+            GridViewRow row = (GridViewRow)lb.NamingContainer;
+            if (lb.CommandArgument == "edit")
+            {
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    TextBox txt1 = (TextBox)GridViewAgency.Rows[index].Cells[1].FindControl("sourceDate");
+                    DropDownList ddl2 = (DropDownList)GridViewAgency.Rows[index].Cells[2].FindControl("ddAgency");
+                    TextBox txt2 = (TextBox)GridViewAgency.Rows[index].Cells[3].FindControl("txtjustification");
+
+                    Label lb1 = (Label)GridViewAgency.Rows[index].Cells[1].FindControl("lbSourceDate");
+                    Label lb2 = (Label)GridViewAgency.Rows[index].Cells[2].FindControl("lbAgency");
+                    Label lb3 = (Label)GridViewAgency.Rows[index].Cells[3].FindControl("lbjust");
+
+                    HtmlGenericControl itag = (HtmlGenericControl)GridViewAgency.Rows[index].Cells[4].FindControl("iconEdit");
+
+                    itag.Attributes.Remove("class");
+                    itag.Attributes.Add("class", "fa fa-save");
+
+                    txt1.Text = lb1.Text;
+                    txt2.Text = lb3.Text;
+
+                    instanceDt = new DataTable();
+                    instanceDt = bus.fill_Agencies();
+                    if (instanceDt.Rows.Count > 0)
+                    {
+                        ddl2.DataSource = instanceDt;
+                        ddl2.DataBind();
+                        ddl2.Items.Insert(0, new ListItem("-----PILIH-----", ""));
+                        ddl2.ClearSelection();
+                        ddl2.Items.FindByText(lb2.Text).Selected = true;
+                    }
+
+                    txt1.Visible = true;
+                    ddl2.Visible = true;
+                    txt2.Visible = true;
+
+                    lb1.Visible = false;
+                    lb2.Visible = false;
+                    lb3.Visible = false;
+
+                    updateStatus.Visible = false;
+                    invalidOption.Visible = false;
+                    invalidAdd.Visible = false;
+                    lb.CommandArgument = "save";
+                }
+            }
+            else if (lb.CommandArgument == "save")
+            {
+                if (row != null)
+                {
+                    int index = row.RowIndex;
+                    DropDownList ddl1 = (DropDownList)GridViewUpdate.Rows[index].Cells[1].FindControl("ddElection");
+                    DropDownList ddl2 = (DropDownList)GridViewUpdate.Rows[index].Cells[2].FindControl("ddPosition");
+                    DropDownList ddl3 = (DropDownList)GridViewUpdate.Rows[index].Cells[3].FindControl("ddArea");
+                    DropDownList ddl4 = (DropDownList)GridViewUpdate.Rows[index].Cells[4].FindControl("ddAreaCode");
+                    DropDownList ddl5 = (DropDownList)GridViewUpdate.Rows[index].Cells[5].FindControl("ddOptions");
+
+                    Label lb1 = (Label)GridViewUpdate.Rows[index].Cells[1].FindControl("LblElection");
+                    Label lb2 = (Label)GridViewUpdate.Rows[index].Cells[2].FindControl("LblPosition");
+                    Label lb3 = (Label)GridViewUpdate.Rows[index].Cells[3].FindControl("LblArea");
+                    Label lb4 = (Label)GridViewUpdate.Rows[index].Cells[4].FindControl("LblAreaCode");
+                    Label lb5 = (Label)GridViewUpdate.Rows[index].Cells[5].FindControl("LblOptions");
+
+                    HiddenField hf1 = (HiddenField)GridViewUpdate.Rows[index].Cells[1].FindControl("hfPid");
+
+                    HtmlGenericControl itag = (HtmlGenericControl)GridViewUpdate.Rows[index].Cells[6].FindControl("iconEdit");
+
+                    if (rowValidate(ddl1, ddl2, ddl3, ddl4, ddl5) == 1)
+                    {
+
+                        if (hf1.Value != "")
+                        {
+                            bus.candidate_area_id = int.Parse(hf1.Value);
+                            bus.candidate_id = 0;
+                            bus.area_id = int.Parse(ddl4.SelectedValue);
+                            bus.election_id = int.Parse(ddl1.SelectedValue);
+                            bus.choice_id = int.Parse(ddl5.SelectedValue);
+                            bus.is_incumbent = int.Parse(ddl2.SelectedValue);
+                            if (bus.update_WinnableCandidateArea() == 0)
+                            {
+                                updateLabel.Text = "Dikemaskini Berjaya.";
+                                updateStatus.Attributes.Remove("class");
+                                updateStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                                updateStatus.Visible = true;
+                                invalidOption.Visible = false;
+                                invalidAdd.Visible = false;
+                                lb1.Text = ddl1.SelectedItem.Text;
+                                lb2.Text = ddl2.SelectedItem.Text;
+                                lb3.Text = ddl3.SelectedItem.Text;
+                                lb4.Text = ddl4.SelectedItem.Text;
+                                lb5.Text = ddl5.SelectedItem.Text;
+                            }
+                            else
+                            {
+                                updateLabel.Text = "Tidak dapat mengemas kini maklumat kawasan.";
+                                updateStatus.Attributes.Remove("class");
+                                updateStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                                updateStatus.Visible = true;
+                                invalidOption.Visible = false;
+                                invalidAdd.Visible = false;
+                            }
+                            ddl1.Visible = false;
+                            ddl2.Visible = false;
+                            ddl3.Visible = false;
+                            ddl4.Visible = false;
+                            ddl5.Visible = false;
+
+                            lb1.Visible = true;
+                            lb2.Visible = true;
+                            lb3.Visible = true;
+                            lb4.Visible = true;
+                            lb5.Visible = true;
+
+                            lb.CommandArgument = "edit";
+                            itag.Attributes.Remove("class");
+                            itag.Attributes.Add("class", "fa fa-edit");
+                        }
+                    }
+                }
+            }
+            setDatePicker();
+        }
+
+        private void setDatePicker()
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append(@"<script type='text/javascript'>");
+            sb.Append("jQuery(document).ready(function () {");
+            sb.Append("$('.dateagency').datepicker({");
+            sb.Append("autoclose: true,");
+            sb.Append("todayHighlight: true,");
+            sb.Append("format: 'dd/mm/yyyy',");
+            sb.Append("orientation: 'bottom auto',");
+            sb.Append("keyboardNavigation: false");
+            sb.Append("});");
+            sb.Append("});");
+            sb.Append(@"</script>");
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "DatePickerScript", sb.ToString(), false);
+        }
+
+        protected void lbDelete_Click1(object sender, EventArgs e)
+        {
+
         }
 
         //protected void GridViewUpdate_SelectedIndexChanged(object sender, EventArgs e)
