@@ -18,6 +18,8 @@ namespace SIS_V.state
         float pe, c;
         protected void Page_Load(object sender, EventArgs e)
         {
+            valid.Visible = false;
+            invalid.Visible = false;
             if (!IsPostBack)
             {
                 CheckIsLogin();
@@ -160,6 +162,9 @@ namespace SIS_V.state
             {
                 //success
                 candidate_list.EditIndex = -1;
+                lblvalid.Text = "Dikemaskini Berjaya !";
+                valid.Visible = true;
+                invalid.Visible = false;
                 fill_result_list();
                 fill_races();
                 fill_cand_list();
@@ -168,6 +173,9 @@ namespace SIS_V.state
             {
                 //failure
                 candidate_list.EditIndex = -1;
+                lblinvalid.Text = "Updation Gagal !";
+                invalid.Visible = true;
+                valid.Visible = false;
                 fill_result_list();
                 fill_races();
                 fill_cand_list();
@@ -227,6 +235,8 @@ namespace SIS_V.state
             else
             {
                 //failure
+                lblinvalid.Text = "Update Gagal !";
+                invalid.Visible = true;
             }
         }
     }
