@@ -118,8 +118,16 @@ namespace SIS_V.state
             instanceDt = bus.fill_candidate_area_archive();
             if (instanceDt.Rows.Count > 0)
             {
+                HfArchiveId.Value = instanceDt.Rows[0]["win_candidate_archive_id"].ToString();
                 GridViewFile.DataSource = instanceDt;
                 GridViewFile.DataBind();
+                lbnFileDelete.Visible = true;
+            }
+            else
+            {
+                GridViewFile.DataSource = null;
+                GridViewFile.DataBind();
+                lbnFileDelete.Visible = false;
             }
         }
 
@@ -1072,6 +1080,130 @@ namespace SIS_V.state
                 }
                 
             }
+        }
+
+        protected void lbnSaveArchive_Click(object sender, EventArgs e)
+        {
+            if (fileValidate(FileUpload1, infoFile) == 0)
+            {
+                string filename = FileUpload1.FileName;
+                System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
+                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                bus.fileName = filename;
+                bus.uniqueFilename = filename + "_" + DateTime.Now.ToString("yyyyMMdd_HH_mm_ss");
+                bus.comment = infoFile.Text;
+                if (HfArchiveId.Value.ToString() != "")
+                {
+                    bus.archive_id = int.Parse(HfArchiveId.Value);
+                    if (bus.update_WinnableCandidateArchive() == 0)
+                    {
+                        bus.archive = bytes;
+                        bus.update_WinnableArchiveFile();
+                        if (HfCandidateId.Value.ToString() != "")
+                        {
+                            fillArchive(int.Parse(HfCandidateId.Value));
+                        }
+                        topLabel.Text = "Fail Dikemaskini Berjaya.";
+                        topStatus.Attributes.Remove("class");
+                        topStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                        topStatus.Visible = true;
+                        infoFile.Text = "";
+                    }
+                    else
+                    {
+                        topLabel.Text = "Difailkan untuk mengemas kini fail.";
+                        topStatus.Attributes.Remove("class");
+                        topStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                        topStatus.Visible = true;
+                    }
+                }
+                else
+                {
+                    bus.candidate_id = int.Parse(HfCandidateId.Value);
+                    int aid = bus.insert_WinnableArchive();
+                    if (aid > 0 || aid != null)
+                    {
+
+                        bus.archive_id = aid;
+                        bus.archive = bytes;
+                        bus.update_WinnableArchiveFile();
+                        if (HfCandidateId.Value.ToString() != "")
+                        {
+                            fillArchive(int.Parse(HfCandidateId.Value));
+                        }
+                        topLabel.Text = "Fail Dikemaskini Berjaya.";
+                        topStatus.Attributes.Remove("class");
+                        topStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                        topStatus.Visible = true;
+                        infoFile.Text = "";
+                    }
+                }
+            }
+
+        }
+
+        private int fileValidate(FileUpload file, TextBox txtComment)
+        {
+            int flag = 0;
+            if (!file.HasFile)
+            {
+                flag++;
+                fileName.InnerHtml = "Sila pilih fail!";
+            }
+            else
+            {
+                fileName.InnerHtml = "";
+            }
+            if (txtComment.Text == "")
+            {
+                flag++;
+                txtComment.Attributes.CssStyle.Add("border-color", "red");
+            }
+            else
+            {
+                txtComment.Attributes.CssStyle.Remove("border-color");
+            }
+            if (flag == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                topLabel.Text = "Lengkapkan bidang kemahiran";
+                topStatus.Attributes.Remove("class");
+                topStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                topStatus.Visible = true;
+                return 1;
+            }  
+        }
+
+        protected void lbnFileDelete_Click(object sender, EventArgs e)
+        {
+            if (HfArchiveId.Value.ToString() != "")
+            {
+                bus.archive_id = int.Parse(HfArchiveId.Value);
+                if (bus.delete_WinnableCandidateAreaArchive() == 0)
+                {
+                    topLabel.Text = "Dipadam Berjaya.";
+                    topStatus.Attributes.Remove("class");
+                    topStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                    topStatus.Visible = true;
+                }
+                else
+                {
+                    topLabel.Text = "Gagal Padam!";
+                    topStatus.Attributes.Remove("class");
+                    topStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                    topStatus.Visible = true;
+                }
+                if (HfCandidateId.Value.ToString() != "")
+                {
+                    fillArchive(int.Parse(HfCandidateId.Value));
+                }
+                HfArchiveId.Value = "";
+            }
+
         }
 
 

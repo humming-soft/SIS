@@ -15,6 +15,36 @@
                 $(this).parent().find("#hfsourceDate").val($v);
             });
         });
+        function showBrowseDialogAdd() {
+            $('#FileUpload1').click();
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var filename = $("#FileUpload1").val();
+                var size = input.files[0].size;
+                if (size > 3000000) {
+                    $("#FileUpload1").val('');
+                    $('#fileName').text('');
+                    alert("The file size can not exceed 3MB.");
+                } else {
+                    //alert(size);
+                    var extension = filename.replace(/^.*\./, '');
+                    if (extension == filename) {
+                        extension = '';
+                    } else {
+                        extension = extension.toLowerCase();
+                    }
+                    if (extension == 'rar' || extension == 'zip') {
+                        $('#fileName').text(filename);
+                    }
+                    else {
+                        $("#FileUpload1").val('');
+                        $('#fileName').text('');
+                        alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
+                    }
+                }
+            }
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,6 +55,10 @@
                         <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL CALON BOLEH MENANG</b></h4>
                         <p class="text-muted font-13 m-b-30"></p>
                         <div class="row">
+                            <div class="alert alert-danger alert-dismissable" visible="false" id="topStatus" runat="server">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <asp:Label ID="topLabel" runat="server" Text=""></asp:Label>
+                            </div>
                             <div class="col-lg-12">
                                 <div class="panel panel-color panel-custom-info">
                                     <div class="panel-heading panel-heading-custom">
@@ -636,7 +670,7 @@
                                             <div class="panel-heading panel-custom-bg-custom-info">
                                                 <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN FAIL ARCHIVES</h3>
                                             </div>
-                                            <div class="panel-body panel-custom-bg-custom-info" style="height:316px">
+                                            <div class="panel-body panel-custom-bg-custom-info" style="height:298px">
                                                 <div class="row">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                          <asp:GridView ID="GridViewFile" runat="server" class="table table-bordered dt-responsive nowrap m-t-10 temp" ClientIDMode="Static" OnPreRender="GridViewFile_PreRender" AutoGenerateColumns="False" EmptyDataText="No Data Found!">
@@ -686,7 +720,7 @@
                                                 </div>
                                                 <div class="row">
                                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                      <button class="btn btn-danger pull-right"><i class="fa fa-trash"></i> HAPUS ARCHIVE</button>
+                                                     <asp:LinkButton ID="lbnFileDelete" runat="server" CssClass="btn btn-danger pull-right" OnClick="lbnFileDelete_Click"><i class="fa fa-trash"></i> HAPUS ARCHIVE</asp:LinkButton>
                                                  </div>
                                                </div>
                                             </div>
@@ -717,13 +751,16 @@
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
                                                             <label for="userName">INFORMASI TAMBAHAN</label>
-                                                            <asp:TextBox ID="TextBox3" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
+                                                            <asp:TextBox ID="infoFile" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
                                                         </div>                                            
                                                      </div>
                                                 </div>
                                                 <div class="row">
+
+                                                </div>
+                                                <div class="row">
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <button class="btn btn-primary pull-right">KAMASKINI ARCHIVE</button>
+                                                        <asp:LinkButton ID="lbnSaveArchive" runat="server" CssClass="btn btn-primary pull-right" OnClick="lbnSaveArchive_Click"><i class="fa fa-save"></i> KAMASKINI ARCHIVE</asp:LinkButton>
                                                     </div>
                                                 </div>
                                             </div>

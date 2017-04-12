@@ -288,5 +288,15 @@ namespace SIS_B
         {
             return data.data_DeleteWinnableCandidateAreaSource(candidate_area_source_id);
         }
+
+        public int update_WinnableCandidateArchive()
+        {
+            return data.data_UpdateWinnableCandidateArchive(archive_id, comment, uniqueFilename, fileName);
+        }
+
+        public int delete_WinnableCandidateAreaArchive()
+        {
+            return data.data_DeleteWinnableCandidateAreaArchive(archive_id);
+        }
     }
 }

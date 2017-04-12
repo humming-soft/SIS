@@ -22,6 +22,24 @@ namespace SIS_V.state {
         protected global::System.Web.UI.ScriptManager MainScriptManager;
         
         /// <summary>
+        /// topStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topStatus;
+        
+        /// <summary>
+        /// topLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label topLabel;
+        
+        /// <summary>
         /// candidates control.
         /// </summary>
         /// <remarks>
@@ -193,6 +211,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.GridView GridViewFile;
         
         /// <summary>
+        /// lbnFileDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnFileDelete;
+        
+        /// <summary>
         /// HfArchiveId control.
         /// </summary>
         /// <remarks>
@@ -220,13 +247,22 @@ namespace SIS_V.state {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl fileName;
         
         /// <summary>
-        /// TextBox3 control.
+        /// infoFile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox infoFile;
+        
+        /// <summary>
+        /// lbnSaveArchive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnSaveArchive;
         
         /// <summary>
         /// TextBox4 control.
