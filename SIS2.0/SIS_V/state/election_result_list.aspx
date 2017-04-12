@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/state/state_master.Master" AutoEventWireup="true" CodeBehind="election_result_list.aspx.cs" Inherits="SIS_V.state.election_result_list" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script type="text/javascript">
+    function validation_e_list() {
+        Election_Result_ListA.init();
+    }
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -46,7 +51,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary" Font-Underline="false" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-search-plus"></i> Cari</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary" Font-Underline="false" runat="server" OnClientClick="validation_e_list()" OnClick="LinkButton1_Click"><i class="fa fa-search-plus"></i> Cari</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
