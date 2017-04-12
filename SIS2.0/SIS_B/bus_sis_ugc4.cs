@@ -65,6 +65,8 @@ namespace SIS_B
         public int archive_id { get; set; }
 
         public int candidate_area_id { get; set; }
+
+        public int candidate_area_source_id { get; set; }
         //Release-2
 
         public DataTable fill_lamporan()
@@ -252,6 +254,11 @@ namespace SIS_B
         {
             return data.candidate_area_archive("usp_GetWinnableCandidateAreaArchive_state", candidate_id);
         }
+
+        public DataTable download_WinnableCandidateArchive()
+        {
+            return data.data_GetWinnableCandidateArchiveById("usp_GetWinnableCandidateAreaArchiveById",archive_id);
+        }
         public DataTable fill_winnable_area_source()
         {
             return data.winnable_area_source("usp_GetWinnableCandidate_Area_Source", candidate_area_id);
@@ -272,5 +279,14 @@ namespace SIS_B
             return data.data_UpdateWinnableCandidateComment(candidate_id, comment);
         }
 
+        public int update_WinnableCandidateSource()
+        {
+            return data.data_UpdateWinnableCandidateSource(candidate_area_source_id, candidate_area_id, agency_id, justification, source_date);
+        }
+
+        public int delete_WinnableSourceArea()
+        {
+            return data.data_DeleteWinnableCandidateAreaSource(candidate_area_source_id);
+        }
     }
 }
