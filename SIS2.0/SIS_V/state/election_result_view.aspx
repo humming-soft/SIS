@@ -8,9 +8,11 @@
     </style>
     <script type="text/javascript">
         var rowid;
+        var rowvalue;
         var totp = 0;
         var fvals = "";
         var gper = 0;
+        var gperu = 0;
         function add_to_table() {
             if ($('#ddlraces').val() != "" && $('#txtperc').val() != "") {
                 gper = parseInt($('#txttperc').val()) + parseInt($('#txtperc').val());
@@ -49,6 +51,8 @@
                     }
                 }
                 else {
+                    $('#ddlraces').val("");
+                    $('#txtperc').val('');
                     alert('Total Percentage Cannot be greater than 100 !')
                 }
             }
@@ -80,14 +84,28 @@
         }
 
         function up_table() {
-            //first remove the row then add new row with the updated values, also can select new race at the same time
-            $('#' + rowid).remove();
-            $('#lnkkamaskini').prop('disabled', true);
-            $('#lnkdelete').prop('disabled', true);
-            add_to_table();
-            $('#lnktambah').prop('disabled', false);
-            $('#lnkkamaskini').prop('disabled', true);
-            $('#lnkdelete').prop('disabled', true);
+            if ($('#ddlraces').val() != "" && $('#txtperc').val() != "") {
+                // check for value less than 100 if yes first remove the row then add new row with the updated values, also can select new race at the same time
+                gperu = parseInt($('#txttperc').val()) - parseInt(rowvalue) + parseInt($('#txtperc').val());
+                if (gperu <= 100) {
+                    $('#' + rowid).remove();
+                    $('#lnkkamaskini').prop('disabled', true);
+                    $('#lnkdelete').prop('disabled', true);
+                    add_to_table();
+                    $('#lnktambah').prop('disabled', false);
+                    $('#lnkkamaskini').prop('disabled', true);
+                    $('#lnkdelete').prop('disabled', true);
+                }
+                else {
+                    $('#ddlraces').val("");
+                    $('#txtperc').val('');
+                    alert('Total Percentage Cannot be greater than 100 !');
+                }
+            }
+            else {
+                alert('Select Any Race and Enter Value!')
+            }
+
         }
 
         function get_values() {
@@ -98,7 +116,7 @@
             var slice = " ";
             slice = fvals.replace(/,\s*$/, ""); // removing the last comma
             $('#tabular tbody').html("");
-            $('#txttperc').val("0");
+            $('#txttperc').val("0").change();
             $('#txtpk').val("");
             $('#txtpk').val(slice).change();
         }
@@ -120,6 +138,7 @@
                 $('#lnkkamaskini').prop('disabled', false);
                 $('#lnkdelete').prop('disabled', false);
                 rowid = this.id;
+                rowvalue = this.className;
                 $('#ddlraces').val(this.id).change();
                 $('#txtperc').val(this.className);
             });
@@ -139,6 +158,14 @@
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="row">
                     <div class="col-lg-12">
+                        <div class="alert alert-danger alert-dismissable" id="invalid" runat="server">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <asp:Label ID="lblinvalid" runat="server"></asp:Label>
+                        </div>
+                        <div class="alert alert-success alert-dismissable" id="valid" runat="server">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <asp:Label ID="lblvalid" runat="server"></asp:Label>
+                        </div>
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
                                 <h3 class="panel-title"><i class="fa fa-search-plus"></i>MAKLUMAT KAWASAN</h3>
