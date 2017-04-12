@@ -152,19 +152,27 @@
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var filename = $("#FileUpload1").val();
-                var extension = filename.replace(/^.*\./, '');
-                if (extension == filename) {
-                    extension = '';
-                } else {
-                    extension = extension.toLowerCase();
-                }
-                if (extension == 'rar' || extension == 'zip') {
-                    $('#fileName').text(filename);
-                }
-                else {
+                var size = input.files[0].size;
+                if (size > 3000000) {
                     $("#FileUpload1").val('');
                     $('#fileName').text('');
-                    alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
+                    alert("The file size can not exceed 3MB.");
+                } else {
+                    //alert(size);
+                    var extension = filename.replace(/^.*\./, '');
+                    if (extension == filename) {
+                        extension = '';
+                    } else {
+                        extension = extension.toLowerCase();
+                    }
+                    if (extension == 'rar' || extension == 'zip') {
+                        $('#fileName').text(filename);
+                    }
+                    else {
+                        $("#FileUpload1").val('');
+                        $('#fileName').text('');
+                        alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
+                    }
                 }
             }
         }
