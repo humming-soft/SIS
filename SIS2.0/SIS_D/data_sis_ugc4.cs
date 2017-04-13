@@ -776,6 +776,31 @@ namespace SIS_D
             }
         }
 
+        public int data_DeleteWinnableCandidateSourceAll(int candidate_area_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_DeleteWinnableCandidateAreaSourceAll";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_area_id", candidate_area_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
         public int data_UpdateWinnableCandidateComment(int candidate_id, string comment)
         {
             try

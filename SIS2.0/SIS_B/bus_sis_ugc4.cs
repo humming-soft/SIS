@@ -298,5 +298,10 @@ namespace SIS_B
         {
             return data.data_DeleteWinnableCandidateAreaArchive(archive_id);
         }
+
+        public int delete_WinnableCandidateAreaSourceAll()
+        {
+            return data.data_DeleteWinnableCandidateSourceAll(candidate_area_id);
+        }
     }
 }
