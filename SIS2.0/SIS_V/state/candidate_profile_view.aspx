@@ -114,7 +114,7 @@
                 else {
                     $("#FileUpload1").val('');
                     $('#imager').attr('src', '../assets/images/users/avatar-0.jpg');
-                    alert("Invalid Extension - Supported Image types(JPG, JPEG, PNG) !");
+                    alert("Sambungan Tidak Sah - Jenis Imej Disokong(JPG, JPEG, PNG) !");
                 }
             }
         }
@@ -135,7 +135,7 @@
                 else {
                     $("#FileUpload2").val('');
                     $('#rar_name').text('');
-                    alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
+                    alert("Sambungan Tidak Sah - Jenis Arkib Disokong(.rar, .zip) !");
                 }
             }
         }
@@ -237,11 +237,11 @@
                                     <img id="img" src="../assets/images/users/avatar-0.jpg" class="thumb-img" alt="work-thumbnail" style="width: 156px;" />
                                 </div>
                             </div>
-                            <h4 class="text-center" style="margin-top: 10px !important">Calon Profile Image</h4>
+                            <h4 class="text-center" style="margin-top: 10px !important">Calon Profil Imej</h4>
                             <div class="ga-border"></div>
                             <div class="form-group text-left m-b-0 m-t-15">
                                 <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
-                                <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialog();"><i class="fa fa-image"></i>Select Image <div><label style="color:white;font-size:x-small">(JPG, JPEG, PNG, Less than 3MB)</label></div></button>
+                                <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialog();"><i class="fa fa-image"></i> Pilih Imej <div><label style="color:white;font-size:x-small">(JPG, JPEG, PNG, Kurang daripada 3MB)</label></div></button>
                             </div>
                         </div>
                     </div>
@@ -458,7 +458,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="date_join">Tarik Luput Ahli</label>
+                                    <label for="date_join">Tarikh Luput Ahli</label>
                                     <asp:TextBox ID="TextBox25" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
@@ -466,13 +466,13 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="date_left">Tarik Daftar Parti</label>
+                                    <label for="date_left">Tarikh Daftar Parti</label>
                                     <asp:TextBox ID="TextBox26" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label for="expiry_date">Tarik Keluar Parti</label>
+                                    <label for="expiry_date">Tarikh Keluar Parti</label>
                                     <asp:TextBox ID="TextBox27" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
@@ -516,18 +516,18 @@
             <div class="col-lg-4">
                 <div class="panel panel-color panel-primary">
                     <div class="panel-heading panel-heading-custom">
-                        <h3 class="panel-title">TAMBAH FAIL ARCHIVES</h3>
+                        <h3 class="panel-title">TAMBAH FAIL ARKIB</h3>
                     </div>
                     <div class="panel-body panel-custom-bg">
                         <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <div class="form-group">
                                         <asp:FileUpload ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL2(this);" />
-                                        <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i>Select Archives <div><label style="color:white;font-size:x-small">(.rar, .zip)</label></div></button>
+                                        <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih Arkib <div><label style="color:white;font-size:x-small">(.rar, .zip, Kurang daripada 3MB)</label></div></button>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
