@@ -173,7 +173,7 @@ namespace SIS_V.state
             {
                 //failure
                 candidate_list.EditIndex = -1;
-                lblinvalid.Text = "Updation Gagal !";
+                lblinvalid.Text = "Kemaskini Gagal !";
                 invalid.Visible = true;
                 valid.Visible = false;
                 fill_result_list();

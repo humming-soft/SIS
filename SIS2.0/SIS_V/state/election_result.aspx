@@ -32,7 +32,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-primary">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search Candidate (NEGERI : PERLIS)</h3>
+                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> CARIAN CALON (NEGERI : PERLIS)</h3>
                             </div>
                             <div class="panel-body panel-custom-bg">
                                 <div class="row">
@@ -112,16 +112,19 @@
                             </div>--%>
                             <div class="panel-body panel-custom-bg">
                                 <div class="row">
+                                    <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>NAMA CALON</label>
+                                        <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>--%>
                                         <asp:TextBox ID="txtCanName" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                           <div class="form-group">
-                                            <label for="userName">SELECT CANDIDATE</label>
-                                            <asp:DropDownList ID="ddlName" CssClass="custom-select" ClientIDMode="Static" runat="server" DataTextField="candidate_details" DataValueField="candidate_id" OnSelectedIndexChanged = "ddlName_OnSelectedIndexChanged" AutoPostBack ="true">
+                                            <label for="userName">PILIH CALON</label>
+                                            <asp:DropDownList ID="ddlName" CssClass="form-control custom-select" ClientIDMode="Static" runat="server" DataTextField="candidate_details" DataValueField="candidate_id" OnSelectedIndexChanged = "ddlName_OnSelectedIndexChanged" AutoPostBack ="true">
                                             </asp:DropDownList>
                                         </div>                                       
                                     </div>

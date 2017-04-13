@@ -54,6 +54,7 @@ var cand_profile = function () {
                     required : true
                 },
                 ctl00$ContentPlaceHolder1$FileUpload2: {
+                    filesize: 3145728,
                     extension: "rar,zip"
                 }
 
