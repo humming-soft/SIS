@@ -250,25 +250,28 @@ namespace SIS_V.state
                     bus.candidate_area_id = int.Parse(hfvalue.Value);
                     invalidOption.Visible = false;
                     invalidAdd.Visible = false;
-                    if (bus.delete_WinnableCandidateArea() == 0)
+                    if (bus.delete_WinnableCandidateAreaSourceAll() == 0)
                     {
-                        updateLabel.Text = "Rekod berjaya dipadamkan.";
-                        updateStatus.Attributes.Remove("class");
-                        updateStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
-                        updateStatus.Visible = true;
-                        if (candidates.SelectedIndex != 0)
+                        if (bus.delete_WinnableCandidateArea() == 0)
                         {
-                            string candidateIc = candidates.SelectedValue;
-                            bus.candidateIc = candidateIc;
-                            fillCandidateInfo();
+                            updateLabel.Text = "Rekod berjaya dipadamkan.";
+                            updateStatus.Attributes.Remove("class");
+                            updateStatus.Attributes.Add("class", "alert alert-success alert-dismissable");
+                            updateStatus.Visible = true;
+                            if (candidates.SelectedIndex != 0)
+                            {
+                                string candidateIc = candidates.SelectedValue;
+                                bus.candidateIc = candidateIc;
+                                fillCandidateInfo();
+                            }
                         }
-                    }
-                    else
-                    {
-                        updateLabel.Text = "Tidak dapat memadam rekod.";
-                        updateStatus.Attributes.Remove("class");
-                        updateStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
-                        updateStatus.Visible = true;
+                        else
+                        {
+                            updateLabel.Text = "Tidak dapat memadam rekod.";
+                            updateStatus.Attributes.Remove("class");
+                            updateStatus.Attributes.Add("class", "alert alert-danger alert-dismissable");
+                            updateStatus.Visible = true;
+                        }
                     }
                 }
             }

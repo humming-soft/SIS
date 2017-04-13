@@ -93,7 +93,7 @@
                              <div class="col-lg-3">
                                  <div class="panel panel-color panel-custom-info">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="md md-contacts"></i> Candidate Informaton</h3>
+                                        <h3 class="panel-title"><i class="md md-contacts"></i> BUTIRAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-custom-info">
                                         <asp:HiddenField ID="HfCandidateId" runat="server" />
@@ -289,7 +289,7 @@
                                                                 <div class="col-lg-12">
                                                                     <asp:GridView ID="GridViewUpdate" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridViewUpdate_PreRender" AutoGenerateColumns="False" OnRowDataBound="GridViewUpdate_RowDataBound">
                                                                        <Columns>
-                                                                           <asp:TemplateField HeaderText="#">
+                                                                           <asp:TemplateField HeaderText="NO">
                                                                                <ItemTemplate>
                                                                                     <asp:Label ID="rowNumber" runat="server" Text=""></asp:Label>
                                                                                 </ItemTemplate>
@@ -554,7 +554,7 @@
                                                              <asp:HiddenField ID="htCandidateAreaId" runat="server"/>
                                                              <asp:GridView ID="GridViewAgency" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridViewAgency_PreRender" AutoGenerateColumns="False" EmptyDataText="No Data Found!" OnRowDataBound="GridViewAgency_RowDataBound">
                                                                  <Columns>
-                                                                    <asp:TemplateField HeaderText="#">
+                                                                    <asp:TemplateField HeaderText="NO">
                                                                         <ItemTemplate>
                                                                             <asp:Label ID="rowNumber" runat="server" Text=""></asp:Label>
                                                                         </ItemTemplate>
@@ -735,7 +735,7 @@
                                                 <div class="row">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                          <asp:HiddenField ID="HfArchiveId" runat="server" />
-                                                         <label for="userName">PILIH FAIL YANG ANDA KEHENDAKI DI BAWAH</label>
+                                                         <label for="userName">PILIH FAIL YANG ANDA KEHENDAKI DI BAWAH</label><br />
 <%--                                                          <div class="fileupload fileupload-new" data-provides="fileupload">
                                                             <span class="btn btn-primary btn-file" style="width:100%"><span class="fileupload-new"><i class="fa fa-file-text"></i> Select file</span>
                                                             <span class="fileupload-exists"><i class="fa fa-reply"></i> Change</span><asp:FileUpload ID="FileUpload1" runat="server" /></span>
