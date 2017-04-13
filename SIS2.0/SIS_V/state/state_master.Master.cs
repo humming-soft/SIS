@@ -222,7 +222,7 @@ namespace SIS_V.state
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Keputusan Pilihanraya";
                     breadcrum_child.Attributes["href"] = "result_view";
-                    breadcrum_grant_child.InnerText = "Keputusan Pilihanraya Details";
+                    breadcrum_grant_child.InnerText = "Butiran Keputusan Pilihanraya";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;

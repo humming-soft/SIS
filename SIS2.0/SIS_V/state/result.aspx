@@ -18,7 +18,7 @@
                                 <div class="col-lg-12">
                                     <div class="file-manager">
                                         <div class="hr-line-dashed"></div>
-                                        <h5>ELECTION TITLE</h5>
+                                        <h5>TAJUK PILIHANRAYA</h5>
                                         <div class="hr-line-dashed"></div>
                                         <ul class="folder-list folder-list-c" style="padding: 0">
                                             <li><i class="fa fa-university">
@@ -34,7 +34,7 @@
                <div class="col-lg-8">
                     <div class="panel panel-color panel-custom-info">
                         <div class="panel-heading panel-heading-custom">
-                            <h3 class="panel-title"><i class="fa fa-university"></i> ELECTION DESCRIPTION</h3>
+                            <h3 class="panel-title"><i class="fa fa-university"></i> DESKRIPSI PILIHANRAYA</h3>
                         </div>
                         <div class="panel-body panel-custom-bg-custom-info">
                             <div class="row">  
@@ -49,7 +49,7 @@
                                     </div>--%>
                                     <hr>
 
-                                    <h4>ELECTION INFORMATION</h4>
+                                    <h4>MAKLUMAT PILIHANRAYA</h4>
                                     <dl class="dl-horizontal m-t-md" style="min-height:205px">
                                         <dt class="l-h-24">TARIKH PILIHANRAYA</dt>
                                         <dd>
@@ -67,7 +67,7 @@
                                     <hr>
                                     <div>
                                         <div class="btn-group">
-                                            <asp:LinkButton ID="LinkButton1" class="btn btn-default btn-sm" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-star"></i> VIEW ELECTON RESULT </asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton1" class="btn btn-default btn-sm" runat="server" OnClick="LinkButton1_Click"><i class="fa fa-star"></i> PAPAR KEPUTUSAN PILIHANRAYA </asp:LinkButton>
                                         </div>
                                     </div>
                                 </div> 
