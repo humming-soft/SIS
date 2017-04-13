@@ -729,10 +729,13 @@ namespace SIS_V.state
                                 string[] sourceJust = hid3.Value.Split(',');
                                 for (int j = 0; j < sourceDate.Length; j++)
                                 {
-                                    bus.agency_id = Int32.Parse(sourceId[j]);
-                                    bus.justification = sourceJust[j];
-                                    bus.source_date = DateTime.ParseExact(sourceDate[j], "dd/MM/yyyy", null);
-                                    bus.insert_WinnableAreaSource();
+                                    if (sourceId[j] != "" && sourceJust[j] != "" && sourceDate[j] != "")
+                                    {
+                                        bus.agency_id = Int32.Parse(sourceId[j]);
+                                        bus.justification = sourceJust[j];
+                                        bus.source_date = DateTime.ParseExact(sourceDate[j], "dd/MM/yyyy", null);
+                                        bus.insert_WinnableAreaSource();
+                                    }
                                 }
 
                                 rowIndex++;
@@ -742,6 +745,15 @@ namespace SIS_V.state
                     invalid.Visible = false;
                     valid.Visible = true;
                     lblvalid.Text = "Rekod berjaya disimpan.";
+                    if (candidates.SelectedIndex != 0)
+                    {
+                        string candidateIc = candidates.SelectedValue;
+                        bus.candidateIc = candidateIc;
+                        fillCandidateInfo();
+                        clientInvocation();
+                        SetInitialRow();
+                    }
+                    infoFile.Text = "";
             }
             else
             {

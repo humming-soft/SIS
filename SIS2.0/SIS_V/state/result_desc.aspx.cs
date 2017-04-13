@@ -144,7 +144,15 @@ namespace SIS_V.state
                             }
                         }
                         percentage = ((turnout_vote / tot_vote) * 100);
-                        per = Math.Round(Convert.ToDecimal(percentage), 1).ToString() + "%";
+                        if (percentage >= 0.0)
+                        {
+                            per = Math.Round(Convert.ToDecimal(percentage), 1).ToString() + "%";
+                        }
+                        else
+                        {
+                            per = "0.00%";
+                        }
+                        
                         ds.Tables[0].Rows[i]["perccetage"] = per;
                         ds.Tables[0].Rows[i]["total_vote1"] = total_vote1;
                         ds.Tables[0].Rows[i]["turnout_vote1"] = turnout_vote1;

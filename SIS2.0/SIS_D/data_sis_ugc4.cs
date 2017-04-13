@@ -801,5 +801,133 @@ namespace SIS_D
                 db.disconnect();
             }
         }
+
+        public DataTable data_GetWinnableCandidateArchiveById(string sp, int archiveId)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_archive_id", archiveId);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                cmd.Connection = db.connect();
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                return dt;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int data_UpdateWinnableCandidateSource(int candidate_area_source_id, int candidate_area_id, int agency_id, string justification, DateTime source_date)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_UpdateWinnableCandidateAreaSource";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_area_source_id", candidate_area_source_id);
+                cmd.Parameters.AddWithValue("@candidate_area_id", candidate_area_id);
+                cmd.Parameters.AddWithValue("@agency_id", agency_id);
+                cmd.Parameters.AddWithValue("@justification", justification);
+                cmd.Parameters.AddWithValue("@source_date", source_date);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int data_DeleteWinnableCandidateAreaSource(int candidate_area_source_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_DeleteWinnableCandidateAreaSource";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@candidate_area_source_id", candidate_area_source_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int data_UpdateWinnableCandidateArchive(int archive_id, string archive_info, string unique_filename, string original_filename)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_UpdateWinnableCandidateArchive";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@win_candidate_archive_id", archive_id);
+                cmd.Parameters.AddWithValue("@win_candidate_archive_info", archive_info);
+                cmd.Parameters.AddWithValue("@unique_filename", unique_filename);
+                cmd.Parameters.AddWithValue("@original_filename", original_filename);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
+
+        public int data_DeleteWinnableCandidateAreaArchive(int archive_id)
+        {
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandText = "usp_DeleteWinnableCandidateAreaArchive";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@win_candidate_archive_id", archive_id);
+                SqlParameter outparam = new SqlParameter();
+                outparam.ParameterName = "@OutputID";
+                outparam.Direction = ParameterDirection.InputOutput;
+                outparam.DbType = DbType.Int32;
+                outparam.Value = 0;
+                cmd.Parameters.Add(outparam);
+                cmd.Connection = db.connect();
+                cmd.ExecuteNonQuery();
+                int res = int.Parse(cmd.Parameters["@OutputID"].Value.ToString());
+                return res;
+            }
+            finally
+            {
+                db.disconnect();
+            }
+        }
     }
 }

@@ -53,8 +53,22 @@ namespace SIS_V.state
             }
             else
             {
-                lbl_parlimen_total.Text = ds.Tables[3].Rows[0]["win_total_parlimen"].ToString();
-                lbl_dun_total.Text = ds.Tables[4].Rows[0]["win_total_dun"].ToString();
+                if (ds.Tables[3].Rows[0]["win_total_parlimen"].ToString()  != "")
+                {
+                    lbl_parlimen_total.Text = ds.Tables[3].Rows[0]["win_total_parlimen"].ToString();
+                }
+                else
+                {
+                    lbl_parlimen_total.Text = "0";
+                }
+                if (ds.Tables[4].Rows[0]["win_total_dun"].ToString() != "")
+                {
+                    lbl_dun_total.Text = ds.Tables[4].Rows[0]["win_total_dun"].ToString();
+                }
+                else
+                {
+                    lbl_dun_total.Text = "0";
+                }
                 lbl_state1.Text = Session["statename"].ToString();
                 lbl_state2.Text = Session["statename"].ToString();
                 string cand_imaged;
