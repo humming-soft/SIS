@@ -158,7 +158,7 @@ namespace SIS_V.state
                 CanDetails.DataBind();
                 txtCanName.Text = "";
                 invalid.Visible = true;
-                lblinvalid.Text = "Maklumat calon kawasan yang dipilih tidak availabe. Sila masukkan butiran !";
+                lblinvalid.Text = "Calon tidak wujud bagi kawasan yang dipilih. Sila tambah maklumat calon !";
             }
         }
         protected void fill_search_list()
