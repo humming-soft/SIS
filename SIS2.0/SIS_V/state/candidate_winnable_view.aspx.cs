@@ -94,6 +94,7 @@ namespace SIS_V.state
                     cand_image = "data:image/png;base64," + base64String;
                     candidateDt.Rows[i]["pimage"] = cand_image;
                 }
+                ViewState["candidate"] = candidateDt;
                 CandidateDataList.DataSource = candidateDt;
                 CandidateDataList.DataBind();
                 HfCandidateId.Value = candidateDt.Rows[0]["candidate_id"].ToString();
@@ -801,13 +802,32 @@ namespace SIS_V.state
             Label commentLabel = (Label)CandidateDataList.Items[0].FindControl("commentLabel");
             bus.candidate_id = int.Parse(HfCandidateId.Value);
             bus.comment = tt1.Text;
-            if (bus.update_WinnableCandidateComment() == 0)
+            int ret = bus.update_WinnableCandidateComment();
+            if (ret == 0)
             {
                 commentLabel.Text = "Dikemaskini Berjaya.";
                 alert.Attributes.Remove("class");
                 alert.Attributes.Add("class", "alert alert-success alert-dismissable");
                 alert.Visible = true;
 
+            }
+            else if (ret == -1)
+            {
+                if (ViewState["candidate"] != null)
+                {
+                    DataTable dtCandidate = (DataTable)ViewState["candidate"];
+                    bus.candidate_id = int.Parse(HfCandidateId.Value);
+                    bus.name = dtCandidate.Rows[0]["name"].ToString();
+                    bus.job = dtCandidate.Rows[0]["occupation"].ToString();
+                    bus.education = dtCandidate.Rows[0]["education"].ToString();
+                    bus.political_post = dtCandidate.Rows[0]["political_post"].ToString();
+                    bus.comment = tt1.Text;
+                    bus.insert_WinnableCandidate();
+                }
+                commentLabel.Text = "Dikemaskini Berjaya.";
+                alert.Attributes.Remove("class");
+                alert.Attributes.Add("class", "alert alert-success alert-dismissable");
+                alert.Visible = true;
             }
             else
             {

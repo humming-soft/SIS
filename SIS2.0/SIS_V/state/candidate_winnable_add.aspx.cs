@@ -75,10 +75,12 @@ namespace SIS_V.state
                 fillCandidateInfo();
                 clientInvocation();
                 SetInitialRow();
+                invalid.Visible = false;
             }
             else
             {
-                
+                lblinvalid.Text = "Sila pilih calon untuk mencari.";
+                invalid.Visible = true;
             }
         }
 
@@ -127,7 +129,7 @@ namespace SIS_V.state
                 alternate.Visible = false;
             }
             else
-            {
+            {                
                 candidateinfo.Visible = false;
                 alternate.Visible = true;
             }
