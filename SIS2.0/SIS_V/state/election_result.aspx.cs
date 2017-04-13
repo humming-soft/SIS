@@ -206,7 +206,7 @@ namespace SIS_V.state
                 else
                 {
                     invalid.Visible = true;
-                    lblinvalid.Text = "Calon atau parti sudah wujud !";
+                    lblinvalid.Text = "Calon atau parti sudah wujud di kawasan ini atau kawasan lain !";
                 }
             }
         }
