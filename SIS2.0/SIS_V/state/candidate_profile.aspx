@@ -98,7 +98,7 @@
                 else {
                     $("#FileUpload1").val('');
                     $('#imager').attr('src', '../assets/images/users/avatar-0.jpg');
-                    alert("Invalid Extension - Supported Image types(JPG, JPEG, PNG) !");
+                    alert("Sambungan Tidak Sah - Jenis Imej Disokong(JPG, JPEG, PNG) !");
                 }
             }
         }
@@ -119,7 +119,7 @@
                 else {
                     $("#FileUpload2").val('');
                     $('#rar_name').text('');
-                    alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
+                    alert("Sambungan Tidak Sah - Jenis Arkib Disokong(.rar, .zip) !");
                 }
             }
         }
