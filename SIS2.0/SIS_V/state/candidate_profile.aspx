@@ -229,7 +229,7 @@
                             <div class="ga-border"></div>
                             <div class="form-group text-left m-b-0 m-t-15">
                                 <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
-                                <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialog();"><i class="fa fa-image"></i>Select Image</button>
+                                <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialog();"><i class="fa fa-image"></i> Select Image <div><label style="color:white;font-size:x-small">(JPG, JPEG, PNG, Less than 3MB)</label></div></button>
                             </div>
                         </div>
                     </div>
@@ -512,7 +512,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <asp:FileUpload ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL2(this);" />
-                                        <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i>Select Archives</button>
+                                        <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i>Select Archives <div><label style="color:white;font-size:x-small">(.rar, .zip)</label></div></button>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
