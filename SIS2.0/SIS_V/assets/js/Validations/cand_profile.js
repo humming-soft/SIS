@@ -15,6 +15,12 @@ var cand_profile = function () {
             // value = value of the element (file name)
             return this.optional(element) || (element.files[0].size <= param)
         }, "Image must be less than 3 Mb");
+        $.validator.addMethod('filesize1', function (value, element, param) {
+            // param = size (in bytes) 
+            // element = element to validate (<input>)
+            // value = value of the element (file name)
+            return this.optional(element) || (element.files[0].size <= param)
+        }, "File must be less than 3 Mb");
         form.validate({
             ignore: [],
             rules: {
@@ -54,7 +60,7 @@ var cand_profile = function () {
                     required : true
                 },
                 ctl00$ContentPlaceHolder1$FileUpload2: {
-                    filesize: 3145728,
+                    filesize1: 3145728,
                     extension: "rar,zip"
                 }
 
