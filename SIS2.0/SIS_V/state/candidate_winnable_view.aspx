@@ -9,8 +9,42 @@
     <script src="../assets/js/fileupload/boostrap.fileupload.min.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
-                $("#candidates").customselect();
+            $("#candidates").customselect();
+            $(document).on("change", ".dateagency", function () {
+                $v = $(this).val();
+                $(this).parent().find("#hfsourceDate").val($v);
+            });
         });
+        function showBrowseDialogAdd() {
+            $('#FileUpload1').click();
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var filename = $("#FileUpload1").val();
+                var size = input.files[0].size;
+                if (size > 3000000) {
+                    $("#FileUpload1").val('');
+                    $('#fileName').text('');
+                    alert("The file size can not exceed 3MB.");
+                } else {
+                    //alert(size);
+                    var extension = filename.replace(/^.*\./, '');
+                    if (extension == filename) {
+                        extension = '';
+                    } else {
+                        extension = extension.toLowerCase();
+                    }
+                    if (extension == 'rar' || extension == 'zip') {
+                        $('#fileName').text(filename);
+                    }
+                    else {
+                        $("#FileUpload1").val('');
+                        $('#fileName').text('');
+                        alert("Invalid Extension - Supported Archive types(.rar, .zip) !");
+                    }
+                }
+            }
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,10 +55,14 @@
                         <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL CALON BOLEH MENANG</b></h4>
                         <p class="text-muted font-13 m-b-30"></p>
                         <div class="row">
+                            <div class="alert alert-danger alert-dismissable" visible="false" id="topStatus" runat="server">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <asp:Label ID="topLabel" runat="server" Text=""></asp:Label>
+                            </div>
                             <div class="col-lg-12">
                                 <div class="panel panel-color panel-custom-info">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search Candidate</h3>
+                                        <h3 class="panel-title"><i class="fa fa-search-plus"></i> CARIAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-custom-info">
                                         <div class="row">
@@ -55,7 +93,7 @@
                              <div class="col-lg-3">
                                  <div class="panel panel-color panel-custom-info">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="md md-contacts"></i> Candidate Informaton</h3>
+                                        <h3 class="panel-title"><i class="md md-contacts"></i> BUTIRAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-custom-info">
                                         <asp:HiddenField ID="HfCandidateId" runat="server" />
@@ -251,7 +289,7 @@
                                                                 <div class="col-lg-12">
                                                                     <asp:GridView ID="GridViewUpdate" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridViewUpdate_PreRender" AutoGenerateColumns="False" OnRowDataBound="GridViewUpdate_RowDataBound">
                                                                        <Columns>
-                                                                           <asp:TemplateField HeaderText="#">
+                                                                           <asp:TemplateField HeaderText="NO">
                                                                                <ItemTemplate>
                                                                                     <asp:Label ID="rowNumber" runat="server" Text=""></asp:Label>
                                                                                 </ItemTemplate>
@@ -319,7 +357,7 @@
                                                                            <asp:TemplateField ItemStyle-Width="15%">
                                                                                <ItemTemplate>
                                                                                    <asp:LinkButton ID="lbEdit" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="edit" ClientIDMode="AutoID" OnClick="lbEdit_Click"><i id="iconEdit" runat="server" class="fa fa-edit"></i></asp:LinkButton>
-                                                                                   <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="delete" ClientIDMode="AutoID" OnClick="lbDelete_Click"><i class="fa fa-trash"></i></asp:LinkButton>
+                                                                                   <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" OnClientClick="return confirm('Adakah anda mahu memadamkan kawasan?')" CommandArgument="delete" ClientIDMode="AutoID" OnClick="lbDelete_Click"><i class="fa fa-trash"></i></asp:LinkButton>
                                                                                    <asp:LinkButton ID="lbAgency" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="agencyView" ClientIDMode="AutoID" OnClick="lbAgency_Click"><i class="fa fa-chevron-down"></i></asp:LinkButton>
 <%--                                                                                   <a id="lnkResource" class="btn btn-warning w100 rsrce no-loader lnkResource<%#Eval("RowNumber")%>" data-toggle="modal" data-index='<%#Eval("RowNumber")%>' data-target="#resource-modal"><i class="fa fa-globe"></i> PILIH SUMBER</a>--%>
                                                                                    <asp:HiddenField ID="hdnSourceDate" Value="" runat="server" />
@@ -491,17 +529,17 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row m-t-30">
+<%--                                                            <div class="row m-t-30">
                                                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">                                                                
-                                                                    <%--<button type="button" class="btn btn-primary w100"><i class="fa fa-plus"></i> KEMASKINI KAWASAN</button>--%>
-                                                                </div>
+                                                                    <button type="button" class="btn btn-primary w100"><i class="fa fa-plus"></i> KEMASKINI KAWASAN</button>--%>
+<%--                                                                </div>
                                                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                                                     <button type="button" class="btn btn-success w100"><i class="fa fa-plus"></i> TAMBAH KAWASAN</button>
+                                                                     <asp:LinkButton ID="rowAdd" runat="server" CssClass="btn btn-success w100 no-loader" OnClick="rowAdd_Click"><i class="fa fa-plus"></i> TAMBAH KAWASAN</asp:LinkButton>
                                                                 </div>
                                                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                                                     <button type="button" class="btn btn-danger w100"><i class="fa fa-trash"></i> HAPUS</button>
                                                                 </div>
-                                                            </div>
+                                                            </div>--%>
                                                         </div>
                                             </div>
                                         </div>
@@ -513,9 +551,10 @@
                                                 <div class="panel-body panel-custom-bg-custom-info">
                                                      <div class="row">
                                                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                             <asp:HiddenField ID="htCandidateAreaId" runat="server"/>
                                                              <asp:GridView ID="GridViewAgency" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridViewAgency_PreRender" AutoGenerateColumns="False" EmptyDataText="No Data Found!" OnRowDataBound="GridViewAgency_RowDataBound">
                                                                  <Columns>
-                                                                    <asp:TemplateField HeaderText="#">
+                                                                    <asp:TemplateField HeaderText="NO">
                                                                         <ItemTemplate>
                                                                             <asp:Label ID="rowNumber" runat="server" Text=""></asp:Label>
                                                                         </ItemTemplate>
@@ -523,9 +562,11 @@
                                                                     <asp:TemplateField HeaderText="TARIKH SUMBER">
                                                                         <ItemTemplate>
                                                                            <div class="form-group m-b-0">
-                                                                               <asp:HiddenField ID="hfAgencyid" runat="server" Value='<%# Eval("candidate_area_source_id") %>'/>
+                                                                                <asp:HiddenField ID="hfAgencyid" runat="server" Value='<%# Eval("candidate_area_source_id") %>'/>
+                                                                                <asp:HiddenField ID="hfAreaid" runat="server" Value='<%# Eval("candidate_area_id") %>'/>
+                                                                               <asp:HiddenField ID="hfsourceDate" runat="server" ClientIDMode="Static"/>
                                                                                 <asp:Label ID="lbSourceDate" runat="server" Text='<%# Eval("source_date") %>'></asp:Label>
-                                                                                <asp:TextBox ID="sourceDate" runat="server" CssClass="input form-control dateagency" ReadOnly="true" ClientIDMode="Static"></asp:TextBox>
+                                                                                <asp:TextBox ID="sourceDate" runat="server" CssClass="input form-control dateagency" ReadOnly="true" ClientIDMode="Static" ></asp:TextBox>
                                                                             </div>
                                                                         </ItemTemplate>
                                                                      </asp:TemplateField>
@@ -548,7 +589,7 @@
                                                                      <asp:TemplateField ItemStyle-Width="10%">
                                                                           <ItemTemplate>
                                                                              <asp:LinkButton ID="lbEdit" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="edit" ClientIDMode="AutoID" OnClick="lbEdit_Click1"><i id="iconEdit" runat="server" class="fa fa-edit"></i></asp:LinkButton>
-                                                                             <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader" CommandArgument="delete" ClientIDMode="AutoID" OnClick="lbDelete_Click1"><i class="fa fa-trash"></i></asp:LinkButton>
+                                                                             <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-icon waves-effect btn-default m-b-5 no-loader"  OnClientClick="return confirm('Adakah anda mahu memadamkan Agensi?')" CommandArgument="delete" ClientIDMode="AutoID" OnClick="lbDelete_Click1"><i class="fa fa-trash"></i></asp:LinkButton>
                                                                           </ItemTemplate>
                                                                      </asp:TemplateField>
                                                                   </Columns>                                                             
@@ -604,13 +645,19 @@
                                                             </table>--%>
                                                          </div>
                                                      </div>
+                                                    <div class="row">
+                                                        <div class="alert alert-danger alert-dismissable" visible="false" id="agencyStatus" runat="server">
+                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                            <asp:Label ID="agencyLabel" runat="server" Text=""></asp:Label>
+                                                        </div>
+                                                    </div>
                                                     <div class="row" id="agencyGroupBtn" runat="server">
-                                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<%--                                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                                             <button type="button" class="btn btn-success w100"><i class="fa fa-plus"></i> TAMBAH SUMBER</button>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                                             <button type="button" class="btn btn-danger w100"><i class="fa fa-trash"></i> HAPUS SUMBER</button>
-                                                        </div>
+                                                        </div>--%>
                                                     </div>
                                                 </div>
                                             </div>
@@ -621,12 +668,37 @@
                                     <div class="col-lg-6 p-l-0">
                                          <div class="panel panel-color panel-custom-info">
                                             <div class="panel-heading panel-custom-bg-custom-info">
-                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN FAIL ARCHIVES</h3>
+                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN FAIL ARKIB</h3>
                                             </div>
-                                            <div class="panel-body panel-custom-bg-custom-info" style="height:316px">
+                                            <div class="panel-body panel-custom-bg-custom-info" style="height:298px">
                                                 <div class="row">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <table class="table table-bordered dt-responsive nowrap m-t-10 temp">
+                                                         <asp:GridView ID="GridViewFile" runat="server" class="table table-bordered dt-responsive nowrap m-t-10 temp" ClientIDMode="Static" OnPreRender="GridViewFile_PreRender" AutoGenerateColumns="False" EmptyDataText="No Data Found!">
+                                                             <Columns>
+                                                                <asp:TemplateField HeaderText="NO">
+                                                                    <ItemTemplate>
+                                                                        <asp:HiddenField ID="HfArchiveId" runat="server" Value='<%# Eval("win_candidate_archive_id") %>' />
+                                                                        <asp:Label ID="rowNumber" runat="server" Text="1"></asp:Label>
+                                                                    </ItemTemplate>
+                                                                 </asp:TemplateField>  
+                                                                 <asp:TemplateField HeaderText="NAMA FAIL">
+                                                                     <ItemTemplate>
+                                                                         <asp:Label ID="lbFileName" runat="server" Text='<%# Eval("original_filename") %>'></asp:Label>
+                                                                     </ItemTemplate>
+                                                                 </asp:TemplateField>
+                                                                 <asp:TemplateField HeaderText="INFORMASI">
+                                                                     <ItemTemplate>
+                                                                         <asp:Label ID="lbInformation" runat="server" Text='<%# Eval("win_candidate_archive_info") %>'></asp:Label>
+                                                                     </ItemTemplate>
+                                                                 </asp:TemplateField>
+                                                                 <asp:TemplateField HeaderText="MUAT TURUN" ItemStyle-Width="5%">
+                                                                     <ItemTemplate>
+                                                                         <asp:LinkButton ID="lbDownload" runat="server" CssClass="no-loader" OnClick="lbDownload_Click"><i class="fa fa-download"></i></asp:LinkButton>
+                                                                     </ItemTemplate>
+                                                                 </asp:TemplateField>
+                                                             </Columns>
+                                                         </asp:GridView>
+<%--                                                        <table class="table table-bordered dt-responsive nowrap m-t-10 temp">
                                                             <thead>
                                                                 <tr>
                                                                     <th>#</th>
@@ -643,12 +715,12 @@
                                                                     <td><a href="#"><i class="fa fa-download"></i></a></td>
                                                                 </tr>
                                                             </tbody>
-                                                        </table>
+                                                        </table>--%>
                                                      </div>
                                                 </div>
                                                 <div class="row">
                                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                      <button class="btn btn-danger pull-right"><i class="fa fa-trash"></i> HAPUS ARCHIVE</button>
+                                                     <asp:LinkButton ID="lbnFileDelete" runat="server" CssClass="btn btn-danger pull-right" OnClick="lbnFileDelete_Click"><i class="fa fa-trash"></i> HAPUS ARKIB</asp:LinkButton>
                                                  </div>
                                                </div>
                                             </div>
@@ -657,31 +729,38 @@
                                     <div class="col-lg-6 p-r-0">
                                        <div class="panel panel-color panel-custom-info">
                                             <div class="panel-heading panel-heading-custom">
-                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> TAMBAH MAKLUMAT ARCHIVES</h3>
+                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> TAMBAH MAKLUMAT ARKIB</h3>
                                             </div>
                                             <div class="panel-body panel-custom-bg-custom-info">
                                                 <div class="row">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                         <label for="userName">PILIH FAIL YANG ANDA KENHANDAKI DI BAWAH</label>
-                                                          <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                         <asp:HiddenField ID="HfArchiveId" runat="server" />
+                                                         <label for="userName">PILIH FAIL YANG ANDA KEHENDAKI DI BAWAH</label><br />
+<%--                                                          <div class="fileupload fileupload-new" data-provides="fileupload">
                                                             <span class="btn btn-primary btn-file" style="width:100%"><span class="fileupload-new"><i class="fa fa-file-text"></i> Select file</span>
                                                             <span class="fileupload-exists"><i class="fa fa-reply"></i> Change</span><asp:FileUpload ID="FileUpload1" runat="server" /></span>
                                                             <span class="fileupload-preview"></span>
                                                             <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-                                                          </div>
+                                                          </div>--%>
+                                                        <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
+                                                        <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih fail</button>
+                                                        <span id="fileName" runat="server" ClientIDMode="Static"></span>
                                                      </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row m-t-15">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
                                                             <label for="userName">INFORMASI TAMBAHAN</label>
-                                                            <asp:TextBox ID="TextBox3" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
+                                                            <asp:TextBox ID="infoFile" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="115px"></asp:TextBox>
                                                         </div>                                            
                                                      </div>
                                                 </div>
                                                 <div class="row">
+
+                                                </div>
+                                                <div class="row">
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <button class="btn btn-primary pull-right">KAMASKINI ARCHIVE</button>
+                                                        <asp:LinkButton ID="lbnSaveArchive" runat="server" CssClass="btn btn-primary pull-right" OnClick="lbnSaveArchive_Click"><i class="fa fa-save"></i> KEMASKINI ARKIB</asp:LinkButton>
                                                     </div>
                                                 </div>
                                             </div>

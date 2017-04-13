@@ -27,7 +27,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="fa fa-search-plus"></i>Search</h3>
+                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> Carian</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary" Font-Underline="false" runat="server" OnClientClick="validation_e_list()" OnClick="LinkButton1_Click"><i class="fa fa-search-plus"></i> Cari</asp:LinkButton>
+                                        <asp:Button ID="Button1" CssClass="btn btn-primary" OnClientClick="validation_e_list()" runat="server" Text="Cari" OnClick="Button1_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -62,13 +62,13 @@
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="md md-list"></i>Details</h3>
+                                <h3 class="panel-title"><i class="md md-list"></i> Butiran</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <asp:GridView ID="GrdDetails" CssClass="table table-bordered dt-responsive nowrap" ClientIDMode="Static" runat="server" OnPreRender="GrdDetails_PreRender" AutoGenerateColumns="False" DataKeyNames="election_id,state_id,area_id,election_result_id">
                                         <Columns>
-                                            <asp:BoundField DataField="RowNumber" HeaderText="#" />
+                                            <asp:BoundField DataField="RowNumber" HeaderText="No." />
                                             <asp:BoundField DataField="election_name" HeaderText="Pilihanraya" />
                                             <asp:BoundField DataField="area_code" HeaderText="Kod Kawasan" />
                                             <asp:BoundField DataField="area_name" HeaderText="Nama Kawasan" />

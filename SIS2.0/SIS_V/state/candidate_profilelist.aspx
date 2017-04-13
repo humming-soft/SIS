@@ -36,7 +36,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-success">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title">Search Candidate</h3>
+                                <h3 class="panel-title">CARIAN CALON</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-success">
                                 <div class="row">
@@ -67,16 +67,16 @@
                     <div class="col-lg-12">
                         <asp:GridView ID="GridCInfo" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" runat="server" OnPreRender="GridCInfo_PreRender" AutoGenerateColumns="False" DataKeyNames="candidate_id">
                             <Columns>
-                                <asp:TemplateField HeaderText="Profil Image">
+                                <asp:TemplateField HeaderText="Imej Profil">
                                     <ItemTemplate>
                                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("image") %>' Height="100px" Width="100px" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:BoundField DataField="title" HeaderText="Geleran" />
+                                <asp:BoundField DataField="title" HeaderText="Gelaran" />
                                 <asp:BoundField DataField="candidate_ic" HeaderText="Kad Pengenalan Calon" />
                                 <asp:BoundField DataField="name" HeaderText="Nama Calon" />
                                 <asp:BoundField DataField="party_name_bm" HeaderText="Parti" />
-                                <asp:TemplateField HeaderText="Fail Archives">
+                                <asp:TemplateField HeaderText="Fail Arkib">
                                     <ItemTemplate>
                                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("original_filename") %>'></asp:Label>
                                         <asp:LinkButton ID="lnkdownload" Enabled='<%# Eval("original_filename").Equals("Tidak Terdapat") ? false: true %>' CssClass="fa fa-download no-loader" Font-Underline="false" OnClick="lnkdownload_Click" runat="server"></asp:LinkButton>

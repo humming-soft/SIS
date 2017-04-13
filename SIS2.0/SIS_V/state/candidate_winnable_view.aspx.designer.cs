@@ -22,6 +22,24 @@ namespace SIS_V.state {
         protected global::System.Web.UI.ScriptManager MainScriptManager;
         
         /// <summary>
+        /// topStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topStatus;
+        
+        /// <summary>
+        /// topLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label topLabel;
+        
+        /// <summary>
         /// candidates control.
         /// </summary>
         /// <remarks>
@@ -130,6 +148,15 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.Label updateLabel;
         
         /// <summary>
+        /// htCandidateAreaId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField htCandidateAreaId;
+        
+        /// <summary>
         /// GridViewAgency control.
         /// </summary>
         /// <remarks>
@@ -148,6 +175,24 @@ namespace SIS_V.state {
         protected global::System.Web.UI.HtmlControls.HtmlTable noAgency;
         
         /// <summary>
+        /// agencyStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl agencyStatus;
+        
+        /// <summary>
+        /// agencyLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label agencyLabel;
+        
+        /// <summary>
         /// agencyGroupBtn control.
         /// </summary>
         /// <remarks>
@@ -155,6 +200,33 @@ namespace SIS_V.state {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl agencyGroupBtn;
+        
+        /// <summary>
+        /// GridViewFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewFile;
+        
+        /// <summary>
+        /// lbnFileDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnFileDelete;
+        
+        /// <summary>
+        /// HfArchiveId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HfArchiveId;
         
         /// <summary>
         /// FileUpload1 control.
@@ -166,13 +238,31 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// TextBox3 control.
+        /// fileName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fileName;
+        
+        /// <summary>
+        /// infoFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox infoFile;
+        
+        /// <summary>
+        /// lbnSaveArchive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnSaveArchive;
         
         /// <summary>
         /// TextBox4 control.

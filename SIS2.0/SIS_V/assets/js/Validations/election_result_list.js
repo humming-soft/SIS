@@ -12,7 +12,7 @@ var Election_Result_ListA = function () {
             rules: {
                 ctl00$ContentPlaceHolder1$ddlArea: {
                     required: true
-                },
+                }
             },
             submitHandler: function (form) {
                 errorHandler.hide();
