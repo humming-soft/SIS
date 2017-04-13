@@ -11,13 +11,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>PELAPORAN ANALISA CALON BERTANDING</b></h4>
+                <h4 class="m-t-0 header-title"><b>LAPORAN ANALISA CALON BERTANDING</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-primary">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="md md-contacts"></i>SENARAI CALON BERTANDING UNTUK NEGERI (State Name Goes Here) MENGIKUT PARLIMEN DAN DUN</h3>
+                                <h3 class="panel-title"><i class="md md-contacts"></i>SENARAI CALON BERTANDING UNTUK NEGERI MENGIKUT PARLIMEN DAN DUN</h3>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
@@ -59,11 +59,11 @@
                                                                         <div class="col-sm-8">
                                                                             <h4><strong><%# Eval("name")%></strong></h4>
                                                                             <address>
-                                                                                <strong>PARTY</strong><br>
+                                                                                <strong>PARTI</strong><br>
                                                                                 <%# Eval("party_name")%><br>
                                                                             </address>
                                                                             <address>
-                                                                                <strong>NO I/O</strong><br>
+                                                                                <strong>NOMBOR KAD PENGENALAN</strong><br>
                                                                                 <%# Eval("icnum")%><br>
                                                                             </address>
                                                                             <address>
@@ -71,7 +71,7 @@
                                                                                 <%# Eval("age")%><br>
                                                                             </address>
                                                                             <address>
-                                                                                <strong>TARIK LAHIR</strong><br>
+                                                                                <strong>TARIKH LAHIR</strong><br>
                                                                                 <%# Eval("dob")%><br>
                                                                             </address>
                                                                             <address>
@@ -111,11 +111,11 @@
                                                                                                     <div class="col-sm-8">
                                                                                                         <h4><strong><%# Eval("name")%></strong></h4>
                                                                                                         <address>
-                                                                                                            <strong>PARTY</strong><br>
+                                                                                                            <strong>PARTI</strong><br>
                                                                                                             <%# Eval("party_name")%><br>
                                                                                                         </address>
                                                                                                         <address>
-                                                                                                            <strong>NO I/O</strong><br>
+                                                                                                            <strong>NOMBOR KAD PENGENALAN</strong><br>
                                                                                                             <%# Eval("icnum")%><br>
                                                                                                         </address>
                                                                                                         <address>
@@ -123,7 +123,7 @@
                                                                                                             <%# Eval("age")%><br>
                                                                                                         </address>
                                                                                                         <address>
-                                                                                                            <strong>TARIK LAHIR</strong><br>
+                                                                                                            <strong>TARIKH LAHIR</strong><br>
                                                                                                             <%# Eval("dob")%><br>
                                                                                                         </address>
                                                                                                         <address>
