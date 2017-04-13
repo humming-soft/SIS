@@ -375,7 +375,7 @@
                             <button type="button" id="lnktambah" class="btn btn-success w100" onclick="add_to_table()"><i class="fa fa-plus"></i>TAMBAH</button>
                         </div>
                         <div class="col-lg-4">
-                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i>KAMASKINI</button>
+                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i>KEMASKINI</button>
                         </div>
                         <div class="col-lg-4">
                             <button type="button" id="lnkdelete" class="btn btn-danger w100" onclick="del_frm_table()"><i class="fa fa-trash"></i>HAPUS</button>
