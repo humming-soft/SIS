@@ -509,13 +509,13 @@
                     <div class="panel-body panel-custom-bg">
                         <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <div class="form-group">
                                         <asp:FileUpload ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL2(this);" />
                                         <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih Arkib <div><label style="color:white;font-size:x-small">(.rar, .zip, Kurang daripada 3MB)</label></div></button>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <asp:Label ID="rar_name" runat="server" ClientIDMode="Static"></asp:Label>
                                     </div>
