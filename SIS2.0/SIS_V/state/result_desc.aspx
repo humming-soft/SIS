@@ -75,7 +75,7 @@
                                                             <dl class="dl-horizontal m-b-0">
                                                                 <dt>PERATUSAN KAUM
                                                                 </dt>
-                                                                <dd>:  Tiada data diperolehi
+                                                                <dd>:  <%# Eval("race_one")%>
                                                                 </dd>
                                                             </dl>
                                                         </div>

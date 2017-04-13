@@ -107,6 +107,7 @@ namespace SIS_V.state
                 ds.Tables[0].Columns.Add("unreturned_vote1", typeof(string));
                 ds.Tables[0].Columns.Add("spoilt_vote1", typeof(string));
                 ds.Tables[0].Columns.Add("majority_incumbent1", typeof(string));
+                ds.Tables[0].Columns.Add("race_one", typeof(string));
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -160,6 +161,7 @@ namespace SIS_V.state
                         ds.Tables[0].Rows[i]["unreturned_vote1"] = unreturned_vote1;
                         ds.Tables[0].Rows[i]["spoilt_vote1"] = spoilt_vote1;
                         ds.Tables[0].Rows[i]["majority_incumbent1"] = majority_incumbent1;
+                        ds.Tables[0].Rows[i]["race_one"] = ds.Tables[0].Rows[i]["race_fragment"].ToString();
 
                     }
                 }
