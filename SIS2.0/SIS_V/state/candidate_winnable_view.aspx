@@ -747,11 +747,11 @@
                                                         <span id="fileName" runat="server" ClientIDMode="Static"></span>
                                                      </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row m-t-15">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                         <div class="form-group">
                                                             <label for="userName">INFORMASI TAMBAHAN</label>
-                                                            <asp:TextBox ID="infoFile" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="130px"></asp:TextBox>
+                                                            <asp:TextBox ID="infoFile" runat="server" CssClass="input form-control" TextMode="MultiLine" Height="115px"></asp:TextBox>
                                                         </div>                                            
                                                      </div>
                                                 </div>
