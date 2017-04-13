@@ -35,7 +35,7 @@
                         var finder = checker.includes($('#ddlraces').val());
                         if (finder == true) // if finder is true the value is already added for that race, false means not added
                         {
-                            alert('Value already Added !');
+                            alert('Nilai sudah ditambah !');
                         }
                         else {
                             totp = 0;
@@ -53,11 +53,11 @@
                 else {
                     $('#ddlraces').val("");
                     $('#txtperc').val('');
-                    alert('Total Percentage Cannot be greater than 100 !')
+                    alert('Jumlah peratus tidak boleh melebihi daripada 100 !')
                 }
             }
             else {
-                alert('Select Any Race and Enter Value!')
+                alert('Pilih bangsa dan masukkan nilai peratus!')
             }
         }
 
@@ -99,11 +99,11 @@
                 else {
                     $('#ddlraces').val("");
                     $('#txtperc').val('');
-                    alert('Total Percentage Cannot be greater than 100 !');
+                    alert('Jumlah peratus tidak boleh melebihi daripada 100 !');
                 }
             }
             else {
-                alert('Select Any Race and Enter Value!')
+                alert('Pilih bangsa dan masukkan nilai peratus!')
             }
 
         }
@@ -168,7 +168,7 @@
                         </div>
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="fa fa-search-plus"></i>MAKLUMAT KAWASAN</h3>
+                                <h3 class="panel-title"><i class="fa fa-search-plus"></i> MAKLUMAT KAWASAN</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
@@ -250,7 +250,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart"></i>MAKLUMAT UNDI CALON</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart"></i> MAKLUMAT UNDI CALON</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
@@ -317,7 +317,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">KEMASKINI PERATUSAN KANUM</h4>
+                    <h4 class="modal-title">KEMASKINI PERATUSAN KAUM</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">

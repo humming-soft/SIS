@@ -25,7 +25,7 @@
                     <div class="col-lg-6">
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="md md-content-paste"></i>SCORESHEET</h3>
+                                <h3 class="panel-title"><i class="md md-content-paste"></i> BUTIRAN SKOR</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
@@ -39,7 +39,7 @@
                                                     <h5><%# Eval("area_code")%> - <%# Eval("area_name")%></h5>
                                                 </div>
                                                 <div class="ibox-content">
-                                                    <h4>ELECTION INFORMATION</h4>
+                                                    <h4>MAKLUMAT PILIHANRAYA</h4>
                                                     <div class="table-responsive">
                                                         <table class="table table-striped table-hover">
                                                             <tbody>
@@ -114,7 +114,7 @@
                     <div class="col-lg-6">
                         <div class="panel panel-color panel-custom-info">
                             <div class="panel-heading panel-heading-custom">
-                                <h3 class="panel-title"><i class="md md-event-note"></i>GAZETTED</h3>
+                                <h3 class="panel-title"><i class="md md-event-note"></i> DIWARTAKAN</h3>
                             </div>
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
@@ -129,7 +129,7 @@
                                                     <h5><%# Eval("area_code")%> - <%# Eval("area_name")%></h5>
                                                 </div>
                                                 <div class="ibox-content">
-                                                    <h4>ELECTION INFORMATION</h4>
+                                                    <h4>MAKLUMAT PILIHANRAYA</h4>
                                                     <div class="table-responsive">
                                                         <table class="table table-striped table-hover">
                                                             <tbody>
