@@ -203,7 +203,7 @@
                             <div class="col-lg-12">
                                 <div class="panel panel-color panel-success">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search Candidate</h3>
+                                        <h3 class="panel-title"><i class="fa fa-search-plus"></i> CARIAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-success">
 <%--                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
@@ -228,7 +228,7 @@
                              <div class="col-lg-3">
                                  <div class="panel panel-color panel-success">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="md md-contacts"></i> Candidate Informaton</h3>
+                                        <h3 class="panel-title"><i class="md md-contacts"></i> BUTIRAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-success">
                                         <asp:DataList ID="CandidateDataList" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
@@ -327,7 +327,7 @@
                                                    <div class="table-responsive max-height-210 mCustomScrollbar" data-mcs-theme="dark-3">
                                                        <asp:GridView ID="GridViewRowAdd" runat="server" CssClass="table table-striped table-bordered dt-responsive nowrap" ClientIDMode="Static" OnPreRender="GridViewRowAdd_PreRender" AutoGenerateColumns="False">
                                                            <Columns>
-                                                               <asp:BoundField DataField="RowNumber" HeaderText="#"/>
+                                                               <asp:BoundField DataField="RowNumber" HeaderText="NO"/>
                                                                <asp:TemplateField HeaderText="PILIHANRAYA">
                                                                    <ItemTemplate>
                                                                        <asp:DropDownList ID="ddElection" CssClass="form-control" runat="server" DataTextField="election_name" DataValueField="election_id"></asp:DropDownList>
@@ -438,7 +438,7 @@
                                                         <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
                                                       </div>--%>
                                                     <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
-                                                    <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Select Archives</button>
+                                                    <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih Arkib</button>
                                                      <span id="fileName" runat="server" ClientIDMode="Static"></span>
                                                  </div>
                                             </div>
@@ -459,7 +459,7 @@
                                  <div class="panel panel-color panel-success">
                                     <div class="panel-body panel-custom-bg-success">
                                         <div class="btn-group pull-right">
-                                            <asp:Button ID="saveAll" runat="server" Text="Simplan" CssClass="btn btn-success" OnClick="saveAll_Click" /> <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="Cancel" />
+                                            <asp:Button ID="saveAll" runat="server" Text="Simpan" CssClass="btn btn-success" OnClick="saveAll_Click" /> <asp:Button ID="Button2" CssClass="btn btn-danger" runat="server" Text="BATAL" />
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +526,7 @@
                                             <table class="table table-bordered dt-responsive nowrap m-t-10 temp resourceTable">
                                                 <thead>
                                                     <tr>
-                                                        <th>#</th>
+                                                        <th>NO</th>
                                                         <th style="width:20%">TARIKH SUMBER</th>
                                                         <th style="width:25%">AGENSI</th>
                                                         <th>JUSTIFIKASI</th>                    
