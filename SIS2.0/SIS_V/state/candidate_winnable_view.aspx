@@ -62,7 +62,7 @@
                             <div class="col-lg-12">
                                 <div class="panel panel-color panel-custom-info">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="fa fa-search-plus"></i> Search Candidate</h3>
+                                        <h3 class="panel-title"><i class="fa fa-search-plus"></i> CARIAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-custom-info">
                                         <div class="row">
@@ -668,14 +668,14 @@
                                     <div class="col-lg-6 p-l-0">
                                          <div class="panel panel-color panel-custom-info">
                                             <div class="panel-heading panel-custom-bg-custom-info">
-                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN FAIL ARCHIVES</h3>
+                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> PAPARAN FAIL ARKIB</h3>
                                             </div>
                                             <div class="panel-body panel-custom-bg-custom-info" style="height:298px">
                                                 <div class="row">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                          <asp:GridView ID="GridViewFile" runat="server" class="table table-bordered dt-responsive nowrap m-t-10 temp" ClientIDMode="Static" OnPreRender="GridViewFile_PreRender" AutoGenerateColumns="False" EmptyDataText="No Data Found!">
                                                              <Columns>
-                                                                <asp:TemplateField HeaderText="#">
+                                                                <asp:TemplateField HeaderText="NO">
                                                                     <ItemTemplate>
                                                                         <asp:HiddenField ID="HfArchiveId" runat="server" Value='<%# Eval("win_candidate_archive_id") %>' />
                                                                         <asp:Label ID="rowNumber" runat="server" Text="1"></asp:Label>
@@ -720,7 +720,7 @@
                                                 </div>
                                                 <div class="row">
                                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                     <asp:LinkButton ID="lbnFileDelete" runat="server" CssClass="btn btn-danger pull-right" OnClick="lbnFileDelete_Click"><i class="fa fa-trash"></i> HAPUS ARCHIVE</asp:LinkButton>
+                                                     <asp:LinkButton ID="lbnFileDelete" runat="server" CssClass="btn btn-danger pull-right" OnClick="lbnFileDelete_Click"><i class="fa fa-trash"></i> HAPUS ARKIB</asp:LinkButton>
                                                  </div>
                                                </div>
                                             </div>
@@ -729,13 +729,13 @@
                                     <div class="col-lg-6 p-r-0">
                                        <div class="panel panel-color panel-custom-info">
                                             <div class="panel-heading panel-heading-custom">
-                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> KAMASKINI MAKLUMAT ARCHIVES</h3>
+                                                <h3 class="panel-title"><i class="fa fa-file-archive-o"></i> TAMBAH MAKLUMAT ARKIB</h3>
                                             </div>
                                             <div class="panel-body panel-custom-bg-custom-info">
                                                 <div class="row">
                                                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                          <asp:HiddenField ID="HfArchiveId" runat="server" />
-                                                         <label for="userName">PILIH FAIL YANG ANDA KENHANDAKI DI BAWAH</label>
+                                                         <label for="userName">PILIH FAIL YANG ANDA KEHENDAKI DI BAWAH</label>
 <%--                                                          <div class="fileupload fileupload-new" data-provides="fileupload">
                                                             <span class="btn btn-primary btn-file" style="width:100%"><span class="fileupload-new"><i class="fa fa-file-text"></i> Select file</span>
                                                             <span class="fileupload-exists"><i class="fa fa-reply"></i> Change</span><asp:FileUpload ID="FileUpload1" runat="server" /></span>
@@ -743,7 +743,7 @@
                                                             <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
                                                           </div>--%>
                                                         <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
-                                                        <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Select Archives</button>
+                                                        <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih fail</button>
                                                         <span id="fileName" runat="server" ClientIDMode="Static"></span>
                                                      </div>
                                                 </div>
@@ -760,7 +760,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <asp:LinkButton ID="lbnSaveArchive" runat="server" CssClass="btn btn-primary pull-right" OnClick="lbnSaveArchive_Click"><i class="fa fa-save"></i> KAMASKINI ARCHIVE</asp:LinkButton>
+                                                        <asp:LinkButton ID="lbnSaveArchive" runat="server" CssClass="btn btn-primary pull-right" OnClick="lbnSaveArchive_Click"><i class="fa fa-save"></i> KEMASKINI ARKIB</asp:LinkButton>
                                                     </div>
                                                 </div>
                                             </div>
