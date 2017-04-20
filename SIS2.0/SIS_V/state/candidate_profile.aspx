@@ -222,14 +222,14 @@
                         <div class="gal-detail thumb panel-custom-bg" style="margin-top: 0px">
                             <div style="width: 100%; padding: 0 28%">
                                 <div class="gal-detail thumb" style="margin-top: 0px">
-                                    <img id="imager" src="../assets/images/users/avatar-0.jpg" class="thumb-img" alt="work-thumbnail" style="width: 156px;" />
+                                    <img id="imager" src="../assets/images/users/avatar-0.jpg" class="thumb-img" alt="work-thumbnail" style="width: 135px;" />
                                 </div>
                             </div>
                             <h4 class="text-center" style="margin-top: 10px !important">Calon Profil Imej</h4>
                             <div class="ga-border"></div>
-                            <div class="form-group text-left m-b-0 m-t-15">
+                            <div class="form-group text-left m-b-0 m-t-15" title="pilih imej calon">
                                 <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
-                                <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialog();"><i class="fa fa-image"></i> Pilih Imej <div><label style="color:white;font-size:x-small">(JPG, JPEG, PNG, Kurang daripada 3MB)</label></div></button>
+                                <button type="button"  class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialog();"><i class="fa fa-image"></i> Pilih Imej <div><label style="color:white;font-size:x-small">(JPG, JPEG, PNG, Kurang daripada 3MB)</label></div></button>
                             </div>
                         </div>
                     </div>
@@ -510,8 +510,8 @@
                         <div class="col-xs-12 col-sm-12 col-lg-8 col-md-8">
                             <div class="row">
                                 <div class="col-lg-8">
-                                    <div class="form-group">
-                                        <asp:FileUpload ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL2(this);" />
+                                    <div class="form-group" title="Tambah Fail Akrib">
+                                        <asp:FileUpload   ID="FileUpload2" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL2(this);" />
                                         <button type="button" class="btn btn-success waves-light" style="width: 100%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih Arkib <div><label style="color:white;font-size:x-small">(.rar, .zip, Kurang daripada 3MB)</label></div></button>
                                     </div>
                                 </div>
@@ -534,8 +534,8 @@
         <div class="row" style="padding-left: 10px">
             <div class="col-sm-12 col-lg-12 p-0">
                 <div class="form-group text-left m-b-0 m-t-15">
-                    <asp:Button ID="button1" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClientClick="canprof()" OnClick="button1_Click" ClientIDMode="Static" />
-                    <asp:Button ID="button2" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" ClientIDMode="Static" OnClientClick="reseter();this.form.reset();return false;" />
+                    <asp:Button ID="button1" title="Kemaskini profil calon" CssClass="btn btn-primary waves-light" runat="server" Text="Simpan" OnClientClick="canprof()" OnClick="button1_Click" ClientIDMode="Static" />
+                    <asp:Button ID="button2" title="Hapus rekod profil calon" CssClass="btn btn-default waves-light m-l-5" runat="server" Text="Jelas" ClientIDMode="Static" OnClientClick="reseter();this.form.reset();return false;" />
                 </div>
             </div>
         </div>

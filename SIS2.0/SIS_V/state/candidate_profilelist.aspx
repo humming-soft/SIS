@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card-box">
-                <h4 class="m-t-0 header-title"><b>TAMBAH PROFIL BAKAL CALON / INDIVIDU</b></h4>
+                <h4 class="m-t-0 header-title"><b>PAPARAN PROFIL BAKAL CALON / INDIVIDU</b></h4>
                 <p class="text-muted font-13 m-b-30"></p>
                 <div class="col-md-12">
                     <div class="alert alert-success alert-dismissable" id="valid" runat="server">

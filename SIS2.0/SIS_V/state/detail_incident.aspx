@@ -51,7 +51,7 @@
                             <td>MAJORITI
                                 <br />
                                 <asp:Label ID="lbl_majority" runat="server" Text=""></asp:Label></td>
-                            <td>PERATUS MENGUNDI<br />
+                            <td>PERATUSAN KELUAR MENGUNDI<br />
                                 <asp:Label ID="lbl_percent_vote" runat="server" Text=""></asp:Label></td>
                             <td>UNDI ROSAK<br />
                                 <asp:Label ID="lbl_spoilt_vote" runat="server" Text=""></asp:Label></td>
@@ -62,7 +62,7 @@
                                 <asp:Label ID="lbl_winner" runat="server" Text=""></asp:Label></td>
                         </tr>
                         <tr>
-                            <td colspan="4">PECAHAN
+                            <td colspan="4">PECAHAN KAUM
                                 <br />
                                 <asp:Label ID="lbl_raceFragment" runat="server" Text=""></asp:Label></td>
                         </tr>
