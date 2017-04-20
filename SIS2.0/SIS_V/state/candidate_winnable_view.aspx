@@ -743,7 +743,7 @@
                                                             <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
                                                           </div>--%>
                                                         <asp:FileUpload ID="FileUpload1" runat="server" Style="display: none" ClientIDMode="Static" onchange="readURL(this);" />
-                                                        <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih fail</button>
+                                                        <button type="button" class="btn btn-success waves-light" style="width: 50%" runat="server" onclick="return showBrowseDialogAdd();"><i class="fa fa-file-zip-o"></i> Pilih fail (.rar,.zip)</button>
                                                         <span id="fileName" runat="server" ClientIDMode="Static"></span>
                                                      </div>
                                                 </div>
