@@ -24,16 +24,16 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="content">
-                                        <asp:GridView ID="status_kawasan_dist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender" DataKeyNames="area_id">
+                                        <asp:GridView ID="status_kawasan_dist" CssClass="table dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="false" runat="server" OnPreRender="status_kawasan_dist_PreRender" DataKeyNames="area_id">
                                             <Columns>
-                                                <asp:BoundField HeaderText="Kod" DataField="area_code" ItemStyle-Width="25%"></asp:BoundField>
-                                                <asp:TemplateField HeaderText="Nama Kawasan">
+                                                <asp:BoundField HeaderText="Kod" DataField="area_code" ItemStyle-Width="25%" ItemStyle-CssClass="success"></asp:BoundField>
+                                                <asp:TemplateField HeaderText="Nama Kawasan" ItemStyle-CssClass="success">
                                                     <ItemTemplate>
                                                         <asp:LinkButton ID="link_area_name_skone" CssClass="no-loader" runat="server" Enabled='<%# IsEnabled((bool)Eval("isconcentrated")) %>' OnClick="link_area_name_skone_Click"><%# Eval("area_name")%></asp:LinkButton>
                                                         <img src="<%# Convert.ToBoolean(Eval("isconcentrated")) ? "../assets/images/logo/subaru.ico" : "" %>"></img>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%">
+                                                <asp:TemplateField HeaderText="Status" ItemStyle-Width="10%" ItemStyle-CssClass="success">
                                                     <ItemTemplate>
                                                         <h3 class="portlet-table-status <%# Eval("color").Equals("PUTIH") ? "status-white" : Eval("color").Equals("HITAM") ? "status-black" : "status-gray" %>"></h3>
                                                     </ItemTemplate>
@@ -62,9 +62,9 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="content">
-                                        <asp:GridView ID="status_kawasan_subdist" CssClass="table table-bordered dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="False" runat="server" OnPreRender="status_kawasan_subdist_PreRender">
+                                        <asp:GridView ID="status_kawasan_subdist" CssClass="table dt-responsive nowrap m-t-10" ClientIDMode="Static" AutoGenerateColumns="False" runat="server" OnPreRender="status_kawasan_subdist_PreRender">
                                             <Columns>
-                                                <asp:TemplateField HeaderText="Nama Kawasan">
+                                                <asp:TemplateField HeaderText="Nama Kawasan" ItemStyle-CssClass="warning">
                                                     <ItemTemplate>
                                                         <div class="rest-max-height-44 mCustomScrollbar">
                                                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("names") %>'></asp:Label>
