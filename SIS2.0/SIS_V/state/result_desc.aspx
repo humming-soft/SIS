@@ -75,7 +75,7 @@
                                                             <dl class="dl-horizontal m-b-0">
                                                                 <dt>PERATUSAN KAUM
                                                                 </dt>
-                                                                <dd>:  Tiada data diperolehi
+                                                                <dd>:  <%# Eval("race_one")%>
                                                                 </dd>
                                                             </dl>
                                                         </div>
@@ -98,7 +98,7 @@
                                                             <dl class="dl-horizontal m-b-0">
                                                                 <dt>PENYANDANG
                                                                 </dt>
-                                                                <dd>: <%# Eval("incumbent_name")%> (<%# Eval("coalition_shortcode")%>) (Majoritu: <%# Eval("majority_incumbent1")%> Undi).
+                                                                <dd>: <%# Eval("incumbent_name")%> (<%# Eval("coalition_shortcode")%>) (Majoriti: <%# Eval("majority_incumbent1")%> Undi).
                                                                 </dd>
                                                             </dl>
                                                         </div>
@@ -179,7 +179,7 @@
                                                             <dl class="dl-horizontal m-b-0">
                                                                 <dt>PENYANDANG
                                                                 </dt>
-                                                                <dd>: () (Majoritu: 0 Undi).
+                                                                <dd>: () (Majoriti: 0 Undi).
                                                                 </dd>
                                                             </dl>
                                                         </div>

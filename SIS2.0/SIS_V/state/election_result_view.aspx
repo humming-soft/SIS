@@ -88,10 +88,46 @@
                 // check for value less than 100 if yes first remove the row then add new row with the updated values, also can select new race at the same time
                 gperu = parseInt($('#txttperc').val()) - parseInt(rowvalue) + parseInt($('#txtperc').val());
                 if (gperu <= 100) {
+                    $('#txttperc').val(gperu).change();
                     $('#' + rowid).remove();
                     $('#lnkkamaskini').prop('disabled', true);
                     $('#lnkdelete').prop('disabled', true);
-                    add_to_table();
+
+                    //add_to_table();
+
+                    var checker1 = []; // create an array
+                    var rowCount1 = $('#tb tr').length; // get the row count
+                    if (rowCount1 == 0) { // if row count is zero just append
+                        $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + ' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                        $('#txttperc').val($('#txtperc').val());
+                        $('#ddlraces').val("");
+                        $('#txtperc').val('');
+
+                    }
+                    else { // if row count is not zero loop through the current table and push the values into array
+                        $("#tb tr").each(function () {
+                            checker1.push($(this).attr("id"));
+                        });
+
+                        // check the new selected value in the array
+                        var finder1 = checker1.includes($('#ddlraces').val());
+                        if (finder1 == true) // if finder is true the value is already added for that race, false means not added
+                        {
+                            alert('Nilai sudah ditambah !');
+                        }
+                        else {
+                            totp = 0;
+                            $('#tb').append('<tr id=' + $('#ddlraces').val() + ' class=' + $('#txtperc').val() + ' text=' + $('#ddlraces option:selected').text() + '><td>' + $('#ddlraces option:selected').text() + '</td>' + '<td>' + $('#txtperc').val() + '</td></tr>');
+                            $("#tb tr").each(function () {
+                                totp += parseInt($(this).attr("class"));
+                            });
+                            $('#ddlraces').val("");
+                            $('#txtperc').val('');
+                            $('#txttperc').val(totp);
+                        }
+
+                    }
+
                     $('#lnktambah').prop('disabled', false);
                     $('#lnkkamaskini').prop('disabled', true);
                     $('#lnkdelete').prop('disabled', true);
@@ -226,7 +262,7 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="">MAKLUMAT PEMENANG</label>
-                                            <asp:Label ID="lblwinner" runat="server" CssClass="form-control"></asp:Label>
+                                            <asp:Label ID="lblwinner" runat="server" CssClass="form-control" BorderStyle="None" BackColor ="White"></asp:Label>
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
@@ -238,7 +274,7 @@
                                     <div class="col-lg-3">
                                         <div class="form-group">
                                             <label for="">MAKLUMAT PENYANDANG</label>
-                                            <asp:Label ID="lblinc" runat="server" CssClass="form-control"></asp:Label>
+                                            <asp:Label ID="lblinc" runat="server" CssClass="form-control" BorderStyle="None" BackColor ="White"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
@@ -339,7 +375,7 @@
                             <button type="button" id="lnktambah" class="btn btn-success w100" onclick="add_to_table()"><i class="fa fa-plus"></i>TAMBAH</button>
                         </div>
                         <div class="col-lg-4">
-                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i>KAMASKINI</button>
+                            <button type="button" id="lnkkamaskini" class="btn btn-primary w100" onclick="up_table()"><i class="fa fa-plus"></i>KEMASKINI</button>
                         </div>
                         <div class="col-lg-4">
                             <button type="button" id="lnkdelete" class="btn btn-danger w100" onclick="del_frm_table()"><i class="fa fa-trash"></i>HAPUS</button>

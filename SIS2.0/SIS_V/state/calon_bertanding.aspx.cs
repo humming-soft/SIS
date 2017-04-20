@@ -121,8 +121,9 @@ namespace SIS_V.state
                     }
                     datalstParlimen.DataSource = lstPar;
                     datalstParlimen.DataBind();
-                    datalstDunname.DataBind();
+
                 }
+                datalstDunname.DataBind();
             }
         }
         protected void datalstDunname_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -170,7 +171,6 @@ namespace SIS_V.state
                     tempdt.Rows[i]["candidate_ic"].ToString(), tempdt.Rows[i]["dob"].ToString(), tempdt.Rows[i]["candidate_age"].ToString(), tempdt.Rows[i]["candidate_religion"].ToString());
                 }
                 datalstDun.DataSource = lstDun;
-                datalstDun.DataBind();
                 datalstDun.DataBind();
             }
         }

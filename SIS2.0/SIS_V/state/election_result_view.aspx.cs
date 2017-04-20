@@ -79,8 +79,15 @@ namespace SIS_V.state
                 {
                     a = int.Parse(dt.Rows[0][15].ToString());
                     b = int.Parse(dt.Rows[0][8].ToString());
-                    c = (float)a / b;
-                    pe = c * 100;
+                    if(b == 0)
+                    {
+                        pe = 0;
+                    }
+                    else
+                    {
+                        c = (float)a / b;
+                        pe = c * 100;
+                    }
                 }
                 txtper.Text = pe.ToString("F");
                 if (String.IsNullOrEmpty(dt.Rows[0][32].ToString()) || String.IsNullOrEmpty(dt.Rows[0][34].ToString()) || String.IsNullOrEmpty(dt.Rows[0][33].ToString()))
@@ -191,7 +198,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.race_frg = null;
+                bus.race_frg = "Tiada Data";
             }
             if (txtjpb.Text.Trim() !="")
             {
@@ -199,7 +206,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.totalvote = int.Parse(null);
+                bus.totalvote = 0;
             }
             if (txtjkud.Text.Trim() != "")
             {
@@ -207,7 +214,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.spolit_vote = int.Parse(null);
+                bus.spolit_vote = 0;
             }
             if (txtjkudi.Text.Trim() != "")
             {
@@ -215,7 +222,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.turn_vote = int.Parse(null);
+                bus.turn_vote = 0;
             }
             if (txtmajority.Text.Trim() != "")
             {
@@ -223,7 +230,7 @@ namespace SIS_V.state
             }
             else
             {
-                bus.majority = int.Parse(null);
+                bus.majority = 0;
             }
 
             simpan = bus.update_simpan();
