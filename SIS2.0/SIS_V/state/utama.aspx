@@ -222,11 +222,23 @@
                 series: [{
                     maxPointWidth: 20,
                     name: 'PEMBANGKANG',
-                    data: pm
+                    data: pm,
+                    events: {
+                        legendItemClick: function () {
+                            return false;
+                        }
+                    }
+
                 }, {
                     maxPointWidth: 20,
                     name: 'BN',
-                    data: bn
+                    data: bn,
+                    events: {
+                        legendItemClick: function () {
+                            return false;
+                        }
+                    }
+
                 }, ]
             });
         }
@@ -309,11 +321,21 @@
                 series: [{
                     maxPointWidth: 20,
                     name: 'PEMBANGKANG',
-                    data: pm1
+                    data: pm1,
+                    events: {
+                        legendItemClick: function () {
+                            return false;
+                        }
+                    }
                 }, {
                     maxPointWidth: 20,
                     name: 'BN',
-                    data: bn1
+                    data: bn1,
+                    events: {
+                        legendItemClick: function () {
+                            return false;
+                        }
+                    }
                 }, ]
             });
         }
