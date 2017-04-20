@@ -184,7 +184,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div id="activity_scroll"  ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 610px;" data-mcs-theme="dark-3">
+                                    <div id="activity_scroll"  ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_activity" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_activity_PreRender">
                                             <Columns>
                                                 <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
@@ -219,7 +219,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="mCustomScrollbar" ClientIDMode="Static" id="isu_scroll" runat="server"  style="height: 610px;" data-mcs-theme="dark-3">
+                                    <div class="mCustomScrollbar" ClientIDMode="Static" id="isu_scroll" runat="server"  style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_isu" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10 " OnPreRender="grid_isu_PreRender">
                                             <Columns>
                                                 <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
@@ -253,7 +253,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div  id="janji_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 610px;" data-mcs-theme="dark-3">
+                                    <div  id="janji_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_janji" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_janji_PreRender">
                                             <Columns>
                                                 <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
@@ -287,7 +287,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div id="insiden_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 610px;" data-mcs-theme="dark-3">
+                                    <div id="insiden_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_insiden" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_insiden_PreRender">
                                             <Columns>
                                                 <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
