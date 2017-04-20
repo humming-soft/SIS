@@ -55,7 +55,7 @@
             fty = tn + (total * 50) / 100;
             //console.log(fty + '---' + frty + '---' + tn);
             Highcharts.chart('gauge', {
-
+               tooltip: { enabled: false },
                 chart: {
                     type: 'gauge',
                     plotBackgroundColor: null,
@@ -141,10 +141,7 @@
 
                 series: [{
                     name: 'Value',
-                    data: [vals],
-                    tooltip: {
-                        valueSuffix: ''
-                    }
+                    data: [vals]
                 }]
 
             });
