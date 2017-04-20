@@ -22,11 +22,11 @@
         <div class="col-md-12">
             <div class="card-box">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title"><b>KAWASAN TUMPUAN -</b>
+                    <div class="col-md-6" style="border-right:2px solid #cfcfcf">
+                        <h4 class="m-t-0 m-b-20 header-title f-s-20" style="margin-left: 36px;"><b>KAWASAN TUMPUAN -</b>
                         <asp:Label ID="lblCon" runat="server" Text="Label"></asp:Label>
                         </h4>
-                        <div>
+                       <div class="container">
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="content">
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title"><b>KAWASAN OPERASI -</b>
+                        <h4 class="m-t-0 m-b-20 header-title f-s-20" style="margin-left: 36px;"><b>KAWASAN OPERASI -</b>
                         <asp:Label ID="lblOp" runat="server" Text="Label"></asp:Label>
                         </h4>
                         <div class="container">
