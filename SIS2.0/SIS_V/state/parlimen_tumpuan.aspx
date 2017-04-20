@@ -7,10 +7,10 @@
         <div class="col-md-12">
             <div class="card-box">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title"><b>SENARAI KAWASAN BN - </b>
+                    <div class="col-md-6" style="border-right:2px solid #cfcfcf">
+                        <h4 class="m-t-0 m-b-20 header-title f-s-20" style="margin-left: 36px;"><b>SENARAI KAWASAN BN - </b>
                             <asp:Label ID="k_count" runat="server" Text="3"></asp:Label></h4>
-                        <%--<div class="container table-custom">--%>
+                       <div class="container">
                             <div class="row">
                                 <div class="col-lg-4" id="sena1" runat="server">
                                     <div class="content">
@@ -72,10 +72,10 @@
                                     </div>
                                 </div>
                             </div>
-                        <%--</div>--%>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="m-t-0 m-b-20 header-title"><b>SENARAI KAWASAN PEMBANGKANG - </b>
+                        <h4 class="m-t-0 m-b-20 header-title f-s-20" style="margin-left: 36px;"><b>SENARAI KAWASAN PEMBANGKANG - </b>
                             <asp:Label ID="pem_count" runat="server" Text="2"></asp:Label></h4>
                         <div class="container">
                             <div class="row">

@@ -252,9 +252,15 @@
                             <li>
                                 <img src="../assets/images/gallery/006_d.png" alt="Logo Image Here" />
                                 <a href="parlimen_tumpuan">
-                                    <p class="days_ref">
-                                        Parlimen Tumpuan BN VS Pembangkang
+                                    <p class="days_ref" style="top:64px">
+                                        Kawasan Tumpuan BN VS Pembangkang
                                     </p>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../assets/images/gallery/008_d.png" alt="Logo Image Here" />
+                                <a href="result">
+                                    <p class="minutes_ref b35">Keputusan Pilihanraya </p>
                                 </a>
                             </li>
                             <li>
@@ -263,21 +269,15 @@
                                     <p class="minutes_ref">Rumusan Status Kawasan</p>
                                 </a>
                             </li>
-                            <li>
+                        </ul>
+                        <ul class="countdown m-t-25">
+                           <li>
                                 <img src="../assets/images/gallery/007_d.png" alt="Logo Image Here" />
                                 <a href="Win_Candidate">
                                     <p class="seconds_ref">Winnable Candidate</p>
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="countdown m-t-25">
-                            <li>
-                                <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
-                                <a href="calon_bertanding">
-                                    <p class="seconds_ref">Calon Bertanding</p>
-                                </a>
-                            </li>
-                            <li>
+                           <li>
                                 <img src="../assets/images/gallery/005_d.png" alt="Logo Image Here" />
                                 <a href="percentage_voters">
                                     <p class="days_ref b35">
@@ -288,9 +288,9 @@
                                 </a>
                             </li>
                             <li>
-                                <img src="../assets/images/gallery/008_d.png" alt="Logo Image Here" />
-                                <a href="result">
-                                    <p class="minutes_ref b35">Keputusan Pilihanraya </p>
+                                <img src="../assets/images/gallery/004_d.png" alt="Logo Image Here" />
+                                <a href="calon_bertanding">
+                                    <p class="seconds_ref">Calon Bertanding</p>
                                 </a>
                             </li>
                             <li>

@@ -390,23 +390,23 @@
         <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
             <div class="widget-simple-chart text-right card-box">
                 <h4 class="text-dark  header-title m-t-0 ta-center">Status</h4>
-                <p class="text-muted m-b-25 font-13 ta-center">
-                    Parlimen
+                <p class="text-muted m-b-25 f-s-15 ta-center f-w-600">
+                    PARLIMEN
                 </p>
-                <h3 class="text-success portlet-status  status-white" id="white">-</h3>
+                <h3 class="text-warning portlet-status  status-white" id="white">-</h3>
                 <h3 class="text-warning portlet-status  status-gray" id="grey">-</h3>
-                <h3 class="text-info portlet-status status-black" id="black">-</h3>
+                <h3 class="text-warning portlet-status status-black" id="black">-</h3>
             </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-1 col-lg-1">
             <div class="widget-simple-chart text-right card-box">
                 <h4 class="text-dark  header-title m-t-0 ta-center">Status</h4>
-                <p class="text-muted m-b-25 font-13 ta-center">
-                    Dun
+                <p class="text-muted m-b-25 f-s-15 f-w-600 ta-center">
+                    DUN
                 </p>
-                <h3 class="text-success portlet-status status-white" id="whited">-</h3>
+                <h3 class="text-warning portlet-status status-white" id="whited">-</h3>
                 <h3 class="text-warning portlet-status status-gray" id="greyd">-</h3>
-                <h3 class="text-info portlet-status status-black" id="blackd">-</h3>
+                <h3 class="text-warning portlet-status status-black" id="blackd">-</h3>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
@@ -419,7 +419,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card-box">
-                <h4 class="text-dark  header-title m-t-0">Jumlah Insiden</h4>
+                <h4 class="text-dark  header-title m-t-0">Jumlah Insiden <span runat="server" class="badge badge-primary" style="margin-top:-4px; border-radius:3px" id="countInsident"></span></h4>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 rest-height-250 mCustomScrollbar m-b-15"  id="ins1" runat="server" data-mcs-theme="dark-3">
                         <div class="table-responsive">

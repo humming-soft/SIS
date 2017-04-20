@@ -237,11 +237,11 @@ File: Menu
   color: #4c5667;
   border: 2px solid #4c5667;
 }
-#topnav .navbar-custom {
+/*#topnav .navbar-custom {
   background-color: #ffffff;
   box-shadow: 0 6px 19px 0 rgba(0, 0, 0, 0.04), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
   box-shadow: 2px -5px 19px 0 rgba(58, 57, 57, 0.42), 0px 0px 0px 0 rgba(0, 0, 0, 0.02);
-}
+}*/
 #topnav .navbar-toggle {
   border: 0;
   position: relative;

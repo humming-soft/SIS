@@ -107,6 +107,7 @@ namespace SIS_V.state
         {
             bus1.stateid = int.Parse(Session["state"].ToString());
             dt = bus1.jumlah_insiden();
+            int totalInsident = 0;
             if (dt.Rows.Count > 0)
             {
                 count = dt.Rows.Count / 2;
@@ -126,10 +127,12 @@ namespace SIS_V.state
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
+                    
                     id = 0; Name = ""; Num = 0;
                     id = int.Parse(dt.Rows[i]["id"].ToString());
                     Name = dt.Rows[i]["aname"].ToString();
                     Num = int.Parse(dt.Rows[i]["Num"].ToString());
+                    totalInsident += Num;
                     if (i < count)
                     {
                         table1.Rows.Add(id, Name, Num);
@@ -163,6 +166,7 @@ namespace SIS_V.state
                     }
 
                 }
+                countInsident.InnerHtml = totalInsident.ToString();
                 grdinsident1.DataSource = table1;
                 grdinsident1.DataBind();
 
