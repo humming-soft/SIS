@@ -125,7 +125,7 @@
                 <div class="menu-extras">
                     <ul class="nav navbar-nav navbar-right pull-right">
                         <li class="dropdown no-loader">
-                            <a href="#" class="state" id="statename" runat="server" style="cursor:default"></a>
+                            <a href="#" class="state" id="statename" runat="server" style="cursor:default; font-size:large"></a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true">
@@ -324,7 +324,7 @@
                <div class="row">
                     <div class="col-sm-12">
                        <%-- <h4>Dashboard Utama</h4>--%>
-                        <ol class="breadcrumb p-l-0">
+                        <ol class="breadcrumb p-l-0" style="font-size:medium">
                             <li>
                                 <a href="dash"><i class="fa fa-home"></i></a>
                             </li>

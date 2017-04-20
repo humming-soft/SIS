@@ -72,6 +72,7 @@ namespace SIS_V.state
         public void fill_maklumat_kawasan()
         {
             bus.area_id = id;
+            Double avgValue = 0.00;
             DataTable dt = bus.fill_maklumat_kawasan();
             if (dt.Rows.Count > 0)
             {
@@ -79,7 +80,15 @@ namespace SIS_V.state
                 lbl_area_name.Text = dt.Rows[0]["area_name"].ToString();
                 lbl_no_voters.Text = dt.Rows[0]["total_vote"].ToString();
                 lbl_majority.Text = dt.Rows[0]["winner_majority"].ToString();
-                lbl_percent_vote.Text = dt.Rows[0]["percent_vote"].ToString();
+                if (dt.Rows[0]["percent_vote"].ToString() !="")
+                {
+                    avgValue = Math.Round(Convert.ToDouble(dt.Rows[0]["percent_vote"]), 2);
+                }
+                else
+                {
+                    avgValue = 0.00;
+                }
+                lbl_percent_vote.Text = avgValue.ToString() + "%" ;
                 lbl_spoilt_vote.Text = dt.Rows[0]["spoilt_vote"].ToString();
                 lbl_winner.Text = dt.Rows[0]["winner_name"].ToString();
                 lbl_raceFragment.Text = dt.Rows[0]["race_fragment"].ToString();
