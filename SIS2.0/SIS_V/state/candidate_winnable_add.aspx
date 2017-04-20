@@ -470,12 +470,12 @@
                              <div class="col-lg-12">
                                  <div class="panel panel-color panel-success">
                                     <div class="panel-heading panel-heading-custom">
-                                        <h3 class="panel-title"><i class="md md-contacts"></i> Candidate Informaton</h3>
+                                        <h3 class="panel-title"><i class="md md-contacts"></i>  BUTIRAN CALON</h3>
                                     </div>
                                     <div class="panel-body panel-custom-bg-success">
                                         <div class="alert alert-danger alert-dismissable" id="Div1" runat="server">
                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                                No Information found.
+                                                Tiada Info found.
                                         </div>
                                     </div>
                                 </div>

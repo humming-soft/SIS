@@ -50,6 +50,7 @@ namespace SIS_V.state
         {
             if (candidates.SelectedIndex != 0)
             {
+                topStatus.Visible = false;
                 string candidateIc = candidates.SelectedValue;
                 bus.candidateIc = candidateIc;
                 fillCandidateInfo();
@@ -61,7 +62,8 @@ namespace SIS_V.state
             }
             else
             {
-
+                topLabel.Text = "Sila pilih calon untuk mencari.";
+                topStatus.Visible = true;
             }
         }
         private void fillCandidateInfo()
@@ -102,12 +104,12 @@ namespace SIS_V.state
                 fillWinnableArea(Int32.Parse(candidateDt.Rows[0]["candidate_id"].ToString()));
                 fillArchive(Int32.Parse(candidateDt.Rows[0]["candidate_id"].ToString()));
                 candidateInfoPanel.Visible = true;
-                //alternate.Visible = false;
+                alternate.Visible = false;
             }
             else
             {
                 candidateInfoPanel.Visible = false;
-                //alternate.Visible = true;
+                alternate.Visible = true;
             }
         }
 

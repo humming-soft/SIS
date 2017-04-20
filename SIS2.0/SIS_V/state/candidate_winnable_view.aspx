@@ -769,6 +769,21 @@
                                 </div>
                            </div>  
                         </div>
+                        <div class="row" runat="server" id="alternate" visible="false">
+                             <div class="col-lg-12">
+                                 <div class="panel panel-color panel-success">
+                                    <div class="panel-heading panel-heading-custom">
+                                        <h3 class="panel-title"><i class="md md-contacts"></i> BUTIRAN CALON</h3>
+                                    </div>
+                                    <div class="panel-body panel-custom-bg-success">
+                                        <div class="alert alert-danger alert-dismissable" id="Div1" runat="server">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                Tiada Info found.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
                     </div>
         </div>
     </div>
