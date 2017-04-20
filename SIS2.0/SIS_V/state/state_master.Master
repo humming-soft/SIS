@@ -157,7 +157,7 @@
 
 
         <!-- Navbar Start -->
-        <div class="navbar-custom">
+        <div class="navbar-custom" style="background: #ffffff;">
             <div class="container">
                 <div id="navigation" style="z-index: 9999">
                     <!-- Navigation Menu-->
