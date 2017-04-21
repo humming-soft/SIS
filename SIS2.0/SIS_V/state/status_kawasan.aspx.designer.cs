@@ -13,13 +13,13 @@ namespace SIS_V.state {
     public partial class status_kawasan {
         
         /// <summary>
-        /// statusblack control.
+        /// statuswhite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusblack;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statuswhite;
         
         /// <summary>
         /// statusgray control.
@@ -31,13 +31,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusgray;
         
         /// <summary>
-        /// statuswhite control.
+        /// statusblack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statuswhite;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusblack;
         
         /// <summary>
         /// status_kawasan_dist control.
@@ -49,13 +49,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.WebControls.GridView status_kawasan_dist;
         
         /// <summary>
-        /// statusblack_sd control.
+        /// statuswhite_sd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusblack_sd;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statuswhite_sd;
         
         /// <summary>
         /// statusgray_sd control.
@@ -67,13 +67,13 @@ namespace SIS_V.state {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusgray_sd;
         
         /// <summary>
-        /// statuswhite_sd control.
+        /// statusblack_sd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statuswhite_sd;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusblack_sd;
         
         /// <summary>
         /// status_kawasan_subdist control.

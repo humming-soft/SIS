@@ -874,3 +874,10 @@ a.list-group-item.active .list-group-item-text, a.list-group-item.active:hover .
 .f-s-17{
     font-size:17px;
 }
+.m-list{
+    float: left;
+    display: block;
+    position: relative;
+    /*width: 30%;*/
+    /*margin: 10px !important;*/
+}
