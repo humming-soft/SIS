@@ -180,7 +180,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">Data tidak terdapat</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -210,20 +210,20 @@
                                         <thead>
                                             <tr>
                                                 <th>Kod</th>
-                                                <th>AKTIVITI :</th>
+                                                <th>ISU ISU :</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">Data tidak terdapat</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <div class="mCustomScrollbar" ClientIDMode="Static" id="isu_scroll" runat="server"  style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_isu" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10 " OnPreRender="grid_isu_PreRender">
                                             <Columns>
-                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
-                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="Kod." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="ISU ISU :" SortExpression="details" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>
@@ -244,20 +244,20 @@
                                         <thead>
                                             <tr>
                                                 <th>Kod</th>
-                                                <th>AKTIVITI :</th>
+                                                <th>JANJI PILIHANRAYA :</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">Data tidak terdapat</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <div  id="janji_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_janji" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_janji_PreRender">
                                             <Columns>
-                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
-                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="Kod." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="JANJI PILIHANRAYA :" SortExpression="details" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>
@@ -278,20 +278,20 @@
                                         <thead>
                                             <tr>
                                                 <th>Kod</th>
-                                                <th>AKTIVITI :</th>
+                                                <th>INSIDEN :</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2" class="ta-center" style="padding: 15px;">No Data Available</td>
+                                                <td colspan="2" class="ta-center" style="padding: 15px;">Data tidak terdapat</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <div id="insiden_scroll" ClientIDMode="Static" runat="server" class="mCustomScrollbar" style="height: 575px;" data-mcs-theme="dark-3">
                                         <asp:GridView ID="grid_insiden" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dt-responsive nowrap m-t-10" OnPreRender="grid_insiden_PreRender">
                                             <Columns>
-                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="No." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
-                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="AKTIVITI :" SortExpression="details" />
+                                                <asp:BoundField DataField="number" ItemStyle-CssClass="va-top f-w-600" HeaderText="Kod." ItemStyle-Width="5%" ItemStyle-VerticalAlign="Top" />
+                                                <asp:BoundField DataField="issue" ItemStyle-CssClass="p-b-10" HeaderText="INSIDEN :" SortExpression="details" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>

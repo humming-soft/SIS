@@ -123,7 +123,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Dashboard Utama";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     grant_child_li.Visible = false;
                     child_li.Attributes["class"] = "active";
                     break;
@@ -133,7 +134,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Parlimen Tumpuan";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -143,7 +145,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Kawasan Tumpuan BN VS Kawasan Tumpuan Pembangkang";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -169,7 +172,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Rumusan Status Kawasan";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -177,7 +181,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Winnable Candidate";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     grant_child_li.Visible = false;
                     child_li.Attributes["class"] = "active";
                     break;
@@ -194,7 +199,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Peratusan Keluar Mengundi";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -204,7 +210,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Keputusan Pilihanraya";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -239,6 +246,8 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Calon Boleh Menang";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     breadcrum_grant_child.InnerText = "Tambah";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
@@ -247,6 +256,8 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Calon Boleh Menang";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     breadcrum_grant_child.InnerText = "Paparan";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
@@ -268,7 +279,8 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Tambah Aktiviti Bakal Calon/Individu";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -302,6 +314,8 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Laporan Harian Negeri";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     breadcrum_grant_child.InnerText = "Tambah";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
@@ -310,6 +324,8 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Laporan Harian Negeri";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     breadcrum_grant_child.InnerText = "Paparan";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
@@ -318,7 +334,8 @@ namespace SIS_V.state
                     pilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pilihanraya";
                     breadcrum_child.InnerText = "Keluar Mengundi";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -351,7 +368,8 @@ namespace SIS_V.state
                     tetapan.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Tetapan";
                     breadcrum_child.InnerText = "Parlimen Info";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     child_li.Attributes["class"] = "active";
                     grant_child_li.Visible = false;
                     break;
@@ -414,6 +432,8 @@ namespace SIS_V.state
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Profil Bakal Calon / Individu";
                     breadcrum_grant_child.InnerText = "Tambah";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
                     break;
@@ -421,7 +441,8 @@ namespace SIS_V.state
                     dash.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Dashboard";
                     breadcrum_child.InnerText = "Calon Bertanding";
-                    breadcrum_child.Attributes["class"] = "b-600";
+                    breadcrum_child.Attributes["class"] = "b-600 no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     grant_child_li.Visible = false;
                     child_li.Attributes["class"] = "active";
                     break;
@@ -429,6 +450,8 @@ namespace SIS_V.state
                     prapilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pra-Pilihanraya";
                     breadcrum_child.InnerText = "Profil Bakal Calon / Individu";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     breadcrum_grant_child.InnerText = "Paparan";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
@@ -445,6 +468,8 @@ namespace SIS_V.state
                     pilihanraya.Attributes["class"] = "has-submenu active";
                     breadcrum_parent.InnerText = "Pilihanraya";
                     breadcrum_child.InnerText = "Keputusan Pilihanraya";
+                    breadcrum_child.Attributes["class"] = "no-loader";
+                    breadcrum_child.Attributes.Remove("href");
                     breadcrum_grant_child.InnerText = "Kemaskini";
                     grant_child_li.Attributes["class"] = "active";
                     breadcrum_grant_child.Attributes["class"] = "b-600";
