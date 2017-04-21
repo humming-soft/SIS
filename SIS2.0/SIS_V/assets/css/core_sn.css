@@ -874,3 +874,6 @@ a.list-group-item.active .list-group-item-text, a.list-group-item.active:hover .
 .f-s-17{
     font-size:17px;
 }
+.pad-6-17{
+    padding: 6px 17px;
+}

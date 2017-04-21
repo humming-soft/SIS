@@ -30,7 +30,7 @@
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <div class="alert alert-danger alert-dismissable" id="norec_1" runat="server">
-                                        <p style="text-align: center"><b>No Records Found !</b></p>
+                                        <p style="text-align: center"><b>Data tidak terdapat !</b></p>
                                     </div>
                                     <asp:DataList ID="dtlst_scoresheet" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" OnItemDataBound="dtlst_scoresheet_ItemDataBound">
                                         <ItemTemplate>
@@ -119,7 +119,7 @@
                             <div class="panel-body panel-custom-bg-custom-info">
                                 <div class="row">
                                     <div class="alert alert-danger alert-dismissable" id="norec_2" runat="server">
-                                        <p style="text-align: center"><b>No Records Found !</b></p>
+                                        <p style="text-align: center"><b>Data tidak terdapat !</b></p>
                                     </div>
                                     <asp:DataList ID="dtlst_gazetted" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal">
                                         <ItemTemplate>

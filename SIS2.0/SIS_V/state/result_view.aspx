@@ -39,7 +39,7 @@
                                             </li>
                                         </ul>
                                         <div class="alert alert-danger alert-dismissable" id="norec_2" runat="server">
-                                            <p style="text-align: center"><b>No Records Found !</b></p>
+                                            <p style="text-align: center"><b>Data tidak terdapat!</b></p>
                                         </div>
                                         <ul class="sortable-list connectList agile-list ui-sortable">
                                             <asp:DataList ID="dtlst_coalition" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" OnItemDataBound="dtlst_coalition_ItemDataBound" DataKeyField="coalition_id">
