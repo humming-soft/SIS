@@ -49,10 +49,16 @@
     <script type="text/javascript">
 
         function guage(total, vals) {
-            var fty = 0, tn = 0, frty = 0;
+            var fty = 0, tn = 0, frty = 0, fifty = 0, fifty1 = 0, svntyfv = 0, svntyfv1 = 0;
             frty = (total * 40) / 100;
             tn = frty + (total * 10) / 100;
             fty = tn + (total * 50) / 100;
+
+            fifty = (total * 50) / 100;
+            fifty1 = parseInt(fifty) + 1;
+            svntyfv = (total * 75) / 100;
+            svntyfv1 = parseInt(svntyfv) + 1;
+
             //console.log(fty + '---' + frty + '---' + tn);
             Highcharts.chart('gauge', {
                tooltip: { enabled: false },
@@ -124,7 +130,8 @@
                     title: {
                         text: ''
                     },
-                    plotBands: [{
+                    // old requirement don't delete
+                    /*plotBands: [{
                         from: 0,
                         to: frty,          //40 % of total
                         color: '#DF5353' // red
@@ -135,6 +142,19 @@
                     }, {
                         from: tn,
                         to: total,        //50 % of total
+                        color: '#55BF3B' // green
+                    }]*/
+                    plotBands: [{
+                        from: 0,
+                        to: fifty,
+                        color: '#DF5353' // red
+                    }, {
+                        from: fifty,
+                        to: svntyfv,
+                        color: '#DDDF0D' // yellow
+                    }, {
+                        from: svntyfv,
+                        to: total,        
                         color: '#55BF3B' // green
                     }]
                 },
