@@ -85,6 +85,7 @@ namespace SIS_V.state
         protected void fill_grid()
         {
             objBUS.area_id = int.Parse(Request.Form[ddlAreaList.UniqueID]);
+            objBUS.election_id = int.Parse(Session["election_id"].ToString());
             dt1 = objBUS.GetPollingDetails();
             if (dt1.Rows.Count > 0)
             {

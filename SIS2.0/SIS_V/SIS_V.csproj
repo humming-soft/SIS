@@ -451,9 +451,6 @@
     <Content Include="state\winnable_candidate.aspx" />
     <Content Include="state\Win_Candidate.aspx" />
     <Content Include="unauthorised.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="404.aspx.cs">
@@ -1069,12 +1066,6 @@
     <Content Include="assets\fonts\weathericons-regular-webfontd41d.eot" />
     <Content Include="assets\images\favicon\manifest.json" />
     <Content Include="assets\js\fileupload\boostrap.fileupload.min.js" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SIS_B\SIS_B.csproj">
@@ -1082,7 +1073,15 @@
       <Name>SIS_B</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -388,14 +388,15 @@ namespace SIS_D
                 db.disconnect();
             }
         }
-        public DataTable GetPollingDetails(int area_id)
+        public DataTable GetPollingDetails(int area_id,int election_id)
         {
             try
             {
                 cmd.Parameters.Clear();
-                cmd.CommandText = "usp_GetPollingDetails";
+                cmd.CommandText = "[usp_GetPollingDetails_election]";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@area_id", area_id);
+                cmd.Parameters.AddWithValue("@ele_id", election_id);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 cmd.Connection = db.connect();
