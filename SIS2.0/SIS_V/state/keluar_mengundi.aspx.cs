@@ -86,7 +86,7 @@ namespace SIS_V.state
         {
             objBUS.area_id = int.Parse(Request.Form[ddlAreaList.UniqueID]);
             objBUS.election_id = int.Parse(Session["election_id"].ToString());
-            dt1 = objBUS.GetPollingDetails();
+            dt1 = objBUS.GetPollingDetails_elc();
             if (dt1.Rows.Count > 0)
             {
                 GridKM.DataSource = dt1;

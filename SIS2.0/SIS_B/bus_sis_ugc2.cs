@@ -187,7 +187,11 @@ namespace SIS_B
         }
         public DataTable GetPollingDetails()
         {
-            return objDAL.GetPollingDetails(area_id,election_id);
+            return objDAL.GetPollingDetails(area_id);
+        }
+        public DataTable GetPollingDetails_elc()
+        {
+            return objDAL.GetPollingDetails_elc(area_id, election_id);
         }
         public int UpdateNoVote()
         {
