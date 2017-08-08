@@ -416,8 +416,8 @@ namespace SIS_D
                 cmd.Parameters.Clear();
                 cmd.CommandText = "usp_UpdateNoVote";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@area_id", area_id);
-                cmd.Parameters.AddWithValue("@election_id", election_id);
+                //cmd.Parameters.AddWithValue("@area_id", area_id);
+                //cmd.Parameters.AddWithValue("@election_id", election_id);
                 cmd.Parameters.AddWithValue("@polling_district_id", polling_district_id);
                 cmd.Parameters.AddWithValue("@no_of_vote", no_of_vote);
                 SqlParameter outparam = new SqlParameter();
