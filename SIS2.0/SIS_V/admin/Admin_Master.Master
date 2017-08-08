@@ -499,30 +499,30 @@
                     h = checkTime(today.getHours()),
                     m = checkTime(today.getMinutes()),
                     s = checkTime(today.getSeconds());
-                if (h == 00) {
-                    hr = 12;
-                    D = ' AM';
-                }
-                else if (h > 0 && h <= 11) {
-                    hr = h;
-                    D = ' AM';
-                }
-                else if (h > 12 && h <= 23) {
-                    hr = h - 12;
-                    if (hr < 10) {
-                        hr = "0" + hr;
-                    }
-                    else {
-                        hr = h - 12;
-                    }
-                    D = ' PM';
-                }
-                else {
-                    hr = 12;
-                    D = ' PM';
-                }
-                $('#tm').text(hr + ":" + m + ":" + s + D);
-                $('#tms').text(hr + ":" + m + ":" + s + D);
+                //if (h == 00) {
+                //    hr = 12;
+                //    D = ' AM';
+                //}
+                //else if (h > 0 && h <= 11) {
+                //    hr = h;
+                //    D = ' AM';
+                //}
+                //else if (h > 12 && h <= 23) {
+                //    hr = h - 12;
+                //    if (hr < 10) {
+                //        hr = "0" + hr;
+                //    }
+                //    else {
+                //        hr = h - 12;
+                //    }
+                //    D = ' PM';
+                //}
+                //else {
+                //    hr = 12;
+                //    D = ' PM';
+                //}
+                $('#tm').text(h + ":" + m + ":" + s);
+                $('#tms').text(h + ":" + m + ":" + s);
                 t = setTimeout(function () {
                     Timer()
                 }, 500);
@@ -539,15 +539,13 @@
                         'day': d,
                         'month': m,
                         'year': y,
-                        'hour': 12,
+                        'hour': 24,
                         'min': 00,
                         'sec': 00
                     },
                     omitWeeks: true
                 });
                 //enter the count down date using the format year, month, day, time: hour, min, sec
-
-                if ($('.day_field .top').html() == "0") $('.day_field').css('display', 'none');
 
             }
         }
@@ -581,6 +579,7 @@
                         console.log(errorThrown);
                     },
                     complete: function (data) {
+                        if ($('.day_field .top').html() == "0") $('.day_field').css('display', 'none');
                     }
                 });
             }
